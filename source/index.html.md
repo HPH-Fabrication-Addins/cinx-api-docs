@@ -13,6 +13,8 @@ toc_footers:
 
 includes:
   - errors
+  - vendors
+  - organisations
 
 search: true
 ---
