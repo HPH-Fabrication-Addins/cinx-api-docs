@@ -262,6 +262,80 @@
               </ul>
           </li>
           <li>
+            <a href="#manufacturers" class="toc-h1 toc-link" data-title="Manufacturers">Manufacturers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#manufacturer-price-sheet-introduction" class="toc-h2 toc-link" data-title="Manufacturer Price Sheet Introduction">Manufacturer Price Sheet Introduction</a>
+                  </li>
+                  <li>
+                    <a href="#api-get-manufacturer-s-price-sheet-masters" class="toc-h2 toc-link" data-title="API – GET Manufacturer’s Price Sheet Masters">API – GET Manufacturer’s Price Sheet Masters</a>
+                  </li>
+                  <li>
+                    <a href="#api-get-manufacturer-s-price-sheet-master-details" class="toc-h2 toc-link" data-title="API – GET Manufacturer’s Price Sheet Master Details">API – GET Manufacturer’s Price Sheet Master Details</a>
+                  </li>
+                  <li>
+                    <a href="#api-get-project-list" class="toc-h2 toc-link" data-title="API – GET Project List">API – GET Project List</a>
+                  </li>
+                  <li>
+                    <a href="#api-get-project-details" class="toc-h2 toc-link" data-title="API – GET Project Details">API – GET Project Details</a>
+                  </li>
+                  <li>
+                    <a href="#api-put-new-project" class="toc-h2 toc-link" data-title="API – PUT New Project">API – PUT New Project</a>
+                  </li>
+                  <li>
+                    <a href="#api-modify-a-cinx-project" class="toc-h2 toc-link" data-title="API – Modify a CINX Project">API – Modify a CINX Project</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#job-costs" class="toc-h1 toc-link" data-title="Job Costs">Job Costs</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#cinx-job-cost-introduction" class="toc-h2 toc-link" data-title="CINX Job Cost Introduction">CINX Job Cost Introduction</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#api-get-a-list-of-the-job-cost-phases" class="toc-h1 toc-link" data-title="API – GET a List of the Job Cost Phases">API – GET a List of the Job Cost Phases</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#api-create-a-job-cost-phase" class="toc-h2 toc-link" data-title="API – Create a Job Cost Phase">API – Create a Job Cost Phase</a>
+                  </li>
+                  <li>
+                    <a href="#api-modify-a-job-cost-phase" class="toc-h2 toc-link" data-title="API – Modify a Job Cost Phase">API – Modify a Job Cost Phase</a>
+                  </li>
+                  <li>
+                    <a href="#api-get-a-list-of-the-job-cost-cost-codes" class="toc-h2 toc-link" data-title="API – GET a List of the Job Cost Cost Codes">API – GET a List of the Job Cost Cost Codes</a>
+                  </li>
+                  <li>
+                    <a href="#api-create-a-job-cost-category" class="toc-h2 toc-link" data-title="API – Create a Job Cost Category">API – Create a Job Cost Category</a>
+                  </li>
+                  <li>
+                    <a href="#api-get-a-list-of-the-job-cost-tax-groups" class="toc-h2 toc-link" data-title="API – GET a List of the Job Cost Tax Groups">API – GET a List of the Job Cost Tax Groups</a>
+                  </li>
+                  <li>
+                    <a href="#api-create-a-job-cost-tax-group" class="toc-h2 toc-link" data-title="API – Create a Job Cost Tax Group">API – Create a Job Cost Tax Group</a>
+                  </li>
+                  <li>
+                    <a href="#api-modify-a-job-cost-tax-group" class="toc-h2 toc-link" data-title="API – Modify a Job Cost Tax Group">API – Modify a Job Cost Tax Group</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#notifications" class="toc-h1 toc-link" data-title="Notifications">Notifications</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#api-call-post-external-file-with-user-notifications" class="toc-h2 toc-link" data-title="API Call – POST External file with User Notifications">API Call – POST External file with User Notifications</a>
+                  </li>
+                  <li>
+                    <a href="#api-get-received-user-alerts" class="toc-h2 toc-link" data-title="API – GET Received User Alerts">API – GET Received User Alerts</a>
+                  </li>
+                  <li>
+                    <a href="#api-mark-user-alerts-shown-or-closed" class="toc-h2 toc-link" data-title="API – Mark User Alerts Shown or Closed">API – Mark User Alerts Shown or Closed</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#vendors" class="toc-h1 toc-link" data-title="Vendors">Vendors</a>
               <ul class="toc-list-h2">
                   <li>
@@ -730,6 +804,415 @@ Remember — a happy kitten is an authenticated kitten!
 <p>URL Pattern: <strong>{api path}/sub/user/subscriptions</strong></p>
 
 <p>URL Sample: <strong>https://api.cinx.com/sub/user/subscriptions</strong></p>
+<h1 id='manufacturers'>Manufacturers</h1><h2 id='manufacturer-price-sheet-introduction'>Manufacturer Price Sheet Introduction</h2>
+<p>A Price Sheet is a document that is issued by a product manufacturer or service provider that define the prices that will be charged to consumers for procuring the listed materials or services.  Manufacturers with large product offerings often have multiple price sheets with each containing only a segment of the manufacturer’s overall product listing.  For example, Charlotte has different price sheets for their Cast Iron No Hub, Service Weight, and Extra Heavy products.</p>
+
+<p>Due to rising raw material, labor, transportation and many other factors, manufacturers frequently release new instances of price sheets with revised pricing levels.</p>
+
+<p>Every item price in the Harrison Plumbing/Mechanical catalog on CINX is linked to Manufacturer Price Sheet from which it was obtained.  The CINX API provides several endpoints for working with Manufacturer Price Sheets.</p>
+
+<p>To better understand the API, please review the following terms/concepts:</p>
+
+<p><strong>Price Sheet Hierarchy:</strong> In CINX there is a hierarchal structure that is used to manage the manufacturers’ price sheet instances.  The three levels of the hierarchy are: Manufacturer, Price Sheet Master, and Price Sheet Detail.</p>
+
+<p><strong>Manufacturer:</strong>  This is the organization that creates and releases the price sheets.  Each manufacturer will have a unique CINX identifier that will be used in API requests.
+Example Manufacturer: Charlotte</p>
+
+<p><strong>Price Sheet Master:</strong> This defines a type of price sheet issued by the manufacturer.  Each Price Sheet Master will have a unique CINX identifier that will be used in API requests.
+Example Price Sheet Master: Charlotte No Hub</p>
+
+<p><strong>Price Sheet Detail:</strong> This is a specific instance of a price sheet type.  Each Price Sheet Detail will have a unique CINX identifier that will be used in API requests.
+Example Price Sheet Detail: Charlotte No Hub – January 1, 2018</p>
+
+<p><strong>Effective Date:</strong> This is the date that the prices on the Price Sheet are scheduled to be implemented.  This date is set by the manufacturer.  Each Price Sheet Detail will have an Effective Date value. </p>
+<h2 id='api-get-manufacturer-s-price-sheet-masters'>API – GET Manufacturer’s Price Sheet Masters</h2>
+<p>This request will be used to get a list of the manufacturer’s price sheet masters.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/pricesheet/masters/{org id}</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/pricesheet/masters/org-0000-1108
+The results will be sorted alphabetically by <strong>description field values.</strong></p>
+<h2 id='api-get-manufacturer-s-price-sheet-master-details'>API – GET Manufacturer’s Price Sheet Master Details</h2>
+<p>This request will be used to get a list of the price sheet details for a given manufacturer price sheet master.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/pricesheet/master/{org id}/{price sheet master id}/details</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/pricesheet/masters/org-0000-1108</p>
+
+<p>The results will be sorted descending on the <strong>date_effective</strong> field values.</p>
+
+<p>To make subsequent API calls using a price sheet detail, the <strong>id</strong> field within the <strong>cinx_doc</strong> object will be required.</p>
+<h2 id='api-get-project-list'>API – GET Project List</h2>
+<p>This request will be used to get a list of the org’s Projects from CINX.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/boms?type=pml</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/boms?type=pml</p>
+<h2 id='api-get-project-details'>API – GET Project Details</h2>
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/project/{Project GUID}/details</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/project/c8195210-dba8-b303-6292-8c7a60b8f539/details</p>
+<h2 id='api-put-new-project'>API – PUT New Project</h2>
+<p>This request will be used to create a new project in the org’s CINX account.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/project/create?values={JSON Structure}</p>
+
+<p>The <strong>values</strong> section of this URL must contain properly formatted JSON.  If the structure is an array, all elements of the array must be submitted.  Please see the <strong>CINX Project JSON Structures</strong> section of this document for a listing of the available JSON structures.</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/project/create? values={&quot;name&quot;:&quot;Test-2016-06-09&quot;,&quot;description&quot;:&quot;Test API create a project&quot;,&quot;number&quot;:&quot;101&quot;}</p>
+<h2 id='api-modify-a-cinx-project'>API – Modify a CINX Project</h2>
+<p>This request will be used to modify a project in the org’s CINX account.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/project/{Project GUID}/modify?values={JSON Structure}</p>
+
+<p>The <strong>values</strong> section of this URL must contain properly formatted JSON.  If the structure is an array, all elements of the array must be submitted.  Please see the <strong>CINX Project JSON Structures</strong> section of this document for a listing of the available JSON structures.</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/project/c8195210-dba8-b303-6292-8c7a60b8f539/modify?values={&quot;status&quot;:&quot;Bid&quot;}</p>
+<h1 id='job-costs'>Job Costs</h1><h2 id='cinx-job-cost-introduction'>CINX Job Cost Introduction</h2>
+<p>To allow for the proper reporting of Project items and integration of transactions with contractor accounting systems, CINX has the ability for a company to define their job costing attributes. CINX supports the following Job Cost information types:</p>
+
+<p><strong>PHASES</strong>
+A Phase is construction management concept that allows a company to break-down a project into a smaller group of tasks commonly used for scheduling, sequencing, and reporting purposes.  A Phase is also referred to as a Sub-Job, Area, or Extra by other software systems.  Examples Phases include, Site Work, Floor, and System.</p>
+
+<p><strong>COST CODES</strong>
+A Cost Code is an accounting and construction management concept that allows a company to track material and labor for cost reporting purposes.  Other systems refer to Cost Codes as Item Groups.  Example Cost Codes are Sanitary Sewer, Domestic Water, and Gas.</p>
+
+<p><strong>CATEGORIES</strong>
+A Category is an accounting that allows a company to classify project costs for expensing purposes.  Categories are also known as Cost Classes.  For example, Material, Labor, Sub-Contractor, and Rental.</p>
+
+<p><strong>TAX GROUPS</strong>
+A Tax Group is a collection of tax fields defined in an accounting system that allows for the proper identification and processing of taxes.  </p>
+<h1 id='api-get-a-list-of-the-job-cost-phases'>API – GET a List of the Job Cost Phases</h1>
+<p>This URL will be used to get the list of Phases in the company’s CINX Job Costing library.  </p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/org-job-cost/get-list/phases</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/org-job-cost/get-list/phases</p>
+<h2 id='api-create-a-job-cost-phase'>API – Create a Job Cost Phase</h2>
+<p>This URL will be used to create a new Phase in the company’s CINX Job Costing library.   </p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/org-job-cost/modify/phases? values={“phases”:[{JSON Structure}]}</p>
+
+<p>The JSON <strong>values</strong> section of this URL will begin with <strong>“phases”</strong>: and then will be followed by an array structure comprised of the following components:</p>
+
+<p><strong>Name</strong>
+“name”:”value”</p>
+
+<p><strong>Description</strong>
+“description”:”value”</p>
+
+<p><strong>Reference Id</strong> (Can be used to store the accounting system’s internal Id for the Phase)
+“reference_id”:”value”</p>
+
+<p><strong>User Id</strong>
+“user_id”:”value”</p>
+
+<p><strong>Date Modified</strong>
+“date_modified”:”date/time value”</p>
+
+<p><strong>Status</strong>
+“status”:”value”
+Available options are: <strong>A, D</strong> 
+Option Definitions: <strong>A=Active, D=Discontinued</strong></p>
+
+<p><strong>Material Cost Code</strong> (Can be used to define a default Cost Code for the Phase)
+“material_cost_code”:”value”</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/org-job-cost/modify/phases? values={%22phases%22:[{%22name%22:%2202-8157%22,%22description%22:%22Site%20Work%22,%22reference_id%22:%22%22,%22user_id%22:%22%22,%22date_modified%22:%22%22,%22status%22:%22A%22,%22material_cost_code%22:%225241%22}]}</p>
+<h2 id='api-modify-a-job-cost-phase'>API – Modify a Job Cost Phase</h2>
+<p>This URL will be used to modify an existing Phase in the company’s CINX Job Costing library. </p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/org-job-cost/modify/phases? values={“phases”:[{JSON Structure}]}</p>
+
+<p>NOTE: This URL pattern is the same as the Create Phase except that the GUID of the Phase to be modified must be included in the JSON array.</p>
+
+<p>The JSON <strong>values</strong> section of this URL will begin with <strong>“phases”:</strong> and then will be followed by an array structure comprised of the following components:</p>
+
+<p><strong>GUID</strong>
+“guid”:”value”</p>
+
+<p><strong>Name</strong>
+“name”:”value”</p>
+
+<p><strong>Description</strong>
+“description”:”value”</p>
+
+<p><strong>Reference Id</strong> (Can be used to store the accounting system’s internal Id for the Phase)
+“reference_id”:”value”</p>
+
+<p><strong>User Id</strong>
+“user_id”:”value”</p>
+
+<p><strong>Date Modified</strong>
+“date_modified”:”date/time value”</p>
+
+<p><strong>Status</strong>
+“status”:”value”
+Available options are: <strong>A, D</strong> 
+Option Definitions: <strong>A=Active, D=Discontinued</strong></p>
+
+<p><strong>Material Cost Code</strong> (Can be used to define a default Cost Code for the Phase)
+“material_cost_code”:”value”</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/org-job-cost/modify/phases?user=dc3aecca-f2ec-ee6e-eee9-6d96d45390fa&amp;values={&quot;phases&quot;:[{&quot;guid&quot;:&quot;6ebcc266-83b4-85cf-53f9-8db2d52f15cb&quot;,&quot;name&quot;:&quot;02-8158&quot;,&quot;description&quot;:&quot;Site Work&quot;,&quot;reference_id&quot;:&quot;&quot;,&quot;user_id&quot;:&quot;&quot;,&quot;date_modified&quot;:&quot;&quot;,&quot;status&quot;:&quot;A&quot;,&quot;material_cost_code&quot;:&quot;5241&quot;}]}</p>
+<h2 id='api-get-a-list-of-the-job-cost-cost-codes'>API – GET a List of the Job Cost Cost Codes</h2>
+<p>This URL will be used to get the list of Cost Codes in the company’s CINX Job Costing library.   </p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/org-job-cost/get-list/material-cost-codes</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/org-job-cost/get-list/material-cost-codes</p>
+<h2 id='api-create-a-job-cost-category'>API – Create a Job Cost Category</h2>
+<p>This URL will be used to create a new Category in the company’s CINX Job Costing library.   </p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-expense-categories? values={“material_cost_code”:[{JSON Structure}]}</p>
+
+<p>NOTE: Please use underscores on <strong>material_cost_code</strong> when it is within the JSON structure.  This is different than the earlier part of the URL where hyphens are used.</p>
+
+<p>The JSON <strong>values</strong> section of this URL will begin with <strong>“material_cost_code”:</strong> and then will be followed by an array structure comprised of the following components:</p>
+
+<p><strong>Name</strong>
+“name”:”value”</p>
+
+<p><strong>Description</strong>
+“description”:”value”</p>
+
+<p><strong>Reference Id</strong> (Can be used to store the accounting system’s internal Id for the Phase)
+“reference_id”:”value”</p>
+
+<p><strong>User Id</strong>
+“user_id”:”value”</p>
+
+<p><strong>Date Modified</strong>
+“date_modified”:”date/time value”</p>
+
+<p><strong>Status</strong>
+“status”:”value”
+Available options are: <strong>A, D</strong> 
+Option Definitions: <strong>A=Active, D=Discontinued</strong></p>
+<h2 id='api-get-a-list-of-the-job-cost-tax-groups'>API – GET a List of the Job Cost Tax Groups</h2>
+<p>This URL will be used to get the list of Tax Groups in the company’s CINX Job Costing library.  </p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/org-job-cost/get-list/tax-groups</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/org-job-cost/get-list/tax-groups</p>
+<h2 id='api-create-a-job-cost-tax-group'>API – Create a Job Cost Tax Group</h2>
+<p>This URL will be used to create a new Tax Group in the company’s CINX Job Costing library. </p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-groups? values={“ tax_groups”:[{JSON Structure}]}</p>
+
+<p>NOTE: Please use underscores on tax_groups when it is within the JSON structure.  This is different than the earlier part of the URL where hyphens are used.</p>
+
+<p>The JSON <strong>values</strong> section of this URL will begin with <strong>“tax_groups”:</strong> and then will be followed by an array structure comprised of the following components:</p>
+
+<p><strong>Name</strong>
+“name”:”value”</p>
+
+<p><strong>Tax Type</strong>
+“tax_type”:”value”
+Available options are: SALES, USE, or {user defined}</p>
+
+<p><strong>Description</strong>
+“description”:”value”</p>
+
+<p><strong>Reference Id</strong> (Can be used to store the accounting system’s internal Id for the Phase)
+“reference_id”:”value”</p>
+
+<p><strong>User Id</strong>
+“user_id”:”value”</p>
+
+<p><strong>Date Modified</strong>
+“date_modified”:”date/time value”</p>
+
+<p><strong>Status</strong>
+“status”:”value”
+Available options are: <strong>A, D</strong> 
+Option Definitions: <strong>A=Active, D=Discontinued</strong></p>
+
+<p>Rate
+“rate”:”value”</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/org-job-cost/modify/tax-groups? values={&quot;tax_groups&quot;:[{&quot;name&quot;:&quot;MD1&quot;,&quot;tax_type&quot;:&quot;Sales&quot;,&quot;description&quot;:&quot;Maryland Sales Tax&quot;,&quot;reference_id&quot;:&quot;T1254&quot;,&quot;user_id&quot;:&quot;&quot;,&quot;date_modified&quot;:&quot;&quot;,&quot;status&quot;:&quot;A&quot;,&quot;rate&quot;:&quot;5.65&quot;}}}</p>
+<h2 id='api-modify-a-job-cost-tax-group'>API – Modify a Job Cost Tax Group</h2>
+<p>This URL will be used to modify an existing Tax Group in the company’s CINX Job Costing library.  </p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-groups? values={“ tax_groups”:[{JSON Structure}]}</p>
+
+<p>NOTE: This URL pattern is the same as the Create Tax Group except that the GUID of the Tax Group to be modified must be included in the JSON array.</p>
+
+<p>NOTE: Please use underscores on <strong>tax_groups</strong> when it is within the JSON structure.  This is different than the earlier part of the URL where hyphens are used.</p>
+
+<p>The JSON <strong>values</strong> section of this URL will begin with <strong>“tax_groups”:</strong> and then will be followed by an array structure comprised of the following components:</p>
+
+<p><strong>GUID</strong>
+“guid”:”value”</p>
+
+<p><strong>Name</strong>
+“name”:”value”</p>
+
+<p><strong>Tax Type</strong>
+“tax_type”:”value”
+Available options are: SALES, USE, or {user defined}</p>
+
+<p><strong>Description</strong>
+“description”:”value”</p>
+
+<p><strong>Reference Id</strong> (Can be used to store the accounting system’s internal Id for the Phase)
+“reference_id”:”value”</p>
+
+<p><strong>User Id</strong>
+“user_id”:”value”</p>
+
+<p><strong>Date Modified</strong>
+“date_modified”:”date/time value”</p>
+
+<p><strong>Status</strong>
+“status”:”value”
+Available options are: <strong>A, D</strong> 
+Option Definitions: <strong>A=Active, D=Discontinued</strong></p>
+
+<p><strong>Rate</strong>
+“rate”:”value”</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/org-job-cost/modify/tax-groups? values={&quot;tax_groups&quot;:[{&quot;guid&quot;:&quot;dba9161a-4d78-9cff-fa37-6a7c344837b2&quot;,&quot;name&quot;:&quot;MD1&quot;,&quot;tax_type&quot;:&quot;Sales&quot;,&quot;description&quot;:&quot;Maryland Sales Tax&quot;,&quot;reference_id&quot;:&quot;T1254&quot;,&quot;user_id&quot;:&quot;&quot;,&quot;date_modified&quot;:&quot;&quot;,&quot;status&quot;:&quot;A&quot;,&quot;rate&quot;:&quot;5.65&quot;}]}</p>
+
+<p> </p>
+<h1 id='notifications'>Notifications</h1><h2 id='api-call-post-external-file-with-user-notifications'>API Call – POST External file with User Notifications</h2>
+<p>This request will be used to POST an uploaded external file (Excel, PDF, txt) to the CINX CDN.  In addition, this POST operation allows for user notifications to be delivered by the API.  The notification types are <strong>Email</strong> and <strong>CINX System Alert.</strong></p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/partner/exec/cinx/lib-doc? type=MATERIAL+REQUISITION &amp;name={requisition id}&amp;parent=couchdb://{CINX Org Id}/{CINX Project GUID}&amp;email_subject={text}&amp;notify_email={User Email address}&amp;notify_alert={CINX User GUID}</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/e8478738-8c4b-a152-609d-f50e34be0090/partner/exec/cinx/lib-doc? type=MATERIAL+REQUISITION&amp;name=Req123&amp;parent=couchdb://org-0000-6138/3dde31ee-694e-0e43-8af2-8382bb6dcc1f&amp;email_subject=NewShopMaterialRequestionReq123&amp;notify_email=bakigervalla@gmail.com&amp;notify_email=dmcphaul@hphguide.com&amp;notify_alert=c61a47a8-3a4a-025a-0db1-2b9e609da089&amp;notify_alert=54e0afa4-c359-f55b-ad3c-cc63df698900</p>
+
+<p>URL Parameter Information</p>
+
+<p><strong>/partner/exec/cinx/lib-doc</strong>  <literal></p>
+
+<p><strong>?type=&quot;MATERIAL REQUISITION&quot;</strong>  <literal></p>
+
+<p><strong>&amp;name=</strong> {document name} populate with the Requisition Id</p>
+
+<p><strong>&amp;parent=couchdb://</strong>  <literal> </p>
+
+<p>CINX Org ID = CINX Id of Org that the current user is associated with /default Org Id (ie, <strong>org-0000-7833</strong> for Your company Dev account)</p>
+
+<p>Project GUID = CINX Project GUID</p>
+
+<p><strong>&amp;email_subject=</strong> {subject line for email notification} <strong>“New CINX Material Requisition Received</strong> – {req id}”</p>
+
+<p><strong>&amp;notify_email=</strong>{email address} – Send to User email address - REPEAT as needed using full parameter label and value</p>
+
+<p><strong>&amp;notify_alert=</strong>{user id/cdoc} - Send to CINX User GUID - REPEAT as needed using full parameter label and value </p>
+<h2 id='api-get-received-user-alerts'>API – GET Received User Alerts</h2>
+<p>This request will be used get a User’s CINX system alerts.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/user/alerts/received?shown=0</p>
+
+<p>Samples:</p>
+
+<p><strong>“Shown” Parameter</strong></p>
+
+<p>This optional URL parameter allows us to filter the alerts given their “User Shown” status.</p>
+
+<p><strong>?shown=0</strong>
+<strong>?shown=1</strong></p>
+
+<p>An alert is marked <strong>shown</strong> when a user has view the alert.</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?shown=0</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?shown=1</p>
+
+<p><strong>“Closed” Parameter</strong></p>
+
+<p>This optional URL parameter allows us to filter the alerts given their “User Closed” status.</p>
+
+<p>An alert is marked <strong>closed</strong> when a user has “deleted” the alert from a UI.</p>
+
+<p><strong>?closed=0</strong>
+<strong>?closed=1</strong></p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?closed=0</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?closed=1</p>
+<h2 id='api-mark-user-alerts-shown-or-closed'>API – Mark User Alerts Shown or Closed</h2>
+<p>This request will be used update a user’s CINX system alert’s <strong>Shown</strong> or <strong>Closed</strong> status.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/user/alert/{alert GUID}/modify?values={<strong>“shown or closed</strong> attribute label”:{boolean indicator}</p>
+
+<p>Samples:</p>
+
+<p><strong>Mark Shown</strong></p>
+
+<p>{api path}/sub/{B2B Id GUID}/user /alert/{alert GUID}modify?values={&quot;shown&quot;:1 }</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alert/5dbf1bdf-732c-5c3b-d4cc-c837f5fc2fa2/modify?values={%22shown%22:1}</p>
+
+<p>{api path}/sub/{B2B Id GUID}/user/alert/{alert guid}/modify?values={&quot;closed&quot;: 1 }</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alert/5dbf1bdf-732c-5c3b-d4cc-c837f5fc2fa2/modify?values={%22closed%22:1}
+  </p>
 <h1 id='vendors'>Vendors</h1><h2 id='cinx-vendor-introduction'>CINX Vendor Introduction</h2>
 <p>For contractors on the CINX platform, a Vendor is a Wholesale Distributor or other entities that provide products or services.  As a web-based platform CINX has the ability for contractors and distributors to connect with one another if they are both already members of the CINX site.  Similar to LinkedIn and Facebook, a request is sent by the requesting party to create a relationship whereby CINX activities and transactions can be shared between the two companies.</p>
 
