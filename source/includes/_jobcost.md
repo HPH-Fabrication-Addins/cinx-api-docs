@@ -16,7 +16,7 @@ A Category is an accounting that allows a company to classify project costs for 
 **TAX GROUPS**
 A Tax Group is a collection of tax fields defined in an accounting system that allows for the proper identification and processing of taxes.  
 
-# API – GET a List of the Job Cost Phases
+## API – GET a List of the Job Cost Phases
 
 This URL will be used to get the list of Phases in the company’s CINX Job Costing library.  
 
