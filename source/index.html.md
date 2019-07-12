@@ -11,6 +11,9 @@ toc_footers:
 includes:
   - background
   - subscriptions
+  - manufacturers
+  - jobcost
+  - notifications
   - vendors
   - organisations
 
