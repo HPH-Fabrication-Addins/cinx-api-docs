@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,9 +211,6 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
               <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
@@ -242,7 +239,88 @@
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#background" class="toc-h1 toc-link" data-title="Background">Background</a>
+          </li>
+          <li>
+            <a href="#subscriptions" class="toc-h1 toc-link" data-title="Subscriptions">Subscriptions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#cinx-application-subscription-model-introduction" class="toc-h2 toc-link" data-title="CINX Application/Subscription Model Introduction">CINX Application/Subscription Model Introduction</a>
+                  </li>
+                  <li>
+                    <a href="#cinx-data-source-introduction" class="toc-h2 toc-link" data-title="CINX Data Source Introduction">CINX Data Source Introduction</a>
+                  </li>
+                  <li>
+                    <a href="#cinx-application-and-data-source-introduction" class="toc-h2 toc-link" data-title="CINX Application and Data Source Introduction">CINX Application and Data Source Introduction</a>
+                  </li>
+                  <li>
+                    <a href="#working-with-the-get-user-subscriptions-authorizations-api-response" class="toc-h2 toc-link" data-title="Working with the GET User Subscriptions/Authorizations API Response">Working with the GET User Subscriptions/Authorizations API Response</a>
+                  </li>
+                  <li>
+                    <a href="#subscriptions-get" class="toc-h2 toc-link" data-title="Subscriptions GET">Subscriptions GET</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#vendors" class="toc-h1 toc-link" data-title="Vendors">Vendors</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#cinx-vendor-introduction" class="toc-h2 toc-link" data-title="CINX Vendor Introduction">CINX Vendor Introduction</a>
+                  </li>
+                  <li>
+                    <a href="#api-get-vendor-list" class="toc-h2 toc-link" data-title="API – GET Vendor List">API – GET Vendor List</a>
+                  </li>
+                  <li>
+                    <a href="#api-get-vendor-details-using-cinx-commerce-guid" class="toc-h2 toc-link" data-title="API – GET Vendor Details – using CINX Commerce GUID">API – GET Vendor Details – using CINX Commerce GUID</a>
+                  </li>
+                  <li>
+                    <a href="#api-put-new-vendor" class="toc-h2 toc-link" data-title="API – PUT New Vendor">API – PUT New Vendor</a>
+                  </li>
+                  <li>
+                    <a href="#api-modify-a-vendor" class="toc-h2 toc-link" data-title="API – Modify a Vendor">API – Modify a Vendor</a>
+                  </li>
+                  <li>
+                    <a href="#cinx-vendor-json-structures" class="toc-h2 toc-link" data-title="CINX Vendor JSON Structures">CINX Vendor JSON Structures</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#organisations" class="toc-h1 toc-link" data-title="Organisations">Organisations</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#api-get-organization-details" class="toc-h2 toc-link" data-title="API – GET Organization Details">API – GET Organization Details</a>
+                  </li>
+                  <li>
+                    <a href="#api-modify-organization-details" class="toc-h2 toc-link" data-title="API – Modify Organization Details">API – Modify Organization Details</a>
+                  </li>
+                  <li>
+                    <a href="#cinx-organization-json-structures" class="toc-h2 toc-link" data-title="CINX Organization JSON Structures">CINX Organization JSON Structures</a>
+                  </li>
+                  <li>
+                    <a href="#api-get-an-organization-s-user-list" class="toc-h2 toc-link" data-title="API – GET an Organization’s User List">API – GET an Organization’s User List</a>
+                  </li>
+                  <li>
+                    <a href="#api-get-an-organization-s-addresses" class="toc-h2 toc-link" data-title="API – GET an Organization’s Addresses">API – GET an Organization’s Addresses</a>
+                  </li>
+                  <li>
+                    <a href="#api-get-an-organization-s-customer-type-list" class="toc-h2 toc-link" data-title="API – GET an Organization’s Customer Type List">API – GET an Organization’s Customer Type List</a>
+                  </li>
+                  <li>
+                    <a href="#api-get-an-organization-s-vendor-type-list" class="toc-h2 toc-link" data-title="API – GET an Organization’s Vendor Type List">API – GET an Organization’s Vendor Type List</a>
+                  </li>
+                  <li>
+                    <a href="#api-get-an-organization-s-project-type-list" class="toc-h2 toc-link" data-title="API – GET an Organization’s Project Type List">API – GET an Organization’s Project Type List</a>
+                  </li>
+                  <li>
+                    <a href="#api-get-an-organization-s-invoice-dispute-reasons-list" class="toc-h2 toc-link" data-title="API – GET an Organization’s Invoice Dispute Reasons List">API – GET an Organization’s Invoice Dispute Reasons List</a>
+                  </li>
+                  <li>
+                    <a href="#api-get-an-organization-s-return-reasons-list" class="toc-h2 toc-link" data-title="API – GET an Organization’s Return Reasons List">API – GET an Organization’s Return Reasons List</a>
+                  </li>
+                  <li>
+                    <a href="#api-get-an-organization-s-return-actions-list" class="toc-h2 toc-link" data-title="API – GET an Organization’s Return Actions List">API – GET an Organization’s Return Actions List</a>
+                  </li>
+              </ul>
           </li>
       </ul>
         <ul class="toc-footer">
@@ -263,16 +341,7 @@
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
 </code></pre>
@@ -289,17 +358,7 @@ curl <span class="s2">"api_endpoint_here"</span>
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
@@ -350,17 +409,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
@@ -393,18 +442,7 @@ Remember — a happy kitten is an authenticated kitten!
 <td>The ID of the kitten to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
 <span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
@@ -432,71 +470,524 @@ Remember — a happy kitten is an authenticated kitten!
 <td>The ID of the kitten to delete</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
+<h1 id='background'>Background</h1>
+<p>Harrison Publishing House (HPH) is a content and software provider to the construction industry in North America.  We aggregate building product information, extend the data with our own content, and make it available to trade participants.</p>
 
-<p>The Kittn API uses the following error codes:</p>
+<p>HPH has historically supported mechanical contractor estimating systems with price updates so that estimators could use current information when preparing bids.</p>
 
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
-</tr>
-</tbody></table>
+<p>With our new product CINX (Construction Information Network &amp; Exchange) we are expanding our software offering for both contractors and wholesale distributors (vendors) from whom contractors purchase materials.  For contractors CINX will provide a Master Data Management platform and transaction integration with their vendors.  For wholesale distributors CINX will provide a standardized customer integration portal and limited CRM functionality.</p>
+<h1 id='subscriptions'>Subscriptions</h1><h2 id='cinx-application-subscription-model-introduction'>CINX Application/Subscription Model Introduction</h2>
+<p>A CINX customer (organization) has the opportunity to subscribe to different applications available on the platform. An application can be a grouping of pages and functionality on the CINX web site or external applications that consume content from CINX.  Each application on the CINX platform has a unique identifier and a range of fields that define its attributes.  When an organization subscribes to an application a new unique identifier is created to link the application to the subscribing organization.  This application id will be used in API calls to identify and grant access to requested data operations.</p>
+
+<p><img src='images/subscription1.jpg'/></p>
+<h2 id='cinx-data-source-introduction'>CINX Data Source Introduction</h2>
+<p>CINX supports different “catalogs” of content.  Companies subscribing to CINX can have access to multiple catalogs or databases of content.  Here are some common catalogs in CINX:</p>
+
+<ul>
+<li>HPH Plumbing/Mechanical catalog</li>
+<li>MCAA WebLEM</li>
+<li>PHCC Labor Units </li>
+</ul>
+
+<p>Another catalog that each CINX company can use is a “Private” catalog.  This catalog of content is specific to the subscribing company and can contain material items.  These items can be copied from another catalog on CINX or manually entered/uploaded by the company.</p>
+
+<p>Estimating systems, CAD/BIM software systems, and other software partners that utilize CINX content will also have a separate CINX Catalogs.  This allows each system to have a specific set of items that CINX maintains.</p>
+
+<p>A good way to visualize this concept is to open the Catalog drop-down in the CINX Search app.  Here is a screen shot that shows a company that has access to many catalogs.  Note:  each company’s private catalog will be listed using the company’s name as registered in CINX.</p>
+
+<p><img src='images/subscription2.jpg'/></p>
+
+<p>When working with the CINX API in conjunction with a company’s subscription a catalog is often named Data Source.</p>
+<h2 id='cinx-application-and-data-source-introduction'>CINX Application and Data Source Introduction</h2>
+<p>For software partner (external) applications that consume data from CINX there is an important attribute in the CINX subscription that defines which CINX catalog is used to acquire information for data outputs.  This attribute is called a <strong>data source</strong>.</p>
+
+<p>Each application subscription in CINX has this attribute.</p>
+
+<p>Importantly, a company can subscribe to an application multiple times provided that the data source is different.  For example, a company using an industry estimating system may have CINX produce updates for different locations using different CINX Catalogs (data sources).  One location may want standard list prices from the standard estimating database and another location may want update files to contain net buy prices based on their private catalog of content.</p>
+
+<p><img src='images/subscription3.jpg'/></p>
+
+<p><strong>Please note that when working with the CINX Subscription API response each combination of an application and a data source will be listed in separate blocks.</strong></p>
+
+<p>Below is a sample showing an App with its data source</p>
+
+<p>App Name: Viewpoint Estimation</p>
+
+<p>Data Source Name: Viewpoint Estimation</p>
+
+<p><img src='images/subscription4.jpg'/></p>
+
+<p>App Name: Viewpoint Estimation</p>
+
+<p>Data Source Name: My Private Catalog</p>
+
+<p><img src='images/subscription5.jpg'/></p>
+<h2 id='working-with-the-get-user-subscriptions-authorizations-api-response'>Working with the GET User Subscriptions/Authorizations API Response</h2>
+<p>The Subscriptions/Authorizations API response will provide the necessary information to make subsequent API requests.</p>
+
+<p>Please keep the following CINX Platform attributes in mind as you begin to work with the Subscriptions response:</p>
+
+<ul>
+<li>A User may be associated with more than one Org (multiple Orgs in the CINX subscription result)</li>
+<li>An Org can subscribe to multiple catalogs of content</li>
+<li>An Org might have multiple subscriptions to a single App  (the data for the App coming from different sources) (multiple instances of the same App within a single Org in the CINX subscription result)</li>
+<li>A User may use a CINX Addin for multiple partner applications on the same computer</li>
+<li>Objects in the CINX Platform are assigned Unique Ids that will be required API URL elements</li>
+</ul>
+
+<p>The JSON response uses the following structure:</p>
+
+<p><img src='images/subscription6.jpg'/></p>
+
+<p>Each <strong>Row</strong> array of the response will correspond to an Org to which the user is a member and will contain the following components:</p>
+
+<p><strong>Org:</strong> contains two objects labeled <strong>Names</strong> and <strong>CINX Id.</strong>  The <strong>CINX Id</strong> will contain the Unique Id to identify the Org on the CINX Platform.</p>
+
+<p><strong>Access Status:</strong> defines the org’s subscription status which controls access to the API.</p>
+
+<p><strong>Start Date:</strong> lists the date the CINX subscription was established.</p>
+
+<p><strong>End Date:</strong> provides the scheduled expiration date for the subscription.</p>
+
+<p><strong>Apps:</strong> an array of applications that the org currently subscribes to and can access using the API.  The structure of an app object is governed by its <strong>Type.</strong>  Current CINX App types include <strong>Data-Source</strong> (catalogs of content), <strong>Integration</strong> (interactions with other software systems), and <strong>Website</strong> (CINX web site features).</p>
+
+<p><strong>CINX Id:</strong> contains the Unique Id for the org’s subscription.</p>
+
+<p><strong>User:</strong> provides basic information about the user and his/her CINX Unique Id.</p>
+
+<p>The following sections contain important information about using the API and the CINX Unique Ids that will be required for making some API calls. </p>
+
+<p><strong>Is the subscription active?</strong></p>
+
+<p>You will first need to verify that the subscription is active.  This is done by checking the <strong>access_status</strong> object of the response. If the subscription is active the response will have the following information:</p>
+
+<p><code>
+  &quot;access_status&quot;: {
+        &quot;code&quot;: 200,
+        &quot;message&quot;: &quot;OK&quot;,
+        &quot;reason&quot;: null
+   },
+</code></p>
+
+<p>If the subscription has expired the response will have the following information:</p>
+
+<p><code>
+  &quot;access_status&quot;: {
+        &quot;code&quot;: 401,
+        &quot;message&quot;: Unauthorized&quot;,
+        &quot;reason&quot;: &quot;Subscription expired on [2014-08-03]&quot;
+   },
+</code></p>
+
+<p><strong>Does the subscription response contain a B2B (data integration) application?</strong></p>
+
+<p>A B2B CINX application allows programmatic access to content on the CINX Platform.   To determine if an Org has a B2B app in their subscription, you will need to query the apps array for an  app_cdoc that has this value:  &quot;couchdb://apps/2d4dde95cc7d1a3d8e830036ff126f60&quot; (which is a CINX Platform constant).  Once this is located please hold the value of the id: field.  The string shown in this field is required to make additional API calls to retrieve item and project information.</p>
+
+<p><img src='images/subscription7.jpg'/></p>
+
+<p>In the above screenshot, the necessary <strong>id</strong> value is:  <strong>050ba80b-832b-89cc-8197-b2a1261a408c</strong></p>
+
+<p><strong>Does the subscription response contain multiple B2B (data integration) applications?</strong></p>
+
+<p>It is possible for an org to have multiple B2B applications.  This is allowed to let CINX link to different data sources.  A data source is a catalog of content.  One org may have access to multiple content catalogs.</p>
+
+<p>It is recommended that B2B application with an org’s Private Catalog data source be used when working with the public API for a specific org.</p>
+
+<p>Similar to the B2B app cdoc, the My Private Catalog data source will have a static/constant that can be used when querying the API’s Subscription response.  Inside a B2B app there will be a <strong>data_source</strong> field.  The value in this field for the My Private Catalog will be <strong>couchdb://apps/a6502d78d800a4cd3cc052562500033a.</strong>  This value is a CINX Platform constant.</p>
+
+<p><img src='images/subscription8.jpg' /></p>
+
+<p>It is not recommended to use the <strong>data_source_name</strong> field as the name text may change in the future.</p>
+
+<p><strong>Does the subscription response contain Integration (Import-Export) application?</strong></p>
+
+<p>A CINX Import-Export application provides API access to formats required for integration with external applications.  This will be used in the API calls to pull price updates for a Your company catalog.</p>
+
+<p><img src='images/subscription9.jpg' /></p>
+
+<p>The necessary <strong>id</strong> value in this screenshot is:  <strong>0d2b4b77-d706-e215-13f2-207c7e4aaee7</strong></p>
+
+<p><strong>What is the user’s CINX Unique Id?</strong></p>
+
+<p>The CINX User Unique Id (GUID) will be required by some API requests.  These requests will generally be ones in which new information is created or existing content is updated.  The user will then be identified as the “last modified by”.</p>
+<h2 id='subscriptions-get'>Subscriptions GET</h2><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
+      <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
+      <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getSubscriptions</span><span class="p">()</span>
+            <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+                  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+                <span class="p">});</span>
+            <span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User-&gt;getUserSubscriptions"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub/user/subscriptions"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1562338517.204</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"total_time"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.31632900238037</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"record_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"org"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"names"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"primary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ratkoceri Engineering-LIVE"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"alternate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"short"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"previous"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORG"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"orgs"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org-0000-8247"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"access_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"reason"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"start_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-06-18 13:04:53Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"end_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-18 13:04:53Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"apps"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HPH Plumbing/Mechanical"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e82d126d-53c7-b455-8e26-cc0a4a2b6762"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DATA-SOURCE"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CATALOG"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"access"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PUBLIC"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"app_cdoc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"couchdb://apps/dab29b19c69e2703849cd5010a183fdd"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+
+              </span><span class="p">],</span><span class="w">
+              </span><span class="s2">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"is_paid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+
+              </span><span class="p">],</span><span class="w">
+              </span><span class="s2">"notify"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+
+              </span><span class="p">],</span><span class="w">
+              </span><span class="s2">"labor_app"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.cinx.com/assets/apps/org-0000-0001_logo_1.png"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HPH Plumbing and Mechanical Material Catalog"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"data_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"couchdb://apps/dab29b19c69e2703849cd5010a183fdd"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"data_source_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HPH Plumbing/Mechanical"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"catalog_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"couchdb://apps/dab29b19c69e2703849cd5010a183fdd"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUBSCRIPTION"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subscriptions"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"47895223-a950-a206-ef6c-fb489667eeb3"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"names"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Burim"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"middle"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ratkoceri"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"suffix"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USER"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"users"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"911d0a71-c650-51dc-5a28-d35d1229397b"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"joomla_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10396"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"orgs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"org_cdoc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"couchdb://orgs/org-0000-8247"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Administrator"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"permission_extensions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+
+                </span><span class="p">]</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"org_cdoc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"couchdb://orgs/org-0000-7068"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+
+                </span><span class="p">],</span><span class="w">
+                </span><span class="s2">"permission_extensions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+
+                </span><span class="p">]</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='api-get-user-subscriptions-authorizations-orgs-and-applications'>API – GET User Subscriptions/Authorizations (Orgs and Applications)</h3>
+<p>This request will be used to get the applications/subscriptions that the user is authorized to access.  The response will contain information required to make additional API calls.</p>
+
+<p>URL Pattern: <strong>{api path}/sub/user/subscriptions</strong></p>
+
+<p>URL Sample: <strong>https://api.cinx.com/sub/user/subscriptions</strong></p>
+<h1 id='vendors'>Vendors</h1><h2 id='cinx-vendor-introduction'>CINX Vendor Introduction</h2>
+<p>For contractors on the CINX platform, a Vendor is a Wholesale Distributor or other entities that provide products or services.  As a web-based platform CINX has the ability for contractors and distributors to connect with one another if they are both already members of the CINX site.  Similar to LinkedIn and Facebook, a request is sent by the requesting party to create a relationship whereby CINX activities and transactions can be shared between the two companies.</p>
+
+<p>As shown in the graphic, a simple click of the Add As Vendor button will send a request to the Vendor to accept the contractor’s request.</p>
+
+<p>When a relationship between the two parties is created CINX creates a Commerce GUID that links the two parties.  This GUID is the key that allows for the storage of important transaction parameters that are required to deliver and process transactions.</p>
+
+<p>It is therefore also used by the API as a URL parameter when fetching and updating relationship data.</p>
+
+<p>CINX also has the ability for a contractor to create a <strong>Private</strong> vendor.  This is a vendor that is not a member of the CINX site.  A private vendor is unique to the contractor and will still be linked using a Commerce GUID.</p>
+<h2 id='api-get-vendor-list'>API – GET Vendor List</h2>
+<p>This request will be used to get a list of the company’s Vendors from CINX.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/vendors</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/vendors</p>
+<h2 id='api-get-vendor-details-using-cinx-commerce-guid'>API – GET Vendor Details – using CINX Commerce GUID</h2>
+<p>This request will be used to get the details of a vendor.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/vendor/{commerce guid}/details</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/vendor/512d5a2f-1d6c-21ca-9b97-9299ac9c802a/details</p>
+<h2 id='api-put-new-vendor'>API – PUT New Vendor</h2>
+<p>This request will be used to insert a new private vendor for an organization.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/private/vendor/create?values={JSON Structure}</p>
+
+<p>The <strong>values</strong> section of this URL must contain properly formatted JSON.  If the structure is an array, all elements of the array must be submitted.  Please see the <strong>CINX Vendor JSON Structures</strong> section of this document for a listing of the available JSON structures.</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/private/vendor/create?values={%22name_primary%22:%22Hilti%22,%22vendor_id%22:%22H123%22,%22vendor_type%22:%22Hardware%22,%22add_address%22:{%22type%22:%22Mailing%22,%22address1%22:%22Route%203%22,%22address2%22:%22Building%204%22,%22address3%22:%22Suite%20G%22,%22city%22:%22Woburn%22,%22state%22:%22MA%22,%22postal_code%22:%2201234%22,%22country%22:%22USA%22,%22latitude%22:%22%22,%22longitude%22:%22%22}}</p>
+<h2 id='api-modify-a-vendor'>API – Modify a Vendor</h2>
+<p>API – Modify a Vendor
+This request will be used to modify a private vendor for an organization.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/private/vendor/{commerce guid}/modify?values={JSON Structure}</p>
+
+<p>The <strong>values</strong> section of this URL must contain properly formatted JSON.  If the structure is an array, all elements of the array must be submitted.  Please see the <strong>CINX Vendor JSON Structures</strong> section of this document for a listing of the available JSON structures.</p>
+
+<p>Sample:</p>
+
+<p>http://api.cinx.com/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/private/vendor/org-0001-4221/modify?values={&quot;name_primary&quot;:&quot;Hilti-5&quot;,&quot;vendor_id&quot;:&quot;H125&quot;}</p>
+<h2 id='cinx-vendor-json-structures'>CINX Vendor JSON Structures</h2>
+<p>The JSON structures shown below can be used in API calls to <strong>Create</strong> or <strong>Modify</strong> a Vendor.</p>
+
+<p>If the structure is an array, all elements of the array must be submitted.</p>
+
+<p><strong>Vendor Number/Id</strong>
+“vendor_id”:”value”</p>
+
+<p><strong>Vendor Status</strong>
+“vendor_status”:”value”
+Available options are: <strong>A, I</strong>
+Option Definitions: <strong>A=Active, I=Inactive</strong>
+Default value: <strong>A</strong></p>
+
+<p><strong>Vendor Type</strong> (each org can define a set list of vendor types to be used to classify their vendors)
+“vendor_type”:”value”</p>
+
+<p>The options shown below are for creating or modifying <strong>Private</strong> Vendors</p>
+
+<p><strong>Name - Primary (required)</strong>
+“name_primary”:”value”</p>
+
+<p><strong>Name - Short</strong>
+“name_short”:”value”</p>
+
+<p><strong>Name - Alternate</strong>
+“name_alternate”:”value”</p>
+
+<p><strong>Name - Previous</strong>
+“name_previous”:”value”</p>
+
+<p><strong>Addresses (array)</strong>
+“add_address”:[{”address_type”:”type value”,”address1”: “value”,”address2”: “value”,”address3”: “value”,”city”: “value”,”state”: “value”,”postal_code”: “value”,”country”: “value”,”latitude”: “value” ,”longitude”: “value”}]
+Available “address types” are: <strong>SHIPPING, MAILING, BILLING</strong>
+Default Country: <strong>USA</strong></p>
+
+<p><strong>Location Id</strong>
+“location_id”:”value”</p>
+
+<p><strong>Location Type</strong>
+“location_type”:”value”
+Available “location types” are: <strong>HEADQUARTERS, BRANCH, WAREHOUSE, FABRICATION FACILITY, SHOP, SALES OFFICE, REGIONAL OFFICE, CENTRAL DISTRIBUTION CENTER, TRAINING CENTER, SHOWROOM</strong></p>
+<h1 id='organisations'>Organisations</h1><h2 id='api-get-organization-details'>API – GET Organization Details</h2>
+<p>This request will be used to get the company’s CINX organization details.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B GUID}/org/details
+Sample:</p>
+
+<p>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/org/
+details</p>
+<h2 id='api-modify-organization-details'>API – Modify Organization Details</h2>
+<p>This request will be used to modify an organization’s details.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/modify/org?values={JSON Structure}</p>
+
+<p>The <strong>values</strong> section of this URL must contain properly formatted JSON.  If the structure is an array, all elements of the array must be submitted.  Please see the <strong>CINX Organization JSON Structures</strong> section of this document for a listing of the available JSON structures.</p>
+
+<p>Sample:</p>
+
+<p>Dev sample using HPH Account:</p>
+
+<p>http://api.dev.cinx.biz/sub/83d8ba34-ecf1-59ab-1013-0ba2603adb36/modify/org?values={&quot;types_customers&quot;:&quot;Residential,Commercial,Industrial&quot;}
+ </p>
+<h2 id='cinx-organization-json-structures'>CINX Organization JSON Structures</h2>
+<p>The JSON structures shown below can be used in API calls to <strong>Modify</strong> an existing CINX Organization.
+If the structure is an array, all elements of the array must be submitted.  </p>
+
+<p><strong>Name - Primary (required)</strong>
+“name_primary”:”value”</p>
+
+<p><strong>Name - Short</strong>
+“name_short”:”value”</p>
+
+<p><strong>Name - Alternate</strong>
+“name_alternate”:”value”</p>
+
+<p><strong>Name - Previous</strong>
+“name_previous”:”value”</p>
+
+<p><strong>Addresses (array)</strong>
+“add_address”:[{”address_type”:”type value”,”address1”: “value”,”address2”: “value”,”address3”: “value”,”city”: “value”,”state”: “value”,”postal_code”: “value”,”country”: “value”,”latitude”: “value” ,”longitude”: “value”}]
+Available “address types” are: <strong>SHIPPING, MAILING, BILLING</strong>
+Default Country: <strong>USA</strong></p>
+
+<p><strong>Marketing – Org Description</strong>
+“marketing_desc”:”value”</p>
+
+<p><strong>Marketing – Org Tag Line</strong>
+“marketing_tag”:”value”</p>
+
+<p><strong>Marketing – Org Year Founded</strong>
+“marketing_founded”:”value”</p>
+
+<p><strong>Location Id</strong>
+“location_id”:”value”</p>
+
+<p><strong>Location Type</strong>
+“location_type”:”value”
+Available “location types” are: <strong>HEADQUARTERS, BRANCH, WAREHOUSE, FABRICATION FACILITY, SHOP, SALES OFFICE, REGIONAL OFFICE, CENTRAL DISTRIBUTION CENTER, TRAINING CENTER, SHOWROOM</strong></p>
+
+<p><strong>Customer Types</strong>
+“types_customers”:”value”
+Values parameter can be a comma delimited list of types.  For example: <strong>RESIDENTIAL,COMMERCIAL</strong></p>
+
+<p><strong>Project Types</strong>
+“types_projects”:”value”
+Values parameter can be a comma delimited list of types.  For example: <strong>EDUCATION,SERVICE,CHEMICAL,BREWERY,INDUSTRIAL</strong></p>
+
+<p><strong>Vendor Types</strong>
+“types_vendors”:”value”
+Values parameter can be a comma delimited list of types.  For example: <strong>PVF,HANGER,RENTAL,OFFICE SUPPLIES</strong></p>
+
+<p>Additional content types are available; please contact HPH if your system requires additional project content.</p>
+
+<p> </p>
+<h2 id='api-get-an-organization-s-user-list'>API – GET an Organization’s User List</h2>
+<p>This request will be used to get a company’s list of CINX users.  The results of this API will contain the User’s CINX system Id which can be used in other API calls.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B GUID}/users</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/users</p>
+<h2 id='api-get-an-organization-s-addresses'>API – GET an Organization’s Addresses</h2>
+<p>This request will be used to get a company’s list of addresses.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B GUID}/addresses</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/addresses </p>
+<h2 id='api-get-an-organization-s-customer-type-list'>API – GET an Organization’s Customer Type List</h2>
+<p>This request will be used to get a company’s list of Customer Type Classifications. </p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B GUID}/customer/types</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/customer/types</p>
+<h2 id='api-get-an-organization-s-vendor-type-list'>API – GET an Organization’s Vendor Type List</h2>
+<p>This request will be used to get a company’s list of Vendor Type Classifications.  </p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B GUID}/vendor/types</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/vendor/types</p>
+<h2 id='api-get-an-organization-s-project-type-list'>API – GET an Organization’s Project Type List</h2>
+<p>This request will be used to get a company’s list of Project Type Classifications.  </p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B GUID}/project/types</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/types</p>
+<h2 id='api-get-an-organization-s-invoice-dispute-reasons-list'>API – GET an Organization’s Invoice Dispute Reasons List</h2>
+<p>This request will be used to get a company’s list of Invoice Dispute types. </p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B GUID}/dispute/reasons</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/dispute/reasons</p>
+<h2 id='api-get-an-organization-s-return-reasons-list'>API – GET an Organization’s Return Reasons List</h2>
+<p>This request will be used to get a company’s list of Return Reasons.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B GUID}/return/reasons</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/return/reasons</p>
+<h2 id='api-get-an-organization-s-return-actions-list'>API – GET an Organization’s Return Actions List</h2>
+<p>This request will be used to get a company’s list of Return Actions.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B GUID}/return/actions</p>
+
+<p>Sample:</p>
+
+<p>https://api.cinx.com/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/return/actions</p>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
                 <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
