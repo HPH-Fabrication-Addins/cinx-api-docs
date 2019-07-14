@@ -26,7 +26,6 @@ A good way to visualize this concept is to open the Catalog drop-down in the CIN
   
 When working with the CINX API in conjunction with a company’s subscription a catalog is often named Data Source.
 
-
 ## App - Data Sources
 ### CINX Application and Data Source Introduction
 
