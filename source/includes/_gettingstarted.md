@@ -5,21 +5,25 @@
 
 The CINX platform offers programmatic access to read and write data using ReST web services and standard HTTP verbs.
 
+
 **Authentication & Headers**
 
 HTTP Basic Authentication over HTTPS is used to control access to CINX platform resources.
 
 With each API call, you’ll need to set request headers, including a CINX User’s User Name and Password.
 
+
 **Account Authorization**
 
 CINX accounts are subscription based and have expiration dates.  Accounts with expired subscriptions will not have access to CINX data.
+
 
 **Production Endpoint**
 
 The production endpoint for the CINX API is:
 
 **https://api.cinx.com/**
+
 
 **API Response Formatting – Standard/JSON**
 
@@ -29,7 +33,7 @@ The **“response” object** will contain meta data about the server’s respon
 
 The **“rows” array** will contain the query results.
 
-<code>
+`
 {
   "start_time": 1411574224.8083,
   "response": {
@@ -44,7 +48,8 @@ The **“rows” array** will contain the query results.
     {
   ]
 }
-</code>
+`
+
 
 **API Response Formatting – XML**
 
@@ -52,23 +57,24 @@ To receive an XML response, please add the following parameter to the url:
 
 **format=xml**
 
-<code>
-	<cinx_api>
-		<start_time>1414436492.2267</start_time>
-		<response>
-			<status_code>200</status_code>
-			<message>OK</message>
-			<record_count>2</record_count>
-			<server_response_time>0</server_response_time>
-			<total_elapsed_time>0.013047933578491</total_elapsed_time>
-			<total_count>0</total_count>
-		</response>
-		<rows>
-			<row> 
-			</row>
-		</rows>
-	</cinx_api> 
-</code>
+`
+<cinx_api>
+	<start_time>1414436492.2267</start_time>
+	<response>
+		<status_code>200</status_code>
+		<message>OK</message>
+		<record_count>2</record_count>
+		<server_response_time>0</server_response_time>
+		<total_elapsed_time>0.013047933578491</total_elapsed_time>
+		<total_count>0</total_count>
+	</response>
+	<rows>
+		<row> 
+		</row>
+	</rows>
+</cinx_api> 
+`
+
 
 **Result Rows - Paging**
 
