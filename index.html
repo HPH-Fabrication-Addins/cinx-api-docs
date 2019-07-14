@@ -239,6 +239,20 @@
               </ul>
           </li>
           <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#app-sub-model" class="toc-h2 toc-link" data-title="App/Sub Model">App/Sub Model</a>
+                  </li>
+                  <li>
+                    <a href="#data-sources" class="toc-h2 toc-link" data-title="Data Sources">Data Sources</a>
+                  </li>
+                  <li>
+                    <a href="#app-data-sources" class="toc-h2 toc-link" data-title="App - Data Sources">App - Data Sources</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#background" class="toc-h1 toc-link" data-title="Background">Background</a>
           </li>
           <li>
@@ -542,6 +556,52 @@ Remember — a happy kitten is an authenticated kitten!
 <td>The ID of the kitten to delete</td>
 </tr>
 </tbody></table>
+<h1 id='introduction'>Introduction</h1><h2 id='app-sub-model'>App/Sub Model</h2><h3 id='cinx-application-subscription-model-introduction'>CINX Application/Subscription Model Introduction</h3>
+<p>A CINX customer (organization) has the opportunity to subscribe to different applications available on the platform. An application can be a grouping of pages and functionality on the CINX web site or external applications that consume content from CINX.  Each application on the CINX platform has a unique identifier and a range of fields that define its attributes.  When an organization subscribes to an application a new unique identifier is created to link the application to the subscribing organization.  This application id will be used in API calls to identify and grant access to requested data operations.</p>
+
+<p><img src='images/subscription1.jpg'/></p>
+<h2 id='data-sources'>Data Sources</h2><h3 id='cinx-data-source-introduction'>CINX Data Source Introduction</h3>
+<p>CINX supports different “catalogs” of content.  Companies subscribing to CINX can have access to multiple catalogs or databases of content.  Here are some common catalogs in CINX:</p>
+
+<ul>
+<li>HPH Plumbing/Mechanical catalog</li>
+<li>MCAA WebLEM</li>
+<li>PHCC Labor Units </li>
+</ul>
+
+<p>Another catalog that each CINX company can use is a “Private” catalog.  This catalog of content is specific to the subscribing company and can contain material items.  These items can be copied from another catalog on CINX or manually entered/uploaded by the company.</p>
+
+<p>Estimating systems, CAD/BIM software systems, and other software partners that utilize CINX content will also have a separate CINX Catalogs.  This allows each system to have a specific set of items that CINX maintains.</p>
+
+<p>A good way to visualize this concept is to open the Catalog drop-down in the CINX Search app.  Here is a screen shot that shows a company that has access to many catalogs.  Note:  each company’s private catalog will be listed using the company’s name as registered in CINX.</p>
+
+<p><img src='images/subscription2.jpg'/></p>
+
+<p>When working with the CINX API in conjunction with a company’s subscription a catalog is often named Data Source.</p>
+<h2 id='app-data-sources'>App - Data Sources</h2><h3 id='cinx-application-and-data-source-introduction'>CINX Application and Data Source Introduction</h3>
+<p>For software partner (external) applications that consume data from CINX there is an important attribute in the CINX subscription that defines which CINX catalog is used to acquire information for data outputs.  This attribute is called a <strong>data source</strong>.</p>
+
+<p>Each application subscription in CINX has this attribute.</p>
+
+<p>Importantly, a company can subscribe to an application multiple times provided that the data source is different.  For example, a company using an industry estimating system may have CINX produce updates for different locations using different CINX Catalogs (data sources).  One location may want standard list prices from the standard estimating database and another location may want update files to contain net buy prices based on their private catalog of content.</p>
+
+<p><img src='images/subscription3.jpg'/></p>
+
+<p><strong>Please note that when working with the CINX Subscription API response each combination of an application and a data source will be listed in separate blocks.</strong></p>
+
+<p>Below is a sample showing an App with its data source</p>
+
+<p>App Name: Viewpoint Estimation</p>
+
+<p>Data Source Name: Viewpoint Estimation</p>
+
+<p><img src='images/subscription4.jpg'/></p>
+
+<p>App Name: Viewpoint Estimation</p>
+
+<p>Data Source Name: My Private Catalog</p>
+
+<p><img src='images/subscription5.jpg'/></p>
 <h1 id='background'>Background</h1>
 <p>Harrison Publishing House (HPH) is a content and software provider to the construction industry in North America.  We aggregate building product information, extend the data with our own content, and make it available to trade participants.</p>
 
