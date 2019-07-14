@@ -239,6 +239,9 @@
               </ul>
           </li>
           <li>
+            <a href="#background" class="toc-h1 toc-link" data-title="Background">Background</a>
+          </li>
+          <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
               <ul class="toc-list-h2">
                   <li>
@@ -253,7 +256,12 @@
               </ul>
           </li>
           <li>
-            <a href="#background" class="toc-h1 toc-link" data-title="Background">Background</a>
+            <a href="#getting-started" class="toc-h1 toc-link" data-title="Getting Started">Getting Started</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#rest-api" class="toc-h2 toc-link" data-title="REST API">REST API</a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#subscriptions" class="toc-h1 toc-link" data-title="Subscriptions">Subscriptions</a>
@@ -556,6 +564,12 @@ Remember — a happy kitten is an authenticated kitten!
 <td>The ID of the kitten to delete</td>
 </tr>
 </tbody></table>
+<h1 id='background'>Background</h1>
+<p>Harrison Publishing House (HPH) is a content and software provider to the construction industry in North America.  We aggregate building product information, extend the data with our own content, and make it available to trade participants.</p>
+
+<p>HPH has historically supported mechanical contractor estimating systems with price updates so that estimators could use current information when preparing bids.</p>
+
+<p>With our new product CINX (Construction Information Network &amp; Exchange) we are expanding our software offering for both contractors and wholesale distributors (vendors) from whom contractors purchase materials.  For contractors CINX will provide a Master Data Management platform and transaction integration with their vendors.  For wholesale distributors CINX will provide a standardized customer integration portal and limited CRM functionality.</p>
 <h1 id='introduction'>Introduction</h1><h2 id='app-sub-model'>App/Sub Model</h2><h3 id='cinx-application-subscription-model-introduction'>CINX Application/Subscription Model Introduction</h3>
 <p>A CINX customer (organization) has the opportunity to subscribe to different applications available on the platform. An application can be a grouping of pages and functionality on the CINX web site or external applications that consume content from CINX.  Each application on the CINX platform has a unique identifier and a range of fields that define its attributes.  When an organization subscribes to an application a new unique identifier is created to link the application to the subscribing organization.  This application id will be used in API calls to identify and grant access to requested data operations.</p>
 
@@ -602,12 +616,81 @@ Remember — a happy kitten is an authenticated kitten!
 <p>Data Source Name: My Private Catalog</p>
 
 <p><img src='images/subscription5.jpg'/></p>
-<h1 id='background'>Background</h1>
-<p>Harrison Publishing House (HPH) is a content and software provider to the construction industry in North America.  We aggregate building product information, extend the data with our own content, and make it available to trade participants.</p>
+<h1 id='getting-started'>Getting Started</h1><h2 id='rest-api'>REST API</h2><h3 id='rest-api-2'>ReST API</h3>
+<p>The CINX platform offers programmatic access to read and write data using ReST web services and standard HTTP verbs.</p>
 
-<p>HPH has historically supported mechanical contractor estimating systems with price updates so that estimators could use current information when preparing bids.</p>
+<p><strong>Authentication &amp; Headers</strong></p>
 
-<p>With our new product CINX (Construction Information Network &amp; Exchange) we are expanding our software offering for both contractors and wholesale distributors (vendors) from whom contractors purchase materials.  For contractors CINX will provide a Master Data Management platform and transaction integration with their vendors.  For wholesale distributors CINX will provide a standardized customer integration portal and limited CRM functionality.</p>
+<p>HTTP Basic Authentication over HTTPS is used to control access to CINX platform resources.</p>
+
+<p>With each API call, you’ll need to set request headers, including a CINX User’s User Name and Password.</p>
+
+<p><strong>Account Authorization</strong></p>
+
+<p>CINX accounts are subscription based and have expiration dates.  Accounts with expired subscriptions will not have access to CINX data.</p>
+
+<p><strong>Production Endpoint</strong></p>
+
+<p>The production endpoint for the CINX API is:</p>
+
+<p><strong>https://api.cinx.com/</strong></p>
+
+<p><strong>API Response Formatting – Standard/JSON</strong></p>
+
+<p>All CINX API responses use a standardized format.  By default a JSON formatted response is provided.  Please see below if you prefer XML.</p>
+
+<p>The <strong>“response” object</strong> will contain meta data about the server’s response to the request.</p>
+
+<p>The <strong>“rows” array</strong> will contain the query results.</p>
+
+<p><code>
+{
+  &quot;start_time&quot;: 1411574224.8083,
+  &quot;response&quot;: {
+    &quot;status_code&quot;: 200,
+    &quot;message&quot;: &quot;OK&quot;,
+    &quot;record_count&quot;: 1,
+    &quot;server_response_time&quot;: 0,
+    &quot;total_elapsed_time&quot;: 0.02492094039917,
+    &quot;total_count&quot;: 0
+  },
+  &quot;rows&quot;: [
+    {
+  ]
+}
+</code></p>
+
+<p><strong>API Response Formatting – XML</strong></p>
+
+<p>To receive an XML response, please add the following parameter to the url:</p>
+
+<p><strong>format=xml</strong></p>
+
+<p><code>
+    <cinx_api>
+        <start_time>1414436492.2267</start_time>
+        <response>
+            <status_code>200</status_code>
+            <message>OK</message>
+            <record_count>2</record_count>
+            <server_response_time>0</server_response_time>
+            <total_elapsed_time>0.013047933578491</total_elapsed_time>
+            <total_count>0</total_count>
+        </response>
+        <rows>
+            <row> 
+            </row>
+        </rows>
+    </cinx_api> 
+</code></p>
+
+<p><strong>Result Rows - Paging</strong></p>
+
+<p>For many HTTP GET requests you can use URL parameters to define the number of rows returned in the response.  Valid input parameters are:</p>
+
+<p><strong>start={number}</strong></p>
+
+<p><strong>limit={number}</strong></p>
 <h1 id='subscriptions'>Subscriptions</h1><h2 id='cinx-application-subscription-model-introduction'>CINX Application/Subscription Model Introduction</h2>
 <p>A CINX customer (organization) has the opportunity to subscribe to different applications available on the platform. An application can be a grouping of pages and functionality on the CINX web site or external applications that consume content from CINX.  Each application on the CINX platform has a unique identifier and a range of fields that define its attributes.  When an organization subscribes to an application a new unique identifier is created to link the application to the subscribing organization.  This application id will be used in API calls to identify and grant access to requested data operations.</p>
 
