@@ -33,7 +33,7 @@ The **“response” object** will contain meta data about the server’s respon
 
 The **“rows” array** will contain the query results.
 
-```
+
 {
   "start_time": 1411574224.8083,
   "response": {
@@ -48,7 +48,7 @@ The **“rows” array** will contain the query results.
     {
   ]
 }
-```
+
 
 
 **API Response Formatting – XML**
@@ -57,7 +57,7 @@ To receive an XML response, please add the following parameter to the url:
 
 **format=xml**
 
-```
+
 <cinx_api>
 	<start_time>1414436492.2267</start_time>
 	<response>
@@ -73,7 +73,7 @@ To receive an XML response, please add the following parameter to the url:
 		</row>
 	</rows>
 </cinx_api> 
-```
+
 
 
 **Result Rows - Paging**
