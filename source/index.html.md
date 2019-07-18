@@ -12,12 +12,12 @@ includes:
   - background
   - introduction
   - gettingstarted
-  - subscriptions
+  - organisations
   - manufacturers
   - jobcost
   - notifications
   - vendors
-  - organisations
+
 
 search: true
 ---

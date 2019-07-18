@@ -87,18 +87,6 @@ For many HTTP GET requests you can use URL parameters to define the number of ro
 ## PING Server
 ### API – PING Server
 
-This request can be used to test the availability of the CINX API.
-
-URL Pattern:
-
-**{api path}/ping**
-
-URL Samples:
-
-**http://api.cinx.com/ping**
-
-**http://api.cinx.com/ping?format=xml**
-
 ```javascript
 //Using cinx-api.js
 var cinxApi = new CinxApi();
@@ -134,18 +122,22 @@ cinxApi.pingCinx()
 }
 ```
 
+This request can be used to test the availability of the CINX API.
+
+URL Pattern:
+
+**{api path}/ping**
+
+URL Samples:
+
+**http://api.cinx.com/ping**
+
+**http://api.cinx.com/ping?format=xml**
+
+
+
 ## User Auth
 ### API – GET User Subscriptions/Authorizations (Orgs and Applications)
-
-This request will be used to get the applications/subscriptions that the user is authorized to access.  The response will contain information required to make additional API calls.
-
-URL Pattern: 
-
-**{api path}/sub/user/subscriptions**
-
-URL Sample: 
-
-**https://api.cinx.com/sub/user/subscriptions**
 
 ```javascript
 //Using cinx-api.js
@@ -265,6 +257,18 @@ cinxApi.getSubscriptions()
         ]
       }
 ```
+
+This request will be used to get the applications/subscriptions that the user is authorized to access.  The response will contain information required to make additional API calls.
+
+URL Pattern: 
+
+**{api path}/sub/user/subscriptions**
+
+URL Sample: 
+
+**https://api.cinx.com/sub/user/subscriptions**
+
+
 
 ## Auth Response
 ### Working with the GET User Subscriptions/Authorizations API Response

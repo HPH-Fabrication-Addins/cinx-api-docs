@@ -1,6 +1,7 @@
 # Notifications
 
-## API Call – POST External file with User Notifications 
+## POST External Files
+### API Call – POST External file with User Notifications 
 
 This request will be used to POST an uploaded external file (Excel, PDF, txt) to the CINX CDN.  In addition, this POST operation allows for user notifications to be delivered by the API.  The notification types are **Email** and **CINX System Alert.**
 
@@ -32,7 +33,8 @@ Project GUID = CINX Project GUID
 
 **&notify_alert=**{user id/cdoc} - Send to CINX User GUID - REPEAT as needed using full parameter label and value 
 
-## API – GET Received User Alerts
+## Get Alerts
+### API – GET Received User Alerts
 
 This request will be used get a User’s CINX system alerts.
 
@@ -68,7 +70,8 @@ https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/receiv
 
 https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?closed=1
  
-## API – Mark User Alerts Shown or Closed
+## Modify Alerts
+### API – Mark User Alerts Shown or Closed
 
 This request will be used update a user’s CINX system alert’s **Shown** or **Closed** status.
 

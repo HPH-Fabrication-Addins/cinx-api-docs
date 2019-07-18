@@ -1,6 +1,7 @@
-# Job Costs
+# Job Cost Setup	
 
-## CINX Job Cost Introduction
+## Introduction
+### CINX Job Cost Introduction
 
 To allow for the proper reporting of Project items and integration of transactions with contractor accounting systems, CINX has the ability for a company to define their job costing attributes. CINX supports the following Job Cost information types:
 
@@ -16,7 +17,8 @@ A Category is an accounting that allows a company to classify project costs for 
 **TAX GROUPS**
 A Tax Group is a collection of tax fields defined in an accounting system that allows for the proper identification and processing of taxes.  
 
-## API – GET a List of the Job Cost Phases
+## Get Phases
+### API – GET a List of the Job Cost Phases
 
 This URL will be used to get the list of Phases in the company’s CINX Job Costing library.  
 
@@ -29,7 +31,8 @@ Sample:
 
 https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/org-job-cost/get-list/phases
 
-## API – Create a Job Cost Phase 
+## Create Phase
+### API – Create a Job Cost Phase 
 
 This URL will be used to create a new Phase in the company’s CINX Job Costing library.   
 
@@ -65,9 +68,10 @@ Option Definitions: **A=Active, D=Discontinued**
 
 Sample:
 
-https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/org-job-cost/modify/phases? values={%22phases%22:[{%22name%22:%2202-8157%22,%22description%22:%22Site%20Work%22,%22reference_id%22:%22%22,%22user_id%22:%22%22,%22date_modified%22:%22%22,%22status%22:%22A%22,%22material_cost_code%22:%225241%22}]}
+https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/org-job-cost/modify/phases?values={%22phases%22:[{%22name%22:%2202-8157%22,%22description%22:%22Site%20Work%22,%22reference_id%22:%22%22,%22user_id%22:%22%22,%22date_modified%22:%22%22,%22status%22:%22A%22,%22material_cost_code%22:%225241%22}]}
 
-## API – Modify a Job Cost Phase 
+## Modify Phase
+### API – Modify a Job Cost Phase 
 
 This URL will be used to modify an existing Phase in the company’s CINX Job Costing library. 
 
@@ -110,7 +114,8 @@ Sample:
 
 https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/org-job-cost/modify/phases?user=dc3aecca-f2ec-ee6e-eee9-6d96d45390fa&values={"phases":[{"guid":"6ebcc266-83b4-85cf-53f9-8db2d52f15cb","name":"02-8158","description":"Site Work","reference_id":"","user_id":"","date_modified":"","status":"A","material_cost_code":"5241"}]}
 
-## API – GET a List of the Job Cost Cost Codes
+## Get Cost Codes
+### API – GET a List of the Job Cost Cost Codes
 
 This URL will be used to get the list of Cost Codes in the company’s CINX Job Costing library.   
 
@@ -122,7 +127,98 @@ Sample:
 
 https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/org-job-cost/get-list/material-cost-codes
 
-## API – Create a Job Cost Category
+## Create Cost Code
+### API – Create a Job Cost Cost Code
+
+This URL will be used to create a new Cost Code in the company’s CINX Job Costing library.
+
+URL Pattern:
+
+{api path}/sub/{B2B Id GUID}/org-job-cost/modify/material-cost-codes? values={“ material_cost_codes”:[{JSON Structure}]}
+
+NOTE: Please use underscores on material_cost_code when it is within the JSON structure.  This is different than the earlier part of the URL where hyphens are used.
+
+The JSON values section of this URL will begin with “material_cost_codes”: and then will be followed by an array structure comprised of the following components:
+
+Name
+“name”:”value”
+
+Description
+“description”:”value”
+
+Reference Id (Can be used to store the accounting system’s internal Id for the Phase)
+“reference_id”:”value”
+
+User Id
+“user_id”:”value”
+
+Date Modified
+“date_modified”:”date/time value”
+
+Status
+“status”:”value”
+Available options are: A, D 
+Option Definitions: A=Active, D=Discontinued
+
+Expense Category (Can be used to define a default Category for the Cost Code)
+“expense_category”:”value”
+
+## Modify Cost Code
+### API – Modify a Job Cost Cost Code
+
+This URL will be used to modify an existing Cost Code in the company’s CINX Job Costing library.
+
+URL Pattern:
+
+{api path}/sub/{B2B Id GUID}/org-job-cost/modify/material-cost-codes? values={“ material_cost_codes”:[{JSON Structure}]}
+
+NOTE: This URL pattern is the same as the Create Cost Code except that the GUID of the Cost Code to be modified must be included in the JSON array.
+
+NOTE: Please use underscores on material_cost_code when it is within the JSON structure.  This is different than the earlier part of the URL where hyphens are used.
+
+The JSON values section of this URL will begin with “material_cost_codes”: and then will be followed by an array structure comprised of the following components:
+
+GUID
+“guid”:”value”
+
+Name
+“name”:”value”
+
+Description
+“description”:”value”
+
+Reference Id (Can be used to store the accounting system’s internal Id for the Phase)
+“reference_id”:”value”
+
+User Id
+“user_id”:”value”
+
+Date Modified
+“date_modified”:”date/time value”
+
+Status
+“status”:”value”
+Available options are: A, D 
+Option Definitions: A=Active, D=Discontinued
+
+Expense Category (Can be used to define a default Category for the Cost Code)
+“expense_category”:”value”
+
+## Get Categories
+### API – GET a List of the Job Cost Categories
+
+This URL will be used to get the list of Categories in the company’s CINX Job Costing library.   
+
+URL Pattern:
+
+{api path}/sub/{B2B Id GUID}/org-job-cost/get-list/tax-expense-categories
+
+Sample:
+
+https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/org-job-cost/get-list/tax-expense-categories
+
+## Create Category
+### API – Create a Job Cost Category
 
 This URL will be used to create a new Category in the company’s CINX Job Costing library.   
 
@@ -154,7 +250,48 @@ The JSON **values** section of this URL will begin with **“material_cost_code�
 Available options are: **A, D** 
 Option Definitions: **A=Active, D=Discontinued**
 
-## API – GET a List of the Job Cost Tax Groups
+## Modify Category
+### API – Modify a Job Cost Category
+
+This URL will be used to modify an existing Category in the company’s CINX Job Costing library.   
+
+URL Pattern:
+
+{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-expense-categories? values={“ tax_expense_categories”:[{JSON Structure}]}
+
+NOTE: This URL pattern is the same as the Create Category except that the GUID of the Category to be modified must be included in the JSON array.
+
+NOTE: Please use underscores on tax_expense_categories when it is within the JSON structure.  This is different than the earlier part of the URL where hyphens are used.
+
+The JSON values section of this URL will begin with “tax_expense_categories”: and then will be followed by an array structure comprised of the following components:
+
+GUID
+“guid”:”value”
+
+Name
+“name”:”value”
+
+Description
+“description”:”value”
+
+Reference Id (Can be used to store the accounting system’s internal Id for the Phase)
+“reference_id”:”value”
+
+User Id
+“user_id”:”value”
+
+Date Modified
+“date_modified”:”date/time value”
+
+Status
+“status”:”value”
+Available options are: A, D 
+Option Definitions: A=Active, D=Discontinued
+
+
+
+## Get Tax Groups
+### API – GET a List of the Job Cost Tax Groups
 
 This URL will be used to get the list of Tax Groups in the company’s CINX Job Costing library.  
 
@@ -166,7 +303,8 @@ Sample:
 
 https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/org-job-cost/get-list/tax-groups
 
-## API – Create a Job Cost Tax Group
+## Create Tax Group
+### API – Create a Job Cost Tax Group
 
 This URL will be used to create a new Tax Group in the company’s CINX Job Costing library. 
 
@@ -210,7 +348,8 @@ Sample:
 https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/org-job-cost/modify/tax-groups? values={"tax_groups":[{"name":"MD1","tax_type":"Sales","description":"Maryland Sales Tax","reference_id":"T1254","user_id":"","date_modified":"","status":"A","rate":"5.65"}}}
 
 
-## API – Modify a Job Cost Tax Group
+## Modify Tax Group
+### API – Modify a Job Cost Tax Group
 
 This URL will be used to modify an existing Tax Group in the company’s CINX Job Costing library.  
 
@@ -257,7 +396,7 @@ Option Definitions: **A=Active, D=Discontinued**
 
 Sample:
 
-https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/org-job-cost/modify/tax-groups? values={"tax_groups":[{"guid":"dba9161a-4d78-9cff-fa37-6a7c344837b2","name":"MD1","tax_type":"Sales","description":"Maryland Sales Tax","reference_id":"T1254","user_id":"","date_modified":"","status":"A","rate":"5.65"}]}
+https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/org-job-cost/modify/tax-groups?values={"tax_groups":[{"guid":"dba9161a-4d78-9cff-fa37-6a7c344837b2","name":"MD1","tax_type":"Sales","description":"Maryland Sales Tax","reference_id":"T1254","user_id":"","date_modified":"","status":"A","rate":"5.65"}]}
 
  
  
