@@ -15,7 +15,7 @@ includes:
   - gettingstarted
   - organisations
   - manufacturers
-  - JobCost
+  - JobCosts
   - notifications
   - vendors
 
