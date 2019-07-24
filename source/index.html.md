@@ -11,10 +11,11 @@ toc_footers:
 includes:
   - background
   - introduction
+  - Login
   - gettingstarted
   - organisations
   - manufacturers
-  - jobcost
+  - JobCost
   - notifications
   - vendors
 
