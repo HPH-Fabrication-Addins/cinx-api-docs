@@ -599,22 +599,25 @@ Remember — a happy kitten is an authenticated kitten!
 <p>To receive an XML response, please add the following parameter to the url:</p>
 
 <p><strong>format=xml</strong></p>
-<pre class="highlight xml tab-xml"><code><span class="nt">&lt;cinx_api&gt;</span>
-    <span class="nt">&lt;start_time&gt;</span>1414436492.2267<span class="nt">&lt;/start_time&gt;</span>
-    <span class="nt">&lt;response&gt;</span>
-        <span class="nt">&lt;status_code&gt;</span>200<span class="nt">&lt;/status_code&gt;</span>
-        <span class="nt">&lt;message&gt;</span>OK<span class="nt">&lt;/message&gt;</span>
-        <span class="nt">&lt;record_count&gt;</span>2<span class="nt">&lt;/record_count&gt;</span>
-        <span class="nt">&lt;server_response_time&gt;</span>0<span class="nt">&lt;/server_response_time&gt;</span>
-        <span class="nt">&lt;total_elapsed_time&gt;</span>0.013047933578491<span class="nt">&lt;/total_elapsed_time&gt;</span>
-        <span class="nt">&lt;total_count&gt;</span>0<span class="nt">&lt;/total_count&gt;</span>
-    <span class="nt">&lt;/response&gt;</span>
-    <span class="nt">&lt;rows&gt;</span>
-        <span class="nt">&lt;row&gt;</span> 
-        <span class="nt">&lt;/row&gt;</span>
-    <span class="nt">&lt;/rows&gt;</span>
-<span class="nt">&lt;/cinx_api&gt;</span> 
-</code></pre>
+
+<p><code>
+&lt;cinx_api&gt;
+    &lt;start_time&gt;1414436492.2267&lt;/start_time&gt;
+    &lt;response&gt;
+        &lt;status_code&gt;200&lt;/status_code&gt;
+        &lt;message&gt;OK&lt;/message&gt;
+        &lt;record_count&gt;2&lt;/record_count&gt;
+        &lt;server_response_time&gt;0&lt;/server_response_time&gt;
+        &lt;total_elapsed_time&gt;0.013047933578491&lt;/total_elapsed_time&gt;
+        &lt;total_count&gt;0&lt;/total_count&gt;
+    &lt;/response&gt;
+    &lt;rows&gt;
+        &lt;row&gt; 
+        &lt;/row&gt;
+    &lt;/rows&gt;
+&lt;/cinx_api&gt; 
+</code></p>
+
 <p><strong>Result Rows - Paging</strong></p>
 
 <p>For many HTTP GET requests you can use URL parameters to define the number of rows returned in the response.  Valid input parameters are:</p>
