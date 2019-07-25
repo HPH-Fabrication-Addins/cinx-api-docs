@@ -57,7 +57,7 @@ To receive an XML response, please add the following parameter to the url:
 
 **format=xml**
 
-```xml
+`
 <cinx_api>
 	<start_time>1414436492.2267</start_time>
 	<response>
@@ -73,7 +73,7 @@ To receive an XML response, please add the following parameter to the url:
 		</row>
 	</rows>
 </cinx_api> 
-```
+`
 
 
 
