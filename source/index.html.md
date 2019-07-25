@@ -13,7 +13,6 @@ includes:
   - gettingstarted
   - organisations
   - manufacturers
-  - JobCosts
   - notifications
   - vendors
 
