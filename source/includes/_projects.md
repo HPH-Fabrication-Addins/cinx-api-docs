@@ -3,6 +3,197 @@
 ## Get Project List
 ### API – GET Project List
 
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+
+cinxApi.getProjects(cinx_api_token)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
+> The above code returns JSON structured like this:
+
+```json
+{
+    "response": {
+        "status_code": 200,
+        "message": "OK",
+        "method": "bom->getBomList",
+        "uri": "sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/boms",
+        "format": "json",
+        "start_time": 1564156207.213,
+        "total_time": 0.43530583381653,
+        "record_count": 7,
+        "total_count": 7
+    },
+    "rows": [
+        {
+            "number": "PRJ2",
+            "name": "P1",
+            "description": "P1 Desc",
+            "release_number": null,
+            "is_locked": "0",
+            "status": "A",
+            "workflow": null,
+            "workflow_date": null,
+            "vendor": null,
+            "cinx_id": {
+                "type": "PROJECT",
+                "domain": "org-0001-4030",
+                "id": "ffa00f58-a576-546d-a698-04efa2f680a0"
+            },
+            "parent": {
+                "cinx_id": {
+                    "type": null,
+                    "domain": null,
+                    "id": null
+                }
+            }
+        },
+        {
+            "number": "PRJ1",
+            "name": "P1",
+            "description": "P1 Desc",
+            "release_number": null,
+            "is_locked": "0",
+            "status": "A",
+            "workflow": null,
+            "workflow_date": null,
+            "vendor": null,
+            "cinx_id": {
+                "type": "PROJECT",
+                "domain": "org-0001-4030",
+                "id": "ab941327-1392-5871-a0fd-b4a28d7dee0a"
+            },
+            "parent": {
+                "cinx_id": {
+                    "type": null,
+                    "domain": null,
+                    "id": null
+                }
+            }
+        },
+        {
+            "number": "WTS-2017-04",
+            "name": "WTS-2017-04 - ATC Denver",
+            "description": "17243",
+            "release_number": null,
+            "is_locked": "0",
+            "status": "A",
+            "workflow": null,
+            "workflow_date": null,
+            "vendor": null,
+            "cinx_id": {
+                "type": "PROJECT",
+                "domain": "org-0001-4030",
+                "id": "e1e3cb54-b00a-55ae-a079-072732542bf4"
+            },
+            "parent": {
+                "cinx_id": {
+                    "type": null,
+                    "domain": null,
+                    "id": null
+                }
+            }
+        },
+        {
+            "number": "WTS-2019-06",
+            "name": "2019 01 30",
+            "release_number": null,
+            "is_locked": "0",
+            "status": "A",
+            "workflow": null,
+            "workflow_date": null,
+            "vendor": null,
+            "cinx_id": {
+                "type": "PROJECT",
+                "domain": "org-0001-4030",
+                "id": "48ea9284-6b2d-57e3-a4d2-a7e0859eee10"
+            },
+            "parent": {
+                "cinx_id": {
+                    "type": null,
+                    "domain": null,
+                    "id": null
+                }
+            }
+        },
+        {
+            "number": "WTS-2017-05",
+            "name": "2017",
+            "description": "test",
+            "release_number": null,
+            "is_locked": "0",
+            "status": "A",
+            "workflow": null,
+            "workflow_date": null,
+            "vendor": null,
+            "cinx_id": {
+                "type": "PROJECT",
+                "domain": "org-0001-4030",
+                "id": "e509b84c-bde6-5e37-b35d-e97743babf11"
+            },
+            "parent": {
+                "cinx_id": {
+                    "type": null,
+                    "domain": null,
+                    "id": null
+                }
+            }
+        },
+        {
+            "number": "WTS-2017-03",
+            "name": "WTS-2017-03",
+            "release_number": null,
+            "is_locked": "0",
+            "status": "A",
+            "workflow": null,
+            "workflow_date": null,
+            "vendor": null,
+            "cinx_id": {
+                "type": "PROJECT",
+                "domain": "org-0001-4030",
+                "id": "bb613aff-4256-5359-b7cd-391505d19e01"
+            },
+            "parent": {
+                "cinx_id": {
+                    "type": null,
+                    "domain": null,
+                    "id": null
+                }
+            }
+        },
+        {
+            "number": "WTS-2017-01",
+            "name": "HQ  Oct 23",
+            "description": "test",
+            "release_number": null,
+            "is_locked": "0",
+            "status": "A",
+            "workflow": null,
+            "workflow_date": null,
+            "vendor": null,
+            "cinx_id": {
+                "type": "PROJECT",
+                "domain": "org-0001-4030",
+                "id": "db0ca505-e2f5-573a-a580-30f51383b0e4"
+            },
+            "parent": {
+                "cinx_id": {
+                    "type": null,
+                    "domain": null,
+                    "id": null
+                }
+            }
+        }
+    ]
+}
+```
+
 This request will be used to get a list of the org’s Projects from CINX.
 
 URL Pattern:
@@ -16,6 +207,14 @@ Sample:
 ## Get Project Details
 ### API – GET Project Details
 
+```javascript
+```
+
+> The above code returns JSON structured like this:
+
+```json
+```
+
 URL Pattern:
 
 {api path}/sub/{B2B Id GUID}/project/{Project GUID}/details
@@ -26,6 +225,47 @@ Sample:
 
 ## Create Project
 ### API – PUT New Project
+
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+
+var values = `{"name":"${pName}","description":"${pDescription}","number":"${pNumber}","status":"${pStatus}","dates":[{"type":"SCHEDULED START","value": "2019-06-01"},{"type":"ACTUAL START","value":"2019-06-15"}]}`;
+
+cinxApi.postNewProject(cinx_api_token, values)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
+> The above code returns JSON structured like this:
+
+```json
+{
+    "response": {
+        "status_code": 200,
+        "message": "OK",
+        "method": "Project->modify",
+        "uri": "sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/create",
+        "format": "json",
+        "start_time": 1564156438.235,
+        "total_time": 0.6323070526123,
+        "record_count": 1,
+        "total_count": 0
+    },
+    "rows": [
+        {
+            "cinx_id": {
+                "type": "PROJECT",
+                "domain": "org-0001-4030",
+                "id": "4b4d08c7-7edf-57d2-b632-2371f8a18496"
+            }
+        }
+    ]
+}
+```
 
 This request will be used to create a new project in the org’s CINX account.
 
@@ -42,6 +282,8 @@ Sample:
  
 ## Modify Project
 ### API – Modify a CINX Project
+
+
 
 This request will be used to modify a project in the org’s CINX account.
 
