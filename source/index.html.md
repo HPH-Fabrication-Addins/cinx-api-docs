@@ -10,9 +10,11 @@ toc_footers:
 
 includes:
   - introduction
-  - gettingstarted
-  - organisations
-  - getcatalogitems
+  - getting-started
+  - org-company
+  - get-catalog-items
+  - catalog-item
+  - catalog-lines
   - manufacturers
   - notifications
   - vendors

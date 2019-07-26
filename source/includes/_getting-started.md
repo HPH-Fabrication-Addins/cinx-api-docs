@@ -148,6 +148,7 @@ URL Samples:
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
 
 cinxApi.getSubscriptions()
     .then(function(response) {
