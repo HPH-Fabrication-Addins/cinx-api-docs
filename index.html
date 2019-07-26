@@ -288,6 +288,53 @@
               </ul>
           </li>
           <li>
+            <a href="#get-catalog-items" class="toc-h1 toc-link" data-title="Get Catalog Items">Get Catalog Items</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#full-view-guid" class="toc-h2 toc-link" data-title="Full View - GUID">Full View - GUID</a>
+                  </li>
+                  <li>
+                    <a href="#full-view-org-part" class="toc-h2 toc-link" data-title="Full View  - Org Part">Full View  - Org Part</a>
+                  </li>
+                  <li>
+                    <a href="#full-view-hph-code" class="toc-h2 toc-link" data-title="Full View  - HPH Code">Full View  - HPH Code</a>
+                  </li>
+                  <li>
+                    <a href="#mcaa-view-guid" class="toc-h2 toc-link" data-title="MCAA View - GUID">MCAA View - GUID</a>
+                  </li>
+                  <li>
+                    <a href="#mcaa-view-org-part" class="toc-h2 toc-link" data-title="MCAA View - Org Part">MCAA View - Org Part</a>
+                  </li>
+                  <li>
+                    <a href="#mcaa-view-hph-code" class="toc-h2 toc-link" data-title="MCAA View - HPH Code">MCAA View - HPH Code</a>
+                  </li>
+                  <li>
+                    <a href="#mcaa-contents" class="toc-h2 toc-link" data-title="MCAA Contents">MCAA Contents</a>
+                  </li>
+                  <li>
+                    <a href="#custom-view-guid" class="toc-h2 toc-link" data-title="Custom View - GUID">Custom View - GUID</a>
+                  </li>
+                  <li>
+                    <a href="#custom-view-hph-code" class="toc-h2 toc-link" data-title="Custom View - HPH Code">Custom View - HPH Code</a>
+                  </li>
+                  <li>
+                    <a href="#custom-options" class="toc-h2 toc-link" data-title="Custom Options">Custom Options</a>
+                  </li>
+                  <li>
+                    <a href="#item-count" class="toc-h2 toc-link" data-title="Item Count">Item Count</a>
+                  </li>
+                  <li>
+                    <a href="#item-ids" class="toc-h2 toc-link" data-title="Item Ids">Item Ids</a>
+                  </li>
+                  <li>
+                    <a href="#list-price-history" class="toc-h2 toc-link" data-title="List Price History">List Price History</a>
+                  </li>
+                  <li>
+                    <a href="#json-structures" class="toc-h2 toc-link" data-title="JSON Structures">JSON Structures</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#mfr-price-sheets" class="toc-h1 toc-link" data-title="Mfr Price Sheets">Mfr Price Sheets</a>
               <ul class="toc-list-h2">
                   <li>
@@ -340,7 +387,7 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='www.cinx.com'>www.cinx.com</a></li>
             <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -1833,6 +1880,441 @@ Values parameter can be a comma delimited list of types.  For example: <strong>P
 <p>Sample:</p>
 
 <p><code>https://api.cinx.com/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/return/actions</code></p>
+<h1 id='get-catalog-items'>Get Catalog Items</h1><h2 id='full-view-guid'>Full View - GUID</h2><h3 id='api-get-item-information-using-the-full-response-view-item-guid'>API – GET Item Information using the “full” Response View – Item GUID</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p>This request will be used to get an item’s information using the API’s “full” view and its’ CINX Private Catalog Item GUID.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Subscription Id}/catalog/item/{Private Catalog Item GUID}?view=full</p>
+
+<p>Sample:</p>
+
+<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/catalog/item/28468a6d-5858-1e50-af40-73d62f787a9a?view=full</code></p>
+<h2 id='full-view-org-part'>Full View  - Org Part</h2><h3 id='api-get-item-information-using-the-full-response-view-org-part-number'>API – GET Item Information using the “full” Response View – Org Part Number</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p>This request will be used to get a catalog item’s information using the API’s “full” view.  You will need to include the item’s Org Part Number as a parameter in the URL.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Subscription Id}/catalog/item/org/id/{Org Part Number}?view=full</p>
+
+<p>URL Sample:</p>
+
+<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/item/org/id/F01034S009?view=full</code></p>
+<h2 id='full-view-hph-code'>Full View  - HPH Code</h2><h3 id='api-get-item-information-using-the-full-response-view-hph-code'>API – GET Item Information using the “full” Response View – HPH Code</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p>This request will be used to get an item’s information using the API’s “full” view and its HPH Code.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/items/hphcodes?values={HPH Item Code(s);comma-separated if multiple}&amp;view=full</p>
+
+<p>Sample:</p>
+
+<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/item/hphcode/006wb0212?view=full</code></p>
+<h2 id='mcaa-view-guid'>MCAA View - GUID</h2><h3 id='api-get-item-information-using-the-mcaa-response-view-item-guid'>API – GET Item Information using the “mcaa” Response View – Item GUID</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p>This request will be used to get a catalog item’s information using the API’s “mcaa” view.  You will need to include the item’s Private Catalog GUID as a parameter in the URL.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Subscription Id}/catalog/item/{Private Catalog Item GUID}?view=mcaa</p>
+
+<p>URL Sample:</p>
+
+<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/catalog/item/28468a6d-5858-1e50-af40-73d62f787a9a?view=mcaa</code></p>
+<h2 id='mcaa-view-org-part'>MCAA View - Org Part</h2><h3 id='api-get-item-information-using-the-mcaa-response-view-org-part-number'>API – GET Item Information using the “mcaa” Response View – Org Part Number</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p>This request will be used to get a catalog item’s information using the API’s “mcaa” view.  You will need to include the item’s Org Part Number as a parameter in the URL.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Subscription Id}/item/org/id/{Org Part Number}?view=mcaa</p>
+
+<p>URL Sample:</p>
+
+<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/item/org/id/F01034S009?view=mcaa</code></p>
+<h2 id='mcaa-view-hph-code'>MCAA View - HPH Code</h2><h3 id='api-get-item-information-using-the-mcaa-response-view-hph-code'>API – GET Item Information using the “mcaa” Response View – HPH Code</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p>This request will be used to get a catalog item’s information using the API’s “mcaa” view.  You will need to include the item’s HPH Code as a parameter in the URL.</p>
+
+<p>Single Item </p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Subscription Id}/item/hphcode/{HPH Item Code}?view=mcaa</p>
+
+<p>URL Sample:</p>
+
+<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/item/hphcode/006wb0212?view=mcaa</code></p>
+
+<p><strong>Multiple Items</strong></p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/items/hphcodes?values={HPH Item Code(s);comma-separated if multiple}&amp;view=mcaa</p>
+
+<p>Sample:</p>
+
+<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/items/hphcodes?values=006wb0212,006wb0214&amp;view=mcaa</code></p>
+<h2 id='mcaa-contents'>MCAA Contents</h2><h3 id='mcaa-view-response-contents'>“mcaa” View Response Contents</h3>
+<table><thead>
+<tr>
+<th>Response</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>Mfr product availability status.  A=Available with a list price, P=Available calling for pricing, D=Discontinued/Obsolete</td>
+</tr>
+<tr>
+<td>mfr -&gt; name_long</td>
+<td>Manufacturer full name including reference to legal entity type</td>
+</tr>
+<tr>
+<td>mfr -&gt; name_short</td>
+<td>Manufacturer abbreviated name</td>
+</tr>
+<tr>
+<td>mfr -&gt; name_logo</td>
+<td>Link to the manufacturer&#39;s logo on the CINX CDN.</td>
+</tr>
+<tr>
+<td>ids -&gt; hph_code</td>
+<td>HPH&#39;s unique identifier for a product</td>
+</tr>
+<tr>
+<td>ids -&gt; org_part</td>
+<td>Customer defined part number</td>
+</tr>
+<tr>
+<td>ids -&gt; org_system_id</td>
+<td>Customer defined auxiliary part identifier.</td>
+</tr>
+<tr>
+<td>ids -&gt; mfr_catalog</td>
+<td>Manufacturer catalog/part number</td>
+</tr>
+<tr>
+<td>ids -&gt; mfr_order</td>
+<td>Manufacturer order number</td>
+</tr>
+<tr>
+<td>ids -&gt; mfr_upc</td>
+<td>Manufacturer UPC (12 digit - when defined by the mfr)</td>
+</tr>
+<tr>
+<td>ids -&gt; mfr_gtin</td>
+<td>Manufacturer GTIN (14 digit - when defined by the mfr)</td>
+</tr>
+<tr>
+<td>descriptions -&gt; hph_long</td>
+<td>HPH description excluding the item&#39;s size</td>
+</tr>
+<tr>
+<td>descriptions -&gt; hph_short</td>
+<td>HPH &quot;invoice&quot; description that includes the item&#39;s size</td>
+</tr>
+<tr>
+<td>descriptions -&gt; org</td>
+<td>Customer defined description</td>
+</tr>
+<tr>
+<td>descriptions -&gt; mfr</td>
+<td>Manufacturer defined description</td>
+</tr>
+<tr>
+<td>category</td>
+<td>HPH top-level category value</td>
+</tr>
+<tr>
+<td>sub_category</td>
+<td>HPH secondary-level categorization value</td>
+</tr>
+<tr>
+<td>cost_code</td>
+<td>Customer defined default cost code</td>
+</tr>
+<tr>
+<td>size</td>
+<td>HPH-defined product size</td>
+</tr>
+<tr>
+<td>weight -&gt; value</td>
+<td>Product&#39;s weight</td>
+</tr>
+<tr>
+<td>weight -&gt; uom</td>
+<td>Weight unit-of-measure</td>
+</tr>
+<tr>
+<td>price_mfr_list -&gt; value</td>
+<td>Manufacturer&#39;s list price</td>
+</tr>
+<tr>
+<td>price_mfr_list -&gt; uom</td>
+<td>List price unit-of-measure</td>
+</tr>
+<tr>
+<td>price_mfr_list -&gt; effective</td>
+<td>Manufacturer price sheet effective date</td>
+</tr>
+<tr>
+<td>price_mfr_list -&gt; price_sheet_number</td>
+<td>Manufacturer price sheet number</td>
+</tr>
+<tr>
+<td>price_mfr_list -&gt; price_sheet_name</td>
+<td>Manufacturer price sheet name</td>
+</tr>
+<tr>
+<td>price_org_buy</td>
+<td>Customer defined buy/purchase price</td>
+</tr>
+<tr>
+<td>price_org_sell</td>
+<td>Customer defined sell/change-order price</td>
+</tr>
+<tr>
+<td>price_org_estimate</td>
+<td>Customer defined estimate price</td>
+</tr>
+<tr>
+<td>labor_units <array structure></td>
+<td></td>
+</tr>
+<tr>
+<td>labor_units -&gt; source</td>
+<td>MCAA or PHCC</td>
+</tr>
+<tr>
+<td>labor_units -&gt; description</td>
+<td>Labor unit description</td>
+</tr>
+<tr>
+<td>labor_units -&gt; value</td>
+<td>Labor unit value</td>
+</tr>
+<tr>
+<td>labor_units -&gt; uom</td>
+<td>Labor unit unit-of-measure</td>
+</tr>
+<tr>
+<td>labor_units -&gt; hph_labor_code</td>
+<td>HPH defined unique identifier for the labor unit</td>
+</tr>
+<tr>
+<td>images <array structure></td>
+<td></td>
+</tr>
+<tr>
+<td>images -&gt; url</td>
+<td>Product picture url on the CINX CDN</td>
+</tr>
+<tr>
+<td>images -&gt; mime_type</td>
+<td>Mime-type for the image</td>
+</tr>
+<tr>
+<td>links <array structure></td>
+<td></td>
+</tr>
+<tr>
+<td>links -&gt; url</td>
+<td>Manufacturer documentation url on the CINX CDN</td>
+</tr>
+<tr>
+<td>links -&gt; type</td>
+<td>Documentation type (SDS, Spec, etc.)</td>
+</tr>
+<tr>
+<td>links -&gt; mime_type</td>
+<td>Mime-type for the file</td>
+</tr>
+<tr>
+<td>links -&gt; date</td>
+<td>Date the url was created</td>
+</tr>
+<tr>
+<td>history -&gt; created</td>
+<td>Date the item was added to the customer&#39;s CINX catalog</td>
+</tr>
+<tr>
+<td>history -&gt; creator</td>
+<td>User who added the item</td>
+</tr>
+<tr>
+<td>history -&gt; modified</td>
+<td>Date of the last modification to the catalog item</td>
+</tr>
+<tr>
+<td>history -&gt; modifier</td>
+<td>User who last modified the item</td>
+</tr>
+<tr>
+<td>catalog_ref</td>
+<td>Private catalog GUID</td>
+</tr>
+</tbody></table>
+<h2 id='custom-view-guid'>Custom View - GUID</h2><h3 id='api-get-item-information-using-the-custom-response-view-item-guid'>API – GET Item Information using the “custom” Response View – Item GUID</h3>
+<p>This request will can be used to submit a Private Catalog Item GUID with the response fields defined by the requesting URL.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/catalog/item/{Private Catalog Item GUID}?view=custom&amp;fields={comma separated list of the fields}</p>
+
+<p>Please see the CINX Private Catalog Item Data Options – Custom View section of this document for a listing of the available response fields.</p>
+
+<p>Sample:</p>
+
+<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/catalog/item/28468a6d-5858-1e50-af40-73d62f787a9a?view=custom&amp;fields=image,desc_long,hphcode,mfr_name,price_current,upc,weight,price_buy,price_sell,price_estimate,status,desc_org,desc_short,desc_mfr,partno_mfr,partno_org,system_id,specsheet,hier,xref,price_list_effective</code></p>
+<h2 id='custom-view-hph-code'>Custom View - HPH Code</h2><h3 id='api-get-item-information-using-the-custom-response-view-hph-code'>API – GET Item Information using the “custom” Response View – HPH Code</h3>
+<p>This request will can be used to submit a list of HPH Codes with the response fields defined by the requesting URL.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/items/hphcodes?values={HPH Item Code(s);comma-separated if multiple}&amp;view=custom&amp;fields={comma separated list of the fields}</p>
+
+<p>Please see the CINX Private Catalog Item Data Options – Custom View section of this document for a listing of the available response fields.</p>
+
+<p>Sample:</p>
+
+<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/items/hphcodes?values=006WB0212&amp;view=custom&amp;fields=image,desc_long,hphcode,mfr_name,price_current,upc,weight,price_buy,price_sell,price_estimate,status,desc_org,desc_short,desc_mfr,partno_mfr,partno_org,system_id,specsheet,hier,xref,price_list_effective</code></p>
+<h2 id='custom-options'>Custom Options</h2><h3 id='cinx-private-catalog-item-data-options-custom-view'>CINX Private Catalog Item Data Options – Custom View</h3>
+<p>The list shown below is the available data options for constructing a Custom View URL.</p>
+
+<p><img src='images/subscription14.jpg'/></p>
+
+<p><strong>NOTES:</strong></p>
+
+<p>API Request should have the field names comma-delimited without any spaces.</p>
+
+<p>The response fields will be in the ordered that they were requested.</p>
+
+<p>Fields without values in the contractor&#39;s catalog will be returned as null.</p>
+
+<p>Requests for a field not yet supported will be returned with the requested field name and a value of <strong>&quot;Unsupported Field&quot;.</strong></p>
+<h2 id='item-count'>Item Count</h2><h3 id='api-get-catalog-item-count'>API – GET Catalog Item Count</h3>
+<p>This request is used to obtain the count of Catalog Items contained within an Org’s Private CINX catalog.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Subscription Id}/catalog/items/ids?count=1</p>
+
+<p>Sample:</p>
+
+<p><code>http://api.cinx.com/sub/14b8fb3e-f62e-cd1c-b71f-fd5b1936d1b2/catalog/items/ids?count=1</code></p>
+
+<p>The total_count parameter of the response object details the total items in the catalog.</p>
+<h2 id='item-ids'>Item Ids</h2><h3 id='api-get-catalog-item-ids'>API – GET Catalog Item Ids</h3>
+<p>This request is used to obtain the list of Catalog Item Ids contained within an Org’s Private CINX catalog.</p>
+
+<p>Note:  If the catalog has a large number of items then the paging elements (offset and limit) should be used in conjunction with the URL.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Subscription Id}/catalog/items/ids</p>
+
+<p>Sample:</p>
+
+<p><code>http://api.cinx.com/sub/14b8fb3e-f62e-cd1c-b71f-fd5b1936d1b2/catalog/items/ids?offest=25&amp;limit=100</code></p>
+
+<p>The response will contain three Ids for each item.  These Ids can be used in subsequent API calls to retrieve other product information.  The Ids are:</p>
+
+<p>cinx_id: This value is the item’s Private Catalog GUID</p>
+
+<p>hphcode: HPH Item Code</p>
+
+<p>org_id: Org-defined product identifier</p>
+<h2 id='list-price-history'>List Price History</h2><h3 id='api-get-item-list-price-history-hph-code'>API – GET Item List Price History – HPH Code</h3>
+<p>This request can be used to obtain the Manufacturer List Price history of an item.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Subscription Id}/catalog/item/hphcode/{HPH Item Code}/price/history</p>
+
+<p>URL Sample:</p>
+
+<p><code>https://api.cinx.com/sub/14b8fb3e-f62e-cd1c-b71f-fd5b1936d1b2/item/hphcode/012NI0018/price/history</code></p>
+<h2 id='json-structures'>JSON Structures</h2><h3 id='cinx-private-catalog-item-json-structures'>CINX Private Catalog Item JSON Structures</h3>
+<p>The JSON structures shown below can be used in API calls to <strong>Create</strong> or <strong>Modify</strong> CINX Private Catalog Items.</p>
+
+<p>If the structure is an array, all elements of the array must be submitted. </p>
+
+<p><strong>Manufacturer Name (required)</strong>
+“mfr_name”:”name”</p>
+
+<p><strong>Item Identifiers (array)</strong>
+“pkg_ids”:[{”type”:”type name”,”value”: “value”}]</p>
+
+<p>Available “type names” are: <strong>MFR CATALOG, MFR ORDER, UPC, GTIN, ORG ID, ORG SYSTEM ID</strong></p>
+
+<p><strong>Descriptions (array)</strong>
+“descriptions”:[{”type”:”type name”,”value”: “value”}]</p>
+
+<p>Available “type names” are: <strong>LONG, SHORT, ORG</strong></p>
+
+<p><strong>Size</strong>
+“size”:{”type”:”type name”,”value”: “value”,”uom”:”value”}</p>
+
+<p><strong>Prices (array)</strong>
+“prices”:[{”type”:”type name”,”cdoc”:null,”value”: “value” ,”price_uom”: “price_uom value”,”date_updated”:””,”user_cdoc”:”{user guid}”,”source_method”:”USER”}]</p>
+
+<p>Available “type names” are: <strong>BUY, SELL, ESTIMATED</strong>
+“cdoc”: please submit a <strong>null</strong>
+Available “price uoms” are: <strong>E, T, C, M</strong>
+“date_updated”: <strong>datetime format (yyyy-mm-dd hh:mm:ssZ)</strong>
+“source_method”: <strong>please submit “USER”</strong></p>
+
+<p><strong>Price Multiplier</strong>
+“multiplier”:{“cdoc”:null,”code”:”code value”,”name”: “name”}]</p>
+
+<p><strong>Attributes (array)</strong>
+“attributes”:[{”name”:”name”,”value”: “value”}]</p>
+
+<p><strong>Physical Properties</strong>
+“weight”:”value”
+“weight_uom”: “value”
+“depth”:”value”
+“height”:”value”
+“width”:”value”
+“cube”:”value”
+“dimension_uom”:”value”</p>
+
+<p><strong>Default Cost Code</strong>
+“cost_code_value”:”value”</p>
+
+<p> 
+<strong>Product Availability Status</strong>
+“pkg_status”:”value”</p>
+
+<p>Available “values” are: <strong>A,D,P</strong></p>
 <h1 id='mfr-price-sheets'>Mfr Price Sheets</h1><h2 id='introduction'>Introduction</h2><h3 id='manufacturer-price-sheet-introduction'>Manufacturer Price Sheet Introduction</h3>
 <p>A Price Sheet is a document that is issued by a product manufacturer or service provider that define the prices that will be charged to consumers for procuring the listed materials or services.  Manufacturers with large product offerings often have multiple price sheets with each containing only a segment of the manufacturer’s overall product listing.  For example, Charlotte has different price sheets for their Cast Iron No Hub, Service Weight, and Extra Heavy products.</p>
 
