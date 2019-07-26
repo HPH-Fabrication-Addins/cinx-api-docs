@@ -329,8 +329,36 @@
                   <li>
                     <a href="#list-price-history" class="toc-h2 toc-link" data-title="List Price History">List Price History</a>
                   </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#catalog-item" class="toc-h1 toc-link" data-title="Catalog Item">Catalog Item</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-hph-code" class="toc-h2 toc-link" data-title="Create - HPH Code">Create - HPH Code</a>
+                  </li>
+                  <li>
+                    <a href="#create-non-hph-code" class="toc-h2 toc-link" data-title="Create - Non-HPH Code">Create - Non-HPH Code</a>
+                  </li>
+                  <li>
+                    <a href="#modify-guid" class="toc-h2 toc-link" data-title="Modify - GUID">Modify - GUID</a>
+                  </li>
                   <li>
                     <a href="#json-structures" class="toc-h2 toc-link" data-title="JSON Structures">JSON Structures</a>
+                  </li>
+                  <li>
+                    <a href="#delete" class="toc-h2 toc-link" data-title="Delete">Delete</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#catalog-lines" class="toc-h1 toc-link" data-title="Catalog Lines">Catalog Lines</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-root-level" class="toc-h2 toc-link" data-title="Get Root Level">Get Root Level</a>
+                  </li>
+                  <li>
+                    <a href="#get-children" class="toc-h2 toc-link" data-title="Get Children">Get Children</a>
                   </li>
               </ul>
           </li>
@@ -572,6 +600,7 @@
 <h2 id='user-auth'>User Auth</h2><h3 id='api-get-user-subscriptions-authorizations-orgs-and-applications'>API – GET User Subscriptions/Authorizations (Orgs and Applications)</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getSubscriptions</span><span class="p">()</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -2262,59 +2291,218 @@ Values parameter can be a comma delimited list of types.  For example: <strong>P
 <p>URL Sample:</p>
 
 <p><code>https://api.cinx.com/sub/14b8fb3e-f62e-cd1c-b71f-fd5b1936d1b2/item/hphcode/012NI0018/price/history</code></p>
+<h1 id='catalog-item'>Catalog Item</h1><h2 id='create-hph-code'>Create - HPH Code</h2><h3 id='api-add-a-new-catalog-item-hph-code'>API – Add a New Catalog Item – HPH Code</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Item_Link-&gt;addItemFromCatalog"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/catalog/add/item"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1564132149.572</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_time"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75662302970886</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"record_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ITEM-LINK"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org-0001-4030"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01f9c181-c624-5475-ad84-1b7eeb511155"</span><span class="w"> </span><span class="err">//Private</span><span class="w"> </span><span class="err">Catalog</span><span class="w"> </span><span class="err">Item</span><span class="w"> </span><span class="err">GUID</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This request will be used to submit a HPH Item Code for an item and have it added to an Org’s private catalog. </p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Subscription Id}/catalog/add/item?hphcode={HPH Item Code}</p>
+
+<p>Sample:</p>
+
+<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/catalog/add/item?hphcode=005GR0006</code></p>
+
+<p>The GUID shown in the <strong>id</strong> field is the item’s CINX Private Catalog GUID</p>
+<h2 id='create-non-hph-code'>Create - Non-HPH Code</h2><h3 id='api-create-a-non-hph-private-catalog-item'>API – Create a non-HPH Private Catalog Item</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Item_Link-&gt;addItemFromCatalog"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/catalog/add/item"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1564132149.572</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_time"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75662302970886</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"record_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ITEM-LINK"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org-0001-4030"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01f9c181-c624-5475-ad84-1b7eeb511155"</span><span class="w"> </span><span class="err">//Private</span><span class="w"> </span><span class="err">Catalog</span><span class="w"> </span><span class="err">Item</span><span class="w"> </span><span class="err">GUID</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This request will be used to create a Private Catalog Item that is not linked to an HPH Item.  Please note that this URL will require a valid CINX user GUID.  This will be used to indicate who created the item.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/catalog/add/non-catalog/item?values={JSON Structure}</p>
+
+<p>The values section of this URL must contain properly formatted JSON.  If the structure is an array, all elements of the array must be submitted.  Please see the <strong>CINX Private Catalog Item JSON Structures</strong> section of this document for a listing of the available JSON structures.</p>
+
+<p>Basic Sample: </p>
+
+<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/catalog/add/non-catalog/item?values={&quot;mfr_name&quot;:&quot;Rubbermaid&quot;,&quot;descriptions&quot;:[{&quot;type&quot;:&quot;LONG&quot;,&quot;value&quot;:&quot;30GAL Black Trash Can&quot;},{&quot;type&quot;:&quot;SHORT&quot;,&quot;value&quot;:&quot;Trash Can&quot;}],&quot;pkg_ids&quot;:[{&quot;type&quot;:&quot;MFR CATALOG&quot;,&quot;value&quot;:&quot;101&quot;}]}</code></p>
+
+<p>Expanded Sample: </p>
+
+<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/catalog/add/non-catalog/item?user=dc3aecca-f2ec-ee6e-eee9-6d96d45390fa&amp;values={%22mfr_name%22:%22Rubbermaid%22,%22descriptions%22:[{%22type%22:%22LONG%22,%22value%22:%2230GAL%20Black%20Trash%20Can%22},{%22type%22:%22SHORT%22,%22value%22:%22Trash%20Can%22}],%22pkg_ids%22:[{%22type%22:%22MFR%20CATALOG%22,%22value%22:%22101%22},{%22type%22:%22UPC%22,%22value%22:%22464645656410%22}],%22size%22:%20{%22type%22:%22PHYSICAL%22,%22value%22:%2230%22,%22uom%22:%22GALLON%22},%22prices%22:[{%22type%22:%22BUY%22,%22cdoc%22:%22%22,%22value%22:%2210.256%22,%22price_uom%22:%22E%22,%22date_updated%22:%22%22,%22user_cdoc%22:%22dc3aecca-f2ec-ee6e-eee9-6d96d45390fa%22,%22source_method%22:%22USER%22},{%22type%22:%22ESTIMATED%22,%22cdoc%22:%22%22,%22value%22:%2211.256%22,%22price_uom%22:%22E%22,%22date_updated%22:%22%22,%22user_cdoc%22:%22dc3aecca-f2ec-ee6e-eee9-6d96d45390fa%22,%22source_method%22:%22USER%22}],%22weight%22:%222.300%22,%22weight_uom%22:%22LBS%22,%22depth%22:%2223.00%22,%22height%22:%2238.00%22,%22width%22:%2223.00%22,%22cube%22:%22123%22,%22dimension_uom%22:%22INCHES%22,%22attributes%22:[{%22name%22:%22Color%22,%22value%22:%22Black%22},{%22name%22:%22Body%20Style%22,%22value%22:%22Tapered%22}],%22cost_code%22:%22123456%22,%22pkg_status%22:%22A%22}</code></p>
+
+<p>The GUID shown in the <strong>id</strong> field is the item’s CINX Private Catalog GUID.</p>
+<h2 id='modify-guid'>Modify - GUID</h2><h3 id='api-modify-a-cinx-private-catalog-item-using-a-cinx-guid'>API – Modify a CINX Private Catalog Item – using a CINX GUID</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code></code></pre>
+<p>This request will be used to modify a Private Catalog Item using its CINX Item GUID.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/catalog/item/{CINX ITEM GUID}/modify? values={JSON Structure}</p>
+
+<p>The <strong>values</strong> section of this URL must contain properly formatted JSON.  If the structure is an array, all elements of the array must be submitted.  Please see the <strong>CINX Private Catalog Item JSON Structures</strong> section of this document for a listing of the available JSON structures.</p>
+
+<p>Sample: </p>
+
+<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/catalog/item/3635ded0-2c4a-758f-0ba1-0f11455561ea/modify?values={&quot;size&quot;:{&quot;type&quot;:&quot;PHYSICAL&quot;,&quot;value&quot;:&quot;40&quot;,&quot;uom&quot;:&quot;GALLON&quot;}}</code></p>
 <h2 id='json-structures'>JSON Structures</h2><h3 id='cinx-private-catalog-item-json-structures'>CINX Private Catalog Item JSON Structures</h3>
 <p>The JSON structures shown below can be used in API calls to <strong>Create</strong> or <strong>Modify</strong> CINX Private Catalog Items.</p>
 
 <p>If the structure is an array, all elements of the array must be submitted. </p>
 
-<p><strong>Manufacturer Name (required)</strong>
-“mfr_name”:”name”</p>
+<p><strong>Manufacturer Name (required)</strong></p>
 
-<p><strong>Item Identifiers (array)</strong>
-“pkg_ids”:[{”type”:”type name”,”value”: “value”}]</p>
+<p>“mfr_name”:”name”</p>
+
+<p><strong>Item Identifiers (array)</strong></p>
+
+<p>“pkg_ids”:[{”type”:”type name”,”value”: “value”}]</p>
 
 <p>Available “type names” are: <strong>MFR CATALOG, MFR ORDER, UPC, GTIN, ORG ID, ORG SYSTEM ID</strong></p>
 
-<p><strong>Descriptions (array)</strong>
-“descriptions”:[{”type”:”type name”,”value”: “value”}]</p>
+<p><strong>Descriptions (array)</strong></p>
+
+<p>“descriptions”:[{”type”:”type name”,”value”: “value”}]</p>
 
 <p>Available “type names” are: <strong>LONG, SHORT, ORG</strong></p>
 
-<p><strong>Size</strong>
-“size”:{”type”:”type name”,”value”: “value”,”uom”:”value”}</p>
+<p><strong>Size</strong></p>
 
-<p><strong>Prices (array)</strong>
-“prices”:[{”type”:”type name”,”cdoc”:null,”value”: “value” ,”price_uom”: “price_uom value”,”date_updated”:””,”user_cdoc”:”{user guid}”,”source_method”:”USER”}]</p>
+<p>“size”:{”type”:”type name”,”value”: “value”,”uom”:”value”}</p>
 
-<p>Available “type names” are: <strong>BUY, SELL, ESTIMATED</strong>
-“cdoc”: please submit a <strong>null</strong>
-Available “price uoms” are: <strong>E, T, C, M</strong>
-“date_updated”: <strong>datetime format (yyyy-mm-dd hh:mm:ssZ)</strong>
-“source_method”: <strong>please submit “USER”</strong></p>
+<p><strong>Prices (array)</strong></p>
 
-<p><strong>Price Multiplier</strong>
-“multiplier”:{“cdoc”:null,”code”:”code value”,”name”: “name”}]</p>
+<p>“prices”:[{”type”:”type name”,”cdoc”:null,”value”: “value” ,”price_uom”: “price_uom value”,”date_updated”:””,”user_cdoc”:”{user guid}”,”source_method”:”USER”}]</p>
 
-<p><strong>Attributes (array)</strong>
-“attributes”:[{”name”:”name”,”value”: “value”}]</p>
+<p>Available “type names” are: <strong>BUY, SELL, ESTIMATED</strong></p>
 
-<p><strong>Physical Properties</strong>
-“weight”:”value”
-“weight_uom”: “value”
-“depth”:”value”
-“height”:”value”
-“width”:”value”
-“cube”:”value”
-“dimension_uom”:”value”</p>
+<p>“cdoc”: please submit a <strong>null</strong></p>
 
-<p><strong>Default Cost Code</strong>
-“cost_code_value”:”value”</p>
+<p>Available “price uoms” are: <strong>E, T, C, M</strong></p>
 
-<p> 
-<strong>Product Availability Status</strong>
-“pkg_status”:”value”</p>
+<p>“date_updated”: <strong>datetime format (yyyy-mm-dd hh:mm:ssZ)</strong></p>
+
+<p>“source_method”: <strong>please submit “USER”</strong></p>
+
+<p><strong>Price Multiplier</strong></p>
+
+<p>“multiplier”:{“cdoc”:null,”code”:”code value”,”name”: “name”}]</p>
+
+<p><strong>Attributes (array)</strong></p>
+
+<p>“attributes”:[{”name”:”name”,”value”: “value”}]</p>
+
+<p><strong>Physical Properties</strong></p>
+
+<p>“weight”:”value”</p>
+
+<p>“weight_uom”: “value”</p>
+
+<p>“depth”:”value”</p>
+
+<p>“height”:”value”</p>
+
+<p>“width”:”value”</p>
+
+<p>“cube”:”value”</p>
+
+<p>“dimension_uom”:”value”</p>
+
+<p><strong>Default Cost Code</strong></p>
+
+<p>“cost_code_value”:”value”</p>
+
+<p><strong>Product Availability Status</strong></p>
+
+<p>“pkg_status”:”value”</p>
 
 <p>Available “values” are: <strong>A,D,P</strong></p>
+<h2 id='delete'>Delete</h2><h3 id='api-delete-a-catalog-item-based-on-an-cinx-item-guid'>API – DELETE a Catalog Item (based on an CINX Item GUID)</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code></code></pre>
+<p>This request will be used to delete an item from an Org’s Private CINX catalog.  Please note that this API call requires the item’s CINX Private Catalog Item GUID.</p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/catalog/item/{CINX ITEM GUID}/delete</p>
+
+<p>Sample:</p>
+
+<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/catalog/item/3635ded0-2c4a-758f-0ba1-0f11455561ea/delete</code></p>
+<h1 id='catalog-lines'>Catalog Lines</h1><h2 id='get-root-level'>Get Root Level</h2><h3 id='api-get-private-catalog-lines-root-level'>API – GET Private Catalog Lines – Root Level</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code></code></pre>
+<p>This request will be used to retrieve the Root level Private Catalog lines for an Org’s private catalog. </p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/line/hierarchy/roots</p>
+
+<p>Sample:</p>
+
+<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/line/hierarchy/roots</code></p>
+<h2 id='get-children'>Get Children</h2><h3 id='api-get-a-private-catalog-line-s-children-sub-lines'>API – GET a Private Catalog Line’s Children (sub-lines)</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code></code></pre>
+<p>This request will be used to retrieve the children (sub-lines) of a parent line within an Org’s Private Catalog. </p>
+
+<p>URL Pattern:</p>
+
+<p>{api path}/sub/{B2B Id GUID}/line/hierarchy/{parent hierarchy GUID}/children</p>
+
+<p>Sample:   </p>
+
+<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/line/hierarchy/7ec57062-0ad0-c331-fbe2-6023b015c6e8/children</code></p>
 <h1 id='mfr-price-sheets'>Mfr Price Sheets</h1><h2 id='introduction'>Introduction</h2><h3 id='manufacturer-price-sheet-introduction'>Manufacturer Price Sheet Introduction</h3>
 <p>A Price Sheet is a document that is issued by a product manufacturer or service provider that define the prices that will be charged to consumers for procuring the listed materials or services.  Manufacturers with large product offerings often have multiple price sheets with each containing only a segment of the manufacturer’s overall product listing.  For example, Charlotte has different price sheets for their Cast Iron No Hub, Service Weight, and Extra Heavy products.</p>
 
