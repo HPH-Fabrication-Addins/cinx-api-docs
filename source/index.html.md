@@ -9,15 +9,22 @@ toc_footers:
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
+  - background
   - introduction
   - getting-started
   - org-company
   - get-catalog-items
   - catalog-item
   - catalog-lines
-  - manufacturers
-  - notifications
+  - catalog-updates
+  - mfr-price-sheets
+  - job-cost-setup
   - vendors
+  - projects
+  - transactions
+  - transaction-items
+  - notifications
+  - additional-info
 
 
 search: true

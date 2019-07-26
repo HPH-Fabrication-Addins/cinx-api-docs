@@ -7,11 +7,11 @@ This request will be used to POST an uploaded external file (Excel, PDF, txt) to
 
 URL Pattern:
 
-{api path}/sub/{B2B Id GUID}/partner/exec/cinx/lib-doc? type=MATERIAL+REQUISITION &name={requisition id}&parent=couchdb://{CINX Org Id}/{CINX Project GUID}&email_subject={text}&notify_email={User Email address}&notify_alert={CINX User GUID}
+`{api path}/sub/{B2B Id GUID}/partner/exec/cinx/lib-doc? type=MATERIAL+REQUISITION &name={requisition id}&parent=couchdb://{CINX Org Id}/{CINX Project GUID}&email_subject={text}&notify_email={User Email address}&notify_alert={CINX User GUID}`
 
 Sample:
 
-https://api.cinx.com/sub/e8478738-8c4b-a152-609d-f50e34be0090/partner/exec/cinx/lib-doc? type=MATERIAL+REQUISITION&name=Req123&parent=couchdb://org-0000-6138/3dde31ee-694e-0e43-8af2-8382bb6dcc1f&email_subject=NewShopMaterialRequestionReq123&notify_email=bakigervalla@gmail.com&notify_email=dmcphaul@hphguide.com&notify_alert=c61a47a8-3a4a-025a-0db1-2b9e609da089&notify_alert=54e0afa4-c359-f55b-ad3c-cc63df698900
+`https://api.cinx.com/sub/e8478738-8c4b-a152-609d-f50e34be0090/partner/exec/cinx/lib-doc? type=MATERIAL+REQUISITION&name=Req123&parent=couchdb://org-0000-6138/3dde31ee-694e-0e43-8af2-8382bb6dcc1f&email_subject=NewShopMaterialRequestionReq123&notify_email=bakigervalla@gmail.com&notify_email=dmcphaul@hphguide.com&notify_alert=c61a47a8-3a4a-025a-0db1-2b9e609da089&notify_alert=54e0afa4-c359-f55b-ad3c-cc63df698900`
 
 URL Parameter Information
 
@@ -53,9 +53,9 @@ This optional URL parameter allows us to filter the alerts given their “User S
 
 An alert is marked **shown** when a user has view the alert.
 
-https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?shown=0
+`https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?shown=0`
 
-https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?shown=1
+`https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?shown=1`
 
 **“Closed” Parameter**
 
@@ -66,9 +66,9 @@ An alert is marked **closed** when a user has “deleted” the alert from a UI.
 **?closed=0**
 **?closed=1**
 
-https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?closed=0
+`https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?closed=0`
 
-https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?closed=1
+`https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?closed=1`
  
 ## Modify Alerts
 ### API – Mark User Alerts Shown or Closed
@@ -85,11 +85,11 @@ Samples:
 
 {api path}/sub/{B2B Id GUID}/user /alert/{alert GUID}modify?values={"shown":1 }
 
-https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alert/5dbf1bdf-732c-5c3b-d4cc-c837f5fc2fa2/modify?values={%22shown%22:1}
+`https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alert/5dbf1bdf-732c-5c3b-d4cc-c837f5fc2fa2/modify?values={%22shown%22:1}`
 
 {api path}/sub/{B2B Id GUID}/user/alert/{alert guid}/modify?values={"closed": 1 }
 
-https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alert/5dbf1bdf-732c-5c3b-d4cc-c837f5fc2fa2/modify?values={%22closed%22:1}
+`https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alert/5dbf1bdf-732c-5c3b-d4cc-c837f5fc2fa2/modify?values={%22closed%22:1}`
   
 
 
