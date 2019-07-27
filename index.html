@@ -233,6 +233,9 @@
                   <li>
                     <a href="#app-data-sources" class="toc-h2 toc-link" data-title="App - Data Sources">App - Data Sources</a>
                   </li>
+                  <li>
+                    <a href="#templates" class="toc-h2 toc-link" data-title="Templates">Templates</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -669,6 +672,26 @@
 <p>Data Source Name: My Private Catalog</p>
 
 <p><img src='images/subscription5.jpg'/></p>
+<h2 id='templates'>Templates</h2><h3 id='cinx-templates'>CINX Templates</h3>
+<p>To assist developers in creating and modifying data objects on the CINX Platform, the API includes templates that define the data structure and provide other information that can be used to present data options to the end-user.</p>
+
+<p>The templates are accessed via the API and use a standardized response structure containing the following data structures:</p>
+
+<p><strong>doc_info:</strong> identification and version info for the template</p>
+
+<p><img src='images/subscription18.jpg'/></p>
+
+<p><strong>template:</strong> data structure that should be used when submitting a POST or PUT payload.  Note:  fields not used do not have to be submitted.</p>
+
+<p><img src='images/subscription19.jpg'/></p>
+
+<p><strong>field_options:</strong> lists available options for data fields</p>
+
+<p><img src='images/subscription20.jpg'/></p>
+
+<p><strong>api_calls:</strong> lists related API calls.  The url in the response is fully formed with the proper API Token and other variables.  The API calls will include the web service to POST/PUT the data and any calls that can be used to access data that can be populated in the template. </p>
+
+<p><img src='images/subscription21.jpg'/></p>
 <h1 id='getting-started'>Getting Started</h1><h2 id='rest-api'>REST API</h2><h3 id='rest-api-2'>ReST API</h3>
 <blockquote>
 <p>JSON formatted response</p>
