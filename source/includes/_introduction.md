@@ -52,3 +52,27 @@ App Name: Viewpoint Estimation
 Data Source Name: My Private Catalog
 
 <img src='images/subscription5.jpg'/>
+
+## Templates
+### CINX Templates
+
+To assist developers in creating and modifying data objects on the CINX Platform, the API includes templates that define the data structure and provide other information that can be used to present data options to the end-user.
+
+The templates are accessed via the API and use a standardized response structure containing the following data structures:
+
+**doc_info:** identification and version info for the template
+
+<img src='images/subscription18.jpg'/>
+
+**template:** data structure that should be used when submitting a POST or PUT payload.  Note:  fields not used do not have to be submitted.
+
+<img src='images/subscription19.jpg'/>
+
+**field_options:** lists available options for data fields
+
+<img src='images/subscription20.jpg'/>
+
+**api_calls:** lists related API calls.  The url in the response is fully formed with the proper API Token and other variables.  The API calls will include the web service to POST/PUT the data and any calls that can be used to access data that can be populated in the template. 
+
+<img src='images/subscription21.jpg'/>
+
