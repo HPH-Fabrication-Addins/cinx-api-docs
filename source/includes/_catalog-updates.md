@@ -65,6 +65,91 @@ The CINX UI provides extensive capabilities to manage the catalog updates.  Admi
 ## Get Update List
 ### API – GET Catalog Updates List
 
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+
+cinxApi.getCatalogUpdates(application_id, update_type)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
+> The above code returns JSON structured like this:
+
+```json
+{
+    "response": {
+        "status_code": 200,
+        "message": "OK",
+        "method": "IPU->allUpdates",
+        "uri": "sub/2494df92-e855-5563-826c-05907f9cca22/ipu/updates/all",
+        "format": "json",
+        "start_time": 1564235299.356,
+        "total_time": 0.44800806045532,
+        "record_count": 1,
+        "total_count": 1
+    },
+    "rows": [
+        {
+            "title": "QuoteExpress Mechanical Legacy FULL 08/13/2014",
+            "type": "FULL",
+            "date_published": "2014-08-13 21:12:35",
+            "date_range_start": "2001-01-01",
+            "date_range_end": "2014-08-13",
+            "documents": [
+                {
+                    "type": "DATA-FILE",
+                    "format": "upd",
+                    "size": 80954160,
+                    "formatter": "upd"
+                },
+                {
+                    "type": "BULLETIN",
+                    "format": "xls",
+                    "size": 184320,
+                    "formatter": "xls"
+                },
+                {
+                    "type": "BULLETIN",
+                    "format": "js",
+                    "size": 197514,
+                    "formatter": "js"
+                }
+            ],
+            "transactions": null,
+            "count_of_transactions": 0,
+            "consumed": {
+                "download_date": "2019-07-23",
+                "applied_date": "2019-07-23",
+                "user": {
+                    "name": "Will Stone",
+                    "cinx_id": {
+                        "type": "USER",
+                        "domain": "users",
+                        "id": "185aabe1-3487-5f59-9ad5-c577a76bd392"
+                    }
+                },
+                "cinx_id": {
+                    "type": "SUB-CONSUMPTION",
+                    "domain": "org-0001-4030",
+                    "id": "4ceb4a6e-0513-5745-bf8b-bf9266a28561"
+                }
+            },
+            "export_id": "bulletin_20140813_161048",
+            "created_by": "User Not Found",
+            "cinx_id": {
+                "type": "SUB-UPDATE",
+                "domain": "subscriptions",
+                "id": "7b13257e-25ff-3a03-5d7d-9f4dbe30e091"
+            }
+        }
+    ]
+}
+```
+
 This request will be used to retrieve catalog updates for a given subscription. 
 
 URL Pattern:
@@ -113,6 +198,20 @@ Samples:
 
 ## Mark as Applied
 ### API – Mark Catalog Update File As Applied
+
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+
+var values = `{"applied_date":"2019-06-21", "download_date":"2019-06-21"}`;
+
+cinxApi.setCatalogUpdateFileApplied(application_id, file_id, values)
+    .then(function(response) {
+        console.log(response);
+    });
+```
 
 This will mark the update as **Applied** and it will no longer show up in the **New** update list.
 

@@ -208,11 +208,130 @@ Sample:
 ### API – GET Project Details
 
 ```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+
+cinxApi.getProjectDetails(cinx_api_token, project_id)
+    .then(function(response) {
+        console.log(response);
+    });
 ```
 
 > The above code returns JSON structured like this:
 
 ```json
+{
+    "response": {
+        "status_code": 200,
+        "message": "OK",
+        "method": "Project->details",
+        "uri": "sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/4b4d08c7-7edf-57d2-b632-2371f8a18496/details",
+        "format": "json",
+        "start_time": 1564217578.607,
+        "total_time": 0.4166247844696,
+        "record_count": 1,
+        "total_count": 0
+    },
+    "rows": [
+        {
+            "name": "A",
+            "number": "A",
+            "description": "A",
+            "status": "CONCEPTUAL",
+            "hide_customer": "0",
+            "is_tax_exempt": "0",
+            "tax_exempt_id": null,
+            "is_leed": "0",
+            "size_square_value": null,
+            "size_square_uom": "FEET",
+            "contract_budget_amount": null,
+            "contract_budget_currency": "USD",
+            "use_phases": "0",
+            "type_cinx": "PROJECT",
+            "delivery_method": "NOT SPECIFIED",
+            "type_org_defined": null,
+            "type_construction": "NOT SPECIFIED",
+            "type_industry": "NOT SPECIFIED",
+            "type_sector": "NOT SPECIFIED",
+            "billing": {
+                "recurrence_type": null,
+                "attention": null,
+                "bill_to": {
+                    "type": null,
+                    "domain": null,
+                    "id": null
+                }
+            },
+            "customer": {},
+            "project_manager": null,
+            "participants": [
+                {
+                    "customer_id": null,
+                    "status": "A",
+                    "roles": "Admin",
+                    "date_created": "2019-07-26 15:53:58Z",
+                    "dates": [],
+                    "users": [
+                        {
+                            "roles": "Manager",
+                            "submittal_roles": [],
+                            "is_primary": "1",
+                            "date_created": "2019-07-26 15:53:58Z",
+                            "attributes": [],
+                            "names": {
+                                "first": "Will",
+                                "middle": "",
+                                "last": "Stone",
+                                "suffix": ""
+                            },
+                            "cinx_id": {
+                                "type": "USER",
+                                "domain": "users",
+                                "id": "185aabe1-3487-5f59-9ad5-c577a76bd392"
+                            }
+                        }
+                    ],
+                    "attributes": [],
+                    "org_name": "WTS Mechanical -DEV",
+                    "cinx_id": {
+                        "type": "ORG",
+                        "domain": "orgs",
+                        "id": "org-0001-4030"
+                    }
+                }
+            ],
+            "built_entity": {},
+            "dates": [
+                {
+                    "type": "SCHEDULED START",
+                    "value": "2019-06-01"
+                },
+                {
+                    "type": "ACTUAL START",
+                    "value": "2019-06-15"
+                }
+            ],
+            "attributes": [],
+            "cinx_id": {
+                "type": "PROJECT",
+                "domain": "org-0001-4030",
+                "id": "4b4d08c7-7edf-57d2-b632-2371f8a18496"
+            },
+            "parent": {
+                "type": null,
+                "domain": null,
+                "id": null
+            },
+            "erp_app_id": "808eb448-962c-564b-9e34-c560dc4fdbb9",
+            "tax_group": {
+                "id": "7c42f24f-766e-5220-bc7e-cce8048dbb57",
+                "name": "TAX-12"
+            }
+        }
+    ]
+}
 ```
 
 URL Pattern:
@@ -283,7 +402,46 @@ Sample:
 ## Modify Project
 ### API – Modify a CINX Project
 
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
 
+var values = `{"name":"${pName}","description":"${pDescription}","number":"${pNumber}","status":"${pStatus}"}`;
+
+cinxApi.modifyProject(cinx_api_token, project_id, values)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
+> The above code returns JSON structured like this:
+
+```json
+{
+    "response": {
+        "status_code": 200,
+        "message": "OK",
+        "method": "Project->modify",
+        "uri": "sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/4b4d08c7-7edf-57d2-b632-2371f8a18496/modify",
+        "format": "json",
+        "start_time": 1564217673.261,
+        "total_time": 0.67136001586914,
+        "record_count": 1,
+        "total_count": 0
+    },
+    "rows": [
+        {
+            "cinx_id": {
+                "type": "PROJECT",
+                "domain": "org-0001-4030",
+                "id": "4b4d08c7-7edf-57d2-b632-2371f8a18496"
+            }
+        }
+    ]
+}
+```
 
 This request will be used to modify a project in the org’s CINX account.
 
@@ -370,6 +528,37 @@ Additional content types are available; please contact HPH if your system requir
 ## Delete Project
 ### API – Delete a CINX Project
 
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+
+cinxApi.deleteProject(cinx_api_token, project_id)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
+> The above code returns JSON structured like this:
+
+```json
+{
+    "response": {
+        "status_code": 200,
+        "message": "OK",
+        "method": "Project->delete",
+        "uri": "sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/e509b84c-bde6-5e37-b35d-e97743babf11/delete",
+        "format": "json",
+        "start_time": 1564218098.135,
+        "total_time": 0.45163202285767,
+        "record_count": 0,
+        "total_count": 0
+    },
+    "rows": []
+}
+```
+
 This request will be used to delete a project in the org’s CINX account.
 
 URL Pattern:
@@ -425,6 +614,197 @@ Each CINX project phase/cost code has a field to track the percent complete.
 ## Get Phases & Cost Codes
 ### API – GET a Project’s Phases and Cost Codes List
 
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+
+cinxApi.getProjectCosts(cinx_api_token, project_id)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
+> The above code returns JSON structured like this:
+
+```json
+{
+    "response": {
+        "status_code": 200,
+        "message": "OK",
+        "method": "project_cost_code->projectCostCodes",
+        "uri": "sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/db0ca505-e2f5-573a-a580-30f51383b0e4/cost-codes",
+        "format": "json",
+        "start_time": 1564233935.004,
+        "total_time": 0.43982815742493,
+        "record_count": 3,
+        "total_count": 0
+    },
+    "rows": [
+        {
+            "construction_status": "NOT INSTALLED",
+            "percent_complete": null,
+            "project": {
+                "name": "HQ  Oct 23",
+                "description": "test",
+                "number": "WTS-2017-01"
+            },
+            "phase": {
+                "guid": "8e441211-45ca-5c84-b34b-a93cd4cdf853",
+                "name": "1",
+                "description": "A",
+                "status": "A"
+            },
+            "material_cost_code": {
+                "ref": "df8f4e93-3d04-5379-948a-0b3f5319cbd2",
+                "name": "CC1",
+                "description": "Cost Code1",
+                "status": "A"
+            },
+            "category": {
+                "ref": "b7c8125e-6048-5085-a02c-8dd645012eda",
+                "name": "Expense 13",
+                "description": "Exp13",
+                "status": "A"
+            },
+            "material_cost": {
+                "estimated": null,
+                "budgeted": null,
+                "actual": null
+            },
+            "labor_units": {
+                "estimated": null,
+                "budgeted": null,
+                "actual": null
+            },
+            "labor_cost": {
+                "estimated": null,
+                "budgeted": null,
+                "actual": null
+            },
+            "dates": {
+                "start_scheduled": "2017-10-23 17:00:12Z",
+                "start_actual": "2017-10-23 17:00:12Z",
+                "completion_scheduled": "2017-10-23 17:00:12Z",
+                "completion_actual": "2017-10-23 17:00:12Z"
+            },
+            "cinx_id": {
+                "type": "PROJECT-COST-CODE",
+                "domain": "org-0001-4030",
+                "id": "46dda623-7e6b-55ea-8365-6a6d8dbae47c"
+            }
+        },
+        {
+            "construction_status": "NOT INSTALLED",
+            "percent_complete": null,
+            "project": {
+                "name": "HQ  Oct 23",
+                "description": "test",
+                "number": "WTS-2017-01"
+            },
+            "phase": {
+                "guid": "ea6fba0f-0b8e-5e49-a110-6bcb36182146",
+                "name": "Phase2",
+                "description": "UG pHase",
+                "status": "A"
+            },
+            "material_cost_code": {
+                "ref": "5d9b83d0-a3de-5475-959d-04b92fd4de75",
+                "name": "UG-123",
+                "description": "Underground",
+                "status": "A"
+            },
+            "category": {
+                "ref": "a5f91c07-7c5b-5b0c-863b-16b2f6d960c6",
+                "name": "Expense 12",
+                "description": "expense cat12",
+                "status": "A"
+            },
+            "material_cost": {
+                "estimated": null,
+                "budgeted": null,
+                "actual": null
+            },
+            "labor_units": {
+                "estimated": null,
+                "budgeted": null,
+                "actual": null
+            },
+            "labor_cost": {
+                "estimated": null,
+                "budgeted": null,
+                "actual": null
+            },
+            "dates": {
+                "start_scheduled": "2017-10-23 17:00:12Z",
+                "start_actual": "2017-10-23 17:00:12Z",
+                "completion_scheduled": "2017-10-23 17:00:12Z",
+                "completion_actual": "2017-10-23 17:00:12Z"
+            },
+            "cinx_id": {
+                "type": "PROJECT-COST-CODE",
+                "domain": "org-0001-4030",
+                "id": "aa64e885-bf29-527b-b41e-430c086a0e41"
+            }
+        },
+        {
+            "construction_status": "INSTALLED",
+            "percent_complete": 100,
+            "project": {
+                "name": "HQ  Oct 23",
+                "description": "test",
+                "number": "WTS-2017-01"
+            },
+            "phase": {
+                "guid": "3b61f993-69b5-5db3-a367-2d204321c857",
+                "name": "First Floor",
+                "description": "First Floor",
+                "status": "A"
+            },
+            "material_cost_code": {
+                "ref": "314f6a13-56b3-5c3f-b14e-10d159e4c5c0",
+                "name": "101-1025",
+                "description": "W",
+                "status": "A"
+            },
+            "category": {
+                "ref": "31d57bb1-156e-5cf2-a1ce-05b57232e643",
+                "name": "MAT",
+                "description": "Material",
+                "status": "A"
+            },
+            "material_cost": {
+                "estimated": "4523.00",
+                "budgeted": "4600.00",
+                "actual": "4502.47"
+            },
+            "labor_units": {
+                "estimated": "100",
+                "budgeted": "150",
+                "actual": "93"
+            },
+            "labor_cost": {
+                "estimated": "1001.12",
+                "budgeted": "1050.00",
+                "actual": "1093.00"
+            },
+            "dates": {
+                "start_scheduled": "2019-06-01 00:00:00Z",
+                "start_actual": "2019-06-10 00:00:00Z",
+                "completion_scheduled": "2020-01-14 00:00:00Z",
+                "completion_actual": "2019-02-01 00:00:00Z"
+            },
+            "cinx_id": {
+                "type": "PROJECT-COST-CODE",
+                "domain": "org-0001-4030",
+                "id": "b356381f-081d-5e5f-b878-94863a90d90d"
+            }
+        }
+    ]
+}
+```
+
 This request will be used to get a list of a project’s job cost information – phases and cost codes.  The response will contain full details for each phase/cost code.
 
 URL Pattern:
@@ -437,6 +817,105 @@ Sample:
 
 ## Create Phases & Cost Codes
 ### API – Create a Project’s Phase and Cost Code
+
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+
+var values = `{"material_cost_code":"${pName}","percent_complete":"${pDescription}","phase":"${pNumber}"}`;
+
+cinxApi.putProjectCost(cinx_api_token, project_id, values)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
+> The above code returns JSON structured like this:
+
+```json
+{
+    "response": {
+        "status_code": 200,
+        "message": "OK",
+        "method": "project_cost_code->create",
+        "uri": "sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/e8c5dc6b-e95a-5009-ad89-a11520f55493/cost-code/create",
+        "format": "json",
+        "start_time": 1564234057.744,
+        "total_time": 0.62497401237488,
+        "record_count": 1,
+        "total_count": 0
+    },
+    "rows": [
+        {
+            "_id": "480a6c4a-2289-51bd-baaa-db4cc5563759",
+            "_rev": "1-480a6c4a-2289-51bd-baaa-db4cc5563759",
+            "doc_info": {
+                "version": 1,
+                "db": "org-0001-4030",
+                "type": "PROJECT-COST-CODE",
+                "cdoc_maintainer": "couchdb://users/185aabe1-3487-5f59-9ad5-c577a76bd392",
+                "status": "A",
+                "is_locked": "0",
+                "cdoc_creator": "couchdb://users/185aabe1-3487-5f59-9ad5-c577a76bd392",
+                "date_created": "2019-07-27 13:27:38Z",
+                "cdoc_modifier": "couchdb://users/185aabe1-3487-5f59-9ad5-c577a76bd392",
+                "date_modified": "2019-07-27 13:27:38Z"
+            },
+            "project_cdoc": "couchdb://org-0001-4030/e8c5dc6b-e95a-5009-ad89-a11520f55493",
+            "construction_status": "NOT INSTALLED",
+            "percent_complete": 29,
+            "phase": {
+                "guid": "8e441211-45ca-5c84-b34b-a93cd4cdf853",
+                "number": "1",
+                "name": "A"
+            },
+            "material_cost_code": {
+                "guid": "314f6a13-56b3-5c3f-b14e-10d159e4c5c0",
+                "number": "101-1025",
+                "name": "W"
+            },
+            "category": {
+                "guid": null,
+                "number": null,
+                "name": null
+            },
+            "material_cost": {
+                "estimated": null,
+                "budgeted": null,
+                "actual": null
+            },
+            "labor_units": {
+                "estimated": null,
+                "budgeted": null,
+                "actual": null
+            },
+            "labor_cost": {
+                "estimated": null,
+                "budgeted": null,
+                "actual": null
+            },
+            "dates": {
+                "start_scheduled": null,
+                "start_actual": null,
+                "completion_scheduled": null,
+                "completion_actual": null
+            },
+            "attributes": [],
+            "cinx_id": {
+                "type": "PROJECT-COST-CODE",
+                "domain": "org-0001-4030",
+                "id": "480a6c4a-2289-51bd-baaa-db4cc5563759"
+            },
+            "modifier": "Will Stone",
+            "to_date": 0,
+            "pos": 0,
+            "vendors": 0
+        }
+    ]
+}
+```
 
 This request will be used to create a project’s phase and cost code.
 
@@ -453,6 +932,105 @@ Sample:
 
 ## Modify Phases & Cost Codes
 ### API – Modify a Project’s Phase and Cost Code
+
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+
+var values = `{"material_cost_code":"${pName}","percent_complete":"${pDescription}","phase":"${pNumber}"}`;
+
+cinxApi.modifyProjectCost(cinx_api_token, project_cost_id, values)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
+> The above code returns JSON structured like this:
+
+```json
+{
+    "response": {
+        "status_code": 200,
+        "message": "OK",
+        "method": "project_cost_code->modifyJobCosts",
+        "uri": "sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project-cost-code/46dda623-7e6b-55ea-8365-6a6d8dbae47c/modify",
+        "format": "json",
+        "start_time": 1564234258.237,
+        "total_time": 0.74366211891174,
+        "record_count": 1,
+        "total_count": 0
+    },
+    "rows": [
+        {
+            "_id": "46dda623-7e6b-55ea-8365-6a6d8dbae47c",
+            "_rev": "1-46dda623-7e6b-55ea-8365-6a6d8dbae47c",
+            "doc_info": {
+                "version": 1,
+                "db": "org-0001-4030",
+                "type": "PROJECT-COST-CODE",
+                "cdoc_maintainer": "couchdb://orgs/org-0001-4030",
+                "status": "A",
+                "is_locked": "0",
+                "cdoc_creator": "couchdb://users/185aabe1-3487-5f59-9ad5-c577a76bd392",
+                "date_created": "2017-10-23 17:00:12Z",
+                "cdoc_modifier": "couchdb://users/185aabe1-3487-5f59-9ad5-c577a76bd392",
+                "date_modified": "2019-07-27 13:30:58Z"
+            },
+            "project_cdoc": "couchdb://org-0001-4030/db0ca505-e2f5-573a-a580-30f51383b0e4",
+            "construction_status": "NOT INSTALLED",
+            "percent_complete": 30,
+            "phase": {
+                "guid": "8e441211-45ca-5c84-b34b-a93cd4cdf853",
+                "number": "1",
+                "name": "A"
+            },
+            "material_cost_code": {
+                "guid": "314f6a13-56b3-5c3f-b14e-10d159e4c5c0",
+                "number": "101-1025",
+                "name": "W"
+            },
+            "category": {
+                "guid": "b7c8125e-6048-5085-a02c-8dd645012eda",
+                "number": "Expense 13",
+                "name": "Exp13"
+            },
+            "material_cost": {
+                "estimated": null,
+                "budgeted": null,
+                "actual": null
+            },
+            "labor_units": {
+                "estimated": null,
+                "budgeted": null,
+                "actual": null
+            },
+            "labor_cost": {
+                "estimated": null,
+                "budgeted": null,
+                "actual": null
+            },
+            "dates": {
+                "start_scheduled": "2017-10-23 17:00:12Z",
+                "start_actual": "2017-10-23 17:00:12Z",
+                "completion_scheduled": "2017-10-23 17:00:12Z",
+                "completion_actual": "2017-10-23 17:00:12Z"
+            },
+            "attributes": [],
+            "cinx_id": {
+                "type": "PROJECT-COST-CODE",
+                "domain": "org-0001-4030",
+                "id": "46dda623-7e6b-55ea-8365-6a6d8dbae47c"
+            },
+            "modifier": "Will Stone",
+            "to_date": 0,
+            "pos": 0,
+            "vendors": 0
+        }
+    ]
+}
+```
 
 This request will be used to modify a project’s phase and cost code.
 
