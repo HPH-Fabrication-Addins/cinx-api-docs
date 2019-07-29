@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;javascript&quot;,&quot;c#&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -212,6 +212,7 @@
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="c#">c#</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -235,6 +236,12 @@
                   </li>
                   <li>
                     <a href="#templates" class="toc-h2 toc-link" data-title="Templates">Templates</a>
+                  </li>
+                  <li>
+                    <a href="#cinx-ids" class="toc-h2 toc-link" data-title="CINX Ids">CINX Ids</a>
+                  </li>
+                  <li>
+                    <a href="#commerce-guids" class="toc-h2 toc-link" data-title="Commerce GUIDs">Commerce GUIDs</a>
                   </li>
               </ul>
           </li>
@@ -692,6 +699,27 @@
 <p><strong>api_calls:</strong> lists related API calls.  The url in the response is fully formed with the proper API Token and other variables.  The API calls will include the web service to POST/PUT the data and any calls that can be used to access data that can be populated in the template. </p>
 
 <p><img src='images/subscription21.jpg'/></p>
+<h2 id='cinx-ids'>CINX Ids</h2><h3 id='cinx-ids-2'>CINX Ids</h3>
+<p>The CINX platform stories many Ids for different object types from different sources.  For example, an item on a PO may Ids defined by the customer, vendor, and product manufacturer. </p>
+
+<p>To clearly define CINX system Ids in API responses, the CINX Ids will be positioned at the top of response for the requested object.  They will in most cases be named cinx_guid.</p>
+
+<p><img src='images/cinx_guid_response.jpg'/></p>
+
+<p>If a response contains child JSON objects or arrays that list multiple CINX Ids, then the CINX Id will contain the name of the object being referenced.</p>
+<h2 id='commerce-guids'>Commerce GUIDs</h2><h3 id='cinx-commerce-guids'>CINX Commerce GUIDs</h3>
+<p>When a relationship between the two parties is created in CINX, the system creates a new document that links the two parties.  Examples relationships include:</p>
+
+<ul>
+<li>  A contractor (customer) has a CINX relationship with product wholesale distributors (vendor) that deliver products used in a project.</li>
+<li>  A building owner (customer) has a CINX relationship with a contractor (vendor) that completes a job.</li>
+</ul>
+
+<p>The relationship document allows for the storage of important transaction parameters that are required to deliver and process transactions, submittals, and other communications. This relationship is also assigned a new CINX GUID.  This new Id is therefore used by the API as a URL parameter when fetching and updating relationship data.  To clearly differentiate the Commerce GUID from a GUID assigned to an individual company (org), the API uses a different naming convention.</p>
+
+<p>The Commerce GUIDs in API responses and requests will be named <strong>cinx_commerce_guid</strong>.</p>
+
+<p><img src='images/cinx_commerce_guid.jpg'/></p>
 <h1 id='getting-started'>Getting Started</h1><h2 id='rest-api'>REST API</h2><h3 id='rest-api-2'>ReST API</h3>
 <blockquote>
 <p>JSON formatted response</p>
@@ -6993,6 +7021,7 @@ Entity).</p>
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="c#">c#</a>
           </div>
       </div>
     </div>
