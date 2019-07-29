@@ -3,7 +3,7 @@ title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
-  - c#
+
 
 toc_footers:
   - <a href='www.cinx.com'>www.cinx.com</a>
@@ -24,6 +24,7 @@ includes:
   - projects
   - transactions
   - transaction-items
+  - requisitions
   - notifications
   - additional-info
 

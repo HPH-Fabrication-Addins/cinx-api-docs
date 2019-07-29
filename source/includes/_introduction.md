@@ -1,5 +1,97 @@
 # Introduction
 
+## REST API
+### ReST API
+
+> JSON formatted response
+
+```json
+{
+  "start_time": 1411574224.8083,
+  "response": {
+    "status_code": 200,
+    "message": "OK",
+    "record_count": 1,
+    "server_response_time": 0,
+    "total_elapsed_time": 0.02492094039917,
+    "total_count": 0
+  },
+  "rows": []
+}
+```
+
+> XML formatted response
+
+```xml
+<cinx_api>
+  <start_time>1414436492.2267</start_time>
+  <response>
+    <status_code>200</status_code>
+    <message>OK</message>
+    <record_count>2</record_count>
+    <server_response_time>0</server_response_time>
+    <total_elapsed_time>0.013047933578491</total_elapsed_time>
+    <total_count>0</total_count>
+  </response>
+  <rows>
+    <row> 
+    </row>
+  </rows>
+</cinx_api> 
+```
+
+The CINX platform offers programmatic access to read and write data using ReST web services and standard HTTP verbs.
+
+**Authentication & Headers**
+
+HTTP Basic Authentication over HTTPS is used to control access to CINX platform resources.
+
+With each API call, you’ll need to set request headers, including a CINX User’s User Name and Password.
+
+**Account Authorization**
+
+CINX accounts are subscription based and have expiration dates.  Accounts with expired subscriptions will not have access to CINX data.  
+
+**Production Endpoint**
+
+The production endpoint for the CINX API is:
+
+**https://api.cinx.com/**
+
+**API Version**
+
+The CINX API is versioned.  This documentation supports version 2.0 and higher.  The API version will be added to the API endpoint and become part of the base URL.
+
+https://api.cinx.com/2.0/
+
+**API Token**
+
+The CINX API uses an API Token when submitting web service requests.  The CINX API Token is retrieved from the subscription web service API response.  A company (org) that has a CINX account must also be configured to permit API access before the API Token will be returned in the subscription API Response.  The API token is valid for the duration of a company’s CINX subscription.  The API Token will be added to the base URL following the API Version number.
+
+https://api.cinx.com/2.0/{api_token_value}/
+
+**API Response Formatting – Standard/JSON**
+
+All CINX API responses use a standardized format.  By default a JSON formatted response is provided.  Please see below if you prefer XML.
+
+The **“response” object** will contain meta data about the server’s response to the request.
+
+The **“rows” array** will contain the query results.
+
+**API Response Formatting – XML**
+
+To receive an XML response, please add the following parameter to the url:
+
+**format=xml**
+
+**Result Rows - Paging**
+
+For many HTTP GET requests you can use URL parameters to define the number of rows returned in the response.  Valid input parameters are:
+
+**start={number}**
+
+**limit={number}**
+
 ## App/Sub Model
 ### CINX Application/Subscription Model Introduction
 
@@ -53,6 +145,69 @@ Data Source Name: My Private Catalog
 
 <img src='images/subscription5.jpg'/>
 
+## Auth Response
+### Working with the GET User Subscriptions/Authorizations API Response
+
+The Subscriptions/Authorizations API response will provide the necessary information to make subsequent API requests.
+
+Please keep the following CINX Platform attributes in mind as you begin to work with the Subscriptions response:
+
+  - A User may be associated with more than one Org (multiple Orgs in the CINX subscription result)
+  - An Org can subscribe to multiple catalogs of content
+  - An Org might have multiple subscriptions to a single App  (the data for the App coming from different sources) (multiple instances of the same App within a single Org in the CINX subscription result)
+  - A User may use a CINX Addin for multiple partner applications on the same computer
+  - Objects in the CINX Platform are assigned Unique Ids that will be required API URL elements
+
+The JSON response uses the following structure:
+
+<img src='images/subscription6.jpg'/>
+
+Each **Row** array of the response will correspond to an Org to which the user is a member and will contain the following components:
+
+**CINX API Token:** Token that will be used in API calls to access and  the org’s data.
+
+**User:** provides basic information about the user and his/her CINX Unique Id.
+
+**Org:** basic information that can be used to identify a registered CINX org.  
+
+**Subscription:** defines the org’s subscription status which controls access to the API.
+
+**Subscription [Apps]:** an array of applications that the org currently subscribes to and can access using the API.  The structure of an app object is governed by its **Type.**  Current CINX App types include **Data-Source** (catalogs of content) and **Integration** (interactions with other software systems).  The contents of this array will only be used if your app needs to access content of a specific CINX Data Source in a pre-defined data format.  For example, price updates for an estimating system database.
+
+The following sections contain important information about using the API and the CINX Unique Ids that will be required for making some API calls. 
+
+**Does the subscription response contain a CINX API Token?**
+
+A CINX API Token is required to grant programmatic access to content on the CINX Platform.  The API Token will appear at the top of the response object in a field named **cinx_api_token.**  If there is not a value in this field, then access to content will be denied.  A user can contact HPH, to have the necessary account modification made to allow for the generation of the token.
+
+<img src='images/subscription10.jpg'/>
+
+**Is the subscription active?**
+
+API-based access to CINX will also be controlled by the org’s subscription status.  You will need to verify that the subscription is active.  This is done by checking the **subscription** object of the response.
+
+If the subscription is active the response will have the following information:
+
+<img src='images/subscription11.jpg'/>
+
+**What is the user’s CINX Unique Id?**
+
+The CINX User Unique Id (GUID) will be required by some API requests.  These requests will generally be ones in which new information is created or existing content is updated.  The user will then be identified as the “last modified by”.
+
+<img src='images/subscription12.jpg'/>
+
+**Will you need to access price updates or other item content stored in a CINX Catalog in a specific pre-defined format?**
+
+The Apps array within the Subscription object in the response will provide a list of applications to which the org has subscribed.  
+
+<img src='images/subscription13.jpg'/>
+
+The **cinx_app_guid** is a constant value that is used to identify an application within the CINX platform.  If you are a software company that requires data access to a specific catalog of content, a CINX app will be created and you will be provided the **cinx_app_guid** so that you can query the response for instances of your app.
+
+The **cinx_app_id** is a unique value that links a subscribing CINX org to your application.  This value will be required when you are making API calls to access content.
+
+The **data_source** name value will define the source of the item content that will be used to create content update files (price updates).  For more information about the relationship between and app and a data source, please review the CINX Applications and Data Source page.
+
 ## Templates
 ### CINX Templates
 
@@ -88,7 +243,8 @@ To clearly define CINX system Ids in API responses, the CINX Ids will be positio
 If a response contains child JSON objects or arrays that list multiple CINX Ids, then the CINX Id will contain the name of the object being referenced.
 
 ## Commerce GUIDs
-### CINX Commerce GUIDs  
+### CINX Commerce GUIDs
+
 When a relationship between the two parties is created in CINX, the system creates a new document that links the two parties.  Examples relationships include:
 
 *	A contractor (customer) has a CINX relationship with product wholesale distributors (vendor) that deliver products used in a project.
@@ -100,5 +256,47 @@ The Commerce GUIDs in API responses and requests will be named **cinx_commerce_g
 
  <img src='images/cinx_commerce_guid.jpg'/>
 
+## Auto-Numbering
+### CINX Object Auto-Numbering 
 
- 
+CINX provides a subscribing company with the option of automating the numbering of common objects when new instances are created.  These numbers are the “public” values used by the company to define the objects.  These are NOT system level ids.
+
+Objects on the CINX Platform that can be auto-numbered for contractors are:
+
+*	Vendors
+*	Customers
+*	Projects
+*	Requisitions
+*	RFQs (Request for Quotations
+*	Purchase Orders
+*	Deliveries
+*	Returns
+*	Submittals
+*	Transmittals
+
+Notes on other Transaction Numbering:
+
+*	Purchase Order change orders are number by appending a numeric suffix the the original PO Number.
+*	Invoices use the Vendor Invoice number
+
+API calls for obtaining the next number for an object are provided and documented.  Please note, that a number will only be provided if the company has activated the auto-numbering feature for the object.
+
+## Documentation Notes
+### Documentation Formating Notes
+
+
+**API URL References**
+
+The API calls documented on this site will contain two URL sections to assist in the construction of properly formatted URL to be submitted to CINX.
+
+URL PATTERN
+This section defines the elements of the URL.  Portions of the URL that will require variables to be inserted will be shown in curly braces {   }. 
+
+URL SAMPLES
+Each API call definition page will also contain at least one sample.  The sample will be fully formatted.  
+THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided only for formatting verification purposes.
+
+
+**Template Field Names – Dot Notation**
+This documentation will present the field definition of the CINX templates.  Dot notation will be used in the name field to indicate the path to the field in the template.
+
