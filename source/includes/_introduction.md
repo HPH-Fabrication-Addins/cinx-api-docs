@@ -76,8 +76,8 @@ The templates are accessed via the API and use a standardized response structure
 
 <img src='images/subscription21.jpg'/>
 
-## CINX IDs
-### CINX IDs
+## CINX Ids
+### CINX Ids
  
 The CINX platform stories many Ids for different object types from different sources.  For example, an item on a PO may Ids defined by the customer, vendor, and product manufacturer. 
 
@@ -86,3 +86,19 @@ To clearly define CINX system Ids in API responses, the CINX Ids will be positio
  <img src='images/cinx_guid_response.jpg'/>
 
 If a response contains child JSON objects or arrays that list multiple CINX Ids, then the CINX Id will contain the name of the object being referenced.
+
+## Commerce GUIDs
+### CINX Commerce GUIDs  
+When a relationship between the two parties is created in CINX, the system creates a new document that links the two parties.  Examples relationships include:
+
+*	A contractor (customer) has a CINX relationship with product wholesale distributors (vendor) that deliver products used in a project.
+*	A building owner (customer) has a CINX relationship with a contractor (vendor) that completes a job.
+
+The relationship document allows for the storage of important transaction parameters that are required to deliver and process transactions, submittals, and other communications. This relationship is also assigned a new CINX GUID.  This new Id is therefore used by the API as a URL parameter when fetching and updating relationship data.  To clearly differentiate the Commerce GUID from a GUID assigned to an individual company (org), the API uses a different naming convention.
+
+The Commerce GUIDs in API responses and requests will be named **cinx_commerce_guid**.
+
+ <img src='images/cinx_commerce_guid.jpg'/>
+
+
+ 

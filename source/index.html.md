@@ -3,6 +3,7 @@ title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
+  - c#
 
 toc_footers:
   - <a href='www.cinx.com'>www.cinx.com</a>
