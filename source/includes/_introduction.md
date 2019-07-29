@@ -76,3 +76,13 @@ The templates are accessed via the API and use a standardized response structure
 
 <img src='images/subscription21.jpg'/>
 
+## CINX IDs
+### CINX IDs
+ 
+The CINX platform stories many Ids for different object types from different sources.  For example, an item on a PO may Ids defined by the customer, vendor, and product manufacturer. 
+
+To clearly define CINX system Ids in API responses, the CINX Ids will be positioned at the top of response for the requested object.  They will in most cases be named cinx_guid.
+
+ <img src='images/cinx_guid_response.jpg'/>
+
+If a response contains child JSON objects or arrays that list multiple CINX Ids, then the CINX Id will contain the name of the object being referenced.
