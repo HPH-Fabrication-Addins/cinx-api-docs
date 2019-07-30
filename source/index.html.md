@@ -10,7 +10,6 @@ toc_footers:
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
-  - background
   - introduction
   - getting-started
   - org-company
