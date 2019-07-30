@@ -1,7 +1,7 @@
 # Requisitions
 
 ## Req Definition
-### Requisition Object Definition
+### CINX Object Defintion - Requisition
 
 A CINX Material Requisition is a compilation of parts that need to be purchased.  The list might be for a whole project, phase, system, pre-fab work-order, spool, or a general list created by a project foreman in the field. Requisitions are created to request the materials.  The parts on a requisition might also contain items from multiple projects that are combined into one purchase to achieve volume pricing.
 
@@ -27,7 +27,7 @@ It is important to understand that the parts on a requisition may be divided ont
 * Modify a requisition
 
 ## Get Req List
-### Get a List of Requisitions
+### API Endpoint - Get a List of Requisitions
 
 This request will be used to get a list of requisitions.
 
@@ -38,7 +38,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 HTTP Method: `GET`
 
 ## Get Req
-### Get a Requisition
+### API Endpoint - Get a Requisition
 
 This request will be used to get the details of a specific requisition.  Note: This response will include the requisition’s items.
 
@@ -51,7 +51,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 HTTP Method: `GET`
 
 ## Req Template
-### Get a Requisition Template
+### API Endpoint - Get a Requisition Template
 
 This request will be used to get a CINX Template for a requisition.
 
@@ -62,7 +62,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 HTTP Method: `GET`
 
 ## New Req Number
-### Get a New Requisition Number
+### API Endpoint - Get a New Requisition Number
 
 This request will be used to get a value to be used in the number field of a new requisition.
 
@@ -76,7 +76,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 HTTP Method: `GET`
 
 ## Create Req
-### Create a New Requisition
+### API Endpoint - Create a New Requisition
 
 This API call will be used to create a new requisition.
 
@@ -92,7 +92,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 HTTP Method: `POST`
 
 ## Modify Req
-### Modify a Requisition
+### API Endpoint - Modify a Requisition
 
 This API call will be used to modify an existing CINX requisition.
 
