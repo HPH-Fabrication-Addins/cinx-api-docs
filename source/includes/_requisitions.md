@@ -13,17 +13,18 @@ It is important to understand that the parts on a requisition may be divided ont
 * Must have a unique number
 * Must have a procurement status
 * Must be assigned to a valid CINX user
+* Must have at least one item before it can be submitted
 
 **Supported API Services**
 
 * Get a list of requisitions
 * Get a requisition
-* Get a requisition’s related POs
 * Get a requisition’s related RFQs
-* Modify a requisition
+* Get a requisition’s related POs
 * Get a requisition template
 * Get a requisition number
 * Create a requisition
+* Modify a requisition
 
 ## Get Req List
 ### Get a List of Requisitions
