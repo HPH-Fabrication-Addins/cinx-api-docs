@@ -3,8 +3,6 @@
 ## Req Definition
 ### Requisition Object Definition
 
-**Object Definition**
-
 A CINX Material Requisition is a compilation of parts that need to be purchased.  The list might be for a whole project, phase, system, pre-fab work-order, spool, or a general list created by a project foreman in the field. Requisitions are created to request the materials.  The parts on a requisition might also contain items from multiple projects that are combined into one purchase to achieve volume pricing.
 
 It is important to understand that the parts on a requisition may be divided onto different purchase orders which might be sent to different vendors.
