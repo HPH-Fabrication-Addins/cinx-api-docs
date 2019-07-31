@@ -8,7 +8,6 @@ A CINX Material Requisition is a compilation of parts that need to be purchased.
 It is important to understand that the parts on a requisition may be divided onto different purchase orders which might be sent to different vendors.
 
 **Dependencies and Business Rules**
-
 * Must be created by a CINX user linked to an active CINX company.
 * Must have a unique number
 * Must have a procurement status
@@ -16,26 +15,92 @@ It is important to understand that the parts on a requisition may be divided ont
 * Must have at least one item before it can be submitted
 
 **Supported API Services**
-
-* Get a list of requisitions
-* Get a requisition
-* Get a requisition’s related RFQs
-* Get a requisition’s related POs
-* Get a requisition template
-* Get a requisition number
-* Create a requisition
-* Modify a requisition
+* Get a List of Requisitions
+* Get a Requisition
+* Get a Requisition Template
+* Get a Requisition Number
+* Create a Requisition
+* Modify a Requisition
 
 ## Get Req List
 ### API Endpoint - Get a List of Requisitions
 
-This request will be used to get a list of requisitions.
+> The above code returns JSON structured like this:
+
+```json
+{
+    "response": {},
+    "rows": [
+        {
+			"cinx_guid": "e98e2fc5-f59b-5091-8b05-54edaa9284cc",
+			"number": "requistion 101",
+			"name": "req101",
+			"description": "req description",
+			"tx_type": "FIELD",
+			"current_owner_name": "Karl Stone",
+			"procurement_status": "SUBMITTED",
+			"submitted_by": "Will Stone",
+			"date_submitted": "2019-06-12 22:25:21Z",
+			"ship_via": "SUPPLIER TRUCK",
+			"delivery_location_type": "JOB SITE",
+			"delivery_location_name": null,
+			"date_deliver_by": "2019-06-14 22:21:07Z",
+			"vendor_number": null,
+			"vendor_name": "National Sales Company",
+			"links": [],
+			"project_number": "WTS-2017-04",
+			"project_name": "WTS-2017-04 - ATC Denver",
+			"phase": "First Floor",
+			"cost_code": "101-1025",
+			"category": "MAT",
+			"work_order": null,
+			"spool": null,
+			"allow_substitutes": true,
+			"item_count": 4
+		}
+    ]
+}
+```
+This endpoint will be used to get a list of requisitions. See the Supported Filters list for additional query parameters that can be used in the URL.
 
 URL Pattern: **{api path}/{api_version}sub/{api_token}/reqs**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/reqs`
 
 HTTP Method: `GET`
+
+**Supported Filters**
+Delivery Location Type: will limit results to a specific delivery type location
+URL Parameter: **delivery={option from below}**
+Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+
+Procurement Status: will limit results to a specific procurement status
+URL Parameter: **procurement={option from below}**
+Available options are: OPEN, SUBMITTED, IN-REVIEW, APPROVED, APPROVED W/MODS, REJECTED, PENDING ORDER, COMPLETE, CLOSED, CANCELLED, RESUBMITTED
+
+Project Reference: will limit results to a single project
+URL parameter:  **project={CINX project Id}**
+
+Vendor Reference: will limit results to a single vendor
+URL parameter:  **vendor={CINX vendor Id}**
+
+Ship Via: will limit results to a specific ship via value
+URL Parameter: **ship_via={option from below}**
+Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+
+Deliver By Date: will limit results to a specific date
+URL Parameter: **deliver_date={date}**
+Date Format: YYYY-MM-DD
+
+Submitter: will limit results to a specified CINX user
+URL parameter:  **submitter={submitter CINX User Id}**
+
+Current Owner: will limit results to a specified CINX user to whom the transaction is assigned
+URL parameter:  **owner={CINX User Id}**
+
+Transaction Number: will limit results to a specified transaction number
+URL parameter:  **number={transaction number}**
+
 
 ## Get Req
 ### API Endpoint - Get a Requisition
@@ -50,7 +115,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 
 HTTP Method: `GET`
 
-## Req Template
+## Get Req Template
 ### API Endpoint - Get a Requisition Template
 
 This request will be used to get a CINX Template for a requisition.
@@ -61,24 +126,42 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 
 HTTP Method: `GET`
 
-## New Req Number
+## Req Template Fields
+### Definition of the Req Template's Fields
+
+The table below defines the fields within the template.
+
+## Get Req Number
 ### API Endpoint - Get a New Requisition Number
 
-This request will be used to get a value to be used in the number field of a new requisition.
+> The above code returns JSON structured like this:
+
+```json
+{
+    "response": {},
+    "rows": [
+        {
+			"req": "REQ-0003"
+		}
+    ]
+}
+```
+This endpoint will be used to get a value to be used in the number field of a new requisition.
 
 **Notes** 
 * The response will contain a new value ONLY if the company has turned on the auto-numbering feature in CINX.
+* If a company is using a project number as a component within the numbering of the requisition, the CINX project Id can be added to the url using this syntax: **?project={CINX Project Id}**
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/reqs/next-number**
+URL Pattern: **{api path}/{api_version}sub/{api_token}/auto-number/req**
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/reqs/next-number`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/req`
 
 HTTP Method: `GET`
 
 ## Create Req
 ### API Endpoint - Create a New Requisition
 
-This API call will be used to create a new requisition.
+This endpoint will be used to create a new requisition.
 
 **Notes**
 

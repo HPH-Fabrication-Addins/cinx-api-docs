@@ -1,6 +1,56 @@
 # Additional Info
+## Get Countries
+### API Endpoint - Get a List of Countries
+
+> The above code returns JSON structured like this:
+
+```json
+{
+    "response": {},
+    "rows": [
+        {
+			"name": "United States",
+			"abv_alpha2": "US",
+			"abv_alpha3": "USA",
+			"country_code": "840"
+		}
+    ]
+}
+```
+This endpoint will be used to get a list of countries. This can be used when setting addresses within the API.  Please use the **abv_alpha3** field.
+
+URL Pattern: **{api path}/{api_version}sub/countries**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/countries`
+
+HTTP Method: `GET`
+
+## Get States
+### API Endpoint - Get a List of States for a Country
+
+> The above code returns JSON structured like this:
+
+```json
+{
+    "response": {},
+    "rows": [
+        {
+			"abv": "AL",
+			"name": "Alabama"
+		}
+    ]
+}
+```
+This endpoint will be used to get a list of states for a given country. This can be used when setting addresses within the API.  Please use the **abv** field.
+
+URL Pattern: **{api path}/{api_version}sub/country/{country_abv_alpha3}/states**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/country/usa/states`
+
+HTTP Method: `GET`
+
 ## CINX Concepts
-### Appendix A - CINX Concepts
+### List of CINX Terms and Concepts
 
 **Application:** is a grouping of pages, functionality, or an external software partner system that interacts
 with the CINX platform and is managed via a CINX subscription plan.
@@ -57,17 +107,16 @@ Entity).
 
 **User:** a person who has created a personal CINX account.
 
-## CINX URLs
-### Appendix B - CINX URLs
+## URLs
+### Useful CINX URLs
 
-Below is a listing of important CINX URLs
 
-**Login** -> https://secure.cinx.com/login
+**Login**: https://secure.cinx.com/login
 
-**Forgot CINX Password** -> https://secure.cinx.com/login/reset
+**Forgot CINX Password**: https://secure.cinx.com/login/reset
 
-**To set up a CINX account click here** -> https://secure.cinx.com/join
+**To set up a CINX account click here**: https://secure.cinx.com/join
 
-**Terms** -> http://support.cinx.com/terms-of-use-agreement
+**Terms**: http://support.cinx.com/terms-of-use-agreement
 
  

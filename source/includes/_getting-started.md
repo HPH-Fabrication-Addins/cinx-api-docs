@@ -19,17 +19,7 @@ cinxApi.pingCinx()
 
 ```json
 {
-  "response": {
-    "status_code": 200,
-    "message": "OK",
-    "method": "Validation->ping",
-    "uri": "ping",
-    "format": "json",
-    "start_time": 1563128596.686,
-    "total_time": 0.027906894683838,
-    "record_count": 1,
-    "total_count": 0
-  },
+  "response": {},
   "rows": [
     {
       "status": 200,
@@ -39,7 +29,7 @@ cinxApi.pingCinx()
 }
 ```
 
-This request can be used to test the availability of the CINX API.
+This endpoint can be used to test the availability of the CINX API.
 
 URL Pattern: **{api path}/{api_version}/ping**
 
@@ -66,17 +56,7 @@ cinxApi.getSubscriptions()
 
 ```json
 {
-    "response": {
-        "status_code": 200,
-        "message": "OK",
-        "method": "User->getUserSubscriptions",
-        "uri": "2.0/subs",
-        "format": "json",
-        "start_time": 1564084416.873,
-        "total_time": 0.43612098693848,
-        "record_count": 2,
-        "total_count": 0
-    },
+    "response": {},
     "rows": [
         {
             "cinx_api_token": "dfed7d88-adf8-5356-8029-fe061c93d0fe",
@@ -104,13 +84,6 @@ cinxApi.getSubscriptions()
                         "name": "Integrated Price Updates",
                         "type": "INTEGRATION : IMPORT-EXPORT",
                         "data_source": "Southland"
-                    },
-                    {
-                        "cinx_app_guid": "viewpoint-erp-app",
-                        "cinx_app_id": "808eb448-962c-564b-9e34-c560dc4fdbb9",
-                        "name": "Kirlin / Viewpoint ERP",
-                        "type": "INTEGRATION : ERP",
-                        "data_source": "My Private Catalog"
                     }
                 ]
             }

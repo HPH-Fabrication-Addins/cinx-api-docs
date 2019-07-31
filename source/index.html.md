@@ -20,6 +20,7 @@ includes:
   - mfr-price-sheets
   - job-cost-setup
   - vendors
+  - vendor-transactions
   - projects
   - transactions
   - transaction-items

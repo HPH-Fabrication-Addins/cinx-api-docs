@@ -283,7 +283,10 @@ Objects on the CINX Platform that can be auto-numbered for contractors are:
 *	Submittals
 *	Transmittals
 
-API calls for obtaining the next number for an object are provided and documented. Please note, that a number will only be provided if the company has activated the auto-numbering feature for the object.
+API calls for obtaining the next number for an object are provided and documented. Please note, that a number will only be provided if the company has activated the auto-numbering feature for the object. If the feature is not activated the API will return a 406 response.
+
+ <img src='images/No-Auto-Number.jpg'/>
+
 
 **Notes on other Transaction Numbering**
 *	Purchase Order Change Orders are numbered by appending a numeric suffix the the original PO Number.
