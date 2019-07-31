@@ -107,6 +107,41 @@ Entity).
 
 **User:** a person who has created a personal CINX account.
 
+## Transaction/BOM Intro
+### CINX BOM and BOM-ITEM Introduction
+
+**BOM**
+
+Like many construction software systems, CINX employs the BOM concept. BOM is an acronym for Bill of Materials. A BOM is a collection of materials/services that are grouped together for a particular job or transactional purpose. A BOM will generally contain some descriptive information about its use and then have a listing of materials or services that are linked to it.   
+
+CINX supports the following BOM types:
+
+BOM-ASSEMBLY (Assembly)
+
+BOM-REQ (Requisition)
+
+BOM-RFQ (Request for Quotation)
+
+BOM-QUOTE (Quotation)
+
+BOM-PO (Purchase Order)
+
+BOM-PO-MEMO (Purchase Order Change Order)
+
+BOM-DELIVERY
+
+BOM-RETURN
+
+BOM-INVOICE
+
+PROJECT
+
+**BOM-ITEM**
+
+Once a Catalog item is added to a BOM/Project it becomes a BOM-ITEM. Items imported from another system (estimating, CAD) will also become BOM-ITEMs.
+
+BOM-ITEM is a CINX data structure that is used with all BOM types. It inherits from the Catalog Item structure and also provides additional fields for defining its use within a project (quantities, breakdown structure, spec requirements) and transactions (availability and delivery information).
+
 ## URLs
 ### Useful CINX URLs
 

@@ -8,19 +8,19 @@ A CINX Material Requisition is a compilation of parts that need to be purchased.
 It is important to understand that the parts on a requisition may be divided onto different purchase orders which might be sent to different vendors.
 
 **Dependencies and Business Rules**
-* Must be created by a CINX user linked to an active CINX company.
-* Must have a unique number
-* Must have a procurement status
-* Must be assigned to a valid CINX user
-* Must have at least one item before it can be submitted
+- Must be created by a CINX user linked to an active CINX company.
+- Must have a unique number
+- Must have a procurement status
+- Must be assigned to a valid CINX user
+- Must have at least one item before it can be submitted
 
 **Supported API Services**
-* Get a List of Requisitions
-* Get a Requisition
-* Get a Requisition Template
-* Get a Requisition Number
-* Create a Requisition
-* Modify a Requisition
+- Get a List of Requisitions
+- Get a Requisition
+- Get a Requisition Template
+- Get a Requisition Number
+- Create a Requisition
+- Modify a Requisition
 
 ## Get Req List
 ### API Endpoint - Get a List of Requisitions
@@ -149,8 +149,8 @@ The table below defines the fields within the template.
 This endpoint will be used to get a value to be used in the number field of a new requisition.
 
 **Notes** 
-* The response will contain a new value ONLY if the company has turned on the auto-numbering feature in CINX.
-* If a company is using a project number as a component within the numbering of the requisition, the CINX project Id can be added to the url using this syntax: **?project={CINX Project Id}**
+- The response will contain a new value ONLY if the company has turned on the auto-numbering feature in CINX.
+- If a company is using a project number as a component within the numbering of the requisition, the CINX project Id can be added to the url using this syntax: **?project={CINX Project Id}**
 
 URL Pattern: **{api path}/{api_version}sub/{api_token}/auto-number/req**
 
@@ -165,10 +165,10 @@ This endpoint will be used to create a new requisition.
 
 **Notes**
 
-* A CINX Template is available that documents the available fields that can be populated.
-* A JSON formatted payload is used in the POST request
+- A CINX Template is available that documents the available fields that can be populated.
+- A JSON formatted payload is used in the POST request
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/req/partner/exec/cinx/json-req-import?body=json**
+URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-req-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-req-import?body=json`
 
@@ -181,10 +181,10 @@ This API call will be used to modify an existing CINX requisition.
 
 **Notes**
 
-* A CINX Template is available that documents the available fields that can be populated.
-* A JSON formatted payload is used in the PUT request
+- A CINX Template is available that documents the available fields that can be populated.
+- A JSON formatted payload is used in the PUT request
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/req/partner/exec/cinx/json-req-import?body=json**
+URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-req-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-req-import?body=json`
 

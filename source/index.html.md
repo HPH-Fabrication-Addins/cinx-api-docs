@@ -22,8 +22,8 @@ includes:
   - vendors
   - vendor-transactions
   - projects
-  - transactions
-  - transaction-items
+  - project-job-costing
+  - project-transactions
   - requisitions
   - notifications
   - additional-info
