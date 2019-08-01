@@ -12,7 +12,7 @@ When a relationship between the two parties is created, CINX creates a Commerce 
 CINX also has the ability for a contractor to create a **Private** vendor.  This is a vendor that is not a member of the CINX site.  A private vendor is unique to the contractor and will still be linked using a Commerce GUID.
 
 **Dependencies and Business Rules**
-- Must be created by a CINX user linked to an active CINX company.
+- Must be created by a CINX user linked to an active CINX company
 - The customer can assign an account number for the vendor
 - The vendor can assign an account number for the customer
 - Vendor users can be assigned to customers

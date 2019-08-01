@@ -8,7 +8,7 @@ A CINX Material Requisition is a compilation of parts that need to be purchased.
 It is important to understand that the parts on a requisition may be divided onto different purchase orders which might be sent to different vendors.
 
 **Dependencies and Business Rules**
-- Must be created by a CINX user linked to an active CINX company
+- Must be created by a CINX user linked to an active CINX company.
 - Must have a unique number
 - Must have a procurement status
 - Must be assigned to a valid CINX user
@@ -109,7 +109,7 @@ This request will be used to get the details of a specific requisition.  Note: T
 
 URL Pattern: **{api path}/{api_version}sub/{api_token}/req/{cinx_guid}**
 
-The cinx_guid will be the requisition’s CINX Id.
+The cinx_guid will be the Requisition’s CINX GUID.
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/req/e73c118f-1ee9-57e0-9c79-1775c1a04b81`
 

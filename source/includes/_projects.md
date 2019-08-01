@@ -6,7 +6,7 @@
 A CINX project is a **job** that is being performed for a customer/client on building, structure, or other asset.
 
 **Dependencies and Business Rules**
-- Must be created by a CINX user linked to an active CINX company.
+- Must be created by a CINX user linked to an active CINX company
 - A customer and its building can be associated with a project
 
 **Supported API Services**

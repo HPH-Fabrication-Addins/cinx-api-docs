@@ -25,6 +25,14 @@ includes:
   - project-job-costing
   - project-transactions
   - requisitions
+  - rfqs
+  - quotes
+  - purchase-orders
+  - po-change-orders
+  - back-orders
+  - deliveries
+  - invoices
+  - returns
   - notifications
   - additional-info
 

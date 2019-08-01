@@ -58,27 +58,29 @@ cinxApi.getProjectCosts(cinx_api_token, project_id)
     "response": {},
     "rows": [
         {
+            "cinx_guid": "676a95fb-3903-5e01-9f0d-2a31a426a76e",
             "construction_status": "NOT INSTALLED",
             "percent_complete": null,
             "project": {
+                "cinx_guid": "3b61f993-69b5-5db3-a367-2d204321c857",
                 "name": "HQ  Oct 23",
                 "description": "test",
                 "number": "WTS-2017-01"
             },
             "phase": {
-                "guid": "8e441211-45ca-5c84-b34b-a93cd4cdf853",
+                "cinx_guid": "8e441211-45ca-5c84-b34b-a93cd4cdf853",
                 "name": "1",
                 "description": "A",
                 "status": "A"
             },
             "material_cost_code": {
-                "ref": "df8f4e93-3d04-5379-948a-0b3f5319cbd2",
+                "cinx_guid": "df8f4e93-3d04-5379-948a-0b3f5319cbd2",
                 "name": "CC1",
                 "description": "Cost Code1",
                 "status": "A"
             },
             "category": {
-                "ref": "b7c8125e-6048-5085-a02c-8dd645012eda",
+                "cinx_guid": "b7c8125e-6048-5085-a02c-8dd645012eda",
                 "name": "Expense 13",
                 "description": "Exp13",
                 "status": "A"

@@ -10,16 +10,38 @@
     "response": {},
     "rows": [
         {
-			"cinx_guid": "f823d544-15dc-551f-94f9-f04283bfddb0",
-			
-			UPDATE PICTURE
+			"cinx_guid": "0854d705-707e-56f2-a230-9440e2472aeb",
+			"number": "11 20 17",
+			"name": "2017 11 20 test req",
+			"description": null,
+			"tx_type": "FIELD",
+			"current_owner_name": null,
+			"procurement_status": "OPEN",
+			"submitted_by": "User Not Found",
+			"date_submitted": "",
+			"ship_via": null,
+			"delivery_location_type": "JOB SITE",
+			"delivery_location_name": null,
+			"date_deliver_by": "",
+			"vendor_number": null,
+			"vendor_name": null,
+			"links": [],
+			"project_number": "WTS-2017-04",
+			"project_name": "WTS-2017-04 - ATC Denver",
+			"phase": null,
+			"cost_code": null,
+			"category": null,
+			"work_order": null,
+			"spool": null,
+			"allow_substitutes": true,
+			"item_count": 5
 		}
     ]
 }
 ```
 This endpoint will be used to get a list of Requisitions linked to a project. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid/reqs**
+URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid}/reqs**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/reqs`
 
@@ -100,7 +122,7 @@ URL parameter:  **number={transaction number}**
 ```
 This endpoint will be used to get a list of RFQs linked to a project. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid/rfqs**
+URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid}/rfqs**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/rfqs`
 
@@ -174,7 +196,7 @@ HTTP Method: `GET`
 ```
 This endpoint will be used to get a list of POs linked to a specified project. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid/pos**
+URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid}/pos**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/pos`
 
@@ -223,7 +245,7 @@ HTTP Method: `GET`
 ```
 This endpoint will be used to get a list of PO Change Orders linked to a specified project. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid/pocos**
+URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid}/pocos**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/pocos`
 
@@ -266,7 +288,7 @@ HTTP Method: `GET`
 ```
 This endpoint will be used to get a list of Deliveries for a project. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid/deliveries**
+URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid}/deliveries**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/deliveries`
 
@@ -309,7 +331,7 @@ HTTP Method: `GET`
 ```
 This endpoint will be used to get a list of Invoices linked to a project. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid/invoices**
+URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid}/invoices**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/invoices`
 
@@ -351,7 +373,7 @@ HTTP Method: `GET`
 ```
 This endpoint will be used to get a list of Returns linked to a Project. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid/returns**
+URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid}/returns**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/returns`
 
@@ -367,16 +389,45 @@ HTTP Method: `GET`
     "response": {},
     "rows": [
         {
-			"cinx_guid": "03dfb081-fc43-5196-8b58-d8277278bc59",
-			
-			UPDATE PICTURE
+			"cinx_guid": "076bd4bb-d6d9-5096-96f2-ec105d0562b1",
+			"date_expected_delivery": null,
+			"date_po_deliver_by": null,
+			"date_informed": null,
+			"date_last_updated": null,
+			"reason": null,
+			"quantity_backordered": 1,
+			"quantity_shipped": 0,
+			"quantity_po": 1,
+			"org_item_id": null,
+			"vendor_item_id": null,
+			"mfr_part_number": null,
+			"mfr_order": null,
+			"hph_code": "326ZU6542",
+			"upc": "67024006745",
+			"org_description": "Floor, Z1400 Adjustable, 4",
+			"cinx_description": null,
+			"mfr_description": null,
+			"mfr_name": null,
+			"delivery_location_type": null,
+			"delivery_location_name": "",
+			"vendor_number": "",
+			"vendor_name": "Hilti-6",
+			"work_order_id": null,
+			"work_order_name": null,
+			"spool_id": null,
+			"spool_name": null,
+			"project_number": "WTS-2017-03",
+			"project_name": "WTS-2017-03",
+			"po_number": "P19-062819",
+			"po_name": "P19-062819",
+			"po_submitted_by": "Will Stone"
 		}
     ]
 }
 ```
 This endpoint will be used to get a list of Back-Orders linked to a project. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid/back-orders**
+URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid}/back-orders**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/back-orders`
 
