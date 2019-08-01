@@ -1,7 +1,7 @@
-# Job Cost Setup	
+# Job Costing Setup	
 
-## Job Cost Intro
-### CINX Job Cost Introduction
+## Job Costing Intro
+### CINX Job Costing Introduction
 
 To allow for the proper reporting of project items and integration of transactions with contractor accounting systems, CINX has the ability for a company to define its job costing attributes. CINX supports the following job cost information types:
 

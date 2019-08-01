@@ -1,29 +1,25 @@
-# Requisitions
+# Returns
 
-## Req Definition
+## Return Definition
 ### CINX Object Defintion - Requisition
 
-A CINX Material Requisition is a compilation of parts that need to be purchased.  The list might be for a whole project, phase, system, pre-fab work-order, spool, or a general list created by a project foreman in the field. Requisitions are created to request the materials.  The parts on a requisition might also contain items from multiple projects that are combined into one purchase to achieve volume pricing.
-
-It is important to understand that the parts on a requisition may be divided onto different purchase orders which might be sent to different vendors.
+A CINX Return is a contractor initiatd process of returning previously purchased products to the vendor from which it was sourced. Part of the return process is receiving an RMA from a vendor which will be attached the the return. In CINX an organization may establish the return reasons and actions that are avaialable to users when returning products.
 
 **Dependencies and Business Rules**
-- Must be created by a CINX user linked to an active CINX company.
+- Must be created by a CINX user linked to an active CINX company
 - Must have a unique number
-- Must have a procurement status
-- Must be assigned to a valid CINX user
 - Must have at least one item before it can be submitted
 
 **Supported API Services**
-- Get a List of Requisitions
-- Get a Requisition
-- Get a Requisition Template
-- Get a Requisition Number
-- Create a Requisition
-- Modify a Requisition
+- Get a List of Returns
+- Get a Return
+- Get a Return Template
+- Get a Return Number
+- Create a Return
+- Modify a Return
 
-## Get Req List
-### API Endpoint - Get a List of Requisitions
+## Get Return List
+### API Endpoint - Get a List of Returns
 
 > The above code returns JSON structured like this:
 
@@ -32,40 +28,35 @@ It is important to understand that the parts on a requisition may be divided ont
     "response": {},
     "rows": [
         {
-			"cinx_guid": "e98e2fc5-f59b-5091-8b05-54edaa9284cc",
-			"number": "requistion 101",
-			"name": "req101",
-			"description": "req description",
-			"tx_type": "FIELD",
-			"current_owner_name": "Karl Stone",
-			"procurement_status": "SUBMITTED",
-			"submitted_by": "Will Stone",
-			"date_submitted": "2019-06-12 22:25:21Z",
+			"cinx_guid": "03dfb081-fc43-5196-8b58-d8277278bc59",
+			"number": "R000001",
+			"name": "R000001",
+			"status": "RMA REQUESTED",
+			"rma": null,
+			"rma_expires": null,
+			"reason": null,
+			"action": "Replace Item",
+			"current_owner_name": "Will Stone",
 			"ship_via": "SUPPLIER TRUCK",
-			"delivery_location_type": "JOB SITE",
+			"delivery_location_type": "FABRICATION SHOP",
 			"delivery_location_name": null,
-			"date_deliver_by": "2019-06-14 22:21:07Z",
-			"vendor_number": null,
-			"vendor_name": "National Sales Company",
+			"vendor_number": "H125",
+			"vendor_name": "Hilti-6",
+			"po_number": "PO-123",
+			"po_name": "PO123",
+			"project_number": "WTS-2017-03",
+			"project_name": "WTS-2017-03",
 			"links": [],
-			"project_number": "WTS-2017-04",
-			"project_name": "WTS-2017-04 - ATC Denver",
-			"phase": "First Floor",
-			"cost_code": "101-1025",
-			"category": "MAT",
-			"work_order": null,
-			"spool": null,
-			"allow_substitutes": true,
-			"item_count": 4
+			"item_count": 1
 		}
     ]
 }
 ```
-This endpoint will be used to get a list of requisitions. See the Supported Filters list for additional query parameters that can be used in the URL.
+This endpoint will be used to get a list of returns. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/reqs**
+URL Pattern: **{api path}/{api_version}sub/{api_token}/returns**
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/reqs`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/returns`
 
 HTTP Method: `GET`
 
@@ -102,37 +93,37 @@ Transaction Number: will limit results to a specified transaction number
 URL parameter:  **number={transaction number}**
 
 
-## Get Req
-### API Endpoint - Get a Requisition
+## Get Return
+### API Endpoint - Get a Return
 
-This request will be used to get the details of a specific requisition.  Note: This response will include the requisition’s items.
+This request will be used to get the details of a specific return  Note: This response will include the return’s items.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/req/{cinx_guid}**
+URL Pattern: **{api path}/{api_version}sub/{api_token}/return{cinx_guid}**
 
-The cinx_guid will be the Requisition’s CINX GUID.
+The cinx_guid will be the return's CINX Id.
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/req/e73c118f-1ee9-57e0-9c79-1775c1a04b81`
-
-HTTP Method: `GET`
-
-## Get Req Template
-### API Endpoint - Get a Requisition Template
-
-This request will be used to get a CINX Template for a requisition.
-
-URL Pattern: **{api path}/{api_version}sub/{api_token}/template/req**
-
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/req`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/return/03dfb081-fc43-5196-8b58-d8277278bc59`
 
 HTTP Method: `GET`
 
-## Req Template Fields
-### Definition of the Req Template's Fields
+## Get Return Template
+### API Endpoint - Get a Return Template
+
+This request will be used to get a CINX Template for a return.
+
+URL Pattern: **{api path}/{api_version}sub/{api_token}/template/return**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/return`
+
+HTTP Method: `GET`
+
+## Return Template Fields
+### Definition of the Return template's Fields
 
 The table below defines the fields within the template.
 
-## Get Req Number
-### API Endpoint - Get a New Requisition Number
+## Get Return Number
+### API Endpoint - Get a New Return Number
 
 > The above code returns JSON structured like this:
 
@@ -141,51 +132,50 @@ The table below defines the fields within the template.
     "response": {},
     "rows": [
         {
-			"req": "REQ-0003"
+			"return": "RET-000001"
 		}
     ]
 }
 ```
-This endpoint will be used to get a value to be used in the number field of a new requisition.
+This endpoint will be used to get a value to be used in the number field of a new return.
 
 **Notes** 
 - The response will contain a new value ONLY if the company has turned on the auto-numbering feature in CINX.
-- If a company is using a project number as a component within the numbering of the requisition, the CINX project Id can be added to the url using this syntax: **?project={CINX Project Id}**
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/auto-number/req**
+URL Pattern: **{api path}/{api_version}sub/{api_token}/auto-number/return**
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/req`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/return`
 
 HTTP Method: `GET`
 
-## Create Req
-### API Endpoint - Create a New Requisition
+## Create Return
+### API Endpoint - Create a New Return
 
-This endpoint will be used to create a new requisition.
+This endpoint will be used to create a new return.
 
 **Notes**
 
 - A CINX Template is available that documents the available fields that can be populated.
 - A JSON formatted payload is used in the POST request
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-req-import?body=json**
+URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-return-import?body=json**
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-req-import?body=json`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-return-import?body=json`
 
 HTTP Method: `POST`
 
 ## Modify Req
 ### API Endpoint - Modify a Requisition
 
-This API call will be used to modify an existing CINX requisition.
+This API call will be used to modify an existing CINX return.
 
 **Notes**
 
 - A CINX Template is available that documents the available fields that can be populated.
 - A JSON formatted payload is used in the PUT request
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-req-import?body=json**
+URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-return-import?body=json**
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-req-import?body=json`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-return-import?body=json`
 
 HTTP Method: `PUT`

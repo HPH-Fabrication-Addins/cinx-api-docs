@@ -13,12 +13,9 @@ includes:
   - introduction
   - getting-started
   - org-company
-  - get-catalog-items
   - catalog-item
-  - catalog-lines
   - catalog-updates
-  - mfr-price-sheets
-  - job-cost-setup
+  - job-costing-setup
   - vendors
   - vendor-transactions
   - projects

@@ -1,22 +1,22 @@
 # Catalog Updates
-## Introduction
-### CINX Catalog Update Introduction
+## Update Intro
+### CINX Catalog Update Introduction - Price Update Service
 
-CINX allows a company to define their own catalog of material content.  This Private Catalog can contain items from the Harrison Plumbing/Mechanical database, vendor catalogs that are hosted on CINX, and items created and maintained by the company.  In addition, a company can have access to CINX software partner catalogs.  For example, databases used by industry estimating systems are available as CINX catalogs.
+CINX allows a company to define their own catalog of material content. This Private Catalog can contain items from the Harrison Plumbing/Mechanical database, vendor catalogs that are hosted on CINX, and items created and maintained by the company. In addition, a company can have access to CINX software partner catalogs. For example, databases used by industry estimating systems are available as CINX catalogs.
 
-As part of CINX’s integration services, a company can request catalog updates formatted for industry software or develop a customized format.  The company can have unlimited subscriptions to CINX Import-Export Applications – Catalog updates.
+As part of CINX’s integration services, a company can request catalog updates formatted for industry software or develop a customized format. The company can have unlimited subscriptions to CINX Import-Export Applications.
 
-Each subscription will define the catalog of items and the output format.  This subscription has a CINX GUID that will be required to create API requests.  This GUID can be obtained from the CINX Subscriptions/Authorizations response.
+Each subscription will define the catalog of items and the output format. This subscription has an App Id that will be required to create API requests. This Id can be obtained from the CINX Subscriptions/Authorizations response.
 
 **Update Format**
 
-As noted above, CINX can produce update files according to the specifications of leading industry software systems.  Custom formats are also supported.
+As noted above, CINX can produce update files according to the specifications of leading industry software systems. Custom formats are also supported.
 
-In addition to specifying the catalog and format, a subscription has additional settings that are used to manage the update process.  Examples include a schedule for when updates are produced, who is notified when updates are ready, and what prices types (sources) to include in the updates.
+In addition to specifying the catalog and format, a subscription has additional settings that are used to manage the update process. Examples include a schedule for when updates are produced, who is notified when updates are ready, and what prices types (sources) to include in the updates.
 
 **Schedule**
 
-CINX has the ability to define when catalog updates are processed for subscriptions based on a Private CINX catalog.  Schedule options include:
+CINX has the ability to define when catalog updates are processed for subscriptions based on a Private CINX catalog. Schedule options include:
 
 * Nightly
 * Weekly (select the day)
@@ -25,7 +25,7 @@ CINX has the ability to define when catalog updates are processed for subscripti
 
 **Notifications**
 
-When a catalog update is posted, CINX checks the subscription settings and notifies the defined users.  Notification types include:
+When a catalog update is posted, CINX checks the subscription settings and notifies the defined users. Notification types include:
 
 * Email
 * CINX System Alert
@@ -41,29 +41,30 @@ CINX has the ability to include four price types in a catalog update file.
 
 **Catalog Update File Types**
 
-Each CINX catalog update file has field that defines its **Type.**  Catalog update types are:
+Each CINX catalog update file has field that defines its **Type**. Catalog update types are:
 
-* **Update** – file contains any items that have had changes since the previous update was published.
-* **Full** – file contains ALL items in the catalog.
-* **Custom** – file contains user-defined contents.
+* **Update** – file contains any items that have had changes since the previous update was published
+* **Full** – file contains ALL items in the catalog
+* **Custom** – file contains user-defined contents
 
 **Catalog Update File Status Filter Types**
 
-Each CINX catalog update file has field that defines its **Status.**  When an API call is made to retrieve Catalog Updates a Status filter can be submitted.  Catalog update status filters are:
-* **New** – files that have not been download/applied.
-* **Applied** – files that have been applied to the integrated system. (Requires submission of an API call to mark the file as Applied.)
-* **All** – returns all update files for the requested subscription.
+Each CINX catalog update file has field that defines its **Status**. When an API call is made to retrieve catalog updates a Status filter can be submitted.  Catalog update status filters are:
+
+* **New** – files that have not been download or applied
+* **Applied** – files that have been applied to the integrated system (Requires submission of an API call to mark the file as Applied.)
+* **All** – returns all update files for the requested subscription
 
 **CINX UI – Catalog Updates**
 
-The CINX UI provides extensive capabilities to manage the catalog updates.  Admin settings can be defined that will allow for the creation of update files that can be accessed via the API.  Custom update files can be requested.  Updates can be downloaded and a history of activity can be viewed.
+The CINX UI provides extensive capabilities to manage the catalog updates. Admin settings can be defined that will allow for the creation of update files that can be accessed via the API. Custom update files can be requested. Updates can be downloaded and a history of activity can be viewed.
 
 <img src='images/subscription15.jpg'/>
 
-(Note: many of the API URLs will contain an IPU parameter.  IPU is an acronym for Integrated Product/Price Updates)
+(Note: many of the API URLs will contain an IPU parameter. IPU is an acronym for Integrated Product/Price Updates)
 
 ## Get Update List
-### API – GET Catalog Updates List
+### API Endpoint – Get a List of Catalog Updates
 
 ```javascript
 //Using cinx-api.js
@@ -81,17 +82,7 @@ cinxApi.getCatalogUpdates(application_id, update_type)
 
 ```json
 {
-    "response": {
-        "status_code": 200,
-        "message": "OK",
-        "method": "IPU->allUpdates",
-        "uri": "sub/2494df92-e855-5563-826c-05907f9cca22/ipu/updates/all",
-        "format": "json",
-        "start_time": 1564235299.356,
-        "total_time": 0.44800806045532,
-        "record_count": 1,
-        "total_count": 1
-    },
+    "response": {},
     "rows": [
         {
             "title": "QuoteExpress Mechanical Legacy FULL 08/13/2014",
@@ -150,45 +141,44 @@ cinxApi.getCatalogUpdates(application_id, update_type)
 }
 ```
 
-This request will be used to retrieve catalog updates for a given subscription. 
+This endpoint will be used to retrieve catalog updates for a given subscription. 
 
-URL Pattern:
+**Notes**
+- If the url uses the new update status parameter and there are no **new** updates, the api response will have an empty **rows** array
 
-{api path}/sub/{app-id-guid}/ipu/updates/{update status type: new, all, or applied}
 
-Sample:
+URL Pattern: **{api path}/{api_version}sub/{api_token}/xxx    pp-id-guid}/ipu/updates/{update status type: new, all, or applied}**
 
-`https://api.cinx.com/sub/0d2b4b77-d706-e215-13f2-207c7e4aaee7/ipu/updates/all`
+URL Sample: `https://update me`
 
-If the url uses the new update status parameter and there are no **new** updates, the api response will have an empty **rows []** array.
+HTTP Method: `GET`
 
 ## Download Update
-### API – GET Catalog Update File - Download
+### API Endpoint – Get a Catalog Update File - Download
 
-This request will be used to download a catalog update file. 
+This endpoint will be used to download a catalog update file. 
 
-URL Pattern:
 
-{api path}/sub/{app-id-guid}/ipu/update/download/{update id}/data-file
+URL Pattern: **{api path}/sub/{app-id-guid}/ipu/update/download/{update id}/data-file**
 
-Sample:
+URL Sample: `https://update me`
 
-`https://api.cinx.com/sub/0d2b4b77-d706-e215-13f2-207c7e4aaee7/ipu/update/download/1ac399a6-40e8-f9e4-d5b8-d5dc709e9e1d/data-file`
+HTTP Method: `GET`
 
-This will stream back a data file containing the update
 
 <img src='images/subscription16.jpg'/>
 
 ## Download Bulletin
-### API – GET Catalog Update Bulletin File ONLY - Download
+### API Endpoint – Get a Catalog Update Bulletin File ONLY - Download
 
 This will stream back the bulletin file in the requested format.
 
-URL Pattern:
+URL Pattern: **{api path}/sub/{app-id-guid}/ipu/update/download/{update id}/bulletin?type={json or xls}**
 
-{api path}/sub/{app-id-guid}/ipu/update/download/{update id}/bulletin?type={json or xls}
+URL Sample:
+URL Sample: `https://update me`
 
-Samples:
+HTTP Method: `GET`
 
 `https://api.cinx.com/sub/0d2b4b77-d706-e215-13f2-207c7e4aaee7/ipu/update/download/1ac399a6-40e8-f9e4-d5b8-d5dc709e9e1d/bulletin?type=json`
 
@@ -197,7 +187,7 @@ Samples:
 <img src='images/subscription17.jpg'/>
 
 ## Mark as Applied
-### API – Mark Catalog Update File As Applied
+### API Endpoint – Mark Catalog Update File As Applied
 
 ```javascript
 //Using cinx-api.js
@@ -215,22 +205,15 @@ cinxApi.setCatalogUpdateFileApplied(application_id, file_id, values)
 
 This will mark the update as **Applied** and it will no longer show up in the **New** update list.
 
-URL Pattern:
+URL Pattern: **{api path}/sub/{app-id-guid}/ipu/update/apply/{update id}?values={applied_date:yyyy-mm-dd,download_date:yyyy-mm-dd}**
 
-{api path}/sub/{app-id-guid}/ipu/update/apply/{update id}?values={applied_date:yyyy-mm-dd,download_date:yyyy-mm-dd} 
+URL Sample: `https://update me`
+
+HTTP Method: `PUT`
+
 
 The update id field is taken from the Get Update response in the following location:  row -> cinx_id -> id
 
 Sample:
 
 `https://api.cinx.com/sub/0d2b4b77-d706-e215-13f2-207c7e4aaee7/ipu/update/apply/1ac399a6-40e8-f9e4-d5b8-d5dc709e9e1d?values={%22applied_date%22:%222016-06-10%22,%22download_date%22:%222016-06-10%22}`
-
-
-
-
-
-
-
-
-
-

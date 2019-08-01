@@ -3,13 +3,7 @@
 ## Invoice Definition
 ### CINX Object Defintion - Invoices
 
-A CINX Material Requisition is a compilation of parts that need to be purchased.  The list might be for a whole project, phase, system, pre-fab work-order, spool, or a general list created by a project foreman in the field. Requisitions are created to request the materials.  The parts on a requisition might also contain items from multiple projects that are combined into one purchase to achieve volume pricing.
-
-**Dependencies and Business Rules**
-- Must be created by a CINX user linked to an active CINX company.
-- Must have a unique number
-- Must be assigned to a valid CINX user
-- Must have at least one item before it can be submitted
+An Invoice is a vendor document is that indicates the quantities and costs of the products or services provider by the vendor. The invoice document will also define payment terms and dates.
 
 **Supported API Services**
 - Get a List of Invoices
@@ -28,31 +22,27 @@ A CINX Material Requisition is a compilation of parts that need to be purchased.
     "response": {},
     "rows": [
         {
-			"cinx_guid": "e98e2fc5-f59b-5091-8b05-54edaa9284cc",
-			"number": "requistion 101",
-			"name": "req101",
-			"description": "req description",
-			"tx_type": "FIELD",
-			"current_owner_name": "Karl Stone",
-			"procurement_status": "SUBMITTED",
-			"submitted_by": "Will Stone",
-			"date_submitted": "2019-06-12 22:25:21Z",
-			"ship_via": "SUPPLIER TRUCK",
-			"delivery_location_type": "JOB SITE",
-			"delivery_location_name": null,
-			"date_deliver_by": "2019-06-14 22:21:07Z",
-			"vendor_number": null,
-			"vendor_name": "National Sales Company",
+			"cinx_guid": "8ead0386-496b-571c-b14f-09eafeeb6758",
+			"number": "I456123",
+			"name": "I456123",
+			"status": "PENDING E-INVOICE",
+			"erp_status": "NOT SUBMITTED",
+			"current_owner_name": "Will Stone",
+			"entry_method": "MANUAL",
+			"entered_by": null,
+			"date_entered": "",
+			"accept_method": "MANUAL",
+			"accepted_by": null,
+			"date_issued": "2019-06-08",
+			"payment_due": "2019-06-21 00:00:00Z",
+			"vendor_number": "H125",
+			"vendor_name": "Hilti-6",
+			"po_number": "",
+			"po_name": "PO123",
+			"project_number": "WTS-2017-03",
+			"project_name": "WTS-2017-03",
 			"links": [],
-			"project_number": "WTS-2017-04",
-			"project_name": "WTS-2017-04 - ATC Denver",
-			"phase": "First Floor",
-			"cost_code": "101-1025",
-			"category": "MAT",
-			"work_order": null,
-			"spool": null,
-			"allow_substitutes": true,
-			"item_count": 4
+			"item_count": 15
 		}
     ]
 }
@@ -107,7 +97,7 @@ URL Pattern: **{api path}/{api_version}sub/{api_token}/invoice/{cinx_guid}**
 
 The cinx_guid will be the invoice’s CINX Id.
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/invoice/e73c118f-1ee9-57e0-9c79-1775c1a04b81`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/invoice/8ead0386-496b-571c-b14f-09eafeeb6758`
 
 HTTP Method: `GET`
 

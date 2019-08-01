@@ -3,14 +3,10 @@
 ## Back-Order Definition
 ### CINX Object Defintion - Back-Order
 
-A CINX Material Requisition is a compilation of parts that need to be purchased.  The list might be for a whole project, phase, system, pre-fab work-order, spool, or a general list created by a project foreman in the field. Requisitions are created to request the materials.  The parts on a requisition might also contain items from multiple projects that are combined into one purchase to achieve volume pricing.
+A back-order is an item from a submitted PO that cannot be delivered by the requested delivery date, and for which the customer is prepared to wait for the vendor to replenish its inventory.
 
 **Dependencies and Business Rules**
-- Must be created by a CINX user linked to an active CINX company.
-- Must have a unique number
-- Must have a procurement status
-- Must be assigned to a valid CINX user
-- Must have at least one item before it can be submitted
+- The item must be on a CINX PO
 
 **Supported API Services**
 - Get a List of Back-Orders
@@ -28,31 +24,38 @@ A CINX Material Requisition is a compilation of parts that need to be purchased.
     "response": {},
     "rows": [
         {
-			"cinx_guid": "e98e2fc5-f59b-5091-8b05-54edaa9284cc",
-			"number": "requistion 101",
-			"name": "req101",
-			"description": "req description",
-			"tx_type": "FIELD",
-			"current_owner_name": "Karl Stone",
-			"procurement_status": "SUBMITTED",
-			"submitted_by": "Will Stone",
-			"date_submitted": "2019-06-12 22:25:21Z",
-			"ship_via": "SUPPLIER TRUCK",
-			"delivery_location_type": "JOB SITE",
-			"delivery_location_name": null,
-			"date_deliver_by": "2019-06-14 22:21:07Z",
-			"vendor_number": null,
-			"vendor_name": "National Sales Company",
-			"links": [],
-			"project_number": "WTS-2017-04",
-			"project_name": "WTS-2017-04 - ATC Denver",
-			"phase": "First Floor",
-			"cost_code": "101-1025",
-			"category": "MAT",
-			"work_order": null,
-			"spool": null,
-			"allow_substitutes": true,
-			"item_count": 4
+			"cinx_guid": "076bd4bb-d6d9-5096-96f2-ec105d0562b1",
+			"date_expected_delivery": null,
+			"date_po_deliver_by": null,
+			"date_informed": null,
+			"date_last_updated": null,
+			"reason": null,
+			"quantity_backordered": 1,
+			"quantity_shipped": 0,
+			"quantity_po": 1,
+			"org_item_id": null,
+			"vendor_item_id": null,
+			"mfr_part_number": null,
+			"mfr_order": null,
+			"hph_code": "326ZU6542",
+			"upc": "67024006745",
+			"org_description": "Floor, Z1400 Adjustable, 4",
+			"cinx_description": null,
+			"mfr_description": null,
+			"mfr_name": null,
+			"delivery_location_type": null,
+			"delivery_location_name": "",
+			"vendor_number": "",
+			"vendor_name": "Hilti-6",
+			"work_order_id": null,
+			"work_order_name": null,
+			"spool_id": null,
+			"spool_name": null,
+			"project_number": "WTS-2017-03",
+			"project_name": "WTS-2017-03",
+			"po_number": "P19-062819",
+			"po_name": "P19-062819",
+			"po_submitted_by": "Will Stone"
 		}
     ]
 }
@@ -109,8 +112,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/b
 
 HTTP Method: `GET`
 
-## Get Back-Order Template
-### API Endpoint - Get a Back-Order Template
+## Get Back-Order Upd Template
+### API Endpoint - Get a Back-Order Update Template
 
 This request will be used to get a CINX Template for a updating a back-ordered item.
 
@@ -120,7 +123,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 
 HTTP Method: `GET`
 
-## Back-Order Template Fields
-### Definition of the Back-Order Template's Fields
+## Back-Order Update Template Fields
+### Definition of the Back-Order Update Template's Fields
 
 The table below defines the fields within the template.
