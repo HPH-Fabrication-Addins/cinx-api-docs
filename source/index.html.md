@@ -30,7 +30,7 @@ includes:
   - deliveries
   - invoices
   - returns
-  - notifications
+  - alerts
   - additional-info
 
 
