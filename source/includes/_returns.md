@@ -6,17 +6,19 @@
 A CINX Return is a contractor initiatd process of returning previously purchased products to the vendor from which it was sourced. Part of the return process is receiving an RMA from a vendor which will be attached the the return. In CINX an organization may establish the return reasons and actions that are avaialable to users when returning products.
 
 **Dependencies and Business Rules**
-- Must be created by a CINX user linked to an active CINX company
-- Must have a unique number
-- Must have at least one item before it can be submitted
+
+  - Must be created by a CINX user linked to an active CINX company
+  - Must have a unique number
+  - Must have at least one item before it can be submitted
 
 **Supported API Services**
-- Get a List of Returns
-- Get a Return
-- Get a Return Template
-- Get a Return Number
-- Create a Return
-- Modify a Return
+
+  - Get a List of Returns
+  - Get a Return
+  - Get a Return Template
+  - Get a Return Number
+  - Create a Return
+  - Modify a Return
 
 ## Get Return List
 ### API Endpoint - Get a List of Returns
@@ -54,13 +56,14 @@ A CINX Return is a contractor initiatd process of returning previously purchased
 ```
 This endpoint will be used to get a list of returns. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/returns**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/returns**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/returns`
 
 HTTP Method: `GET`
 
 **Supported Filters**
+
 Delivery Location Type: will limit results to a specific delivery type location
 URL Parameter: **delivery={option from below}**
 Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
@@ -98,7 +101,7 @@ URL parameter:  **number={transaction number}**
 
 This request will be used to get the details of a specific return  Note: This response will include the return’s items.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/return{cinx_guid}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/return{cinx_guid}**
 
 The cinx_guid will be the return's CINX Id.
 
@@ -111,7 +114,7 @@ HTTP Method: `GET`
 
 This request will be used to get a CINX Template for a return.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/template/return**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/return**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/return`
 
@@ -139,10 +142,11 @@ The table below defines the fields within the template.
 ```
 This endpoint will be used to get a value to be used in the number field of a new return.
 
-**Notes** 
-- The response will contain a new value ONLY if the company has turned on the auto-numbering feature in CINX.
+**Notes**
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/auto-number/return**
+  - The response will contain a new value ONLY if the company has turned on the auto-numbering feature in CINX.
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/auto-number/return**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/return`
 
@@ -155,26 +159,26 @@ This endpoint will be used to create a new return.
 
 **Notes**
 
-- A CINX Template is available that documents the available fields that can be populated.
-- A JSON formatted payload is used in the POST request
+  - A CINX Template is available that documents the available fields that can be populated.
+  - A JSON formatted payload is used in the POST request
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-return-import?body=json**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-return-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-return-import?body=json`
 
 HTTP Method: `POST`
 
-## Modify Req
-### API Endpoint - Modify a Requisition
+## Modify Return
+### API Endpoint - Modify a Return
 
 This API call will be used to modify an existing CINX return.
 
 **Notes**
 
-- A CINX Template is available that documents the available fields that can be populated.
-- A JSON formatted payload is used in the PUT request
+  - A CINX Template is available that documents the available fields that can be populated.
+  - A JSON formatted payload is used in the PUT request
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-return-import?body=json**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-return-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-return-import?body=json`
 

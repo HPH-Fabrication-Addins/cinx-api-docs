@@ -6,11 +6,12 @@
 An Invoice is a vendor document is that indicates the quantities and costs of the products or services provider by the vendor. The invoice document will also define payment terms and dates.
 
 **Supported API Services**
-- Get a List of Invoices
-- Get an Invoice
-- Get an Invoice Template
-- Create an Invoice
-- Modify an Invoice
+
+  - Get a List of Invoices
+  - Get an Invoice
+  - Get an Invoice Template
+  - Create an Invoice
+  - Modify an Invoice
 
 ## Get Invoice List
 ### API Endpoint - Get a List of Invoices
@@ -49,13 +50,14 @@ An Invoice is a vendor document is that indicates the quantities and costs of th
 ```
 This endpoint will be used to get a list of invoices. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/invoices**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/invoices**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/invoices`
 
 HTTP Method: `GET`
 
 **Supported Filters**
+
 Delivery Location Type: will limit results to a specific delivery type location
 URL Parameter: **delivery={option from below}**
 Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
@@ -93,7 +95,7 @@ URL parameter:  **number={transaction number}**
 
 This request will be used to get the details of a specific invoice.  Note: This response will include the invoice’s items.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/invoice/{cinx_guid}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/invoice/{cinx_guid}**
 
 The cinx_guid will be the invoice’s CINX Id.
 
@@ -106,7 +108,7 @@ HTTP Method: `GET`
 
 This request will be used to get a CINX Template for an invoice.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/template/invoice**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/invoice**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/invoice`
 
@@ -124,10 +126,10 @@ This endpoint will be used to create a new invoice.
 
 **Notes**
 
-- A CINX Template is available that documents the available fields that can be populated.
-- A JSON formatted payload is used in the POST request
+  - A CINX Template is available that documents the available fields that can be populated.
+  - A JSON formatted payload is used in the POST request
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-invoice-import?body=json**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-invoice-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-invoice-import?body=json`
 
@@ -140,10 +142,10 @@ This API call will be used to modify an existing CINX invoice.
 
 **Notes**
 
-- A CINX Template is available that documents the available fields that can be populated.
-- A JSON formatted payload is used in the PUT request
+  - A CINX Template is available that documents the available fields that can be populated.
+  - A JSON formatted payload is used in the PUT request
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-invoice-import?body=json**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-invoice-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-invoice-import?body=json`
 

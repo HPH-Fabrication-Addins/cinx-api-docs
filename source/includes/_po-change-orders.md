@@ -6,18 +6,20 @@
 A CINX Purchase Order Change Order is created when changes need to be made to a previously submitted purchase order. Example of changes include: changing a price or quantity; adding or modifying job costing information; adding or removing a item row. 
 
 **Dependencies and Business Rules**
-- Must be created by a CINX user linked to an active CINX company
-- Must be linked to a previously created purchase order
-- PO Change Orders will be automatically numbered by the system
-- Must have a procurement status
-- Must have at least one item before it can be submitted
+
+  - Must be created by a CINX user linked to an active CINX company
+  - Must be linked to a previously created purchase order
+  - PO Change Orders will be automatically numbered by the system
+  - Must have a procurement status
+  - Must have at least one item before it can be submitted
 
 **Supported API Services**
-- Get a List of PO Change Orders
-- Get a PO Change Order
-- Get a PO Change Order Template
-- Create a PO Change Order
-- Modify a PO Change Order
+
+  - Get a List of PO Change Orders
+  - Get a PO Change Order
+  - Get a PO Change Order Template
+  - Create a PO Change Order
+  - Modify a PO Change Order
 
 ## Get PO CO List
 ### API Endpoint - Get a List of PO Change Orders
@@ -62,13 +64,14 @@ A CINX Purchase Order Change Order is created when changes need to be made to a 
 ```
 This endpoint will be used to get a list of PO Change Orders. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/pocos**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/pocos**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/pocos`
 
 HTTP Method: `GET`
 
 **Supported Filters**
+
 Delivery Location Type: will limit results to a specific delivery type location
 URL Parameter: **delivery={option from below}**
 Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
@@ -106,7 +109,7 @@ URL parameter:  **number={transaction number}**
 
 This request will be used to get the details of a specific PO Change Order.  Note: This response will include the PO Change Order’s items.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/poco/{cinx_guid}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/poco/{cinx_guid}**
 
 The cinx_guid will be the PO Change Order’s CINX Id.
 
@@ -119,7 +122,7 @@ HTTP Method: `GET`
 
 This request will be used to get a CINX Template for a PO Change Order.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/template/poco**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/poco**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/poco`
 
@@ -137,10 +140,10 @@ This endpoint will be used to create a new PO Change Order.
 
 **Notes**
 
-- A CINX Template is available that documents the available fields that can be populated.
-- A JSON formatted payload is used in the POST request
+  - A CINX Template is available that documents the available fields that can be populated.
+  - A JSON formatted payload is used in the POST request
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-poco-import?body=json**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-poco-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-poco-import?body=json`
 
@@ -153,10 +156,10 @@ This API call will be used to modify an existing CINX PO Change Order.
 
 **Notes**
 
-- A CINX Template is available that documents the available fields that can be populated.
-- A JSON formatted payload is used in the PUT request
+  - A CINX Template is available that documents the available fields that can be populated.
+  - A JSON formatted payload is used in the PUT request
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-poco-import?body=json**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-poco-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-poco-import?body=json`
 

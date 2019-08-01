@@ -6,15 +6,19 @@
 To allow for the proper reporting of project items and integration of transactions with contractor accounting systems, CINX has the ability for a company to define its job costing attributes. CINX supports the following job cost information types:
 
 **PHASES**
+
 A Phase is construction management concept that allows a company to break-down a project into a smaller group of tasks commonly used for scheduling, sequencing, and reporting purposes. A Phase is also referred to as a Sub-Job, Area, or Extra by other software systems.  Example phases include, Site Work, First Floor, and System.
 
 **COST CODES**
+
 A Cost Code is an accounting and construction management concept that allows a company to track material and labor for cost reporting purposes.  Other systems refer to cost codes as Item Groups. Example cost codes are 200-Sanitary Sewer, 400-Domestic Water, and 600-Gas.
 
 **CATEGORIES**
+
 A Category is an accounting concept that allows a company to classify project costs for expensing purposes.  Categories are also known as Cost Classes.  For example, Material, Labor, Sub-Contractor, and Rental.
 
 **TAX GROUPS**
+
 A Tax Group is a collection of tax fields defined in an accounting system that allows for the proper identification and processing of taxes.  
 
 ## Get Phases
@@ -53,7 +57,7 @@ cinxApi.getJobCostPhases(cinx_api_token)
 
 This endpoint will be used to get a company’s list of project phases. In CINX, each company can define the list of standard phases that they use on projects. The company can define a name and description for each phase as well as a default material cost code. 
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/org/job-costing/phases**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/org/job-costing/phases**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/phases`
 
@@ -213,7 +217,7 @@ cinxApi.getJobCostCostCodes(cinx_api_token)
 
 This endpoint will be used to get a company’s list of material cost codes. In CINX, each company can define the list of cost codes that can be assigned to materials in a project. The company can define a name and description for each phase as well as a default category. 
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/org/job-costing/material-cost-codes**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/org/job-costing/material-cost-codes**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/material-cost-codes`
 
@@ -342,7 +346,7 @@ URL Pattern:
 
 This endpoint will be used to get a company’s list of accounting categories. In CINX, each company can define the list of standard categories. The company can define a name and description. 
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/org/job-costing/categories**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/org/job-costing/categories**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/categories`
 
@@ -390,7 +394,7 @@ URL Pattern:
 
 This endpoint will be used to get a company’s list of tax groups. In CINX, each company can define the list of standard tax groups. 
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/org/job-costing/tax-groups**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/org/job-costing/tax-groups**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/tax-groups`
 

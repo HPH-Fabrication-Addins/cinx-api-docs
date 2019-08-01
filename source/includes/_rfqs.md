@@ -6,17 +6,19 @@
 A CINX Request for Quotation is a compilation of  that a customer wants a vendor(s) to provide pricing on before making ordering/sourcing decisions. The list might be for a whole project, phase, system, pre-fab work-order, spool, or a general list created by a project foreman in the field. 
 
 **Dependencies and Business Rules**
-- Must be created by a CINX user linked to an active CINX company
-- Can be submitted to multiple vendors
-- Will be locked after it is submitted
+
+  - Must be created by a CINX user linked to an active CINX company
+  - Can be submitted to multiple vendors
+  - Will be locked after it is submitted
 
 **Supported API Services**
-- Get a List of RFQs
-- Get an RFQ
-- Get an RFQ Template
-- Get an RFQ Number
-- Create an RFQ
-- Modify an RFQ
+
+  - Get a List of RFQs
+  - Get an RFQ
+  - Get an RFQ Template
+  - Get an RFQ Number
+  - Create an RFQ
+  - Modify an RFQ
 
 ## Get RFQ List
 ### API Endpoint - Get a List of RFQs
@@ -61,13 +63,14 @@ A CINX Request for Quotation is a compilation of  that a customer wants a vendor
 ```
 This endpoint will be used to get a list of RFQs. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/rfqs**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/rfqs**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/rfqs`
 
 HTTP Method: `GET`
 
 **Supported Filters**
+
 Delivery Location Type: will limit results to a specific delivery type location
 URL Parameter: **delivery={option from below}**
 Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
@@ -105,7 +108,7 @@ URL parameter:  **number={transaction number}**
 
 This request will be used to get the details of a specific RFQ.  Note: This response will include the RFQ’s items.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/rfq/{cinx_guid}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/rfq/{cinx_guid}**
 
 The cinx_guid will be the RFQ’s CINX Id.
 
@@ -118,7 +121,7 @@ HTTP Method: `GET`
 
 This request will be used to get a CINX Template for an RFQ.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/template/rfq**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/rfq**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/rfq`
 
@@ -147,10 +150,11 @@ The table below defines the fields within the template.
 This endpoint will be used to get a value to be used in the number field of a new RFQ.
 
 **Notes** 
-- The response will contain a new value ONLY if the company has turned on the auto-numbering feature in CINX.
-- If a company is using a project number as a component within the numbering of the requisition, the CINX project Id can be added to the url using this syntax: **?project={CINX Project Id}**
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/auto-number/rfq**
+  - The response will contain a new value ONLY if the company has turned on the auto-numbering feature in CINX.
+  - If a company is using a project number as a component within the numbering of the requisition, the CINX project Id can be added to the url using this syntax: **?project={CINX Project Id}**
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/auto-number/rfq**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/rfq`
 
@@ -163,10 +167,10 @@ This endpoint will be used to create a new RFQ.
 
 **Notes**
 
-- A CINX Template is available that documents the available fields that can be populated.
-- A JSON formatted payload is used in the POST request
+  - A CINX Template is available that documents the available fields that can be populated.
+  - A JSON formatted payload is used in the POST request
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-rfq-import?body=json**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-rfq-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-rfq-import?body=json`
 
@@ -179,10 +183,10 @@ This API call will be used to modify an existing CINX RFQ.
 
 **Notes**
 
-- A CINX Template is available that documents the available fields that can be populated.
-- A JSON formatted payload is used in the PUT request
+  - A CINX Template is available that documents the available fields that can be populated.
+  - A JSON formatted payload is used in the PUT request
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-rfq-import?body=json**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-rfq-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-rfq-import?body=json`
 

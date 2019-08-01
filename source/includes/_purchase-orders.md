@@ -6,23 +6,25 @@
 A CINX Purchase Order is a compilation of parts that are being ordered  The list might be for a whole project, phase, system, pre-fab work-order, spool, or a general list created by a project foreman in the field. Requisitions are created to request the materials.  The parts on a requisition might also contain items from multiple projects that are combined into one purchase to achieve volume pricing.
 
 **Dependencies and Business Rules**
-- Must be created by a CINX user linked to an active CINX company
-- Must have a unique number
-- Must have a procurement status
-- Must have at least one item before it can be submitted
+
+  - Must be created by a CINX user linked to an active CINX company
+  - Must have a unique number
+  - Must have a procurement status
+  - Must have at least one item before it can be submitted
 
 **Supported API Services**
-- Get a List of Purchase Orders
-- Get a Purchase Order
-- Get a Purchase Order Template
-- Get a Purchase Order Number
-- Create a Purchase Order
-- Modify a Purchase Order
-- Get a List of Change Orders for a Purchase Order
-- Get a List of Deliveries for a Purchase Order
-- Get a List of Invoices for a Purchase Order
-- Get a List of Returns for a Purchse Order
-- Update a Purchase Order's ERP Status
+
+  - Get a List of Purchase Orders
+  - Get a Purchase Order
+  - Get a Purchase Order Template
+  - Get a Purchase Order Number
+  - Create a Purchase Order
+  - Modify a Purchase Order
+  - Get a List of Change Orders for a Purchase Order
+  - Get a List of Deliveries for a Purchase Order
+  - Get a List of Invoices for a Purchase Order
+  - Get a List of Returns for a Purchse Order
+  - Update a Purchase Order's ERP Status
 
 ## Get PO List
 ### API Endpoint - Get a List of Purchase Orders
@@ -68,13 +70,14 @@ A CINX Purchase Order is a compilation of parts that are being ordered  The list
 ```
 This endpoint will be used to get a list of purchase orders. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/pos**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/pos**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/pos`
 
 HTTP Method: `GET`
 
 **Supported Filters**
+
 Delivery Location Type: will limit results to a specific delivery type location
 URL Parameter: **delivery={option from below}**
 Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
@@ -112,7 +115,7 @@ URL parameter:  **number={transaction number}**
 
 This request will be used to get the details of a specific purchase order.  Note: This response will include the purchase order’s items.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/po/{cinx_guid}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/po/{cinx_guid}**
 
 The cinx_guid will be the purchase orders’s CINX Id.
 
@@ -125,7 +128,7 @@ HTTP Method: `GET`
 
 This request will be used to get a CINX Template for a purchase order.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/template/po**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/po**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/po`
 
@@ -154,10 +157,11 @@ The table below defines the fields within the template.
 This endpoint will be used to get a value to be used in the number field of a new purchase order.
 
 **Notes** 
-- The response will contain a new value ONLY if the company has turned on the auto-numbering feature in CINX.
-- If a company is using a project number as a component within the numbering of the requisition, the CINX project Id can be added to the url using this syntax: **?project={CINX Project Id}**
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/auto-number/po**
+  - The response will contain a new value ONLY if the company has turned on the auto-numbering feature in CINX.
+  - If a company is using a project number as a component within the numbering of the requisition, the CINX project Id can be added to the url using this syntax: **?project={CINX Project Id}**
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/auto-number/po**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/po`
 
@@ -170,10 +174,10 @@ This endpoint will be used to create a new purchase order.
 
 **Notes**
 
-- A CINX Template is available that documents the available fields that can be populated.
-- A JSON formatted payload is used in the POST request
+  - A CINX Template is available that documents the available fields that can be populated.
+  - A JSON formatted payload is used in the POST request
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-po-import?body=json**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-po-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-po-import?body=json`
 
@@ -186,10 +190,10 @@ This API call will be used to modify an existing CINX purchase order.
 
 **Notes**
 
-- A CINX Template is available that documents the available fields that can be populated.
-- A JSON formatted payload is used in the PUT request
+  - A CINX Template is available that documents the available fields that can be populated.
+  - A JSON formatted payload is used in the PUT request
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-po-import?body=json**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-po-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-po-import?body=json`
 
@@ -238,7 +242,7 @@ HTTP Method: `PUT`
 ```
 This endpoint will be used to get a list of PO Change Orders for a specified purchase order. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/po/{cinx_guid}/pocos**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/po/{cinx_guid}/pocos**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/po/a9863525-d926-5441-9f9c-aa47a285a19b/pocos`
 
@@ -281,7 +285,7 @@ HTTP Method: `GET`
 ```
 This endpoint will be used to get a list of Deliveries for a vendor. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/po/{cinx_guid}/deliveries**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/po/{cinx_guid}/deliveries**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/po/a9863525-d926-5441-9f9c-aa47a285a19b/deliveries`
 
@@ -324,7 +328,7 @@ HTTP Method: `GET`
 ```
 This endpoint will be used to get a list of Invoices for a purchase order. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/po/{cinx_guid}/invoices**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/po/{cinx_guid}/invoices**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/po/a9863525-d926-5441-9f9c-aa47a285a19b/invoices`
 
@@ -366,7 +370,7 @@ HTTP Method: `GET`
 ```
 This endpoint will be used to get a list of Returns for a purchase order. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/po/{cinx_guid/returns**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/po/{cinx_guid/returns**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/po/a9863525-d926-5441-9f9c-aa47a285a19b/returns`
 
@@ -420,7 +424,7 @@ HTTP Method: `GET`
 ```
 This endpoint will be used to get a list of Back-Orders for a purchase order. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/po/{cinx_guid/back-orders**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/po/{cinx_guid/back-orders**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/po/a9863525-d926-5441-9f9c-aa47a285a19b/back-orders`
 
@@ -431,7 +435,7 @@ HTTP Method: `GET`
 
 This API call will be used to modify the erp status for a purchase order in CINX.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/po/{cinx_guid/erp/applied**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/po/{cinx_guid/erp/applied**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/po/a9863525-d926-5441-9f9c-aa47a285a19b/erp/applied`
 

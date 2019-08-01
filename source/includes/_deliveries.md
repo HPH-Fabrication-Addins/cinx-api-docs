@@ -6,18 +6,20 @@
 A CINX Delivery is created when a shipment from a vendor is received. A Delivery references a purchase order on which the materials were ordered.  
 
 **Dependencies and Business Rules**
-- Must be created by a CINX user linked to an active CINX company
-- Must have a unique number
-- Must be linked to a CINX purchase order
-- Must have at least one item before it can be submitted
+
+  - Must be created by a CINX user linked to an active CINX company
+  - Must have a unique number
+  - Must be linked to a CINX purchase order
+  - Must have at least one item before it can be submitted
 
 **Supported API Services**
-- Get a List of Deliveries
-- Get a Delivery
-- Get a Delivery Template
-- Get a Delivery Number
-- Create a Delivery
-- Modify a Delivery
+
+  - Get a List of Deliveries
+  - Get a Delivery
+  - Get a Delivery Template
+  - Get a Delivery Number
+  - Create a Delivery
+  - Modify a Delivery
 
 ## Get Deliveries List
 ### API Endpoint - Get a List of Deliveries
@@ -56,13 +58,14 @@ A CINX Delivery is created when a shipment from a vendor is received. A Delivery
 ```
 This endpoint will be used to get a list of deliveries. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/deliveries**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/deliveries**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/deliveries`
 
 HTTP Method: `GET`
 
 **Supported Filters**
+
 Delivery Location Type: will limit results to a specific delivery type location
 URL Parameter: **delivery={option from below}**
 Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
@@ -100,7 +103,7 @@ URL parameter:  **number={transaction number}**
 
 This request will be used to get the details of a specific delivery. Note: This response will include the delivery’s items.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/delivery/{cinx_guid}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/delivery/{cinx_guid}**
 
 The cinx_guid will be the delivery's CINX Id.
 
@@ -113,7 +116,7 @@ HTTP Method: `GET`
 
 This request will be used to get a CINX Template for a delivery.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/template/delivery**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/delivery**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/delivery`
 
@@ -141,10 +144,11 @@ The table below defines the fields within the template.
 ```
 This endpoint will be used to get a value to be used in the number field of a new delivery.
 
-**Notes** 
-- The response will contain a new value ONLY if the company has turned on the auto-numbering feature in CINX.
+**Notes**
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/auto-number/delivery**
+  - The response will contain a new value ONLY if the company has turned on the auto-numbering feature in CINX.
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/auto-number/delivery**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/delivery`
 
@@ -157,10 +161,10 @@ This endpoint will be used to create a new delivery.
 
 **Notes**
 
-- A CINX Template is available that documents the available fields that can be populated.
-- A JSON formatted payload is used in the POST request
+  - A CINX Template is available that documents the available fields that can be populated.
+  - A JSON formatted payload is used in the POST request
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-delivery-import?body=json**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-delivery-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-delivery-import?body=json`
 
@@ -173,10 +177,10 @@ This API call will be used to modify an existing CINX delivery.
 
 **Notes**
 
-- A CINX Template is available that documents the available fields that can be populated.
-- A JSON formatted payload is used in the PUT request
+  - A CINX Template is available that documents the available fields that can be populated.
+  - A JSON formatted payload is used in the PUT request
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-delivery-import?body=json**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-delivery-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-delivery-import?body=json`
 

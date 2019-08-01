@@ -41,13 +41,14 @@
 ```
 This endpoint will be used to get a list of Requisitions linked to a project. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid}/reqs**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/reqs**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/reqs`
 
 HTTP Method: `GET`
 
 **Supported Filters**
+
 Delivery Location Type: will limit results to a specific delivery type location
 URL Parameter: **delivery={option from below}**
 Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
@@ -122,7 +123,7 @@ URL parameter:  **number={transaction number}**
 ```
 This endpoint will be used to get a list of RFQs linked to a project. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid}/rfqs**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/rfqs**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/rfqs`
 
@@ -139,14 +140,14 @@ HTTP Method: `GET`
     "rows": [
         {
 			"cinx_guid": "80e6d9c8-d2e4-5aaa-9bd3-3957430741dd",
-			UPDATE PICTURE
+			UPDATE CONTENT
 		}
     ]
 }
 ```
 This endpoint will be used to get a list of Quotes linked to a project. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid/quotes**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid/quotes**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/quotes`
 
@@ -168,8 +169,8 @@ HTTP Method: `GET`
 			"description": null,
 			"status": "SUBMITTED",
 			"procurement_status": "ORDERED",
-			"Project_number": "H125",
-			"Project_name": "Hilti-6",
+			"vendor_number": "V101",
+			"vendor_name": "Hilti-6",
 			"ship_via": "SUPPLIER TRUCK",
 			"delivery_location_type": "FABRICATION SHOP",
 			"delivery_location_name": null,
@@ -196,7 +197,7 @@ HTTP Method: `GET`
 ```
 This endpoint will be used to get a list of POs linked to a specified project. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid}/pos**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/pos**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/pos`
 
@@ -223,8 +224,8 @@ HTTP Method: `GET`
 			"po_name": "PO123",
 			"project_number": "WTS-2017-03",
 			"project_name": "WTS-2017-03",
-			"Project_number": "H125",
-			"Project_name": "Hilti-6",
+			"vendor_number": "H125",
+			"vendor_name": "Hilti-6",
 			"ship_via": "SUPPLIER TRUCK",
 			"delivery_location_type": "FABRICATION SHOP",
 			"delivery_location_name": null,
@@ -245,7 +246,7 @@ HTTP Method: `GET`
 ```
 This endpoint will be used to get a list of PO Change Orders linked to a specified project. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid}/pocos**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/pocos**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/pocos`
 
@@ -261,34 +262,34 @@ HTTP Method: `GET`
     "response": {},
     "rows": [
         {
-			"cinx_guid": "f116ad07-ab08-5b87-ad42-18cab454e086",
-			"number": "D000012",
-			"name": "D000012",
+			"cinx_guid": "5a72e540-eca9-5add-bb67-4669725b992b",
+			"number": "DELV-101B",
+			"name": "DELV-101B",
 			"description": null,
 			"status": "INCOMPLETE",
-			"Project_number": "H125",
-			"Project_name": "Hilti-6",
+			"vendor_number": "CXV101",
+			"vendor_name": "National Sales Company",
 			"ship_via": "SUPPLIER TRUCK",
-			"delivery_location_type": "FABRICATION SHOP",
+			"delivery_location_type": "JOB SITE",
 			"delivery_location_name": null,
-			"date_received": "2019-06-07",
-			"received_by": "Will Stone",
-			"total_weight": "456",
-			"packing_slip": "54654645",
+			"date_received": "2019-07-18 17:38:29Z",
+			"received_by": "Karl Stone",
+			"total_weight": "15487",
+			"packing_slip": null,
 			"links": [],
-			"project_number": "WTS-2017-03",
-			"project_name": "WTS-2017-03",
-			"po_number": "PO-123",
-			"po_name": "PO123",
-			"date_deliver_by": "2019-06-11",
-			"item_count": 15
+			"project_number": null,
+			"project_name": null,
+			"po_number": "PO-101B",
+			"po_name": "PO-070319A",
+			"date_deliver_by": "2019-07-11 23:59:59Z",
+			"item_count": 1
 		}
     ]
 }
 ```
 This endpoint will be used to get a list of Deliveries for a project. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid}/deliveries**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/deliveries**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/deliveries`
 
@@ -317,8 +318,8 @@ HTTP Method: `GET`
 			"accepted_by": null,
 			"date_issued": "2019-06-08",
 			"payment_due": "2019-06-21 00:00:00Z",
-			"Project_number": "H125",
-			"Project_name": "Hilti-6",
+			"vendor_number": "H125",
+			"vendor_name": "Hilti-6",
 			"po_number": "",
 			"po_name": "PO123",
 			"project_number": "WTS-2017-03",
@@ -331,7 +332,7 @@ HTTP Method: `GET`
 ```
 This endpoint will be used to get a list of Invoices linked to a project. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid}/invoices**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/invoices**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/invoices`
 
@@ -359,8 +360,8 @@ HTTP Method: `GET`
 			"ship_via": "SUPPLIER TRUCK",
 			"delivery_location_type": "FABRICATION SHOP",
 			"delivery_location_name": null,
-			"Project_number": "H125",
-			"Project_name": "Hilti-6",
+			"vendor_number": "H125",
+			"vendor_name": "Hilti-6",
 			"po_number": "PO-123",
 			"po_name": "PO123",
 			"project_number": "WTS-2017-03",
@@ -373,7 +374,7 @@ HTTP Method: `GET`
 ```
 This endpoint will be used to get a list of Returns linked to a Project. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid}/returns**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/returns**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/returns`
 
@@ -427,7 +428,7 @@ HTTP Method: `GET`
 ```
 This endpoint will be used to get a list of Back-Orders linked to a project. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid}/back-orders**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/back-orders**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/back-orders`
 

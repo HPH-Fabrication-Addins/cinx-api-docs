@@ -18,42 +18,42 @@ In addition to specifying the catalog and format, a subscription has additional 
 
 CINX has the ability to define when catalog updates are processed for subscriptions based on a Private CINX catalog. Schedule options include:
 
-* Nightly
-* Weekly (select the day)
-* Monthly (select the 1st, 15th, of 28th of the month)
-* Quarterly
+  - Nightly
+  - Weekly (select the day)
+  - Monthly (select the 1st, 15th, of 28th of the month)
+  - Quarterly
 
 **Notifications**
 
 When a catalog update is posted, CINX checks the subscription settings and notifies the defined users. Notification types include:
 
-* Email
-* CINX System Alert
+  - Email
+  - CINX System Alert
 
 **Price Types/Sources**
 
 CINX has the ability to include four price types in a catalog update file.  
 
-* Manufacturer List
-* Buy/Purchase  (taken from the company’s private catalog)
-* Sell/Invoice (taken from the company’s private catalog)
-* Estimate (taken from the company’s private catalog)
+  - Manufacturer List
+  - Buy/Purchase  (taken from the company’s private catalog)
+  - Sell/Invoice (taken from the company’s private catalog)
+  - Estimate (taken from the company’s private catalog)
 
 **Catalog Update File Types**
 
 Each CINX catalog update file has field that defines its **Type**. Catalog update types are:
 
-* **Update** – file contains any items that have had changes since the previous update was published
-* **Full** – file contains ALL items in the catalog
-* **Custom** – file contains user-defined contents
+  -  **Update** – file contains any items that have had changes since the previous update was published
+  -  **Full** – file contains ALL items in the catalog
+  -  **Custom** – file contains user-defined contents
 
 **Catalog Update File Status Filter Types**
 
 Each CINX catalog update file has field that defines its **Status**. When an API call is made to retrieve catalog updates a Status filter can be submitted.  Catalog update status filters are:
 
-* **New** – files that have not been download or applied
-* **Applied** – files that have been applied to the integrated system (Requires submission of an API call to mark the file as Applied.)
-* **All** – returns all update files for the requested subscription
+  -  **New** – files that have not been download or applied
+  -  **Applied** – files that have been applied to the integrated system (Requires submission of an API call to mark the file as Applied.)
+  -  **All** – returns all update files for the requested subscription
 
 **CINX UI – Catalog Updates**
 
@@ -144,10 +144,11 @@ cinxApi.getCatalogUpdates(application_id, update_type)
 This endpoint will be used to retrieve catalog updates for a given subscription. 
 
 **Notes**
-- If the url uses the new update status parameter and there are no **new** updates, the api response will have an empty **rows** array
+
+  - If the url uses the new update status parameter and there are no **new** updates, the api response will have an empty **rows** array
 
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/xxx    pp-id-guid}/ipu/updates/{update status type: new, all, or applied}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/xxx    pp-id-guid}/ipu/updates/{update status type: new, all, or applied}**
 
 URL Sample: `https://update me`
 
@@ -175,7 +176,6 @@ This will stream back the bulletin file in the requested format.
 
 URL Pattern: **{api path}/sub/{app-id-guid}/ipu/update/download/{update id}/bulletin?type={json or xls}**
 
-URL Sample:
 URL Sample: `https://update me`
 
 HTTP Method: `GET`

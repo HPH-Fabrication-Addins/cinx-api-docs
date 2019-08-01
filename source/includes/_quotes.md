@@ -6,8 +6,9 @@
 A CINX Quote is a document a vendor prepares in response to a customer’s Request for Quotation.  Quotes will contain the net prices a customer will pay if they place an order.
 
 **Supported API Services**
-- Get a List of Quotes
-- Get a Quote
+
+  - Get a List of Quotes
+  - Get a Quote
 
 
 ## Get Quote List
@@ -28,13 +29,14 @@ A CINX Quote is a document a vendor prepares in response to a customer’s Reque
 ```
 This endpoint will be used to get a list of quotes. See the Supported Filters list for additional query parameters that can be used in the URL.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/quotes**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/quotes**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/quotes`
 
 HTTP Method: `GET`
 
 **Supported Filters**
+
 Delivery Location Type: will limit results to a specific delivery type location
 URL Parameter: **delivery={option from below}**
 Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
@@ -72,7 +74,7 @@ URL parameter:  **number={transaction number}**
 
 This request will be used to get the details of a specific quote.  Note: This response will include the quote’s items.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/quote/{cinx_guid}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/quote/{cinx_guid}**
 
 The cinx_guid will be the quote’s CINX Id.
 

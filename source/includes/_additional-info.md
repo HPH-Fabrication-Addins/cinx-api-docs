@@ -17,7 +17,7 @@
     ]
 }
 ```
-This endpoint will be used to get a list of countries. This can be used when setting addresses within the API.  Please use the **abv_alpha3** field.
+This endpoint will be used to get a list of countries. This can be used when setting addresses within the API. Please use the **abv_alpha3** field.
 
 URL Pattern: **{api path}/{api_version}sub/countries**
 

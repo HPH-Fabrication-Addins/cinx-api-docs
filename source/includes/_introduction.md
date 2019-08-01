@@ -9,7 +9,7 @@ The CINX API provides access to key building material information, construction 
 
 The API requires a user to have a valid CINX account with an API subscription.  
 
-HPH will be pleased to work with any developer seeking to utilize the API. Please email us at: **support@cinx.com**
+HPH will be pleased to work with any developer seeking to utilize the API. Please email us at:  **support@cinx.com**
 
 ## REST API
 ### CINX REST API General Information
@@ -55,32 +55,38 @@ The CINX platform offers programmatic access to read and write data using REST w
 
 
 **Authentication & Headers**
+
 HTTP Basic Authentication over HTTPS is used to control access to CINX platform resources.
 
 With each API call, you’ll need to set request headers, including a CINX user’s email and password.
 
 
 **Account Authorization**
+
 CINX accounts are subscription based and have expiration dates. Accounts with expired subscriptions will not have access to CINX data.  
 
 
 **Production Endpoint Server Path**
+
 The production endpoint for the CINX API is: **https://api.cinx.com/**
 
 
 **API Version**
+
 The CINX API is versioned. This documentation supports version 2.0 and higher. The API version will be added to the API server path and become part of the base URL.
 
 **https://api.cinx.com/2.0/**
 
 
 **API Token**
+
 The CINX API uses an API Token when submitting web service requests. The CINX API Token is retrieved from the subscription authorization web service API response. A company that has a CINX account must also be configured to permit API access before the API token will be returned in the authorization API response. The API token is valid for the duration of a company’s CINX subscription. The API token will be added to the base URL following the API Version number.
 
 **https://api.cinx.com/2.0/{api_token_value}/**
 
 
 **API Response Formatting – Standard/JSON**
+
 All CINX API responses use a standardized format. By default, a JSON formatted response is provided.  Please see below if you prefer XML.
 
 The **response** object will contain meta data about the server’s response to the request.
@@ -89,15 +95,17 @@ The **rows** array will contain the query results.
 
 
 **API Response Formatting – XML**
+
 To receive an XML response, please add the following parameter to the url: **format=xml**
 
 
 **Result Rows - Paging**
+
 For many HTTP GET requests you can use URL parameters to define the number of rows returned in the response.  Valid input parameters are:
 
-**start={number}**
+  - **start={number}**
 
-**limit={number}**
+  - **limit={number}**
 
 ## App/Sub Model
 ### CINX Application/Subscription Model Introduction
@@ -264,7 +272,7 @@ To assist in the exchange of data between systems, CINX supports external refere
 
 A common use for an external reference is a system id from a non-CINX. The API supports setting of these references and provides a three-field array structure:
 
- <img src='images/cinx_ext-refs.jpg'/>
+ <img src='images/cinx-ext-refs.jpg'/>
 
 ## Auto-Numbering
 ### CINX Object Auto-Numbering 
@@ -272,16 +280,17 @@ A common use for an external reference is a system id from a non-CINX. The API s
 CINX provides a subscribing company with the option of automating the numbering of common objects when new instances are created. These numbers are the **public** values used by the company to define the objects. These are NOT system level ids.
 
 Objects on the CINX Platform that can be auto-numbered for contractors are:
-*	Vendors
-*	Customers
-*	Projects
-*	Requisitions
-*	RFQs (Request for Quotations)
-*	POs (Purchase Orders)
-*	Deliveries
-*	Returns
-*	Submittals
-*	Transmittals
+
+  - Vendors
+  - Customers
+  - Projects
+  - Requisitions
+  - RFQs (Request for Quotations)
+  - POs (Purchase Orders)
+  - Deliveries
+  - Returns
+  - Submittals
+  - Transmittals
 
 API calls for obtaining the next number for an object are provided and documented. Please note, that a number will only be provided if the company has activated the auto-numbering feature for the object. If the feature is not activated the API will return a 406 response.
 
@@ -289,27 +298,31 @@ API calls for obtaining the next number for an object are provided and documente
 
 
 **Notes on other Transaction Numbering**
-*	Purchase Order Change Orders are numbered by appending a numeric suffix the the original PO Number.
-*	Invoices use the Vendor Invoice number
+
+  - Purchase Order Change Orders are numbered by appending a numeric suffix the the original PO Number.
+  - Invoices use the Vendor Invoice number
 
 
 ## Documentation Notes
 ### API Documentation Web Site Formating Notes
 
 **API URL References**
+
 The API calls documented on this site will contain two URL sections to assist in the construction of properly formatted URL to be submitted to CINX.
 
-* URL PATTERN
+  - URL PATTERN
 This section defines the elements of the URL. Portions of the URL that will require variables to be inserted will be shown in curly braces. 
 
-* URL SAMPLES
+  - URL SAMPLES
 Each API call definition page will also contain at least one sample. The sample will be fully formatted.  
 THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided only for formatting verification purposes.
 
 
 **Template Field Names – Dot Notation**
+
 This documentation will present the field definitions of the CINX templates. Dot notation will be used in the name field to indicate the path to the field in the template.
 
 
 **Asynchronous Operations**
+
 Some PUT and POST operations will be processed asynchronously. This is due to the fact that some transactions could include a large volume of items which could require longer processing times. These calls will be noted on the API Documentation pages.

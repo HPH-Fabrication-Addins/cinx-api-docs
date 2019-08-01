@@ -6,19 +6,21 @@
 A CINX project is a **job** that is being performed for a customer/client on building, structure, or other asset.
 
 **Dependencies and Business Rules**
-- Must be created by a CINX user linked to an active CINX company
-- A customer and its building can be associated with a project
+
+  - Must be created by a CINX user linked to an active CINX company
+  - A customer and its building can be associated with a project
 
 **Supported API Services**
-- Get a List of Projects
-- Get a Project
-- Get a Project Template
-- Get a Project Number
-- Create a Project
-- Modify a Project
-- Get Project Transactions
-- Get Project Job Costing
-- Get Project Submittals
+
+  - Get a List of Projects
+  - Get a Project
+  - Get a Project Template
+  - Get a Project Number
+  - Create a Project
+  - Modify a Project
+  - Get Project Transactions
+  - Get Project Job Costing
+  - Get Project Submittals
 
 ## Get Project List
 ### API Endpoint - Get List of Projects
@@ -64,7 +66,7 @@ cinxApi.getProjects(cinx_api_token)
 
 This endpoint will be used to get a list of the organization's projects. 
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/projects**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/projects**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/projects`
 
@@ -141,7 +143,7 @@ cinxApi.getProjectDetails(cinx_api_token, project_id)
 
 This endpoint will be used to get the details of a specific project.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/project/{project_guid}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/e8c5dc6b-e95a-5009-ad89-a11520f55493`
 
@@ -152,7 +154,7 @@ HTTP Method: `GET`
 
 This endpoint will be used to get a CINX Template for a project.
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/template/project**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/project**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/project`
 
@@ -180,11 +182,12 @@ The table below defines the fields within the template.
 ```
 This request will be used to get a value to be used in the number field of a new project.
 
-**Notes** 
-- The response will contain a new value ONLY if the company has turned on the auto-numbering feature in CINX.
+**Notes**
+
+  - The response will contain a new value ONLY if the company has turned on the auto-numbering feature in CINX.
 
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/auto-number/project**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/auto-number/project**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/project`
 
@@ -229,10 +232,10 @@ This endpoint will be used to insert a new project.
 
 **Notes**
 
-- A CINX Template is available that documents the available fields that can be populated.
-- A JSON formatted payload is used in the POST request
+  - A CINX Template is available that documents the available fields that can be populated.
+  - A JSON formatted payload is used in the POST request
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-project-import?body=json**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-import?body=json`
 
@@ -276,10 +279,10 @@ This endpoint will be used to modify a project.
 
 **Notes**
 
-- A CINX Template is available that documents the available fields that can be populated.
-- A JSON formatted payload is used in the POST request
+  - A CINX Template is available that documents the available fields that can be populated.
+  - A JSON formatted payload is used in the POST request
 
-URL Pattern: **{api path}/{api_version}sub/{api_token}/partner/exec/cinx/json-project-import?body=json**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-import?body=json`
 
