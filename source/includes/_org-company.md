@@ -13,12 +13,12 @@ An Organization in CINX defines a company or grouping of individuals (residentia
 **Supported API Services**
 
   - [Get an Org's Details](#get-org-details)
-  - Get an Org Template
-  - Get an Org's List of Users
-  - Get an Org's List of Locations/Addresses
-  - Get an Org's List of Customer Types
-  - Get an Org's List of Vendor Types
-  - Get an Org's List of Project Types
+  - [Get an Org Template]()
+  - [Get an Org's List of Users]()
+  - [Get an Org's List of Locations/Addresses]()
+  - [Get an Org's List of Customer Types]()
+  - [Get an Org's List of Vendor Types]()
+  - [Get an Org's List of Project Types]()
   - Get an Org's List of Invoice Dispute Reasons
   - Get an Org's List of Return Reasons
   - Get an Org's List of Return Actions
@@ -26,7 +26,7 @@ An Organization in CINX defines a company or grouping of individuals (residentia
 The above list is intended to represent the API endpoints related to an Org and it core entities and references. There are many other org-related endpoint types documented on this site.  For example, an Org's Vendors, Projects, and Transactions.
 
 ## Get Org Details
-### API Endpoint - Get an Organization's Details
+### API Endpoint - Get an Organization's Details `GET`
 
 > The above code returns JSON structured like this:
 
@@ -42,7 +42,6 @@ The above list is intended to represent the API endpoints related to an Org and 
     ]
 }
 ```
-
 
 This endpoint will be used to get company’s CINX organization details.
 

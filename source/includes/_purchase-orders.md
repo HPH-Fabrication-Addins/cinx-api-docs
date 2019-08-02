@@ -546,7 +546,9 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 HTTP Method: `POST`
 
-Processing Type: `Asynchronous`
+<aside class="notice">
+The POST payload will be processed asynchronously.
+</aside>
 
 ## Modify PO
 ### API Endpoint - Modify a Purchase Order
