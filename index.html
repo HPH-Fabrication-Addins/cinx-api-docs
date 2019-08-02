@@ -1234,19 +1234,19 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <ul>
 <li><a href="#get-org-details">Get an Org&#39;s Details</a></li>
-<li>Get an Org Template</li>
-<li>Get an Org&#39;s List of Users</li>
-<li>Get an Org&#39;s List of Locations/Addresses</li>
-<li>Get an Org&#39;s List of Customer Types</li>
-<li>Get an Org&#39;s List of Vendor Types</li>
-<li>Get an Org&#39;s List of Project Types</li>
+<li><a href="#">Get an Org Template</a></li>
+<li><a href="#">Get an Org&#39;s List of Users</a></li>
+<li><a href="#">Get an Org&#39;s List of Locations/Addresses</a></li>
+<li><a href="#">Get an Org&#39;s List of Customer Types</a></li>
+<li><a href="#">Get an Org&#39;s List of Vendor Types</a></li>
+<li><a href="#">Get an Org&#39;s List of Project Types</a></li>
 <li>Get an Org&#39;s List of Invoice Dispute Reasons</li>
 <li>Get an Org&#39;s List of Return Reasons</li>
 <li>Get an Org&#39;s List of Return Actions</li>
 </ul>
 
 <p>The above list is intended to represent the API endpoints related to an Org and it core entities and references. There are many other org-related endpoint types documented on this site.  For example, an Org&#39;s Vendors, Projects, and Transactions.</p>
-<h2 id='get-org-details'>Get Org Details</h2><h3 id='api-endpoint-get-an-organization-39-s-details'>API Endpoint - Get an Organization&#39;s Details</h3>
+<h2 id='get-org-details'>Get Org Details</h2><h3 id='api-endpoint-get-an-organization-39-s-details-get'>API Endpoint - Get an Organization&#39;s Details <code>GET</code></h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
@@ -5164,7 +5164,9 @@ URL parameter:  <strong>number={transaction number}</strong></p>
 
 <p>HTTP Method: <code>POST</code></p>
 
-<p>Processing Type: <code>Asynchronous</code></p>
+<aside class="notice">
+The POST payload will be processed asynchronously.
+</aside>
 <h2 id='modify-po'>Modify PO</h2><h3 id='api-endpoint-modify-a-purchase-order'>API Endpoint - Modify a Purchase Order</h3>
 <p>This API call will be used to modify an existing CINX purchase order.</p>
 
