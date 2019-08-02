@@ -12,7 +12,7 @@ An Organization in CINX defines a company or grouping of individuals (residentia
 
 **Supported API Services**
 
-  - Get an Org's Details
+  - [Get an Org's Details](#get-org-details)
   - Get an Org Template
   - Get an Org's List of Users
   - Get an Org's List of Locations/Addresses
