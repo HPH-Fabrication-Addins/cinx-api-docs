@@ -126,7 +126,5 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 
 HTTP Method: `GET`
 
-## Back-Order Update Template Fields
-### Definition of the Back-Order Update Template's Fields
 
-The table below defines the fields within the template.
+The table below defines the input fields within the template.

@@ -176,6 +176,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 HTTP Method: `POST`
 
+Processing Type: `Asynchronous`
+
 ## Modify RFQ
 ### API Endpoint - Modify an RFQ
 
@@ -191,3 +193,5 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-r
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-rfq-import?body=json`
 
 HTTP Method: `PUT`
+
+Processing Type: `Asynchronous`

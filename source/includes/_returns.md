@@ -120,10 +120,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 
 HTTP Method: `GET`
 
-## Return Template Fields
-### Definition of the Return template's Fields
 
-The table below defines the fields within the template.
+The table below defines the input fields within the template.
 
 ## Get Return Number
 ### API Endpoint - Get a New Return Number
@@ -168,6 +166,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 HTTP Method: `POST`
 
+Processing Type: `Asynchronous`
+
 ## Modify Return
 ### API Endpoint - Modify a Return
 
@@ -183,3 +183,5 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-r
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-return-import?body=json`
 
 HTTP Method: `PUT`
+
+Processing Type: `Asynchronous`

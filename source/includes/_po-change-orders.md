@@ -128,10 +128,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 
 HTTP Method: `GET`
 
-## PO CO Template Fields
-### Definition of the PO Change Order Template's Fields
 
-The table below defines the fields within the template.
+The table below defines the input fields within the template.
 
 ## Create PO CO
 ### API Endpoint - Create a PO Change Order
@@ -149,6 +147,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 HTTP Method: `POST`
 
+Processing Type: `Asynchronous`
+
 ## Modify PO CO
 ### API Endpoint - Modify a PO Change Order
 
@@ -164,3 +164,5 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-p
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-poco-import?body=json`
 
 HTTP Method: `PUT`
+
+Processing Type: `Asynchronous`

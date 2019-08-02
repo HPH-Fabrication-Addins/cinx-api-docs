@@ -114,10 +114,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 
 HTTP Method: `GET`
 
-## Invoice Template Fields
-### Definition of the Invoice Template's Fields
 
-The table below defines the fields within the template.
+The table below defines the input fields within the template.
 
 ## Create Invoice
 ### API Endpoint - Create a New Invoice
@@ -135,6 +133,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 HTTP Method: `POST`
 
+Processing Type: `Asynchronous`
+
 ## Modify Invoice
 ### API Endpoint - Modify an Invoice
 
@@ -150,3 +150,5 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-i
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-invoice-import?body=json`
 
 HTTP Method: `PUT`
+
+Processing Type: `Asynchronous`

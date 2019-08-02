@@ -121,6 +121,138 @@ HTTP Method: `GET`
 ## Get Req Template
 ### API Endpoint - Get a Requisition Template
 
+```json
+{
+	"response": {},
+	"rows": [{
+		"doc_info": {},
+		"template": {
+			"cinx_guid": null,
+			"number": null,
+			"name": null,
+			"description": null,
+			"tx_sub_type": null,
+			"user_comment": null,
+			"procurement_status": "OPEN",
+			"allow_substitutes": true,
+			"cinx_user_guid_assign_to": null,
+			"dates": {
+				"need_by": null,
+				"approved": null,
+				"closed": null
+			},
+			"vendor": {
+				"cinx_commerce_guid": null,
+				"number": null
+			},
+			"project": {
+				"cinx_guid": null,
+				"number": null
+			},
+			"delivery": {
+				"address1": null,
+				"address2": null,
+				"address3": null,
+				"city": null,
+				"state": null,
+				"postal_code": null,
+				"country": "USA",
+				"ship_via": null,
+				"fob_type": null,
+				"ship_from": null,
+				"attention": null,
+				"location_type": "JOB SITE",
+				"location_name": null,
+				"instructions": null
+			},
+			"job_cost_defaults": {
+				"cinx_phase_guid": null,
+				"phase_name": null,
+				"cinx_material_cost_code_guid": null,
+				"material_cost_code_name": null,
+				"cinx_category_guid": null,
+				"category_name": null
+			},
+			"taxes": {
+				"taxable": false,
+				"cinx_guid": null,
+				"tax_group_name": null
+			},
+			"external_references": [{
+				"type": null,
+				"description": null,
+				"value": null
+			}],
+			"items": [{
+				"cinx_guid": null,
+				"quantity": null,
+				"need_by_date": null,
+				"allow_substitutes": true,
+				"hph_code": null,
+				"org_item_id": null,
+				"org_system_id": null,
+				"mfr_part_number": null,
+				"upc": null,
+				"size": null,
+				"description": null,
+				"mfr_name": null,
+				"item_type": null,
+				"vendor": {
+					"cinx_commerce_guid": null,
+					"number": null
+				},
+				"project": {
+					"cinx_guid": null,
+					"number": null
+				},
+				"delivery": {
+					"deliver_to": null,
+					"location_type": "JOB SITE",
+					"instructions": null,
+					"labeling_instructions": null,
+					"packaging_instructions": null
+				},
+				"work_breakdown": {
+					"work_order_id": null,
+					"work_order_name": null,
+					"spool_id": null,
+					"spool_number": null,
+					"building_name": null,
+					"level": null,
+					"space": null,
+					"sub_space": null,
+					"system": null,
+					"arch_symbol": null,
+					"tag": null
+				},
+				"job_cost": {
+					"cinx_phase_guid": null,
+					"phase_name": null,
+					"cinx_material_cost_code_guid": null,
+					"material_cost_code_name": null,
+					"cinx_category_guid": null,
+					"category_name": null
+				},
+				"taxes": {
+					"taxable": false,
+					"cinx_guid": null,
+					"tax_group_name": null
+				},
+				"design": {
+					"model_item_guid": null,
+					"model_name": null,
+					"model_file": null,
+					"drawing_number": null,
+					"drawing_name": null
+				}
+			}]
+		},
+		"field_options": {},
+		"api_calls": []
+	}]
+}
+```
+
 This request will be used to get a CINX Template for a requisition.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/req**
@@ -129,10 +261,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 
 HTTP Method: `GET`
 
-## Req Template Fields
-### Definition of the Req Template's Fields
 
-The table below defines the fields within the template.
+The table below defines the input fields within the template.
 
 ## Get Req Number
 ### API Endpoint - Get a New Requisition Number
@@ -178,6 +308,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 HTTP Method: `POST`
 
+Processing Type: `Asynchronous`
+
 ## Modify Req
 ### API Endpoint - Modify a Requisition
 
@@ -193,3 +325,5 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-r
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-req-import?body=json`
 
 HTTP Method: `PUT`
+
+Processing Type: `Asynchronous`

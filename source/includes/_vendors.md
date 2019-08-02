@@ -101,10 +101,61 @@ cinxApi.getVendorDetails(cinx_api_token, vendor_id)
 ```json
 {
     "response": {},
-    "rows": [
-        {  GET PICTURE
-        }
-    ]
+    "rows": [{
+        "cinx_commerce_guid": "de0cf849-6f7b-5df6-9ae9-f924659f2d25",
+        "number": "CXV101",
+        "name": "ABS Supply Company",
+        "short_name": null,
+        "description": "Full Service PVF Distributor.",
+        "type": null,
+        "web_site": null,
+        "logo": "http://cdn.dev.cinx.biz/assets/org-0000-5814/logo/org-0000-5814_logo_1.jpg",
+        "status": "A",
+        "location": {
+            "number": null,
+            "type": null,
+            "emergency_info": "Call night watchman at 314.555.1452"
+        },
+        "terms": {
+            "account_number": "CX101",
+            "payment_days_type": "Number of Days",
+            "payment_due_days": 15,
+            "late_fee_percent": 1,
+            "discount_days_type": null,
+            "discount_days": 0,
+            "discount_percent": 0
+        },
+        "accounting_defaults": {
+            "cinx_material_cost_code_guid": null,
+            "material_cost_code_name": null,
+            "cinx_category_guid": null,
+            "category_name": null,
+            "cinx_tax_group_guid": null,
+            "tax_group_name": null,
+            "gl_account": null
+        },
+        "addresses": [{
+            "type": "SHIPPING",
+            "address1": "1533 Delmar Avenue",
+            "address2": "",
+            "address3": "",
+            "country": "USA",
+            "city": "St. Louis",
+            "state": "AL",
+            "postal_code": "63103",
+            "description": "1533 Delmar Avenue"
+        }],
+        "phone_numbers": [{
+            "type": "OFFICE",
+            "number": "314.555.3200"
+        }],
+        "fax_numbers": [],
+        "email_addresses": [{
+            "type": "CORPORATE",
+            "address": "sales@abssupply1.com"
+        }],
+        "id_numbers": []
+    }]
 }
 ```
 
@@ -119,6 +170,88 @@ HTTP Method: `GET`
 ## Get Vendor Template
 ### API Endpoint - Get a Vendor Template
 
+```json
+{
+    "response": {},
+    "rows": [
+        {
+           "doc_info": {},
+           "template": {
+                "cinx_guid": null,
+                "number": null,
+                "name": null,
+                "short_name": null,
+                "description": null,
+                "type": null,
+                "web_site": null,
+                "status": "A",
+                "location": {
+                    "number": null,
+                    "type": null,
+                    "emergency_info": null
+                },
+                "terms": {
+                    "account_number": null,
+                    "payment_days_type": null,
+                    "payment_due_days": null,
+                    "late_fee_percent": null,
+                    "discount_days_type": null,
+                    "discount_days": null,
+                    "discount_percent": null
+                },
+                "accounting_defaults": {
+                    "cinx_material_cost_code_guid": null,
+                    "material_cost_code_name": null,
+                    "cinx_category_guid": null,
+                    "category_name": null,
+                    "cinx_tax_group_guid": null,
+                    "tax_group_name": null,
+                    "gl_account": null
+                },
+                "addresses": [
+                    {
+                        "type": null,
+                        "address1": null,
+                        "address2": null,
+                        "address3": null,
+                        "city": null,
+                        "state": null,
+                        "postal_code": null,
+                        "country": "USA"
+                    }
+                ],
+                "phone_numbers": [
+                    {
+                        "type": null,
+                        "number": null
+                    }
+                ],
+                "fax_numbers": [
+                    {
+                        "type": null,
+                        "number": null
+                    }
+                ],
+                "email_addresses": [
+                    {
+                        "type": null,
+                        "address": null
+                    }
+                ],
+                "id_numbers": [
+                    {
+                        "type": null,
+                        "number": null
+                    }
+                ]
+            },
+            "field_options": {},
+            "api_calls": {}
+        }
+    ]
+}
+```
+
 This endpoint will be used to get a CINX Template for a vendor.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/vendor**
@@ -127,10 +260,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 
 HTTP Method: `GET`
 
-## Vendor Template Fields
-### Definition of the Vendor Template's Fields
 
-The table below defines the fields within the template.
+The table below defines the input fields within the template.
 
 ## Get Vendor Number
 ### API Endpoint - Get a New Vendor Number

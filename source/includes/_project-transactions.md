@@ -47,38 +47,43 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 HTTP Method: `GET`
 
-**Supported Filters**
+**SUPPORTED FILTERS**
 
-Delivery Location Type: will limit results to a specific delivery type location
-URL Parameter: **delivery={option from below}**
-Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+**Delivery Location Type**: will limit results to a specific delivery type location
 
-Procurement Status: will limit results to a specific procurement status
-URL Parameter: **procurement={option from below}**
-Available options are: OPEN, SUBMITTED, IN-REVIEW, APPROVED, APPROVED W/MODS, REJECTED, PENDING ORDER, COMPLETE, CLOSED, CANCELLED, RESUBMITTED
+  - URL Parameter: **delivery={option_from_below}**
+  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
 
-Project Reference: will limit results to a single project
-URL parameter:  **project={CINX project Id}**
+**Procurement Status**: will limit results to a specific procurement status
 
-Project Reference: will limit results to a single Project
-URL parameter:  **Project={CINX Project Id}**
+  - URL Parameter: **procurement={option_from_below}**
+  - Available options are: OPEN, SUBMITTED, IN-REVIEW, APPROVED, APPROVED W/MODS, REJECTED, PENDING ORDER, COMPLETE, CLOSED, CANCELLED, RESUBMITTED
 
-Ship Via: will limit results to a specific ship via value
-URL Parameter: **ship_via={option from below}**
-Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+**Vendor Reference**: will limit results to a single vendor
 
-Deliver By Date: will limit results to a specific date
-URL Parameter: **deliver_date={date}**
-Date Format: YYYY-MM-DD
+  - URL parameter:  **vendor={{cinx_commerce_guid}}**
 
-Submitter: will limit results to a specified CINX user
-URL parameter:  **submitter={submitter CINX User Id}**
+**Ship Via**: will limit results to a specific ship via value
 
-Current Owner: will limit results to a specified CINX user to whom the transaction is assigned
-URL parameter:  **owner={CINX User Id}**
+  - URL Parameter: **ship_via={option_from_below}**
+  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
 
-Transaction Number: will limit results to a specified transaction number
-URL parameter:  **number={transaction number}**
+**Deliver By Date/Need By Date**: will limit results to a specific date
+
+  - URL Parameter: **deliver_date={date}**
+  - Date Format: YYYY-MM-DD
+
+**Submitter**: will limit results to a specified CINX user
+
+  - URL parameter:  **submitter={CINX_User_Id}**
+
+**Current Owner**: will limit results to a specified CINX user to whom the transaction is assigned
+
+  - URL parameter:  **owner={CINX_User_Id}**
+
+**Transaction Number**: will limit results to a specified transaction number
+
+  - URL parameter:  **number={transaction_number}**
 
 ## Get Project RFQs
 ### API Endpoint - Get a List of RFQs Linked to a Project
@@ -128,6 +133,42 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/r
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/rfqs`
 
 HTTP Method: `GET`
+
+
+**SUPPORTED FILTERS**
+
+**Delivery Location Type**: will limit results to a specific delivery type location
+
+  - URL Parameter: **delivery={option_from_below}**
+  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+
+**Workflow Status**: will limit results to a specific workflow status
+
+  - URL Parameter: **workflow={option_from_below}**
+  - Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, QUOTED
+
+**Vendor Reference**: will limit results to a single vendor
+
+  - URL parameter:  **vendor={{cinx_commerce_guid}}**
+
+**Ship Via**: will limit results to a specific ship via value
+
+  - URL Parameter: **ship_via={option_from_below}**
+  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+
+**Deliver By Date/Need By Date**: will limit results to a specific date
+
+  - URL Parameter: **deliver_date={date}**
+  - Date Format: YYYY-MM-DD
+
+**Submitter**: will limit results to a specified CINX user
+
+  - URL parameter:  **submitter={CINX_User_Id}**
+
+**Transaction Number**: will limit results to a specified transaction number
+
+  - URL parameter:  **number={transaction_number}**
+
 
 ## Get Project Quotes
 ### API Endpoint - Get a List of Quotes for a Project

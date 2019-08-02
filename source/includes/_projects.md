@@ -152,6 +152,60 @@ HTTP Method: `GET`
 ## Get Project Template
 ### API Endpoint - Get a Project Template
 
+```json
+{
+    "response": {},
+    "rows": [{
+        "doc_info": {},
+        "template": {
+            "cinx_guid": null,
+            "number": null,
+            "name": null,
+            "description": null,
+            "status": null,
+            "dates": {
+                "contract_award": null,
+                "scheduled_start": null,
+                "actual_start": null,
+                "scheduled_complete": null,
+                "actual_complete": null
+            },
+            "customer": {
+                "cinx_guid": null,
+                "customer_name": null,
+                "cinx_building_guid": null,
+                "building_name": null,
+                "project_number": null
+            },
+            "classifications": {
+                "delivery_method": null,
+                "is_leed": false,
+                "org_defined_type": null,
+                "construction_type": null,
+                "industry_type": null,
+                "cinx_type": null,
+                "sector_type": null
+            },
+            "contract": {
+                "budget_amount": null,
+                "budget_currency": null
+            },
+            "taxes": {
+                "taxable": false,
+                "cinx_guid": null,
+                "tax_group_name": null,
+                "tax_exempt_id": null
+            },
+            "size_square": {
+                "value": null,
+                "uom": null
+            }
+        },
+        "field_options": {},
+        "api_calls": []
+}
+```
+
 This endpoint will be used to get a CINX Template for a project.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/project**
@@ -160,10 +214,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 
 HTTP Method: `GET`
 
-## Project Template Fields
-### Definition of the Project Template's Fields
 
-The table below defines the fields within the template.
+The table below defines the input fields within the template.
 
 ## Get Project Number
 ### API Endpoint - Get a New Project Number

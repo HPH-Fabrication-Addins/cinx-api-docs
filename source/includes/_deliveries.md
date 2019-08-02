@@ -114,6 +114,74 @@ HTTP Method: `GET`
 ## Get Delivery Template
 ### API Endpoint - Get a Delivery Template
 
+```json
+{
+	"response": {},
+	"rows": [{
+		"doc_info": {},
+		"template": {
+			"cinx_guid": null,
+			"number": null,
+			"name": null,
+			"description": null,
+			"date_received": null,
+			"cinx_receiver_guid": null,
+			"location_type": null,
+			"location_name": null,
+			"packing_slip_number": null,
+			"total_weight": null,
+			"condition": null,
+			"was_insured": false,
+			"fob_type": null,
+			"fob_point": null,
+			"user_comment": null,
+			"workflow_status": "INCOMPLETE",
+			"delivery": {
+				"ship_via": null,
+				"package_id": null,
+				"driver": null,
+				"truck": null
+			},
+			"purchase_order": {
+				"cinx_guid": null,
+				"number": null
+			},
+			"vendor": {
+				"cinx_commerce_guid": null,
+				"number": null
+			},
+			"project": {
+				"cinx_guid": null,
+				"number": null
+			},
+			"items": [{
+				"cinx_po_item_guid": null,
+				"quantity_accepted": null,
+				"quantity_refused": null,
+				"date_received": null,
+				"cinx_receiver_guid": null,
+				"workflow_status": "INCOMPLETE",
+				"photo_url": null,
+				"delivery": {
+					"ship_via": null,
+					"location_type": null,
+					"location_name": null
+				},
+				"billable_weight": {
+					"weight": null,
+					"uom": null
+				},
+				"hazmat": {
+					"is_hazmat": false,
+					"hazmat_code": null
+				}
+			}]
+		},
+		"field_options": {},
+		"api_calls": []
+}
+```
+
 This request will be used to get a CINX Template for a delivery.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/delivery**
@@ -122,10 +190,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 
 HTTP Method: `GET`
 
-## Delivery Template Fields
-### Definition of the Delivery Template's Fields
 
-The table below defines the fields within the template.
+The table below defines the input fields within the template.
 
 ## Get Delivery Number
 ### API Endpoint - Get a New Delivery Number
@@ -170,6 +236,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 HTTP Method: `POST`
 
+Processing Type: `Asynchronous`
+
 ## Modify Delivery
 ### API Endpoint - Modify a Delivery
 
@@ -185,3 +253,5 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-d
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-delivery-import?body=json`
 
 HTTP Method: `PUT`
+
+Processing Type: `Asynchronous`

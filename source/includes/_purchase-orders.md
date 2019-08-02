@@ -113,6 +113,178 @@ URL parameter:  **number={transaction number}**
 ## Get PO
 ### API Endpoint - Get a Purchase Order
 
+```json
+{
+    "response": {},
+    "rows": [
+        {
+			"cinx_guid": "8185cbd2-18c6-5cdc-b3ed-25795aabbfcc",
+			"number": "PO-111111",
+			"name": "PO-111111",
+			"description": "No Description Entered",
+			"terms": "1.5/10",
+			"user_comment": "Test User Comment",
+			"procurement_status": "ORDERED",
+			"workflow_status": "SUBMITTED",
+			"erp_status": "NOT SUBMITTED",
+			"allow_substitutes": "1",
+			"submitter": {
+				"cinx_guid": "185aabe1-3487-5f59-9ad5-c577a76bd392",
+				"name": "Will Stone",
+				"email": "willstone@cinx.com"
+			},
+			"dates": {
+				"created": "2019-07-29",
+				"last_modified": "2019-07-29",
+				"order_by": null,
+				"need_by": "2019-08-02",
+				"submitted": "2019-07-29"
+			},
+			"vendor": {
+				"cinx_commerce_guid": "7880c854-017f-5359-96de-fdef626c33cf",
+				"number": "V101",
+				"name": "Hilti-6"
+			},
+			"project": {
+				"cinx_guid": "bb613aff-4256-5359-b7cd-391505d19e01",
+				"number": "WTS-2017-03",
+				"name": "WTS-2017-03"
+			},
+			"delivery": {
+				"address1": null,
+				"address2": null,
+				"address3": null,
+				"city": null,
+				"state": null,
+				"postal_code": null,
+				"country": "USA",
+				"ship_via": "SUPPLIER TRUCK",
+				"fob_type": "PREPAID",
+				"ship_from": "BRANCH",
+				"attention": "Site Forman",
+				"location_type": "JOB SITE",
+				"location_name": "HPH",
+				"instructions": "Handle with care"
+			},
+			"job_cost_defaults": {
+				"cinx_phase_guid": "3b61f993-69b5-5db3-a367-2d204321c857",
+				"phase_name": "First Floor",
+				"cinx_material_cost_code_guid": "5d9b83d0-a3de-5475-959d-04b92fd4de75",
+				"material_cost_code": "UG-123",
+				"cinx_category_guid": "31d57bb1-156e-5cf2-a1ce-05b57232e643",
+				"category_name": "MAT"
+			},
+			"taxes": {
+				"taxable": true,
+				"cinx_guid": "7c42f24f-766e-5220-bc7e-cce8048dbb57",
+				"tax_group_name": "TAX-12",
+				"tax_type": "Sales",
+				"tax_rate": 8
+			},
+			"external_references": [{
+				"type": "FAB SHOP TRANSACTION REF",
+				"description": "",
+				"value": "465465498796189fgf349"
+			}],
+			"charges": [],
+			"credits": [],
+			"counts": {
+				"items": 1,
+				"charges": 0,
+				"credits": 0
+			},
+			"items": [{
+				"cinx_guid": "11208a81-c1d2-53c8-8b46-272d65b3e295",
+				"sequence": 1,
+				"unit_price": 18.11,
+				"price_uom": "E",
+				"currency": "USD",
+				"price_source_type": "MFR LIST",
+				"need_by_date": "2019-07-15",
+				"allow_substitutes": true,
+				"hph_code": "012NI0018",
+				"org_item_id": null,
+				"org_system_id": null,
+				"mfr_part_number": "9055750",
+				"upc": "039923312969",
+				"size": "1\"",
+				"description": "1\" WROT CXC 90 ELBOW",
+				"mfr_name": "NIBCO, Inc.",
+				"item_type": "MATERIAL",
+				"procurement_status": "ORDERED",
+				"quantities": {
+					"ordered": 3,
+					"received": 0,
+					"invoiced": 0
+				},
+				"vendor": {
+					"cinx_category_guid": "7880c854-017f-5359-96de-fdef626c33cf",
+					"number": "V101",
+					"name": "Hilti-6",
+					"item_id": null,
+					"system_id": null,
+					"cinx_quote_guid": null,
+					"quote_number": null
+				},
+				"requisition": {
+					"cinx_guid": "2e5763f6-f7be-5179-9109-5e81014fb5b5",
+					"number": null,
+					"name": null
+				},
+				"project": {
+					"cinx_guid": "bb613aff-4256-5359-b7cd-391505d19e01",
+					"number": "WTS-2017-03",
+					"name": "WTS-2017-03"
+				},
+				"delivery": {
+					"ship_via": "SUPPLIER TRUCK",
+					"deliver_to": "Site Forman",
+					"location_type": "JOBSITE",
+					"location_name": "HPH",
+					"instructions": "Handle with double extra care",
+					"labeling_instructions": "HPH-789879",
+					"packaging_instructions": "Wrapped pallets"
+				},
+				"work_breakdown": {
+					"work_order_id": null,
+					"work_order_name": "WO-8774512",
+					"spool_id": null,
+					"spool_name": "SPL-4897987",
+					"building_name": "HPH1",
+					"level": "1",
+					"space": "Lobby",
+					"sub_space": "Domestic Cold Water",
+					"system": null,
+					"arch_symbol": "ELB-045",
+					"tag": null
+				},
+				"job_cost": {
+					"cinx_phase_guid": "3b61f993-69b5-5db3-a367-2d204321c857",
+					"phase_name": "First Floor",
+					"cinx_material_cost_code_guid": "5d9b83d0-a3de-5475-959d-04b92fd4de75",
+					"material_cost_code": "UG-123",
+					"cinx_category_guid": "31d57bb1-156e-5cf2-a1ce-05b57232e643",
+					"category_name": "MAT"
+				},
+				"taxes": {
+					"taxable": true,
+					"cinx_guid": "7c42f24f-766e-5220-bc7e-cce8048dbb57",
+					"tax_group_name": "TAX-12",
+					"tax_type": "SALES",
+					"tax_rate": 8,
+					"tax_amount": 0
+				},
+				"design": {
+					"model_item_guid": "234234q32fqw5324f3232",
+					"model_name": "HPH Model 1",
+					"model_file": "HPHModell.rvt",
+					"drawing_number": "PLB-01",
+					"drawing_name": "Plumbing 01"
+				}
+		}]	
+    }]
+}
+```
 This request will be used to get the details of a specific purchase order.  Note: This response will include the purchase order’s items.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/po/{cinx_guid}**
@@ -126,6 +298,199 @@ HTTP Method: `GET`
 ## Get PO Template
 ### API Endpoint - Get a Purchase Order Template
 
+```json
+{
+	"response": {},
+	"rows": [{
+		"doc_info": {},
+		"template": {
+			"cinx_guid": null,
+			"number": null,
+			"name": null,
+			"description": null,
+			"terms": null,
+			"user_comment": null,
+			"procurement_status": null,
+			"workflow_status": null,
+			"erp_status": null,
+			"allow_substitutes": true,
+			"dates": {
+				"order_by": null,
+				"need_by": null
+			},
+			"vendor": {
+				"cinx_guid": null,
+				"number": null
+			},
+			"project": {
+				"cinx_guid": null,
+				"number": null
+			},
+			"delivery": {
+				"address1": null,
+				"address2": null,
+				"address3": null,
+				"city": null,
+				"state": null,
+				"postal_code": null,
+				"country": null,
+				"ship_via": null,
+				"fob_type": null,
+				"ship_from": null,
+				"attention": null,
+				"location_type": null,
+				"location_name": null,
+				"instructions": null
+			},
+			"job_cost_defaults": {
+				"cinx_phase_guid": null,
+				"phase_name": null,
+				"cinx_material_cost_code_guid": null,
+				"material_cost_code_name": null,
+				"cinx_category_guid": null,
+				"category_name": null
+			},
+			"taxes": {
+				"taxable": true,
+				"cinx_guid": null,
+				"tax_group_name": null
+			},
+			"charges": [{
+				"type": null,
+				"description": null,
+				"unit_price": null,
+				"job_cost": {
+					"cinx_phase_guid": null,
+					"phase_name": null,
+					"cinx_material_cost_code_guid": null,
+					"material_cost_code_name": null,
+					"cinx_category_guid": null,
+					"category_name": null,
+					"gl_account": null
+				},
+				"taxes": {
+					"taxable": true,
+					"cinx_guid": null,
+					"tax_group_name": null,
+					"tax_type": null,
+					"tax_rate": null,
+					"tax_amount": null
+				},
+				"project": {
+					"cinx_guid": null,
+					"number": null
+				}
+			}],
+			"credits": [{
+				"type": null,
+				"description": null,
+				"unit_price": null,
+				"job_cost": {
+					"cinx_phase_guid": null,
+					"phase_name": null,
+					"cinx_material_cost_code_guid": null,
+					"material_cost_code_name": null,
+					"cinx_category_guid": null,
+					"category_name": null,
+					"gl_account": null
+				},
+				"taxes": {
+					"taxable": true,
+					"cinx_guid": null,
+					"tax_group_name": null,
+					"tax_type": null,
+					"tax_rate": null,
+					"tax_amount": null
+				},
+				"project": {
+					"cinx_guid": null,
+					"number": null
+				}
+			}],
+			"external_references": [{
+				"type": null,
+				"description": null,
+				"value": null
+			}],
+			"items": [{
+				"cinx_guid": null,
+				"quantity": null,
+				"price_uom": null,
+				"unit_price": null,
+				"currency": null,
+				"price_source_type": null,
+				"need_by_date": null,
+				"allow_substitutes": true,
+				"hph_code": null,
+				"org_item_id": null,
+				"org_system_id": null,
+				"mfr_part_number": null,
+				"upc": null,
+				"size": null,
+				"description": null,
+				"mfr_name": null,
+				"item_type": null,
+				"procurement_status": null,
+				"vendor": {
+					"cinx_commerce_guid": null,
+					"number": null
+				},
+				"project": {
+					"cinx_guid": null,
+					"number": null
+				},
+				"delivery": {
+					"ship_via": null,
+					"deliver_to": null,
+					"location_type": null,
+					"location_name": null,
+					"instructions": null,
+					"labeling_instructions": null,
+					"packaging_instructions": null
+				},
+				"work_breakdown": {
+					"work_order_id": null,
+					"work_order_name": null,
+					"spool_id": null,
+					"spool_name": null,
+					"building_name": null,
+					"level": null,
+					"space": null,
+					"sub_space": null,
+					"system": null,
+					"arch_symbol": null,
+					"tag": null
+				},
+				"job_cost": {
+					"cinx_phase_guid": null,
+					"phase_name": null,
+					"cinx_material_cost_code_guid": null,
+					"material_cost_code_name": null,
+					"cinx_category_guid": null,
+					"category_name": null
+				},
+				"taxes": {
+					"taxable": true,
+					"cinx_guid": null,
+					"tax_group_name": null,
+					"tax_type": null,
+					"tax_rate": null,
+					"tax_amount": null
+				},
+				"design": {
+					"model_item_guid": null,
+					"model_name": null,
+					"model_file": null,
+					"drawing_number": null,
+					"drawing_name": null
+				}
+			}]
+		},
+		"field_options": {},
+		"api_calls": []
+	}]
+}
+```
 This request will be used to get a CINX Template for a purchase order.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/po**
@@ -134,10 +499,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 
 HTTP Method: `GET`
 
-## PO Template Fields
-### Definition of the Purchase Order Template's Fields
 
-The table below defines the fields within the template.
+The table below defines the input fields within the template.
 
 ## Get PO Number
 ### API Endpoint - Get a New Purchase Order Number
@@ -183,6 +546,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 HTTP Method: `POST`
 
+Processing Type: `Asynchronous`
+
 ## Modify PO
 ### API Endpoint - Modify a Purchase Order
 
@@ -198,6 +563,8 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-p
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-po-import?body=json`
 
 HTTP Method: `PUT`
+
+Processing Type: `Asynchronous`
 
 ## Get PO Change Orders
 ### API Endpoint - Get a List of PO Change Orders for a Purchase Order
