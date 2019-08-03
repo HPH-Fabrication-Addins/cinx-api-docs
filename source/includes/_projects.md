@@ -3,7 +3,7 @@
 ## Project Definition
 ### CINX Object Defintion - Project
 
-A CINX project is a **job** that is being performed for a customer/client on building, structure, or other asset.
+A CINX project is a job that is being performed for a customer/client on building, structure, or other asset.
 
 **Dependencies and Business Rules**
 
@@ -12,14 +12,14 @@ A CINX project is a **job** that is being performed for a customer/client on bui
 
 **Supported API Services**
 
-  - Get a List of Projects
-  - Get a Project
-  - Get a Project Template
-  - Get a Project Number
-  - Create a Project
-  - Modify a Project
-  - Get Project Transactions
-  - Get Project Job Costing
+  - [Get a List of Projects](#get-project-list)
+  - [Get a Project](#get-project)
+  - [Get a Project Template](#get-project-template)
+  - [Get a Project Number](#get-project-number)
+  - [Create a Project](#create-project)
+  - [Modify a Project](#modify-project)
+  - [Get Project Job Costing](#project-job-costing)
+  - [Get Project Transactions](#project-transactions)
   - Get Project Submittals
 
 ## Get Project List
@@ -63,14 +63,13 @@ cinxApi.getProjects(cinx_api_token)
     ]
 }
 ```
+`GET`
 
 This endpoint will be used to get a list of the organization's projects. 
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/projects**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/projects`
-
-HTTP Method: `GET`
 
 ## Get Project
 ### API Endpoint - Get a Project
@@ -140,14 +139,13 @@ cinxApi.getProjectDetails(cinx_api_token, project_id)
     ]
 }
 ```
+`GET`
 
 This endpoint will be used to get the details of a specific project.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/e8c5dc6b-e95a-5009-ad89-a11520f55493`
-
-HTTP Method: `GET`
 
 ## Get Project Template
 ### API Endpoint - Get a Project Template
@@ -205,14 +203,13 @@ HTTP Method: `GET`
         "api_calls": []
 }
 ```
+`GET`
 
 This endpoint will be used to get a CINX Template for a project.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/project**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/project`
-
-HTTP Method: `GET`
 
 
 The table below defines the input fields within the template.
@@ -232,6 +229,8 @@ The table below defines the input fields within the template.
     ]
 }
 ```
+`GET`
+
 This request will be used to get a value to be used in the number field of a new project.
 
 **Notes**
@@ -242,9 +241,6 @@ This request will be used to get a value to be used in the number field of a new
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/auto-number/project**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/project`
-
-HTTP Method: `GET`
-
 
 ## Create Project
 ### API Endpoint - Create a New Project
@@ -279,6 +275,7 @@ cinxApi.postNewProject(cinx_api_token, values)
     ]
 }
 ```
+ `POST`
 
 This endpoint will be used to insert a new project.
 
@@ -290,8 +287,6 @@ This endpoint will be used to insert a new project.
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-import?body=json`
-
-HTTP Method: `POST`
  
 ## Modify Project
 ### API Endpoint - Modify a CINX Project
@@ -326,16 +321,15 @@ cinxApi.modifyProject(cinx_api_token, project_id, values)
     ]
 }
 ```
+`PUT`
 
 This endpoint will be used to modify a project.
 
 **Notes**
 
   - A CINX Template is available that documents the available fields that can be populated.
-  - A JSON formatted payload is used in the POST request
+  - A JSON formatted payload is used in the PUT request
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-import?body=json`
-
-HTTP Method: `PUT`

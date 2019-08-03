@@ -13,20 +13,21 @@ An Organization in CINX defines a company or grouping of individuals (residentia
 **Supported API Services**
 
   - [Get an Org's Details](#get-org-details)
-  - [Get an Org Template]()
-  - [Get an Org's List of Users]()
-  - [Get an Org's List of Locations/Addresses]()
-  - [Get an Org's List of Customer Types]()
-  - [Get an Org's List of Vendor Types]()
-  - [Get an Org's List of Project Types]()
-  - Get an Org's List of Invoice Dispute Reasons
-  - Get an Org's List of Return Reasons
-  - Get an Org's List of Return Actions
+  - [Get an Org Template](#get-org-template)
+  - [Modify Org](#modify-org)
+  - [Get an Org's List of Users](#org-users)
+  - [Get an Org's List of Locations/Addresses](#org-locations-addresses)
+  - [Get an Org's List of Customer Types](#get-customer-types)
+  - [Get an Org's List of Vendor Types](#get-vendor-types)
+  - [Get an Org's List of Project Types](#get-project-types)
+  - [Get an Org's List of Invoice Dispute Reasons](#get-dispute-reasons)
+  - [Get an Org's List of Return Reasons](#get-return-reasons)
+  - [Get an Org's List of Return Actions](#get-return-actions)
 
-The above list is intended to represent the API endpoints related to an Org and it core entities and references. There are many other org-related endpoint types documented on this site.  For example, an Org's Vendors, Projects, and Transactions.
+The above list is intended to represent the API endpoints related to an Org and it core entities and references. There are many other org-related endpoint types documented on this site.  For example, an [Org's Vendors](#vendors), [Projects](#projects), and Transactions.
 
 ## Get Org Details
-### API Endpoint - Get an Organization's Details `GET`
+### API Endpoint - Get an Organization's Details
 
 > The above code returns JSON structured like this:
 
@@ -42,6 +43,7 @@ The above list is intended to represent the API endpoints related to an Org and 
     ]
 }
 ```
+`GET`
 
 This endpoint will be used to get company’s CINX organization details.
 
@@ -49,10 +51,10 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/org**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org`
 
-HTTP Method: `GET`
-
 ## Get Org Template
 ### API Endpoint - Get an Organization Template
+
+`GET`
 
 This endpoint will be used to get a CINX Template for an organization.
 
@@ -60,7 +62,16 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/org**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/org`
 
-HTTP Method: `GET`
+## Modify Org
+### API Enpoint – Modify an Organization's Details
+
+`PUT`
+
+This request will be used to modify an organization’s details.
+
+URL Pattern:**{api path}/{api_version}/sub/{api_token}/org**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/xxx`
 
 ## Org Users
 ### API Enpoint – Get an Organization's List of Users
@@ -86,14 +97,13 @@ HTTP Method: `GET`
     ]
 }
 ```
+ `GET`
 
-This endpoint will be used to get a company’s list of CINX users. The response of this API call will contain the user’s CINX System Id which can be used in other API calls.
+This endpoint will be used to get a company’s list of CINX users. The response of this API call will contain the CINX Id for each user.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/users**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/users`
-
-HTTP Method: `GET`
 
 ## Org Locations/Addresses
 ### API Enpoint – Get an Organization's List of Locations/Addresses
@@ -121,26 +131,13 @@ HTTP Method: `GET`
     ]
 }
 ```
+`GET`
 
 This endpoint will be used to get a company’s list of location types and their addresses. This list will be used when creating material transactions that require delivery to a specific location.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/addresses**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/addresses`
-
-HTTP Method: `GET`
-
-## Modify Org
-### API Enpoint – Modify an Organization's Details
-
-This request will be used to modify an organization’s details.
-
-URL Pattern:**{api path}/{api_version}/sub/{api_token}/modify/org**
-
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/xxx`
-
-HTTP Method: `PUT`
-
  
 ## Get Customer Types
 ### API Enpoint – Get an Organization’s List of Customer Types
@@ -159,14 +156,13 @@ HTTP Method: `PUT`
     ]
 }
 ```
+`GET`
 
-This endpoint will be used to get a company’s list of thier Customer Types. In CINX, each company can define how it  would like to classify its customers. 
+This endpoint will be used to get a company’s list of their Customer Types. In CINX, each company can define how it  would like to classify its customers.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/org-refs/types/customers**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org-refs/types/customers`
-
-HTTP Method: `GET`
 
 ## Get Vendor Types
 ### API Enpoint – Get an Organization’s List of Vendor Types
@@ -185,14 +181,13 @@ HTTP Method: `GET`
     ]
 }
 ```
+ `GET`
 
-This endpoint will be used to get a company’s list of thier Vendor Types. In CINX, each company can define how it  would like to classify its vendors. 
+This endpoint will be used to get a company’s list of their Vendor Types. In CINX, each company can define how it  would like to classify its vendors. 
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/org-refs/types/vendors**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org-refs/types/vendors`
-
-HTTP Method: `GET`
 
 ## Get Project Types
 ### API Enpoint – Get an Organization’s List of Project Types
@@ -209,14 +204,13 @@ HTTP Method: `GET`
     ]
 }
 ```
+`GET`
 
-This endpoint will be used to get a company’s list of thier Project Types. In CINX, each company can define how it  would like to classify its projects. 
+This endpoint will be used to get a company’s list of their Project Types. In CINX, each company can define how it  would like to classify its projects. 
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/org-refs/types/projects**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org-refs/types/projects`
-
-HTTP Method: `GET`
 
 ## Get Dispute Reasons
 ### API Enpoint – Get an Organization’s List of Invoice Dispute Reasons
@@ -240,14 +234,13 @@ HTTP Method: `GET`
     ]
 }
 ```
+`GET`
 
-This endpoint will be used to get a company’s list of thier Invoice Dispute Types. In CINX, each company can define the list of the reasons it can dispute an invoice. Dispute reasons can be at the transaction level and on individual items. The company can define a code and name for the dispute reasons. 
+This endpoint will be used to get a company’s list of their Invoice Dispute Types. In CINX, each company can define the list of reasons it can use to identify a dispute on an invoice. Dispute reasons can be at the transaction level and also on individual items. The company can define a code and name for the dispute reasons. 
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/org-refs/invoices/dispute-reasons**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org-refs/invoices/dispute-reasons`
-
-HTTP Method: `GET`
 
 ## Get Return Reasons
 ### API Enpoint – Get an Organization’s List of Return Reasons
@@ -271,14 +264,13 @@ HTTP Method: `GET`
     ]
 }
 ```
+`GET`
 
-This endpoint will be used to get a company’s list of thier Return Reasons. In CINX, each company can define the list of the reasons it will return materials. The company can define a code and name for each reason. 
+This endpoint will be used to get a company’s list of their Return Reasons. In CINX, each company can define the list of the reasons it will return materials. The company can define a code and name for each reason. 
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/org-refs/returns/reasons**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org-refs/returns/reasons`
-
-HTTP Method: `GET`
 
 ## Get Return Actions
 ### API Enpoint – Get an Organization’s List of Return Actions
@@ -302,11 +294,10 @@ HTTP Method: `GET`
     ]
 }
 ```
+`GET`
 
 This endpoint will be used to get a company’s list of thier Return Actions. In CINX, each company can define the list of the actions it would like the vendor to use when processing the return. The company can define a code and name for each action. 
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/org-refs/returns/actions**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org-refs/returns/actions`
-
-HTTP Method: `GET`

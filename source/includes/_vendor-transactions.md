@@ -41,46 +41,45 @@
     ]
 }
 ```
-This endpoint will be used to get a list of RFQs submitted to a specified vendor. See the Supported Filters list for additional query parameters that can be used in the URL.
+ `GET`
+
+ This endpoint will be used to get a list of RFQs submitted to a specified vendor. See the Optional URL Parameters list for additional query parameters that can be used in the URL.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/vendor/{cinx_commerce_guid}/rfqs**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/vendor/7880c854-017f-5359-96de-fdef626c33cf/rfqs`
 
-HTTP Method: `GET`
 
-**Supported Filters**
+**OPTIONAL URL PARAMETERS**
 
-Delivery Location Type: will limit results to a specific delivery type location
-URL Parameter: **delivery={option from below}**
-Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
 
-Procurement Status: will limit results to a specific procurement status
-URL Parameter: **procurement={option from below}**
-Available options are: OPEN, SUBMITTED, IN-REVIEW, APPROVED, APPROVED W/MODS, REJECTED, PENDING ORDER, COMPLETE, CLOSED, CANCELLED, RESUBMITTED
+**delivery**: will limit results to a specific delivery type location
 
-Project Reference: will limit results to a single project
-URL parameter:  **project={CINX project Id}**
+  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
 
-Vendor Reference: will limit results to a single vendor
-URL parameter:  **vendor={CINX vendor Id}**
+**procurement**: will limit results to a specific procurement status
 
-Ship Via: will limit results to a specific ship via value
-URL Parameter: **ship_via={option from below}**
-Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+  - Available options are: OPEN, SUBMITTED, IN-REVIEW, APPROVED, APPROVED W/MODS, REJECTED, PENDING ORDER, COMPLETE, CLOSED, CANCELLED, RESUBMITTED
 
-Deliver By Date: will limit results to a specific date
-URL Parameter: **deliver_date={date}**
-Date Format: YYYY-MM-DD
+**project**: will limit results to a single project
 
-Submitter: will limit results to a specified CINX user
-URL parameter:  **submitter={submitter CINX User Id}**
+  - {cinx_project_guid}
 
-Current Owner: will limit results to a specified CINX user to whom the transaction is assigned
-URL parameter:  **owner={CINX User Id}**
+**ship_via**: will limit results to a specific ship via value
 
-Transaction Number: will limit results to a specified transaction number
-URL parameter:  **number={transaction number}**
+  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+
+**deliver_date**: will limit results to a specific need-by or delivery-by date
+
+  - Date Format: YYYY-MM-DD
+
+**submitter**: will limit results to a specified CINX user
+
+  - {CINX_User_Id}
+
+**number**: will limit results to a specified transaction number
+
+  - {transaction_number}
 
 ## Get Vendor Quotes
 ### API Endpoint - Get a List of Quotes Submitted by a Vendor
@@ -98,13 +97,13 @@ URL parameter:  **number={transaction number}**
     ]
 }
 ```
-This endpoint will be used to get a list of Quotes submitted by a specified vendor. See the Supported Filters list for additional query parameters that can be used in the URL.
+ `GET`
+
+This endpoint will be used to get a list of Quotes submitted by a specified vendor. See the Optional URL Parameters list for additional query parameters that can be used in the URL.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/vendor/{cinx_commerce_guid}/quotes**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/vendor/7880c854-017f-5359-96de-fdef626c33cf/quotes`
-
-HTTP Method: `GET`
 
 ## Get Vendor POs
 ### API Endpoint - Get a List of POs Submitted to a Vendor
@@ -148,13 +147,13 @@ HTTP Method: `GET`
     ]
 }
 ```
-This endpoint will be used to get a list of POs submitted to a specified vendor. See the Supported Filters list for additional query parameters that can be used in the URL.
+`GET`
+
+This endpoint will be used to get a list of POs submitted to a specified vendor. See the Optional URL Parameters list for additional query parameters that can be used in the URL.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/vendor/{cinx_commerce_guid}/pos**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/vendor/7880c854-017f-5359-96de-fdef626c33cf/pos`
-
-HTTP Method: `GET`
 
 ## Get Vendor POCOs
 ### API Endpoint - Get a List of PO Change Orders Submitted to a Vendor
@@ -197,13 +196,13 @@ HTTP Method: `GET`
     ]
 }
 ```
-This endpoint will be used to get a list of PO Change Orders submitted to a specified vendor. See the Supported Filters list for additional query parameters that can be used in the URL.
+`GET`
+
+This endpoint will be used to get a list of PO Change Orders submitted to a specified vendor. See the Optional URL Parameters list for additional query parameters that can be used in the URL.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/vendor/{cinx_commerce_guid}/pocos**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/vendor/7880c854-017f-5359-96de-fdef626c33cf/pocos`
-
-HTTP Method: `GET`
 
 ## Get Vendor Deliveries
 ### API Endpoint - Get a List of Deliveries for a Vendor
@@ -240,13 +239,13 @@ HTTP Method: `GET`
     ]
 }
 ```
-This endpoint will be used to get a list of Deliveries for a vendor. See the Supported Filters list for additional query parameters that can be used in the URL.
+ `GET`
+
+This endpoint will be used to get a list of Deliveries for a vendor. See the Optional URL Parameters list for additional query parameters that can be used in the URL.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/vendor/{cinx_commerce_guid}/deliveries**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/vendor/7880c854-017f-5359-96de-fdef626c33cf/deliveries`
-
-HTTP Method: `GET`
 
 ## Get Vendor Invoices
 ### API Endpoint - Get a List of Invoices from a Vendor
@@ -283,13 +282,13 @@ HTTP Method: `GET`
     ]
 }
 ```
-This endpoint will be used to get a list of Invoices from a vendor. See the Supported Filters list for additional query parameters that can be used in the URL.
+`GET`
+
+This endpoint will be used to get a list of Invoices from a vendor. See the Optional URL Parameters list for additional query parameters that can be used in the URL.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/vendor/{cinx_commerce_guid}/invoices**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/vendor/7880c854-017f-5359-96de-fdef626c33cf/invoices`
-
-HTTP Method: `GET`
 
 ## Get Vendor Returns
 ### API Endpoint - Get a List of Returns for a Vendor
@@ -325,13 +324,13 @@ HTTP Method: `GET`
     ]
 }
 ```
-This endpoint will be used to get a list of Returns for a vendor. See the Supported Filters list for additional query parameters that can be used in the URL.
+`GET`
+
+This endpoint will be used to get a list of Returns for a vendor. See the Optional URL Parameters list for additional query parameters that can be used in the URL.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/vendor/{cinx_commerce_guid}/returns**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/vendor/7880c854-017f-5359-96de-fdef626c33cf/returns`
-
-HTTP Method: `GET`
 
 ## Get Vendor Back-Orders
 ### API Endpoint - Get a List of Back-Orders from a Vendor
@@ -379,10 +378,10 @@ HTTP Method: `GET`
     ]
 }
 ```
-This endpoint will be used to get a list of Back-Orders from a vendor. See the Supported Filters list for additional query parameters that can be used in the URL.
+`GET`
+
+This endpoint will be used to get a list of Back-Orders for a vendor. See the Optional URL Parameters list for additional query parameters that can be used in the URL.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/vendor/{cinx_commerce_guid}/back-orders**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/vendor/7880c854-017f-5359-96de-fdef626c33cf/back-orders`
-
-HTTP Method: `GET`

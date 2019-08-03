@@ -21,13 +21,13 @@ CINX also has the ability for a contractor to create a **Private** vendor.  This
 
 **Supported API Services**
 
-  - Get a List of Vendors
-  - Get a Vendor
-  - Get a Vendor Template
-  - Get a Vendor Number
-  - Create a Vendor
-  - Modify a Vendor
-  - Get Vendor Transactions
+  - [Get a List of Vendors](#get-vendor-list)
+  - [Get a Vendor](#get-vendor)
+  - [Get a Vendor Template](#get-vendor-template)
+  - [Get a Vendor Number](#get-vendor-number)
+  - [Create a Vendor](#create-vendor)
+  - [Modify a Vendor](#modify-vendor)
+  - [Get Vendor Transactions](#vendor-transactions)
   - Get Vendor Branches
   - Get Vendor Contacts
 
@@ -72,14 +72,13 @@ cinxApi.getVendors(cinx_api_token)
     ]
 }
 ```
+ `GET`
 
 This endpoint will be used to get a list of the organization's vendors. 
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/vendors**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/vendors`
-
-HTTP Method: `GET`
 
 ## Get Vendor
 ### API Endpoint - Get a Vendor
@@ -158,14 +157,13 @@ cinxApi.getVendorDetails(cinx_api_token, vendor_id)
     }]
 }
 ```
+ `GET`
 
 This endpoint will be used to get the details of a specific vendor using the CINX Commerce Id.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/vendor/{cinx_commerce_guid}**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/vendor/512d5a2f-1d6c-21ca-9b97-9299ac9c802a`
-
-HTTP Method: `GET`
 
 ## Get Vendor Template
 ### API Endpoint - Get a Vendor Template
@@ -251,14 +249,13 @@ HTTP Method: `GET`
     ]
 }
 ```
+`GET`
 
 This endpoint will be used to get a CINX Template for a vendor.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/vendor**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/vendor`
-
-HTTP Method: `GET`
 
 
 The table below defines the input fields within the template.
@@ -278,18 +275,17 @@ The table below defines the input fields within the template.
     ]
 }
 ```
+ `GET`
+
 This request will be used to get a value to be used in the number field of a new vendor.
 
 **Notes** 
 
 - The response will contain a new value ONLY if the company has turned on the auto-numbering feature in CINX.
 
-
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/auto-number/vendor**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/vendor`
-
-HTTP Method: `GET`
 
 ## Create Vendor
 ### API Endpoint - Create a New Vendor
@@ -331,6 +327,7 @@ cinxApi.postNewVendor(cinx_api_token, values)
     ]
 }
 ```
+ `POST`
 
 This endpoint will be used to insert a new private vendor for an organization.
 
@@ -342,8 +339,6 @@ This endpoint will be used to insert a new private vendor for an organization.
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-vendor-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-vendor-import?body=json`
-
-HTTP Method: `POST`
 
 ## Modify Vendor
 ###API Endpoint - Modify a Vendor
@@ -385,16 +380,15 @@ cinxApi.modifyVendor(cinx_api_token, vendor_id, values)
     ]
 }
 ```
+`PUT`
 
 This endpoint will be used to modify a vendor.
 
 **Notes**
 
   - A CINX Template is available that documents the available fields that can be populated.
-  - A JSON formatted payload is used in the POST request
+  - A JSON formatted payload is used in the PUT request
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-vendor-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-vendor-import?body=json`
-
-HTTP Method: `PUT`

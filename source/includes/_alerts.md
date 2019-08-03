@@ -3,6 +3,8 @@
 ## Get Alerts
 ### API – GET Received User Alerts
 
+`GET`
+
 This request will be used get a User’s CINX system alerts.
 
 URL Pattern:
@@ -39,6 +41,8 @@ An alert is marked **closed** when a user has “deleted” the alert from a UI.
  
 ## Modify Alerts
 ### API – Mark User Alerts Shown or Closed
+
+`PUT`
 
 This request will be used update a user’s CINX system alert’s **Shown** or **Closed** status.
 

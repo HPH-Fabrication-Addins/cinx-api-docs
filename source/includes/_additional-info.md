@@ -17,13 +17,13 @@
     ]
 }
 ```
+`GET`
+
 This endpoint will be used to get a list of countries. This can be used when setting addresses within the API. Please use the **abv_alpha3** field.
 
 URL Pattern: **{api path}/{api_version}sub/countries**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/countries`
-
-HTTP Method: `GET`
 
 ## Get States
 ### API Endpoint - Get a List of States for a Country
@@ -41,13 +41,14 @@ HTTP Method: `GET`
     ]
 }
 ```
+`GET`
+
 This endpoint will be used to get a list of states for a given country. This can be used when setting addresses within the API.  Please use the **abv** field.
 
 URL Pattern: **{api path}/{api_version}sub/country/{country_abv_alpha3}/states**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/country/usa/states`
 
-HTTP Method: `GET`
 
 ## CINX Concepts
 ### List of CINX Terms and Concepts

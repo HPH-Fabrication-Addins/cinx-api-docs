@@ -6,7 +6,7 @@ CINX allows a company to define their own catalog of material content. This Priv
 
 As part of CINX’s integration services, a company can request catalog updates formatted for industry software or develop a customized format. The company can have unlimited subscriptions to CINX Import-Export Applications.
 
-Each subscription will define the catalog of items and the output format. This subscription has an App Id that will be required to create API requests. This Id can be obtained from the CINX Subscriptions/Authorizations response.
+Each subscription will define the catalog of items and the output format. This subscription has an **app_id** that will be required to create API requests. This Id can be obtained from the CINX Subscriptions/Authorizations response.
 
 **Update Format**
 
@@ -140,22 +140,22 @@ cinxApi.getCatalogUpdates(application_id, update_type)
     ]
 }
 ```
+`GET`
 
 This endpoint will be used to retrieve catalog updates for a given subscription. 
 
 **Notes**
 
-  - If the url uses the new update status parameter and there are no **new** updates, the api response will have an empty **rows** array
+  - If the url uses the **new** update status parameter and there are no new updates, the api response will have an empty **rows** array
 
 
-URL Pattern: **{api path}/{api_version}/sub/{api_token}/xxx    pp-id-guid}/ipu/updates/{update status type: new, all, or applied}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/xxx**
 
 URL Sample: `https://update me`
 
-HTTP Method: `GET`
-
 ## Download Update
-### API Endpoint – Get a Catalog Update File - Download
+### API Endpoint – Download a Catalog Update File
+`GET`
 
 This endpoint will be used to download a catalog update file. 
 
@@ -164,21 +164,18 @@ URL Pattern: **{api path}/sub/{app-id-guid}/ipu/update/download/{update id}/data
 
 URL Sample: `https://update me`
 
-HTTP Method: `GET`
-
 
 <img src='images/subscription16.jpg'/>
 
 ## Download Bulletin
 ### API Endpoint – Get a Catalog Update Bulletin File ONLY - Download
+`GET`
 
 This will stream back the bulletin file in the requested format.
 
 URL Pattern: **{api path}/sub/{app-id-guid}/ipu/update/download/{update id}/bulletin?type={json or xls}**
 
 URL Sample: `https://update me`
-
-HTTP Method: `GET`
 
 `https://api.cinx.com/sub/0d2b4b77-d706-e215-13f2-207c7e4aaee7/ipu/update/download/1ac399a6-40e8-f9e4-d5b8-d5dc709e9e1d/bulletin?type=json`
 
@@ -202,14 +199,13 @@ cinxApi.setCatalogUpdateFileApplied(application_id, file_id, values)
         console.log(response);
     });
 ```
+`PUT`
 
 This will mark the update as **Applied** and it will no longer show up in the **New** update list.
 
 URL Pattern: **{api path}/sub/{app-id-guid}/ipu/update/apply/{update id}?values={applied_date:yyyy-mm-dd,download_date:yyyy-mm-dd}**
 
 URL Sample: `https://update me`
-
-HTTP Method: `PUT`
 
 
 The update id field is taken from the Get Update response in the following location:  row -> cinx_id -> id

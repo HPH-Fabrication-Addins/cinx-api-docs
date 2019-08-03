@@ -13,12 +13,12 @@ A CINX Request for Quotation is a compilation of  that a customer wants a vendor
 
 **Supported API Services**
 
-  - Get a List of RFQs
-  - Get an RFQ
-  - Get an RFQ Template
-  - Get an RFQ Number
-  - Create an RFQ
-  - Modify an RFQ
+  - [Get a List of RFQs](#get-rfq-list)
+  - [Get an RFQ](#get-rfq)
+  - [Get an RFQ Template](#get-rfq-template)
+  - [Get an RFQ Number](#get-rfq-number)
+  - [Create an RFQ](#create-rfq)
+  - [Modify an RFQ](#modify-rfq)
 
 ## Get RFQ List
 ### API Endpoint - Get a List of RFQs
@@ -61,50 +61,22 @@ A CINX Request for Quotation is a compilation of  that a customer wants a vendor
     ]
 }
 ```
-This endpoint will be used to get a list of RFQs. See the Supported Filters list for additional query parameters that can be used in the URL.
+`GET`
+
+This endpoint will be used to get a list of RFQs. See the Optional URL Parameters list for additional query parameters that can be used in the URL.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/rfqs**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/rfqs`
 
-HTTP Method: `GET`
 
-**Supported Filters**
-
-Delivery Location Type: will limit results to a specific delivery type location
-URL Parameter: **delivery={option from below}**
-Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
-
-Procurement Status: will limit results to a specific procurement status
-URL Parameter: **procurement={option from below}**
-Available options are: OPEN, SUBMITTED, IN-REVIEW, APPROVED, APPROVED W/MODS, REJECTED, PENDING ORDER, COMPLETE, CLOSED, CANCELLED, RESUBMITTED
-
-Project Reference: will limit results to a single project
-URL parameter:  **project={CINX project Id}**
-
-Vendor Reference: will limit results to a single vendor
-URL parameter:  **vendor={CINX vendor Id}**
-
-Ship Via: will limit results to a specific ship via value
-URL Parameter: **ship_via={option from below}**
-Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
-
-Deliver By Date: will limit results to a specific date
-URL Parameter: **deliver_date={date}**
-Date Format: YYYY-MM-DD
-
-Submitter: will limit results to a specified CINX user
-URL parameter:  **submitter={submitter CINX User Id}**
-
-Current Owner: will limit results to a specified CINX user to whom the transaction is assigned
-URL parameter:  **owner={CINX User Id}**
-
-Transaction Number: will limit results to a specified transaction number
-URL parameter:  **number={transaction number}**
+**OPTIONAL URL PARAMETERS**
 
 
 ## Get RFQ
 ### API Endpoint - Get an RFQ
+
+`GET`
 
 This request will be used to get the details of a specific RFQ.  Note: This response will include the RFQ’s items.
 
@@ -114,10 +86,10 @@ The cinx_guid will be the RFQ’s CINX Id.
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/rfq/e73c118f-1ee9-57e0-9c79-1775c1a04b81`
 
-HTTP Method: `GET`
-
 ## Get RFQ Template
 ### API Endpoint - Get an RFQ Template
+
+`GET`
 
 This request will be used to get a CINX Template for an RFQ.
 
@@ -125,12 +97,8 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/rfq**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/rfq`
 
-HTTP Method: `GET`
 
-## RFQ Template Fields
-### Definition of the RFQ Template's Fields
-
-The table below defines the fields within the template.
+The table below defines the input fields within the template.
 
 ## Get RFQ Number
 ### API Endpoint - Get a New RFQ Number
@@ -147,21 +115,24 @@ The table below defines the fields within the template.
     ]
 }
 ```
+`GET`
+
 This endpoint will be used to get a value to be used in the number field of a new RFQ.
 
 **Notes** 
 
   - The response will contain a new value ONLY if the company has turned on the auto-numbering feature in CINX.
-  - If a company is using a project number as a component within the numbering of the requisition, the CINX project Id can be added to the url using this syntax: **?project={CINX Project Id}**
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/auto-number/rfq**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/rfq`
 
-HTTP Method: `GET`
+HTTP Method: 
 
 ## Create RFQ
 ### API Endpoint - Create a New RFQ
+
+`POST`
 
 This endpoint will be used to create a new RFQ.
 
@@ -174,12 +145,14 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-r
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-rfq-import?body=json`
 
-HTTP Method: `POST`
-
-Processing Type: `Asynchronous`
+<aside class="notice">
+The POST payload will be processed asynchronously.
+</aside>
 
 ## Modify RFQ
 ### API Endpoint - Modify an RFQ
+
+`PUT`
 
 This API call will be used to modify an existing CINX RFQ.
 
@@ -192,6 +165,6 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-r
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-rfq-import?body=json`
 
-HTTP Method: `PUT`
-
-Processing Type: `Asynchronous`
+<aside class="notice">
+The PUT payload will be processed asynchronously.
+</aside>

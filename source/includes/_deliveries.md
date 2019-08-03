@@ -14,14 +14,14 @@ A CINX Delivery is created when a shipment from a vendor is received. A Delivery
 
 **Supported API Services**
 
-  - Get a List of Deliveries
-  - Get a Delivery
-  - Get a Delivery Template
-  - Get a Delivery Number
-  - Create a Delivery
-  - Modify a Delivery
+  - [Get a List of Deliveries](#get-deliveries-list)
+  - [Get a Delivery](#get-delivery)
+  - [Get a Delivery Template](#get-delivery-template)
+  - [Get a Delivery Number](#get-delivery-number)
+  - [Create a Delivery](#create-delivery)
+  - [Modify a Delivery](#modify-delivery)
 
-## Get Deliveries List
+## Get Delivery List
 ### API Endpoint - Get a List of Deliveries
 
 > The above code returns JSON structured like this:
@@ -56,50 +56,19 @@ A CINX Delivery is created when a shipment from a vendor is received. A Delivery
     ]
 }
 ```
-This endpoint will be used to get a list of deliveries. See the Supported Filters list for additional query parameters that can be used in the URL.
+`GET`
+
+This endpoint will be used to get a list of deliveries. See the Optional URL Parameters list for additional query parameters that can be used in the URL.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/deliveries**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/deliveries`
 
-HTTP Method: `GET`
-
-**Supported Filters**
-
-Delivery Location Type: will limit results to a specific delivery type location
-URL Parameter: **delivery={option from below}**
-Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
-
-Procurement Status: will limit results to a specific procurement status
-URL Parameter: **procurement={option from below}**
-Available options are: OPEN, SUBMITTED, IN-REVIEW, APPROVED, APPROVED W/MODS, REJECTED, PENDING ORDER, COMPLETE, CLOSED, CANCELLED, RESUBMITTED
-
-Project Reference: will limit results to a single project
-URL parameter:  **project={CINX project Id}**
-
-Vendor Reference: will limit results to a single vendor
-URL parameter:  **vendor={CINX vendor Id}**
-
-Ship Via: will limit results to a specific ship via value
-URL Parameter: **ship_via={option from below}**
-Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
-
-Deliver By Date: will limit results to a specific date
-URL Parameter: **deliver_date={date}**
-Date Format: YYYY-MM-DD
-
-Submitter: will limit results to a specified CINX user
-URL parameter:  **submitter={submitter CINX User Id}**
-
-Current Owner: will limit results to a specified CINX user to whom the transaction is assigned
-URL parameter:  **owner={CINX User Id}**
-
-Transaction Number: will limit results to a specified transaction number
-URL parameter:  **number={transaction number}**
-
 
 ## Get Delivery
 ### API Endpoint - Get a Delivery
+
+`GET`
 
 This request will be used to get the details of a specific delivery. Note: This response will include the delivery’s items.
 
@@ -108,8 +77,6 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/delivery/{cinx_guid}**
 The cinx_guid will be the delivery's CINX Id.
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/delivery/e73c118f-1ee9-57e0-9c79-1775c1a04b81`
-
-HTTP Method: `GET`
 
 ## Get Delivery Template
 ### API Endpoint - Get a Delivery Template
@@ -181,14 +148,13 @@ HTTP Method: `GET`
 		"api_calls": []
 }
 ```
+`GET`
 
 This request will be used to get a CINX Template for a delivery.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/delivery**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/delivery`
-
-HTTP Method: `GET`
 
 
 The table below defines the input fields within the template.
@@ -208,6 +174,8 @@ The table below defines the input fields within the template.
     ]
 }
 ```
+`GET`
+
 This endpoint will be used to get a value to be used in the number field of a new delivery.
 
 **Notes**
@@ -217,11 +185,12 @@ This endpoint will be used to get a value to be used in the number field of a ne
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/auto-number/delivery**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/delivery`
-
-HTTP Method: `GET`
+ 
 
 ## Create Delivery
 ### API Endpoint - Create a New Delivery
+
+`POST`
 
 This endpoint will be used to create a new delivery.
 
@@ -234,12 +203,14 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-d
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-delivery-import?body=json`
 
-HTTP Method: `POST`
-
-Processing Type: `Asynchronous`
+<aside class="notice">
+The POST payload will be processed asynchronously.
+</aside>
 
 ## Modify Delivery
 ### API Endpoint - Modify a Delivery
+
+`PUT`
 
 This API call will be used to modify an existing CINX delivery.
 
@@ -252,6 +223,6 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-d
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-delivery-import?body=json`
 
-HTTP Method: `PUT`
-
-Processing Type: `Asynchronous`
+<aside class="notice">
+The PUT payload will be processed asynchronously.
+</aside>

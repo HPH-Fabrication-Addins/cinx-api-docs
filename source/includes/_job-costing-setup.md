@@ -54,6 +54,7 @@ cinxApi.getJobCostPhases(cinx_api_token)
     ]
 }
 ```
+`GET`
 
 This endpoint will be used to get a company’s list of project phases. In CINX, each company can define the list of standard phases that they use on projects. The company can define a name and description for each phase as well as a default material cost code. 
 
@@ -61,10 +62,8 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/org/job-costing/phases**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/phases`
 
-HTTP Method: `GET`
-
 ## Create Phase
-### API Endpoint - Create a Job Cost Phase 
+### API Endpoint - Create a Phase 
 
 ```javascript
 //Using cinx-api.js
@@ -112,16 +111,17 @@ cinxApi.putJobCostPhase(cinx_api_token, values)
     ]
 }
 ```
+`POST`
 
-This URL will be used to create a new Phase in the company’s CINX Job Costing library.   
+This URL will be used to create a new Phase in the company’s CINX job costing library.   
 
-URL Pattern:
+URL Pattern: **{api path}/sub/{B2B Id GUID}/org-job-cost/modify/phases?values={“phases”:[{JSON Structure}]}**
 
-{api path}/sub/{B2B Id GUID}/org-job-cost/modify/phases?values={“phases”:[{JSON Structure}]}
+URL Sample:
 
 
 ## Modify Phase
-### API Endpoint - Modify a Job Cost Phase 
+### API Endpoint - Modify a Phase 
 
 ```javascript
 //Using cinx-api.js
@@ -173,12 +173,11 @@ cinxApi.putJobCostPhase(cinx_api_token, values)
     ]
 }
 ```
+`PUT`
 
-This URL will be used to modify an existing Phase in the company’s CINX Job Costing library. 
+This URL will be used to modify an existing Phase in the company’s CINX job costing library. 
 
-URL Pattern:
-
-{api path}/sub/{B2B Id GUID}/org-job-cost/modify/phases?values={“phases”:[{JSON Structure}]}
+URL Pattern: **{api path}/sub/{B2B Id GUID}/org-job-cost/modify/phases?values={“phases”:[{JSON Structure}]}**
 
 
 ## Get Cost Codes
@@ -214,17 +213,16 @@ cinxApi.getJobCostCostCodes(cinx_api_token)
     ]
 }
 ```
+`GET`
 
-This endpoint will be used to get a company’s list of material cost codes. In CINX, each company can define the list of cost codes that can be assigned to materials in a project. The company can define a name and description for each phase as well as a default category. 
+This endpoint will be used to get a company’s list of material cost codes. In CINX, each company can define the list of cost codes that can be assigned to materials in a project. The company can define a name and description for each cost code as well as a default category. 
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/org/job-costing/material-cost-codes**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/material-cost-codes`
 
-HTTP Method: `GET`
-
 ## Create Cost Code
-### API Endpoint - Create a Job Cost Cost Code
+### API Endpoint - Create a Material Cost Code
 
 ```javascript
 //Using cinx-api.js
@@ -272,16 +270,14 @@ cinxApi.putJobCostCostCode(cinx_api_token, values)
     ]
 }
 ```
+`POST`
 
-This URL will be used to create a new Cost Code in the company’s CINX Job Costing library.
+This URL will be used to create a new Cost Code in the company’s CINX job costing library.
 
-URL Pattern:
-
-{api path}/sub/{B2B Id GUID}/org-job-cost/modify/material-cost-codes? values={“ material_cost_codes”:[{JSON Structure}]}
-
+URL Pattern: **{api path}/sub/{B2B Id GUID}/org-job-cost/modify/material-cost-codes? values={“ material_cost_codes”:[{JSON Structure}]}**
 
 ## Modify Cost Code
-### API Endpoint - Modify a Job Cost Cost Code
+### API Endpoint - Modify a Material Cost Code
 
 ```javascript
 //Using cinx-api.js
@@ -315,12 +311,11 @@ cinxApi.putJobCostCostCode(cinx_api_token, values)
     ]
 }
 ```
+`PUT`
 
-This URL will be used to modify an existing Cost Code in the company’s CINX Job Costing library.
+This URL will be used to modify an existing Cost Code in the company’s CINX job costing library.
 
-URL Pattern:
-
-{api path}/sub/{B2B Id GUID}/org-job-cost/modify/material-cost-codes? values={“ material_cost_codes”:[{JSON Structure}]}
+URL Pattern: **{api path}/sub/{B2B Id GUID}/org-job-cost/modify/material-cost-codes? values={“ material_cost_codes”:[{JSON Structure}]}**
 
 
 ## Get Categories
@@ -343,32 +338,29 @@ URL Pattern:
     ]
 }
 ```
+ `GET`
 
-This endpoint will be used to get a company’s list of accounting categories. In CINX, each company can define the list of standard categories. The company can define a name and description. 
+This endpoint will be used to get a company’s list of accounting categories. In CINX, each company can define the list of standard categories. The company can define a name and description for each category. 
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/org/job-costing/categories**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/categories`
 
-HTTP Method: `GET`
-
 ## Create Category
-### API Endpoint - Create a Job Cost Category
+### API Endpoint - Create a Category
+`POST`
 
-This URL will be used to create a new Category in the company’s CINX Job Costing library.   
+This URL will be used to create a new Category in the company’s CINX job costing library.   
 
-URL Pattern:
-
-{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-expense-categories? values={“material_cost_code”:[{JSON Structure}]}
+URL Pattern: **{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-expense-categories? values={“material_cost_code”:[{JSON Structure}]}**
 
 ## Modify Category
 ### API Endpoint - Modify a Job Cost Category
+`PUT`
 
-This URL will be used to modify an existing Category in the company’s CINX Job Costing library.   
+This URL will be used to modify an existing Category in the company’s CINX job costing library.   
 
-URL Pattern:
-
-{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-expense-categories? values={“ tax_expense_categories”:[{JSON Structure}]}
+URL Pattern: **{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-expense-categories? values={“ tax_expense_categories”:[{JSON Structure}]}**
 
 
 ## Get Tax Groups
@@ -391,6 +383,7 @@ URL Pattern:
     ]
 }
 ```
+`GET`
 
 This endpoint will be used to get a company’s list of tax groups. In CINX, each company can define the list of standard tax groups. 
 
@@ -398,24 +391,20 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/org/job-costing/tax-grou
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/tax-groups`
 
-HTTP Method: `GET`
-
 ## Create Tax Group
 ### API Endpoint - Create a Job Cost Tax Group
+`POST`
 
-This URL will be used to create a new Tax Group in the company’s CINX Job Costing library. 
+This URL will be used to create a new Tax Group in the company’s CINX job costing library. 
 
-URL Pattern:
-
-{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-groups? values={“ tax_groups”:[{JSON Structure}]}
+URL Pattern: **{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-groups? values={“ tax_groups”:[{JSON Structure}]}**
 
 
 
 ## Modify Tax Group
 ### API Endpoint - Modify a Job Cost Tax Group
+`PUT`
 
-This URL will be used to modify an existing Tax Group in the company’s CINX Job Costing library.  
+This URL will be used to modify an existing Tax Group in the company’s CINX job costing library.  
 
-URL Pattern:
-
-{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-groups? values={“ tax_groups”:[{JSON Structure}]}
+URL Pattern: **{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-groups? values={“ tax_groups”:[{JSON Structure}]}**

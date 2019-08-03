@@ -5,7 +5,7 @@
 
 CINX is a platform product from Harrison Publishing House (HPH) serving the construction industry in North America.  
 
-The CINX API provides access to key building material information, construction project information, and material transactions exchanged with product vendors.
+The CINX API provides access to building material information, construction project information, and material transactions exchanged with product vendors.
 
 The API requires a user to have a valid CINX account with an API subscription.  
 
@@ -66,23 +66,28 @@ With each API call, you’ll need to set request headers, including a CINX user�
 CINX accounts are subscription based and have expiration dates. Accounts with expired subscriptions will not have access to CINX data.  
 
 
-**Production Endpoint Server Path**
+**PAPI Server Paths**
 
-The production endpoint for the CINX API is: **https://api.cinx.com/**
+The production server is: **https://api.cinx.com**
+
+The development server is: **https://api.dev.cinx.biz**
 
 
 **API Version**
 
 The CINX API is versioned. This documentation supports version 2.0 and higher. The API version will be added to the API server path and become part of the base URL.
 
-**https://api.cinx.com/2.0/**
-
 
 **API Token**
 
-The CINX API uses an API Token when submitting web service requests. The CINX API Token is retrieved from the subscription authorization web service API response. A company that has a CINX account must also be configured to permit API access before the API token will be returned in the authorization API response. The API token is valid for the duration of a company’s CINX subscription. The API token will be added to the base URL following the API Version number.
+The CINX API uses an API Token when submitting web service requests. The CINX API Token is retrieved from the subscription authorization API response. A company that has a CINX account must also be configured to permit API access before the API token will be returned in the authorization API response. The API token is valid for the duration of a company’s CINX subscription. The API token will be added to the base URL following the API Version number.
 
-**https://api.cinx.com/2.0/{api_token_value}/**
+**API Base URL**
+
+The CINX API Base URL is constructed from the components shown below:
+
+  - **https://api.cinx.com/2.0/{api_token_value}/sub/**
+  - **https://api.dev.cinx.biz/2.0/{api_token_value}/sub/**
 
 
 **API Response Formatting – Standard/JSON**
@@ -123,7 +128,7 @@ CINX supports different “catalogs” (databases) of content. Companies subscri
   - MCAA WebLEM
   - PHCC Labor Units 
   
-Another catalog that each CINX company can use is a “Private” catalog.  This catalog of content is specific to the subscribing company and can contain material items. These items can be copied from another catalog on CINX or manually entered/uploaded by the company.
+Another catalog that each CINX company can use is a **Private** catalog.  This catalog of content is specific to the subscribing company and can contain material items. These items can be copied from another catalog on CINX or manually entered/uploaded by the company.
 
 Estimating systems, CAD/BIM software systems, and other software partners that utilize CINX content will also have a separate CINX Catalogs. This allows each system to have a specific set of items that CINX maintains.
 
@@ -131,7 +136,7 @@ A good way to visualize this concept is to open the Catalog drop-down in the CIN
   
 <img src='images/subscription2.jpg'/>
   
-When working with the CINX API in conjunction with a company’s subscription a catalog is often named Data Source.
+When working with the CINX API in conjunction with a company’s subscription a catalog is often named as Data Source in API responses.
 
 ## App - Data Sources
 ### CINX Application and Data Source Introduction
@@ -245,7 +250,7 @@ The templates are accessed via the API and use a standardized response structure
  
 The CINX platform stores many Ids for different object types from different sources. For example, an item on a PO may have Ids defined by the customer, vendor, and product manufacturer. 
 
-To clearly define CINX system Ids in API responses, the CINX Ids will be positioned at the top of response for the requested object. They will in most cases be named **cinx_guid**.
+To clearly define CINX System Ids in API responses, the CINX Ids will be positioned at the top of response for the requested object. They will in most cases be named **cinx_guid**.
 
  <img src='images/cinx_guid_response.jpg'/>
 
@@ -256,7 +261,7 @@ If a response contains child JSON objects or arrays that list multiple CINX Ids,
 
 When a relationship between the two parties is created in CINX, a new document that links the two parties is created. Examples relationships include:
 
-*	A contractor (customer) has a CINX relationship with a product wholesale distributors (vendor) that deliver products used in a project.
+*	A contractor (customer) has a CINX relationship with a product wholesale distributor (vendor) that deliver products used in a project.
 *	A building owner (customer) has a CINX relationship with a contractor (vendor) that completes a job.
 
 The relationship document allows for the storage of important parameters that are required to deliver and process transactions, submittals, and other communications. This relationship is also assigned a new CINX GUID. This new Id is therefore used by the API as a URL parameter when fetching and updating relationship data. To clearly differentiate the Commerce GUID from a GUID assigned to an individual company (org), the API uses a different naming convention.
@@ -270,7 +275,7 @@ The Commerce GUIDs in API responses and requests will be named **cinx_commerce_g
 
 To assist in the exchange of data between systems, CINX supports external references for most object types.
 
-A common use for an external reference is a system id from a non-CINX. The API supports setting of these references and provides a three-field array structure:
+A common use for an external reference is a system id from a non-CINX application. The API supports setting of these references and provides a three-field array structure:
 
  <img src='images/cinx-ext-refs.jpg'/>
 
@@ -308,19 +313,12 @@ API calls for obtaining the next number for an object are provided and documente
 
 **API URL References**
 
-The API calls documented on this site will contain two URL sections to assist in the construction of properly formatted URL to be submitted to CINX.
+The API calls documented on this site will contain two URL sections to assist in the construction of properly formatted URLs to be submitted to CINX.
 
-  - URL PATTERN
-This section defines the elements of the URL. Portions of the URL that will require variables to be inserted will be shown in curly braces. 
+  - **URL PATTERN**: This section defines the elements of the URL. Portions of the URL that will require variables to be inserted will be shown in curly braces. 
 
-  - URL SAMPLES
-Each API call definition page will also contain at least one sample. The sample will be fully formatted.  
+  - **URL SAMPLES**: Each API call definition page will also contain at least one sample. The sample will be fully formatted.  
 THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided only for formatting verification purposes.
-
-
-**Template Field Names – Dot Notation**
-
-This documentation will present the field definitions of the CINX templates. Dot notation will be used in the name field to indicate the path to the field in the template.
 
 
 **Asynchronous Operations**

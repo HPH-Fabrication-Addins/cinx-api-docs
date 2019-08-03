@@ -1,17 +1,17 @@
 # Catalog Item
 
 ## Item Definition
-### CINX Object Defintion - Catalog
+### CINX Object Defintion - Catalog Item
 
 A CINX Catalog Item is a building material product or construction related service that is stored within a CINX catalog.
 
-A CINX Catalog is a collection of items grouped together in a CINX database structure. Catalogs may contain construction materials, sub-contract services, rental equipment, and other content necessary for the execution of a construction project or maintenance of a building.
+A CINX catalog is a collection of items grouped together in a CINX database structure. Catalogs may contain construction materials, sub-contract services, rental equipment, and other content necessary for the execution of a construction project or maintenance of a building.
 
-A CINX orgranization will have a private catalog where items can be stored. An organization's private CINX catalog can be built from the items from CINX public catalogs including the HPH Plumbing/Mechanical list. Private items not associated with a CINX public catalog can also be inserted into an organization's private catalog. Thus, the responsibility for maintaining that item will be the organization.
+A CINX orgranization will have a private catalog where items can be stored. An organization's private CINX catalog can be built from the items from CINX public catalogs including the HPH Plumbing/Mechanical database. Private items not associated with a CINX public catalog can also be inserted into an organization's private catalog. Thus, the responsibility for maintaining that item will be the organization.
 
 **Labor Units**
 
-CINX has worked with industry labor unit providers (MCAA and PHCC) to store their labor units as CINX Catalogs. HPH has also linked labor units to our HPH Plumbing/Mechanical catalog items. The CINX Get Item API can return labor units when the **details** view is used. Adding a labor parameter to the URL will enable the output of labor units.  **Labor units will be returned ONLY if the organziation is authorized by the labor unit author to access them**
+CINX has worked with industry labor unit providers (MCAA and PHCC) to store their labor units as CINX Catalogs. HPH has also linked labor units to our HPH Plumbing/Mechanical catalog items. The CINX Get Item API can return labor units when the **details view** is used. Adding a labor parameter to the URL will enable the output of labor units.  **Labor units will be returned ONLY if the organziation is authorized by the labor unit author to access them**
 
 **Dependencies and Business Rules**
 
@@ -21,15 +21,14 @@ CINX has worked with industry labor unit providers (MCAA and PHCC) to store thei
 
 **Supported API Services**
 
-  - Get an Item using the HPH Code
-  - Get an Item using an Organization Id
-  - Get an Item using a CINX Id
-  - Get a Purchase Order Number
-  - Create a Catalog Item from an HPH Code
-  - Get a Catalog Item Template
-  - Create a Catalog Item
-  - Modify a Catalog Item
-  - Delete a Catalog Item
+  - [Get an Item using the HPH Code](#get-item-hph-code)
+  - [Get an Item using an Organization Id](#get-item-org-id)
+  - [Get an Item using a CINX Id](#get-item-cinx-id)
+  - [Create a Catalog Item from an HPH Code](#create-item-hph-code)
+  - [Get a Catalog Item Template](#get-item-template)
+  - [Create a Catalog Item](#create-item)
+  - [Modify a Catalog Item](#modify-item)
+  - [Delete a Catalog Item](#delete-item)
 
 ## Get Item - HPH Code
 ### API Endpoint – Get an Item using an HPH Code
@@ -37,10 +36,10 @@ CINX has worked with industry labor unit providers (MCAA and PHCC) to store thei
 > The above code returns JSON structured like this:
 
 ```json
-See this page for the contents of a **compact** response.  EMBED LINK
 
-See this page for the contents of a **details** response.  EMBED LINK
 ```
+
+`GET`
 
 This endpoint will be used to get a catalog item’s information using the HPH Code of an item.  
 
@@ -48,14 +47,14 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/item/hph-code/{hph_code}
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/item/hph-code/012EK0018?view=details`
 
-HTTP Method: `GET`
+**OPTIONAL URL PARAMETERS**
 
-**View Options** 
+**View** 
 
-- **compact**: returns a small set of item information fields. This is the default view if one is not specified.
-- **details**: returns a comprehensive set of item information
+- **compact**: returns a small set of item information fields. This is the default view if one is not specified. Please see [Compact View](#item-view-compact) for a definition of the output.
+- **details**: returns a comprehensive set of item information. Please see [Details View](#item-view-details) for a definition of the output.
 
-**Labor Options** 
+**Labor** 
 
 - **all**: returns all industry labor units the organization is authorized to use
 - **mcaa**: returns the MCAA labor units if the organization is authorized to access them
@@ -67,10 +66,9 @@ HTTP Method: `GET`
 > The above code returns JSON structured like this:
 
 ```json
-See this page for the contents of a **compact** response.  EMBED LINK
 
-See this page for the contents of a **details** response.  EMBED LINK
 ```
+`GET`
 
 This endpoint will be used to get a catalog item’s information using the organization's item id.  
 
@@ -78,14 +76,14 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/item/org-id/{org_item_id
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/item/org-id/C90114?view=details`
 
-HTTP Method: `GET`
+**OPTIONAL URL PARAMETERS**
 
-**View Options** 
+**View** 
 
-- **compact**: returns a small set of item information fields. This is the default view if one is not specified.
-- **details**: returns a comprehensive set of item information
+- **compact**: returns a small set of item information fields. This is the default view if one is not specified. Please see [Compact View](#item-view-compact) for a definition of the output.
+- **details**: returns a comprehensive set of item information. Please see [Details View](#item-view-details) for a definition of the output.
 
-**Labor Options** 
+**Labor** 
 
 - **all**: returns all industry labor units the organization is authorized to use
 - **mcaa**: returns the MCAA labor units if the organization is authorized to access them
@@ -97,29 +95,55 @@ HTTP Method: `GET`
 > The above code returns JSON structured like this:
 
 ```json
-See this page for the contents of a **compact** response.  EMBED LINK
 
-See this page for the contents of a **details** response.  EMBED LINK
 ```
+`GET`
 
 This endpoint will be used to get a catalog item’s information using the item's CINX Id.  
 
-URL Pattern: **{api path}/{api_version}/sub/{api_token}/item/hph-code/{hph_code}?view={view_option}&labor={labor_type}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/item/guid/{cinx_guid}?view={view_option}&labor={labor_type}**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/item/guid/012EK0018?view=details`
 
-HTTP Method: `GET`
+**OPTIONAL URL PARAMETERS**
 
-**View Options** 
+**View** 
 
-- **compact**: returns a small set of item information fields. This is the default view if one is not specified.
-- **details**: returns a comprehensive set of item information
+- **compact**: returns a small set of item information fields. This is the default view if one is not specified. Please see [Compact View](#item-view-compact) for a definition of the output.
+- **details**: returns a comprehensive set of item information. Please see [Details View](#item-view-details) for a definition of the output.
 
-**Labor Options** 
+**Labor** 
 
 - **all**: returns all industry labor units the organization is authorized to use
 - **mcaa**: returns the MCAA labor units if the organization is authorized to access them
 - **phcc**: returns the PHCC labor units if the organization is authorized to access them
+
+## Item View - Compact
+### API Item Response View Definition - Compact
+
+```json
+{
+  "response": {},
+  "rows": [{
+    "cinx_guid": "b0f01d82-b996-11e0-b635-00137268a1bf",
+    "availability_status": "A",
+    "size": "1\"",
+    "category": "Copper Fittings & Flanges",
+    "sub-category": "Pressure Wrot-Solder",
+    "hph_code": "012NI0018",
+    "org_item_id": null,
+    "org_system_id": null,
+    "mfr_part_number": "607",
+    "description": "1\" WROT CXC 90 ELBOW",
+    "mfr_name": "NIBCO, Inc.",
+    "mfr_list_price": 18.11,
+    "price_uom": "E"
+  }]
+}
+```
+When requesting a catalog from the CINX API there are two view options. 
+
+The table below defines the fields output using the **compact** view option.
 
 ## Item View - Details
 ### API Item Response View Definition - Details
@@ -220,33 +244,6 @@ When requesting a catalog from the CINX API there are two view options.
 
 The table below defines the fields output using the **details** view option.
 
-## Item View - Compact
-### API Item Response View Definition - Compact
-
-```json
-{
-  "response": {},
-  "rows": [{
-    "cinx_guid": "b0f01d82-b996-11e0-b635-00137268a1bf",
-    "availability_status": "A",
-    "size": "1\"",
-    "category": "Copper Fittings & Flanges",
-    "sub-category": "Pressure Wrot-Solder",
-    "hph_code": "012NI0018",
-    "org_item_id": null,
-    "org_system_id": null,
-    "mfr_part_number": "607",
-    "description": "1\" WROT CXC 90 ELBOW",
-    "mfr_name": "NIBCO, Inc.",
-    "mfr_list_price": 18.11,
-    "price_uom": "E"
-  }]
-}
-```
-When requesting a catalog from the CINX API there are two view options. 
-
-The table below defines the fields output using the **compact** view option.
-
 ## Create Item - HPH Code
 ### API Endpoint – Add a New Catalog Item using an HPH Code
 
@@ -264,17 +261,18 @@ The table below defines the fields output using the **compact** view option.
     ]
 }
 ```
+`POST`
 
 This endpoint will be used to submit an HPH Item Code for an item and have it added to an organization's private catalog. 
 
-URL Pattern: **{api path}/{api_version}/sub/{api_token}/catalog-item/add?hph-code={hph-code}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/item/add?hph-code={hph-code}**
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/catalog-item/add?hph-code=001BS0200F`
-
-HTTP Method: `POST`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/item/add?hph-code=001BS0200F`
 
 ## Get Item Template
 ### API Endpoint - Get a Catalog Item Template
+
+ `GET`
 
 This request will be used to get a CINX Template for a catalog item.
 
@@ -282,7 +280,6 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/item**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/item`
 
-HTTP Method: `GET`
 
 The table below defines the fields within the template.
 
@@ -303,6 +300,7 @@ The table below defines the fields within the template.
     ]
 }
 ```
+`POST`
 
 This endpoint will be used to create a private catalog item that is not linked to an HPH Item.  
 
@@ -315,11 +313,10 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-i
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-item-import?body=json`
 
-HTTP Method: `POST`
-
 ## Modify Item
 ### API Endpoint – Modify a CINX Private Catalog Item using a CINX Id
 
+`PUT`
 
 This endpoint will be used to modify a private catalog item that is not linked to an HPH Item.  
 
@@ -332,11 +329,10 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-i
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-item-import?body=json`
 
-HTTP Method: `PUT`
-
-
 ## Delete Item
 ### API Endpoint – Delete a Catalog Item using a CINX Id
+
+`DELETE`
 
 > The above code returns JSON structured like this:
 
@@ -348,5 +344,3 @@ This endpoint will be used to remove an item from an organization's private CINX
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/item/{cinx_guid}**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/item/d9863525-d926-5441-9f9c-aa47a285a19b`
-
-HTTP Method: `DELETE`

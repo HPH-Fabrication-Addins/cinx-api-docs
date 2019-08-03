@@ -12,14 +12,15 @@ A CINX Purchase Order Change Order is created when changes need to be made to a 
   - PO Change Orders will be automatically numbered by the system
   - Must have a procurement status
   - Must have at least one item before it can be submitted
+  - Will be locked after it is submitted
 
 **Supported API Services**
 
-  - Get a List of PO Change Orders
-  - Get a PO Change Order
-  - Get a PO Change Order Template
-  - Create a PO Change Order
-  - Modify a PO Change Order
+  - [Get a List of PO Change Orders](#get-po-co-list)
+  - [Get a PO Change Order](#get-po-co)
+  - [Get a PO Change Order Template](#get-po-co-template)
+  - [Create a PO Change Order](#create-po-co)
+  - [Modify a PO Change Order](#modify-po-co)
 
 ## Get PO CO List
 ### API Endpoint - Get a List of PO Change Orders
@@ -62,50 +63,19 @@ A CINX Purchase Order Change Order is created when changes need to be made to a 
     ]
 }
 ```
-This endpoint will be used to get a list of PO Change Orders. See the Supported Filters list for additional query parameters that can be used in the URL.
+`GET`
+
+This endpoint will be used to get a list of PO Change Orders. See the Optional URL Parameters list for additional query parameters that can be used in the URL.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/pocos**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/pocos`
 
-HTTP Method: `GET`
-
-**Supported Filters**
-
-Delivery Location Type: will limit results to a specific delivery type location
-URL Parameter: **delivery={option from below}**
-Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
-
-Procurement Status: will limit results to a specific procurement status
-URL Parameter: **procurement={option from below}**
-Available options are: OPEN, SUBMITTED, IN-REVIEW, APPROVED, APPROVED W/MODS, REJECTED, PENDING ORDER, COMPLETE, CLOSED, CANCELLED, RESUBMITTED
-
-Project Reference: will limit results to a single project
-URL parameter:  **project={CINX project Id}**
-
-Vendor Reference: will limit results to a single vendor
-URL parameter:  **vendor={CINX vendor Id}**
-
-Ship Via: will limit results to a specific ship via value
-URL Parameter: **ship_via={option from below}**
-Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
-
-Deliver By Date: will limit results to a specific date
-URL Parameter: **deliver_date={date}**
-Date Format: YYYY-MM-DD
-
-Submitter: will limit results to a specified CINX user
-URL parameter:  **submitter={submitter CINX User Id}**
-
-Current Owner: will limit results to a specified CINX user to whom the transaction is assigned
-URL parameter:  **owner={CINX User Id}**
-
-Transaction Number: will limit results to a specified transaction number
-URL parameter:  **number={transaction number}**
-
 
 ## Get PO CO
 ### API Endpoint - Get a PO Change Order
+
+`GET`
 
 This request will be used to get the details of a specific PO Change Order.  Note: This response will include the PO Change Order’s items.
 
@@ -115,10 +85,10 @@ The cinx_guid will be the PO Change Order’s CINX Id.
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/poco/e73c118f-1ee9-57e0-9c79-1775c1a04b81`
 
-HTTP Method: `GET`
-
 ## Get PO CO Template
 ### API Endpoint - Get a PO Change Order Template
+
+`GET`
 
 This request will be used to get a CINX Template for a PO Change Order.
 
@@ -126,13 +96,13 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/poco**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/poco`
 
-HTTP Method: `GET`
-
 
 The table below defines the input fields within the template.
 
 ## Create PO CO
 ### API Endpoint - Create a PO Change Order
+
+`POST`
 
 This endpoint will be used to create a new PO Change Order.
 
@@ -145,12 +115,14 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-p
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-poco-import?body=json`
 
-HTTP Method: `POST`
-
-Processing Type: `Asynchronous`
+<aside class="notice">
+The POST payload will be processed asynchronously.
+</aside>
 
 ## Modify PO CO
 ### API Endpoint - Modify a PO Change Order
+
+`PUT`
 
 This API call will be used to modify an existing CINX PO Change Order.
 
@@ -163,6 +135,6 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-p
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-poco-import?body=json`
 
-HTTP Method: `PUT`
-
-Processing Type: `Asynchronous`
+<aside class="notice">
+The PUT payload will be processed asynchronously.
+</aside>

@@ -3,7 +3,7 @@
 ## Job Cost Intro
 ### CINX Project Job Costing Introduction
 
-To allow for the proper reporting of Project items and integration of transactions with contractor accounting systems, CINX has the ability for a company to define their job costing attributes or each Project. 
+To allow for the proper reporting of project items and integration of transactions with contractor accounting systems, CINX has the ability for a company to define their job costing attributes or each project. 
 
 CINX supports the following Job Cost information at the project level:
 
@@ -43,7 +43,7 @@ The following statuses can be used to track a project’s phase/cost code: Not I
 
 Each CINX project phase/cost code has a field to track the percent complete.
 
-**Phases, Cost Codes, and Categories must be established in the company’s CINX account before they can be attached to a project.  Please see these documentation sections for information about creating job cost information in CINX:**
+**Phases, Cost Codes, and Categories must be established in the company’s CINX account before they can be attached to a project.  Please see [Job Costing Setup](#job-costing-setup) for information about creating job cost information in CINX:**
 
 ## Get Project Job Costing
 ### API Endpoint - Get a Project’s Job Costing List
@@ -119,14 +119,13 @@ cinxApi.getProjectCosts(cinx_api_token, project_id)
     ]
 }
 ```
+`GET`
 
 This endpoint will be used to get a list of a project’s job costing information – phases and cost codes.  The response will contain full details for each phase/cost code.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/job-costing**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/e1e3cb54-b00a-55ae-a079-072732542bf4/job-costing`
-
-HTTP Method: `GET`
 
 ## Create Project Job Costing
 ### API Endpoint - Create a Project’s Phase and Cost Code List
@@ -157,6 +156,7 @@ cinxApi.putProjectCost(cinx_api_token, project_id, values)
     ]
 }
 ```
+`POST`
 
 This endpoint will be used to create a project’s job costing attributes.
 
@@ -168,8 +168,6 @@ This endpoint will be used to create a project’s job costing attributes.
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-xxxx-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-xxxx-import?body=json`
-
-HTTP Method: `POST`
 
 ## Modify Project Job Costing
 ### API Endpoint - Modify a Project’s Phase and Cost Code
@@ -200,11 +198,16 @@ cinxApi.modifyProjectCost(cinx_api_token, project_cost_id, values)
     ]
 }
 ```
+`PUT`
 
 This endpoint will be used to modify a project’s phase and cost code attributes.
+
+**Notes**
+
+  - A CINX Template is available that documents the available fields that can be populated.
+  - A JSON formatted payload is used in the PUT request
+
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-xxxx-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-xxxx-import?body=json`
-
-HTTP Method: `PUT`

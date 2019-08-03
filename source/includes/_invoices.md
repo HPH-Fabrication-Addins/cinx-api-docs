@@ -5,13 +5,19 @@
 
 An Invoice is a vendor document is that indicates the quantities and costs of the products or services provider by the vendor. The invoice document will also define payment terms and dates.
 
+**Dependencies and Business Rules**
+
+  - Must be created by a CINX user linked to an active CINX company
+  - Must be linked to a CINX purchase order
+  - Must have at least one item before it can be submitted
+
 **Supported API Services**
 
-  - Get a List of Invoices
-  - Get an Invoice
-  - Get an Invoice Template
-  - Create an Invoice
-  - Modify an Invoice
+  - [Get a List of Invoices](#get-invoice-list)
+  - [Get an Invoice](#get-invoice)
+  - [Get an Invoice Template](#get-invoice-template)
+  - [Create an Invoice](#create-invoice)
+  - [Modify an Invoice](#modify-invoice)
 
 ## Get Invoice List
 ### API Endpoint - Get a List of Invoices
@@ -48,50 +54,19 @@ An Invoice is a vendor document is that indicates the quantities and costs of th
     ]
 }
 ```
-This endpoint will be used to get a list of invoices. See the Supported Filters list for additional query parameters that can be used in the URL.
+`GET`
+
+This endpoint will be used to get a list of invoices. See the Optional URL Parameters list for additional query parameters that can be used in the URL.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/invoices**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/invoices`
 
-HTTP Method: `GET`
-
-**Supported Filters**
-
-Delivery Location Type: will limit results to a specific delivery type location
-URL Parameter: **delivery={option from below}**
-Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
-
-Procurement Status: will limit results to a specific procurement status
-URL Parameter: **procurement={option from below}**
-Available options are: OPEN, SUBMITTED, IN-REVIEW, APPROVED, APPROVED W/MODS, REJECTED, PENDING ORDER, COMPLETE, CLOSED, CANCELLED, RESUBMITTED
-
-Project Reference: will limit results to a single project
-URL parameter:  **project={CINX project Id}**
-
-Vendor Reference: will limit results to a single vendor
-URL parameter:  **vendor={CINX vendor Id}**
-
-Ship Via: will limit results to a specific ship via value
-URL Parameter: **ship_via={option from below}**
-Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
-
-Deliver By Date: will limit results to a specific date
-URL Parameter: **deliver_date={date}**
-Date Format: YYYY-MM-DD
-
-Submitter: will limit results to a specified CINX user
-URL parameter:  **submitter={submitter CINX User Id}**
-
-Current Owner: will limit results to a specified CINX user to whom the transaction is assigned
-URL parameter:  **owner={CINX User Id}**
-
-Transaction Number: will limit results to a specified transaction number
-URL parameter:  **number={transaction number}**
-
 
 ## Get Invoice
 ### API Endpoint - Get an Invoice
+
+`GET`
 
 This request will be used to get the details of a specific invoice.  Note: This response will include the invoice’s items.
 
@@ -101,10 +76,10 @@ The cinx_guid will be the invoice’s CINX Id.
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/invoice/8ead0386-496b-571c-b14f-09eafeeb6758`
 
-HTTP Method: `GET`
-
 ## Get Invoice Template
 ### API Endpoint - Get an Invoice Template
+
+`GET`
 
 This request will be used to get a CINX Template for an invoice.
 
@@ -112,13 +87,13 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/invoice**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/invoice`
 
-HTTP Method: `GET`
-
 
 The table below defines the input fields within the template.
 
 ## Create Invoice
 ### API Endpoint - Create a New Invoice
+
+`POST`
 
 This endpoint will be used to create a new invoice.
 
@@ -131,12 +106,14 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-i
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-invoice-import?body=json`
 
-HTTP Method: `POST`
-
-Processing Type: `Asynchronous`
+<aside class="notice">
+The POST payload will be processed asynchronously.
+</aside>
 
 ## Modify Invoice
 ### API Endpoint - Modify an Invoice
+
+`PUT`
 
 This API call will be used to modify an existing CINX invoice.
 
@@ -149,6 +126,6 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-i
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-invoice-import?body=json`
 
-HTTP Method: `PUT`
-
-Processing Type: `Asynchronous`
+<aside class="notice">
+The PUT payload will be processed asynchronously.
+</aside>
