@@ -134,6 +134,33 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 **OPTIONAL URL PARAMETERS**
 
+**delivery**: will limit results to a specific delivery type location
+
+  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+
+**workflow**: will limit results to a specific workflow status
+
+  - Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, QUOTED
+
+**vendor**: will limit results to a single vendor
+
+  - {cinx_commerce_guid}
+
+**ship_via**: will limit results to a specific ship via value
+
+  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+
+**deliver_date**: will limit results to a specific need-by or delivery-by date
+
+  - Date Format: YYYY-MM-DD
+
+**submitter**: will limit results to a specified CINX user
+
+  - {CINX_User_Id}
+
+**number**: will limit results to a specified transaction number
+
+  - {transaction_number}
 
 ## Get Project Quotes
 ### API Endpoint - Get a List of Quotes for a Project
@@ -145,8 +172,23 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
     "response": {},
     "rows": [
         {
-			"cinx_guid": "80e6d9c8-d2e4-5aaa-9bd3-3957430741dd",
-			UPDATE CONTENT
+			"cinx_guid": "1eb08930-8744-5213-90f0-3ad63a216b20",
+			"number": "",
+			"name": "WTS Mechanical -DEV[ 2019 07 25 a ]",
+			"description": "",
+			"workflow_status": "RECEIVED",
+			"vendor_number": "99999",
+			"vendor_name": "Ferguson Testing July 2015",
+			"submitted_by": "eb stone",
+			"date_received": "2019-07-25",
+			"date_expires": "2019-07-26",
+			"date_requested": null,
+			"links": [],
+			"project_number": "WTS-2019-06",
+			"project_name": "2019 01 30",
+			"rfq_number": "2019 07 25 a",
+			"rfq_name": "2019 07 25 a",
+			"item_count": 11
 		}
     ]
 }
@@ -158,6 +200,37 @@ This endpoint will be used to get a list of Quotes linked to a project. See the 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid/quotes**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/quotes`
+
+
+**OPTIONAL URL PARAMETERS**
+
+**delivery**: will limit results to a specific delivery type location
+
+  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+
+**workflow**: will limit results to a specific workflow status
+
+  - Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ERP PENDING, ERP ACCEPTED, ERP FAILED
+
+**vendor**: will limit results to a single vendor
+
+  - {cinx_commerce_guid}
+
+**ship_via**: will limit results to a specific ship via value
+
+  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+
+**deliver_date**: will limit results to a specific need-by or delivery-by date
+
+  - Date Format: YYYY-MM-DD
+
+**submitter**: will limit results to a specified CINX user
+
+  - {CINX_User_Id}
+
+**number**: will limit results to a specified transaction number
+
+  - {transaction_number}
 
 ## Get Project POs
 ### API Endpoint - Get a List of POs for a Project
@@ -209,6 +282,49 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/p
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/pos`
 
+
+**OPTIONAL URL PARAMETERS**
+
+**delivery**: will limit results to a specific delivery type location
+
+  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+
+**procurement**: will limit results to a specific procurement status
+
+  - Available options are: NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED
+
+**workflow**: will limit results to a specific workflow status
+
+  - Available options are: N-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED
+
+**erp**: will limit results to a specific erp status
+
+  - Available options are: NOT SUBMITTED, PENDING, SUBMITTED, APPLIED
+
+**project**: will limit results to a single project
+
+  - {cinx_project_guid}
+
+**vendor**: will limit results to a single vendor
+
+  - {cinx_commerce_guid}
+
+**ship_via**: will limit results to a specific ship via value
+
+  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+
+**deliver_date**: will limit results to a specific need-by or delivery-by date
+
+  - Date Format: YYYY-MM-DD
+
+**submitter**: will limit results to a specified CINX user
+
+  - {CINX_User_Id}
+
+**number**: will limit results to a specified transaction number
+
+  - {transaction_number}
+
 ## Get Project POCOs
 ### API Endpoint - Get a List of PO Change Orders for a Project
 
@@ -258,6 +374,49 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/p
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/pocos`
 
+
+**OPTIONAL URL PARAMETERS**
+
+**delivery**: will limit results to a specific delivery type location
+
+  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+
+**procurement**: will limit results to a specific procurement status
+
+  - Available options are: NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED
+
+**workflow**: will limit results to a specific workflow status
+
+  - Available options are: N-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED
+
+**erp**: will limit results to a specific erp status
+
+  - Available options are: NOT SUBMITTED, PENDING, SUBMITTED, APPLIED
+
+**project**: will limit results to a single project
+
+  - {cinx_project_guid}
+
+**vendor**: will limit results to a single vendor
+
+  - {cinx_commerce_guid}
+
+**ship_via**: will limit results to a specific ship via value
+
+  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+
+**deliver_date**: will limit results to a specific need-by or delivery-by date
+
+  - Date Format: YYYY-MM-DD
+
+**submitter**: will limit results to a specified CINX user
+
+  - {CINX_User_Id}
+
+**number**: will limit results to a specified transaction number
+
+  - {transaction_number}
+
 ## Get Project Deliveries
 ### API Endpoint - Get a List of Deliveries for a Project
 
@@ -300,6 +459,33 @@ This endpoint will be used to get a list of Deliveries for a project. See the Op
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/deliveries**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/deliveries`
+
+
+**OPTIONAL URL PARAMETERS**
+
+**vendor**: will limit results to a single vendor
+
+  - {cinx_commerce_guid}
+
+**delivery**: will limit results to a specific delivery type location
+
+  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+
+**ship_via**: will limit results to a specific ship via value
+
+  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+
+**po_guid**: will limit results to a specified CINX purchase order
+
+  - {CINX_PO_Id}
+
+**submitter**: will limit results to a specified CINX user
+
+  - {CINX_User_Id}
+
+**number**: will limit results to a specified transaction number
+
+  - {transaction_number}
 
 ## Get Project Invoices
 ### API Endpoint - Get a List of Invoices for a Project
@@ -344,6 +530,33 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/i
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/invoices`
 
+
+**OPTIONAL URL PARAMETERS**
+
+**po_guid**: will limit results to a specified CINX purchase order
+
+  - {CINX_PO_Id}
+
+**status**: will limit results to a specific status
+
+  - Available options are: PENDING E-INVOICE, ENTERED, REVIEWED, ACCEPTED, IN-DISPUTE, ON-HOLD, REJECTED, SUBMITTED
+
+**erp**: will limit results to a specific erp status
+
+  - Available options are: NOT SUBMITTED, PENDING, SUBMITTED, APPLIED
+
+**vendor**: will limit results to a single vendor
+
+  - {cinx_commerce_guid}
+
+**owner**: will limit results to a specified CINX user to whom the transaction is assigned
+
+  - {CINX_User_Id}
+
+**number**: will limit results to a specified transaction number
+
+  - {transaction_number}
+
 ## Get Project Returns
 ### API Endpoint - Get a List of Returns for a Project
 
@@ -385,6 +598,33 @@ This endpoint will be used to get a list of Returns linked to a Project. See the
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/returns**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/returns`
+
+
+**OPTIONAL URL PARAMETERS**
+
+**vendor**: will limit results to a single vendor
+
+  - {cinx_commerce_guid}
+
+**delivery**: will limit results to a specific delivery type location
+
+  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+
+**ship_via**: will limit results to a specific ship via value
+
+  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+
+**po_guid**: will limit results to a specified CINX purchase order
+
+  - {CINX_PO_Id}
+
+**owner**: will limit results to a specified CINX user to whom the transaction is assigned
+
+  - {CINX_User_Id}
+
+**number**: will limit results to a specified transaction number
+
+  - {transaction_number}
 
 ## Get Project Back-Orders
 ### API Endpoint - Get a List of Back-Orders for a Project
@@ -439,3 +679,23 @@ This endpoint will be used to get a list of Back-Orders linked to a project. See
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/back-orders**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/back-orders`
+
+
+**OPTIONAL URL PARAMETERS**
+
+**delivery**: will limit results to a specific delivery type location
+
+  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+
+**project**: will limit results to a single project
+
+  - {cinx_project_guid}
+
+**vendor**: will limit results to a single vendor
+
+  - {cinx_commerce_guid}
+  
+**po_guid**: will limit results to a specified CINX purchase order
+
+  - {CINX_PO_Id}
+

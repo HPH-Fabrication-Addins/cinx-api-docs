@@ -71,6 +71,7 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/reqs**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/reqs`
 
+
 **OPTIONAL URL PARAMETERS**
 
 **delivery**: will limit results to a specific delivery type location
@@ -80,6 +81,10 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 **procurement**: will limit results to a specific procurement status
 
   - Available options are: OPEN, SUBMITTED, IN-REVIEW, APPROVED, APPROVED W/MODS, REJECTED, PENDING ORDER, COMPLETE, CLOSED, CANCELLED, RESUBMITTED
+
+**project**: will limit results to a single project
+
+  - {cinx_project_guid}
 
 **vendor**: will limit results to a single vendor
 

@@ -70,6 +70,25 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/back-orders**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/back-orders`
 
+
+**OPTIONAL URL PARAMETERS**
+
+**delivery**: will limit results to a specific delivery type location
+
+  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+
+**project**: will limit results to a single project
+
+  - {cinx_project_guid}
+
+**vendor**: will limit results to a single vendor
+
+  - {cinx_commerce_guid}
+  
+**po_guid**: will limit results to a specified CINX purchase order
+
+  - {CINX_PO_Id}
+
 ## Get Back-Order
 ### API Endpoint - Get a Back_Order
 

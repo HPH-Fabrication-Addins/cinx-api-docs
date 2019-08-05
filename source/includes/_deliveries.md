@@ -65,6 +65,36 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/deliveries**
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/deliveries`
 
 
+**OPTIONAL URL PARAMETERS**
+
+**project**: will limit results to a single project
+
+  - {cinx_project_guid}
+
+**vendor**: will limit results to a single vendor
+
+  - {cinx_commerce_guid}
+
+**delivery**: will limit results to a specific delivery type location
+
+  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+
+**ship_via**: will limit results to a specific ship via value
+
+  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+
+**po_guid**: will limit results to a specified CINX purchase order
+
+  - {CINX_PO_Id}
+
+**submitter**: will limit results to a specified CINX user
+
+  - {CINX_User_Id}
+
+**number**: will limit results to a specified transaction number
+
+  - {transaction_number}
+  
 ## Get Delivery
 ### API Endpoint - Get a Delivery
 

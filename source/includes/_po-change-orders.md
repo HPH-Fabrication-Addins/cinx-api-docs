@@ -71,6 +71,48 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/pocos**
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/pocos`
 
 
+**OPTIONAL URL PARAMETERS**
+
+**delivery**: will limit results to a specific delivery type location
+
+  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+
+**procurement**: will limit results to a specific procurement status
+
+  - Available options are: NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED
+
+**workflow**: will limit results to a specific workflow status
+
+  - Available options are: N-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED
+
+**erp**: will limit results to a specific erp status
+
+  - Available options are: NOT SUBMITTED, PENDING, SUBMITTED, APPLIED
+
+**project**: will limit results to a single project
+
+  - {cinx_project_guid}
+
+**vendor**: will limit results to a single vendor
+
+  - {cinx_commerce_guid}
+
+**ship_via**: will limit results to a specific ship via value
+
+  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+
+**deliver_date**: will limit results to a specific need-by or delivery-by date
+
+  - Date Format: YYYY-MM-DD
+
+**submitter**: will limit results to a specified CINX user
+
+  - {CINX_User_Id}
+
+**number**: will limit results to a specified transaction number
+
+  - {transaction_number}
+
 ## Get PO CO
 ### API Endpoint - Get a PO Change Order
 
