@@ -21,8 +21,23 @@ A CINX Quote is a document a vendor prepares in response to a customer’s Reque
     "response": {},
     "rows": [
         {
-			"cinx_guid": "e98e2fc5-f59b-5091-8b05-54edaa9284cc",
-			UPDATE CONTENT
+			"cinx_guid": "1eb08930-8744-5213-90f0-3ad63a216b20",
+			"number": "",
+			"name": "WTS Mechanical -DEV[ 2019 07 25 a ]",
+			"description": "",
+			"workflow_status": "RECEIVED",
+			"vendor_number": "99999",
+			"vendor_name": "Ferguson Testing July 2015",
+			"submitted_by": "eb stone",
+			"date_received": "2019-07-25",
+			"date_expires": "2019-07-26",
+			"date_requested": null,
+			"links": [],
+			"project_number": "WTS-2019-06",
+			"project_name": "2019 01 30",
+			"rfq_number": "2019 07 25 a",
+			"rfq_name": "2019 07 25 a",
+			"item_count": 11
 		}
     ]
 }

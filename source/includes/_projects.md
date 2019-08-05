@@ -54,7 +54,6 @@ cinxApi.getProjects(cinx_api_token)
                 "cinx_commerce_guid": null,
                 "customer_name": null,
                 "cinx_building_guid": null,
-                "building_number": null,
                 "building_name": null,
                 "project_number": null
             },
@@ -91,52 +90,52 @@ cinxApi.getProjectDetails(cinx_api_token, project_id)
 ```json
 {
     "response": {},
-    "rows": [
-        {
-            "cinx_guid": "e8c5dc6b-e95a-5009-ad89-a11520f55493",
-            "number": "A",
-            "name": "A",
-            "description": "A",
-            "status": "CONCEPTUAL",
-            "dates": {
-                "contract_award": null,
-                "scheduled_start": null,
-                "actual_start": null,
-                "scheduled_complete": null,
-                "actual_complete": null
-            },
-            "customer": {
-                "cinx_commerce_guid": null,
-                "customer_name": null,
-                "cinx_building_guid": null,
-                "building_name": null,
-                "project_number": null
-            },
-            "classifications": {
-                "delivery_method": "NOT SPECIFIED",
-                "is_leed": "0",
-                "org_defined_type": null,
-                "construction_type": "NOT SPECIFIED",
-                "industry_type": "NOT SPECIFIED",
-                "cinx_type": "PROJECT",
-                "sector_type": "NOT SPECIFIED"
-            },
-            "contract": {
-                "budget_amount": null,
-                "budget_currency": "USD"
-            },
-            "taxes": {
-                "taxable": true,
-                "cinx_guid": "7c42f24f-766e-5220-bc7e-cce8048dbb57",
-                "tax_group_name": "TAX-12",
-                "tax_exempt_id": null
-            },
-            "size_square": {
-                "value": null,
-                "uom": "FEET"
-            }
+    "rows": [{
+        "cinx_guid": "e1e3cb54-b00a-55ae-a079-072732542bf4",
+        "number": "WTS-2017-04",
+        "name": "WTS-2017-04 - ATC Denver",
+        "description": "17243",
+        "project_manager": "Will Stone",
+        "status": "DESIGN",
+        "item_count": 241,
+        "dates": {
+            "contract_award": null,
+            "scheduled_start": null,
+            "actual_start": null,
+            "scheduled_complete": null,
+            "actual_complete": null
+        },
+        "customer": {
+            "cinx_commerce_guid": "b65d1355-e1f7-55bc-b44a-5dc441989235",
+            "customer_name": "Team O'Neil",
+            "cinx_building_guid": "070eb515-65d7-5430-9e09-24eb9af9dcd1",
+            "building_name": "motorsports",
+            "project_number": null
+        },
+        "classifications": {
+            "delivery_method": "INTEGRATED PROJECT DELIVERY",
+            "is_leed": "1",
+            "org_defined_type": "Industrial",
+            "construction_type": "NEW",
+            "industry_type": "COMMERCIAL",
+            "cinx_type": "PROJECT",
+            "sector_type": "PRIVATE - FOR PROFIT"
+        },
+        "contract": {
+            "budget_amount": null,
+            "budget_currency": "USD"
+        },
+        "taxes": {
+            "taxable": true,
+            "cinx_guid": "7c42f24f-766e-5220-bc7e-cce8048dbb57",
+            "tax_group_name": "TAX-12",
+            "tax_exempt_id": null
+        },
+        "size_square": {
+            "value": null,
+            "uom": "FEET"
         }
-    ]
+    }]
 }
 ```
 `GET`
@@ -169,7 +168,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
                 "actual_complete": null
             },
             "customer": {
-                "cinx_guid": null,
+                "cinx_commerce_guid": null,
                 "customer_name": null,
                 "cinx_building_guid": null,
                 "building_name": null,

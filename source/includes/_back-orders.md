@@ -28,11 +28,11 @@ A back-order is an item from a submitted PO that cannot be delivered by the requ
         {
 			"cinx_guid": "076bd4bb-d6d9-5096-96f2-ec105d0562b1",
 			"date_expected_delivery": null,
-			"date_po_deliver_by": null,
+			"date_po_needr_by": null,
 			"date_informed": null,
 			"date_last_updated": null,
 			"reason": null,
-			"quantity_backordered": 1,
+			"quantity_back_ordered": 1,
 			"quantity_shipped": 0,
 			"quantity_po": 1,
 			"org_item_id": null,

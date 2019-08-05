@@ -34,8 +34,8 @@ A CINX Request for Quotation is a compilation of  that a customer wants a vendor
 			"number": "",
 			"name": "RFQ-1254",
 			"description": "",
-			"status": "IN-PROCESS",
-			"submitted_by": "User Not Found",
+			"workflow_status": "SUBMITTED",
+			"submitted_by": "Will Stone",
 			"date_submitted": "",
 			"date_respond_by": "",
 			"vendors": [
@@ -48,13 +48,13 @@ A CINX Request for Quotation is a compilation of  that a customer wants a vendor
 			"ship_via": "SUPPLIER TRUCK",
 			"delivery_location_type": "OFFICE",
 			"delivery_location_name": null,
-			"date_deliver_by": "2019-06-08",
+			"date_need_by": "2019-06-08",
 			"project_number": "WTS-2017-03",
 			"project_name": "WTS-2017-03",
 			"req_number": null,
 			"req_name": null,
 			"phase": null,
-			"cost_code": null,
+			"material_cost_code": null,
 			"category": null,
 			"item_count": 113
 		}

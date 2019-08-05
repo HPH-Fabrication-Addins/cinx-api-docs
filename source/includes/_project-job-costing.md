@@ -110,10 +110,10 @@ cinxApi.getProjectCosts(cinx_api_token, project_id)
                 "actual": null
             },
             "dates": {
-                "start_scheduled": "2017-10-23 17:00:12Z",
-                "start_actual": "2017-10-23 17:00:12Z",
-                "completion_scheduled": "2017-10-23 17:00:12Z",
-                "completion_actual": "2017-10-23 17:00:12Z"
+                "scheduled_start": "2017-10-23",
+                "actual_start": "2017-10-23",
+                "scheduled_complete": "2019-01-23",
+                "actual_complete": "2019-05-02"
             }
         }
     ]
