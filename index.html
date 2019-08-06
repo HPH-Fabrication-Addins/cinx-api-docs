@@ -370,6 +370,23 @@
               </ul>
           </li>
           <li>
+            <a href="#catalog-item" class="toc-h1 toc-link" data-title="Catalog Item">Catalog Item</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#labor-units-intro" class="toc-h2 toc-link" data-title="Labor Units Intro">Labor Units Intro</a>
+                  </li>
+                  <li>
+                    <a href="#get-labor-hph-code" class="toc-h2 toc-link" data-title="Get Labor - HPH Code">Get Labor - HPH Code</a>
+                  </li>
+                  <li>
+                    <a href="#get-labor-source-id" class="toc-h2 toc-link" data-title="Get Labor - Source Id">Get Labor - Source Id</a>
+                  </li>
+                  <li>
+                    <a href="#get-item-labor-hph-code" class="toc-h2 toc-link" data-title="Get Item Labor - HPH Code">Get Item Labor - HPH Code</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#job-costing-setup" class="toc-h1 toc-link" data-title="Job Costing Setup">Job Costing Setup</a>
               <ul class="toc-list-h2">
                   <li>
@@ -864,7 +881,7 @@
 
 <p>CINX accounts are subscription based and have expiration dates. Accounts with expired subscriptions will not have access to CINX data.  </p>
 
-<p><strong>PAPI Server Paths</strong></p>
+<p><strong>API Server Paths</strong></p>
 
 <p>The production server is: <strong>https://api.cinx.com</strong></p>
 
@@ -1497,7 +1514,9 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p><strong>Labor Units</strong></p>
 
-<p>CINX has worked with industry labor unit providers (MCAA and PHCC) to store their labor units as CINX Catalogs. HPH has also linked labor units to our HPH Plumbing/Mechanical catalog items. The CINX Get Item API can return labor units when the <strong>details view</strong> is used. Adding a labor parameter to the URL will enable the output of labor units.  <strong>Labor units will be returned ONLY if the organziation is authorized by the labor unit author to access them</strong></p>
+<p>HPH has worked with industry labor unit providers (MCAA and PHCC) to store their labor units as CINX Catalogs. HPH has also linked labor units to our HPH Plumbing/Mechanical catalog items. The CINX Get Item API can return labor units when the <strong>details view</strong> is used. Adding a labor parameter to the URL will enable the output of labor units.  <strong>Labor units will be returned ONLY if the organziation is authorized by the labor unit author to access them</strong>.</p>
+
+<p>For more information about labor units, please review the <a href="#labor-units">Labor Units</a> pages on this site.</p>
 
 <p><strong>Dependencies and Business Rules</strong></p>
 
@@ -2017,6 +2036,141 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>Sample:</p>
 
 <p><code>https://api.cinx.com/sub/0d2b4b77-d706-e215-13f2-207c7e4aaee7/ipu/update/apply/1ac399a6-40e8-f9e4-d5b8-d5dc709e9e1d?values={%22applied_date%22:%222016-06-10%22,%22download_date%22:%222016-06-10%22}</code></p>
+<h1 id='catalog-item'>Catalog Item</h1><h2 id='labor-units-intro'>Labor Units Intro</h2><h3 id='cinx-introduction-to-industry-labor-units'>CINX Introduction to Industry Labor Units</h3>
+<p>In construction, a labor unit is the estimated time it takes to install an item under good working conditions.</p>
+
+<p>In the Plumbing/Mechanial industry there are two primary sources of labor unit standards.  They are both industry trade organzations:</p>
+
+<ul>
+<li>MCAA - Mechanical Contractors Association of America</li>
+<li>PHCC - Plumbing - Heating - Cooling Contractors Association</li>
+</ul>
+
+<p>Each organization has two two choices or methods for laboring common Pipe, Valves, and Fittings. </p>
+
+<ul>
+<li>MCAA - <strong>Component</strong> and <strong>Work Activity</strong></li>
+<li>PHCC - <strong>Per Fitting</strong> and <strong>Per Joint</strong></li>
+</ul>
+
+<p>HPH has license agreements with both of these trade organinzations which allow us to store their labor units as CINX catalogs and provide API services to access their content. Every labor unit has been assigned a unique HPH Labor Code.  The code can stored in local database and used in API calls to access the actual labor unit values.</p>
+
+<p>The API also offers full database and update files of the labor units so that a sofware system can have a labor unit update feature.</p>
+
+<p>HPH has also linked the industry labor units to our HPH Plumbing/Mechanical catalog items. Both PHCC methods and the MCAA Component method have been assigned to our items.</p>
+
+<p><strong>NOTES</strong></p>
+
+<ul>
+<li><strong>Labor units will be returned ONLY if the organziation is authorized by the labor unit source (trade organization) to access them</strong>.</li>
+<li>Please review the assumptions from each trade organization in regards to how the units were calculated and their intended use.</li>
+<li>The Labor Unit API responses will contain a field named <strong>joint_quantity</strong>. This will be populated only when the labor source is PHCC and the method is Per Joint.</li>
+</ul>
+
+<p><strong>Dependencies and Business Rules</strong></p>
+
+<ul>
+<li>A single HPH Item Code can be linked to multiple labor units from the labor unit source</li>
+</ul>
+
+<p><strong>Supported API Services</strong></p>
+
+<ul>
+<li><a href="#">Get a Labor Unit using the HPH Labor Code</a></li>
+<li><a href="#">Get a Labor Unit using the Source Id</a></li>
+<li><a href="#">Get a Labor Unit Update File</a></li>
+<li><a href="#">Get an Item&#39;s Labor Units using the HPH Item Code</a></li>
+<li><a href="#">Get an Item&#39;s Labor Units using an Organization&#39;s Item Id</a></li>
+<li><a href="#">Get an Item&#39;s Labor Units using a CINX Item Id</a></li>
+</ul>
+<h2 id='get-labor-hph-code'>Get Labor - HPH Code</h2><h3 id='api-endpoint-get-a-labor-unit-using-an-hph-labor-code'>API Endpoint – Get a Labor Unit using an HPH Labor Code</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e3944e24-5fa5-5880-b140-2e0cbf3d5a6c"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hph_labor_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L01FTCU030000025"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"source_unit_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"533501"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MCAA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"source_logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cdn.dev.cinx.biz/assets/apps/app-v2-mcaa.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"component"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Piping Systems (Component Method) | Fittings | Copper | Pressure | 95/5 Solder | 90 Elbow Long Radius | 1.0000 Dia. (in)"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"joint_quantity"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"base_unit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.63</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"total_unit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.63</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HOUR"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"date_effective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2008-03-01"</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a labor unit’s information using the HPH Labor Code.  </p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/labor/hph/{hph_labor_code}</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/labor/hph/L01FTCU030000025</code></p>
+<h2 id='get-labor-source-id'>Get Labor - Source Id</h2><h3 id='api-endpoint-get-a-labor-unit-using-the-source-39-s-trade-organization-unit-id'>API Endpoint – Get a Labor Unit using the Source&#39;s (Trade Organization) Unit Id</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e3944e24-5fa5-5880-b140-2e0cbf3d5a6c"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hph_labor_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L01FTCU030000025"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"source_unit_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"533501"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MCAA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"source_logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cdn.dev.cinx.biz/assets/apps/app-v2-mcaa.png"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"component"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Piping Systems (Component Method) | Fittings | Copper | Pressure | 95/5 Solder | 90 Elbow Long Radius | 1.0000 Dia. (in)"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"joint_quantity"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"base_unit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.63</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"total_unit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.63</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HOUR"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"date_effective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2008-03-01"</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a labor unit’s information using the source&#39;s (trade organization) Id for the unit.  </p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/labor/{labor_source_reference}/{labor_source_unit_id}</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/labor/mcaa/533501</code></p>
+
+<p><strong>Labor Source Reference Options</strong></p>
+
+<ul>
+<li><strong>MCAA</strong> - MCAA</li>
+<li><strong>PHCC</strong> - PHCC</li>
+</ul>
+<h2 id='get-item-labor-hph-code'>Get Item Labor - HPH Code</h2><h3 id='api-endpoint-get-an-item-39-s-labor-units-using-an-hph-code'>API Endpoint – Get an Item&#39;s Labor Units using an HPH Code</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a catalog item’s labor unit and descriptive information using the HPH Code of an item.  </p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/item/hph-code/{hph_code}?view=details&amp;labor={labor_type}</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/item/hph-code/012EK0018?view=details&amp;labor=all</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<p><strong>Labor</strong> </p>
+
+<ul>
+<li><strong>all</strong>: returns all industry labor units the organization is authorized to use</li>
+<li><strong>mcaa</strong>: returns the MCAA labor units if the organization is authorized to access them</li>
+<li><strong>phcc</strong>: returns the PHCC labor units if the organization is authorized to access them</li>
+</ul>
 <h1 id='job-costing-setup'>Job Costing Setup</h1><h2 id='job-costing-intro'>Job Costing Intro</h2><h3 id='cinx-job-costing-introduction'>CINX Job Costing Introduction</h3>
 <p>To allow for the proper reporting of project items and integration of transactions with contractor accounting systems, CINX has the ability for a company to define its job costing attributes. CINX supports the following job cost information types:</p>
 
