@@ -118,7 +118,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 `GET`
 
-This request will be used to get the details of a specific PO Change Order.  Note: This response will include the PO Change Order’s items.
+This endpoint will be used to get the details of a specific PO Change Order.  Note: This response will include the PO Change Order’s items.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/poco/{cinx_guid}**
 
@@ -131,7 +131,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 `GET`
 
-This request will be used to get a CINX Template for a PO Change Order.
+This endpoint will be used to get a CINX Template for a PO Change Order.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/poco**
 
@@ -165,7 +165,7 @@ The POST payload will be processed asynchronously.
 
 `PUT`
 
-This API call will be used to modify an existing CINX PO Change Order.
+This API endpoint will be used to modify an existing CINX PO Change Order.
 
 **Notes**
 

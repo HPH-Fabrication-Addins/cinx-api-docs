@@ -277,7 +277,7 @@ The table below defines the input fields within the template.
 ```
  `GET`
 
-This request will be used to get a value to be used in the number field of a new vendor.
+This endpoint will be used to get a value to be used in the number field of a new vendor.
 
 **Notes** 
 

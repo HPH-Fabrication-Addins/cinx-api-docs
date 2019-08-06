@@ -90,7 +90,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/q
 
 `GET`
 
-This request will be used to get the details of a specific quote.  Note: This response will include the quote’s items.
+This endpoint will be used to get the details of a specific quote.  Note: This response will include the quote’s items.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/quote/{cinx_guid}**
 

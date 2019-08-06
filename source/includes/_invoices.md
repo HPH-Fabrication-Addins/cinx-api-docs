@@ -98,7 +98,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/i
 
 `GET`
 
-This request will be used to get the details of a specific invoice.  Note: This response will include the invoice’s items.
+This endpoint will be used to get the details of a specific invoice.  Note: This response will include the invoice’s items.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/invoice/{cinx_guid}**
 
@@ -111,7 +111,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/i
 
 `GET`
 
-This request will be used to get a CINX Template for an invoice.
+This endpoint will be used to get a CINX Template for an invoice.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/invoice**
 
@@ -145,7 +145,7 @@ The POST payload will be processed asynchronously.
 
 `PUT`
 
-This API call will be used to modify an existing CINX invoice.
+This API endpoint will be used to modify an existing CINX invoice.
 
 **Notes**
 

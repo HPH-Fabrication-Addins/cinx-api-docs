@@ -100,7 +100,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/d
 
 `GET`
 
-This request will be used to get the details of a specific delivery. Note: This response will include the delivery’s items.
+This endpoint will be used to get the details of a specific delivery. Note: This response will include the delivery’s items.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/delivery/{cinx_guid}**
 
@@ -180,7 +180,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/d
 ```
 `GET`
 
-This request will be used to get a CINX Template for a delivery.
+This endpoint will be used to get a CINX Template for a delivery.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/delivery**
 
@@ -242,7 +242,7 @@ The POST payload will be processed asynchronously.
 
 `PUT`
 
-This API call will be used to modify an existing CINX delivery.
+This API endpoint will be used to modify an existing CINX delivery.
 
 **Notes**
 

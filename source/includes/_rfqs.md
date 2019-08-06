@@ -109,7 +109,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 
 `GET`
 
-This request will be used to get the details of a specific RFQ.  Note: This response will include the RFQ’s items.
+This endpoint will be used to get the details of a specific RFQ.  Note: This response will include the RFQ’s items.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/rfq/{cinx_guid}**
 
@@ -122,7 +122,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 
 `GET`
 
-This request will be used to get a CINX Template for an RFQ.
+This endpoint will be used to get a CINX Template for an RFQ.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/rfq**
 
@@ -185,7 +185,7 @@ The POST payload will be processed asynchronously.
 
 `PUT`
 
-This API call will be used to modify an existing CINX RFQ.
+This API endpoint will be used to modify an existing CINX RFQ.
 
 **Notes**
 

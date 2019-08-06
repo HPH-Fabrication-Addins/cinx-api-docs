@@ -298,7 +298,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 ```
 `GET`
 
-This request will be used to get the details of a specific purchase order.  Note: This response will include the purchase order’s items.
+This endpoint will be used to get the details of a specific purchase order.  Note: This response will include the purchase order’s items.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/po/{cinx_guid}**
 
@@ -502,7 +502,7 @@ The cinx_guid will be the purchase orders’s CINX Id.
 ```
 `GET`
 
-This request will be used to get a CINX Template for a purchase order.
+This endpoint will be used to get a CINX Template for a purchase order.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/po**
 
@@ -563,7 +563,7 @@ The POST payload will be processed asynchronously.
 
 `PUT`
 
-This API call will be used to modify an existing CINX purchase order.
+This API endpoint will be used to modify an existing CINX purchase order.
 
 **Notes**
 
