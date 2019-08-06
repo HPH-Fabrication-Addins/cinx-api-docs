@@ -110,3 +110,29 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/l
 
   - **MCAA** - MCAA
   - **PHCC** - PHCC
+
+## Get Item Labor - HPH Code
+### API Endpoint – Get an Item's Labor Units using an HPH Code
+
+> The above code returns JSON structured like this:
+
+```json
+
+```
+
+`GET`
+
+This endpoint will be used to get a catalog item’s labor unit and descriptive information using the HPH Code of an item.  
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/item/hph-code/{hph_code}?view=details&labor={labor_type}**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/item/hph-code/012EK0018?view=details&labor=all`
+
+**OPTIONAL URL PARAMETERS**
+
+**Labor** 
+
+- **all**: returns all industry labor units the organization is authorized to use
+- **mcaa**: returns the MCAA labor units if the organization is authorized to access them
+- **phcc**: returns the PHCC labor units if the organization is authorized to access them
+
