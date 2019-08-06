@@ -66,7 +66,7 @@ With each API call, youâ€™ll need to set request headers, including a CINX userâ
 CINX accounts are subscription based and have expiration dates. Accounts with expired subscriptions will not have access to CINX data.  
 
 
-**PAPI Server Paths**
+**API Server Paths**
 
 The production server is: **https://api.cinx.com**
 
