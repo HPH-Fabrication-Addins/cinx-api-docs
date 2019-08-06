@@ -1,4 +1,4 @@
-# Catalog Item
+# Labor Units
 
 ## Labor Units Intro
 ### CINX Introduction to Industry Labor Units
