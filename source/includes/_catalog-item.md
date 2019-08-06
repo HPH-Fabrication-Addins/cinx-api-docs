@@ -11,7 +11,9 @@ A CINX orgranization will have a private catalog where items can be stored. An o
 
 **Labor Units**
 
-CINX has worked with industry labor unit providers (MCAA and PHCC) to store their labor units as CINX Catalogs. HPH has also linked labor units to our HPH Plumbing/Mechanical catalog items. The CINX Get Item API can return labor units when the **details view** is used. Adding a labor parameter to the URL will enable the output of labor units.  **Labor units will be returned ONLY if the organziation is authorized by the labor unit author to access them**
+HPH has worked with industry labor unit providers (MCAA and PHCC) to store their labor units as CINX Catalogs. HPH has also linked labor units to our HPH Plumbing/Mechanical catalog items. The CINX Get Item API can return labor units when the **details view** is used. Adding a labor parameter to the URL will enable the output of labor units.  **Labor units will be returned ONLY if the organziation is authorized by the labor unit author to access them**.
+
+For more information about labor units, please review the [Labor Units](#labor-units) pages on this site.
 
 **Dependencies and Business Rules**
 
