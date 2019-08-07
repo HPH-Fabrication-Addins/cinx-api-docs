@@ -113,6 +113,152 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 ## Get Req
 ### API Endpoint - Get a Requisition
 
+```json
+{
+	"response": {},
+	"rows": [{
+		"cinx_guid": "40b43924-e7b8-5827-935e-14bd70c1d04e",
+		"number": "REQ-0005",
+		"name": "REQ-TEST EMS",
+		"description": null,
+		"tx_sub_type": "SHOP",
+		"user_comment": null,
+		"procurement_status": "OPEN",
+		"allow_substitutes": true,
+		"assigned_to": {
+			"cinx_guid": "185aabe1-3487-5f59-9ad5-c577a76bd392",
+			"name": "Will Stone",
+			"email": "willstone@cinx.com"
+		},
+		"submitter": {
+			"cinx_quid": null,
+			"name": null,
+			"email": null
+		},
+		"dates": {
+			"created": "2019-08-06",
+			"last_modified": "2019-08-06",
+			"submitted": null,
+			"need_by": null,
+			"approved": null,
+			"closed": null
+		},
+		"vendor": {
+			"cinx_commerce_guid": "9a13fcca-e6ae-524f-95dd-0f4d7d26930f",
+			"number": "99999",
+			"name": "Keegan Supply"
+		},
+		"project": {
+			"cinx_guid": "e1e3cb54-b00a-55ae-a079-072732542bf4",
+			"number": "WTS-2017-04",
+			"name": "WTS-2017-04 - ATC Denver"
+		},
+		"delivery": {
+			"address1": "995 Industrial Park Rd",
+			"address2": "",
+			"address3": "",
+			"city": "Littleton",
+			"state": "NH",
+			"postal_code": "03561",
+			"country": "USA",
+			"ship_via": "MOTOR COMMON CARRIER",
+			"fob_type": null,
+			"ship_from": null,
+			"attention": null,
+			"location_type": "OFFICE",
+			"location_name": null,
+			"instructions": null
+		},
+		"job_cost_defaults": {
+			"cinx_phase_guid": null,
+			"phase_name": null,
+			"cinx_material_cost_code_guid": null,
+			"material_cost_code": null,
+			"cinx_category_guid": null,
+			"category_name": null
+		},
+		"taxes": {
+			"taxable": true,
+			"cinx_guid": null,
+			"tax_group_name": null
+		},
+		"external_references": [],
+		"items": [{
+				"cinx_guid": "090e00f4-b942-5234-acc0-4ead0b2e3538",
+				"sequence": 1,
+				"order_status": "REQUEST PENDING",
+				"quantity": 1,
+				"date_need_by": "",
+				"order_lead_time": null,
+				"date_order_by": "",
+				"allow_substitutes": true,
+				"hph_code": "512EK0232",
+				"org_item_id": null,
+				"org_system_id": null,
+				"mfr_part_number": "10020189",
+				"upc": "683264201897",
+				"size": "1-3/8\"",
+				"description": "1-3/8\" ACR CXC 45 ELBOW",
+				"mfr_name": "Elkhart Products Corporation",
+				"item_type": "MATERIAL",
+				"vendor": {
+					"cinx_commerce_guid": null,
+					"number": null,
+					"name": null,
+					"item_id": null,
+					"system_id": null
+				},
+				"project": {
+					"cinx_guid": null,
+					"number": null,
+					"name": null
+				},
+				"delivery": {
+					"deliver_to": null,
+					"location_type": "JOBSITE",
+					"location_name": null,
+					"instructions": null,
+					"labeling_instructions": null,
+					"packaging_instructions": null
+				},
+				"work_breakdown": {
+					"work_order_id": null,
+					"work_order_name": null,
+					"spool_id": null,
+					"spool_name": null,
+					"building_name": null,
+					"level": null,
+					"space": null,
+					"sub_space": null,
+					"system": null,
+					"arch_symbol": null,
+					"tag": null
+				},
+				"job_cost": {
+					"cinx_phase_guid": null,
+					"phase_name": null,
+					"cinx_material_cost_code_guid": null,
+					"material_cost_code": null,
+					"cinx_category_guid": null,
+					"category_name": null
+				},
+				"taxes": {
+					"taxable": true,
+					"cinx_guid": null,
+					"tax_group_name": null
+				},
+				"design": {
+					"model_item_guid": null,
+					"model_name": null,
+					"model_file": null,
+					"drawing_number": null,
+					"drawing_name": null
+				}
+			}
+		]
+	}]
+}
+```
 `GET`
 
 This endpoint will be used to get the details of a specific requisition.  Note: This response will include the requisition’s items.

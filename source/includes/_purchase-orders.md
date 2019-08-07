@@ -328,7 +328,7 @@ The cinx_guid will be the purchase orders’s CINX Id.
 				"need_by": null
 			},
 			"vendor": {
-				"cinx_guid": null,
+				"cinx_commerce_guid": null,
 				"number": null
 			},
 			"project": {
