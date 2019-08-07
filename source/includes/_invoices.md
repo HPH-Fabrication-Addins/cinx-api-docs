@@ -83,7 +83,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/i
 
 **vendor**: will limit results to a single vendor
 
-  - {cinx_commerce_guid}
+  - {organization's vendor number}
 
 **owner**: will limit results to a specified CINX user to whom the transaction is assigned
 

@@ -67,7 +67,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/q
 
 **vendor**: will limit results to a single vendor
 
-  - {cinx_commerce_guid}
+  - {organization's vendor number}
 
 **ship_via**: will limit results to a specific ship via value
 

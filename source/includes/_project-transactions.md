@@ -60,7 +60,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 **vendor**: will limit results to a single vendor
 
-  - {cinx_commerce_guid}
+  - {organization's vendor number}
 
 **ship_via**: will limit results to a specific ship via value
 
@@ -144,7 +144,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 **vendor**: will limit results to a single vendor
 
-  - {cinx_commerce_guid}
+  - {organization's vendor number}
 
 **ship_via**: will limit results to a specific ship via value
 
@@ -214,7 +214,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 **vendor**: will limit results to a single vendor
 
-  - {cinx_commerce_guid}
+  - {organization's vendor number}
 
 **ship_via**: will limit results to a specific ship via value
 
@@ -291,11 +291,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 **procurement**: will limit results to a specific procurement status
 
-  - Available options are: NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED
+  - Available options are: NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED, DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED
 
 **workflow**: will limit results to a specific workflow status
 
-  - Available options are: N-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED
+  - Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED
 
 **erp**: will limit results to a specific erp status
 
@@ -307,7 +307,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 **vendor**: will limit results to a single vendor
 
-  - {cinx_commerce_guid}
+  - {organization's vendor number}
 
 **ship_via**: will limit results to a specific ship via value
 
@@ -383,11 +383,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 **procurement**: will limit results to a specific procurement status
 
-  - Available options are: NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED
+  - Available options are: NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED, DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED
 
 **workflow**: will limit results to a specific workflow status
 
-  - Available options are: N-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED
+  - Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED
 
 **erp**: will limit results to a specific erp status
 
@@ -399,7 +399,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 **vendor**: will limit results to a single vendor
 
-  - {cinx_commerce_guid}
+  - {organization's vendor number}
 
 **ship_via**: will limit results to a specific ship via value
 
@@ -465,7 +465,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 **vendor**: will limit results to a single vendor
 
-  - {cinx_commerce_guid}
+  - {organization's vendor number}
 
 **delivery**: will limit results to a specific delivery type location
 
@@ -547,7 +547,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 **vendor**: will limit results to a single vendor
 
-  - {cinx_commerce_guid}
+  - {organization's vendor number}
 
 **owner**: will limit results to a specified CINX user to whom the transaction is assigned
 
@@ -604,7 +604,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 **vendor**: will limit results to a single vendor
 
-  - {cinx_commerce_guid}
+  - {organization's vendor number}
 
 **delivery**: will limit results to a specific delivery type location
 
@@ -693,7 +693,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 **vendor**: will limit results to a single vendor
 
-  - {cinx_commerce_guid}
+  - {organization's vendor number}
   
 **po_guid**: will limit results to a specified CINX purchase order
 
