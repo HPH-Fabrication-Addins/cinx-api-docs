@@ -367,7 +367,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 					"work_order_id": null,
 					"work_order_name": null,
 					"spool_id": null,
-					"spool_number": null,
+					"spool_name": null,
 					"building_name": null,
 					"level": null,
 					"space": null,

@@ -77,7 +77,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/d
 
 **delivery**: will limit results to a specific delivery type location
 
-  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE
 
 **ship_via**: will limit results to a specific ship via value
 
@@ -87,7 +87,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/d
 
   - {CINX_PO_Id}
 
-**submitter**: will limit results to a specified CINX user
+**submitter**: will limit results to a specified CINX user who received the order (received_by)
 
   - {CINX_User_Id}
 
