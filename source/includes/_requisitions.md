@@ -415,9 +415,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 
 The table below defines the input fields within the template.
 
-Name | Data Type | Required | Default Value | Note
+**TEMPLATE FIELDS**
+
+Name | Data Type | Required | Default | Note
 ----- | ----- | ----- | ----- | -----
-cinx_guid | String (GUID format) | POST = No; PUT = Yes |  | CINX System Id.
+cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
 number | String | Yes |  | Public number for the object.
 name | String | Yes |  | Public name for the object.
 description | String | No |  | Public description for the object.
@@ -425,65 +427,65 @@ tx_sub_type | String | No |  | Used to define the specific type of requisition. 
 user_comment | String | No |  | General comment defined by a CINX user.
 procurement_status | String | Yes | OPEN | Status used to track the procurement activities of the requisition. Template has a list of optional values.
 allow_substitutes | Boolean | Yes | TRUE | Transaction level default used to indicate if the items on the requisition can be sourced from an alternate manufacturer.
-cinx_user_guid_assign_to | String (GUID format) | No |  | CINX Id for the user to whom the requisition should be assigned.
+cinx_user_guid_assign_to | String (GUID Format) | No |  | CINX Id for the user to whom the requisition should be assigned.
 dates.need_by | Date (YYYY-MM-DD) | No |  | Date the products on the requisition need to be delivered to the specified delivery location.
 dates.approved | Date (YYYY-MM-DD) | No |  | Date the requisition was approved for ordering.
 dates.closed | Date (YYYY-MM-DD) | No |  | Date the requisition was closed.
-vendor.cinx_commerce_guid | String (GUID format) | No |  | Transaction level default. CINX Commerce Id for the requested vendor.
+vendor.cinx_commerce_guid | String (GUID Format) | No |  | Transaction level default. CINX Commerce Id for the requested vendor.
 vendor.number | String | No |  | Transaction level default. The public number of the vendor from whom the requester would like the products to be sourced.
-project.cinx_guid | String (GUID format) | No |  | Transaction level default. CINX Project Id.
+project.cinx_guid | String (GUID Format) | No |  | Transaction level default. CINX Project Id.
 project.number | String | No |  | Transaction level default. The public number of the project from which the items are being requested.
 delivery.address1 | String | No |  | Address 1 value for the location to which the products on the requisition are to be delivered.
 delivery.address2 | String | No |  | Address 2 value for the location to which the products on the requisition are to be delivered.
 delivery.address3 | String | No |  | Address 3 value for the location to which the products on the requisition are to be delivered.
 delivery.city | String | No |  | City to which the products on the requisition are to be delivered.
-delivery.state | String (2 character alpha abbreviation) | No |  | State to which the products on the requisition are to be delivered.
+delivery.state | String | No |  | State to which the products on the requisition are to be delivered. Two-character alpha abbreviation.
 delivery.postal_code | String | No |  | Postal/Zip Code to which the products on the requisition are to be delivered.
-delivery.country | String (3 character alpha abbreviation) | No | USA | Country to which the products on the requisition are to be delivered.
+delivery.country | String | No |  | Country to which the products on the requisition are to be delivered. Three-character alpha abbreviation.
 delivery.ship_via | String | No |  | How the products are to be delivered or otherwise acquired. Template has a list of optional values.
 delivery.fob_type | String | No |  | F.O.B. Type. Template has a list of optional values.
 delivery.ship_from | String | No |  | Location from which the requester would like the materials on the requisition to be shipped.
 delivery.attention | String | No |  | User-defined delivery attention.
 delivery.location_type | String | No | JOB SITE | Transaction level default. Type of location where the requester would like the materials delivered. Template has a list of optional values.
 delivery.location_name | String | No |  | Name of the location where the requester would like the materials delivered.
-job_cost_defaults .cinx_phase_guid | String (GUID format) | No |  | Transaction level default. CINX Id for the Phase/Sub-Job assigned to the items on the requisition.
+job_cost_defaults.cinx_phase_guid | String (GUID Format) | No |  | Transaction level default. CINX Id for the Phase/Sub-Job assigned to the items on the requisition.
 job_cost_defaults.phase_name | String | No |  | Transaction level default. Name for the Phase/Sub-Job assigned to the items on the requisition.
-job_cost_defaults.cinx_material_cost_code_guid | String (GUID format) | No |  | Transaction level default. CINX Id for the Material Cost Code assigned to the items on the requisition.
+job_cost_defaults.cinx_material_cost_code_guid | String (GUID Format) | No |  | Transaction level default. CINX Id for the Material Cost Code assigned to the items on the requisition.
 job_cost_defaults.material_cost_code_name | String | No |  | Transaction level default. Name for the Material Cost Code assigned to the items on the requisition.
-job_cost_defaults.cinx_category_guid | String (GUID format) | No |  | Transaction level default. CINX Id for the Category assigned to the items on the requisition.
+job_cost_defaults.cinx_category_guid | String (GUID Format) | No |  | Transaction level default. CINX Id for the Category assigned to the items on the requisition.
 job_cost_defaults.category_name | String | No |  | Transaction level default. Name for the Category assigned to the items on the requisition.
 taxes.taxable | Boolean | Yes | FALSE | Transaction level default. Indicator defining if the products on the requisition are taxable.
-taxes.cinx_guid | String (GUID format) | No |  | Transaction level default. CINX Id for the Tax Group assigned to the items on the requisition.
+taxes.cinx_guid | String (GUID Format) | No |  | Transaction level default. CINX Id for the Tax Group assigned to the items on the requisition.
 taxes.tax_group_name | String | No |  | Transaction level default. Name for the Tax Group assigned to the items on the requisition.
-external_references.type | String | No |  | Non-CINX system reference type name.
+external_references.type | String | No |  | Non-CINX system reference type.
 external_references.description | String | No |  | Non-CINX system reference description.
 external_references.value | String | No |  | Non-CINX system reference value.
-items.cinx_guid | String (GUID format) | POST = No; PUT = Yes |  | CINX System Id.
+items.cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
 items.quantity | Real | No | 1 | Quantity of the item that needs to be ordered.
 items.date_need_by | Date (YYYY-MM-DD) | No |  | Date the product needs to be delivered to the specified delivery location.
 items.allow_substitutes | Boolean | Yes | TRUE | Indicator if the product can be sourced from an alternate manufacturer.
 items.hph_code | String | No |  | HPH Item Code for the item that needs to be ordered.
 items.org_item_id | String | No |  | The requesting company's Org Item Id for the product that needs to be ordered. User-friendly code.
 items.org_system_id | String | No |  | The requesting company's Org System Item Id for the product that needs to be ordered. Unique Id code.
-items.mfr_part_number | String | No |  | Manufacturer defined Part/Catalog Number for the product that needs to be ordered.
-items.upc | String | No |  | Manufacturer defined UPC Number for the product that needs to be ordered.
-items.size | String | No |  | Size or rating of the item that needs to be ordered.
+items.mfr_part_number | String | No |  | Manufacturer-defined Part/Catalog Number for the product that needs to be ordered.
+items.upc | String | No |  | Manufacturer-defined UPC Number for the product that needs to be ordered.
+items.size | String | No |  | Size of the item that needs to be ordered.
 items.description | String | No |  | Description of the item that needs to be ordered.
 items.mfr_name | String | No |  | Name of the manufacturer or fabricator that produces the item that needs to be ordered.
 items.item_type | String | No |  | Classification name of the item that needs to be ordered.
-items.vendor.cinx_commerce_guid | String (GUID format) | No |  | CINX Commerce Id for the requested vendor.
+items.vendor.cinx_commerce_guid | String (GUID Format) | No |  | CINX Commerce Id for the requested vendor.
 items.vendor.number | String | No |  | The public number of the vendor from whom the requester would like the product to be sourced.
-items.project.cinx_guid | String (GUID format) | No |  | CINX Project Id.
+items.project.cinx_guid | String | No |  | CINX Project Id.
 items.project.number | String | No |  | The public number of the project from which the item are being requested.
 items.delivery.deliver_to | String | No |  | Deliver To text.
 items.delivery.location_type | String | No | JOB SITE | Where the requester would like the product to be delivered. Template has a list of optional values.
-items.delivery.instructions | String | No |  | Delivery instructions the requester would like submitted to the vendor responsible for delivering the items.
-items.delivery.labeling_instructions | String | No |  | Labeling instructions the requester would like submitted to the vendor responsible for delivering the items.
-items.delivery.packaging_instructions | String | No |  | Packaging instructions the requester would like submitted to the vendor responsible for delivering the items.
+items.delivery.instructions | String | No |  | Delivery instructions the requester would like submitted to the vendor responsible for delivering the item.
+items.delivery.labeling_instructions | String | No |  | Labeling instructions the requester would like submitted to the vendor responsible for delivering the item.
+items.delivery.packaging_instructions | String | No |  | Packaging instructions the requester would like submitted to the vendor responsible for delivering the item.
 items.work_breakdown.work_order_id | String | No |  | Contractor defined Work Order Id that was assigned to the product.
 items.work_breakdown.work_order_name | String | No |  | Contractor defined Work Order Name that was assigned to the product.
 items.work_breakdown.spool_id | String | No |  | Contractor defined Spool Id that was assigned to the product.
-items.work_breakdown.spool_name | String | No |  | Contractor defined Spool name that was assigned to the product.
+items.work_breakdown.spool_name | String | No |  | Contractor defined Spool Name that was assigned to the product.
 items.work_breakdown.building_name | String | No |  | Name of the building in which the product will be installed.
 items.work_breakdown.level | String | No |  | Level of the building in which the product will be installed.
 items.work_breakdown.space | String | No |  | Space of the building in which the product will be installed.
@@ -491,19 +493,20 @@ items.work_breakdown.sub_space | String | No |  | Sub-space of the building in w
 items.work_breakdown.system | String | No |  | Name of the system in which the product will be installed.
 items.work_breakdown.arch_symbol | String | No |  | Architectural symbol of the product.
 items.work_breakdown.tag | String | No |  | Text of what should appear on a tag for the item.
-items.job_cost .cinx_phase_guid | String (GUID format) | No |  | CINX Id for the Phase/Sub-Job assigned to the item.
+items.job_cost.cinx_phase_guid | String (GUID Format) | No |  | CINX Id for the Phase/Sub-Job assigned to the item.
 items.job_cost.phase_name | String | No |  | Name for the Phase/Sub-Job assigned to the item.
-items.job_cost.cinx_material_cost_code_guid | String (GUID format) | No |  | CINX Id for the Material Cost Code assigned to the item.
+items.job_cost.cinx_material_cost_code_guid | String (GUID Format) | No |  | CINX Id for the Material Cost Code assigned to the item.
 items.job_cost.material_cost_code_name | String | No |  | Name for the Material Cost Code assigned to the item.
-items.job_cost.cinx_category_guid | String (GUID format) | No |  | CINX Id for the Category assigned to the item.
+items.job_cost.cinx_category_guid | String (GUID Format) | No |  | CINX Id for the Category assigned to the item.
 items.job_cost.category_name | String | No |  | Name for the Category assigned to the item.
 items.taxes.taxable | Boolean | Yes | FALSE | Indicator defining if the product is taxable.
-items.taxes.cinx_guid | String (GUID format) | No |  | CINX Id for the Tax Group assigned to the item.
+items.taxes.cinx_guid | String (GUID Format) | No |  | CINX Id for the Tax Group assigned to the item.
 items.taxes.tax_group_name | String | No |  | Name of the Tax Group assigned to the item.
-items.design.model_item_guid | String | No |  | Id assigned by the authoring system that placed the item in the model.
+items.design.model_item_guid | String (GUID Format) | No |  | Id assigned by the authoring system that placed the item in the model.
 items.design.model_name | String | No |  | Name of the model in which the item is located.
 items.design.model_file | String | No |  | File name of the model in which the item is located.
-
+items.design.drawing_number | String | No |  | Number of the drawing on which the item is located.
+items.design.drawing_name | String | No |  | Name of the drawing on which the item is located.
 
 ## Get Req Number
 ### API Endpoint - Get a New Requisition Number

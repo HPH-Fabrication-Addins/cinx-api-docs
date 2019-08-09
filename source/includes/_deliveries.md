@@ -309,6 +309,51 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 
 The table below defines the input fields within the template.
 
+**TEMPLATE FIELDS**
+
+Name | Data Type | Required | Default | Note
+----- | ----- | ----- | ----- | -----
+cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+number | String | Yes |  | Public number for the object.
+name | String | Yes |  | Public name for the object.
+description | String | No |  | Public description for the object.
+date_received | Date (YYYY-MM-DD) | No |  | Date the delivery was processed.
+cinx_receiver_guid | String (GUID Format) | No |  | CINX Id for the user who processed the delivery.
+ship_via | String | No |  | How the products were delivered or otherwise acquired. Template has a list of optional values.
+delivery_location_type | String | No | JOB SITE | Type of location where the delivery was received. Template has a list of optional values.
+delivery_location_name | String | No |  | Name of the location where the materials were delivered.
+packing_slip_number | String | No |  | Id number from the shipment's packing slip.
+tracking_id | String | No |  | Identification number of the package. For example, a tracking number issued by a delivery service.
+total_weight | String | No |  | Total weight of the full shipment.
+condition | String | No |  | User description of quality of the shipment packaging and handling.
+was_insured | Boolean | Yes | FALSE | Indicator if the shipment was insured.
+driver | String | No |  | Name of the driver who delivered the shipment.
+truck | String | No |  | Id of the truck that delivered the shipment.
+fob_type | String | No |  | F.O.B. Type. Template has a list of optional values.
+fob_point | String | No |  | F.O.B. Point.
+user_comment | String | No |  | General comment defined by a CINX user.
+workflow_status | String | Yes | INCOMPLETE | Status used to track the delivery of the products. Template has a list of optional values.
+purchase_order.cinx_guid | String (GUID Format) | No |  | CINX Id of the Purchase Order against which the delivery was made.
+purchase_order.number | String | No |  | Public number for the Purchase Order.
+vendor.cinx_commerce_guid | String (GUID Format) | No |  | CINX Commerce Id for the vendor.
+vendor.number | String | No |  | The public number of the vendor from whom the products were sourced.
+project.cinx_guid | String (GUID Format) | No |  | CINX Project Id.
+project.number | String | No |  | The public number of the project from which the items are being requested.
+items.cinx_po_item_guid | String (GUID Format) | Yes |  | CINX System Id for the item on the purchase order.
+items.quantity_accepted | Real | No |  | Quantity of the item that was accepted during the delivery receiving.
+items.quantity_refused | Real | No |  | Quantity of the item that was refused during the delivery receiving.
+items.date_received | Date (YYYY-MM-DD) | No |  | Date the delivery of the product was processed.
+items.cinx_receiver_guid | String (GUID Format) | No |  | CINX Id for the user who received the product.
+items.workflow_status | String | Yes | INCOMPLETE | Status used to track the delivery. Template has a list of optional values.
+items.photo_url | String | No |  | Link to a photo of the item being received.
+items.delivery.ship_via | String | No |  | How the product was delivered or otherwise acquired. Template has a list of optional values.
+items.delivery.location_type | String | No | JOB SITE | Location type where the product was delivered. Template has a list of optional values.
+items.delivery.location_name | String | No |  | Name of the location where the product was delivered.
+items.billable_weight.weight | String | No |  | Weight of the product that could be subject to a delivery charge.
+items.billable_weight.uom | String | No |  | Unit-of-measure of the product's billable weight.
+items.hazmat.is_hazmat | Boolean | Yes | FALSE | Indicator if the delivered product is labeled as a Hazardous Material.
+items.hazmat.hazmat_code | String | No |  | Hazardous Material code assigned to the product.
+
 ## Get Delivery Number
 ### API Endpoint - Get a New Delivery Number
 

@@ -214,6 +214,41 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 
 The table below defines the input fields within the template.
 
+**TEMPLATE FIELDS**
+
+Name | Data Type | Required | Dflt | Note
+----- | ----- | ----- | ----- | -----
+cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+number | String | Yes |  | Public number for the object.
+name | String | Yes |  | Public name for the object.
+description | String | No |  | Public description for the object.
+status | String | Yes | NOT SPECIFIED | Status used to track the project. Template has a list of optional values.
+dates.contract_award | Date (YYYY-MM-DD) | No |  | Date the contract was awarded to the contractor.
+dates.scheduled_start | Date (YYYY-MM-DD) | No |  | Date the project was scheduled to start.
+dates.actual_start | Date (YYYY-MM-DD) | No |  | Date the project begin construction.
+dates.scheduled_complete | Date (YYYY-MM-DD) | No |  | Date the project was scheduled to finish.
+dates.actual_complete | Date (YYYY-MM-DD) | No |  | Date the project was finished.
+customer.cinx_commerce_guid | String (GUID Format) | No |  | CINX Commerce Id for the customer that commissioned the project.
+customer.name | String | No |  | The name of the customer that commissioned the project.
+customer.cinx_building_guid | String (GUID Format) | No |  | CINX Id for the building or structure.
+customer.project_number | String | No |  | The project number assigned by the customer for the project.
+classifications.delivery_method | String | No |  | Project delivery method being used on the project. Template has a list of optional values.
+classifications.is_leed | Boolean | No | FALSE | Indicator if the project is a LEED project.
+classifications.org_defined_type | String | No |  | Organization-defined type of project
+classifications.construction_type | String | No |  | The construction type for the project. Template has a list of optional values.
+classifications.industry_type | String | No |  | The construction type for the project. Template has a list of optional values.
+classifications.cinx_type | String | No |  | The industry type for the project. Template has a list of optional values.
+classifications.sector_type | String | No |  | The sector type for the project. Template has a list of optional values.
+contract.budget_amount | String | No |  | The budgeted amount for the project.
+contract.budget_currency | String | No |  | The currency in which the budget is defined.
+taxes.taxable | Boolean | Yes | TRUE | Indicator defining if the project is taxable.
+taxes.cinx_guid | String (GUID Format) | No |  | CINX Id for the Tax Group assigned to the items on the project.
+taxes.tax_group_name | String | No |  | Name for the Tax Group assigned to the items on the project.
+taxes.tax_exempt_id | String | No |  | Tax-Exempt Id.
+size_square.value | String | No |  | Size of the project.
+size_square.uom | String | No |  | Unit-of-measure that the size of the project is defined.
+
+
 ## Get Project Number
 ### API Endpoint - Get a New Project Number
 

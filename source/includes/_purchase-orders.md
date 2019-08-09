@@ -512,6 +512,146 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 
 The table below defines the input fields within the template.
 
+**TEMPLATE FIELDS**
+
+Name | Data Type | Required | Default | Note
+----- | ----- | ----- | ----- | -----
+cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+number | String | Yes |  | Public number for the object.
+name | String | Yes |  | Public name for the object.
+description | String | No |  | Public description for the object.
+terms | String | No |  | Transaction terms.
+user_comment | String | No |  | General comment defined by a CINX user.
+procurement_status | String | Yes | NOT ORDERED | Status used to track the procurement activities of the purchase order. Template has a list of optional values.
+workflow_status | String | Yes | IN-PROCESS | Status used to track the workflow of the purchase order. Template has a list of optional values.
+erp_status | String | Yes | NOT SUBMITTED | Status used to track the purchase order's integration with an ERP system. Template has a list of optional values.
+allow_substitutes | Boolean | Yes | TRUE | Transaction level default used to indicate if the items on the purchase order can be sourced from an alternate manufacturer.
+dates.order_by | Date (YYYY-MM-DD) | No |  | Date the purchase order should be submitted to the vendor.
+dates.need_by | Date (YYYY-MM-DD) | No |  | Date the products on the purchase order need to be delivered to the specified delivery location.
+vendor.cinx_commerce_guid | String (GUID Format) | No |  | CINX Commerce Id for the vendor that will receive the purchase order.
+vendor.number | String | No |  | The public number of the vendor that will receive the purchase order.
+project.cinx_guid | String (GUID Format) | No |  | CINX Project Id.
+project.number | String | No |  | The public number of the project for which the items are being purchased.
+delivery.address1 | String | No |  | Address 1 value for the location to which the products on the purchase order are to be delivered.
+delivery.address2 | String | No |  | Address 2 value for the location to which the products on the purchase order are to be delivered.
+delivery.address3 | String | No |  | Address 3 value for the location to which the products on the purchase order are to be delivered.
+delivery.city | String | No |  | City to which the products on the purchase order are to be delivered.
+delivery.state | String | No |  | State to which the products on the purchase order are to be delivered. Two-character alpha abbreviation.
+delivery.postal_code | String | No |  | Postal/Zip Code to which the products on the purchase order are to be delivered.
+delivery.country | String | No |  | Country to which the products on the purchase order are to be delivered. Three-character alpha abbreviation.
+delivery.ship_via | String | No |  | How the products are to be delivered or otherwise acquired. Template has a list of optional values.
+delivery.fob_type | String | No |  | F.O.B. Type. Template has a list of optional values.
+delivery.ship_from | String | No |  | Location from which the requester would like the materials on the purchase order to be shipped.
+delivery.attention | String | No |  | User-defined delivery attention.
+delivery.location_type | String | No | JOB SITE | Type of location where the requester would like the materials delivered. Template has a list of optional values.
+delivery.location_name | String | No |  | Name of the location where the requester would like the materials delivered.
+delivery.Instructions | String | No |  | General delivery instructions for the order.
+job_cost_defaults.cinx_phase_guid | String (GUID Format) | No |  | Transaction level default. CINX Id for the Phase/Sub-Job assigned to the items on the purchase order.
+job_cost_defaults.phase_name | String | No |  | Transaction level default. Name for the Phase/Sub-Job assigned to the items on the purchase order.
+job_cost_defaults.cinx_material_cost_code_guid | String (GUID Format) | No |  | Transaction level default. CINX Id for the Material Cost Code assigned to the items on the purchase order.
+job_cost_defaults.material_cost_code_name | String | No |  | Transaction level default. Name for the Material Cost Code assigned to the items on the purchase order.
+job_cost_defaults.cinx_category_guid | String (GUID Format) | No |  | Transaction level default. CINX Id for the Category assigned to the items on the purchase order.
+job_cost_defaults.category_name | String | No |  | Transaction level default. Name for the Category assigned to the items on the purchase order.
+taxes.taxable | Boolean | Yes | TRUE | Transaction level default. Indicator defining if the products on the purchase order are taxable.
+taxes.cinx_guid | String (GUID Format) | No |  | Transaction level default. CINX Id for the Tax Group assigned to the items on the purchase order.
+taxes.tax_group_name | String | No |  | Transaction level default. Name for the Tax Group assigned to the items on the purchase order.
+external_references.type | String | No |  | Non-CINX system reference type.
+external_references.description | String | No |  | Non-CINX system reference description.
+external_references.value | String | No |  | Non-CINX system reference value.
+charges.type | String | No |  | Name of the type of charge. Template has a list of optional values.
+charges.description | String | No |  | Description of the charge.
+charges.unit_price | Real | No |  | Cost of the charge.
+charges.job_cost.cinx_phase_guid | String (GUID Format) | No |  | CINX Id for the Phase/Sub-Job assigned to the charge.
+charges.job_cost.phase_name | String | No |  | Name for the Phase/Sub-Job assigned to the charge.
+charges.job_cost.cinx_material_cost_code_guid | String (GUID Format) | No |  | CINX Id for the Material Cost Code assigned to the charge.
+charges.job_cost.material_cost_code_name | String | No |  | Name for the Material Cost Code assigned to the charge.
+charges.job_cost.cinx_category_guid | String (GUID Format) | No |  | CINX Id for the Category assigned to the charge.
+charges.job_cost.category_name | String | No |  | Name for the Category assigned to the charge.
+charges.job_cost.gl_account | String | No |  | General Ledger account assigned to the charge.
+charges.taxes.taxable | Boolean | Yes | TRUE | Indicator defining if the charge is taxable.
+charges.taxes.cinx_guid | String (GUID Format) | No |  | CINX Id for the Tax Group assigned to the charge.
+charges.taxes.tax_group_name | String | No |  | Name for the Tax Group assigned to the charge.
+charges.taxes.tax_type | String | No |  | Name of the type of tax. Template has a list of optional values.
+charges.taxes.tax_rate | Real | No |  | The tax rate.
+charges.taxes.tax_amount | Real | No |  | The total amount of the tax for the charge.
+charges.project.cinx_guid | String (GUID Format) | No |  | CINX Project Id.
+charges.project.number | String | No |  | The public number of the project.
+credits.type | String | No |  | Name of the type of credit. Template has a list of optional values.
+credits.description | String | No |  | Description of the credit.
+credits.unit_price | Real | No |  | Amount of the credit.
+credits.job_cost.cinx_phase_guid | String (GUID Format) | No |  | CINX Id for the Phase/Sub-Job assigned to the credit.
+credits.job_cost.phase_name | String | No |  | Name for the Phase/Sub-Job assigned to the credit.
+credits.job_cost.cinx_material_cost_code_guid | String (GUID Format) | No |  | CINX Id for the Material Cost Code assigned to the credit.
+credits.job_cost.material_cost_code_name | String | No |  | Name for the Material Cost Code assigned to the credit.
+credits.job_cost.cinx_category_guid | String (GUID Format) | No |  | CINX Id for the Category assigned to the credit.
+credits.job_cost.category_name | String | No |  | Name for the Category assigned to the credit.
+credits.job_cost.gl_account | String | No |  | General Ledger account assigned to the credit.
+credits.taxes.taxable | Boolean | Yes | TRUE | Indicator defining if the credit is taxable.
+credits.taxes.cinx_guid | String (GUID Format) | No |  | CINX Id for the Tax Group assigned to the credit.
+credits.taxes.tax_group_name | String | No |  | Name for the Tax Group assigned to the credit.
+credits.taxes.tax_type | String | No |  | Name of the type of tax. Template has a list of optional values.
+credits.taxes.tax_rate | Real | No |  | The tax rate.
+credits.taxes.tax_amount | Real | No |  | The total amount of the tax for the credit.
+credits.project.cinx_guid | String (GUID Format) | No |  | CINX Project Id.
+credits.project.number | String | No |  | The public number of the project.
+items.cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+items.quantity | Real | No | 1 | Quantity of the item that is being ordered.
+items.unit_price | Real | No |  | Unit price of the item on the purchase order.
+items.price_uom | String | No | E | Price unit-of-measure. Template has a list of optional values.
+items.currency | String | No | USD | Currency in which the price is being defined.  Three-character alpha abbreviation.
+items.price_source_type | String | No |  | Source from which the price was obtained. Template has a list of optional values.
+items.date_need_by | Date (YYYY-MM-DD) | No |  | Date the product needs to be delivered to the specified delivery location.
+items.allow_substitutes | Boolean | Yes | TRUE | Indicator if the product can be sourced from an alternate manufacturer.
+items.hph_code | String | No |  | HPH Item Code for the item that is being ordered.
+items.org_item_id | String | No |  | The requesting company's Org Item Id for the product that is being ordered. User-friendly code.
+items.org_system_id | String | No |  | The requesting company's Org System Item Id for the product that is being ordered. Unique Id code.
+items.mfr_part_number | String | No |  | Manufacturer-defined Part/Catalog Number for the product that is being ordered.
+items.upc | String | No |  | Manufacturer-defined UPC Number for the product that is being ordered.
+items.size | String | No |  | Size of the item that is being ordered.
+items.description | String | No |  | Description of the item that is being ordered.
+items.mfr_name | String | No |  | Name of the manufacturer or fabricator that produces the item that is being ordered.
+items.item_type | String | No |  | Classification name of the item that is being ordered.
+items.procurement_status | String | Yes | NOT-ORDERED | Status used to track the procurement activities of the item. Template has a list of optional values.
+items.vendor.cinx_commerce_guid | String (GUID Format) | No |  | CINX Commerce Id for the vendor.
+items.vendor.number | String | No |  | The public number of the vendor from whom the product is being sourced.
+items.project.cinx_guid | String | No |  | CINX Project Id.
+items.project.number | String | No |  | The public number of the project from which the item are being ordered.
+items.delivery.ship_via | String | No |  | How the product is to be delivered or otherwise acquired. Template has a list of optional values.
+items.delivery.deliver_to | String | No |  | Deliver To text.
+items.delivery.location_type | String | No |  | Where the requester would like the product to be delivered. Template has a list of optional values.
+items.delivery_location_name | String | No |  | Name of the location where the item is to be delivered.
+items.delivery.instructions | String | No |  | Delivery instructions to be submitted to the vendor responsible for delivering the item.
+items.delivery.labeling_instructions | String | No |  | Labeling instructions to be submitted to the vendor responsible for delivering the item.
+items.delivery.packaging_instructions | String | No |  | Packaging instructions to be submitted to the vendor responsible for delivering the item.
+items.work_breakdown.work_order_id | String | No |  | Contractor defined Work Order Id that was assigned to the product.
+items.work_breakdown.work_order_name | String | No |  | Contractor defined Work Order Name that was assigned to the product.
+items.work_breakdown.spool_id | String | No |  | Contractor defined Spool Id that was assigned to the product.
+items.work_breakdown.spool_name | String | No |  | Contractor defined Spool Name that was assigned to the product.
+items.work_breakdown.building_name | String | No |  | Name of the building in which the product will be installed.
+items.work_breakdown.level | String | No |  | Level of the building in which the product will be installed.
+items.work_breakdown.space | String | No |  | Space of the building in which the product will be installed.
+items.work_breakdown.sub_space | String | No |  | Sub-space of the building in which the product will be installed.
+items.work_breakdown.system | String | No |  | Name of the system in which the product will be installed.
+items.work_breakdown.arch_symbol | String | No |  | Architectural symbol of the product.
+items.work_breakdown.tag | String | No |  | Text of what should appear on a tag for the item.
+items.job_cost.cinx_phase_guid | String (GUID Format) | No |  | CINX Id for the Phase/Sub-Job assigned to the item.
+items.job_cost.phase_name | String | No |  | Name for the Phase/Sub-Job assigned to the item.
+items.job_cost.cinx_material_cost_code_guid | String (GUID Format) | No |  | CINX Id for the Material Cost Code assigned to the item.
+items.job_cost.material_cost_code_name | String | No |  | Name for the Material Cost Code assigned to the item.
+items.job_cost.cinx_category_guid | String (GUID Format) | No |  | CINX Id for the Category assigned to the item.
+items.job_cost.category_name | String | No |  | Name for the Category assigned to the item.
+items.taxes.taxable | Boolean | Yes | TRUE | Indicator defining if the product is taxable.
+items.taxes.cinx_guid | String (GUID Format) | No |  | CINX Id for the Tax Group assigned to the item.
+items.taxes.tax_group_name | String | No |  | Name of the Tax Group assigned to the item.
+items.taxes.tax_type | String | No |  | Name of the type of tax. Template has a list of optional values.
+items.taxes.rate | Real | No |  | The tax rate.
+items.taxes.amount | Real | No |  | The total amount of the tax for the item.
+items.design.model_item_guid | String (GUID Format) | No |  | Id assigned by the authoring system that placed the item in the model.
+items.design.model_name | String | No |  | Name of the model in which the item is located.
+items.design.model_file | String | No |  | File name of the model in which the item is located.
+items.design.drawing_number | String | No |  | Number of the drawing on which the item is located.
+items.design.drawing_name | String | No |  | Name of the drawing on which the item is located.
+
 ## Get PO Number
 ### API Endpoint - Get a New Purchase Order Number
 

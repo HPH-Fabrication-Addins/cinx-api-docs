@@ -399,6 +399,96 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 
 The table below defines the input fields within the template.
 
+**TEMPLATE FIELDS**
+
+Name | Data Type | Required | Default | Note
+----- | ----- | ----- | ----- | -----
+cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+number | String | Yes |  | Public number for the object.
+name | String | Yes |  | Public name for the object.
+description | String | No |  | Public description for the object.
+terms | String | No |  | Transaction terms.
+user_comment | String | No |  | General comment defined by a CINX user.
+workflow_status | String | Yes | IN-PROCESS | Status used to track the workflow of the RFQ. Template has a list of optional values.
+dates.respond_by | Date (YYYY-MM-DD) | No |  | Date the requester would like the vendor to provide the quoted prices.
+dates.need_by | Date (YYYY-MM-DD) | No |  | Date the products on the RFQ need to be delivered to the specified delivery location.
+dates.submitted | Date (YYYY-MM-DD) | No |  | Date the RFQ was submitted to the vendor.
+vendor.cinx_commerce_guid | String (GUID Format) | No |  | CINX Commerce Id for the vendor that will receive the RFQ.
+vendor.number | String | No |  | The public number of the vendor that will receive the RFQ.
+project.cinx_guid | String (GUID Format) | No |  | CINX Project Id.
+project.number | String | No |  | The public number of the project for which the items are linked.
+delivery.address1 | String | No |  | Address 1 value for the location to which the products on the RFQ are to be delivered.
+delivery.address2 | String | No |  | Address 2 value for the location to which the products on the RFQ are to be delivered.
+delivery.address3 | String | No |  | Address 3 value for the location to which the products on the RFQ are to be delivered.
+delivery.city | String | No |  | City to which the products on the RFQ are to be delivered.
+delivery.state | String | No |  | State to which the products on the RFQ are to be delivered. Two-character alpha abbreviation.
+delivery.postal_code | String | No |  | Postal/Zip Code to which the products on the RFQ are to be delivered.
+delivery.country | String | No |  | Country to which the products on the RFQ are to be delivered. Three-character alpha abbreviation.
+delivery.ship_via | String | No |  | How the products are to be delivered or otherwise acquired. Template has a list of optional values.
+delivery.fob_type | String | No |  | F.O.B. Type. Template has a list of optional values.
+delivery.ship_from | String | No |  | Location from which the requester would like the materials on the RFQ to be shipped.
+delivery.attention | String | No |  | User-defined delivery attention.
+delivery.location_type | String | No | JOB SITE | Type of location where the requester would like the materials delivered. Template has a list of optional values.
+delivery.Instructions | String | No |  | General delivery instructions to be used on an order.
+job_cost_defaults.cinx_phase_guid | String (GUID Format) | No |  | Transaction level default. CINX Id for the Phase/Sub-Job assigned to the items on the RFQ.
+job_cost_defaults.phase_name | String | No |  | Transaction level default. Name for the Phase/Sub-Job assigned to the items on the RFQ.
+job_cost_defaults.cinx_material_cost_code_guid | String (GUID Format) | No |  | Transaction level default. CINX Id for the Material Cost Code assigned to the items on the RFQ.
+job_cost_defaults.material_cost_code_name | String | No |  | Transaction level default. Name for the Material Cost Code assigned to the items on the RFQ.
+job_cost_defaults.cinx_category_guid | String (GUID Format) | No |  | Transaction level default. CINX Id for the Category assigned to the items on the RFQ.
+job_cost_defaults.category_name | String | No |  | Transaction level default. Name for the Category assigned to the items on the RFQ.
+taxes.taxable | Boolean | Yes | TRUE | Transaction level default. Indicator defining if the products on the RFQ are taxable.
+taxes.cinx_guid | String (GUID Format) | No |  | Transaction level default. CINX Id for the Tax Group assigned to the items on the RFQ.
+taxes.tax_group_name | String | No |  | Transaction level default. Name for the Tax Group assigned to the items on the RFQ.
+external_references.type | String | No |  | Non-CINX system reference type.
+external_references.description | String | No |  | Non-CINX system reference description.
+external_references.value | String | No |  | Non-CINX system reference value.
+items.cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+items.quantity | Real | No | 1 | Quantity of the item.
+items.date_need_by | Date (YYYY-MM-DD) | No |  | Date the product needs to be delivered to the specified delivery location.
+items.allow_substitutes | Boolean | Yes | TRUE | Indicator if the product can be sourced from an alternate manufacturer.
+items.hph_code | String | No |  | HPH Item Code for the item.
+items.org_item_id | String | No |  | The requesting company's Org Item Id. User-friendly code.
+items.org_system_id | String | No |  | The requesting company's Org System Item Id. Unique Id code.
+items.mfr_part_number | String | No |  | Manufacturer-defined Part/Catalog Number.
+items.upc | String | No |  | Manufacturer-defined UPC Number.
+items.size | String | No |  | Size of the item.
+items.description | String | No |  | Description of the item.
+items.mfr_name | String | No |  | Name of the manufacturer or fabricator that produces the item.
+items.item_type | String | No |  | Classification name of the item.
+items.project.cinx_guid | String | No |  | CINX Project Id.
+items.project.number | String | No |  | The public number of the project.
+items.delivery.ship_via | String | No |  | How the product is to be delivered or otherwise acquired. Template has a list of optional values.
+items.delivery.deliver_to | String | No |  | Deliver To text.
+items.delivery.location_type | String | No |  | Where the requester would like the product to be delivered. Template has a list of optional values.
+items.delivery.instructions | String | No |  | Delivery instructions to be submitted to the vendor responsible for delivering the item.
+items.delivery.labeling_instructions | String | No |  | Labeling instructions to be submitted to the vendor responsible for delivering the item.
+items.delivery.packaging_instructions | String | No |  | Packaging instructions to be submitted to the vendor responsible for delivering the item.
+items.work_breakdown.work_order_id | String | No |  | Contractor defined Work Order Id that was assigned to the product.
+items.work_breakdown.work_order_name | String | No |  | Contractor defined Work Order Name that was assigned to the product.
+items.work_breakdown.spool_id | String | No |  | Contractor defined Spool Id that was assigned to the product.
+items.work_breakdown.spool_name | String | No |  | Contractor defined Spool Name that was assigned to the product.
+items.work_breakdown.building_name | String | No |  | Name of the building in which the product will be installed.
+items.work_breakdown.level | String | No |  | Level of the building in which the product will be installed.
+items.work_breakdown.space | String | No |  | Space of the building in which the product will be installed.
+items.work_breakdown.sub_space | String | No |  | Sub-space of the building in which the product will be installed.
+items.work_breakdown.system | String | No |  | Name of the system in which the product will be installed.
+items.work_breakdown.arch_symbol | String | No |  | Architectural symbol of the product.
+items.work_breakdown.tag | String | No |  | Text of what should appear on a tag for the item.
+items.job_cost.cinx_phase_guid | String (GUID Format) | No |  | CINX Id for the Phase/Sub-Job assigned to the item.
+items.job_cost.phase_name | String | No |  | Name for the Phase/Sub-Job assigned to the item.
+items.job_cost.cinx_material_cost_code_guid | String (GUID Format) | No |  | CINX Id for the Material Cost Code assigned to the item.
+items.job_cost.material_cost_code_name | String | No |  | Name for the Material Cost Code assigned to the item.
+items.job_cost.cinx_category_guid | String (GUID Format) | No |  | CINX Id for the Category assigned to the item.
+items.job_cost.category_name | String | No |  | Name for the Category assigned to the item.
+items.taxes.taxable | Boolean | Yes | TRUE | Indicator defining if the product is taxable.
+items.taxes.cinx_guid | String (GUID Format) | No |  | CINX Id for the Tax Group assigned to the item.
+items.taxes.tax_group_name | String | No |  | Name of the Tax Group assigned to the item.
+items.design.model_item_guid | String (GUID Format) | No |  | Id assigned by the authoring system that placed the item in the model.
+items.design.model_name | String | No |  | Name of the model in which the item is located.
+items.design.model_file | String | No |  | File name of the model in which the item is located.
+items.design.drawing_number | String | No |  | Number of the drawing on which the item is located.
+items.design.drawing_name | String | No |  | Name of the drawing on which the item is located.
+
 ## Get RFQ Number
 ### API Endpoint - Get a New RFQ Number
 
