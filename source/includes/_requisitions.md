@@ -118,6 +118,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 	"response": {},
 	"rows": [{
 		"cinx_guid": "40b43924-e7b8-5827-935e-14bd70c1d04e",
+		"locked": "0",
 		"number": "REQ-0005",
 		"name": "REQ-TEST EMS",
 		"description": null,

@@ -92,6 +92,7 @@ cinxApi.getProjectDetails(cinx_api_token, project_id)
     "response": {},
     "rows": [{
         "cinx_guid": "e1e3cb54-b00a-55ae-a079-072732542bf4",
+        "locked": "0",
         "number": "WTS-2017-04",
         "name": "WTS-2017-04 - ATC Denver",
         "description": "17243",

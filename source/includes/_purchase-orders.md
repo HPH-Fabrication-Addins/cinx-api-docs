@@ -130,6 +130,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
     "rows": [
         {
 			"cinx_guid": "8185cbd2-18c6-5cdc-b3ed-25795aabbfcc",
+			"locked": "1",
 			"number": "PO-111111",
 			"name": "PO-111111",
 			"description": "No Description Entered",
@@ -424,8 +425,8 @@ The cinx_guid will be the purchase orders’s CINX Id.
 			"items": [{
 				"cinx_guid": null,
 				"quantity": null,
-				"price_uom": null,
 				"unit_price": null,
+				"price_uom": null,
 				"currency": null,
 				"price_source_type": null,
 				"date_need_by": null,

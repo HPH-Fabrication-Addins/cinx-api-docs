@@ -107,6 +107,145 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 ## Get RFQ
 ### API Endpoint - Get an RFQ
 
+```json
+{
+	"response": {},
+	"rows": [{
+		"cinx_guid": "a71e023c-f809-5a51-a51f-d4546ed0c9fd",
+		"locked": "1",
+		"number": "",
+		"name": "TestNSCXRef",
+		"description": "",
+		"terms": null,
+		"user_comment": "",
+		"workflow_status": "SUBMITTED",
+		"submitter": {
+			"cinx_guid": "185aabe1-3487-5f59-9ad5-c577a76bd392",
+			"name": "Will Stone",
+			"email": "willstone@cinx.com"
+		},
+		"dates": {
+			"created": "2019-03-29",
+			"last_modified": "2019-03-29",
+			"respond_by": "2019-03-30",
+			"need_by": null,
+			"submitted": "2019-03-29",
+			"quoted": null
+		},
+		"customer": {
+			"cinx_commerce_guid": null,
+			"number": null,
+			"name": "WTS Mechanical -DEV"
+		},
+		"vendors": [{
+			"cinx_commerce_guid": "de0cf849-6f7b-5df6-9ae9-f924659f2d25",
+			"number": "CXV101",
+			"name": "National Sales Company"
+		}],
+		"project": {
+			"cinx_id": null,
+			"number": null,
+			"name": null
+		},
+		"delivery": {
+			"address1": "995 Industrial Park Rd",
+			"address2": "",
+			"address3": "",
+			"city": "Littleton",
+			"state": "NH",
+			"postal_code": "03561",
+			"country": "USA",
+			"ship_via": null,
+			"fob_type": null,
+			"ship_from": null,
+			"attention": null,
+			"location_type": "JOB SITE",
+			"location_name": null,
+			"instructions": null
+		},
+		"job_cost_defaults": {
+			"cinx_phase_guid": null,
+			"phase_name": null,
+			"cinx_material_cost_code_guid": null,
+			"material_cost_code": null,
+			"cinx_category_guid": null,
+			"category_name": null
+		},
+		"taxes": {
+			"taxable": true,
+			"cinx_id": null,
+			"tax_group_name": null
+		},
+		"external_references": [],
+		"items": [{
+				"cinx_guid": "ca43c356-f686-5211-92ca-484d4ad4ef08",
+				"sequence": 1,
+				"quantity": 1,
+				"date_need_by": null,
+				"allow_substitutes": true,
+				"hph_code": "012NI0010",
+				"org_item_id": null,
+				"org_system_id": null,
+				"mfr_part_number": "9055450",
+				"upc": "039923312723",
+				"size": "1/2\"",
+				"description": "1/2\" WROT CXC 90 ELBOW",
+				"mfr_name": "NIBCO, Inc.",
+				"item_type": "MATERIAL",
+				"project": {
+					"cinx_guid": null,
+					"number": null,
+					"name": null
+				},
+				"delivery": {
+					"deliver_to": null,
+					"location_type": "JOBSITE",
+					"instructions": null,
+					"labeling_instructions": null,
+					"packaging_instructions": null
+				},
+				"work_breakdown": {
+					"work_order_id": null,
+					"work_order_name": null,
+					"spool_id": null,
+					"spool_name": null,
+					"building_name": null,
+					"level": null,
+					"space": null,
+					"sub_space": null,
+					"system": null,
+					"arch_symbol": null,
+					"tag": null
+				},
+				"job_cost": {
+					"cinx_phase_guid": null,
+					"phase_name": null,
+					"cinx_material_cost_code_guid": null,
+					"material_cost_code": null,
+					"cinx_category_guid": null,
+					"category_name": null
+				},
+				"taxes": {
+					"taxable": true,
+					"cinx_guid": null,
+					"tax_group_name": null,
+					"tax_type": null,
+					"tax_rate": 0,
+					"tax_amount": 0
+				},
+				"design": {
+					"model_item_guid": null,
+					"model_name": null,
+					"model_file": null,
+					"drawing_number": null,
+					"drawing_name": null
+				}
+			}
+		]
+	}]
+}
+```
+
 `GET`
 
 This endpoint will be used to get the details of a specific RFQ.  Note: This response will include the RFQ’s items.
@@ -328,3 +467,40 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 <aside class="notice">
 The PUT payload will be processed asynchronously.
 </aside>
+
+## Get RFQ Quotes
+### API Endpoint - Get a List of Quotes for an RFQ
+
+> The above code returns JSON structured like this:
+
+```json
+{
+	"response": {},
+	"rows": [{
+		"cinx_guid": "1eb08930-8744-5213-90f0-3ad63a216b20",
+		"number": "",
+		"name": "WTS Mechanical -DEV[ 2019 07 25 a ]",
+		"description": "",
+		"workflow_status": "RECEIVED",
+		"vendor_number": "99999",
+		"vendor_name": "Keegan Supply",
+		"submitted_by": "eb stone",
+		"date_received": "2019-07-25",
+		"date_expires": "2019-07-26",
+		"date_requested": "",
+		"links": [],
+		"project_number": "WTS-2019-06",
+		"project_name": "2019 01 30",
+		"rfq_number": "2019 07 25 a",
+		"rfq_name": "2019 07 25 a",
+		"item_count": 11
+	}]
+}
+```
+`GET`
+
+This endpoint will be used to get a list of Quotes for a specified RFQ. 
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/rfq/{rfq_guid}/quotes**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/rfq/8902980f-4a4f-504c-8fc3-2e71067ab59b/quotes`

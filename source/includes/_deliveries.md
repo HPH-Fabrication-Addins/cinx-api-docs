@@ -98,6 +98,128 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/d
 ## Get Delivery
 ### API Endpoint - Get a Delivery
 
+```json
+{
+	"response": {},
+	"rows": [{
+		"cinx_guid": "69e5c268-1c7b-54bf-acd9-601f4f59a52b",
+		"locked": "1",
+		"number": "D19-4512",
+		"name": "D19-4512",
+		"description": null,
+		"date_received": "2019-06-27",
+		"ship_via": "SUPPLIER TRUCK",
+		"location_type": "JOB SITE",
+		"location_name": null,
+		"packing_slip_number": null,
+		"tracking_id": null,
+		"total_weight": null,
+		"condition": null,
+		"was_insured": "0",
+		"driver": null,
+		"truck": null,
+		"fob_type": null,
+		"fob_point": null,
+		"user_comment": null,
+		"workflow_status": "COMPLETE",
+		"receiver": {
+			"cinx_guid": "185aabe1-3487-5f59-9ad5-c577a76bd392",
+			"name": "Will Stone",
+			"email": "willstone@cinx.com"
+		},
+		"purchase_order": {
+			"cinx_guid": "5c88bd83-7675-54b0-8c11-61644cf470d6",
+			"number": "P19-789412",
+			"name": "P19-789412",
+			"date_need_by": ""
+		},
+		"vendor": {
+			"cinx_commerce_guid": "de0cf849-6f7b-5df6-9ae9-f924659f2d25",
+			"number": "CXV101",
+			"name": "National Sales Company"
+		},
+		"project": {
+			"cinx_guid": "bb613aff-4256-5359-b7cd-391505d19e01",
+			"number": "WTS-2017-03",
+			"name": "WTS-2017-03"
+		},
+		"items": [{
+				"cinx_guid": "4361e462-7406-5989-84f6-9e2e7b2c5521",
+				"sequence": 1,
+				"quantity_ordered": 3,
+				"quantity_accepted": 3,
+				"quantity_refused": 0,
+				"date_received": "2019-06-27",
+				"allow_substitutes": true,
+				"hph_code": "326ZU6541",
+				"org_item_id": null,
+				"org_system_id": null,
+				"mfr_part_number": null,
+				"upc": "67024006731",
+				"size": "3",
+				"description": null,
+				"mfr_name": null,
+				"workflow_status": "COMPLETE",
+				"photo_url": null,
+				"delivery": {
+					"ship_via": "SUPPLIER TRUCK",
+					"location_type": "JOB SITE",
+					"location_name": null
+				},
+				"billable_weight": {
+					"weight": 0,
+					"uom": null
+				},
+				"hazmat": {
+					"is_hazmat": false,
+					"hazmat_code": null
+				},
+				"receiver": {
+					"cinx_guid": "185aabe1-3487-5f59-9ad5-c577a76bd392",
+					"name": "Will Stone",
+					"email": "willstone@cinx.com"
+				},
+				"vendor": {
+					"cinx_commerce_guid": "de0cf849-6f7b-5df6-9ae9-f924659f2d25",
+					"number": "CXV101",
+					"name": "National Sales Company",
+					"item_id": null,
+					"system_id": null
+				},
+				"work_breakdown": {
+					"work_order_id": null,
+					"work_order_name": null,
+					"spool_id": null,
+					"spool_name": null,
+					"building_name": null,
+					"level": "MAIN",
+					"space": null,
+					"sub_space": null,
+					"system": "SAN W&V UG",
+					"arch_symbol": null,
+					"tag": null
+				},
+				"job_cost": {
+					"cinx_phase_guid": null,
+					"phase_name": "124",
+					"cinx_material_cost_code_guid": null,
+					"material_cost_code": null,
+					"cinx_category_guid": null,
+					"category_name": null
+				},
+				"design": {
+					"model_item_guid": null,
+					"model_name": null,
+					"model_file": null,
+					"drawing_number": "P1.0",
+					"drawing_name": null
+				}
+			}
+		]
+	}]
+}
+```
+
 `GET`
 
 This endpoint will be used to get the details of a specific delivery. Note: This response will include the delivery’s items.
