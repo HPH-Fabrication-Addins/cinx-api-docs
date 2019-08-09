@@ -97,11 +97,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
   - {organization's vendor number}
 
-**ship_via**: will limit results to a specific ship via value
+**ship-via**: will limit results to a specific ship via value
 
   - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
 
-**deliver_date**: will limit results to a specific need-by or delivery-by date
+**need-by**: will limit results to a specific need-by or delivery-by date
 
   - Date Format: YYYY-MM-DD
 

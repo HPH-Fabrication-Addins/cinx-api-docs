@@ -79,11 +79,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/d
 
   - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE
 
-**ship_via**: will limit results to a specific ship via value
+**ship-via**: will limit results to a specific ship via value
 
   - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
 
-**po_guid**: will limit results to a specified CINX purchase order
+**po-guid**: will limit results to a specified CINX purchase order
 
   - {CINX_PO_Id}
 

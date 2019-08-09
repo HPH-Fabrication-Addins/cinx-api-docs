@@ -88,11 +88,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 
   - {organization's vendor number}
 
-**ship_via**: will limit results to a specific ship via value
+**ship-via**: will limit results to a specific ship via value
 
   - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
 
-**deliver_date**: will limit results to a specific need-by or delivery-by date
+**need-by**: will limit results to a specific need-by or delivery-by date
 
   - Date Format: YYYY-MM-DD
 
@@ -120,6 +120,135 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 ## Get RFQ Template
 ### API Endpoint - Get an RFQ Template
 
+```json
+{
+	"response": {},
+	"rows": [{
+		"doc_info": {},
+		"template": {
+			"cinx_id": null,
+			"number": null,
+			"name": null,
+			"description": null,
+			"terms": null,
+			"user_comment": null,
+			"workflow_status": "IN-PROCESS",
+			"dates": {
+				"respond_by": null,
+				"need_by": null,
+				"submitted": null
+			},
+			"vendors": [{
+				"cinx_commerce_guid": null,
+				"number": null
+			}],
+			"project": {
+				"cinx_id": null,
+				"number": null
+			},
+			"delivery": {
+				"address1": null,
+				"address2": null,
+				"address3": null,
+				"city": null,
+				"state": null,
+				"postal_code": null,
+				"country": "USA",
+				"ship_via": null,
+				"fob_type": null,
+				"ship_from": null,
+				"attention": null,
+				"location_type": "JOB SITE",
+				"location_name": null,
+				"instructions": null
+			},
+			"job_cost_defaults": {
+				"cinx_phase_guid": null,
+				"phase_name": null,
+				"cinx_material_cost_code_guid": null,
+				"material_cost_code_name": null,
+				"cinx_category_guid": null,
+				"category_name": null
+			},
+			"taxes": {
+				"taxable": false,
+				"cinx_id": null,
+				"tax_group_name": null
+			},
+			"external_references": [{
+				"type": null,
+				"description": null,
+				"value": null
+			}],
+			"items": [{
+				"cinx_guid": null,
+				"quantity": null,
+				"date_need_by": null,
+				"allow_substitutes": "true",
+				"hph_code": null,
+				"org_item_id": null,
+				"org_system_id": null,
+				"mfr_part_number": null,
+				"upc": null,
+				"size": null,
+				"description": null,
+				"mfr_name": null,
+				"item_type": null,
+				"vendor": {
+					"cinx_commerce_guid": null,
+					"number": null
+				},
+				"project": {
+					"cinx_guid": null,
+					"number": null
+				},
+				"delivery": {
+					"deliver_to": null,
+					"location_type": "JOB SITE",
+					"instructions": null,
+					"labeling_instructions": null,
+					"packaging_instructions": null
+				},
+				"work_breakdown": {
+					"work_order_id": null,
+					"work_order_name": null,
+					"spool_id": null,
+					"spool_name": null,
+					"building_name": null,
+					"level": null,
+					"space": null,
+					"sub_space": null,
+					"system": null,
+					"arch_symbol": null,
+					"tag": null
+				},
+				"job_cost": {
+					"cinx_phase_guid": null,
+					"phase_name": null,
+					"cinx_material_cost_code_guid": null,
+					"material_cost_code_name": null,
+					"cinx_category_guid": null,
+					"category_name": null
+				},
+				"taxes": {
+					"taxable": false,
+					"cinx_guid": null,
+					"tax_group_name": null
+				},
+				"design": {
+					"model_item_guid": null,
+					"model_name": null,
+					"model_file": null,
+					"drawing_number": null,
+					"drawing_name": null
+				}
+			}]
+		},
+		"field_options": {},
+		"api_calls": []
+	}]
+}
+```
 `GET`
 
 This endpoint will be used to get a CINX Template for an RFQ.

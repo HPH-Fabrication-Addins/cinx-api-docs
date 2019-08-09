@@ -85,7 +85,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/b
 
   - {organization's vendor number}
   
-**po_guid**: will limit results to a specified CINX purchase order
+**po-guid**: will limit results to a specified CINX purchase order
 
   - {CINX_PO_Id}
 

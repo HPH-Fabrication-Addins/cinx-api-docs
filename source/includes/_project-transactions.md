@@ -62,11 +62,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
   - {organization's vendor number}
 
-**ship_via**: will limit results to a specific ship via value
+**ship-via**: will limit results to a specific ship via value
 
   - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
 
-**deliver_date**: will limit results to a specific need-by or delivery-by date
+**need-by**: will limit results to a specific need-by or delivery-by date
 
   - Date Format: YYYY-MM-DD
 
@@ -146,11 +146,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
   - {organization's vendor number}
 
-**ship_via**: will limit results to a specific ship via value
+**ship-via**: will limit results to a specific ship via value
 
   - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
 
-**deliver_date**: will limit results to a specific need-by or delivery-by date
+**need-by**: will limit results to a specific need-by or delivery-by date
 
   - Date Format: YYYY-MM-DD
 
@@ -216,11 +216,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
   - {organization's vendor number}
 
-**ship_via**: will limit results to a specific ship via value
+**ship-via**: will limit results to a specific ship via value
 
   - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
 
-**deliver_date**: will limit results to a specific need-by or delivery-by date
+**need-by**: will limit results to a specific need-by or delivery-by date
 
   - Date Format: YYYY-MM-DD
 
@@ -309,11 +309,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
   - {organization's vendor number}
 
-**ship_via**: will limit results to a specific ship via value
+**ship-via**: will limit results to a specific ship via value
 
   - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
 
-**deliver_date**: will limit results to a specific need-by or delivery-by date
+**need-by**: will limit results to a specific need-by or delivery-by date
 
   - Date Format: YYYY-MM-DD
 
@@ -401,11 +401,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
   - {organization's vendor number}
 
-**ship_via**: will limit results to a specific ship via value
+**ship-via**: will limit results to a specific ship via value
 
   - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
 
-**deliver_date**: will limit results to a specific need-by or delivery-by date
+**need-by**: will limit results to a specific need-by or delivery-by date
 
   - Date Format: YYYY-MM-DD
 
@@ -471,11 +471,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
   - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
 
-**ship_via**: will limit results to a specific ship via value
+**ship-via**: will limit results to a specific ship via value
 
   - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
 
-**po_guid**: will limit results to a specified CINX purchase order
+**po-guid**: will limit results to a specified CINX purchase order
 
   - {CINX_PO_Id}
 
@@ -533,7 +533,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 **OPTIONAL URL PARAMETERS**
 
-**po_guid**: will limit results to a specified CINX purchase order
+**po-guid**: will limit results to a specified CINX purchase order
 
   - {CINX_PO_Id}
 
@@ -610,11 +610,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
   - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
 
-**ship_via**: will limit results to a specific ship via value
+**ship-via**: will limit results to a specific ship via value
 
   - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
 
-**po_guid**: will limit results to a specified CINX purchase order
+**po-guid**: will limit results to a specified CINX purchase order
 
   - {CINX_PO_Id}
 
@@ -695,7 +695,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
   - {organization's vendor number}
   
-**po_guid**: will limit results to a specified CINX purchase order
+**po-guid**: will limit results to a specified CINX purchase order
 
   - {CINX_PO_Id}
 
