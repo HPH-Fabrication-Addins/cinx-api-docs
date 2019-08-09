@@ -415,6 +415,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 The table below defines the input fields within the template.
 
 Name | Data Type | Required | Default Value | Note
+----- | ----- | ----- | ----- | -----
 cinx_guid | String (GUID format) | POST = No; PUT = Yes |  | CINX System Id.
 number | String | Yes |  | Public number for the object.
 name | String | Yes |  | Public name for the object.
