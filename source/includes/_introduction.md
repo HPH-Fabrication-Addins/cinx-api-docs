@@ -152,14 +152,14 @@ Importantly, a company can subscribe to an application multiple times provided t
 Below is a sample showing an App with two different data sources.
 
 
-**Data Source Name: Viewpoint Estimation**
+**Data Source Name: Quotesoft**
 
-<img src='images/subscription4.jpg'/>
+<img src='images/QSI-QSI.jpg'/>
 
 
 **Data Source Name: My Private Catalog**
 
-<img src='images/subscription5.jpg'/>
+<img src='images/Qsi-MPC.jpg'/>
 
 ## Auth Response
 ### Working with the GET User SubscriptionAuthorization API Response
