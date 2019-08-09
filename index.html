@@ -4972,93 +4972,618 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p>The table below defines the input fields within the template.</p>
 
-<p>Name | Data Type | Required | Default Value | Note
-cinx_guid | String (GUID format) | POST = No; PUT = Yes |  | CINX System Id.
-number | String | Yes |  | Public number for the object.
-name | String | Yes |  | Public name for the object.
-description | String | No |  | Public description for the object.
-tx_sub_type | String | No |  | Used to define the specific type of requisition. See template for available options.
-user_comment | String | No |  | General comment defined by a CINX user.
-procurement_status | String | Yes | OPEN | Status used to track the procurement activities of the requisition. Template has a list of optional values.
-allow_substitutes | Boolean | Yes | TRUE | Transaction level default used to indicate if the items on the requisition can be sourced from an alternate manufacturer.
-cinx_user_guid_assign_to | String (GUID format) | No |  | CINX Id for the user to whom the requisition should be assigned.
-dates.need_by | Date (YYYY-MM-DD) | No |  | Date the products on the requisition need to be delivered to the specified delivery location.
-dates.approved | Date (YYYY-MM-DD) | No |  | Date the requisition was approved for ordering.
-dates.closed | Date (YYYY-MM-DD) | No |  | Date the requisition was closed.
-vendor.cinx_commerce_guid | String (GUID format) | No |  | Transaction level default. CINX Commerce Id for the requested vendor.
-vendor.number | String | No |  | Transaction level default. The public number of the vendor from whom the requester would like the products to be sourced.
-project.cinx_guid | String (GUID format) | No |  | Transaction level default. CINX Project Id.
-project.number | String | No |  | Transaction level default. The public number of the project from which the items are being requested.
-delivery.address1 | String | No |  | Address 1 value for the location to which the products on the requisition are to be delivered.
-delivery.address2 | String | No |  | Address 2 value for the location to which the products on the requisition are to be delivered.
-delivery.address3 | String | No |  | Address 3 value for the location to which the products on the requisition are to be delivered.
-delivery.city | String | No |  | City to which the products on the requisition are to be delivered.
-delivery.state | String (2 character alpha abbreviation) | No |  | State to which the products on the requisition are to be delivered.
-delivery.postal_code | String | No |  | Postal/Zip Code to which the products on the requisition are to be delivered.
-delivery.country | String (3 character alpha abbreviation) | No | USA | Country to which the products on the requisition are to be delivered.
-delivery.ship_via | String | No |  | How the products are to be delivered or otherwise acquired. Template has a list of optional values.
-delivery.fob_type | String | No |  | F.O.B. Type. Template has a list of optional values.
-delivery.ship_from | String | No |  | Location from which the requester would like the materials on the requisition to be shipped.
-delivery.attention | String | No |  | User-defined delivery attention.
-delivery.location_type | String | No | JOB SITE | Transaction level default. Type of location where the requester would like the materials delivered. Template has a list of optional values.
-delivery.location_name | String | No |  | Name of the location where the requester would like the materials delivered.
-job_cost_defaults .cinx_phase_guid | String (GUID format) | No |  | Transaction level default. CINX Id for the Phase/Sub-Job assigned to the items on the requisition.
-job_cost_defaults.phase_name | String | No |  | Transaction level default. Name for the Phase/Sub-Job assigned to the items on the requisition.
-job_cost_defaults.cinx_material_cost_code_guid | String (GUID format) | No |  | Transaction level default. CINX Id for the Material Cost Code assigned to the items on the requisition.
-job_cost_defaults.material_cost_code_name | String | No |  | Transaction level default. Name for the Material Cost Code assigned to the items on the requisition.
-job_cost_defaults.cinx_category_guid | String (GUID format) | No |  | Transaction level default. CINX Id for the Category assigned to the items on the requisition.
-job_cost_defaults.category_name | String | No |  | Transaction level default. Name for the Category assigned to the items on the requisition.
-taxes.taxable | Boolean | Yes | FALSE | Transaction level default. Indicator defining if the products on the requisition are taxable.
-taxes.cinx_guid | String (GUID format) | No |  | Transaction level default. CINX Id for the Tax Group assigned to the items on the requisition.
-taxes.tax_group_name | String | No |  | Transaction level default. Name for the Tax Group assigned to the items on the requisition.
-external_references.type | String | No |  | Non-CINX system reference type name.
-external_references.description | String | No |  | Non-CINX system reference description.
-external_references.value | String | No |  | Non-CINX system reference value.
-items.cinx_guid | String (GUID format) | POST = No; PUT = Yes |  | CINX System Id.
-items.quantity | Real | No | 1 | Quantity of the item that needs to be ordered.
-items.date_need_by | Date (YYYY-MM-DD) | No |  | Date the product needs to be delivered to the specified delivery location.
-items.allow_substitutes | Boolean | Yes | TRUE | Indicator if the product can be sourced from an alternate manufacturer.
-items.hph_code | String | No |  | HPH Item Code for the item that needs to be ordered.
-items.org_item_id | String | No |  | The requesting company&#39;s Org Item Id for the product that needs to be ordered. User-friendly code.
-items.org_system_id | String | No |  | The requesting company&#39;s Org System Item Id for the product that needs to be ordered. Unique Id code.
-items.mfr_part_number | String | No |  | Manufacturer defined Part/Catalog Number for the product that needs to be ordered.
-items.upc | String | No |  | Manufacturer defined UPC Number for the product that needs to be ordered.
-items.size | String | No |  | Size or rating of the item that needs to be ordered.
-items.description | String | No |  | Description of the item that needs to be ordered.
-items.mfr_name | String | No |  | Name of the manufacturer or fabricator that produces the item that needs to be ordered.
-items.item_type | String | No |  | Classification name of the item that needs to be ordered.
-items.vendor.cinx_commerce_guid | String (GUID format) | No |  | CINX Commerce Id for the requested vendor.
-items.vendor.number | String | No |  | The public number of the vendor from whom the requester would like the product to be sourced.
-items.project.cinx_guid | String (GUID format) | No |  | CINX Project Id.
-items.project.number | String | No |  | The public number of the project from which the item are being requested.
-items.delivery.deliver_to | String | No |  | Deliver To text.
-items.delivery.location_type | String | No | JOB SITE | Where the requester would like the product to be delivered. Template has a list of optional values.
-items.delivery.instructions | String | No |  | Delivery instructions the requester would like submitted to the vendor responsible for delivering the items.
-items.delivery.labeling_instructions | String | No |  | Labeling instructions the requester would like submitted to the vendor responsible for delivering the items.
-items.delivery.packaging_instructions | String | No |  | Packaging instructions the requester would like submitted to the vendor responsible for delivering the items.
-items.work_breakdown.work_order_id | String | No |  | Contractor defined Work Order Id that was assigned to the product.
-items.work_breakdown.work_order_name | String | No |  | Contractor defined Work Order Name that was assigned to the product.
-items.work_breakdown.spool_id | String | No |  | Contractor defined Spool Id that was assigned to the product.
-items.work_breakdown.spool_name | String | No |  | Contractor defined Spool name that was assigned to the product.
-items.work_breakdown.building_name | String | No |  | Name of the building in which the product will be installed.
-items.work_breakdown.level | String | No |  | Level of the building in which the product will be installed.
-items.work_breakdown.space | String | No |  | Space of the building in which the product will be installed.
-items.work_breakdown.sub_space | String | No |  | Sub-space of the building in which the product will be installed.
-items.work_breakdown.system | String | No |  | Name of the system in which the product will be installed.
-items.work_breakdown.arch_symbol | String | No |  | Architectural symbol of the product.
-items.work_breakdown.tag | String | No |  | Text of what should appear on a tag for the item.
-items.job_cost .cinx_phase_guid | String (GUID format) | No |  | CINX Id for the Phase/Sub-Job assigned to the item.
-items.job_cost.phase_name | String | No |  | Name for the Phase/Sub-Job assigned to the item.
-items.job_cost.cinx_material_cost_code_guid | String (GUID format) | No |  | CINX Id for the Material Cost Code assigned to the item.
-items.job_cost.material_cost_code_name | String | No |  | Name for the Material Cost Code assigned to the item.
-items.job_cost.cinx_category_guid | String (GUID format) | No |  | CINX Id for the Category assigned to the item.
-items.job_cost.category_name | String | No |  | Name for the Category assigned to the item.
-items.taxes.taxable | Boolean | Yes | FALSE | Indicator defining if the product is taxable.
-items.taxes.cinx_guid | String (GUID format) | No |  | CINX Id for the Tax Group assigned to the item.
-items.taxes.tax_group_name | String | No |  | Name of the Tax Group assigned to the item.
-items.design.model_item_guid | String | No |  | Id assigned by the authoring system that placed the item in the model.
-items.design.model_name | String | No |  | Name of the model in which the item is located.
-items.design.model_file | String | No |  | File name of the model in which the item is located.</p>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Default Value</th>
+<th>Note</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cinx_guid</td>
+<td>String (GUID format)</td>
+<td>POST = No; PUT = Yes</td>
+<td></td>
+<td>CINX System Id.</td>
+</tr>
+<tr>
+<td>number</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>Public number for the object.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>Public name for the object.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Public description for the object.</td>
+</tr>
+<tr>
+<td>tx_sub_type</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Used to define the specific type of requisition. See template for available options.</td>
+</tr>
+<tr>
+<td>user_comment</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>General comment defined by a CINX user.</td>
+</tr>
+<tr>
+<td>procurement_status</td>
+<td>String</td>
+<td>Yes</td>
+<td>OPEN</td>
+<td>Status used to track the procurement activities of the requisition. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>allow_substitutes</td>
+<td>Boolean</td>
+<td>Yes</td>
+<td>TRUE</td>
+<td>Transaction level default used to indicate if the items on the requisition can be sourced from an alternate manufacturer.</td>
+</tr>
+<tr>
+<td>cinx_user_guid_assign_to</td>
+<td>String (GUID format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Id for the user to whom the requisition should be assigned.</td>
+</tr>
+<tr>
+<td>dates.need_by</td>
+<td>Date (YYYY-MM-DD)</td>
+<td>No</td>
+<td></td>
+<td>Date the products on the requisition need to be delivered to the specified delivery location.</td>
+</tr>
+<tr>
+<td>dates.approved</td>
+<td>Date (YYYY-MM-DD)</td>
+<td>No</td>
+<td></td>
+<td>Date the requisition was approved for ordering.</td>
+</tr>
+<tr>
+<td>dates.closed</td>
+<td>Date (YYYY-MM-DD)</td>
+<td>No</td>
+<td></td>
+<td>Date the requisition was closed.</td>
+</tr>
+<tr>
+<td>vendor.cinx_commerce_guid</td>
+<td>String (GUID format)</td>
+<td>No</td>
+<td></td>
+<td>Transaction level default. CINX Commerce Id for the requested vendor.</td>
+</tr>
+<tr>
+<td>vendor.number</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Transaction level default. The public number of the vendor from whom the requester would like the products to be sourced.</td>
+</tr>
+<tr>
+<td>project.cinx_guid</td>
+<td>String (GUID format)</td>
+<td>No</td>
+<td></td>
+<td>Transaction level default. CINX Project Id.</td>
+</tr>
+<tr>
+<td>project.number</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Transaction level default. The public number of the project from which the items are being requested.</td>
+</tr>
+<tr>
+<td>delivery.address1</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Address 1 value for the location to which the products on the requisition are to be delivered.</td>
+</tr>
+<tr>
+<td>delivery.address2</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Address 2 value for the location to which the products on the requisition are to be delivered.</td>
+</tr>
+<tr>
+<td>delivery.address3</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Address 3 value for the location to which the products on the requisition are to be delivered.</td>
+</tr>
+<tr>
+<td>delivery.city</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>City to which the products on the requisition are to be delivered.</td>
+</tr>
+<tr>
+<td>delivery.state</td>
+<td>String (2 character alpha abbreviation)</td>
+<td>No</td>
+<td></td>
+<td>State to which the products on the requisition are to be delivered.</td>
+</tr>
+<tr>
+<td>delivery.postal_code</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Postal/Zip Code to which the products on the requisition are to be delivered.</td>
+</tr>
+<tr>
+<td>delivery.country</td>
+<td>String (3 character alpha abbreviation)</td>
+<td>No</td>
+<td>USA</td>
+<td>Country to which the products on the requisition are to be delivered.</td>
+</tr>
+<tr>
+<td>delivery.ship_via</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>How the products are to be delivered or otherwise acquired. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>delivery.fob_type</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>F.O.B. Type. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>delivery.ship_from</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Location from which the requester would like the materials on the requisition to be shipped.</td>
+</tr>
+<tr>
+<td>delivery.attention</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>User-defined delivery attention.</td>
+</tr>
+<tr>
+<td>delivery.location_type</td>
+<td>String</td>
+<td>No</td>
+<td>JOB SITE</td>
+<td>Transaction level default. Type of location where the requester would like the materials delivered. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>delivery.location_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the location where the requester would like the materials delivered.</td>
+</tr>
+<tr>
+<td>job_cost_defaults .cinx_phase_guid</td>
+<td>String (GUID format)</td>
+<td>No</td>
+<td></td>
+<td>Transaction level default. CINX Id for the Phase/Sub-Job assigned to the items on the requisition.</td>
+</tr>
+<tr>
+<td>job_cost_defaults.phase_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Transaction level default. Name for the Phase/Sub-Job assigned to the items on the requisition.</td>
+</tr>
+<tr>
+<td>job_cost_defaults.cinx_material_cost_code_guid</td>
+<td>String (GUID format)</td>
+<td>No</td>
+<td></td>
+<td>Transaction level default. CINX Id for the Material Cost Code assigned to the items on the requisition.</td>
+</tr>
+<tr>
+<td>job_cost_defaults.material_cost_code_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Transaction level default. Name for the Material Cost Code assigned to the items on the requisition.</td>
+</tr>
+<tr>
+<td>job_cost_defaults.cinx_category_guid</td>
+<td>String (GUID format)</td>
+<td>No</td>
+<td></td>
+<td>Transaction level default. CINX Id for the Category assigned to the items on the requisition.</td>
+</tr>
+<tr>
+<td>job_cost_defaults.category_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Transaction level default. Name for the Category assigned to the items on the requisition.</td>
+</tr>
+<tr>
+<td>taxes.taxable</td>
+<td>Boolean</td>
+<td>Yes</td>
+<td>FALSE</td>
+<td>Transaction level default. Indicator defining if the products on the requisition are taxable.</td>
+</tr>
+<tr>
+<td>taxes.cinx_guid</td>
+<td>String (GUID format)</td>
+<td>No</td>
+<td></td>
+<td>Transaction level default. CINX Id for the Tax Group assigned to the items on the requisition.</td>
+</tr>
+<tr>
+<td>taxes.tax_group_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Transaction level default. Name for the Tax Group assigned to the items on the requisition.</td>
+</tr>
+<tr>
+<td>external_references.type</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Non-CINX system reference type name.</td>
+</tr>
+<tr>
+<td>external_references.description</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Non-CINX system reference description.</td>
+</tr>
+<tr>
+<td>external_references.value</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Non-CINX system reference value.</td>
+</tr>
+<tr>
+<td>items.cinx_guid</td>
+<td>String (GUID format)</td>
+<td>POST = No; PUT = Yes</td>
+<td></td>
+<td>CINX System Id.</td>
+</tr>
+<tr>
+<td>items.quantity</td>
+<td>Real</td>
+<td>No</td>
+<td>1</td>
+<td>Quantity of the item that needs to be ordered.</td>
+</tr>
+<tr>
+<td>items.date_need_by</td>
+<td>Date (YYYY-MM-DD)</td>
+<td>No</td>
+<td></td>
+<td>Date the product needs to be delivered to the specified delivery location.</td>
+</tr>
+<tr>
+<td>items.allow_substitutes</td>
+<td>Boolean</td>
+<td>Yes</td>
+<td>TRUE</td>
+<td>Indicator if the product can be sourced from an alternate manufacturer.</td>
+</tr>
+<tr>
+<td>items.hph_code</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>HPH Item Code for the item that needs to be ordered.</td>
+</tr>
+<tr>
+<td>items.org_item_id</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>The requesting company&#39;s Org Item Id for the product that needs to be ordered. User-friendly code.</td>
+</tr>
+<tr>
+<td>items.org_system_id</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>The requesting company&#39;s Org System Item Id for the product that needs to be ordered. Unique Id code.</td>
+</tr>
+<tr>
+<td>items.mfr_part_number</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Manufacturer defined Part/Catalog Number for the product that needs to be ordered.</td>
+</tr>
+<tr>
+<td>items.upc</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Manufacturer defined UPC Number for the product that needs to be ordered.</td>
+</tr>
+<tr>
+<td>items.size</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Size or rating of the item that needs to be ordered.</td>
+</tr>
+<tr>
+<td>items.description</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Description of the item that needs to be ordered.</td>
+</tr>
+<tr>
+<td>items.mfr_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the manufacturer or fabricator that produces the item that needs to be ordered.</td>
+</tr>
+<tr>
+<td>items.item_type</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Classification name of the item that needs to be ordered.</td>
+</tr>
+<tr>
+<td>items.vendor.cinx_commerce_guid</td>
+<td>String (GUID format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Commerce Id for the requested vendor.</td>
+</tr>
+<tr>
+<td>items.vendor.number</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>The public number of the vendor from whom the requester would like the product to be sourced.</td>
+</tr>
+<tr>
+<td>items.project.cinx_guid</td>
+<td>String (GUID format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Project Id.</td>
+</tr>
+<tr>
+<td>items.project.number</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>The public number of the project from which the item are being requested.</td>
+</tr>
+<tr>
+<td>items.delivery.deliver_to</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Deliver To text.</td>
+</tr>
+<tr>
+<td>items.delivery.location_type</td>
+<td>String</td>
+<td>No</td>
+<td>JOB SITE</td>
+<td>Where the requester would like the product to be delivered. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>items.delivery.instructions</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Delivery instructions the requester would like submitted to the vendor responsible for delivering the items.</td>
+</tr>
+<tr>
+<td>items.delivery.labeling_instructions</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Labeling instructions the requester would like submitted to the vendor responsible for delivering the items.</td>
+</tr>
+<tr>
+<td>items.delivery.packaging_instructions</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Packaging instructions the requester would like submitted to the vendor responsible for delivering the items.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.work_order_id</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Contractor defined Work Order Id that was assigned to the product.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.work_order_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Contractor defined Work Order Name that was assigned to the product.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.spool_id</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Contractor defined Spool Id that was assigned to the product.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.spool_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Contractor defined Spool name that was assigned to the product.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.building_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the building in which the product will be installed.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.level</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Level of the building in which the product will be installed.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.space</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Space of the building in which the product will be installed.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.sub_space</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Sub-space of the building in which the product will be installed.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.system</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the system in which the product will be installed.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.arch_symbol</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Architectural symbol of the product.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.tag</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Text of what should appear on a tag for the item.</td>
+</tr>
+<tr>
+<td>items.job_cost .cinx_phase_guid</td>
+<td>String (GUID format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Id for the Phase/Sub-Job assigned to the item.</td>
+</tr>
+<tr>
+<td>items.job_cost.phase_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name for the Phase/Sub-Job assigned to the item.</td>
+</tr>
+<tr>
+<td>items.job_cost.cinx_material_cost_code_guid</td>
+<td>String (GUID format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Id for the Material Cost Code assigned to the item.</td>
+</tr>
+<tr>
+<td>items.job_cost.material_cost_code_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name for the Material Cost Code assigned to the item.</td>
+</tr>
+<tr>
+<td>items.job_cost.cinx_category_guid</td>
+<td>String (GUID format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Id for the Category assigned to the item.</td>
+</tr>
+<tr>
+<td>items.job_cost.category_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name for the Category assigned to the item.</td>
+</tr>
+<tr>
+<td>items.taxes.taxable</td>
+<td>Boolean</td>
+<td>Yes</td>
+<td>FALSE</td>
+<td>Indicator defining if the product is taxable.</td>
+</tr>
+<tr>
+<td>items.taxes.cinx_guid</td>
+<td>String (GUID format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Id for the Tax Group assigned to the item.</td>
+</tr>
+<tr>
+<td>items.taxes.tax_group_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the Tax Group assigned to the item.</td>
+</tr>
+<tr>
+<td>items.design.model_item_guid</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Id assigned by the authoring system that placed the item in the model.</td>
+</tr>
+<tr>
+<td>items.design.model_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the model in which the item is located.</td>
+</tr>
+<tr>
+<td>items.design.model_file</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>File name of the model in which the item is located.</td>
+</tr>
+</tbody></table>
 <h2 id='get-req-number'>Get Req Number</h2><h3 id='api-endpoint-get-a-new-requisition-number'>API Endpoint - Get a New Requisition Number</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
