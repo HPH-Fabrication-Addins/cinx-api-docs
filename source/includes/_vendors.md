@@ -260,6 +260,52 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/t
 
 The table below defines the input fields within the template.
 
+**TEMPLATE FIELDS**
+
+Name | Data Type | Required | Default | Note
+----- | ----- | ----- | ----- | -----
+cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+number | String | No |  | Public number for the object.
+name | String | Yes |  | Full name of the vendor.
+short_name | String | No |  | Short or abbreviated name of the vendor.
+description | String | No |  | Description of the vendor.
+type | String | No |  | Organization-defined type assigned to the vendor.
+web_site | String | No |  | Primary web site address of the vendor.
+status | String | Yes | A | Status of the vendor.
+location.number | String | No |  | Number identifying the vendor's location.
+location.type | String | No |  | Type of location.  Template has a list of optional values.
+location.emergency_info | String | No |  | Information for contacting the vendor in-case of an emergency.
+terms.account_number | String | No |  | Vendor's system number for the customer.
+terms.payment_days_type | String | No |  | Vendor's payment terms days type.
+terms.payment_due_days | Real | No |  | Vendor's payment terms due days.
+terms.late_fee_percent | Real | No |  | Vendor's payment terms late payment fee percentage.
+terms.discount_days_type | String | No |  | Vendor's payment terms early pay discount days type.
+terms.discount_days | Real | No |  | Vendor's payment terms early pay discount days.
+terms.discount_percent | Real | No |  | Vendor's payment terms early pay discount percentage.
+accounting_defaults.cinx_material_cost_code_guid | String (GUID Format) | No |  | Default CINX Id for the Material Cost Code assigned to the vendor.
+accounting_defaults.material_cost_code_name | String | No |  | Default name for the Material Cost Code assigned to the vendor.
+accounting_defaults.cinx_category_guid | String (GUID Format) | No |  | Default CINX Id for the Category assigned to the vendor.
+accounting_defaults.category_name | String | No |  | Default name for the Category assigned to the vendor.
+accounting_defaults.cinx_tax_group_guid | String (GUID Format) | No |  | Default CINX Id for the Tax Group assigned to the vendor
+accounting_defaults.tax_group_name | String | No |  | Default name for the Tax Group assigned to the vendor.
+accounting_defaults.gl_account | String | No |  | Default name for the General Ledger account assigned to the vendor.
+addresses.type | String | No |  | Type of vendor location address. Template has a list of optional values.
+addresses.address1 | String | No |  | Address 1 value for the vendor location.
+addresses.address2 | String | No |  | Address 2 value for the vendor location.
+addresses.address3 | String | No |  | Address 3 value for the vendor location.
+addresses.city | String | No |  | City value for the vendor location.
+addresses.state | String | No |  | State value for the vendor location. Two-character alpha abbreviation.
+addresses.postal_code | String | No |  | Postal/Zip Code value for the vendor location.
+addresses.country | String | No | USA | Country value for the vendor location. Three-character alpha abbreviation.
+phone_numbers.type | String | No |  | Type of phone number. Template has a list of optional values.
+phone_numbers.number | String | No |  | Value of the phone number.
+fax_numbers.type | String | No |  | Type of fax number. Template has a list of optional values.
+fax_numbers.number | String | No |  | Value of the fax number.
+email_addresses.type | String | No |  | Type of email address. Template has a list of optional values.
+email_addresses.address | String | No |  | Email address.
+id_numbers.type | String | No |  | Type of Id number. Template has a list of optional values.
+id_numbers.number | String | No |  | Id number value.
+
 ## Get Vendor Number
 ### API Endpoint - Get a New Vendor Number
 
