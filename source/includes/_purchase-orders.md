@@ -167,6 +167,11 @@ number | Limits results to a specified transaction number. | {transaction_number
 				"need_by": "2019-08-02",
 				"submitted": "2019-07-29"
 			},
+			"customer": {
+				"cinx_commerce_guid": "de0cf849-6f7b-5df6-9ae9-f924659f2d25",
+				"number": "CX101",
+				"name": "WTS Mechanical"
+			},
 			"vendor": {
 				"cinx_commerce_guid": "7880c854-017f-5359-96de-fdef626c33cf",
 				"number": "V101",
