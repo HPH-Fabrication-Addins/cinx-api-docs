@@ -105,9 +105,9 @@ number | Limits results to a specified transaction number. | {transaction_number
 			"locked": "1",
 			"number": "PO-111111",
 			"name": "PO-111111",
-			"description": "No Description Entered",
+			"description": "Sample PO description text",
 			"terms": "1.5/10",
-			"user_comment": "Test User Comment",
+			"user_comment": "Sample PO user Comment",
 			"procurement_status": "ORDERED",
 			"workflow_status": "SUBMITTED",
 			"erp_status": "NOT SUBMITTED",
@@ -132,20 +132,20 @@ number | Limits results to a specified transaction number. | {transaction_number
 			"vendor": {
 				"cinx_commerce_guid": "7880c854-017f-5359-96de-fdef626c33cf",
 				"number": "V101",
-				"name": "Hilti-6"
+				"name": "Hilti"
 			},
 			"project": {
 				"cinx_guid": "bb613aff-4256-5359-b7cd-391505d19e01",
 				"number": "WTS-2017-03",
-				"name": "WTS-2017-03"
+				"name": "WTS-Building 3"
 			},
 			"delivery": {
-				"address1": null,
+				"address1": "377 Route 117",
 				"address2": null,
 				"address3": null,
-				"city": null,
-				"state": null,
-				"postal_code": null,
+				"city": "Sugar Hill",
+				"state": "NH",
+				"postal_code": "03586",
 				"country": "USA",
 				"ship_via": "SUPPLIER TRUCK",
 				"fob_type": "PREPAID",
@@ -209,7 +209,7 @@ number | Limits results to a specified transaction number. | {transaction_number
 				"vendor": {
 					"cinx_commerce_guid": "7880c854-017f-5359-96de-fdef626c33cf",
 					"number": "V101",
-					"name": "Hilti-6",
+					"name": "Hilti",
 					"item_id": null,
 					"system_id": null,
 					"cinx_quote_guid": null,
@@ -223,7 +223,7 @@ number | Limits results to a specified transaction number. | {transaction_number
 				"project": {
 					"cinx_guid": "bb613aff-4256-5359-b7cd-391505d19e01",
 					"number": "WTS-2017-03",
-					"name": "WTS-2017-03"
+					"name": "WTS-Building 3"
 				},
 				"delivery": {
 					"ship_via": "SUPPLIER TRUCK",
