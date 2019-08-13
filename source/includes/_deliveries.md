@@ -64,36 +64,17 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/deliveries**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/deliveries`
 
-
 **OPTIONAL URL PARAMETERS**
 
-**project**: will limit results to a single project
-
-  - {cinx_project_guid}
-
-**vendor**: will limit results to a single vendor
-
-  - {organization's vendor number}
-
-**delivery**: will limit results to a specific delivery type location
-
-  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE
-
-**ship-via**: will limit results to a specific ship via value
-
-  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
-
-**po-guid**: will limit results to a specified CINX purchase order
-
-  - {CINX_PO_Id}
-
-**submitter**: will limit results to a specified CINX user who received the order (received_by)
-
-  - {CINX_User_Id}
-
-**number**: will limit results to a specified transaction number
-
-  - {transaction_number}
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+project | Limits results to a single project. | {cinx_project_id}
+vendor | Limits results to a single vendor. | {organization's vendor number}
+delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+po-guid | Limits results to a specific purchase order. | {cinx_po_id}
+submitter | Limits results to a specified CINX user. | {cinx_user_id}
+number | Limits results to a specified transaction number. | {transaction_number}
   
 ## Get Delivery
 ### API Endpoint - Get a Delivery

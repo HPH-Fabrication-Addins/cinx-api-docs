@@ -73,45 +73,18 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 **OPTIONAL URL PARAMETERS**
 
-**delivery**: will limit results to a specific delivery type location
-
-  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
-
-**procurement**: will limit results to a specific procurement status
-
-  - Available options are: NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED, DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED
-
-**workflow**: will limit results to a specific workflow status
-
-  - Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED
-
-**erp**: will limit results to a specific erp status
-
-  - Available options are: NOT SUBMITTED, PENDING, SUBMITTED, APPLIED
-
-**project**: will limit results to a single project
-
-  - {cinx_project_guid}
-
-**vendor**: will limit results to a single vendor
-
-  - {organization's vendor number}
-
-**ship-via**: will limit results to a specific ship via value
-
-  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
-
-**need-by**: will limit results to a specific need-by or delivery-by date
-
-  - Date Format: YYYY-MM-DD
-
-**submitter**: will limit results to a specified CINX user
-
-  - {CINX_User_Id}
-
-**number**: will limit results to a specified transaction number
-
-  - {transaction_number}
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+procurement | Limits results to a specific procurement status. | NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED, DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED
+workflow | Limits results to a specific workflow status. | IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED
+erp | Limits results to a specific erp status. | NOT SUBMITTED, PENDING, SUBMITTED, APPLIED
+project | Limits results to a single project. | {cinx_project_id}
+vendor | Limits results to a single vendor. | {organization's vendor number}
+ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
+submitter | Limits results to a specified CINX user. | {cinx_user_id}
+number | Limits results to a specified transaction number. | {transaction_number}
 
 ## Get PO CO
 ### API Endpoint - Get a PO Change Order

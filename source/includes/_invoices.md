@@ -62,36 +62,17 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/invoices**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/invoices`
 
-
 **OPTIONAL URL PARAMETERS**
 
-**po-guid**: will limit results to a specified CINX purchase order
-
-  - {CINX_PO_Id}
-
-**status**: will limit results to a specific status
-
-  - Available options are: PENDING E-INVOICE, ENTERED, REVIEWED, ACCEPTED, IN-DISPUTE, ON-HOLD, REJECTED, SUBMITTED
-
-**erp**: will limit results to a specific erp status
-
-  - Available options are: NOT SUBMITTED, PENDING, SUBMITTED, APPLIED
-
-**project**: will limit results to a single project
-
-  - {cinx_project_guid}
-
-**vendor**: will limit results to a single vendor
-
-  - {organization's vendor number}
-
-**owner**: will limit results to a specified CINX user to whom the transaction is assigned
-
-  - {CINX_User_Id}
-
-**number**: will limit results to a specified transaction number
-
-  - {transaction_number}
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+po-guid | Limits results to a specific purchase order. | {cinx_po_id}
+status | Limits results to a specific status. | PENDING E-INVOICE, ENTERED, REVIEWED, ACCEPTED, IN-DISPUTE, ON-HOLD, REJECTED, SUBMITTED
+erp | Limits results to a specific erp status. | NOT SUBMITTED, PENDING, SUBMITTED, APPLIED
+project | Limits results to a single project. | {cinx_project_id}
+vendor | Limits results to a single vendor. | {organization's vendor number}
+owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
+number | Limits results to a specified transaction number. | {transaction_number}
 
 ## Get Invoice
 ### API Endpoint - Get an Invoice

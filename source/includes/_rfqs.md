@@ -72,37 +72,16 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 
 **OPTIONAL URL PARAMETERS**
 
-**delivery**: will limit results to a specific delivery type location
-
-  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
-
-**workflow**: will limit results to a specific workflow status
-
-  - Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, QUOTED
-
-**project**: will limit results to a single project
-
-  - {cinx_project_guid}
-
-**vendor**: will limit results to a single vendor
-
-  - {organization's vendor number}
-
-**ship-via**: will limit results to a specific ship via value
-
-  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
-
-**need-by**: will limit results to a specific need-by or delivery-by date
-
-  - Date Format: YYYY-MM-DD
-
-**submitter**: will limit results to a specified CINX user
-
-  - {CINX_User_Id}
-
-**number**: will limit results to a specified transaction number
-
-  - {transaction_number}
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+workflow | Limits results to a specific workflow status. | IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, QUOTED
+project | Limits results to a single project. | {cinx_project_id}
+vendor | Limits results to a single vendor. | {organization's vendor number}
+ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
+submitter | Limits results to a specified CINX user. | {cinx_user_id}
+number | Limits results to a specified transaction number. | {transaction_number}
 
 ## Get RFQ
 ### API Endpoint - Get an RFQ
@@ -594,3 +573,16 @@ This endpoint will be used to get a list of Quotes for a specified RFQ.
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/rfq/{rfq_guid}/quotes**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/rfq/8902980f-4a4f-504c-8fc3-2e71067ab59b/quotes`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+workflow | Limits results to a specific workflow status. | IN-PROCESS, SUBMITTED, RECEIVED, ERP PENDING, ERP ACCEPTED, ERP FAILED
+project | Limits results to a single project. | {cinx_project_id}
+vendor | Limits results to a single vendor. | {organization's vendor number}
+ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
+submitter | Limits results to a specified CINX user. | {cinx_uer_id}
+number | Limits results to a specified transaction number. | {transaction_number}
