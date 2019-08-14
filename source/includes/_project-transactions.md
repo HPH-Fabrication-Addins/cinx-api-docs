@@ -47,40 +47,18 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/r
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/reqs`
 
-
 **OPTIONAL URL PARAMETERS**
 
-**delivery**: will limit results to a specific delivery type location
-
-  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
-
-**procurement**: will limit results to a specific procurement status
-
-  - Available options are: OPEN, SUBMITTED, IN-REVIEW, APPROVED, APPROVED W/MODS, REJECTED, PENDING ORDER, COMPLETE, CLOSED, CANCELLED, RESUBMITTED
-
-**vendor**: will limit results to a single vendor
-
-  - {organization's vendor number}
-
-**ship-via**: will limit results to a specific ship via value
-
-  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
-
-**need-by**: will limit results to a specific need-by or delivery-by date
-
-  - Date Format: YYYY-MM-DD
-
-**submitter**: will limit results to a specified CINX user
-
-  - {CINX_User_Id}
-
-**owner**: will limit results to a specified CINX user to whom the transaction is assigned
-
-  - {CINX_User_Id}
-
-**number**: will limit results to a specified transaction number
-
-  - {transaction_number}
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+procurement | Limits results to a specific procurement status. | OPEN, SUBMITTED, IN-REVIEW, APPROVED, APPROVED W/MODS, REJECTED, PENDING ORDER, COMPLETE, CLOSED, CANCELLED, RESUBMITTED
+vendor | Limits results to a single vendor. | {organization's vendor number}
+ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
+submitter | Limits results to a specified CINX user. | {cinx_user_id}
+owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
+number | Limits results to a specified transaction number. | {transaction_number}
 
 ## Get Project RFQs
 ### API Endpoint - Get a List of RFQs Linked to a Project
@@ -131,36 +109,17 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/r
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/rfqs`
 
-
 **OPTIONAL URL PARAMETERS**
 
-**delivery**: will limit results to a specific delivery type location
-
-  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
-
-**workflow**: will limit results to a specific workflow status
-
-  - Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, QUOTED
-
-**vendor**: will limit results to a single vendor
-
-  - {organization's vendor number}
-
-**ship-via**: will limit results to a specific ship via value
-
-  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
-
-**need-by**: will limit results to a specific need-by or delivery-by date
-
-  - Date Format: YYYY-MM-DD
-
-**submitter**: will limit results to a specified CINX user
-
-  - {CINX_User_Id}
-
-**number**: will limit results to a specified transaction number
-
-  - {transaction_number}
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+workflow | Limits results to a specific workflow status. | IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, QUOTED
+vendor | Limits results to a single vendor. | {organization's vendor number}
+ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
+submitter | Limits results to a specified CINX user. | {cinx_user_id}
+number | Limits results to a specified transaction number. | {transaction_number}
 
 ## Get Project Quotes
 ### API Endpoint - Get a List of Quotes for a Project
@@ -201,36 +160,17 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid/qu
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/quotes`
 
-
 **OPTIONAL URL PARAMETERS**
 
-**delivery**: will limit results to a specific delivery type location
-
-  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
-
-**workflow**: will limit results to a specific workflow status
-
-  - Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ERP PENDING, ERP ACCEPTED, ERP FAILED
-
-**vendor**: will limit results to a single vendor
-
-  - {organization's vendor number}
-
-**ship-via**: will limit results to a specific ship via value
-
-  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
-
-**need-by**: will limit results to a specific need-by or delivery-by date
-
-  - Date Format: YYYY-MM-DD
-
-**submitter**: will limit results to a specified CINX user
-
-  - {CINX_User_Id}
-
-**number**: will limit results to a specified transaction number
-
-  - {transaction_number}
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+workflow | Limits results to a specific workflow status. | IN-PROCESS, SUBMITTED, RECEIVED, ERP PENDING, ERP ACCEPTED, ERP FAILED
+vendor | Limits results to a single vendor. | {organization's vendor number}
+ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
+submitter | Limits results to a specified CINX user. | {cinx_user_id}
+number | Limits results to a specified transaction number. | {transaction_number}
 
 ## Get Project POs
 ### API Endpoint - Get a List of POs for a Project
@@ -282,48 +222,19 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/p
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/pos`
 
-
 **OPTIONAL URL PARAMETERS**
 
-**delivery**: will limit results to a specific delivery type location
-
-  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
-
-**procurement**: will limit results to a specific procurement status
-
-  - Available options are: NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED, DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED
-
-**workflow**: will limit results to a specific workflow status
-
-  - Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED
-
-**erp**: will limit results to a specific erp status
-
-  - Available options are: NOT SUBMITTED, PENDING, SUBMITTED, APPLIED
-
-**project**: will limit results to a single project
-
-  - {cinx_project_guid}
-
-**vendor**: will limit results to a single vendor
-
-  - {organization's vendor number}
-
-**ship-via**: will limit results to a specific ship via value
-
-  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
-
-**need-by**: will limit results to a specific need-by or delivery-by date
-
-  - Date Format: YYYY-MM-DD
-
-**submitter**: will limit results to a specified CINX user
-
-  - {CINX_User_Id}
-
-**number**: will limit results to a specified transaction number
-
-  - {transaction_number}
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+procurement | Limits results to a specific procurement status. | NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED, DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED
+workflow | Limits results to a specific workflow status. | IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED
+erp | Limits results to a specific erp status. | NOT SUBMITTED, PENDING, SUBMITTED, APPLIED
+vendor | Limits results to a single vendor. | {organization's vendor number}
+ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
+submitter | Limits results to a specified CINX user. | {cinx_user_id}
+number | Limits results to a specified transaction number. | {transaction_number}
 
 ## Get Project POCOs
 ### API Endpoint - Get a List of PO Change Orders for a Project
@@ -374,48 +285,19 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/p
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/pocos`
 
-
 **OPTIONAL URL PARAMETERS**
 
-**delivery**: will limit results to a specific delivery type location
-
-  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
-
-**procurement**: will limit results to a specific procurement status
-
-  - Available options are: NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED, DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED
-
-**workflow**: will limit results to a specific workflow status
-
-  - Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED
-
-**erp**: will limit results to a specific erp status
-
-  - Available options are: NOT SUBMITTED, PENDING, SUBMITTED, APPLIED
-
-**project**: will limit results to a single project
-
-  - {cinx_project_guid}
-
-**vendor**: will limit results to a single vendor
-
-  - {organization's vendor number}
-
-**ship-via**: will limit results to a specific ship via value
-
-  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
-
-**need-by**: will limit results to a specific need-by or delivery-by date
-
-  - Date Format: YYYY-MM-DD
-
-**submitter**: will limit results to a specified CINX user
-
-  - {CINX_User_Id}
-
-**number**: will limit results to a specified transaction number
-
-  - {transaction_number}
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+procurement | Limits results to a specific procurement status. | NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED, DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED
+workflow | Limits results to a specific workflow status. | IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED
+erp | Limits results to a specific erp status. | NOT SUBMITTED, PENDING, SUBMITTED, APPLIED
+vendor | Limits results to a single vendor. | {organization's vendor number}
+ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
+submitter | Limits results to a specified CINX user. | {cinx_user_id}
+number | Limits results to a specified transaction number. | {transaction_number}
 
 ## Get Project Deliveries
 ### API Endpoint - Get a List of Deliveries for a Project
@@ -460,32 +342,16 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/d
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/deliveries`
 
-
 **OPTIONAL URL PARAMETERS**
 
-**vendor**: will limit results to a single vendor
-
-  - {organization's vendor number}
-
-**delivery**: will limit results to a specific delivery type location
-
-  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
-
-**ship-via**: will limit results to a specific ship via value
-
-  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
-
-**po-guid**: will limit results to a specified CINX purchase order
-
-  - {CINX_PO_Id}
-
-**submitter**: will limit results to a specified CINX user
-
-  - {CINX_User_Id}
-
-**number**: will limit results to a specified transaction number
-
-  - {transaction_number}
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+vendor | Limits results to a single vendor. | {organization's vendor number}
+delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+po-guid | Limits results to a specific purchase order. | {cinx_po_id}
+submitter | Limits results to a specified CINX user. | {cinx_user_id}
+number | Limits results to a specified transaction number. | {transaction_number}
 
 ## Get Project Invoices
 ### API Endpoint - Get a List of Invoices for a Project
@@ -530,32 +396,16 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/i
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/invoices`
 
-
 **OPTIONAL URL PARAMETERS**
 
-**po-guid**: will limit results to a specified CINX purchase order
-
-  - {CINX_PO_Id}
-
-**status**: will limit results to a specific status
-
-  - Available options are: PENDING E-INVOICE, ENTERED, REVIEWED, ACCEPTED, IN-DISPUTE, ON-HOLD, REJECTED, SUBMITTED
-
-**erp**: will limit results to a specific erp status
-
-  - Available options are: NOT SUBMITTED, PENDING, SUBMITTED, APPLIED
-
-**vendor**: will limit results to a single vendor
-
-  - {organization's vendor number}
-
-**owner**: will limit results to a specified CINX user to whom the transaction is assigned
-
-  - {CINX_User_Id}
-
-**number**: will limit results to a specified transaction number
-
-  - {transaction_number}
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+po-guid | Limits results to a specific purchase order. | {cinx_po_id}
+status | Limits results to a specific status. | PENDING E-INVOICE, ENTERED, REVIEWED, ACCEPTED, IN-DISPUTE, ON-HOLD, REJECTED, SUBMITTED
+erp | Limits results to a specific erp status. | NOT SUBMITTED, PENDING, SUBMITTED, APPLIED
+vendor | Limits results to a single vendor. | {organization's vendor number}
+owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
+number | Limits results to a specified transaction number. | {transaction_number}
 
 ## Get Project Returns
 ### API Endpoint - Get a List of Returns for a Project
@@ -599,32 +449,16 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/r
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/returns`
 
-
 **OPTIONAL URL PARAMETERS**
 
-**vendor**: will limit results to a single vendor
-
-  - {organization's vendor number}
-
-**delivery**: will limit results to a specific delivery type location
-
-  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
-
-**ship-via**: will limit results to a specific ship via value
-
-  - Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
-
-**po-guid**: will limit results to a specified CINX purchase order
-
-  - {CINX_PO_Id}
-
-**owner**: will limit results to a specified CINX user to whom the transaction is assigned
-
-  - {CINX_User_Id}
-
-**number**: will limit results to a specified transaction number
-
-  - {transaction_number}
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+vendor | Limits results to a single vendor. | {organization's vendor number}
+delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
+po-guid | Limits results to a specific purchase order. | {cinx_po_id}
+owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
+number | Limits results to a specified transaction number. | {transaction_number}
 
 ## Get Project Back-Orders
 ### API Endpoint - Get a List of Back-Orders for a Project
@@ -680,22 +514,10 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/b
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/back-orders`
 
-
 **OPTIONAL URL PARAMETERS**
 
-**delivery**: will limit results to a specific delivery type location
-
-  - Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
-
-**project**: will limit results to a single project
-
-  - {cinx_project_guid}
-
-**vendor**: will limit results to a single vendor
-
-  - {organization's vendor number}
-  
-**po-guid**: will limit results to a specified CINX purchase order
-
-  - {CINX_PO_Id}
-
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
+vendor | Limits results to a single vendor. | {organization's vendor number}
+po-guid | Limits results to a specific purchase order. | {cinx_po_id}
