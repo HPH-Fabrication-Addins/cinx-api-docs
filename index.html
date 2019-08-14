@@ -5145,59 +5145,59 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><strong>delivery</strong>: will limit results to a specific delivery type location</p>
-
-<ul>
-<li>Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</li>
-</ul>
-
-<p><strong>procurement</strong>: will limit results to a specific procurement status</p>
-
-<ul>
-<li>Available options are: OPEN, SUBMITTED, IN-REVIEW, APPROVED, APPROVED W/MODS, REJECTED, PENDING ORDER, COMPLETE, CLOSED, CANCELLED, RESUBMITTED</li>
-</ul>
-
-<p><strong>project</strong>: will limit results to a single project</p>
-
-<ul>
-<li>{cinx_project_guid}</li>
-</ul>
-
-<p><strong>vendor</strong>: will limit results to a single vendor</p>
-
-<ul>
-<li>{organization&#39;s vendor number}</li>
-</ul>
-
-<p><strong>ship-via</strong>: will limit results to a specific ship via value</p>
-
-<ul>
-<li>Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</li>
-</ul>
-
-<p><strong>need-by</strong>: will limit results to a specific need-by or delivery-by date</p>
-
-<ul>
-<li>Date Format: YYYY-MM-DD</li>
-</ul>
-
-<p><strong>submitter</strong>: will limit results to a specified CINX user</p>
-
-<ul>
-<li>{CINX_User_Id}</li>
-</ul>
-
-<p><strong>owner</strong>: will limit results to a specified CINX user to whom the transaction is assigned</p>
-
-<ul>
-<li>{CINX_User_Id}</li>
-</ul>
-
-<p><strong>number</strong>: will limit results to a specified transaction number</p>
-
-<ul>
-<li>{transaction_number}</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>procurement</td>
+<td>Limits results to a specific procurement status.</td>
+<td>OPEN, SUBMITTED, IN-REVIEW, APPROVED, APPROVED W/MODS, REJECTED, PENDING ORDER, COMPLETE, CLOSED, CANCELLED, RESUBMITTED</td>
+</tr>
+<tr>
+<td>project</td>
+<td>Limits results to a single project.</td>
+<td>{cinx_project_id}</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>ship-via</td>
+<td>Limits results to a specific ship via value.</td>
+<td>SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</td>
+</tr>
+<tr>
+<td>need-by</td>
+<td>Limits results to a specific need-by or delivery-by date.</td>
+<td>Date Format: YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>submitter</td>
+<td>Limits results to a specified CINX user.</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>owner</td>
+<td>Limits results to a specified CINX user to whom the transaction is assigned</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-req'>Get Req</h2><h3 id='api-endpoint-get-a-requisition'>API Endpoint - Get a Requisition</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
     </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
@@ -6255,53 +6255,54 @@ The PUT payload will be processed asynchronously.
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><strong>delivery</strong>: will limit results to a specific delivery type location</p>
-
-<ul>
-<li>Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</li>
-</ul>
-
-<p><strong>workflow</strong>: will limit results to a specific workflow status</p>
-
-<ul>
-<li>Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, QUOTED</li>
-</ul>
-
-<p><strong>project</strong>: will limit results to a single project</p>
-
-<ul>
-<li>{cinx_project_guid}</li>
-</ul>
-
-<p><strong>vendor</strong>: will limit results to a single vendor</p>
-
-<ul>
-<li>{organization&#39;s vendor number}</li>
-</ul>
-
-<p><strong>ship-via</strong>: will limit results to a specific ship via value</p>
-
-<ul>
-<li>Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</li>
-</ul>
-
-<p><strong>need-by</strong>: will limit results to a specific need-by or delivery-by date</p>
-
-<ul>
-<li>Date Format: YYYY-MM-DD</li>
-</ul>
-
-<p><strong>submitter</strong>: will limit results to a specified CINX user</p>
-
-<ul>
-<li>{CINX_User_Id}</li>
-</ul>
-
-<p><strong>number</strong>: will limit results to a specified transaction number</p>
-
-<ul>
-<li>{transaction_number}</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>workflow</td>
+<td>Limits results to a specific workflow status.</td>
+<td>IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, QUOTED</td>
+</tr>
+<tr>
+<td>project</td>
+<td>Limits results to a single project.</td>
+<td>{cinx_project_id}</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>ship-via</td>
+<td>Limits results to a specific ship via value.</td>
+<td>SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</td>
+</tr>
+<tr>
+<td>need-by</td>
+<td>Limits results to a specific need-by or delivery-by date.</td>
+<td>Date Format: YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>submitter</td>
+<td>Limits results to a specified CINX user.</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-rfq'>Get RFQ</h2><h3 id='api-endpoint-get-an-rfq'>API Endpoint - Get an RFQ</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
     </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
@@ -7293,6 +7294,57 @@ The PUT payload will be processed asynchronously.
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/rfq/{rfq_guid}/quotes</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/rfq/8902980f-4a4f-504c-8fc3-2e71067ab59b/quotes</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>workflow</td>
+<td>Limits results to a specific workflow status.</td>
+<td>IN-PROCESS, SUBMITTED, RECEIVED, ERP PENDING, ERP ACCEPTED, ERP FAILED</td>
+</tr>
+<tr>
+<td>project</td>
+<td>Limits results to a single project.</td>
+<td>{cinx_project_id}</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>ship-via</td>
+<td>Limits results to a specific ship via value.</td>
+<td>SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</td>
+</tr>
+<tr>
+<td>need-by</td>
+<td>Limits results to a specific need-by or delivery-by date.</td>
+<td>Date Format: YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>submitter</td>
+<td>Limits results to a specified CINX user.</td>
+<td>{cinx_uer_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h1 id='quotes'>Quotes</h1><h2 id='quote-definition'>Quote Definition</h2><h3 id='cinx-object-defintion-quote'>CINX Object Defintion - Quote</h3>
 <p>A CINX Quote is a document a vendor prepares in response to a customer’s Request for Quotation.  Quotes will contain the net prices a customer will pay if they place an order.</p>
 
@@ -7341,53 +7393,54 @@ The PUT payload will be processed asynchronously.
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><strong>delivery</strong>: will limit results to a specific delivery type location</p>
-
-<ul>
-<li>Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</li>
-</ul>
-
-<p><strong>workflow</strong>: will limit results to a specific workflow status</p>
-
-<ul>
-<li>Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ERP PENDING, ERP ACCEPTED, ERP FAILED</li>
-</ul>
-
-<p><strong>project</strong>: will limit results to a single project</p>
-
-<ul>
-<li>{cinx_project_guid}</li>
-</ul>
-
-<p><strong>vendor</strong>: will limit results to a single vendor</p>
-
-<ul>
-<li>{organization&#39;s vendor number}</li>
-</ul>
-
-<p><strong>ship-via</strong>: will limit results to a specific ship via value</p>
-
-<ul>
-<li>Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</li>
-</ul>
-
-<p><strong>need-by</strong>: will limit results to a specific need-by or delivery-by date</p>
-
-<ul>
-<li>Date Format: YYYY-MM-DD</li>
-</ul>
-
-<p><strong>submitter</strong>: will limit results to a specified CINX user</p>
-
-<ul>
-<li>{CINX_User_Id}</li>
-</ul>
-
-<p><strong>number</strong>: will limit results to a specified transaction number</p>
-
-<ul>
-<li>{transaction_number}</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>workflow</td>
+<td>Limits results to a specific workflow status.</td>
+<td>IN-PROCESS, SUBMITTED, RECEIVED, ERP PENDING, ERP ACCEPTED, ERP FAILED</td>
+</tr>
+<tr>
+<td>project</td>
+<td>Limits results to a single project.</td>
+<td>{cinx_project_id}</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>ship-via</td>
+<td>Limits results to a specific ship via value.</td>
+<td>SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</td>
+</tr>
+<tr>
+<td>need-by</td>
+<td>Limits results to a specific need-by or delivery-by date.</td>
+<td>Date Format: YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>submitter</td>
+<td>Limits results to a specified CINX user.</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-quote'>Get Quote</h2><h3 id='api-endpoint-get-a-quote'>API Endpoint - Get a Quote</h3>
 <p><code>GET</code></p>
 
@@ -7628,7 +7681,7 @@ The PUT payload will be processed asynchronously.
 <tr>
 <td>project</td>
 <td>Limits results to a single project.</td>
-<td>{cinx_project_guid}</td>
+<td>{cinx_project_id}</td>
 </tr>
 <tr>
 <td>vendor</td>
@@ -7648,7 +7701,7 @@ The PUT payload will be processed asynchronously.
 <tr>
 <td>submitter</td>
 <td>Limits results to a specified CINX user.</td>
-<td>{CINX_User_Id}</td>
+<td>{cinx_user_id}</td>
 </tr>
 <tr>
 <td>number</td>
@@ -7656,66 +7709,6 @@ The PUT payload will be processed asynchronously.
 <td>{transaction_number}</td>
 </tr>
 </tbody></table>
-
-<p><strong>delivery</strong>: will limit results to a specific delivery type location</p>
-
-<ul>
-<li>Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</li>
-</ul>
-
-<p><strong>procurement</strong>: will limit results to a specific procurement status</p>
-
-<ul>
-<li>Available options are: NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED, DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED</li>
-</ul>
-
-<p><strong>workflow</strong>: will limit results to a specific workflow status</p>
-
-<ul>
-<li>Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED</li>
-</ul>
-
-<p><strong>erp</strong>: will limit results to a specific erp status</p>
-
-<ul>
-<li>Available options are: NOT SUBMITTED, PENDING, SUBMITTED, APPLIED</li>
-</ul>
-
-<p><strong>project</strong>: will limit results to a single project</p>
-
-<ul>
-<li>{cinx_project_guid}</li>
-</ul>
-
-<p><strong>vendor</strong>: will limit results to a single vendor</p>
-
-<ul>
-<li>{organization&#39;s vendor number}</li>
-</ul>
-
-<p><strong>ship-via</strong>: will limit results to a specific ship via value</p>
-
-<ul>
-<li>Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</li>
-</ul>
-
-<p><strong>need-by</strong>: will limit results to a specific need-by or delivery-by date</p>
-
-<ul>
-<li>Date Format: YYYY-MM-DD</li>
-</ul>
-
-<p><strong>submitter</strong>: will limit results to a specified CINX user</p>
-
-<ul>
-<li>{CINX_User_Id}</li>
-</ul>
-
-<p><strong>number</strong>: will limit results to a specified transaction number</p>
-
-<ul>
-<li>{transaction_number}</li>
-</ul>
 <h2 id='get-po'>Get PO</h2><h3 id='api-endpoint-get-a-purchase-order'>API Endpoint - Get a Purchase Order</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
     </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -7724,9 +7717,9 @@ The PUT payload will be processed asynchronously.
             </span><span class="s2">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PO-111111"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PO-111111"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No Description Entered"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample PO description text"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"terms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.5/10"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"user_comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test User Comment"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"user_comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample PO user Comment"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"procurement_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORDERED"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"workflow_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUBMITTED"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"erp_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT SUBMITTED"</span><span class="p">,</span><span class="w">
@@ -7751,20 +7744,20 @@ The PUT payload will be processed asynchronously.
             </span><span class="s2">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"cinx_commerce_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7880c854-017f-5359-96de-fdef626c33cf"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"V101"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hilti-6"</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hilti"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bb613aff-4256-5359-b7cd-391505d19e01"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WTS-2017-03"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WTS-2017-03"</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WTS-Building 3"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"delivery"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"377 Route 117"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"address2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"address3"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sugar Hill"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NH"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"03586"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"ship_via"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUPPLIER TRUCK"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"fob_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREPAID"</span><span class="p">,</span><span class="w">
@@ -7828,7 +7821,7 @@ The PUT payload will be processed asynchronously.
                 </span><span class="s2">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"cinx_commerce_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7880c854-017f-5359-96de-fdef626c33cf"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"V101"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hilti-6"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hilti"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"system_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"cinx_quote_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -7842,7 +7835,7 @@ The PUT payload will be processed asynchronously.
                 </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bb613aff-4256-5359-b7cd-391505d19e01"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WTS-2017-03"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WTS-2017-03"</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WTS-Building 3"</span><span class="w">
                 </span><span class="p">},</span><span class="w">
                 </span><span class="s2">"delivery"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"ship_via"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUPPLIER TRUCK"</span><span class="p">,</span><span class="w">
@@ -9169,6 +9162,67 @@ The PUT payload will be processed asynchronously.
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/po/{cinx_guid}/pocos</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/po/a9863525-d926-5441-9f9c-aa47a285a19b/pocos</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>procurement</td>
+<td>Limits results to a specific procurement status.</td>
+<td>NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED, DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED</td>
+</tr>
+<tr>
+<td>workflow</td>
+<td>Limits results to a specific workflow status.</td>
+<td>IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED</td>
+</tr>
+<tr>
+<td>erp</td>
+<td>Limits results to a specific erp status.</td>
+<td>NOT SUBMITTED, PENDING, SUBMITTED, APPLIED</td>
+</tr>
+<tr>
+<td>project</td>
+<td>Limits results to a single project.</td>
+<td>{cinx_project_id}</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>ship-via</td>
+<td>Limits results to a specific ship via value.</td>
+<td>SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</td>
+</tr>
+<tr>
+<td>need-by</td>
+<td>Limits results to a specific need-by or delivery-by date.</td>
+<td>Date Format: YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>submitter</td>
+<td>Limits results to a specified CINX user.</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-po-deliveries'>Get PO Deliveries</h2><h3 id='api-endpoint-get-a-list-of-deliveries-for-a-purchase-order'>API Endpoint - Get a List of Deliveries for a Purchase Order</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -9209,6 +9263,52 @@ The PUT payload will be processed asynchronously.
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/po/{cinx_guid}/deliveries</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/po/a9863525-d926-5441-9f9c-aa47a285a19b/deliveries</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>Limits results to a single project.</td>
+<td>{cinx_project_id}</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>ship-via</td>
+<td>Limits results to a specific ship via value.</td>
+<td>SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</td>
+</tr>
+<tr>
+<td>po-guid</td>
+<td>Limits results to a specific purchase order.</td>
+<td>{cinx_po_id}</td>
+</tr>
+<tr>
+<td>submitter</td>
+<td>Limits results to a specified CINX user.</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-po-invoices'>Get PO Invoices</h2><h3 id='api-endpoint-get-a-list-of-invoices-for-a-purchase-order'>API Endpoint - Get a List of Invoices for a Purchase Order</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -9249,6 +9349,47 @@ The PUT payload will be processed asynchronously.
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/po/{cinx_guid}/invoices</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/po/a9863525-d926-5441-9f9c-aa47a285a19b/invoices</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>Limits results to a specific status.</td>
+<td>PENDING E-INVOICE, ENTERED, REVIEWED, ACCEPTED, IN-DISPUTE, ON-HOLD, REJECTED, SUBMITTED</td>
+</tr>
+<tr>
+<td>erp</td>
+<td>Limits results to a specific erp status.</td>
+<td>NOT SUBMITTED, PENDING, SUBMITTED, APPLIED</td>
+</tr>
+<tr>
+<td>project</td>
+<td>Limits results to a single project.</td>
+<td>{cinx_project_id}</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>owner</td>
+<td>Limits results to a specified CINX user to whom the transaction is assigned</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-po-returns'>Get PO Returns</h2><h3 id='api-endpoint-get-a-list-of-returns-for-a-purchase-order'>API Endpoint - Get a List of Returns for a Purchase Order</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -9288,6 +9429,47 @@ The PUT payload will be processed asynchronously.
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/po/{cinx_guid/returns</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/po/a9863525-d926-5441-9f9c-aa47a285a19b/returns</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>Limits results to a single project.</td>
+<td>{cinx_project_id}</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>ship-via</td>
+<td>Limits results to a specific ship via value.</td>
+<td>SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</td>
+</tr>
+<tr>
+<td>owner</td>
+<td>Limits results to a specified CINX user to whom the transaction is assigned</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-po-back-orders'>Get PO Back-Orders</h2><h3 id='api-endpoint-get-a-list-of-back-orders-for-a-purchase-order'>API Endpoint - Get a List of Back-Orders for a Purchase Order</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -9340,7 +9522,31 @@ The PUT payload will be processed asynchronously.
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/po/a9863525-d926-5441-9f9c-aa47a285a19b/back-orders</code></p>
 
-<p>HTTP Method: </p>
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>project</td>
+<td>Limits results to a single project.</td>
+<td>{cinx_project_id}</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+</tbody></table>
 <h2 id='erp-status-update'>ERP Status Update</h2><h3 id='api-endpoint-update-a-purchase-order-39-s-erp-status'>API Endpoint - Update a Purchase Order&#39;s ERP Status</h3>
 <p><code>PUT</code></p>
 
@@ -9420,65 +9626,64 @@ The PUT payload will be processed asynchronously.
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><strong>delivery</strong>: will limit results to a specific delivery type location</p>
-
-<ul>
-<li>Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</li>
-</ul>
-
-<p><strong>procurement</strong>: will limit results to a specific procurement status</p>
-
-<ul>
-<li>Available options are: NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED, DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED</li>
-</ul>
-
-<p><strong>workflow</strong>: will limit results to a specific workflow status</p>
-
-<ul>
-<li>Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED</li>
-</ul>
-
-<p><strong>erp</strong>: will limit results to a specific erp status</p>
-
-<ul>
-<li>Available options are: NOT SUBMITTED, PENDING, SUBMITTED, APPLIED</li>
-</ul>
-
-<p><strong>project</strong>: will limit results to a single project</p>
-
-<ul>
-<li>{cinx_project_guid}</li>
-</ul>
-
-<p><strong>vendor</strong>: will limit results to a single vendor</p>
-
-<ul>
-<li>{organization&#39;s vendor number}</li>
-</ul>
-
-<p><strong>ship-via</strong>: will limit results to a specific ship via value</p>
-
-<ul>
-<li>Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</li>
-</ul>
-
-<p><strong>need-by</strong>: will limit results to a specific need-by or delivery-by date</p>
-
-<ul>
-<li>Date Format: YYYY-MM-DD</li>
-</ul>
-
-<p><strong>submitter</strong>: will limit results to a specified CINX user</p>
-
-<ul>
-<li>{CINX_User_Id}</li>
-</ul>
-
-<p><strong>number</strong>: will limit results to a specified transaction number</p>
-
-<ul>
-<li>{transaction_number}</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>procurement</td>
+<td>Limits results to a specific procurement status.</td>
+<td>NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED, DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED</td>
+</tr>
+<tr>
+<td>workflow</td>
+<td>Limits results to a specific workflow status.</td>
+<td>IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED</td>
+</tr>
+<tr>
+<td>erp</td>
+<td>Limits results to a specific erp status.</td>
+<td>NOT SUBMITTED, PENDING, SUBMITTED, APPLIED</td>
+</tr>
+<tr>
+<td>project</td>
+<td>Limits results to a single project.</td>
+<td>{cinx_project_id}</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>ship-via</td>
+<td>Limits results to a specific ship via value.</td>
+<td>SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</td>
+</tr>
+<tr>
+<td>need-by</td>
+<td>Limits results to a specific need-by or delivery-by date.</td>
+<td>Date Format: YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>submitter</td>
+<td>Limits results to a specified CINX user.</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-po-co'>Get PO CO</h2><h3 id='api-endpoint-get-a-po-change-order'>API Endpoint - Get a PO Change Order</h3>
 <p><code>GET</code></p>
 
@@ -9607,29 +9812,34 @@ The PUT payload will be processed asynchronously.
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><strong>delivery</strong>: will limit results to a specific delivery type location</p>
-
-<ul>
-<li>Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</li>
-</ul>
-
-<p><strong>project</strong>: will limit results to a single project</p>
-
-<ul>
-<li>{cinx_project_guid}</li>
-</ul>
-
-<p><strong>vendor</strong>: will limit results to a single vendor</p>
-
-<ul>
-<li>{organization&#39;s vendor number}</li>
-</ul>
-
-<p><strong>po-guid</strong>: will limit results to a specified CINX purchase order</p>
-
-<ul>
-<li>{CINX_PO_Id}</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>project</td>
+<td>Limits results to a single project.</td>
+<td>{cinx_project_id}</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>po-guid</td>
+<td>Limits results to a specific purchase order.</td>
+<td>{cinx_po_id}</td>
+</tr>
+</tbody></table>
 <h2 id='get-back-order'>Get Back-Order</h2><h3 id='api-endpoint-get-a-back_order'>API Endpoint - Get a Back_Order</h3>
 <p><code>GET</code></p>
 
@@ -9713,47 +9923,49 @@ The PUT payload will be processed asynchronously.
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><strong>project</strong>: will limit results to a single project</p>
-
-<ul>
-<li>{cinx_project_guid}</li>
-</ul>
-
-<p><strong>vendor</strong>: will limit results to a single vendor</p>
-
-<ul>
-<li>{organization&#39;s vendor number}</li>
-</ul>
-
-<p><strong>delivery</strong>: will limit results to a specific delivery type location</p>
-
-<ul>
-<li>Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE</li>
-</ul>
-
-<p><strong>ship-via</strong>: will limit results to a specific ship via value</p>
-
-<ul>
-<li>Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</li>
-</ul>
-
-<p><strong>po-guid</strong>: will limit results to a specified CINX purchase order</p>
-
-<ul>
-<li>{CINX_PO_Id}</li>
-</ul>
-
-<p><strong>submitter</strong>: will limit results to a specified CINX user who received the order (received_by)</p>
-
-<ul>
-<li>{CINX_User_Id}</li>
-</ul>
-
-<p><strong>number</strong>: will limit results to a specified transaction number</p>
-
-<ul>
-<li>{transaction_number}</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>Limits results to a single project.</td>
+<td>{cinx_project_id}</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>ship-via</td>
+<td>Limits results to a specific ship via value.</td>
+<td>SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</td>
+</tr>
+<tr>
+<td>po-guid</td>
+<td>Limits results to a specific purchase order.</td>
+<td>{cinx_po_id}</td>
+</tr>
+<tr>
+<td>submitter</td>
+<td>Limits results to a specified CINX user.</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-delivery'>Get Delivery</h2><h3 id='api-endpoint-get-a-delivery'>API Endpoint - Get a Delivery</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
     </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
@@ -10376,47 +10588,49 @@ The PUT payload will be processed asynchronously.
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><strong>po-guid</strong>: will limit results to a specified CINX purchase order</p>
-
-<ul>
-<li>{CINX_PO_Id}</li>
-</ul>
-
-<p><strong>status</strong>: will limit results to a specific status</p>
-
-<ul>
-<li>Available options are: PENDING E-INVOICE, ENTERED, REVIEWED, ACCEPTED, IN-DISPUTE, ON-HOLD, REJECTED, SUBMITTED</li>
-</ul>
-
-<p><strong>erp</strong>: will limit results to a specific erp status</p>
-
-<ul>
-<li>Available options are: NOT SUBMITTED, PENDING, SUBMITTED, APPLIED</li>
-</ul>
-
-<p><strong>project</strong>: will limit results to a single project</p>
-
-<ul>
-<li>{cinx_project_guid}</li>
-</ul>
-
-<p><strong>vendor</strong>: will limit results to a single vendor</p>
-
-<ul>
-<li>{organization&#39;s vendor number}</li>
-</ul>
-
-<p><strong>owner</strong>: will limit results to a specified CINX user to whom the transaction is assigned</p>
-
-<ul>
-<li>{CINX_User_Id}</li>
-</ul>
-
-<p><strong>number</strong>: will limit results to a specified transaction number</p>
-
-<ul>
-<li>{transaction_number}</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>po-guid</td>
+<td>Limits results to a specific purchase order.</td>
+<td>{cinx_po_id}</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Limits results to a specific status.</td>
+<td>PENDING E-INVOICE, ENTERED, REVIEWED, ACCEPTED, IN-DISPUTE, ON-HOLD, REJECTED, SUBMITTED</td>
+</tr>
+<tr>
+<td>erp</td>
+<td>Limits results to a specific erp status.</td>
+<td>NOT SUBMITTED, PENDING, SUBMITTED, APPLIED</td>
+</tr>
+<tr>
+<td>project</td>
+<td>Limits results to a single project.</td>
+<td>{cinx_project_id}</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>owner</td>
+<td>Limits results to a specified CINX user to whom the transaction is assigned</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-invoice'>Get Invoice</h2><h3 id='api-endpoint-get-an-invoice'>API Endpoint - Get an Invoice</h3>
 <p><code>GET</code></p>
 
@@ -10538,47 +10752,49 @@ The PUT payload will be processed asynchronously.
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><strong>project</strong>: will limit results to a single project</p>
-
-<ul>
-<li>{cinx_project_guid}</li>
-</ul>
-
-<p><strong>vendor</strong>: will limit results to a single vendor</p>
-
-<ul>
-<li>{organization&#39;s vendor number}</li>
-</ul>
-
-<p><strong>delivery</strong>: will limit results to a specific delivery type location</p>
-
-<ul>
-<li>Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</li>
-</ul>
-
-<p><strong>ship-via</strong>: will limit results to a specific ship via value</p>
-
-<ul>
-<li>Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</li>
-</ul>
-
-<p><strong>po-guid</strong>: will limit results to a specified CINX purchase order</p>
-
-<ul>
-<li>{CINX_PO_Id}</li>
-</ul>
-
-<p><strong>owner</strong>: will limit results to a specified CINX user to whom the transaction is assigned</p>
-
-<ul>
-<li>{CINX_User_Id}</li>
-</ul>
-
-<p><strong>number</strong>: will limit results to a specified transaction number</p>
-
-<ul>
-<li>{transaction_number}</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project</td>
+<td>Limits results to a single project.</td>
+<td>{cinx_project_id}</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>ship-via</td>
+<td>Limits results to a specific ship via value.</td>
+<td>SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</td>
+</tr>
+<tr>
+<td>po-guid</td>
+<td>Limits results to a specific purchase order.</td>
+<td>{cinx_po_id}</td>
+</tr>
+<tr>
+<td>owner</td>
+<td>Limits results to a specified CINX user to whom the transaction is assigned</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-return'>Get Return</h2><h3 id='api-endpoint-get-a-return'>API Endpoint - Get a Return</h3>
 <p><code>GET</code></p>
 
