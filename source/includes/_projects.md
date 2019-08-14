@@ -225,7 +225,7 @@ description | String | No |  | Public description for the object.
 status | String | Yes | NOT SPECIFIED | Status used to track the project. Template has a list of optional values.
 dates.contract_award | Date (YYYY-MM-DD) | No |  | Date the contract was awarded to the contractor.
 dates.scheduled_start | Date (YYYY-MM-DD) | No |  | Date the project was scheduled to start.
-dates.actual_start | Date (YYYY-MM-DD) | No |  | Date the project begin construction.
+dates.actual_start | Date (YYYY-MM-DD) | No |  | Date the project began construction.
 dates.scheduled_complete | Date (YYYY-MM-DD) | No |  | Date the project was scheduled to finish.
 dates.actual_complete | Date (YYYY-MM-DD) | No |  | Date the project was finished.
 customer.cinx_commerce_guid | String (GUID Format) | No |  | CINX Commerce Id for the customer that commissioned the project.

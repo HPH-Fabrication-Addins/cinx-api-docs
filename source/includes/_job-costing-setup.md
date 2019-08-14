@@ -62,6 +62,51 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/org/job-costing/phases**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/phases`
 
+## Get Phase Template
+### API Endpoint - Get a Phase Template
+
+```json
+{
+    "response": {},
+    "rows": [{
+        "doc_info": {},
+        "template": {
+            "cinx_guid": null,
+            "name": null,
+            "description": null,
+            "status": "A",
+            "reference_id": null,
+            "cinx_material_cost_code_guid": null,
+            "material_cost_code_name": null
+        },
+        "field_options": {},
+        "api_calls": []
+    }]
+}
+```
+`GET`
+
+This endpoint will be used to get a CINX Template for a job costing phase.
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/phase**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/phase`
+
+
+The table below defines the input fields within the template.
+
+**TEMPLATE FIELDS**
+
+Name | Data Type | Required | Default | Note
+----- | ----- | ----- | ----- | -----
+cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+name | String | Yes |  | Full name of the phase.
+description | String | No |  | Description of the phase.
+status | String | Yes | A | Status of the phase.
+reference_id | String | No |  | Reference id field that can be used to store an ERP code for the phase.
+cinx_material_cost_code_guid | String (GUID Format) | No |  | CINX Id for the default material cost code assigned to the phase.
+material_cost_code_name | String | No |  | Name of the default material cost code assigned to the phase.
+
 ## Create Phase
 ### API Endpoint - Create a Phase 
 
@@ -115,9 +160,9 @@ cinxApi.putJobCostPhase(cinx_api_token, values)
 
 This URL will be used to create a new Phase in the company’s CINX job costing library.   
 
-URL Pattern: **{api path}/sub/{B2B Id GUID}/org-job-cost/modify/phases?values={“phases”:[{JSON Structure}]}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-phase-import?body=json**
 
-URL Sample:
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-phase-import?body=json`
 
 
 ## Modify Phase
@@ -177,10 +222,12 @@ cinxApi.putJobCostPhase(cinx_api_token, values)
 
 This URL will be used to modify an existing Phase in the company’s CINX job costing library. 
 
-URL Pattern: **{api path}/sub/{B2B Id GUID}/org-job-cost/modify/phases?values={“phases”:[{JSON Structure}]}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-phase-import?body=json**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-phase-import?body=json`
 
 
-## Get Cost Codes
+## Get Mat Cost Codes
 ### API Endpoint - Get an Organization's List of Material Cost Codes
 
 ```javascript
@@ -221,7 +268,53 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/org/job-costing/material
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/material-cost-codes`
 
-## Create Cost Code
+## Get Mat Cost Code Template
+### API Endpoint - Get a Material Cost Code Template
+
+```json
+{
+    "response": {},
+    "rows": [{
+        "doc_info": {},
+        "template": {
+            "cinx_guid": null,
+            "name": null,
+            "description": null,
+            "status": "A",
+            "reference_id": null,
+            "cinx_category_guid": null,
+            "category_name": null
+        },
+        "field_options": {},
+        "api_calls": []
+    }]
+}
+```
+`GET`
+
+This endpoint will be used to get a CINX Template for a job costing material cost code.
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/material-cost-code**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/material-cost-code`
+
+
+The table below defines the input fields within the template.
+
+**TEMPLATE FIELDS**
+
+Name | Data Type | Required | Default | Note
+----- | ----- | ----- | ----- | -----
+cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+name | String | Yes |  | Full name of the material cost code.
+description | String | No |  | Description of the material cost code.
+status | String | Yes | A | Status of the material cost code.
+reference_id | String | No |  | Reference id field that can be used to store an ERP code for the material cost code.
+cinx_category_guid | String (GUID Format) | No |  | CINX Id for the default category assigned to the material cost code.
+category_name | String | No |  | Name of the default category assigned to the material cost code.
+
+
+## Create Mat Cost Code
 ### API Endpoint - Create a Material Cost Code
 
 ```javascript
@@ -274,9 +367,11 @@ cinxApi.putJobCostCostCode(cinx_api_token, values)
 
 This URL will be used to create a new Cost Code in the company’s CINX job costing library.
 
-URL Pattern: **{api path}/sub/{B2B Id GUID}/org-job-cost/modify/material-cost-codes? values={“ material_cost_codes”:[{JSON Structure}]}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-material-cost-code-import?body=json**
 
-## Modify Cost Code
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-material-cost-code-import?body=json`
+
+## Modify Mat Cost Code
 ### API Endpoint - Modify a Material Cost Code
 
 ```javascript
@@ -315,8 +410,9 @@ cinxApi.putJobCostCostCode(cinx_api_token, values)
 
 This URL will be used to modify an existing Cost Code in the company’s CINX job costing library.
 
-URL Pattern: **{api path}/sub/{B2B Id GUID}/org-job-cost/modify/material-cost-codes? values={“ material_cost_codes”:[{JSON Structure}]}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-material-cost-code-import?body=json**
 
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-material-cost-code-import?body=json`
 
 ## Get Categories
 ### API Endpoint - Get an Organization's List of Categories
@@ -346,13 +442,58 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/org/job-costing/categori
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/categories`
 
+## Get Category Template
+### API Endpoint - Get a Category Template
+
+```json
+{
+    "response": {},
+    "rows": [{
+        "doc_info": {},
+        "template": {
+            "cinx_guid": null,
+            "name": null,
+            "description": null,
+            "status": "A",
+            "reference_id": null,
+            "cinx_category_guid": null,
+            "category_name": null
+        },
+        "field_options": {},
+        "api_calls": []
+    }]
+}
+```
+`GET`
+
+This endpoint will be used to get a CINX Template for an accounting category.
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/category**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/category`
+
+
+The table below defines the input fields within the template.
+
+**TEMPLATE FIELDS**
+
+Name | Data Type | Required | Default | Note
+----- | ----- | ----- | ----- | -----
+cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+name | String | Yes |  | Full name of the category.
+description | String | No |  | Description of the category.
+status | String | Yes | A | Status of the category.
+reference_id | String | No |  | Reference id field that can be used to store an ERP code for the category.
+
 ## Create Category
 ### API Endpoint - Create a Category
 `POST`
 
 This URL will be used to create a new Category in the company’s CINX job costing library.   
 
-URL Pattern: **{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-expense-categories? values={“material_cost_code”:[{JSON Structure}]}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-category-import?body=json**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-category-import?body=json`
 
 ## Modify Category
 ### API Endpoint - Modify a Job Cost Category
@@ -360,7 +501,9 @@ URL Pattern: **{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-expense-cate
 
 This URL will be used to modify an existing Category in the company’s CINX job costing library.   
 
-URL Pattern: **{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-expense-categories? values={“ tax_expense_categories”:[{JSON Structure}]}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-category-import?body=json**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-category-import?body=json`
 
 
 ## Get Tax Groups
@@ -391,13 +534,60 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/org/job-costing/tax-grou
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/tax-groups`
 
+## Get Tax Group Template
+### API Endpoint - Get a Tax Group Template
+
+```json
+{
+    "response": {},
+    "rows": [{
+        "doc_info": {},
+        "template": {
+            "cinx_guid": null,
+            "name": null,
+            "description": null,
+            "rate": null,
+            "tax_type": null,
+            "status": "A",
+            "reference_id": null
+            
+        },
+        "field_options": {},
+        "api_calls": []
+    }]
+}
+```
+`GET`
+
+This endpoint will be used to get a CINX Template for a tax group.
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/tax-group**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/tax-group`
+
+The table below defines the input fields within the template.
+
+**TEMPLATE FIELDS**
+
+Name | Data Type | Required | Default | Note
+----- | ----- | ----- | ----- | -----
+cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+name | String | Yes |  | Full name of the tax group.
+description | String | No |  | Description of the tax group.
+rate | Real | No |  | Value of the tax group rate.
+tax_type | String | No |  | Type of the tax. Template has a list of optional values.
+status | String | Yes | A | Status of the tax group. Template has a list of optional values.
+reference_id | String | No |  | Reference id field that can be used to store an ERP code for the tax group.
+
 ## Create Tax Group
 ### API Endpoint - Create a Job Cost Tax Group
 `POST`
 
 This URL will be used to create a new Tax Group in the company’s CINX job costing library. 
 
-URL Pattern: **{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-groups? values={“ tax_groups”:[{JSON Structure}]}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-tax-group-import?body=json**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-tax-group-import?body=json`
 
 
 
@@ -407,4 +597,6 @@ URL Pattern: **{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-groups? valu
 
 This URL will be used to modify an existing Tax Group in the company’s CINX job costing library.  
 
-URL Pattern: **{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-groups? values={“ tax_groups”:[{JSON Structure}]}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-tax-group-import?body=json**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-tax-group-import?body=json`
