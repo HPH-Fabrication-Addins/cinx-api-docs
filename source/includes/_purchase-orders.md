@@ -218,7 +218,7 @@ number | Limits results to a specified transaction number. | {transaction_number
 				"requisition": {
 					"cinx_guid": "2e5763f6-f7be-5179-9109-5e81014fb5b5",
 					"number": "REQ-19-001",
-					"name": "REQ-19-001",
+					"name": "REQ-19-001"
 				},
 				"project": {
 					"cinx_guid": "bb613aff-4256-5359-b7cd-391505d19e01",
