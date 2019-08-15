@@ -26,32 +26,30 @@ An Invoice is a vendor document is that indicates the quantities and costs of th
 
 ```json
 {
-    "response": {},
-    "rows": [
-        {
-			"cinx_guid": "8ead0386-496b-571c-b14f-09eafeeb6758",
-			"number": "I456123",
-			"name": "I456123",
-			"workflow_status": "PENDING E-INVOICE",
-			"erp_status": "NOT SUBMITTED",
-			"current_owner_name": "Will Stone",
-			"entry_type": "MANUAL",
-			"entered_by": null,
-			"date_entered": "",
-			"accept_type": "MANUAL",
-			"accepted_by": null,
-			"date_issued": "2019-06-08",
-			"date_payment_due": "2019-06-21",
-			"vendor_number": "H125",
-			"vendor_name": "Hilti-6",
-			"po_number": "",
-			"po_name": "PO123",
-			"project_number": "WTS-2017-03",
-			"project_name": "WTS-2017-03",
-			"links": [],
-			"item_count": 15
-		}
-    ]
+	"response": {},
+	"rows": [{
+		"cinx_guid": "8ead0386-496b-571c-b14f-09eafeeb6758",
+		"number": "I456123",
+		"name": "I456123",
+		"workflow_status": "PENDING E-INVOICE",
+		"erp_status": "NOT SUBMITTED",
+		"current_owner_name": "Will Stone",
+		"entry_type": "MANUAL",
+		"entered_by": null,
+		"date_entered": "",
+		"accept_type": "MANUAL",
+		"accepted_by": null,
+		"date_issued": "2019-06-08",
+		"date_payment_due": "2019-07-08",
+		"vendor_number": "H125",
+		"vendor_name": "Hilti",
+		"po_number": "PO123",
+		"po_name": "PO123",
+		"project_number": "WTS-2017-03",
+		"project_name": "HPH HQ Renovation",
+		"links": [],
+		"item_count": 15
+	}]
 }
 ```
 `GET`

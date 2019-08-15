@@ -18,28 +18,26 @@ A CINX Quote is a document a vendor prepares in response to a customer’s Reque
 
 ```json
 {
-    "response": {},
-    "rows": [
-        {
-			"cinx_guid": "1eb08930-8744-5213-90f0-3ad63a216b20",
-			"number": "",
-			"name": "WTS Mechanical -DEV[ 2019 07 25 a ]",
-			"description": "",
-			"workflow_status": "RECEIVED",
-			"vendor_number": "99999",
-			"vendor_name": "Ferguson Testing July 2015",
-			"submitted_by": "eb stone",
-			"date_received": "2019-07-25",
-			"date_expires": "2019-07-26",
-			"date_requested": null,
-			"links": [],
-			"project_number": "WTS-2019-06",
-			"project_name": "2019 01 30",
-			"rfq_number": "2019 07 25 a",
-			"rfq_name": "2019 07 25 a",
-			"item_count": 11
-		}
-    ]
+	"response": {},
+	"rows": [{
+		"cinx_guid": "1eb08930-8744-5213-90f0-3ad63a216b20",
+		"number": "Q19-789456",
+		"name": "Q19-789456",
+		"description": "",
+		"workflow_status": "RECEIVED",
+		"vendor_number": "99999",
+		"vendor_name": "Keegan Supply",
+		"submitted_by": "eb stone",
+		"date_received": "2019-07-25",
+		"date_expires": "2019-08-26",
+		"date_requested": "",
+		"links": [],
+		"project_number": "WTS-2019-06",
+		"project_name": "HPH HQ Renovation",
+		"rfq_number": "RFQ-456464",
+		"rfq_name": "RFQ-456464",
+		"item_count": 11
+	}]
 }
 ```
 `GET`

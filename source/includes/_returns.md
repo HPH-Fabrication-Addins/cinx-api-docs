@@ -43,11 +43,11 @@ A CINX Return is a contractor initiated process of returning previously purchase
 			"delivery_location_type": "FABRICATION SHOP",
 			"delivery_location_name": null,
 			"vendor_number": "H125",
-			"vendor_name": "Hilti-6",
+			"vendor_name": "Hilti",
 			"po_number": "PO-123",
 			"po_name": "PO123",
 			"project_number": "WTS-2017-03",
-			"project_name": "WTS-2017-03",
+			"project_name": "HPH HQ Renovation",
 			"links": [],
 			"item_count": 1
 		}
