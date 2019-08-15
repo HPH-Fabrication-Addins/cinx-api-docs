@@ -396,22 +396,31 @@
                     <a href="#get-phases" class="toc-h2 toc-link" data-title="Get Phases">Get Phases</a>
                   </li>
                   <li>
+                    <a href="#get-phase-template" class="toc-h2 toc-link" data-title="Get Phase Template">Get Phase Template</a>
+                  </li>
+                  <li>
                     <a href="#create-phase" class="toc-h2 toc-link" data-title="Create Phase">Create Phase</a>
                   </li>
                   <li>
                     <a href="#modify-phase" class="toc-h2 toc-link" data-title="Modify Phase">Modify Phase</a>
                   </li>
                   <li>
-                    <a href="#get-cost-codes" class="toc-h2 toc-link" data-title="Get Cost Codes">Get Cost Codes</a>
+                    <a href="#get-mat-cost-codes" class="toc-h2 toc-link" data-title="Get Mat Cost Codes">Get Mat Cost Codes</a>
                   </li>
                   <li>
-                    <a href="#create-cost-code" class="toc-h2 toc-link" data-title="Create Cost Code">Create Cost Code</a>
+                    <a href="#get-mat-cost-code-template" class="toc-h2 toc-link" data-title="Get Mat Cost Code Template">Get Mat Cost Code Template</a>
                   </li>
                   <li>
-                    <a href="#modify-cost-code" class="toc-h2 toc-link" data-title="Modify Cost Code">Modify Cost Code</a>
+                    <a href="#create-mat-cost-code" class="toc-h2 toc-link" data-title="Create Mat Cost Code">Create Mat Cost Code</a>
+                  </li>
+                  <li>
+                    <a href="#modify-mat-cost-code" class="toc-h2 toc-link" data-title="Modify Mat Cost Code">Modify Mat Cost Code</a>
                   </li>
                   <li>
                     <a href="#get-categories" class="toc-h2 toc-link" data-title="Get Categories">Get Categories</a>
+                  </li>
+                  <li>
+                    <a href="#get-category-template" class="toc-h2 toc-link" data-title="Get Category Template">Get Category Template</a>
                   </li>
                   <li>
                     <a href="#create-category" class="toc-h2 toc-link" data-title="Create Category">Create Category</a>
@@ -421,6 +430,9 @@
                   </li>
                   <li>
                     <a href="#get-tax-groups" class="toc-h2 toc-link" data-title="Get Tax Groups">Get Tax Groups</a>
+                  </li>
+                  <li>
+                    <a href="#get-tax-group-template" class="toc-h2 toc-link" data-title="Get Tax Group Template">Get Tax Group Template</a>
                   </li>
                   <li>
                     <a href="#create-tax-group" class="toc-h2 toc-link" data-title="Create Tax Group">Create Tax Group</a>
@@ -519,6 +531,9 @@
                   </li>
                   <li>
                     <a href="#get-project-job-costing" class="toc-h2 toc-link" data-title="Get Project Job Costing">Get Project Job Costing</a>
+                  </li>
+                  <li>
+                    <a href="#get-project-job-cost-template" class="toc-h2 toc-link" data-title="Get Project Job Cost Template">Get Project Job Cost Template</a>
                   </li>
                   <li>
                     <a href="#create-project-job-costing" class="toc-h2 toc-link" data-title="Create Project Job Costing">Create Project Job Costing</a>
@@ -2227,6 +2242,95 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/org/job-costing/phases</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/phases</code></p>
+<h2 id='get-phase-template'>Get Phase Template</h2><h3 id='api-endpoint-get-a-phase-template'>API Endpoint - Get a Phase Template</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"doc_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cinx_material_cost_code_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"material_cost_code_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"field_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"api_calls"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a CINX Template for a job costing phase.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/phase</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/phase</code></p>
+
+<p>The table below defines the input fields within the template.</p>
+
+<p><strong>TEMPLATE FIELDS</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Note</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cinx_guid</td>
+<td>String (GUID Format)</td>
+<td>POST = No; Put = Yes</td>
+<td></td>
+<td>CINX System Id.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>Full name of the phase.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Description of the phase.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>Yes</td>
+<td>A</td>
+<td>Status of the phase.</td>
+</tr>
+<tr>
+<td>reference_id</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Reference id field that can be used to store an ERP code for the phase.</td>
+</tr>
+<tr>
+<td>cinx_material_cost_code_guid</td>
+<td>String (GUID Format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Id for the default material cost code assigned to the phase.</td>
+</tr>
+<tr>
+<td>material_cost_code_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the default material cost code assigned to the phase.</td>
+</tr>
+</tbody></table>
 <h2 id='create-phase'>Create Phase</h2><h3 id='api-endpoint-create-a-phase'>API Endpoint - Create a Phase</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -2275,9 +2379,9 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p>This URL will be used to create a new Phase in the company’s CINX job costing library.   </p>
 
-<p>URL Pattern: <strong>{api path}/sub/{B2B Id GUID}/org-job-cost/modify/phases?values={“phases”:[{JSON Structure}]}</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-phase-import?body=json</strong></p>
 
-<p>URL Sample:</p>
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-phase-import?body=json</code></p>
 <h2 id='modify-phase'>Modify Phase</h2><h3 id='api-endpoint-modify-a-phase'>API Endpoint - Modify a Phase</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -2330,8 +2434,10 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p>This URL will be used to modify an existing Phase in the company’s CINX job costing library. </p>
 
-<p>URL Pattern: <strong>{api path}/sub/{B2B Id GUID}/org-job-cost/modify/phases?values={“phases”:[{JSON Structure}]}</strong></p>
-<h2 id='get-cost-codes'>Get Cost Codes</h2><h3 id='api-endpoint-get-an-organization-39-s-list-of-material-cost-codes'>API Endpoint - Get an Organization&#39;s List of Material Cost Codes</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-phase-import?body=json</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-phase-import?body=json</code></p>
+<h2 id='get-mat-cost-codes'>Get Mat Cost Codes</h2><h3 id='api-endpoint-get-an-organization-39-s-list-of-material-cost-codes'>API Endpoint - Get an Organization&#39;s List of Material Cost Codes</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
@@ -2366,7 +2472,96 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/org/job-costing/material-cost-codes</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/material-cost-codes</code></p>
-<h2 id='create-cost-code'>Create Cost Code</h2><h3 id='api-endpoint-create-a-material-cost-code'>API Endpoint - Create a Material Cost Code</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
+<h2 id='get-mat-cost-code-template'>Get Mat Cost Code Template</h2><h3 id='api-endpoint-get-a-material-cost-code-template'>API Endpoint - Get a Material Cost Code Template</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"doc_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cinx_category_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"category_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"field_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"api_calls"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a CINX Template for a job costing material cost code.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/material-cost-code</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/material-cost-code</code></p>
+
+<p>The table below defines the input fields within the template.</p>
+
+<p><strong>TEMPLATE FIELDS</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Note</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cinx_guid</td>
+<td>String (GUID Format)</td>
+<td>POST = No; Put = Yes</td>
+<td></td>
+<td>CINX System Id.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>Full name of the material cost code.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Description of the material cost code.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>Yes</td>
+<td>A</td>
+<td>Status of the material cost code.</td>
+</tr>
+<tr>
+<td>reference_id</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Reference id field that can be used to store an ERP code for the material cost code.</td>
+</tr>
+<tr>
+<td>cinx_category_guid</td>
+<td>String (GUID Format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Id for the default category assigned to the material cost code.</td>
+</tr>
+<tr>
+<td>category_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the default category assigned to the material cost code.</td>
+</tr>
+</tbody></table>
+<h2 id='create-mat-cost-code'>Create Mat Cost Code</h2><h3 id='api-endpoint-create-a-material-cost-code'>API Endpoint - Create a Material Cost Code</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
@@ -2414,8 +2609,10 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p>This URL will be used to create a new Cost Code in the company’s CINX job costing library.</p>
 
-<p>URL Pattern: <strong>{api path}/sub/{B2B Id GUID}/org-job-cost/modify/material-cost-codes? values={“ material_cost_codes”:[{JSON Structure}]}</strong></p>
-<h2 id='modify-cost-code'>Modify Cost Code</h2><h3 id='api-endpoint-modify-a-material-cost-code'>API Endpoint - Modify a Material Cost Code</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-material-cost-code-import?body=json</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-material-cost-code-import?body=json</code></p>
+<h2 id='modify-mat-cost-code'>Modify Mat Cost Code</h2><h3 id='api-endpoint-modify-a-material-cost-code'>API Endpoint - Modify a Material Cost Code</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
@@ -2449,7 +2646,9 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p>This URL will be used to modify an existing Cost Code in the company’s CINX job costing library.</p>
 
-<p>URL Pattern: <strong>{api path}/sub/{B2B Id GUID}/org-job-cost/modify/material-cost-codes? values={“ material_cost_codes”:[{JSON Structure}]}</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-material-cost-code-import?body=json</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-material-cost-code-import?body=json</code></p>
 <h2 id='get-categories'>Get Categories</h2><h3 id='api-endpoint-get-an-organization-39-s-list-of-categories'>API Endpoint - Get an Organization&#39;s List of Categories</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -2475,18 +2674,97 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/org/job-costing/categories</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/categories</code></p>
+<h2 id='get-category-template'>Get Category Template</h2><h3 id='api-endpoint-get-a-category-template'>API Endpoint - Get a Category Template</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"doc_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cinx_category_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"category_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"field_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"api_calls"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a CINX Template for an accounting category.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/category</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/category</code></p>
+
+<p>The table below defines the input fields within the template.</p>
+
+<p><strong>TEMPLATE FIELDS</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Note</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cinx_guid</td>
+<td>String (GUID Format)</td>
+<td>POST = No; Put = Yes</td>
+<td></td>
+<td>CINX System Id.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>Full name of the category.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Description of the category.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>Yes</td>
+<td>A</td>
+<td>Status of the category.</td>
+</tr>
+<tr>
+<td>reference_id</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Reference id field that can be used to store an ERP code for the category.</td>
+</tr>
+</tbody></table>
 <h2 id='create-category'>Create Category</h2><h3 id='api-endpoint-create-a-category'>API Endpoint - Create a Category</h3>
 <p><code>POST</code></p>
 
 <p>This URL will be used to create a new Category in the company’s CINX job costing library.   </p>
 
-<p>URL Pattern: <strong>{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-expense-categories? values={“material_cost_code”:[{JSON Structure}]}</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-category-import?body=json</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-category-import?body=json</code></p>
 <h2 id='modify-category'>Modify Category</h2><h3 id='api-endpoint-modify-a-job-cost-category'>API Endpoint - Modify a Job Cost Category</h3>
 <p><code>PUT</code></p>
 
 <p>This URL will be used to modify an existing Category in the company’s CINX job costing library.   </p>
 
-<p>URL Pattern: <strong>{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-expense-categories? values={“ tax_expense_categories”:[{JSON Structure}]}</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-category-import?body=json</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-category-import?body=json</code></p>
 <h2 id='get-tax-groups'>Get Tax Groups</h2><h3 id='api-endpoint-get-an-organization-39-s-list-of-tax-groups'>API Endpoint - Get an Organization&#39;s List of Tax Groups</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -2512,18 +2790,112 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/org/job-costing/tax-groups</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/tax-groups</code></p>
+<h2 id='get-tax-group-template'>Get Tax Group Template</h2><h3 id='api-endpoint-get-a-tax-group-template'>API Endpoint - Get a Tax Group Template</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"doc_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"rate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tax_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"field_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"api_calls"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a CINX Template for a tax group.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/tax-group</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/tax-group</code></p>
+
+<p>The table below defines the input fields within the template.</p>
+
+<p><strong>TEMPLATE FIELDS</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Note</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cinx_guid</td>
+<td>String (GUID Format)</td>
+<td>POST = No; Put = Yes</td>
+<td></td>
+<td>CINX System Id.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>Full name of the tax group.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Description of the tax group.</td>
+</tr>
+<tr>
+<td>rate</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Value of the tax group rate.</td>
+</tr>
+<tr>
+<td>tax_type</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Type of the tax. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>Yes</td>
+<td>A</td>
+<td>Status of the tax group. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>reference_id</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Reference id field that can be used to store an ERP code for the tax group.</td>
+</tr>
+</tbody></table>
 <h2 id='create-tax-group'>Create Tax Group</h2><h3 id='api-endpoint-create-a-job-cost-tax-group'>API Endpoint - Create a Job Cost Tax Group</h3>
 <p><code>POST</code></p>
 
 <p>This URL will be used to create a new Tax Group in the company’s CINX job costing library. </p>
 
-<p>URL Pattern: <strong>{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-groups? values={“ tax_groups”:[{JSON Structure}]}</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-tax-group-import?body=json</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-tax-group-import?body=json</code></p>
 <h2 id='modify-tax-group'>Modify Tax Group</h2><h3 id='api-endpoint-modify-a-job-cost-tax-group'>API Endpoint - Modify a Job Cost Tax Group</h3>
 <p><code>PUT</code></p>
 
 <p>This URL will be used to modify an existing Tax Group in the company’s CINX job costing library.  </p>
 
-<p>URL Pattern: <strong>{api path}/sub/{B2B Id GUID}/org-job-cost/modify/tax-groups? values={“ tax_groups”:[{JSON Structure}]}</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-tax-group-import?body=json</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-tax-group-import?body=json</code></p>
 <h1 id='vendors'>Vendors</h1><h2 id='vendor-definition'>Vendor Definition</h2><h3 id='cinx-object-defintion-vendor'>CINX Object Defintion - Vendor</h3>
 <p>Vendor is a generic term that refers to any organization that sells/distributes products or services that are consumed by a customer. Vendors refer to different organization types within the construction vertical market.</p>
 
@@ -3828,7 +4200,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <td>Date (YYYY-MM-DD)</td>
 <td>No</td>
 <td></td>
-<td>Date the project begin construction.</td>
+<td>Date the project began construction.</td>
 </tr>
 <tr>
 <td>dates.scheduled_complete</td>
@@ -4152,26 +4524,26 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
             </span><span class="s2">"percent_complete"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3b61f993-69b5-5db3-a367-2d204321c857"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HQ  Oct 23"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WTS-2017-01"</span><span class="w">
+                </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WTS-2017-06"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HPH HQ Renovation"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample project description."</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"phase"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8e441211-45ca-5c84-b34b-a93cd4cdf853"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Floor"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"material_cost_code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"df8f4e93-3d04-5379-948a-0b3f5319cbd2"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CC1"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cost Code1"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23-850"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23-850 Cost Code"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b7c8125e-6048-5085-a02c-8dd645012eda"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expense 13"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Exp13"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAT"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Material"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"material_cost"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -4191,7 +4563,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"scheduled_start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-23"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"actual_start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-23"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"actual_start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-10-28"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"scheduled_complete"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-01-23"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"actual_complete"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-02"</span><span class="w">
             </span><span class="p">}</span><span class="w">
@@ -4206,6 +4578,247 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/project/{project_guid}/job-costing</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/e1e3cb54-b00a-55ae-a079-072732542bf4/job-costing</code></p>
+<h2 id='get-project-job-cost-template'>Get Project Job Cost Template</h2><h3 id='api-endpoint-get-a-project-job-costing-breakdown-template'>API Endpoint - Get a Project Job Costing Breakdown Template</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"doc_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"construction_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT INSTALLED"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"percent_complete"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"phase"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"material_cost_code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"material_cost"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"estimated"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"budgeted"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"actual"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"labor_units"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"estimated"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"budgeted"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"actual"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"labor_cost"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"estimated"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"budgeted"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"actual"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"scheduled_start"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"actual_start"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"scheduled_complete"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"actual_complete"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"field_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"api_calls"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a CINX Template for a project job costing breakdown.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/project-job-costing</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/project-job-costing</code></p>
+
+<p>The table below defines the input fields within the template.</p>
+
+<p><strong>TEMPLATE FIELDS</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Note</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cinx_guid</td>
+<td>String (GUID Format)</td>
+<td>POST = No; Put = Yes</td>
+<td></td>
+<td>CINX System Id.</td>
+</tr>
+<tr>
+<td>construction_status</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>Status of the project job costing breakdown. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>percent_complete</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Value of the percent complete for the project job costing breakdown.</td>
+</tr>
+<tr>
+<td>project.cinx_guid</td>
+<td>String (GUID Format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Project Id.</td>
+</tr>
+<tr>
+<td>project.number</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>The public number of the project.</td>
+</tr>
+<tr>
+<td>phase.cinx_guid</td>
+<td>String (GUID Format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Id for the phase or sub-job.</td>
+</tr>
+<tr>
+<td>phase.name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name for the phase or sub-job.</td>
+</tr>
+<tr>
+<td>material_cost_code.cinx_guid</td>
+<td>String (GUID Format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Id for the material cost code.</td>
+</tr>
+<tr>
+<td>material_cost_code.name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name for the material cost code.</td>
+</tr>
+<tr>
+<td>category.cinx_guid</td>
+<td>String (GUID Format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Id for the category.</td>
+</tr>
+<tr>
+<td>category.name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name for the category.</td>
+</tr>
+<tr>
+<td>material_cost.estimated</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Estimated amount for the cost of the materials.</td>
+</tr>
+<tr>
+<td>material_cost.budgeted</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Budgeted amount for the cost of the materials.</td>
+</tr>
+<tr>
+<td>material_cost.actual</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Actual amount for the cost of the materials.</td>
+</tr>
+<tr>
+<td>labor_units.estimated</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Estimated labor units.</td>
+</tr>
+<tr>
+<td>labor_units.budgeted</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Budgeted labor units.</td>
+</tr>
+<tr>
+<td>labor_units.actual</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Actual labor units.</td>
+</tr>
+<tr>
+<td>labor_cost.estimated</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Estimated amount for the cost of the labor.</td>
+</tr>
+<tr>
+<td>labor_cost.budgeted</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Budgeted amount for the cost of the labor.</td>
+</tr>
+<tr>
+<td>labor_cost.actual</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Actual amount for the cost of the labor.</td>
+</tr>
+<tr>
+<td>dates.scheduled_start</td>
+<td>Date (YYYY-MM-DD)</td>
+<td>No</td>
+<td></td>
+<td>Date the project breakdown was scheduled to start.</td>
+</tr>
+<tr>
+<td>dates.actual_start</td>
+<td>Date (YYYY-MM-DD)</td>
+<td>No</td>
+<td></td>
+<td>Date the project breakdown began construction.</td>
+</tr>
+<tr>
+<td>dates.scheduled_complete</td>
+<td>Date (YYYY-MM-DD)</td>
+<td>No</td>
+<td></td>
+<td>Date the project breakdown was scheduled to finish.</td>
+</tr>
+<tr>
+<td>dates.actual_complete</td>
+<td>Date (YYYY-MM-DD)</td>
+<td>No</td>
+<td></td>
+<td>Date the project breakdown was finished.</td>
+</tr>
+</tbody></table>
 <h2 id='create-project-job-costing'>Create Project Job Costing</h2><h3 id='api-endpoint-create-a-project-s-phase-and-cost-code-list'>API Endpoint - Create a Project’s Phase and Cost Code List</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -4225,7 +4838,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
     </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
     </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-           </span><span class="err">UPDATE</span><span class="w"> </span><span class="err">PICTURE</span><span class="w">
+           </span><span class="err">UPDATE</span><span class="w"> </span><span class="err">CONTENT</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4241,9 +4854,9 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <li>A JSON formatted payload is used in the POST request</li>
 </ul>
 
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-xxxx-import?body=json</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-job-costing-import?body=json</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-xxxx-import?body=json</code></p>
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-job-costing-import?body=json</code></p>
 <h2 id='modify-project-job-costing'>Modify Project Job Costing</h2><h3 id='api-endpoint-modify-a-project-s-phase-and-cost-code'>API Endpoint - Modify a Project’s Phase and Cost Code</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -4263,7 +4876,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
     </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
     </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
-           </span><span class="err">UPDATE</span><span class="w"> </span><span class="err">PICTURE</span><span class="w">
+           </span><span class="err">UPDATE</span><span class="w"> </span><span class="err">CONTENT</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -4279,9 +4892,9 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <li>A JSON formatted payload is used in the PUT request</li>
 </ul>
 
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-xxxx-import?body=json</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-job-costing-import?body=json</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-xxxx-import?body=json</code></p>
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-job-costing-import?body=json</code></p>
 <h1 id='project-transactions'>Project Transactions</h1><h2 id='get-project-reqs'>Get Project Reqs</h2><h3 id='api-endpoint-get-a-list-of-requisitions-for-a-project'>API Endpoint - Get a List of Requisitions for a Project</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -4329,53 +4942,54 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><strong>delivery</strong>: will limit results to a specific delivery type location</p>
-
-<ul>
-<li>Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</li>
-</ul>
-
-<p><strong>procurement</strong>: will limit results to a specific procurement status</p>
-
-<ul>
-<li>Available options are: OPEN, SUBMITTED, IN-REVIEW, APPROVED, APPROVED W/MODS, REJECTED, PENDING ORDER, COMPLETE, CLOSED, CANCELLED, RESUBMITTED</li>
-</ul>
-
-<p><strong>vendor</strong>: will limit results to a single vendor</p>
-
-<ul>
-<li>{organization&#39;s vendor number}</li>
-</ul>
-
-<p><strong>ship-via</strong>: will limit results to a specific ship via value</p>
-
-<ul>
-<li>Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</li>
-</ul>
-
-<p><strong>need-by</strong>: will limit results to a specific need-by or delivery-by date</p>
-
-<ul>
-<li>Date Format: YYYY-MM-DD</li>
-</ul>
-
-<p><strong>submitter</strong>: will limit results to a specified CINX user</p>
-
-<ul>
-<li>{CINX_User_Id}</li>
-</ul>
-
-<p><strong>owner</strong>: will limit results to a specified CINX user to whom the transaction is assigned</p>
-
-<ul>
-<li>{CINX_User_Id}</li>
-</ul>
-
-<p><strong>number</strong>: will limit results to a specified transaction number</p>
-
-<ul>
-<li>{transaction_number}</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>procurement</td>
+<td>Limits results to a specific procurement status.</td>
+<td>OPEN, SUBMITTED, IN-REVIEW, APPROVED, APPROVED W/MODS, REJECTED, PENDING ORDER, COMPLETE, CLOSED, CANCELLED, RESUBMITTED</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>ship-via</td>
+<td>Limits results to a specific ship via value.</td>
+<td>SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</td>
+</tr>
+<tr>
+<td>need-by</td>
+<td>Limits results to a specific need-by or delivery-by date.</td>
+<td>Date Format: YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>submitter</td>
+<td>Limits results to a specified CINX user.</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>owner</td>
+<td>Limits results to a specified CINX user to whom the transaction is assigned</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-project-rfqs'>Get Project RFQs</h2><h3 id='api-endpoint-get-a-list-of-rfqs-linked-to-a-project'>API Endpoint - Get a List of RFQs Linked to a Project</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -4425,47 +5039,49 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><strong>delivery</strong>: will limit results to a specific delivery type location</p>
-
-<ul>
-<li>Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</li>
-</ul>
-
-<p><strong>workflow</strong>: will limit results to a specific workflow status</p>
-
-<ul>
-<li>Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, QUOTED</li>
-</ul>
-
-<p><strong>vendor</strong>: will limit results to a single vendor</p>
-
-<ul>
-<li>{organization&#39;s vendor number}</li>
-</ul>
-
-<p><strong>ship-via</strong>: will limit results to a specific ship via value</p>
-
-<ul>
-<li>Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</li>
-</ul>
-
-<p><strong>need-by</strong>: will limit results to a specific need-by or delivery-by date</p>
-
-<ul>
-<li>Date Format: YYYY-MM-DD</li>
-</ul>
-
-<p><strong>submitter</strong>: will limit results to a specified CINX user</p>
-
-<ul>
-<li>{CINX_User_Id}</li>
-</ul>
-
-<p><strong>number</strong>: will limit results to a specified transaction number</p>
-
-<ul>
-<li>{transaction_number}</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>workflow</td>
+<td>Limits results to a specific workflow status.</td>
+<td>IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, QUOTED</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>ship-via</td>
+<td>Limits results to a specific ship via value.</td>
+<td>SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</td>
+</tr>
+<tr>
+<td>need-by</td>
+<td>Limits results to a specific need-by or delivery-by date.</td>
+<td>Date Format: YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>submitter</td>
+<td>Limits results to a specified CINX user.</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-project-quotes'>Get Project Quotes</h2><h3 id='api-endpoint-get-a-list-of-quotes-for-a-project'>API Endpoint - Get a List of Quotes for a Project</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -4505,47 +5121,49 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><strong>delivery</strong>: will limit results to a specific delivery type location</p>
-
-<ul>
-<li>Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</li>
-</ul>
-
-<p><strong>workflow</strong>: will limit results to a specific workflow status</p>
-
-<ul>
-<li>Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ERP PENDING, ERP ACCEPTED, ERP FAILED</li>
-</ul>
-
-<p><strong>vendor</strong>: will limit results to a single vendor</p>
-
-<ul>
-<li>{organization&#39;s vendor number}</li>
-</ul>
-
-<p><strong>ship-via</strong>: will limit results to a specific ship via value</p>
-
-<ul>
-<li>Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</li>
-</ul>
-
-<p><strong>need-by</strong>: will limit results to a specific need-by or delivery-by date</p>
-
-<ul>
-<li>Date Format: YYYY-MM-DD</li>
-</ul>
-
-<p><strong>submitter</strong>: will limit results to a specified CINX user</p>
-
-<ul>
-<li>{CINX_User_Id}</li>
-</ul>
-
-<p><strong>number</strong>: will limit results to a specified transaction number</p>
-
-<ul>
-<li>{transaction_number}</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>workflow</td>
+<td>Limits results to a specific workflow status.</td>
+<td>IN-PROCESS, SUBMITTED, RECEIVED, ERP PENDING, ERP ACCEPTED, ERP FAILED</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>ship-via</td>
+<td>Limits results to a specific ship via value.</td>
+<td>SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</td>
+</tr>
+<tr>
+<td>need-by</td>
+<td>Limits results to a specific need-by or delivery-by date.</td>
+<td>Date Format: YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>submitter</td>
+<td>Limits results to a specified CINX user.</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-project-pos'>Get Project POs</h2><h3 id='api-endpoint-get-a-list-of-pos-for-a-project'>API Endpoint - Get a List of POs for a Project</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -4596,65 +5214,59 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><strong>delivery</strong>: will limit results to a specific delivery type location</p>
-
-<ul>
-<li>Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</li>
-</ul>
-
-<p><strong>procurement</strong>: will limit results to a specific procurement status</p>
-
-<ul>
-<li>Available options are: NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED, DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED</li>
-</ul>
-
-<p><strong>workflow</strong>: will limit results to a specific workflow status</p>
-
-<ul>
-<li>Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED</li>
-</ul>
-
-<p><strong>erp</strong>: will limit results to a specific erp status</p>
-
-<ul>
-<li>Available options are: NOT SUBMITTED, PENDING, SUBMITTED, APPLIED</li>
-</ul>
-
-<p><strong>project</strong>: will limit results to a single project</p>
-
-<ul>
-<li>{cinx_project_guid}</li>
-</ul>
-
-<p><strong>vendor</strong>: will limit results to a single vendor</p>
-
-<ul>
-<li>{organization&#39;s vendor number}</li>
-</ul>
-
-<p><strong>ship-via</strong>: will limit results to a specific ship via value</p>
-
-<ul>
-<li>Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</li>
-</ul>
-
-<p><strong>need-by</strong>: will limit results to a specific need-by or delivery-by date</p>
-
-<ul>
-<li>Date Format: YYYY-MM-DD</li>
-</ul>
-
-<p><strong>submitter</strong>: will limit results to a specified CINX user</p>
-
-<ul>
-<li>{CINX_User_Id}</li>
-</ul>
-
-<p><strong>number</strong>: will limit results to a specified transaction number</p>
-
-<ul>
-<li>{transaction_number}</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>procurement</td>
+<td>Limits results to a specific procurement status.</td>
+<td>NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED, DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED</td>
+</tr>
+<tr>
+<td>workflow</td>
+<td>Limits results to a specific workflow status.</td>
+<td>IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED</td>
+</tr>
+<tr>
+<td>erp</td>
+<td>Limits results to a specific erp status.</td>
+<td>NOT SUBMITTED, PENDING, SUBMITTED, APPLIED</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>ship-via</td>
+<td>Limits results to a specific ship via value.</td>
+<td>SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</td>
+</tr>
+<tr>
+<td>need-by</td>
+<td>Limits results to a specific need-by or delivery-by date.</td>
+<td>Date Format: YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>submitter</td>
+<td>Limits results to a specified CINX user.</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-project-pocos'>Get Project POCOs</h2><h3 id='api-endpoint-get-a-list-of-po-change-orders-for-a-project'>API Endpoint - Get a List of PO Change Orders for a Project</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -4704,65 +5316,59 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><strong>delivery</strong>: will limit results to a specific delivery type location</p>
-
-<ul>
-<li>Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</li>
-</ul>
-
-<p><strong>procurement</strong>: will limit results to a specific procurement status</p>
-
-<ul>
-<li>Available options are: NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED, DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED</li>
-</ul>
-
-<p><strong>workflow</strong>: will limit results to a specific workflow status</p>
-
-<ul>
-<li>Available options are: IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED</li>
-</ul>
-
-<p><strong>erp</strong>: will limit results to a specific erp status</p>
-
-<ul>
-<li>Available options are: NOT SUBMITTED, PENDING, SUBMITTED, APPLIED</li>
-</ul>
-
-<p><strong>project</strong>: will limit results to a single project</p>
-
-<ul>
-<li>{cinx_project_guid}</li>
-</ul>
-
-<p><strong>vendor</strong>: will limit results to a single vendor</p>
-
-<ul>
-<li>{organization&#39;s vendor number}</li>
-</ul>
-
-<p><strong>ship-via</strong>: will limit results to a specific ship via value</p>
-
-<ul>
-<li>Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</li>
-</ul>
-
-<p><strong>need-by</strong>: will limit results to a specific need-by or delivery-by date</p>
-
-<ul>
-<li>Date Format: YYYY-MM-DD</li>
-</ul>
-
-<p><strong>submitter</strong>: will limit results to a specified CINX user</p>
-
-<ul>
-<li>{CINX_User_Id}</li>
-</ul>
-
-<p><strong>number</strong>: will limit results to a specified transaction number</p>
-
-<ul>
-<li>{transaction_number}</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>procurement</td>
+<td>Limits results to a specific procurement status.</td>
+<td>NOT ORDERED, ORDER PENDING, ORDERED, BACK-ORDERED, DELIVERED, RETURNED, CANCELLED, CLOSED, ON-HOLD, INVOICE-APPROVED</td>
+</tr>
+<tr>
+<td>workflow</td>
+<td>Limits results to a specific workflow status.</td>
+<td>IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, ERP PENDING, ERP ACCEPTED, ERP FAILED</td>
+</tr>
+<tr>
+<td>erp</td>
+<td>Limits results to a specific erp status.</td>
+<td>NOT SUBMITTED, PENDING, SUBMITTED, APPLIED</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>ship-via</td>
+<td>Limits results to a specific ship via value.</td>
+<td>SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</td>
+</tr>
+<tr>
+<td>need-by</td>
+<td>Limits results to a specific need-by or delivery-by date.</td>
+<td>Date Format: YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>submitter</td>
+<td>Limits results to a specified CINX user.</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-project-deliveries'>Get Project Deliveries</h2><h3 id='api-endpoint-get-a-list-of-deliveries-for-a-project'>API Endpoint - Get a List of Deliveries for a Project</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -4806,41 +5412,44 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><strong>vendor</strong>: will limit results to a single vendor</p>
-
-<ul>
-<li>{organization&#39;s vendor number}</li>
-</ul>
-
-<p><strong>delivery</strong>: will limit results to a specific delivery type location</p>
-
-<ul>
-<li>Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</li>
-</ul>
-
-<p><strong>ship-via</strong>: will limit results to a specific ship via value</p>
-
-<ul>
-<li>Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</li>
-</ul>
-
-<p><strong>po-guid</strong>: will limit results to a specified CINX purchase order</p>
-
-<ul>
-<li>{CINX_PO_Id}</li>
-</ul>
-
-<p><strong>submitter</strong>: will limit results to a specified CINX user</p>
-
-<ul>
-<li>{CINX_User_Id}</li>
-</ul>
-
-<p><strong>number</strong>: will limit results to a specified transaction number</p>
-
-<ul>
-<li>{transaction_number}</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>ship-via</td>
+<td>Limits results to a specific ship via value.</td>
+<td>SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</td>
+</tr>
+<tr>
+<td>po-guid</td>
+<td>Limits results to a specific purchase order.</td>
+<td>{cinx_po_id}</td>
+</tr>
+<tr>
+<td>submitter</td>
+<td>Limits results to a specified CINX user.</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-project-invoices'>Get Project Invoices</h2><h3 id='api-endpoint-get-a-list-of-invoices-for-a-project'>API Endpoint - Get a List of Invoices for a Project</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -4884,41 +5493,44 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><strong>po-guid</strong>: will limit results to a specified CINX purchase order</p>
-
-<ul>
-<li>{CINX_PO_Id}</li>
-</ul>
-
-<p><strong>status</strong>: will limit results to a specific status</p>
-
-<ul>
-<li>Available options are: PENDING E-INVOICE, ENTERED, REVIEWED, ACCEPTED, IN-DISPUTE, ON-HOLD, REJECTED, SUBMITTED</li>
-</ul>
-
-<p><strong>erp</strong>: will limit results to a specific erp status</p>
-
-<ul>
-<li>Available options are: NOT SUBMITTED, PENDING, SUBMITTED, APPLIED</li>
-</ul>
-
-<p><strong>vendor</strong>: will limit results to a single vendor</p>
-
-<ul>
-<li>{organization&#39;s vendor number}</li>
-</ul>
-
-<p><strong>owner</strong>: will limit results to a specified CINX user to whom the transaction is assigned</p>
-
-<ul>
-<li>{CINX_User_Id}</li>
-</ul>
-
-<p><strong>number</strong>: will limit results to a specified transaction number</p>
-
-<ul>
-<li>{transaction_number}</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>po-guid</td>
+<td>Limits results to a specific purchase order.</td>
+<td>{cinx_po_id}</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Limits results to a specific status.</td>
+<td>PENDING E-INVOICE, ENTERED, REVIEWED, ACCEPTED, IN-DISPUTE, ON-HOLD, REJECTED, SUBMITTED</td>
+</tr>
+<tr>
+<td>erp</td>
+<td>Limits results to a specific erp status.</td>
+<td>NOT SUBMITTED, PENDING, SUBMITTED, APPLIED</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>owner</td>
+<td>Limits results to a specified CINX user to whom the transaction is assigned</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-project-returns'>Get Project Returns</h2><h3 id='api-endpoint-get-a-list-of-returns-for-a-project'>API Endpoint - Get a List of Returns for a Project</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -4961,41 +5573,44 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><strong>vendor</strong>: will limit results to a single vendor</p>
-
-<ul>
-<li>{organization&#39;s vendor number}</li>
-</ul>
-
-<p><strong>delivery</strong>: will limit results to a specific delivery type location</p>
-
-<ul>
-<li>Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</li>
-</ul>
-
-<p><strong>ship-via</strong>: will limit results to a specific ship via value</p>
-
-<ul>
-<li>Available options are: SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</li>
-</ul>
-
-<p><strong>po-guid</strong>: will limit results to a specified CINX purchase order</p>
-
-<ul>
-<li>{CINX_PO_Id}</li>
-</ul>
-
-<p><strong>owner</strong>: will limit results to a specified CINX user to whom the transaction is assigned</p>
-
-<ul>
-<li>{CINX_User_Id}</li>
-</ul>
-
-<p><strong>number</strong>: will limit results to a specified transaction number</p>
-
-<ul>
-<li>{transaction_number}</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>ship-via</td>
+<td>Limits results to a specific ship via value.</td>
+<td>SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE</td>
+</tr>
+<tr>
+<td>po-guid</td>
+<td>Limits results to a specific purchase order.</td>
+<td>{cinx_po_id}</td>
+</tr>
+<tr>
+<td>owner</td>
+<td>Limits results to a specified CINX user to whom the transaction is assigned</td>
+<td>{cinx_user_id}</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transaction number.</td>
+<td>{transaction_number}</td>
+</tr>
+</tbody></table>
 <h2 id='get-project-back-orders'>Get Project Back-Orders</h2><h3 id='api-endpoint-get-a-list-of-back-orders-for-a-project'>API Endpoint - Get a List of Back-Orders for a Project</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -5050,29 +5665,29 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><strong>delivery</strong>: will limit results to a specific delivery type location</p>
-
-<ul>
-<li>Available options are: JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</li>
-</ul>
-
-<p><strong>project</strong>: will limit results to a single project</p>
-
-<ul>
-<li>{cinx_project_guid}</li>
-</ul>
-
-<p><strong>vendor</strong>: will limit results to a single vendor</p>
-
-<ul>
-<li>{organization&#39;s vendor number}</li>
-</ul>
-
-<p><strong>po-guid</strong>: will limit results to a specified CINX purchase order</p>
-
-<ul>
-<li>{CINX_PO_Id}</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>delivery</td>
+<td>Limits results to a specific delivery type location.</td>
+<td>JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits results to a single vendor.</td>
+<td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>po-guid</td>
+<td>Limits results to a specific purchase order.</td>
+<td>{cinx_po_id}</td>
+</tr>
+</tbody></table>
 <h1 id='requisitions'>Requisitions</h1><h2 id='req-definition'>Req Definition</h2><h3 id='cinx-object-defintion-requisition'>CINX Object Defintion - Requisition</h3>
 <p>A CINX Material Requisition is a compilation of parts that need to be purchased.  The list might be for a whole project, phase, system, pre-fab work-order, spool, or a general list created by a project foreman in the field. The parts on a requisition might also contain items from multiple projects that are combined into one purchase to achieve volume pricing.</p>
 
