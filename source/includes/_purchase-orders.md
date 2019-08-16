@@ -178,9 +178,9 @@ number | Limits results to a specified transaction number. | {transaction_number
 			"charges": [],
 			"credits": [],
 			"counts": {
-				"items": 1,
+				"credits": 0,
 				"charges": 0,
-				"credits": 0
+				"items": 1
 			},
 			"items": [{
 				"cinx_guid": "11208a81-c1d2-53c8-8b46-272d65b3e295",

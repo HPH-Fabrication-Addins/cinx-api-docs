@@ -85,6 +85,160 @@ The cinx_guid will be the invoice’s CINX Id.
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/invoice/8ead0386-496b-571c-b14f-09eafeeb6758`
 
+```json
+{
+	"response": {},
+	"rows": [{
+		"cinx_guid": "8ead0386-496b-571c-b14f-09eafeeb6758",
+		"locked": "0",
+		"number": "I456123",
+		"name": "I456123",
+		"workflow_status": "PENDING E-INVOICE",
+		"entry_type": "MANUAL",
+		"accepted_type": "MANUAL",
+		"erp_status": "NOT SUBMITTED",
+		"counts": {
+			"credits": 0,
+			"charges": 0,
+			"items": 1
+		},
+		"entered_by": {
+			"cinx_guid": null,
+			"name": null,
+			"email": null
+		},
+		"accepted_by": {
+			"cinx_guid": null,
+			"name": null,
+			"email": null
+		},
+		"assigned_to": {
+			"cinx_guid": "185aabe1-3487-5f59-9ad5-c577a76bd392",
+			"name": "Will Stone",
+			"email": "willstone@cinx.com"
+		},
+		"dates": {
+			"created": "2019-06-07",
+			"last_modified": "2019-06-07",
+			"issued": "2019-06-08",
+			"received": "2019-06-09",
+			"payment_due": "2019-06-21",
+			"discount_due": "2019-06-10",
+			"entered": "",
+			"accepted": ""
+		},
+		"vendor": {
+			"cinx_commerce_guid": "7880c854-017f-5359-96de-fdef626c33cf",
+			"number": "V101",
+			"name": "Hilti",
+			"file_url": null
+		},
+		"customer": {
+			"cinx_commerce_guid": "7880c854-017f-5359-96de-fdef626c33cf",
+			"number": "C101",
+			"name": "WTS Mechanical"
+		},
+		"purchase_order": {
+			"cinx_guid": "80e6d9c8-d2e4-5aaa-9bd3-3957430741dd",
+			"number": "PO123",
+			"name": "PO123"
+		},
+		"project": {
+			"cinx_guid": "bb613aff-4256-5359-b7cd-391505d19e01",
+			"number": "WTS-2017-03",
+			"name": "HPH HQ Renovation"
+		},
+		"payment_terms": {
+			"discount_percent": 1.5,
+			"discount_days_type": null,
+			"discount_days": 10,
+			"due_days": null,
+			"late_fee_percent": null
+		},
+		"bill_to": {
+			"address1": null,
+			"address2": null,
+			"address3": null,
+			"city": null,
+			"state": null,
+			"postal_code": null,
+			"location_name": null,
+			"attention": null
+		},
+		"remit_to": {
+			"address1": null,
+			"address2": null,
+			"address3": null,
+			"city": null,
+			"state": null,
+			"postal_code": null,
+			"location_name": null,
+			"attention": null
+		},
+		"credits": [],
+		"charges": [],
+		"items": [{
+				"cinx_guid": "73d55d4b-4436-5539-aad2-7f2a11666146",
+				"sequence": 1,
+				"quantity": 1,
+				"unit_price": 270.05,
+				"price_uom": "E",
+				"currency": "USD",
+				"invoice_status": "PENDING",
+				"allow_substitutes": true,
+				"hph_code": "326ZU6542",
+				"org_item_id": null,
+				"org_system_id": null,
+				"mfr_part_number": null,
+				"upc": "67024006745",
+				"size": "4",
+				"description": null,
+				"mfr_name": null,
+				"item_type": "MATERIAL",
+				"vendor": {
+					"cinx_commerce_guid": "7880c854-017f-5359-96de-fdef626c33cf",
+					"number": "V101",
+					"name": "Hilti",
+					"item_id": null,
+					"system_id": null
+				},
+				"purchase_order": {
+					"cinx_guid": "80e6d9c8-d2e4-5aaa-9bd3-3957430741dd",
+					"number": "PO-123",
+					"name": "PO123",
+					"quantity": 1,
+					"quantity_received": 1,
+					"unit_price": 270.05,
+					"price_uom": "E",
+					"currency": "USD"
+				},
+				"project": {
+					"cinx_guid": "bb613aff-4256-5359-b7cd-391505d19e01",
+					"number": "WTS-2017-03",
+					"name": "WTS-2017-03"
+				},
+				"job_cost": {
+					"cinx_phase_guid": null,
+					"phase_name": "124",
+					"cinx_material_cost_code_guid": null,
+					"material_cost_code_name": null,
+					"cinx_category_guid": null,
+					"category_name": null
+				},
+				"taxes": {
+					"taxable": true,
+					"cinx_guid": null,
+					"tax_group_name": null,
+					"tax_type": null,
+					"tax_rate": 0,
+					"tax_amount": 0
+				}
+			}
+		]
+	}]
+}
+```
+
 ## Get Invoice Template
 ### API Endpoint - Get an Invoice Template
 

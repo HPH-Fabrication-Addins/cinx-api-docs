@@ -23,43 +23,38 @@ A back-order is an item from a submitted PO that cannot be delivered by the requ
 
 ```json
 {
-    "response": {},
-    "rows": [
-        {
-			"cinx_guid": "076bd4bb-d6d9-5096-96f2-ec105d0562b1",
-			"date_expected_delivery": null,
-			"date_po_needr_by": null,
-			"date_informed": null,
-			"date_last_updated": null,
-			"reason": null,
-			"quantity_back_ordered": 1,
-			"quantity_shipped": 0,
-			"quantity_po": 1,
-			"org_item_id": null,
-			"vendor_item_id": null,
-			"mfr_part_number": null,
-			"mfr_order": null,
-			"hph_code": "326ZU6542",
-			"upc": "67024006745",
-			"org_description": "Floor, Z1400 Adjustable, 4",
-			"cinx_description": null,
-			"mfr_description": null,
-			"mfr_name": null,
-			"delivery_location_type": null,
-			"delivery_location_name": "",
-			"vendor_number": "",
-			"vendor_name": "Hilti-6",
-			"work_order_id": null,
-			"work_order_name": null,
-			"spool_id": null,
-			"spool_name": null,
-			"project_number": "WTS-2017-03",
-			"project_name": "WTS-2017-03",
-			"po_number": "P19-062819",
-			"po_name": "P19-062819",
-			"po_submitted_by": "Will Stone"
-		}
-    ]
+	"response": {},
+	"rows": [{
+		"cinx_guid": "076bd4bb-d6d9-5096-96f2-ec105d0562b1",
+		"date_expected_delivery": "2019-06-11",
+		"date_need_by": "2019-06-08",
+		"date_informed": "2019-06-08",
+		"date_last_updated": "2019-06-11",
+		"reason": null,
+		"quantity_back_ordered": 1,
+		"quantity_shipped": 0,
+		"quantity_po": 1,
+		"org_item_id": null,
+		"vendor_item_id": null,
+		"mfr_part_number": null,
+		"hph_code": "326ZU6542",
+		"upc": "67024006745",
+		"description": null,
+		"mfr_name": "ZURN",
+		"delivery_location_type": null,
+		"delivery_location_name": "",
+		"vendor_number": "V101",
+		"vendor_name": "Hilti",
+		"work_order_id": null,
+		"work_order_name": null,
+		"spool_id": null,
+		"spool_name": null,
+		"project_number": "WTS-2017-03",
+		"project_name": "HPH HQ Renovation",
+		"po_number": "P19-062819",
+		"po_name": "P19-062819",
+		"po_submitter": "Will Stone"
+	}]
 }
 ```
 `GET`
@@ -80,16 +75,132 @@ vendor | Limits results to a single vendor. | {organization's vendor number}
 po-guid | Limits results to a specific purchase order. | {cinx_po_id}
 
 ## Get Back-Order
-### API Endpoint - Get a Back_Order
+### API Endpoint - Get a Back-Order
 
 `GET`
 
 This endpoint will be used to get the details of a specific back-order.  
 
-URL Pattern: **{api path}/{api_version}/sub/{api_token}/back-order{po_item_guid}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/back-order/{back_order_guid}**
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/back-order/e73c118f-1ee9-57e0-9c79-1775c1a04b81`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/back-order/076bd4bb-d6d9-5096-96f2-ec105d0562b1`
 
+```json
+{
+	"response": {},
+	"rows": [{
+		"cinx_guid": "076bd4bb-d6d9-5096-96f2-ec105d0562b1",
+		"unit_price": 270.05,
+		"price_uom": "E",
+		"currency": "USD",
+		"allow_substitutes": true,
+		"hph_code": "326ZU6542",
+		"org_item_id": null,
+		"org_system_id": null,
+		"mfr_part_number": null,
+		"upc": "67024006745",
+		"size": "4",
+		"description": "Floor, Z1400 Adjustable, 4",
+		"mfr_name": "ZURN",
+		"item_type": "MATERIAL",
+		"procurement_status": "BACKORDERED",
+		"update_count": 0,
+		"quantities": {
+			"ordered": 1,
+			"received": 0,
+			"back_ordered": 1,
+			"shipped": 0
+		},
+		"dates": {
+			"need_by": "2019-06-08",
+			"po_submitted": "2019-06-28",
+			"informed": "2019-06-08",
+			"expected_delivery": "2019-06-11",
+			"last_update": "2019-06-11",
+			"cleared": ""
+		},
+		"customer": {
+			"cinx_commerce_guid": "7880c854-017f-5359-96de-fdef626c33cf",
+			"numer": "C101",
+			"name": "WTS Mechanical -DEV"
+		},
+		"vendor": {
+			"cinx_commerce_guid": "7880c854-017f-5359-96de-fdef626c33cf",
+			"number": "V101",
+			"name": "Hilti",
+			"item_id": null,
+			"system_id": null,
+			"back_order_reason": null
+		},
+		"project": {
+			"cinx_guid": "bb613aff-4256-5359-b7cd-391505d19e01",
+			"number": "WTS-2017-03",
+			"name": "WHPH HQ Renovation"
+		},
+		"requisition": {
+			"cinx_guid": null,
+			"number": null,
+			"name": null
+		},
+		"purchase_order": {
+			"cinx_guid": "0435078e-fc66-53a8-b69e-7641e2247437",
+			"number": "P19-062819",
+			"name": "P19-062819",
+			"submitter": {
+				"cinx_guid": "185aabe1-3487-5f59-9ad5-c577a76bd392",
+				"name": "Will Stone",
+				"email": "willstone@cinx.com"
+			}
+		},
+		"delivery": {
+			"ship_via": null,
+			"deliver_to": null,
+			"location_type": "JOB SITE",
+			"location_name": null,
+			"instructions": null,
+			"labeling_instructions": null,
+			"packaging_instructions": null
+		},
+		"work_breakdown": {
+			"work_order_id": null,
+			"work_order_name": null,
+			"spool_id": null,
+			"spool_name": null,
+			"building_name": null,
+			"level": "MAIN",
+			"space": null,
+			"sub_space": null,
+			"system": "GREASE WASTE UG",
+			"arch_symbol": null,
+			"tag": null
+		},
+		"job_cost": {
+			"cinx_phase_guid": null,
+			"phase_name": "124",
+			"cinx_material_cost_code_guid": null,
+			"material_cost_code_name": null,
+			"cinx_category_guid": null,
+			"category_name": null
+		},
+		"taxes": {
+			"taxable": true,
+			"cinx_guid": null,
+			"tax_group_name": null,
+			"tax_type": null,
+			"tax_rate": 0,
+			"tax_amount": 0
+		},
+		"design": {
+			"model_item_guid": null,
+			"model_name": null,
+			"model_file": null,
+			"drawing_number": "P1.0",
+			"drawing_name": null
+		},
+		"updates": []
+	}]
+}
+```
 
 ## Get Back-Order Upd Template
 ### API Endpoint - Get a Back-Order Update Template

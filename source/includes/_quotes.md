@@ -107,9 +107,9 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/q
 			"tax_group_name": null
 		},
 		"counts": {
-			"items": 11,
 			"credits": 0,
-			"charges": 0
+			"charges": 0,
+			"items": 11
 		},
 		"submitter": {
 			"cinx_guid": "0317a60e-2a5a-50a2-8674-39e8f54ad49b",
