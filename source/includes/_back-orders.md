@@ -13,7 +13,7 @@ A back-order is an item from a submitted PO that cannot be delivered by the requ
 
   - [Get a List of Back-Orders](#get-back-order-list)
   - [Get a Back-Order](#get-back-order)
-  - [Get a Back-Order Template](#get-back-order-upd-template)
+  - [Get a Back-Order Update Template](#get-back-order-upd-template)
 
 
 ## Get Back-Order List

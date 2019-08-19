@@ -27,6 +27,7 @@ includes:
   - quotes
   - purchase-orders
   - po-change-orders
+  - lead-times
   - back-orders
   - deliveries
   - invoices
