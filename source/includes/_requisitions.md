@@ -39,9 +39,9 @@ It is important to understand that the parts on a requisition may be divided ont
 			"name": "req-101",
 			"description": "Sample Req Description",
 			"tx_sub_type": "FIELD",
-			"current_owner_name": "Karl Stone",
+			"assigned_to": "Karl Stone",
 			"procurement_status": "SUBMITTED",
-			"submitted_by": "Will Stone",
+			"submitter": "Will Stone",
 			"date_submitted": "2019-06-12",
 			"ship_via": "SUPPLIER TRUCK",
 			"delivery_location_type": "JOB SITE",
@@ -49,7 +49,6 @@ It is important to understand that the parts on a requisition may be divided ont
 			"date_need_by": "2019-06-14",
 			"vendor_number": "N-123",
 			"vendor_name": "National Sales Company",
-			"links": [],
 			"project_number": "WTS-2017-04",
 			"project_name": "HPH Fab Shop Air System",
 			"phase": "First Floor",
@@ -58,6 +57,7 @@ It is important to understand that the parts on a requisition may be divided ont
 			"work_order": null,
 			"spool": null,
 			"allow_substitutes": true,
+			"external_references": [],
 			"item_count": 4
 		}
     ]
@@ -101,6 +101,7 @@ number | Limits results to a specified transaction number. | {transaction_number
 		"user_comment": null,
 		"procurement_status": "OPEN",
 		"allow_substitutes": true,
+		"item_count": 8,
 		"assigned_to": {
 			"cinx_guid": "185aabe1-3487-5f59-9ad5-c577a76bd392",
 			"name": "Will Stone",

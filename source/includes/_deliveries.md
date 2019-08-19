@@ -42,15 +42,15 @@ A CINX Delivery is created when a shipment from a vendor is received. A Delivery
 			"location_type": "FABRICATION SHOP",
 			"location_name": null,
 			"date_received": "2019-06-07",
-			"received_by": "Will Stone",
+			"receiver": "Will Stone",
 			"total_weight": "456",
 			"packing_slip_number": "54654645",
-			"links": [],
 			"project_number": "WTS-2017-03",
 			"project_name": "HPH HQ Renovation",
 			"po_number": "PO-123",
 			"po_name": "PO123",
 			"date_need_by": "2019-06-11",
+			"external_references": [],
 			"item_count": 15
 		}
     ]
@@ -103,6 +103,7 @@ number | Limits results to a specified transaction number. | {transaction_number
 		"fob_point": null,
 		"user_comment": null,
 		"workflow_status": "COMPLETE",
+		"item_count": 3,
 		"receiver": {
 			"cinx_guid": "185aabe1-3487-5f59-9ad5-c577a76bd392",
 			"name": "Will Stone",

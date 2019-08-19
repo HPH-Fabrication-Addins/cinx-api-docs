@@ -38,7 +38,7 @@ A CINX Return is a contractor initiated process of returning previously purchase
 			"date_rma_expires": null,
 			"reason_name": "Wrong Product",
 			"action_name": "Replace Item",
-			"current_owner_name": "Will Stone",
+			"assigned_to": "Will Stone",
 			"ship_via": "SUPPLIER TRUCK",
 			"delivery_location_type": "FABRICATION SHOP",
 			"delivery_location_name": null,
@@ -48,7 +48,7 @@ A CINX Return is a contractor initiated process of returning previously purchase
 			"po_name": "PO123",
 			"project_number": "WTS-2017-03",
 			"project_name": "HPH HQ Renovation",
-			"links": [],
+			"external_references": [],
 			"item_count": 1
 		}
     ]

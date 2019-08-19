@@ -175,7 +175,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/v
         {
            "doc_info": {},
            "template": {
-                "cinx_guid": null,
+                "cinx_commerce_guid": null,
                 "number": null,
                 "name": null,
                 "short_name": null,
@@ -264,7 +264,7 @@ The table below defines the input fields within the template.
 
 Name | Data Type | Required | Default | Note
 ----- | ----- | ----- | ----- | -----
-cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+cinx_commerce_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
 number | String | No |  | Public number for the object.
 name | String | Yes |  | Full name of the vendor.
 short_name | String | No |  | Short or abbreviated name of the vendor.

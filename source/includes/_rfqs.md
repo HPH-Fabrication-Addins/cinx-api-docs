@@ -35,7 +35,7 @@ A CINX Request for Quotation is a compilation of  that a customer wants a vendor
 			"name": "RFQ-1254",
 			"description": "Sample RFQ Description Text",
 			"workflow_status": "SUBMITTED",
-			"submitted_by": "Will Stone",
+			"submitter": "Will Stone",
 			"date_submitted": "2019-06-01",
 			"date_respond_by": "2019-06-03",
 			"vendors": [
@@ -44,7 +44,6 @@ A CINX Request for Quotation is a compilation of  that a customer wants a vendor
 					"name": "Hilti"
 				}
 			],
-			"links": [],
 			"ship_via": "SUPPLIER TRUCK",
 			"delivery_location_type": "OFFICE",
 			"delivery_location_name": null,
@@ -56,6 +55,7 @@ A CINX Request for Quotation is a compilation of  that a customer wants a vendor
 			"phase": null,
 			"material_cost_code": null,
 			"category": null,
+			"external_references": [],
 			"item_count": 113
 		}
     ]
@@ -97,6 +97,7 @@ number | Limits results to a specified transaction number. | {transaction_number
 		"terms": null,
 		"user_comment": "",
 		"workflow_status": "SUBMITTED",
+		"item_count": 3,
 		"submitter": {
 			"cinx_guid": "185aabe1-3487-5f59-9ad5-c577a76bd392",
 			"name": "Will Stone",
@@ -121,6 +122,11 @@ number | Limits results to a specified transaction number. | {transaction_number
 			"name": "National Sales Company"
 		}],
 		"project": {
+			"cinx_id": null,
+			"number": null,
+			"name": null
+		},
+		"requisition": {
 			"cinx_id": null,
 			"number": null,
 			"name": null
@@ -171,6 +177,11 @@ number | Limits results to a specified transaction number. | {transaction_number
 				"mfr_name": "NIBCO, Inc.",
 				"item_type": "MATERIAL",
 				"project": {
+					"cinx_guid": null,
+					"number": null,
+					"name": null
+				},
+				"requisition": {
 					"cinx_guid": null,
 					"number": null,
 					"name": null

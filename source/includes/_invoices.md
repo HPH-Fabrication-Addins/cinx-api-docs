@@ -33,12 +33,13 @@ An Invoice is a vendor document is that indicates the quantities and costs of th
 		"name": "I456123",
 		"workflow_status": "PENDING E-INVOICE",
 		"erp_status": "NOT SUBMITTED",
-		"current_owner_name": "Will Stone",
+		"assigned_to": "Will Stone",
 		"entry_type": "MANUAL",
 		"entered_by": null,
 		"date_entered": "",
 		"accept_type": "MANUAL",
 		"accepted_by": null,
+		"date_accepted": "",
 		"date_issued": "2019-06-08",
 		"date_payment_due": "2019-07-08",
 		"vendor_number": "H125",
@@ -47,7 +48,6 @@ An Invoice is a vendor document is that indicates the quantities and costs of th
 		"po_name": "PO123",
 		"project_number": "WTS-2017-03",
 		"project_name": "HPH HQ Renovation",
-		"links": [],
 		"item_count": 15
 	}]
 }

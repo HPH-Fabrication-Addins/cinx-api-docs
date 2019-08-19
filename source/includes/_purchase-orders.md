@@ -51,10 +51,9 @@ A CINX Purchase Order is a compilation of parts that are being ordered. The list
 			"delivery_location_name": null,
 			"date_order_by": "2019-06-07",
 			"date_submitted": "2019-06-06",
-			"submitted_by": "Will Stone",
+			"submitter": "Will Stone",
 			"date_need_by": "2019-06-11",
 			"date_received": "",
-			"links": [],
 			"project_number": "WTS-2017-03",
 			"project_name": "HPH HQ Renovation",
 			"phase": "First Floor",
@@ -65,6 +64,7 @@ A CINX Purchase Order is a compilation of parts that are being ordered. The list
 			"quote_number": null,
 			"quote_name": null,
 			"erp_status": "NOT SUBMITTED",
+			"external_references": [],
 			"item_count": 15
 		}
     ]
@@ -122,7 +122,8 @@ number | Limits results to a specified transaction number. | {transaction_number
 				"last_modified": "2019-07-29",
 				"order_by": null,
 				"need_by": "2019-08-02",
-				"submitted": "2019-07-29"
+				"submitted": "2019-07-29",
+				"received": ""
 			},
 			"customer": {
 				"cinx_commerce_guid": "de0cf849-6f7b-5df6-9ae9-f924659f2d25",

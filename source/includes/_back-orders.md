@@ -30,10 +30,10 @@ A back-order is an item from a submitted PO that cannot be delivered by the requ
 		"date_need_by": "2019-06-08",
 		"date_informed": "2019-06-08",
 		"date_last_updated": "2019-06-11",
-		"reason": null,
+		"back_order_reason": null,
 		"quantity_back_ordered": 1,
 		"quantity_shipped": 0,
-		"quantity_po": 1,
+		"quantity_ordered": 1,
 		"org_item_id": null,
 		"vendor_item_id": null,
 		"mfr_part_number": null,
@@ -53,7 +53,8 @@ A back-order is an item from a submitted PO that cannot be delivered by the requ
 		"project_name": "HPH HQ Renovation",
 		"po_number": "P19-062819",
 		"po_name": "P19-062819",
-		"po_submitter": "Will Stone"
+		"po_submitter": "Will Stone",
+		"update_count": ""
 	}]
 }
 ```
@@ -116,7 +117,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/b
 			"po_submitted": "2019-06-28",
 			"informed": "2019-06-08",
 			"expected_delivery": "2019-06-11",
-			"last_update": "2019-06-11",
+			"last_updated": "2019-06-11",
 			"cleared": ""
 		},
 		"customer": {
