@@ -12,8 +12,8 @@ CINX supports the definition of a lead-time for an item that has been added to a
 
 **Supported API Services**
 
-  - [Get a List of Lead-Times]()
-  - [Get a Lead Time]()
+  - [Get a List of Lead-Times](#get-lead-times-list)
+  - [Get a Lead Time](#get-lead-time)
 
 
 ## Get Lead-Times List
