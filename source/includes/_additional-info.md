@@ -143,8 +143,8 @@ Once a Catalog item is added to a BOM/Project it becomes a BOM-ITEM. Items impor
 
 BOM-ITEM is a CINX data structure that is used with all BOM types. It inherits from the Catalog Item structure and also provides additional fields for defining its use within a project (quantities, breakdown structure, spec requirements) and transactions (availability and delivery information).
 
-## URLs
-### Useful CINX URLs
+## CINX Links
+### Useful CINX Links
 
 
 **Login**: https://secure.cinx.com/login
