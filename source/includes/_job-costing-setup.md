@@ -47,6 +47,8 @@ cinxApi.getJobCostPhases(cinx_api_token)
             "name": "First Floor",
             "description": "First Floor",
             "material_cost_code_guid": "df8f4e93-3d04-5379-948a-0b3f5319cbd2",
+            "material_cost_code_name": "23-854",
+            "reference_id": null,
             "modified_by": "Will Stone",
             "date_modified": "2019-06-04",
             "status": "A"
@@ -253,6 +255,8 @@ cinxApi.getJobCostCostCodes(cinx_api_token)
             "name": "101-1025",
             "description": "Pipe Hangers",
             "category_guid": "31d57bb1-156e-5cf2-a1ce-05b57232e643",
+            "category_name": "MAT",
+            "reference_id": null,
             "modified_by": "Will Stone",
             "date_modified": "2019-07-26",
             "status": "A"
@@ -427,6 +431,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
             "cinx_guid": "31d57bb1-156e-5cf2-a1ce-05b57232e643",
             "name": "MAT",
             "description": "Material",
+            "reference_id": null,
             "modified_by": "Will Stone",
             "date_modified": "2019-06-04",
             "status": "A"
@@ -519,6 +524,9 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
             "cinx_guid": "7c42f24f-766e-5220-bc7e-cce8048dbb57",
             "name": "TAX-12",
             "description": "state Tax",
+            "rate": 8,
+            "tax_type": "Sales",
+            "reference_id": null,
             "modified_by": "Will Stone",
             "date_modified": "2017-10-20",
             "status": "A"

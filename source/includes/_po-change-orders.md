@@ -88,6 +88,196 @@ number | Limits results to a specified transaction number. | {transaction_number
 ## Get PO CO
 ### API Endpoint - Get a PO Change Order
 
+```json
+{
+	"response": {},
+	"rows": [{
+		"cinx_guid": "a9863525-d926-5441-9f9c-aa47a285a19b",
+		"locked": "1",
+		"number": "PO123-01",
+		"name": "PO123-01",
+		"description": null,
+		"terms": "1.5/10",
+		"user_comment": null,
+		"procurement_status": "ORDERED",
+		"workflow_status": "SUBMITTED",
+		"erp_status": "NOT SUBMITTED",
+		"allow_substitutes": "0",
+		"submitter": {
+			"cinx_guid": "185aabe1-3487-5f59-9ad5-c577a76bd392",
+			"name": "Will Stone",
+			"email": "willstone@cinx.com"
+		},
+		"dates": {
+			"created": "2019-06-06",
+			"last_modified": "2019-06-06",
+			"order_by": null,
+			"need_by": "2019-06-14",
+			"submitted": "2019-06-06",
+			"received": null
+		},
+		"customer": {
+			"cinx_commerce_guid": "7880c854-017f-5359-96de-fdef626c33cf",
+			"number": "C101",
+			"name": "WTS Mechanical"
+		},
+		"vendor": {
+			"cinx_commerce_guid": "7880c854-017f-5359-96de-fdef626c33cf",
+			"number": "V101",
+			"name": "Hilti"
+		},
+		"purchase_order": {
+			"cinx_guid": "80e6d9c8-d2e4-5aaa-9bd3-3957430741dd",
+			"number": "PO-123",
+			"name": "PO123"
+		},
+		"project": {
+			"cinx_guid": "bb613aff-4256-5359-b7cd-391505d19e01",
+			"number": "WTS-2017-03",
+			"name": "HPH HQ Renovation"
+		},
+		"delivery": {
+			"address1": "995 Industrial Park Rd",
+			"address2": "",
+			"address3": "",
+			"city": "Littleton",
+			"state": "NH",
+			"postal_code": "03561",
+			"country": "USA",
+			"ship_via": "SUPPLIER TRUCK",
+			"fob_type": "PREPAID AND CHARGED TO CUSTOMER",
+			"ship_from": "",
+			"attention": "",
+			"location_type": "FABRICATION SHOP",
+			"location_name": null,
+			"instructions": ""
+		},
+		"job_cost_defaults": {
+			"cinx_phase_guid": "3b61f993-69b5-5db3-a367-2d204321c857",
+			"phase_name": "First Floor",
+			"cinx_material_cost_code_guid": "314f6a13-56b3-5c3f-b14e-10d159e4c5c0",
+			"material_cost_code": "101-1025",
+			"cinx_category_guid": null,
+			"category_name": null
+		},
+		"taxes": {
+			"taxable": true,
+			"cinx_guid": "9a962b97-145c-522f-bf1a-e1ad4be4b5a8",
+			"tax_group_name": "TAX-03",
+			"tax_type": "Use",
+			"tax_rate": 5
+		},
+		"external_references": [],
+		"counts": {
+			"credits": 0,
+			"charges": 0,
+			"items": 2
+		},
+		"credits": [],
+		"charges": [],
+		"items": [{
+			"cinx_guid": "73d55d4b-4436-5539-aad2-7f2a11666146",
+			"sequence": 1,
+			"quantity": 3,
+			"unit_price": 270.05,
+			"price_uom": "E",
+			"currency": "USD",
+			"date_need_by": "2019-06-11",
+			"allow_substitutes": true,
+			"hph_code": "326ZU6542",
+			"org_item_id": null,
+			"org_system_id": null,
+			"mfr_part_number": null,
+			"upc": "67024006745",
+			"size": "4",
+			"description": "Floor, Z1400 Adjustable, 4",
+			"mfr_name": null,
+			"item_type": "MATERIAL",
+			"vendor": {
+				"cinx_commerce_guid": "7880c854-017f-5359-96de-fdef626c33cf",
+				"number": "V101",
+				"name": "Hilti",
+				"item_id": null,
+				"system_id": null,
+				"cinx_quote_guid": null,
+				"quote_number": null
+			},
+			"requisition": {
+				"cinx_guid": null,
+				"number": null,
+				"name": null
+			},
+			"purchase_order": {
+				"cinx_guid": "80e6d9c8-d2e4-5aaa-9bd3-3957430741dd",
+				"number": "PO-123",
+				"name": "PO123",
+				"procurement_status": "ORDERED",
+				"unit_price": 270.05,
+				"price_source_type": "USER",
+				"price_uom": "E",
+				"currency": "USD",
+				"quantities": {
+					"ordered": 1,
+					"received": 0,
+					"invoiced": 0,
+					"back_ordered": 0
+				}
+			},
+			"project": {
+				"cinx_guid": "bb613aff-4256-5359-b7cd-391505d19e01",
+				"number": "WTS-2017-03",
+				"name": "HPH HQ Renovation"
+			},
+			"delivery": {
+				"ship_via": null,
+				"deliver_to": null,
+				"location_type": "JOB SITE",
+				"location_name": null,
+				"instructions": null,
+				"labeling_instructions": null,
+				"packaging_instructions": null
+			},
+			"work_breakdown": {
+				"work_order_id": null,
+				"work_order_name": null,
+				"spool_id": null,
+				"spool_name": null,
+				"building_name": null,
+				"level": "MAIN",
+				"space": null,
+				"sub_space": null,
+				"system": "GREASE WASTE UG",
+				"arch_symbol": null,
+				"tag": null
+			},
+			"job_cost": {
+				"cinx_phase_guid": null,
+				"phase_name": "124",
+				"cinx_material_cost_code_guid": null,
+				"material_cost_code": null,
+				"cinx_category_guid": null,
+				"category_name": null
+			},
+			"taxes": {
+				"taxable": true,
+				"cinx_guid": null,
+				"tax_group_name": null,
+				"tax_type": null,
+				"tax_rate": 0,
+				"tax_amount": 0
+			},
+			"design": {
+				"model_item_guid": null,
+				"model_name": null,
+				"model_file": null,
+				"drawing_number": "P1.0",
+				"drawing_name": null
+			}
+		}]
+	}]
+}
+```
+
 `GET`
 
 This endpoint will be used to get the details of a specific PO Change Order.  Note: This response will include the PO Change Order’s items.

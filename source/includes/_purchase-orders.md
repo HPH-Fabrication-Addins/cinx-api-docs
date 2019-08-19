@@ -205,7 +205,8 @@ number | Limits results to a specified transaction number. | {transaction_number
 				"quantities": {
 					"ordered": 3,
 					"received": 0,
-					"invoiced": 0
+					"invoiced": 0,
+					"back-ordered": ""
 				},
 				"vendor": {
 					"cinx_commerce_guid": "7880c854-017f-5359-96de-fdef626c33cf",
