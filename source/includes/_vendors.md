@@ -28,8 +28,6 @@ CINX also has the ability for a contractor to create a **Private** vendor.  This
   - [Create a Vendor](#create-vendor)
   - [Modify a Vendor](#modify-vendor)
   - [Get Vendor Transactions](#vendor-transactions)
-  - Get Vendor Branches
-  - Get Vendor Contacts
 
 ## Get Vendor List
 ### API Endpoint - Get List of Vendors
@@ -58,6 +56,11 @@ cinxApi.getVendors(cinx_api_token)
             "number": "P-45677",
             "status": "A",
             "type": "PVF",
+            "counts": {
+                "all_branches": 1315,
+                "selected_branches": 0,
+                "account_reps": 1
+            },
             "address": {
                 "type": "SHIPPING",
                 "address1": "Address 001",
@@ -110,6 +113,11 @@ cinxApi.getVendorDetails(cinx_api_token, vendor_id)
         "web_site": null,
         "logo": "http://cdn.dev.cinx.biz/assets/org-0000-5814/logo/org-0000-5814_logo_1.jpg",
         "status": "A",
+        "counts": {
+            "all_branches": 1315,
+            "selected_branches": 0,
+            "account_reps": 1
+        },
         "location": {
             "number": null,
             "type": null,
