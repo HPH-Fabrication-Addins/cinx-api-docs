@@ -521,3 +521,49 @@ Parameter Name | Description | Value Type or Options
 delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
 vendor | Limits results to a single vendor. | {organization's vendor number}
 po-guid | Limits results to a specific purchase order. | {cinx_po_id}
+
+## Get Project Lead-Times
+### API Endpoint - Get a List of Lead-Times for a Project
+
+> The above code returns JSON structured like this:
+
+```json
+{
+	"response": {},
+	"rows": [{
+		"cinx_guid": "fe30ea8b-78bf-5dc4-962b-1fb034061b08",
+		"lead_time": 5,
+		"date_need_by": "2019-09-27",
+		"date_order_by": "2019-09-22",
+		"quantity": 1,
+		"org_item_id": null,
+		"vendor_item_id": null,
+		"mfr_part_number": null,
+		"hph_code": "505VC2080",
+		"upc": null,
+		"description": "10\" EPDM GASKET",
+		"mfr_name": "Victaulic Company",
+		"delivery_location_type": "JOB SITE",
+		"delivery_location_name": null,
+		"vendor_number": null,
+		"vendor_name": null,
+		"work_order_id": null,
+		"work_order_name": null,
+		"spool_id": null,
+		"spool_name": null,
+		"project_number": "PRJ-2019-04",
+		"project_name": "Snow-making Pump House",
+		"requisition_number": null,
+		"requisition_name": null,
+		"po_number": null,
+		"po_name": null
+	}]
+}
+```
+`GET`
+
+This endpoint will be used to get a list of items with a lead-time. See the Optional URL Parameters list for additional query parameters that can be used in the URL.
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/lead-times**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/lead-times`

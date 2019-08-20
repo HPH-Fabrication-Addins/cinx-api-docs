@@ -82,7 +82,7 @@ po-guid | Limits results to a specific purchase order. | {cinx_po_id}
 
 This endpoint will be used to get the details of a specific back-order.  
 
-URL Pattern: **{api path}/{api_version}/sub/{api_token}/back-order/{back_order_guid}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/back-order/{cinx_guid}**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/back-order/076bd4bb-d6d9-5096-96f2-ec105d0562b1`
 
