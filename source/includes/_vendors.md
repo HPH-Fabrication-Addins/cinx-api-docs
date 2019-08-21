@@ -161,7 +161,15 @@ cinxApi.getVendorDetails(cinx_api_token, vendor_id)
             "type": "CORPORATE",
             "address": "sales@abssupply1.com"
         }],
-        "id_numbers": []
+        "id_numbers": [],
+        "branches": [],
+        "account_reps": [{
+            "cinx_guid": "e9bf728d-021c-5644-b934-43c193751f2d",
+            "name": "David Farnsworth",
+            "email": "dmcpahul@hphguide.com",
+            "role": "User",
+            "is_primary": false
+        }]
     }]
 }
 ```

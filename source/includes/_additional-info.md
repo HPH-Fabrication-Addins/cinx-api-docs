@@ -49,6 +49,30 @@ URL Pattern: **{api path}/{api_version}sub/country/{country_abv_alpha3}/states**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/country/usa/states`
 
+## Get Currencies
+### API Endpoint - Get a List of Currencies
+
+> The above code returns JSON structured like this:
+
+```json
+{
+    "response": {},
+    "rows": [
+        {
+			"country": "United States",
+			"currency_name": "US Dollar (Next day)",
+			"currency_abv": "USN"
+		}
+    ]
+}
+```
+`GET`
+
+This endpoint will be used to get a list of currencies. Please use the **currency_abv** field when setting a currency in CINX.
+
+URL Pattern: **{api path}/{api_version}sub/currencies**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/currencies`
 
 ## CINX Concepts
 ### List of CINX Terms and Concepts
