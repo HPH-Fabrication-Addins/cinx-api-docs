@@ -573,6 +573,9 @@
                   <li>
                     <a href="#get-project-back-orders" class="toc-h2 toc-link" data-title="Get Project Back-Orders">Get Project Back-Orders</a>
                   </li>
+                  <li>
+                    <a href="#get-project-lead-times" class="toc-h2 toc-link" data-title="Get Project Lead-Times">Get Project Lead-Times</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -2947,8 +2950,6 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <li><a href="#create-vendor">Create a Vendor</a></li>
 <li><a href="#modify-vendor">Modify a Vendor</a></li>
 <li><a href="#vendor-transactions">Get Vendor Transactions</a></li>
-<li>Get Vendor Branches</li>
-<li>Get Vendor Contacts</li>
 </ul>
 <h2 id='get-vendor-list'>Get Vendor List</h2><h3 id='api-endpoint-get-list-of-vendors'>API Endpoint - Get List of Vendors</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
@@ -2972,6 +2973,11 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
             </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P-45677"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PVF"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"all_branches"</span><span class="p">:</span><span class="w"> </span><span class="mi">1315</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"selected_branches"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"account_reps"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">},</span><span class="w">
             </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SHIPPING"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Address 001"</span><span class="p">,</span><span class="w">
@@ -3018,6 +3024,11 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
         </span><span class="s2">"web_site"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cdn.dev.cinx.biz/assets/org-0000-5814/logo/org-0000-5814_logo_1.jpg"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"all_branches"</span><span class="p">:</span><span class="w"> </span><span class="mi">1315</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"selected_branches"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"account_reps"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
         </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -6030,6 +6041,49 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <td>{cinx_po_id}</td>
 </tr>
 </tbody></table>
+<h2 id='get-project-lead-times'>Get Project Lead-Times</h2><h3 id='api-endpoint-get-a-list-of-lead-times-for-a-project'>API Endpoint - Get a List of Lead-Times for a Project</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fe30ea8b-78bf-5dc4-962b-1fb034061b08"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lead_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date_need_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-27"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date_order_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-22"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"org_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vendor_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mfr_part_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hph_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"505VC2080"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10</span><span class="se">\"</span><span class="s2"> EPDM GASKET"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mfr_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Victaulic Company"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"delivery_location_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOB SITE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"delivery_location_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vendor_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vendor_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"work_order_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"work_order_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spool_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spool_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRJ-2019-04"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Snow-making Pump House"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"requisition_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"requisition_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"po_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"po_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a list of items with a lead-time. See the Optional URL Parameters list for additional query parameters that can be used in the URL.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/project/{project_guid}/lead-times</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/lead-times</code></p>
 <h1 id='requisitions'>Requisitions</h1><h2 id='req-definition'>Req Definition</h2><h3 id='cinx-object-defintion-requisition'>CINX Object Defintion - Requisition</h3>
 <p>A CINX Material Requisition is a compilation of parts that need to be purchased.  The list might be for a whole project, phase, system, pre-fab work-order, spool, or a general list created by a project foreman in the field. The parts on a requisition might also contain items from multiple projects that are combined into one purchase to achieve volume pricing.</p>
 
@@ -10921,8 +10975,32 @@ The PUT payload will be processed asynchronously.
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
     </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-
-        </span><span class="err">Update</span><span class="w"> </span><span class="err">Content</span><span class="w">
+        </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fe30ea8b-78bf-5dc4-962b-1fb034061b08"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lead_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date_need_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-27"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date_order_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-22"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"org_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vendor_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mfr_part_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hph_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"505VC2080"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10</span><span class="se">\"</span><span class="s2"> EPDM GASKET"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mfr_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Victaulic Company"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"delivery_location_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOB SITE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"delivery_location_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vendor_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vendor_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"work_order_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"work_order_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spool_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spool_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRJ-2019-04"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Snow-making Pump House"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"requisition_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"requisition_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"po_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"po_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -10964,14 +11042,105 @@ The PUT payload will be processed asynchronously.
 
 <p>This endpoint will be used to get the details of an item with a lead-time.  </p>
 
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/lead-time/{lead_time_guid}</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/lead-time/{cinx_guid}</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/lead_time/076bd4bb-d6d9-5096-96f2-ec105d0562b1</code></p>
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/lead_time/84cd7385-4639-5339-a956-0cad247687f9</code></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
     </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-
-        </span><span class="err">Update</span><span class="w"> </span><span class="err">Content</span><span class="w">
+        </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84cd7385-4639-5339-a956-0cad247687f9"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lead_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price_uom"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"allow_substitutes"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hph_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"505VC2994I"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"org_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"org_system_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mfr_part_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18X14</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18X14</span><span class="se">\"</span><span class="s2"> GRVXFLG AGS SUCTION DIFFUSER"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mfr_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Victaulic Company"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"item_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MATERIAL"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"procurement_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT ORDERED"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"need_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-26"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"order_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"cinx_commerce_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"cinx_commerce_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"system_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57e7399d-d3d8-58f4-bddf-be20006e9178"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRJ-2019-04"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRJ-2019-04"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"requisition"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2ca4a844-e2ea-5593-b002-0bf321e4dcf9"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REQ-0007"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REQ-0007"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"purchase_order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"delivery"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"ship_via"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"deliver_to"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"location_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"location_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"labeling_instructions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"packaging_instructions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"work_breakdown"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"work_order_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"work_order_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"spool_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"spool_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"building_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"space"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"sub_space"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"arch_symbol"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"job_cost"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"cinx_phase_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ea6fba0f-0b8e-5e49-a110-6bcb36182146"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phase_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Phase2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cinx_material_cost_code_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5d9b83d0-a3de-5475-959d-04b92fd4de75"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"material_cost_code_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UG-123"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cinx_category_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a5f91c07-7c5b-5b0c-863b-16b2f6d960c6"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"category_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expense 12"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"taxes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"taxable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tax_group_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tax_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tax_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"design"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"model_item_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"model_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"model_file"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"drawing_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h1 id='back-orders'>Back-Orders</h1><h2 id='back-order-definition'>Back-Order Definition</h2><h3 id='cinx-object-defintion-back-order'>CINX Object Defintion - Back-Order</h3>
@@ -11073,7 +11242,7 @@ The PUT payload will be processed asynchronously.
 
 <p>This endpoint will be used to get the details of a specific back-order.  </p>
 
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/back-order/{back_order_guid}</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/back-order/{cinx_guid}</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/back-order/076bd4bb-d6d9-5096-96f2-ec105d0562b1</code></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
