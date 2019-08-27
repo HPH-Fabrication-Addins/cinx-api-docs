@@ -841,6 +841,9 @@
                     <a href="#get-states" class="toc-h2 toc-link" data-title="Get States">Get States</a>
                   </li>
                   <li>
+                    <a href="#get-currencies" class="toc-h2 toc-link" data-title="Get Currencies">Get Currencies</a>
+                  </li>
+                  <li>
                     <a href="#cinx-concepts" class="toc-h2 toc-link" data-title="CINX Concepts">CINX Concepts</a>
                   </li>
                   <li>
@@ -3072,7 +3075,15 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
             </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CORPORATE"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sales@abssupply1.com"</span><span class="w">
         </span><span class="p">}],</span><span class="w">
-        </span><span class="s2">"id_numbers"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="s2">"id_numbers"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"branches"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"account_reps"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"e9bf728d-021c-5644-b934-43c193751f2d"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"David Farnsworth"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dmcpahul@hphguide.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"is_primary"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">}]</span><span class="w">
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -12819,6 +12830,28 @@ The PUT payload will be processed asynchronously.
 <p>URL Pattern: <strong>{api path}/{api_version}sub/country/{country_abv_alpha3}/states</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/country/usa/states</code></p>
+<h2 id='get-currencies'>Get Currencies</h2><h3 id='api-endpoint-get-a-list-of-currencies'>API Endpoint - Get a List of Currencies</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"currency_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US Dollar (Next day)"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"currency_abv"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USN"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a list of currencies. Please use the <strong>currency_abv</strong> field when setting a currency in CINX.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}sub/currencies</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/currencies</code></p>
 <h2 id='cinx-concepts'>CINX Concepts</h2><h3 id='list-of-cinx-terms-and-concepts'>List of CINX Terms and Concepts</h3>
 <p><strong>Application:</strong> is a grouping of pages, functionality, or an external software partner system that interacts
 with the CINX platform and is managed via a CINX subscription plan.</p>
