@@ -48,6 +48,7 @@ An Invoice is a vendor document is that indicates the quantities and costs of th
 		"po_name": "PO123",
 		"project_number": "WTS-2017-03",
 		"project_name": "HPH HQ Renovation",
+		"external_references": [],
 		"item_count": 15
 	}]
 }
@@ -175,6 +176,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/i
 			"location_name": null,
 			"attention": null
 		},
+		"external_references": [],
 		"credits": [],
 		"charges": [],
 		"items": [{

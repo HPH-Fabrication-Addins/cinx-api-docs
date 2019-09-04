@@ -57,6 +57,7 @@ cinxApi.getProjects(cinx_api_token)
                 "building_name": null,
                 "project_number": null
             },
+            "external_references": [],
             "item_count": 7
         }
     ]
@@ -135,7 +136,8 @@ cinxApi.getProjectDetails(cinx_api_token, project_id)
         "size_square": {
             "value": null,
             "uom": "FEET"
-        }
+        },
+        "external_references": []
     }]
 }
 ```

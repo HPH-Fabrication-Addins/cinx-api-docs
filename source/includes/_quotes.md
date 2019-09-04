@@ -27,15 +27,15 @@ A CINX Quote is a document a vendor prepares in response to a customer’s Reque
 		"workflow_status": "RECEIVED",
 		"vendor_number": "99999",
 		"vendor_name": "Keegan Supply",
-		"submitted_by": "eb stone",
+		"submitter": "eb stone",
 		"date_received": "2019-07-25",
 		"date_expires": "2019-08-26",
 		"date_requested": "",
-		"links": [],
 		"project_number": "WTS-2019-06",
 		"project_name": "HPH HQ Renovation",
 		"rfq_number": "RFQ-456464",
 		"rfq_name": "RFQ-456464",
+		"links": [],
 		"item_count": 11
 	}]
 }

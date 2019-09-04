@@ -48,7 +48,7 @@ A CINX Purchase Order Change Order is created when changes need to be made to a 
 			"delivery_location_type": "FABRICATION SHOP",
 			"delivery_location_name": null,
 			"date_submitted": "2019-06-06",
-			"submitted_by": "Will Stone",
+			"submitter": "Will Stone",
 			"date_need_by": "2019-06-14",
 			"phase": "First Floor",
 			"material_cost_code": "101-1025",
@@ -56,7 +56,7 @@ A CINX Purchase Order Change Order is created when changes need to be made to a 
 			"tax_group": "TAX-03",
 			"terms": "0/0",
 			"erp_status": "NOT SUBMITTED",
-			"links": [],
+			"external_references": [],
 			"item_count": 2
 		}
     ]

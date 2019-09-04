@@ -125,6 +125,7 @@ number | Limits results to a specified transaction number. | {transaction_number
 			"number": "WTS-2017-03",
 			"name": "WTS-2017-03"
 		},
+		"external_references": [],
 		"items": [{
 				"cinx_guid": "4361e462-7406-5989-84f6-9e2e7b2c5521",
 				"sequence": 1,
