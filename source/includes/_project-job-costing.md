@@ -199,7 +199,7 @@ Name | Data Type | Required | Default | Note
 cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
 construction_status | String | Yes |  | Status of the project job costing breakdown. Template has a list of optional values.
 percent_complete | Real | No |  | Value of the percent complete for the project job costing breakdown.
-project.cinx_guid | String (GUID Format) | No |  | CINX Project Id.
+project.cinx_guid | String (GUID Format) | Yes |  | CINX Project Id.
 project.number | String | No |  | The public number of the project.
 phase.cinx_guid | String (GUID Format) | No |  | CINX Id for the phase or sub-job.
 phase.name | String | No |  | Name for the phase or sub-job.
