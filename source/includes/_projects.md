@@ -234,21 +234,21 @@ customer.cinx_commerce_guid | String (GUID Format) | No |  | CINX Commerce Id fo
 customer.name | String | No |  | The name of the customer that commissioned the project.
 customer.cinx_building_guid | String (GUID Format) | No |  | CINX Id for the building or structure.
 customer.project_number | String | No |  | The project number assigned by the customer for the project.
-classifications.delivery_method | String | No |  | Project delivery method being used on the project. Template has a list of optional values.
+classifications.delivery_method | String | Yes | NOT SPECIFIED | Project delivery method being used on the project. Template has a list of optional values.
 classifications.is_leed | Boolean | Yes | FALSE | Indicator if the project is a LEED project.
 classifications.org_defined_type | String | No |  | Organization-defined type of project
-classifications.construction_type | String | No |  | The construction type for the project. Template has a list of optional values.
-classifications.industry_type | String | No |  | The construction type for the project. Template has a list of optional values.
-classifications.cinx_type | String | No |  | The industry type for the project. Template has a list of optional values.
-classifications.sector_type | String | No |  | The sector type for the project. Template has a list of optional values.
+classifications.construction_type | String | Yes | NOT SPECIFIED | The construction type for the project. Template has a list of optional values.
+classifications.industry_type | String | Yes | NOT SPECIFIED | The construction type for the project. Template has a list of optional values.
+classifications.cinx_type | String | Yes | PROJECT | The industry type for the project. Template has a list of optional values.
+classifications.sector_type | String | Yes | NOT SPECIFIED | The sector type for the project. Template has a list of optional values.
 contract.budget_amount | String | No |  | The budgeted amount for the project.
-contract.budget_currency | String | No |  | The currency in which the budget is defined.
+contract.budget_currency | String | Yes | USD | The currency in which the budget is defined.
 taxes.taxable | Boolean | Yes | TRUE | Indicator defining if the project is taxable.
 taxes.cinx_guid | String (GUID Format) | No |  | CINX Id for the Tax Group assigned to the items on the project.
 taxes.tax_group_name | String | No |  | Name for the Tax Group assigned to the items on the project.
 taxes.tax_exempt_id | String | No |  | Tax-Exempt Id.
 size_square.value | String | No |  | Size of the project.
-size_square.uom | String | No |  | Unit-of-measure that the size of the project is defined.
+size_square.uom | String | Yes | FEET | Unit-of-measure that the size of the project is defined.
 
 
 ## Get Project Number
