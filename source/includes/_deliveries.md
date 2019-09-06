@@ -323,8 +323,8 @@ vendor.number | String | No |  | The public number of the vendor from whom the p
 project.cinx_guid | String (GUID Format) | No |  | CINX Project Id.
 project.number | String | No |  | The public number of the project from which the items are being requested.
 items.cinx_po_item_guid | String (GUID Format) | Yes |  | CINX System Id for the item on the purchase order.
-items.quantity_accepted | Real | No |  | Quantity of the item that was accepted during the delivery receiving.
-items.quantity_refused | Real | No |  | Quantity of the item that was refused during the delivery receiving.
+items.quantity_accepted | Real | Yes | 0 | Quantity of the item that was accepted during the delivery receiving.
+items.quantity_refused | Real | Yes | 0 | Quantity of the item that was refused during the delivery receiving.
 items.date_received | Date (YYYY-MM-DD) | No |  | Date the delivery of the product was processed.
 items.cinx_receiver_guid | String (GUID Format) | No |  | CINX Id for the user who received the product.
 items.workflow_status | String | Yes | INCOMPLETE | Status used to track the delivery. Template has a list of optional values.
