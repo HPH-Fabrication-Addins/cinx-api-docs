@@ -417,7 +417,7 @@ delivery.address3 | String | No |  | Address 3 value for the location to which t
 delivery.city | String | No |  | City to which the products on the requisition are to be delivered.
 delivery.state | String | No |  | State to which the products on the requisition are to be delivered. Two-character alpha abbreviation.
 delivery.postal_code | String | No |  | Postal/Zip Code to which the products on the requisition are to be delivered.
-delivery.country | String | No |  | Country to which the products on the requisition are to be delivered. Three-character alpha abbreviation.
+delivery.country | String | Yes | USA | Country to which the products on the requisition are to be delivered. Three-character alpha abbreviation.
 delivery.ship_via | String | No |  | How the products are to be delivered or otherwise acquired. Template has a list of optional values.
 delivery.fob_type | String | No |  | F.O.B. Type. Template has a list of optional values.
 delivery.ship_from | String | No |  | Location from which the requester would like the materials on the requisition to be shipped.
@@ -430,7 +430,7 @@ job_cost_defaults.cinx_material_cost_code_guid | String (GUID Format) | No |  | 
 job_cost_defaults.material_cost_code_name | String | No |  | Transaction level default. Name for the Material Cost Code assigned to the items on the requisition.
 job_cost_defaults.cinx_category_guid | String (GUID Format) | No |  | Transaction level default. CINX Id for the Category assigned to the items on the requisition.
 job_cost_defaults.category_name | String | No |  | Transaction level default. Name for the Category assigned to the items on the requisition.
-taxes.taxable | Boolean | Yes | FALSE | Transaction level default. Indicator defining if the products on the requisition are taxable.
+taxes.taxable | Boolean | Yes | TRUE | Transaction level default. Indicator defining if the products on the requisition are taxable.
 taxes.cinx_guid | String (GUID Format) | No |  | Transaction level default. CINX Id for the Tax Group assigned to the items on the requisition.
 taxes.tax_group_name | String | No |  | Transaction level default. Name for the Tax Group assigned to the items on the requisition.
 external_references.type | String | No |  | Non-CINX system reference type.
@@ -475,7 +475,7 @@ items.job_cost.cinx_material_cost_code_guid | String (GUID Format) | No |  | CIN
 items.job_cost.material_cost_code_name | String | No |  | Name for the Material Cost Code assigned to the item.
 items.job_cost.cinx_category_guid | String (GUID Format) | No |  | CINX Id for the Category assigned to the item.
 items.job_cost.category_name | String | No |  | Name for the Category assigned to the item.
-items.taxes.taxable | Boolean | Yes | FALSE | Indicator defining if the product is taxable.
+items.taxes.taxable | Boolean | Yes | TRUE | Indicator defining if the product is taxable.
 items.taxes.cinx_guid | String (GUID Format) | No |  | CINX Id for the Tax Group assigned to the item.
 items.taxes.tax_group_name | String | No |  | Name of the Tax Group assigned to the item.
 items.design.model_item_guid | String (GUID Format) | No |  | Id assigned by the authoring system that placed the item in the model.
