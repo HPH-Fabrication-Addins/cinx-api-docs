@@ -412,7 +412,7 @@ delivery.address3 | String | No |  | Address 3 value for the location to which t
 delivery.city | String | No |  | City to which the products on the RFQ are to be delivered.
 delivery.state | String | No |  | State to which the products on the RFQ are to be delivered. Two-character alpha abbreviation.
 delivery.postal_code | String | No |  | Postal/Zip Code to which the products on the RFQ are to be delivered.
-delivery.country | String | No |  | Country to which the products on the RFQ are to be delivered. Three-character alpha abbreviation.
+delivery.country | String | Yes | USA | Country to which the products on the RFQ are to be delivered. Three-character alpha abbreviation.
 delivery.ship_via | String | No |  | How the products are to be delivered or otherwise acquired. Template has a list of optional values.
 delivery.fob_type | String | No |  | F.O.B. Type. Template has a list of optional values.
 delivery.ship_from | String | No |  | Location from which the requester would like the materials on the RFQ to be shipped.
@@ -448,7 +448,7 @@ items.project.cinx_guid | String | No |  | CINX Project Id.
 items.project.number | String | No |  | The public number of the project.
 items.delivery.ship_via | String | No |  | How the product is to be delivered or otherwise acquired. Template has a list of optional values.
 items.delivery.deliver_to | String | No |  | Deliver To text.
-items.delivery.location_type | String | No |  | Where the requester would like the product to be delivered. Template has a list of optional values.
+items.delivery.location_type | String | Yes | JOB SITE | Where the requester would like the product to be delivered. Template has a list of optional values.
 items.delivery.instructions | String | No |  | Delivery instructions to be submitted to the vendor responsible for delivering the item.
 items.delivery.labeling_instructions | String | No |  | Labeling instructions to be submitted to the vendor responsible for delivering the item.
 items.delivery.packaging_instructions | String | No |  | Packaging instructions to be submitted to the vendor responsible for delivering the item.
