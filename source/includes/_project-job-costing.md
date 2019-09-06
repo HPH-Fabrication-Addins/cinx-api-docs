@@ -196,7 +196,7 @@ The table below defines the input fields within the template.
 
 Name | Data Type | Required | Default | Note
 ----- | ----- | ----- | ----- | -----
-cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+cinx_guid | String (GUID Format) | POST = No; PUT = Yes |  | CINX System Id.
 construction_status | String | Yes |  | Status of the project job costing breakdown. Template has a list of optional values.
 percent_complete | Real | No |  | Value of the percent complete for the project job costing breakdown.
 project.cinx_guid | String (GUID Format) | Yes |  | CINX Project Id.

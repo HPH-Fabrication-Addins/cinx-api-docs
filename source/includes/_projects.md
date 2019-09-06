@@ -220,7 +220,7 @@ The table below defines the input fields within the template.
 
 Name | Data Type | Required | Dflt | Note
 ----- | ----- | ----- | ----- | -----
-cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+cinx_guid | String (GUID Format) | POST = No; PUT = Yes |  | CINX System Id.
 number | String | Yes |  | Public number for the object.
 name | String | Yes |  | Public name for the object.
 description | String | No |  | Public description for the object.
@@ -235,7 +235,7 @@ customer.name | String | No |  | The name of the customer that commissioned the 
 customer.cinx_building_guid | String (GUID Format) | No |  | CINX Id for the building or structure.
 customer.project_number | String | No |  | The project number assigned by the customer for the project.
 classifications.delivery_method | String | No |  | Project delivery method being used on the project. Template has a list of optional values.
-classifications.is_leed | Boolean | No | FALSE | Indicator if the project is a LEED project.
+classifications.is_leed | Boolean | Yes | FALSE | Indicator if the project is a LEED project.
 classifications.org_defined_type | String | No |  | Organization-defined type of project
 classifications.construction_type | String | No |  | The construction type for the project. Template has a list of optional values.
 classifications.industry_type | String | No |  | The construction type for the project. Template has a list of optional values.

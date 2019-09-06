@@ -280,7 +280,7 @@ The table below defines the input fields within the template.
 
 Name | Data Type | Required | Default | Note
 ----- | ----- | ----- | ----- | -----
-cinx_commerce_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+cinx_commerce_guid | String (GUID Format) | POST = No; PUT = Yes |  | CINX System Id.
 number | String | No |  | Public number for the object.
 name | String | Yes |  | Full name of the vendor.
 short_name | String | No |  | Short or abbreviated name of the vendor.
@@ -312,7 +312,7 @@ addresses.address3 | String | No |  | Address 3 value for the vendor location.
 addresses.city | String | No |  | City value for the vendor location.
 addresses.state | String | No |  | State value for the vendor location. Two-character alpha abbreviation.
 addresses.postal_code | String | No |  | Postal/Zip Code value for the vendor location.
-addresses.country | String | No | USA | Country value for the vendor location. Three-character alpha abbreviation.
+addresses.country | String |  Yes| USA | Country value for the vendor location. Three-character alpha abbreviation.
 phone_numbers.type | String | No |  | Type of phone number. Template has a list of optional values.
 phone_numbers.number | String | No |  | Value of the phone number.
 fax_numbers.type | String | No |  | Type of fax number. Template has a list of optional values.

@@ -296,14 +296,14 @@ The table below defines the input fields within the template.
 
 Name | Data Type | Required | Default | Note
 ----- | ----- | ----- | ----- | -----
-cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+cinx_guid | String (GUID Format) | POST = No; PUT = Yes |  | CINX System Id.
 number | String | Yes |  | Public number for the object.
 name | String | Yes |  | Public name for the object.
 description | String | No |  | Public description for the object.
 date_received | Date (YYYY-MM-DD) | No |  | Date the delivery was processed.
 cinx_receiver_guid | String (GUID Format) | No |  | CINX Id for the user who processed the delivery.
 ship_via | String | No |  | How the products were delivered or otherwise acquired. Template has a list of optional values.
-delivery_location_type | String | No | JOB SITE | Type of location where the delivery was received. Template has a list of optional values.
+delivery_location_type | String | Yes | JOB SITE | Type of location where the delivery was received. Template has a list of optional values.
 delivery_location_name | String | No |  | Name of the location where the materials were delivered.
 packing_slip_number | String | No |  | Id number from the shipment's packing slip.
 tracking_id | String | No |  | Identification number of the package. For example, a tracking number issued by a delivery service.
@@ -330,7 +330,7 @@ items.cinx_receiver_guid | String (GUID Format) | No |  | CINX Id for the user w
 items.workflow_status | String | Yes | INCOMPLETE | Status used to track the delivery. Template has a list of optional values.
 items.photo_url | String | No |  | Link to a photo of the item being received.
 items.delivery.ship_via | String | No |  | How the product was delivered or otherwise acquired. Template has a list of optional values.
-items.delivery.location_type | String | No | JOB SITE | Location type where the product was delivered. Template has a list of optional values.
+items.delivery.location_type | String | Yes | JOB SITE | Location type where the product was delivered. Template has a list of optional values.
 items.delivery.location_name | String | No |  | Name of the location where the product was delivered.
 items.billable_weight.weight | String | No |  | Weight of the product that could be subject to a delivery charge.
 items.billable_weight.uom | String | No |  | Unit-of-measure of the product's billable weight.

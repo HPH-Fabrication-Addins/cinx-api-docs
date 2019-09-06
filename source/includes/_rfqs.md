@@ -392,7 +392,7 @@ The table below defines the input fields within the template.
 
 Name | Data Type | Required | Default | Note
 ----- | ----- | ----- | ----- | -----
-cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+cinx_guid | String (GUID Format) | POST = No; PUT = Yes |  | CINX System Id.
 number | String | Yes |  | Public number for the object.
 name | String | Yes |  | Public name for the object.
 description | String | No |  | Public description for the object.
@@ -417,7 +417,7 @@ delivery.ship_via | String | No |  | How the products are to be delivered or oth
 delivery.fob_type | String | No |  | F.O.B. Type. Template has a list of optional values.
 delivery.ship_from | String | No |  | Location from which the requester would like the materials on the RFQ to be shipped.
 delivery.attention | String | No |  | User-defined delivery attention.
-delivery.location_type | String | No | JOB SITE | Type of location where the requester would like the materials delivered. Template has a list of optional values.
+delivery.location_type | String | Yes | JOB SITE | Type of location where the requester would like the materials delivered. Template has a list of optional values.
 delivery.Instructions | String | No |  | General delivery instructions to be used on an order.
 job_cost_defaults.cinx_phase_guid | String (GUID Format) | No |  | Transaction level default. CINX Id for the Phase/Sub-Job assigned to the items on the RFQ.
 job_cost_defaults.phase_name | String | No |  | Transaction level default. Name for the Phase/Sub-Job assigned to the items on the RFQ.
@@ -432,7 +432,7 @@ external_references.type | String | No |  | Non-CINX system reference type.
 external_references.description | String | No |  | Non-CINX system reference description.
 external_references.value | String | No |  | Non-CINX system reference value.
 items.cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
-items.quantity | Real | No | 1 | Quantity of the item.
+items.quantity | Real | Yes | 1 | Quantity of the item.
 items.date_need_by | Date (YYYY-MM-DD) | No |  | Date the product needs to be delivered to the specified delivery location.
 items.allow_substitutes | Boolean | Yes | TRUE | Indicator if the product can be sourced from an alternate manufacturer.
 items.hph_code | String | No |  | HPH Item Code for the item.

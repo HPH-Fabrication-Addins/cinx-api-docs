@@ -101,7 +101,7 @@ The table below defines the input fields within the template.
 
 Name | Data Type | Required | Default | Note
 ----- | ----- | ----- | ----- | -----
-cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+cinx_guid | String (GUID Format) | POST = No; PUT = Yes |  | CINX System Id.
 name | String | Yes |  | Full name of the phase.
 description | String | No |  | Description of the phase.
 status | String | Yes | A | Status of the phase.
@@ -309,7 +309,7 @@ The table below defines the input fields within the template.
 
 Name | Data Type | Required | Default | Note
 ----- | ----- | ----- | ----- | -----
-cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+cinx_guid | String (GUID Format) | POST = No; PUT = Yes |  | CINX System Id.
 name | String | Yes |  | Full name of the material cost code.
 description | String | No |  | Description of the material cost code.
 status | String | Yes | A | Status of the material cost code.
@@ -484,7 +484,7 @@ The table below defines the input fields within the template.
 
 Name | Data Type | Required | Default | Note
 ----- | ----- | ----- | ----- | -----
-cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+cinx_guid | String (GUID Format) | POST = No; PUT = Yes |  | CINX System Id.
 name | String | Yes |  | Full name of the category.
 description | String | No |  | Description of the category.
 status | String | Yes | A | Status of the category.
@@ -579,7 +579,7 @@ The table below defines the input fields within the template.
 
 Name | Data Type | Required | Default | Note
 ----- | ----- | ----- | ----- | -----
-cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+cinx_guid | String (GUID Format) | POST = No; PUT = Yes |  | CINX System Id.
 name | String | Yes |  | Full name of the tax group.
 description | String | No |  | Description of the tax group.
 rate | Real | No |  | Value of the tax group rate.

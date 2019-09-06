@@ -495,7 +495,7 @@ The table below defines the input fields within the template.
 
 Name | Data Type | Required | Default | Note
 ----- | ----- | ----- | ----- | -----
-cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
+cinx_guid | String (GUID Format) | POST = No; PUT = Yes |  | CINX System Id.
 number | String | Yes |  | Public number for the object.
 name | String | Yes |  | Public name for the object.
 description | String | No |  | Public description for the object.
@@ -522,7 +522,7 @@ delivery.ship_via | String | No |  | How the products are to be delivered or oth
 delivery.fob_type | String | No |  | F.O.B. Type. Template has a list of optional values.
 delivery.ship_from | String | No |  | Location from which the requester would like the materials on the purchase order to be shipped.
 delivery.attention | String | No |  | User-defined delivery attention.
-delivery.location_type | String | No | JOB SITE | Type of location where the requester would like the materials delivered. Template has a list of optional values.
+delivery.location_type | String | Yes | JOB SITE | Type of location where the requester would like the materials delivered. Template has a list of optional values.
 delivery.location_name | String | No |  | Name of the location where the requester would like the materials delivered.
 delivery.Instructions | String | No |  | General delivery instructions for the order.
 job_cost_defaults.cinx_phase_guid | String (GUID Format) | No |  | Transaction level default. CINX Id for the Phase/Sub-Job assigned to the items on the purchase order.
@@ -574,10 +574,10 @@ credits.taxes.tax_amount | Real | No |  | The total amount of the tax for the cr
 credits.project.cinx_guid | String (GUID Format) | No |  | CINX Project Id.
 credits.project.number | String | No |  | The public number of the project.
 items.cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
-items.quantity | Real | No | 1 | Quantity of the item that is being ordered.
+items.quantity | Real | Yes | 1 | Quantity of the item that is being ordered.
 items.unit_price | Real | No |  | Unit price of the item on the purchase order.
-items.price_uom | String | No | E | Price unit-of-measure. Template has a list of optional values.
-items.currency | String | No | USD | Currency in which the price is being defined.  Three-character alpha abbreviation.
+items.price_uom | String | Yes | E | Price unit-of-measure. Template has a list of optional values.
+items.currency | String | Yes | USD | Currency in which the price is being defined.  Three-character alpha abbreviation.
 items.price_source_type | String | No |  | Source from which the price was obtained. Template has a list of optional values.
 items.date_need_by | Date (YYYY-MM-DD) | No |  | Date the product needs to be delivered to the specified delivery location.
 items.allow_substitutes | Boolean | Yes | TRUE | Indicator if the product can be sourced from an alternate manufacturer.
