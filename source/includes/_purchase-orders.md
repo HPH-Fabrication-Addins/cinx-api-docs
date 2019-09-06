@@ -517,7 +517,7 @@ delivery.address3 | String | No |  | Address 3 value for the location to which t
 delivery.city | String | No |  | City to which the products on the purchase order are to be delivered.
 delivery.state | String | No |  | State to which the products on the purchase order are to be delivered. Two-character alpha abbreviation.
 delivery.postal_code | String | No |  | Postal/Zip Code to which the products on the purchase order are to be delivered.
-delivery.country | String | No |  | Country to which the products on the purchase order are to be delivered. Three-character alpha abbreviation.
+delivery.country | String | Yes | USA | Country to which the products on the purchase order are to be delivered. Three-character alpha abbreviation.
 delivery.ship_via | String | No |  | How the products are to be delivered or otherwise acquired. Template has a list of optional values.
 delivery.fob_type | String | No |  | F.O.B. Type. Template has a list of optional values.
 delivery.ship_from | String | No |  | Location from which the requester would like the materials on the purchase order to be shipped.
