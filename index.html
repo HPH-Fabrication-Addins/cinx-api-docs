@@ -4613,8 +4613,8 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <tr>
 <td>classifications.delivery_method</td>
 <td>String</td>
-<td>No</td>
-<td></td>
+<td>Yes</td>
+<td>NOT SPECIFIED</td>
 <td>Project delivery method being used on the project. Template has a list of optional values.</td>
 </tr>
 <tr>
@@ -4634,29 +4634,29 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <tr>
 <td>classifications.construction_type</td>
 <td>String</td>
-<td>No</td>
-<td></td>
+<td>Yes</td>
+<td>NOT SPECIFIED</td>
 <td>The construction type for the project. Template has a list of optional values.</td>
 </tr>
 <tr>
 <td>classifications.industry_type</td>
 <td>String</td>
-<td>No</td>
-<td></td>
+<td>Yes</td>
+<td>NOT SPECIFIED</td>
 <td>The construction type for the project. Template has a list of optional values.</td>
 </tr>
 <tr>
 <td>classifications.cinx_type</td>
 <td>String</td>
-<td>No</td>
-<td></td>
+<td>Yes</td>
+<td>PROJECT</td>
 <td>The industry type for the project. Template has a list of optional values.</td>
 </tr>
 <tr>
 <td>classifications.sector_type</td>
 <td>String</td>
-<td>No</td>
-<td></td>
+<td>Yes</td>
+<td>NOT SPECIFIED</td>
 <td>The sector type for the project. Template has a list of optional values.</td>
 </tr>
 <tr>
@@ -4669,8 +4669,8 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <tr>
 <td>contract.budget_currency</td>
 <td>String</td>
-<td>No</td>
-<td></td>
+<td>Yes</td>
+<td>USD</td>
 <td>The currency in which the budget is defined.</td>
 </tr>
 <tr>
@@ -4711,8 +4711,8 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <tr>
 <td>size_square.uom</td>
 <td>String</td>
-<td>No</td>
-<td></td>
+<td>Yes</td>
+<td>FEET</td>
 <td>Unit-of-measure that the size of the project is defined.</td>
 </tr>
 </tbody></table>
@@ -5027,7 +5027,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <td>construction_status</td>
 <td>String</td>
 <td>Yes</td>
-<td></td>
+<td>NOT INSTALLED</td>
 <td>Status of the project job costing breakdown. Template has a list of optional values.</td>
 </tr>
 <tr>
@@ -6686,8 +6686,8 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <tr>
 <td>delivery.country</td>
 <td>String</td>
-<td>No</td>
-<td></td>
+<td>Yes</td>
+<td>USA</td>
 <td>Country to which the products on the requisition are to be delivered. Three-character alpha abbreviation.</td>
 </tr>
 <tr>
@@ -6778,7 +6778,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <td>taxes.taxable</td>
 <td>Boolean</td>
 <td>Yes</td>
-<td>FALSE</td>
+<td>TRUE</td>
 <td>Transaction level default. Indicator defining if the products on the requisition are taxable.</td>
 </tr>
 <tr>
@@ -7093,7 +7093,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <td>items.taxes.taxable</td>
 <td>Boolean</td>
 <td>Yes</td>
-<td>FALSE</td>
+<td>TRUE</td>
 <td>Indicator defining if the product is taxable.</td>
 </tr>
 <tr>
@@ -7777,8 +7777,8 @@ The PUT payload will be processed asynchronously.
 <tr>
 <td>delivery.country</td>
 <td>String</td>
-<td>No</td>
-<td></td>
+<td>Yes</td>
+<td>USA</td>
 <td>Country to which the products on the RFQ are to be delivered. Three-character alpha abbreviation.</td>
 </tr>
 <tr>
@@ -8029,8 +8029,8 @@ The PUT payload will be processed asynchronously.
 <tr>
 <td>items.delivery.location_type</td>
 <td>String</td>
-<td>No</td>
-<td></td>
+<td>Yes</td>
+<td>JOB SITE</td>
 <td>Where the requester would like the product to be delivered. Template has a list of optional values.</td>
 </tr>
 <tr>
@@ -9299,8 +9299,8 @@ The PUT payload will be processed asynchronously.
 <tr>
 <td>delivery.country</td>
 <td>String</td>
-<td>No</td>
-<td></td>
+<td>Yes</td>
+<td>USA</td>
 <td>Country to which the products on the purchase order are to be delivered. Three-character alpha abbreviation.</td>
 </tr>
 <tr>
@@ -11898,15 +11898,15 @@ The PUT payload will be processed asynchronously.
 <tr>
 <td>items.quantity_accepted</td>
 <td>Real</td>
-<td>No</td>
-<td></td>
+<td>Yes</td>
+<td>0</td>
 <td>Quantity of the item that was accepted during the delivery receiving.</td>
 </tr>
 <tr>
 <td>items.quantity_refused</td>
 <td>Real</td>
-<td>No</td>
-<td></td>
+<td>Yes</td>
+<td>0</td>
 <td>Quantity of the item that was refused during the delivery receiving.</td>
 </tr>
 <tr>
