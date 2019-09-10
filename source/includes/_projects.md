@@ -162,7 +162,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
             "number": null,
             "name": null,
             "description": null,
-            "status": null,
+            "status": "NOT SPECIFIED",
             "dates": {
                 "contract_award": null,
                 "scheduled_start": null,
@@ -181,24 +181,24 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
                 "delivery_method": null,
                 "is_leed": false,
                 "org_defined_type": null,
-                "construction_type": null,
-                "industry_type": null,
-                "cinx_type": null,
-                "sector_type": null
+                "construction_type": "NOT SPECIFIED",
+                "industry_type": "NOT SPECIFIED",
+                "cinx_type": "PROJECT",
+                "sector_type": "NOT SPECIFIED"
             },
             "contract": {
                 "budget_amount": null,
-                "budget_currency": null
+                "budget_currency": "USD"
             },
             "taxes": {
-                "taxable": false,
+                "taxable": true,
                 "cinx_guid": null,
                 "tax_group_name": null,
                 "tax_exempt_id": null
             },
             "size_square": {
                 "value": null,
-                "uom": null
+                "uom": "FEET"
             }
         },
         "field_options": {},
@@ -370,3 +370,4 @@ This endpoint will be used to modify a project.
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-import?body=json`
+
