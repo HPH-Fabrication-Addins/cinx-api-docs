@@ -299,7 +299,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 				"category_name": null
 			},
 			"taxes": {
-				"taxable": false,
+				"taxable": true,
 				"cinx_id": null,
 				"tax_group_name": null
 			},
@@ -310,7 +310,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 			}],
 			"items": [{
 				"cinx_guid": null,
-				"quantity": null,
+				"quantity": 1,
 				"date_need_by": null,
 				"allow_substitutes": "true",
 				"hph_code": null,
@@ -359,7 +359,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 					"category_name": null
 				},
 				"taxes": {
-					"taxable": false,
+					"taxable": true,
 					"cinx_guid": null,
 					"tax_group_name": null
 				},
