@@ -175,7 +175,7 @@ The table below defines the fields output using the **compact** view option.
       "mfr": null
     },
     "mfr": {
-      "cinx_id": "org-0000-1411",
+      "cinx_org_id": "org-0000-1411",
       "name": "NIBCO, Inc.",
       "name_short": "NIBCO",
       "status": "A"
