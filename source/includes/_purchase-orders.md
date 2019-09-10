@@ -299,9 +299,9 @@ The cinx_guid will be the purchase orders’s CINX Id.
 			"description": null,
 			"terms": null,
 			"user_comment": null,
-			"procurement_status": null,
-			"workflow_status": null,
-			"erp_status": null,
+			"procurement_status": "NOT ORDERED",
+			"workflow_status": "IN-PROCESS",
+			"erp_status": "NOT SUBMITTED",
 			"allow_substitutes": true,
 			"dates": {
 				"order_by": null,
@@ -322,12 +322,12 @@ The cinx_guid will be the purchase orders’s CINX Id.
 				"city": null,
 				"state": null,
 				"postal_code": null,
-				"country": null,
+				"country": "USA",
 				"ship_via": null,
 				"fob_type": null,
 				"ship_from": null,
 				"attention": null,
-				"location_type": null,
+				"location_type": "JOB SITE",
 				"location_name": null,
 				"instructions": null
 			},
@@ -403,10 +403,10 @@ The cinx_guid will be the purchase orders’s CINX Id.
 			}],
 			"items": [{
 				"cinx_guid": null,
-				"quantity": null,
+				"quantity": 1,
 				"unit_price": null,
-				"price_uom": null,
-				"currency": null,
+				"price_uom": "E",
+				"currency": "USD",
 				"price_source_type": null,
 				"date_need_by": null,
 				"allow_substitutes": true,
@@ -419,7 +419,7 @@ The cinx_guid will be the purchase orders’s CINX Id.
 				"description": null,
 				"mfr_name": null,
 				"item_type": null,
-				"procurement_status": null,
+				"procurement_status": "NOT ORDERED",
 				"vendor": {
 					"cinx_commerce_guid": null,
 					"number": null
@@ -590,7 +590,7 @@ items.size | String | No |  | Size of the item that is being ordered.
 items.description | String | No |  | Description of the item that is being ordered.
 items.mfr_name | String | No |  | Name of the manufacturer or fabricator that produces the item that is being ordered.
 items.item_type | String | No |  | Classification name of the item that is being ordered.
-items.procurement_status | String | Yes | NOT-ORDERED | Status used to track the procurement activities of the item. Template has a list of optional values.
+items.procurement_status | String | Yes | NOT ORDERED | Status used to track the procurement activities of the item. Template has a list of optional values.
 items.vendor.cinx_commerce_guid | String (GUID Format) | No |  | CINX Commerce Id for the vendor.
 items.vendor.number | String | No |  | The public number of the vendor from whom the product is being sourced.
 items.project.cinx_guid | String | No |  | CINX Project Id.
