@@ -490,7 +490,7 @@ items.design.model_file | String | No |  | File name of the model in which the i
 items.design.drawing_number | String | No |  | Number of the drawing on which the item is located.
 items.design.drawing_name | String | No |  | Name of the drawing on which the item is located.
 items.attributes.name | String | No |  | Name of the attribute.
-items.attributes.name | String | No |  | Value of the attribute.
+items.attributes.value | String | No |  | Value of the attribute.
 
 ## Get Req Number
 ### API Endpoint - Get a New Requisition Number
