@@ -289,7 +289,7 @@ The TYPE and VALUE fields are both required. The DESCRIPTION field is optional.
 
 Processing Notes
 * To update the **value** of an existing external reference, submit the existing **type** with the revised **value**
-* To remove an external reference submit the **type** with a null or empty **value** field 
+* To remove an external reference submit the **type** with a NULL or empty string in the **value** field 
 * If a new external reference is submitted without a **type** or **value** it will not be saved
 
 ## Attributes
@@ -309,7 +309,7 @@ The TYPE and VALUE fields are both required.
 
 Processing Notes
 * To update the **value** of an existing attribute, submit the existing **type** with the revised **value**
-* To remove an attribute submit the **type** with a null or empty **value** field 
+* To remove an attribute submit the **type** with a NULL or empty string in the **value** field 
 * If a new attribute is submitted without a **type** or **value** it will not be saved
 
 ## Auto-Numbering
