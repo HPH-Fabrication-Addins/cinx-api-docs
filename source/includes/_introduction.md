@@ -245,6 +245,10 @@ The templates are accessed via the API and use a standardized response structure
 
 <img src='images/subscription21.jpg'/>
 
+<aside class="notice">
+Fields with a NULL value should be removed before creating or modifying an object. See the CINX demo site for sample code. Submitting a NULL value will over-write existing values.
+</aside>
+
 ## CINX Ids
 ### CINX Platform Unique Ids
  
@@ -275,9 +279,38 @@ The Commerce GUIDs in API responses and requests will be named **cinx_commerce_g
 
 To assist in the exchange of data between systems, CINX supports external references for most object types.
 
-A common use for an external reference is a system id from a non-CINX application. The API supports setting of these references and provides a three-field array structure:
+A common use for an external reference is a system id from a non-CINX application. The API supports setting and modifying of these references using a three-field array structure:
 
  <img src='images/cinx-ext-refs.jpg'/>
+
+<aside class="notice">
+The TYPE and VALUE fields are both required. The DESCRIPTION field is optional.
+</aside>
+
+Processing Notes
+* To update the **value** of an existing external reference, submit the existing **type** with the revised **value**
+* To remove an external reference submit the **type** with a null or empty **value** field 
+* If a new external reference is submitted without a **type** or **value** it will not be saved
+
+## Attributes
+### CINX Attributes
+
+Attributes are also used to assist in the exchange of data between systems. Similar in concept to an external reference, attributes are intended to provide API users the ability to set and retreive values relevant to another system.  
+
+In the API, attributes are used on objects that do not have external references. An important example is a BOM-ITEM.
+
+The API supports setting and modifying of attributes using a two-field array structure:
+
+ <img src='images/attribsStructure.jpg'/>
+
+<aside class="notice">
+The TYPE and VALUE fields are both required.
+</aside>
+
+Processing Notes
+* To update the **value** of an existing attribute, submit the existing **type** with the revised **value**
+* To remove an attribute submit the **type** with a null or empty **value** field 
+* If a new attribute is submitted without a **type** or **value** it will not be saved
 
 ## Auto-Numbering
 ### CINX Object Auto-Numbering 
