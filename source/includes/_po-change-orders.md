@@ -272,7 +272,8 @@ number | Limits results to a specified transaction number. | {transaction_number
 				"model_file": null,
 				"drawing_number": "P1.0",
 				"drawing_name": null
-			}
+			},
+			"attributes": []
 		}]
 	}]
 }
