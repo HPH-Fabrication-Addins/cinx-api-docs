@@ -252,6 +252,9 @@
                     <a href="#external-refs" class="toc-h2 toc-link" data-title="External Refs">External Refs</a>
                   </li>
                   <li>
+                    <a href="#attributes" class="toc-h2 toc-link" data-title="Attributes">Attributes</a>
+                  </li>
+                  <li>
                     <a href="#auto-numbering" class="toc-h2 toc-link" data-title="Auto-Numbering">Auto-Numbering</a>
                   </li>
                   <li>
@@ -1081,6 +1084,10 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <p><strong>api_calls:</strong> lists related API calls.  The url in the response is fully formed with the proper API Token and other variables.  The API calls will include the web service to POST/PUT the data and any calls that can be used to access data that can be populated in the template. </p>
 
 <p><img src='images/subscription21.jpg'/></p>
+
+<aside class="notice">
+Fields with a NULL value should be removed before creating or modifying an object. See the CINX demo site for sample code. Submitting a NULL value will over-write existing values.
+</aside>
 <h2 id='cinx-ids'>CINX Ids</h2><h3 id='cinx-platform-unique-ids'>CINX Platform Unique Ids</h3>
 <p>The CINX platform stores many Ids for different object types from different sources. For example, an item on a PO may have Ids defined by the customer, vendor, and product manufacturer. </p>
 
@@ -1105,9 +1112,35 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <h2 id='external-refs'>External Refs</h2><h3 id='cinx-external-references'>CINX External References</h3>
 <p>To assist in the exchange of data between systems, CINX supports external references for most object types.</p>
 
-<p>A common use for an external reference is a system id from a non-CINX application. The API supports setting of these references and provides a three-field array structure:</p>
+<p>A common use for an external reference is a system id from a non-CINX application. The API supports setting and modifying of these references using a three-field array structure:</p>
 
 <p><img src='images/cinx-ext-refs.jpg'/></p>
+
+<aside class="notice">
+The TYPE and VALUE fields are both required. The DESCRIPTION field is optional.
+</aside>
+
+<p>Processing Notes
+* To update the <strong>value</strong> of an existing external reference, submit the existing <strong>type</strong> with the revised <strong>value</strong>
+* To remove an external reference submit the <strong>type</strong> with a NULL or empty string in the <strong>value</strong> field 
+* If a new external reference is submitted without a <strong>type</strong> or <strong>value</strong> it will not be saved</p>
+<h2 id='attributes'>Attributes</h2><h3 id='cinx-attributes'>CINX Attributes</h3>
+<p>Attributes are also used to assist in the exchange of data between systems. Similar in concept to an external reference, attributes are intended to provide API users the ability to set and retreive values relevant to another system.  </p>
+
+<p>In the API, attributes are used on objects that do not have external references. An important example is a BOM-ITEM.</p>
+
+<p>The API supports setting and modifying of attributes using a two-field array structure:</p>
+
+<p><img src='images/attribsStructure.jpg'/></p>
+
+<aside class="notice">
+The TYPE and VALUE fields are both required.
+</aside>
+
+<p>Processing Notes
+* To update the <strong>value</strong> of an existing attribute, submit the existing <strong>type</strong> with the revised <strong>value</strong>
+* To remove an attribute submit the <strong>type</strong> with a NULL or empty string in the <strong>value</strong> field 
+* If a new attribute is submitted without a <strong>type</strong> or <strong>value</strong> it will not be saved</p>
 <h2 id='auto-numbering'>Auto-Numbering</h2><h3 id='cinx-object-auto-numbering'>CINX Object Auto-Numbering</h3>
 <p>CINX provides a subscribing company with the option of automating the numbering of common objects when new instances are created. These numbers are the <strong>public</strong> values used by the company to define the objects. These are NOT system level ids.</p>
 
@@ -6363,7 +6396,8 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
                     </span><span class="s2">"model_file"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"drawing_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
     </span><span class="p">}]</span><span class="w">
@@ -6500,7 +6534,12 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
                     </span><span class="s2">"model_file"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"drawing_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                    </span><span class="p">}]</span><span class="w">
             </span><span class="p">}]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"field_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
@@ -7145,6 +7184,20 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <td></td>
 <td>Name of the drawing on which the item is located.</td>
 </tr>
+<tr>
+<td>items.attributes.name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the attribute.</td>
+</tr>
+<tr>
+<td>items.attributes.value</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Value of the attribute.</td>
+</tr>
 </tbody></table>
 <h2 id='get-req-number'>Get Req Number</h2><h3 id='api-endpoint-get-a-new-requisition-number'>API Endpoint - Get a New Requisition Number</h3>
 <blockquote>
@@ -7470,7 +7523,8 @@ The PUT payload will be processed asynchronously.
                     </span><span class="s2">"model_file"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"drawing_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
     </span><span class="p">}]</span><span class="w">
@@ -7605,7 +7659,12 @@ The PUT payload will be processed asynchronously.
                     </span><span class="s2">"model_file"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"drawing_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                    </span><span class="p">}]</span><span class="w">
             </span><span class="p">}]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"field_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
@@ -8228,6 +8287,20 @@ The PUT payload will be processed asynchronously.
 <td>No</td>
 <td></td>
 <td>Name of the drawing on which the item is located.</td>
+</tr>
+<tr>
+<td>items.attributes.name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the attribute.</td>
+</tr>
+<tr>
+<td>items.attributes.value</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Value of the attribute.</td>
 </tr>
 </tbody></table>
 <h2 id='get-rfq-number'>Get RFQ Number</h2><h3 id='api-endpoint-get-a-new-rfq-number'>API Endpoint - Get a New RFQ Number</h3>
@@ -8917,7 +8990,8 @@ The PUT payload will be processed asynchronously.
                     </span><span class="s2">"model_file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HPHModell.rvt"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"drawing_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLB-01"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Plumbing 01"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
         </span><span class="p">}]</span><span class="w">  
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -9113,7 +9187,12 @@ The PUT payload will be processed asynchronously.
                     </span><span class="s2">"model_file"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"drawing_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                    </span><span class="p">}]</span><span class="w">
             </span><span class="p">}]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"field_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
@@ -10087,6 +10166,20 @@ The PUT payload will be processed asynchronously.
 <td></td>
 <td>Name of the drawing on which the item is located.</td>
 </tr>
+<tr>
+<td>items.attributes.name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the attribute.</td>
+</tr>
+<tr>
+<td>items.attributes.value</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Value of the attribute.</td>
+</tr>
 </tbody></table>
 <h2 id='get-po-number'>Get PO Number</h2><h3 id='api-endpoint-get-a-new-purchase-order-number'>API Endpoint - Get a New Purchase Order Number</h3>
 <blockquote>
@@ -10903,7 +10996,8 @@ The PUT payload will be processed asynchronously.
                 </span><span class="s2">"model_file"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"drawing_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P1.0"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-            </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
         </span><span class="p">}]</span><span class="w">
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -11153,7 +11247,8 @@ The PUT payload will be processed asynchronously.
             </span><span class="s2">"model_file"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"drawing_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"attibutes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h1 id='back-orders'>Back-Orders</h1><h2 id='back-order-definition'>Back-Order Definition</h2><h3 id='cinx-object-defintion-back-order'>CINX Object Defintion - Back-Order</h3>
@@ -11369,6 +11464,7 @@ The PUT payload will be processed asynchronously.
             </span><span class="s2">"drawing_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P1.0"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
         </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"attibutes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
         </span><span class="s2">"updates"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -11606,7 +11702,8 @@ The PUT payload will be processed asynchronously.
                     </span><span class="s2">"model_file"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"drawing_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P1.0"</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
     </span><span class="p">}]</span><span class="w">
@@ -11678,7 +11775,12 @@ The PUT payload will be processed asynchronously.
                 </span><span class="s2">"hazmat"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"is_hazmat"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"hazmat_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                    </span><span class="p">}]</span><span class="w">
             </span><span class="p">}]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"field_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
@@ -11985,6 +12087,20 @@ The PUT payload will be processed asynchronously.
 <td>No</td>
 <td></td>
 <td>Hazardous Material code assigned to the product.</td>
+</tr>
+<tr>
+<td>items.attributes.name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the attribute.</td>
+</tr>
+<tr>
+<td>items.attributes.value</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Value of the attribute.</td>
 </tr>
 </tbody></table>
 <h2 id='get-delivery-number'>Get Delivery Number</h2><h3 id='api-endpoint-get-a-new-delivery-number'>API Endpoint - Get a New Delivery Number</h3>
@@ -12313,7 +12429,8 @@ The PUT payload will be processed asynchronously.
                     </span><span class="s2">"tax_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"tax_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
     </span><span class="p">}]</span><span class="w">
@@ -12657,7 +12774,8 @@ The PUT payload will be processed asynchronously.
                 </span><span class="s2">"tax_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"tax_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-            </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
         </span><span class="p">}]</span><span class="w">
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
