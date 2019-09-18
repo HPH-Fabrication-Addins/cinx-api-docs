@@ -234,7 +234,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/i
 					"tax_type": null,
 					"tax_rate": 0,
 					"tax_amount": 0
-				}
+				},
+				"attributes": []
 			}
 		]
 	}]
