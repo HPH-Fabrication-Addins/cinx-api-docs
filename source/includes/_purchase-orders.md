@@ -271,7 +271,8 @@ number | Limits results to a specified transaction number. | {transaction_number
 					"model_file": "HPHModell.rvt",
 					"drawing_number": "PLB-01",
 					"drawing_name": "Plumbing 01"
-				}
+				},
+				"attributes": []
 		}]	
     }]
 }
@@ -472,7 +473,12 @@ The cinx_guid will be the purchase orders’s CINX Id.
 					"model_file": null,
 					"drawing_number": null,
 					"drawing_name": null
-				}
+				},
+				"attributes": [
+					{
+						"name": null,
+						"value": null
+					}]
 			}]
 		},
 		"field_options": {},
@@ -630,6 +636,8 @@ items.design.model_name | String | No |  | Name of the model in which the item i
 items.design.model_file | String | No |  | File name of the model in which the item is located.
 items.design.drawing_number | String | No |  | Number of the drawing on which the item is located.
 items.design.drawing_name | String | No |  | Name of the drawing on which the item is located.
+items.attributes.name | String | No |  | Name of the attribute.
+items.attributes.value | String | No |  | Value of the attribute.
 
 ## Get PO Number
 ### API Endpoint - Get a New Purchase Order Number
