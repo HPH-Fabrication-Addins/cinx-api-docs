@@ -177,7 +177,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/l
 			"model_file": null,
 			"drawing_number": null,
 			"drawing_name": null
-		}
+		},
+		"attibutes": []
 	}]
 }
 ```
