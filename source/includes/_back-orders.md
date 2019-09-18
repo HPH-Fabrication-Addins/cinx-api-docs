@@ -198,6 +198,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/b
 			"drawing_number": "P1.0",
 			"drawing_name": null
 		},
+		"attibutes": [],
 		"updates": []
 	}]
 }
