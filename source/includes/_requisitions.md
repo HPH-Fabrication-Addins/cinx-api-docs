@@ -230,7 +230,8 @@ number | Limits results to a specified transaction number. | {transaction_number
 					"model_file": null,
 					"drawing_number": null,
 					"drawing_name": null
-				}
+				},
+				"attributes": []
 			}
 		]
 	}]
@@ -372,7 +373,12 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 					"model_file": null,
 					"drawing_number": null,
 					"drawing_name": null
-				}
+				},
+				"attributes": [
+					{
+						"name": null,
+						"value": null
+					}]
 			}]
 		},
 		"field_options": {},
@@ -483,6 +489,8 @@ items.design.model_name | String | No |  | Name of the model in which the item i
 items.design.model_file | String | No |  | File name of the model in which the item is located.
 items.design.drawing_number | String | No |  | Number of the drawing on which the item is located.
 items.design.drawing_name | String | No |  | Name of the drawing on which the item is located.
+items.attributes.name | String | No |  | Name of the attribute.
+items.attributes.name | String | No |  | Value of the attribute.
 
 ## Get Req Number
 ### API Endpoint - Get a New Requisition Number
