@@ -196,7 +196,8 @@ number | Limits results to a specified transaction number. | {transaction_number
 					"model_file": null,
 					"drawing_number": "P1.0",
 					"drawing_name": null
-				}
+				},
+				"attributes": []
 			}
 		]
 	}]
@@ -274,7 +275,12 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/d
 				"hazmat": {
 					"is_hazmat": false,
 					"hazmat_code": null
-				}
+				},
+				"attributes": [
+					{
+						"name": null,
+						"value": null
+					}]
 			}]
 		},
 		"field_options": {},
@@ -336,6 +342,8 @@ items.billable_weight.weight | String | No |  | Weight of the product that could
 items.billable_weight.uom | String | No |  | Unit-of-measure of the product's billable weight.
 items.hazmat.is_hazmat | Boolean | Yes | FALSE | Indicator if the delivered product is labeled as a Hazardous Material.
 items.hazmat.hazmat_code | String | No |  | Hazardous Material code assigned to the product.
+items.attributes.name | String | No |  | Name of the attribute.
+items.attributes.value | String | No |  | Value of the attribute.
 
 ## Get Delivery Number
 ### API Endpoint - Get a New Delivery Number
