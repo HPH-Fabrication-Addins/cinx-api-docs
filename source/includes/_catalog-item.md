@@ -105,7 +105,7 @@ This endpoint will be used to get a catalog item’s information using the item'
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/item/guid/{cinx_guid}?view={view_option}&labor={labor_type}**
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/item/guid/012EK0018?view=details`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/item/guid/b023b15c-b996-11e0-b635-00137268a1bf?view=details`
 
 **OPTIONAL URL PARAMETERS**
 
