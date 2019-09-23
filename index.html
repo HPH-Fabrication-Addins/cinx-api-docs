@@ -1120,10 +1120,13 @@ Fields with a NULL value should be removed before creating or modifying an objec
 The TYPE and VALUE fields are both required. The DESCRIPTION field is optional.
 </aside>
 
-<p>Processing Notes
-* To update the <strong>value</strong> of an existing external reference, submit the existing <strong>type</strong> with the revised <strong>value</strong>
-* To remove an external reference submit the <strong>type</strong> with a NULL or empty string in the <strong>value</strong> field 
-* If a new external reference is submitted without a <strong>type</strong> or <strong>value</strong> it will not be saved</p>
+<p>Processing Notes</p>
+
+<ul>
+<li>To update the <strong>value</strong> of an existing external reference, submit the existing <strong>type</strong> with the revised <strong>value</strong></li>
+<li>To remove an external reference submit the <strong>type</strong> with a NULL or empty string in the <strong>value</strong> field </li>
+<li>If a new external reference is submitted without a <strong>type</strong> or <strong>value</strong> it will not be saved</li>
+</ul>
 <h2 id='attributes'>Attributes</h2><h3 id='cinx-attributes'>CINX Attributes</h3>
 <p>Attributes are also used to assist in the exchange of data between systems. Similar in concept to an external reference, attributes are intended to provide API users the ability to set and retreive values relevant to another system.  </p>
 
@@ -1137,10 +1140,13 @@ The TYPE and VALUE fields are both required. The DESCRIPTION field is optional.
 The TYPE and VALUE fields are both required.
 </aside>
 
-<p>Processing Notes
-* To update the <strong>value</strong> of an existing attribute, submit the existing <strong>type</strong> with the revised <strong>value</strong>
-* To remove an attribute submit the <strong>type</strong> with a NULL or empty string in the <strong>value</strong> field 
-* If a new attribute is submitted without a <strong>type</strong> or <strong>value</strong> it will not be saved</p>
+<p>Processing Notes</p>
+
+<ul>
+<li>To update the <strong>value</strong> of an existing attribute, submit the existing <strong>type</strong> with the revised <strong>value</strong></li>
+<li>To remove an attribute submit the <strong>type</strong> with a NULL or empty string in the <strong>value</strong> field </li>
+<li>If a new attribute is submitted without a <strong>type</strong> or <strong>value</strong> it will not be saved</li>
+</ul>
 <h2 id='auto-numbering'>Auto-Numbering</h2><h3 id='cinx-object-auto-numbering'>CINX Object Auto-Numbering</h3>
 <p>CINX provides a subscribing company with the option of automating the numbering of common objects when new instances are created. These numbers are the <strong>public</strong> values used by the company to define the objects. These are NOT system level ids.</p>
 
@@ -1681,7 +1687,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/item/guid/{cinx_guid}?view={view_option}&amp;labor={labor_type}</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/item/guid/012EK0018?view=details</code></p>
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/item/guid/b023b15c-b996-11e0-b635-00137268a1bf?view=details</code></p>
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
@@ -2263,9 +2269,9 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='get-phases'>Get Phases</h2><h3 id='api-endpoint-get-an-organizaiton-39-s-list-of-phases'>API Endpoint - Get an Organizaiton&#39;s List of Phases</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getJobCostPhases</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">)</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getPhases</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
     <span class="p">});</span>
@@ -2297,7 +2303,15 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/org/job-costing/phases</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/phases</code></p>
-<h2 id='get-phase-template'>Get Phase Template</h2><h3 id='api-endpoint-get-a-phase-template'>API Endpoint - Get a Phase Template</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+<h2 id='get-phase-template'>Get Phase Template</h2><h3 id='api-endpoint-get-a-phase-template'>API Endpoint - Get a Phase Template</h3><pre class="highlight javascript tab-javascript"><code><span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getPhaseTemplate</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+        <span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
     </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
         </span><span class="s2">"doc_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
@@ -2391,12 +2405,12 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="s2">`{"phases":[{"name":"</span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">","description":"</span><span class="p">${</span><span class="nx">description</span><span class="p">}</span><span class="s2">","status":"</span><span class="p">${</span><span class="nx">status</span><span class="p">}</span><span class="s2">"}]}`</span><span class="p">;</span>
-
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">putJobCostPhase</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">values</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-    <span class="p">});</span>
+<span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="c1">//phaseObject can be created based on the template retreived from cinxApi.getPhaseTemplate(cinx_api_token) call</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postPhase</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">phaseObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+            <span class="p">});</span> 
 </code></pre>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
