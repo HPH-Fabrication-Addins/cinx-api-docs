@@ -28,9 +28,9 @@ A Tax Group is a collection of tax fields defined in an accounting system that a
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
 
-cinxApi.getJobCostPhases(cinx_api_token)
+cinxApi.getPhases(cinx_api_token)
     .then(function(response) {
         console.log(response);
     });
@@ -66,6 +66,14 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/o
 
 ## Get Phase Template
 ### API Endpoint - Get a Phase Template
+```javascript
+cinxApi.getPhaseTemplate(cinx_api_token)
+        .then(function(response) {
+                this.console.log(response);
+        });
+```
+
+> The above code returns JSON structured like this:
 
 ```json
 {
@@ -118,12 +126,12 @@ var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
 
-var values = `{"phases":[{"name":"${name}","description":"${description}","status":"${status}"}]}`;
-
-cinxApi.putJobCostPhase(cinx_api_token, values)
-    .then(function(response) {
-        console.log(response);
-    });
+var isSynchronous = true;
+//phaseObject can be created based on the template retreived from cinxApi.getPhaseTemplate(cinx_api_token) call
+cinxApi.postPhase(cinx_api_token, phaseObject, isSynchronous)
+            .then(function (response) {
+            console.log(response);
+            }); 
 ```
 
 > The above code returns JSON structured like this:
