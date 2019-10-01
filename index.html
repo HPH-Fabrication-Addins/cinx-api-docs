@@ -258,6 +258,9 @@
                     <a href="#auto-numbering" class="toc-h2 toc-link" data-title="Auto-Numbering">Auto-Numbering</a>
                   </li>
                   <li>
+                    <a href="#put-post-processing" class="toc-h2 toc-link" data-title="PUT/POST Processing">PUT/POST Processing</a>
+                  </li>
+                  <li>
                     <a href="#documentation-notes" class="toc-h2 toc-link" data-title="Documentation Notes">Documentation Notes</a>
                   </li>
               </ul>
@@ -1175,6 +1178,10 @@ The TYPE and VALUE fields are both required.
 <li>Purchase Order Change Orders are numbered by appending a numeric suffix the the original PO Number.</li>
 <li>Invoices use the Vendor Invoice number</li>
 </ul>
+<h2 id='put-post-processing'>PUT/POST Processing</h2><h3 id='put-and-post-processing-options'>PUT and POST Processing Options</h3>
+<p>By default some PUT and POST operations will be processed asynchronously. This is due to the fact that some transactions could include a large volume of items which could require longer processing times. These calls will be noted on the API Documentation pages.</p>
+
+<p>If you would like to override the asynchronous default an optioinal URL parameter is provided.  Using <strong>synchronous=1</strong> in the URL will switch the processing mode to be synchronous.</p>
 <h2 id='documentation-notes'>Documentation Notes</h2><h3 id='api-documentation-web-site-formating-notes'>API Documentation Web Site Formating Notes</h3>
 <p><strong>API URL References</strong></p>
 
@@ -1185,10 +1192,6 @@ The TYPE and VALUE fields are both required.
 <li><p><strong>URL SAMPLES</strong>: Each API call definition page will also contain at least one sample. The sample will be fully formatted.<br>
 THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided only for formatting verification purposes.</p></li>
 </ul>
-
-<p><strong>Asynchronous Operations</strong></p>
-
-<p>Some PUT and POST operations will be processed asynchronously. This is due to the fact that some transactions could include a large volume of items which could require longer processing times. These calls will be noted on the API Documentation pages.</p>
 <h1 id='getting-started'>Getting Started</h1><h2 id='ping-server'>PING Server</h2><h3 id='api-endpoint-ping-cinx-api-server'>API Endpoint - PING CINX API Server</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -7253,11 +7256,29 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-req-import?body=json</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-req-import?body=json</code></p>
+<p>URL Samples: 
+  - Asynchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-req-import?body=json</code>
+  - Asynchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-req-import?body=json&amp;synchronous=1</code></p>
 
 <aside class="notice">
-The POST payload will be processed asynchronously.
+By default the POST payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
 </aside>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>synchronous</td>
+<td>Switch to have the payload processed synchronously.</td>
+<td>1</td>
+</tr>
+</tbody></table>
 <h2 id='modify-req'>Modify Req</h2><h3 id='api-endpoint-modify-a-requisition'>API Endpoint - Modify a Requisition</h3>
 <p><code>PUT</code></p>
 
