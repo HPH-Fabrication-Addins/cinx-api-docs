@@ -283,6 +283,8 @@ This endpoint will be used to get the details of a specific purchase order.  Not
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/po/{cinx_guid}**
 
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/po/8185cbd2-18c6-5cdc-b3ed-25795aabbfcc`
+
 The cinx_guid will be the purchase orders’s CINX Id.
 
 ## Get PO Template
