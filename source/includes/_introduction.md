@@ -342,6 +342,13 @@ API calls for obtaining the next number for an object are provided and documente
   - Purchase Order Change Orders are numbered by appending a numeric suffix the the original PO Number.
   - Invoices use the Vendor Invoice number
 
+## PUT/POST Processing
+### PUT and POST Processing Options
+
+By default some PUT and POST operations will be processed asynchronously. This is due to the fact that some transactions could include a large volume of items which could require longer processing times. These calls will be noted on the API Documentation pages.
+
+If you would like to override the asynchronous default an optioinal URL parameter is provided.  Using **synchronous=1** in the URL will switch the processing mode to be synchronous.
+
 
 ## Documentation Notes
 ### API Documentation Web Site Formating Notes
@@ -354,8 +361,3 @@ The API calls documented on this site will contain two URL sections to assist in
 
   - **URL SAMPLES**: Each API call definition page will also contain at least one sample. The sample will be fully formatted.  
 THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided only for formatting verification purposes.
-
-
-**Asynchronous Operations**
-
-Some PUT and POST operations will be processed asynchronously. This is due to the fact that some transactions could include a large volume of items which could require longer processing times. These calls will be noted on the API Documentation pages.
