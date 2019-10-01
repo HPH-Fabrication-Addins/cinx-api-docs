@@ -184,12 +184,12 @@ var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
 
-var values = `{"phases":[{"name":"${name}","description":"${description}","status":"${status}"}]}`;
-
-cinxApi.putJobCostPhase(cinx_api_token, values)
-    .then(function(response) {
-        console.log(response);
-    });
+var isSynchronous = true;
+//phaseObject can be created based on the template retreived from cinxApi.getPhaseTemplate(cinx_api_token) call
+cinxApi.putPhase(cinx_api_token, phaseObject, isSynchronous)
+            .then(function (response) {
+                console.log(response);
+            }); 
 ```
 
 > The above code returns JSON structured like this:
@@ -246,10 +246,10 @@ var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
 
-cinxApi.getJobCostCostCodes(cinx_api_token)
-    .then(function(response) {
-        console.log(response);
-    });
+cinxApi.getMaterialCostCodes(cinx_api_token)
+       .then(function(response) {
+            console.log(response);
+        });
 ```
 
 > The above code returns JSON structured like this:
@@ -261,7 +261,7 @@ cinxApi.getJobCostCostCodes(cinx_api_token)
         {
             "cinx_guid": "314f6a13-56b3-5c3f-b14e-10d159e4c5c0",
             "name": "101-1025",
-            "description": "Pipe Hangers",
+            "description": "W",
             "category_guid": "31d57bb1-156e-5cf2-a1ce-05b57232e643",
             "category_name": "MAT",
             "reference_id": null,
@@ -335,12 +335,12 @@ var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
 
-var values = `{"material_cost_codes":[{"name":"${name}","description":"${description}","status":"${status}"}]}`;
-
-cinxApi.putJobCostCostCode(cinx_api_token, values)
-    .then(function(response) {
-        console.log(response);
-    });
+var isSynchronous = true;
+//ccObject can be created based on the template retreived from cinxApi.getMaterialCostCodeTemplate(cinx_api_token) call
+cinxApi.postMaterialCostCode(cinx_api_token, ccObject, isSynchronous)
+       .then(function(response) {
+            console.log(response);
+        });
 ```
 
 > The above code returns JSON structured like this:
