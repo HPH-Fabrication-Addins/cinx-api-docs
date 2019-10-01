@@ -284,7 +284,7 @@ A common use for an external reference is a system id from a non-CINX applicatio
  <img src='images/cinx-ext-refs.jpg'/>
 
 <aside class="notice">
-The TYPE and VALUE fields are both required. The DESCRIPTION field is optional.
+The TYPE, DESCRIPTION and VALUE fields are all required.
 </aside>
 
 Processing Notes
