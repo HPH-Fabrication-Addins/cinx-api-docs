@@ -1120,7 +1120,7 @@ Fields with a NULL value should be removed before creating or modifying an objec
 <p><img src='images/cinx-ext-refs.jpg'/></p>
 
 <aside class="notice">
-The TYPE and VALUE fields are both required. The DESCRIPTION field is optional.
+The TYPE, DESCRIPTION and VALUE fields are all required.
 </aside>
 
 <p>Processing Notes</p>
@@ -6429,7 +6429,20 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>The cinx_guid will be the requisition’s CINX Id.</p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/req/e73c118f-1ee9-57e0-9c79-1775c1a04b81</code></p>
-<h2 id='get-req-template'>Get Req Template</h2><h3 id='api-endpoint-get-a-requisition-template'>API Endpoint - Get a Requisition Template</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+<h2 id='get-req-template'>Get Req Template</h2><h3 id='api-endpoint-get-a-requisition-template'>API Endpoint - Get a Requisition Template</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
+<span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
+
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getReqTemplate</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+    <span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
     </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
         </span><span class="s2">"doc_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
@@ -7216,7 +7229,16 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <td>Value of the attribute.</td>
 </tr>
 </tbody></table>
-<h2 id='get-req-number'>Get Req Number</h2><h3 id='api-endpoint-get-a-new-requisition-number'>API Endpoint - Get a New Requisition Number</h3>
+<h2 id='get-req-number'>Get Req Number</h2><h3 id='api-endpoint-get-a-new-requisition-number'>API Endpoint - Get a New Requisition Number</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
+<span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
+
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getReqNumber</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+    <span class="p">});</span>
+</code></pre>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
@@ -7242,7 +7264,18 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/auto-number/req</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/req</code></p>
-<h2 id='create-req'>Create Req</h2><h3 id='api-endpoint-create-a-new-requisition'>API Endpoint - Create a New Requisition</h3>
+<h2 id='create-req'>Create Req</h2><h3 id='api-endpoint-create-a-new-requisition'>API Endpoint - Create a New Requisition</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
+<span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="c1">//requisitionObject can be created based on the template retreived from cinxApi.getReqTemplate(cinx_api_token) call</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postPhase</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">requisitionObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+            <span class="p">});</span> 
+</code></pre>
 <p><code>POST</code></p>
 
 <p>This endpoint will be used to create a new requisition.</p>
@@ -8383,10 +8416,31 @@ The PUT payload will be processed asynchronously.
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-rfq-import?body=json</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-rfq-import?body=json</code></p>
+<p>URL Samples: </p>
+
+<ul>
+<li>Asynchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-rfq-import?body=json</code></li>
+<li>Synchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-rfq-import?body=json&amp;synchronous=1</code></li>
+</ul>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>synchronous</td>
+<td>Switch to have the payload processed synchronously.</td>
+<td>1</td>
+</tr>
+</tbody></table>
 
 <aside class="notice">
-The POST payload will be processed asynchronously.
+By default the POST payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
 </aside>
 <h2 id='modify-rfq'>Modify RFQ</h2><h3 id='api-endpoint-modify-an-rfq'>API Endpoint - Modify an RFQ</h3>
 <p><code>PUT</code></p>
@@ -9039,6 +9093,8 @@ The PUT payload will be processed asynchronously.
 <p>This endpoint will be used to get the details of a specific purchase order.  Note: This response will include the purchase order’s items.</p>
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/po/{cinx_guid}</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/po/8185cbd2-18c6-5cdc-b3ed-25795aabbfcc</code></p>
 
 <p>The cinx_guid will be the purchase orders’s CINX Id.</p>
 <h2 id='get-po-template'>Get PO Template</h2><h3 id='api-endpoint-get-a-purchase-order-template'>API Endpoint - Get a Purchase Order Template</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -10259,10 +10315,31 @@ The PUT payload will be processed asynchronously.
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-po-import?body=json</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-po-import?body=json</code></p>
+<p>URL Samples: </p>
+
+<ul>
+<li>Asynchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-po-import?body=json</code></li>
+<li>Synchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-po-import?body=json&amp;synchronous=1</code></li>
+</ul>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>synchronous</td>
+<td>Switch to have the payload processed synchronously.</td>
+<td>1</td>
+</tr>
+</tbody></table>
 
 <aside class="notice">
-The POST payload will be processed asynchronously.
+By default the POST payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
 </aside>
 <h2 id='modify-po'>Modify PO</h2><h3 id='api-endpoint-modify-a-purchase-order'>API Endpoint - Modify a Purchase Order</h3>
 <p><code>PUT</code></p>
@@ -12181,10 +12258,31 @@ The PUT payload will be processed asynchronously.
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-delivery-import?body=json</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-delivery-import?body=json</code></p>
+<p>URL Samples: </p>
+
+<ul>
+<li>Asynchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-delivery-import?body=json</code></li>
+<li>Synchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-delivery-import?body=json&amp;synchronous=1</code></li>
+</ul>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>synchronous</td>
+<td>Switch to have the payload processed synchronously.</td>
+<td>1</td>
+</tr>
+</tbody></table>
 
 <aside class="notice">
-The POST payload will be processed asynchronously.
+By default the POST payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
 </aside>
 <h2 id='modify-delivery'>Modify Delivery</h2><h3 id='api-endpoint-modify-a-delivery'>API Endpoint - Modify a Delivery</h3>
 <p><code>PUT</code></p>
