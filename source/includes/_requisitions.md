@@ -249,6 +249,19 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 
 ## Get Req Template
 ### API Endpoint - Get a Requisition Template
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
+
+cinxApi.getReqTemplate(cinx_api_token)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
+> The above code returns JSON structured like this:
 
 ```json
 {
@@ -495,6 +508,18 @@ items.attributes.value | String | No |  | Value of the attribute.
 ## Get Req Number
 ### API Endpoint - Get a New Requisition Number
 
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
+
+cinxApi.getReqNumber(cinx_api_token)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
 > The above code returns JSON structured like this:
 
 ```json
@@ -522,6 +547,20 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/a
 
 ## Create Req
 ### API Endpoint - Create a New Requisition
+
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
+
+var isSynchronous = true;
+//requisitionObject can be created based on the template retreived from cinxApi.getReqTemplate(cinx_api_token) call
+cinxApi.postPhase(cinx_api_token, requisitionObject, isSynchronous)
+            .then(function (response) {
+            console.log(response);
+            }); 
+```
 
 `POST`
 
