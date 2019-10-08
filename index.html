@@ -2483,7 +2483,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='get-mat-cost-codes'>Get Mat Cost Codes</h2><h3 id='api-endpoint-get-an-organization-39-s-list-of-material-cost-codes'>API Endpoint - Get an Organization&#39;s List of Material Cost Codes</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getMaterialCostCodes</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">)</span>
        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -2609,7 +2609,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='create-mat-cost-code'>Create Mat Cost Code</h2><h3 id='api-endpoint-create-a-material-cost-code'>API Endpoint - Create a Material Cost Code</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 <span class="c1">//ccObject can be created based on the template retreived from cinxApi.getMaterialCostCodeTemplate(cinx_api_token) call</span>
@@ -2622,32 +2622,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"937ddba6-f62c-55a9-83fa-323b8daedfbe"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-26 15:44:33Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"expense_category"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"is_default"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"modifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Will Stone"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USER"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"users"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"185aabe1-3487-5f59-9ad5-c577a76bd392"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORG-MATERIAL-COST-CODES"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org-0001-4030"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71f73b3a-9e60-59bb-b498-bbfc34cb14dc"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p><code>POST</code></p>
@@ -2660,11 +2635,11 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='modify-mat-cost-code'>Modify Mat Cost Code</h2><h3 id='api-endpoint-modify-a-material-cost-code'>API Endpoint - Modify a Material Cost Code</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="s2">`{"material_cost_codes":[{"name":"</span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">","description":"</span><span class="p">${</span><span class="nx">description</span><span class="p">}</span><span class="s2">","status":"</span><span class="p">${</span><span class="nx">status</span><span class="p">}</span><span class="s2">"}]}`</span><span class="p">;</span>
-
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">putJobCostCostCode</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">values</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="c1">//ccObject can be created based on the template retreived from cinxApi.getMaterialCostCodeTemplate(cinx_api_token) call</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">putMaterialCostCode</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">ccObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
     <span class="p">});</span>
@@ -2673,18 +2648,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"101-1025"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"expense_category"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"31d57bb1-156e-5cf2-a1ce-05b57232e643"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAT"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Material"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p><code>PUT</code></p>
@@ -2978,7 +2942,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='get-vendor-list'>Get Vendor List</h2><h3 id='api-endpoint-get-list-of-vendors'>API Endpoint - Get List of Vendors</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getVendors</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -3026,9 +2990,9 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='get-vendor'>Get Vendor</h2><h3 id='api-endpoint-get-a-vendor'>API Endpoint - Get a Vendor</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getVendorDetails</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">vendor_id</span><span class="p">)</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getVendorDetails</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">vendor_guid</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
     <span class="p">});</span>
@@ -3533,11 +3497,11 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='create-vendor'>Create Vendor</h2><h3 id='api-endpoint-create-a-new-vendor'>API Endpoint - Create a New Vendor</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="s2">`{"name_primary":"</span><span class="p">${</span><span class="nx">vName</span><span class="p">}</span><span class="s2">","vendor_id":"</span><span class="p">${</span><span class="nx">vID</span><span class="p">}</span><span class="s2">","vendor_status":"</span><span class="p">${</span><span class="nx">vStatus</span><span class="p">}</span><span class="s2">"}`</span><span class="p">;</span>
-
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postNewVendor</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">values</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="c1">//vendorObject can be created based on the template retreived from cinxApi.getVendorTemplate(cinx_api_token) call</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postVendor</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">vendorObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
     <span class="p">});</span>
@@ -3548,20 +3512,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
     </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORG"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"orgs"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org-0001-4246"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORG-COMMERCE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"orgs"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3dba458d-e000-5756-abde-fd81b2b52e54"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -3582,11 +3533,11 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='modify-vendor'>Modify Vendor</h2><h3 id='api-endpoint-modify-a-vendor'>API Endpoint - Modify a Vendor</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="s2">`{"name_primary":"</span><span class="p">${</span><span class="nx">vName</span><span class="p">}</span><span class="s2">","vendor_id":"</span><span class="p">${</span><span class="nx">vID</span><span class="p">}</span><span class="s2">","vendor_status":"</span><span class="p">${</span><span class="nx">vStatus</span><span class="p">}</span><span class="s2">"}`</span><span class="p">;</span>
-
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">modifyVendor</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">vendor_id</span><span class="p">,</span> <span class="nx">values</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="c1">//vendorObject can be created based on the template retreived from cinxApi.getVendorTemplate(cinx_api_token) call</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">putVendor</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">vendorObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
     <span class="p">});</span>
@@ -3597,20 +3548,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
     </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORG"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"orgs"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org-0001-4245"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORG-COMMERCE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"orgs"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"117556cd-c16b-5724-97fd-f9b644ee0b02"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -4348,7 +4286,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='get-project-list'>Get Project List</h2><h3 id='api-endpoint-get-list-of-projects'>API Endpoint - Get List of Projects</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getProjects</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -4391,9 +4329,9 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='get-project'>Get Project</h2><h3 id='api-endpoint-get-a-project'>API Endpoint - Get a Project</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getProjectDetails</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">project_id</span><span class="p">)</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getProjectDetails</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">project_guid</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
     <span class="p">});</span>
@@ -4766,11 +4704,11 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='create-project'>Create Project</h2><h3 id='api-endpoint-create-a-new-project'>API Endpoint - Create a New Project</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="s2">`{"name":"</span><span class="p">${</span><span class="nx">pName</span><span class="p">}</span><span class="s2">","description":"</span><span class="p">${</span><span class="nx">pDescription</span><span class="p">}</span><span class="s2">","number":"</span><span class="p">${</span><span class="nx">pNumber</span><span class="p">}</span><span class="s2">","status":"</span><span class="p">${</span><span class="nx">pStatus</span><span class="p">}</span><span class="s2">","dates":[{"type":"SCHEDULED START","value": "2019-06-01"},{"type":"ACTUAL START","value":"2019-06-15"}]}`</span><span class="p">;</span>
-
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postNewProject</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">values</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="c1">//projectObject can be created based on the template retreived from cinxApi.getProjectTemplate(cinx_api_token) call</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postProject</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">projectObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
     <span class="p">});</span>
@@ -4808,11 +4746,11 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='modify-project'>Modify Project</h2><h3 id='api-endpoint-modify-a-cinx-project'>API Endpoint - Modify a CINX Project</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="s2">`{"name":"</span><span class="p">${</span><span class="nx">pName</span><span class="p">}</span><span class="s2">","description":"</span><span class="p">${</span><span class="nx">pDescription</span><span class="p">}</span><span class="s2">","number":"</span><span class="p">${</span><span class="nx">pNumber</span><span class="p">}</span><span class="s2">","status":"</span><span class="p">${</span><span class="nx">pStatus</span><span class="p">}</span><span class="s2">"}`</span><span class="p">;</span>
-
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">modifyProject</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">project_id</span><span class="p">,</span> <span class="nx">values</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="c1">//projectObject can be created based on the template retreived from cinxApi.getProjectTemplate(cinx_api_token) call</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">putProject</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">projectObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
     <span class="p">});</span>
@@ -4821,16 +4759,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROJECT"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org-0001-4030"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4b4d08c7-7edf-57d2-b632-2371f8a18496"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p><code>PUT</code></p>
@@ -4892,9 +4821,9 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='get-project-job-costing'>Get Project Job Costing</h2><h3 id='api-endpoint-get-a-project-s-job-costing-list'>API Endpoint - Get a Project’s Job Costing List</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getProjectCosts</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">project_id</span><span class="p">)</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getProjectJobCosting</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">project_guid</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
     <span class="p">});</span>
@@ -5209,11 +5138,11 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='create-project-job-costing'>Create Project Job Costing</h2><h3 id='api-endpoint-create-a-project-s-phase-and-cost-code-list'>API Endpoint - Create a Project’s Phase and Cost Code List</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="s2">`{"material_cost_code":"</span><span class="p">${</span><span class="nx">pName</span><span class="p">}</span><span class="s2">","percent_complete":"</span><span class="p">${</span><span class="nx">pDescription</span><span class="p">}</span><span class="s2">","phase":"</span><span class="p">${</span><span class="nx">pNumber</span><span class="p">}</span><span class="s2">"}`</span><span class="p">;</span>
-
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">putProjectCost</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">project_id</span><span class="p">,</span> <span class="nx">values</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="c1">//projectCostObject can be created based on the template retreived from cinxApi.getProjectJobCostTemplate(cinx_api_token) call</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postProjectJobCosting</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">projectCostObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
     <span class="p">});</span>
@@ -5222,12 +5151,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-           </span><span class="err">UPDATE</span><span class="w"> </span><span class="err">CONTENT</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p><code>POST</code></p>
@@ -5244,28 +5168,13 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-job-costing-import?body=json</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-job-costing-import?body=json</code></p>
-<h2 id='modify-project-job-costing'>Modify Project Job Costing</h2><h3 id='api-endpoint-modify-a-project-s-phase-and-cost-code'>API Endpoint - Modify a Project’s Phase and Cost Code</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
-<span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
-
-<span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="s2">`{"material_cost_code":"</span><span class="p">${</span><span class="nx">pName</span><span class="p">}</span><span class="s2">","percent_complete":"</span><span class="p">${</span><span class="nx">pDescription</span><span class="p">}</span><span class="s2">","phase":"</span><span class="p">${</span><span class="nx">pNumber</span><span class="p">}</span><span class="s2">"}`</span><span class="p">;</span>
-
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">modifyProjectCost</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">project_cost_id</span><span class="p">,</span> <span class="nx">values</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-    <span class="p">});</span>
+<h2 id='modify-project-job-costing'>Modify Project Job Costing</h2><h3 id='api-endpoint-modify-a-project-s-phase-and-cost-code'>API Endpoint - Modify a Project’s Phase and Cost Code</h3><pre class="highlight javascript tab-javascript"><code>
 </code></pre>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-           </span><span class="err">UPDATE</span><span class="w"> </span><span class="err">CONTENT</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p><code>PUT</code></p>
@@ -7238,14 +7147,14 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='create-req'>Create Req</h2><h3 id='api-endpoint-create-a-new-requisition'>API Endpoint - Create a New Requisition</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 <span class="c1">//requisitionObject can be created based on the template retreived from cinxApi.getReqTemplate(cinx_api_token) call</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postPhase</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">requisitionObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postReq</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">requisitionObject</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-            <span class="p">});</span> 
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+            <span class="p">});</span>
 </code></pre>
 <p><code>POST</code></p>
 
