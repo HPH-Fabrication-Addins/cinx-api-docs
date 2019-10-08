@@ -1195,7 +1195,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h1 id='getting-started'>Getting Started</h1><h2 id='ping-server'>PING Server</h2><h3 id='api-endpoint-ping-cinx-api-server'>API Endpoint - PING CINX API Server</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">pingCinx</span><span class="p">()</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -1225,7 +1225,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='user-auth'>User Auth</h2><h3 id='api-endpoint-user-subscription-authorization'>API Endpoint - User Subscription/Authorization</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getSubscriptions</span><span class="p">()</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -2272,7 +2272,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='get-phases'>Get Phases</h2><h3 id='api-endpoint-get-an-organizaiton-39-s-list-of-phases'>API Endpoint - Get an Organizaiton&#39;s List of Phases</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getPhases</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -2406,7 +2406,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='create-phase'>Create Phase</h2><h3 id='api-endpoint-create-a-phase'>API Endpoint - Create a Phase</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 <span class="c1">//phaseObject can be created based on the template retreived from cinxApi.getPhaseTemplate(cinx_api_token) call</span>
@@ -2457,7 +2457,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <h2 id='modify-phase'>Modify Phase</h2><h3 id='api-endpoint-modify-a-phase'>API Endpoint - Modify a Phase</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 <span class="c1">//phaseObject can be created based on the template retreived from cinxApi.getPhaseTemplate(cinx_api_token) call</span>
@@ -2470,36 +2470,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"material_cost_code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"df8f4e93-3d04-5379-948a-0b3f5319cbd2"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CC1"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cost Code1"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8e441211-45ca-5c84-b34b-a93cd4cdf853"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-26 15:40:49Z"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"is_default"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"modifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Will Stone"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USER"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"users"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"185aabe1-3487-5f59-9ad5-c577a76bd392"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ORG-PHASES"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org-0001-4030"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d596b228-1b0a-5658-806c-0b5bd2f426ed"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p><code>PUT</code></p>
