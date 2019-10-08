@@ -124,7 +124,7 @@ material_cost_code_name | String | No |  | Name of the default material cost cod
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 var isSynchronous = true;
 //phaseObject can be created based on the template retreived from cinxApi.getPhaseTemplate(cinx_api_token) call
@@ -182,7 +182,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 var isSynchronous = true;
 //phaseObject can be created based on the template retreived from cinxApi.getPhaseTemplate(cinx_api_token) call
@@ -196,36 +196,7 @@ cinxApi.putPhase(cinx_api_token, phaseObject, isSynchronous)
 
 ```json
 {
-    "response": {},
-    "rows": [
-        {
-            "name": "1",
-            "description": "A",
-            "material_cost_code": {
-                "guid": "df8f4e93-3d04-5379-948a-0b3f5319cbd2",
-                "name": "CC1",
-                "description": "Cost Code1"
-            },
-            "guid": "8e441211-45ca-5c84-b34b-a93cd4cdf853",
-            "date_modified": "2019-07-26 15:40:49Z",
-            "status": "A",
-            "reference_id": null,
-            "is_default": 1,
-            "modifier": {
-                "name": "Will Stone",
-                "cinx_id": {
-                    "type": "USER",
-                    "domain": "users",
-                    "id": "185aabe1-3487-5f59-9ad5-c577a76bd392"
-                }
-            },
-            "cinx_id": {
-                "type": "ORG-PHASES",
-                "domain": "org-0001-4030",
-                "id": "d596b228-1b0a-5658-806c-0b5bd2f426ed"
-            }
-        }
-    ]
+    
 }
 ```
 `PUT`
