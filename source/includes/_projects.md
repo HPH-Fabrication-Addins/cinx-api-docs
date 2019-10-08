@@ -29,7 +29,7 @@ A CINX project is a job that is being performed for a customer/client on buildin
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 cinxApi.getProjects(cinx_api_token)
     .then(function(response) {
@@ -78,9 +78,9 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
 
-cinxApi.getProjectDetails(cinx_api_token, project_id)
+cinxApi.getProjectDetails(cinx_api_token, project_guid)
     .then(function(response) {
         console.log(response);
     });
@@ -286,11 +286,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/a
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
-var values = `{"name":"${pName}","description":"${pDescription}","number":"${pNumber}","status":"${pStatus}","dates":[{"type":"SCHEDULED START","value": "2019-06-01"},{"type":"ACTUAL START","value":"2019-06-15"}]}`;
-
-cinxApi.postNewProject(cinx_api_token, values)
+var isSynchronous = true;
+//projectObject can be created based on the template retreived from cinxApi.getProjectTemplate(cinx_api_token) call
+cinxApi.postProject(cinx_api_token, projectObject, isSynchronous)
     .then(function(response) {
         console.log(response);
     });
@@ -332,11 +332,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
-var values = `{"name":"${pName}","description":"${pDescription}","number":"${pNumber}","status":"${pStatus}"}`;
-
-cinxApi.modifyProject(cinx_api_token, project_id, values)
+var isSynchronous = true;
+//projectObject can be created based on the template retreived from cinxApi.getProjectTemplate(cinx_api_token) call
+cinxApi.putProject(cinx_api_token, projectObject, isSynchronous)
     .then(function(response) {
         console.log(response);
     });
@@ -346,16 +346,7 @@ cinxApi.modifyProject(cinx_api_token, project_id, values)
 
 ```json
 {
-    "response": {},
-    "rows": [
-        {
-            "cinx_id": {
-                "type": "PROJECT",
-                "domain": "org-0001-4030",
-                "id": "4b4d08c7-7edf-57d2-b632-2371f8a18496"
-            }
-        }
-    ]
+
 }
 ```
 `PUT`

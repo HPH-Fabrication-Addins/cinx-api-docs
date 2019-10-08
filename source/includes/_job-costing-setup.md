@@ -215,7 +215,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 cinxApi.getMaterialCostCodes(cinx_api_token)
        .then(function(response) {
@@ -304,7 +304,7 @@ category_name | String | No |  | Name of the default category assigned to the ma
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 var isSynchronous = true;
 //ccObject can be created based on the template retreived from cinxApi.getMaterialCostCodeTemplate(cinx_api_token) call
@@ -318,32 +318,7 @@ cinxApi.postMaterialCostCode(cinx_api_token, ccObject, isSynchronous)
 
 ```json
 {
-    "response": {},
-    "rows": [
-        {
-            "name": "A",
-            "description": "A",
-            "status": "A",
-            "guid": "937ddba6-f62c-55a9-83fa-323b8daedfbe",
-            "date_modified": "2019-07-26 15:44:33Z",
-            "reference_id": null,
-            "expense_category": "",
-            "is_default": 0,
-            "modifier": {
-                "name": "Will Stone",
-                "cinx_id": {
-                    "type": "USER",
-                    "domain": "users",
-                    "id": "185aabe1-3487-5f59-9ad5-c577a76bd392"
-                }
-            },
-            "cinx_id": {
-                "type": "ORG-MATERIAL-COST-CODES",
-                "domain": "org-0001-4030",
-                "id": "71f73b3a-9e60-59bb-b498-bbfc34cb14dc"
-            }
-        }
-    ]
+   
 }
 ```
 `POST`
@@ -361,11 +336,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
-var values = `{"material_cost_codes":[{"name":"${name}","description":"${description}","status":"${status}"}]}`;
-
-cinxApi.putJobCostCostCode(cinx_api_token, values)
+var isSynchronous = true;
+//ccObject can be created based on the template retreived from cinxApi.getMaterialCostCodeTemplate(cinx_api_token) call
+cinxApi.putMaterialCostCode(cinx_api_token, ccObject, isSynchronous)
     .then(function(response) {
         console.log(response);
     });
@@ -375,18 +350,7 @@ cinxApi.putJobCostCostCode(cinx_api_token, values)
 
 ```json
 {
-    "response": { },
-    "rows": [
-        {
-            "name": "101-1025",
-            "description": "W",
-            "expense_category": {
-                "guid": "31d57bb1-156e-5cf2-a1ce-05b57232e643",
-                "name": "MAT",
-                "description": "Material"
-            }
-        }
-    ]
+    
 }
 ```
 `PUT`

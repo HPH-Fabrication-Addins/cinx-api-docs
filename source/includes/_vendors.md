@@ -36,7 +36,7 @@ CINX also has the ability for a contractor to create a **Private** vendor.  This
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 cinxApi.getVendors(cinx_api_token)
     .then(function(response) {
@@ -90,9 +90,9 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/v
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
-cinxApi.getVendorDetails(cinx_api_token, vendor_id)
+cinxApi.getVendorDetails(cinx_api_token, vendor_guid)
     .then(function(response) {
         console.log(response);
     });
@@ -356,11 +356,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/a
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
-var values = `{"name_primary":"${vName}","vendor_id":"${vID}","vendor_status":"${vStatus}"}`;
-
-cinxApi.postNewVendor(cinx_api_token, values)
+var isSynchronous = true;
+//vendorObject can be created based on the template retreived from cinxApi.getVendorTemplate(cinx_api_token) call
+cinxApi.postVendor(cinx_api_token, vendorObject, isSynchronous)
     .then(function(response) {
         console.log(response);
     });
@@ -372,20 +372,7 @@ cinxApi.postNewVendor(cinx_api_token, values)
 {
     "response": {},
     "rows": [
-        {
-            "cinx_id": {
-                "type": "ORG",
-                "domain": "orgs",
-                "id": "org-0001-4246"
-            }
-        },
-        {
-            "cinx_id": {
-                "type": "ORG-COMMERCE",
-                "domain": "orgs",
-                "id": "3dba458d-e000-5756-abde-fd81b2b52e54"
-            }
-        }
+       
     ]
 }
 ```
@@ -409,11 +396,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
-var values = `{"name_primary":"${vName}","vendor_id":"${vID}","vendor_status":"${vStatus}"}`;
-
-cinxApi.modifyVendor(cinx_api_token, vendor_id, values)
+var isSynchronous = true;
+//vendorObject can be created based on the template retreived from cinxApi.getVendorTemplate(cinx_api_token) call
+cinxApi.putVendor(cinx_api_token, vendorObject, isSynchronous)
     .then(function(response) {
         console.log(response);
     });
@@ -425,20 +412,7 @@ cinxApi.modifyVendor(cinx_api_token, vendor_id, values)
 {
     "response": {},
     "rows": [
-        {
-            "cinx_id": {
-                "type": "ORG",
-                "domain": "orgs",
-                "id": "org-0001-4245"
-            }
-        },
-        {
-            "cinx_id": {
-                "type": "ORG-COMMERCE",
-                "domain": "orgs",
-                "id": "117556cd-c16b-5724-97fd-f9b644ee0b02"
-            }
-        }
+       
     ]
 }
 ```

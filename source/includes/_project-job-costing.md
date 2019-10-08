@@ -52,9 +52,9 @@ Each CINX project phase/cost code has a field to track the percent complete.
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
-cinxApi.getProjectCosts(cinx_api_token, project_id)
+cinxApi.getProjectJobCosting(cinx_api_token, project_guid)
     .then(function(response) {
         console.log(response);
     });
@@ -228,11 +228,11 @@ dates.actual_complete | Date (YYYY-MM-DD) | No |  | Date the project breakdown w
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
-var values = `{"material_cost_code":"${pName}","percent_complete":"${pDescription}","phase":"${pNumber}"}`;
-
-cinxApi.putProjectCost(cinx_api_token, project_id, values)
+var isSynchronous = true;
+//projectCostObject can be created based on the template retreived from cinxApi.getProjectJobCostTemplate(cinx_api_token) call
+cinxApi.postProjectJobCosting(cinx_api_token, projectCostObject, isSynchronous)
     .then(function(response) {
         console.log(response);
     });
@@ -242,12 +242,7 @@ cinxApi.putProjectCost(cinx_api_token, project_id, values)
 
 ```json
 {
-    "response": {},
-    "rows": [
-        {
-           UPDATE CONTENT
-        }
-    ]
+
 }
 ```
 `POST`
@@ -267,29 +262,14 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 ### API Endpoint - Modify a Project’s Phase and Cost Code
 
 ```javascript
-//Using cinx-api.js
-var cinxApi = new CinxApi();
-cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
 
-var values = `{"material_cost_code":"${pName}","percent_complete":"${pDescription}","phase":"${pNumber}"}`;
-
-cinxApi.modifyProjectCost(cinx_api_token, project_cost_id, values)
-    .then(function(response) {
-        console.log(response);
-    });
 ```
 
 > The above code returns JSON structured like this:
 
 ```json
 {
-    "response": {},
-    "rows": [
-        {
-           UPDATE CONTENT
-        }
-    ]
+
 }
 ```
 `PUT`

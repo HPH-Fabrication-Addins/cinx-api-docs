@@ -552,14 +552,14 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/a
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 var isSynchronous = true;
 //requisitionObject can be created based on the template retreived from cinxApi.getReqTemplate(cinx_api_token) call
-cinxApi.postPhase(cinx_api_token, requisitionObject, isSynchronous)
+cinxApi.postReq(cinx_api_token, requisitionObject, true)
             .then(function (response) {
-            console.log(response);
-            }); 
+                console.log(response);
+            });
 ```
 
 `POST`
