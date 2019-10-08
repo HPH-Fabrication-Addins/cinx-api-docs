@@ -28,7 +28,7 @@ A Tax Group is a collection of tax fields defined in an accounting system that a
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 cinxApi.getPhases(cinx_api_token)
     .then(function(response) {

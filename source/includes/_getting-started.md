@@ -7,7 +7,7 @@
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 cinxApi.pingCinx()
     .then(function(response) {
@@ -44,7 +44,7 @@ URL Samples: `https://api.cinx.com/2.0/ping`
 //Using cinx-api.js
 var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
-cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 cinxApi.getSubscriptions()
     .then(function(response) {
