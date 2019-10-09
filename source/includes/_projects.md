@@ -152,6 +152,20 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 ## Get Project Template
 ### API Endpoint - Get a Project Template
 
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
+
+cinxApi.getProjectTemplate(cinx_api_token)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
+> The above code returns JSON structured like this:
+
 ```json
 {
     "response": {},
@@ -253,6 +267,18 @@ size_square.uom | String | Yes | FEET | Unit-of-measure that the size of the pro
 
 ## Get Project Number
 ### API Endpoint - Get a New Project Number
+
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
+
+cinxApi.getProjectNumber(cinx_api_token)
+    .then(function(response) {
+        console.log(response);
+    });
+```
 
 > The above code returns JSON structured like this:
 
