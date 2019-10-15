@@ -1987,7 +1987,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
 
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getCatalogUpdates</span><span class="p">(</span><span class="nx">application_id</span><span class="p">,</span> <span class="nx">update_type</span><span class="p">)</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getCatalogUpdates</span><span class="p">(</span><span class="nx">application_guid</span><span class="p">,</span> <span class="nx">update_type</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
     <span class="p">});</span>
@@ -2067,7 +2067,16 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/xxx</strong></p>
 
 <p>URL Sample: <code>https://update me</code></p>
-<h2 id='download-update'>Download Update</h2><h3 id='api-endpoint-download-a-catalog-update-file'>API Endpoint – Download a Catalog Update File</h3>
+<h2 id='download-update'>Download Update</h2><h3 id='api-endpoint-download-a-catalog-update-file'>API Endpoint – Download a Catalog Update File</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
+<span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
+
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getCatalogUpdateFile</span><span class="p">(</span><span class="nx">application_guid</span><span class="p">,</span> <span class="nx">update_guid</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+    <span class="p">});</span>
+</code></pre>
 <p><code>GET</code></p>
 
 <p>This endpoint will be used to download a catalog update file. </p>
@@ -2098,7 +2107,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <span class="kd">var</span> <span class="nx">values</span> <span class="o">=</span> <span class="s2">`{"applied_date":"2019-06-21", "download_date":"2019-06-21"}`</span><span class="p">;</span>
 
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCatalogUpdateFileApplied</span><span class="p">(</span><span class="nx">application_id</span><span class="p">,</span> <span class="nx">file_id</span><span class="p">,</span> <span class="nx">values</span><span class="p">)</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCatalogUpdateFileApplied</span><span class="p">(</span><span class="nx">application_guid</span><span class="p">,</span> <span class="nx">file_guid</span><span class="p">,</span> <span class="nx">values</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
     <span class="p">});</span>
@@ -3468,7 +3477,16 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <td>Id number value.</td>
 </tr>
 </tbody></table>
-<h2 id='get-vendor-number'>Get Vendor Number</h2><h3 id='api-endpoint-get-a-new-vendor-number'>API Endpoint - Get a New Vendor Number</h3>
+<h2 id='get-vendor-number'>Get Vendor Number</h2><h3 id='api-endpoint-get-a-new-vendor-number'>API Endpoint - Get a New Vendor Number</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
+<span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
+
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getVendorNumber</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+    <span class="p">});</span>
+</code></pre>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
