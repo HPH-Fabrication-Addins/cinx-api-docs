@@ -4398,7 +4398,20 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/project/{project_guid}</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/e8c5dc6b-e95a-5009-ad89-a11520f55493</code></p>
-<h2 id='get-project-template'>Get Project Template</h2><h3 id='api-endpoint-get-a-project-template'>API Endpoint - Get a Project Template</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+<h2 id='get-project-template'>Get Project Template</h2><h3 id='api-endpoint-get-a-project-template'>API Endpoint - Get a Project Template</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
+<span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
+
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getProjectTemplate</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+    <span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
     </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
         </span><span class="s2">"doc_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
@@ -4675,7 +4688,16 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <td>Unit-of-measure that the size of the project is defined.</td>
 </tr>
 </tbody></table>
-<h2 id='get-project-number'>Get Project Number</h2><h3 id='api-endpoint-get-a-new-project-number'>API Endpoint - Get a New Project Number</h3>
+<h2 id='get-project-number'>Get Project Number</h2><h3 id='api-endpoint-get-a-new-project-number'>API Endpoint - Get a New Project Number</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
+<span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
+
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">getProjectNumber</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+    <span class="p">});</span>
+</code></pre>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
