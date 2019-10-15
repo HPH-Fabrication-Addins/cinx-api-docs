@@ -72,7 +72,7 @@ var cinxApi = new CinxApi();
 cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
 
-cinxApi.getCatalogUpdates(application_id, update_type)
+cinxApi.getCatalogUpdates(application_guid, update_type)
     .then(function(response) {
         console.log(response);
     });
@@ -155,6 +155,18 @@ URL Sample: `https://update me`
 
 ## Download Update
 ### API Endpoint – Download a Catalog Update File
+
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
+
+cinxApi.getCatalogUpdateFile(application_guid, update_guid)
+    .then(function(response) {
+        console.log(response);
+    });
+```
 `GET`
 
 This endpoint will be used to download a catalog update file. 
@@ -194,7 +206,7 @@ cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '');
 
 var values = `{"applied_date":"2019-06-21", "download_date":"2019-06-21"}`;
 
-cinxApi.setCatalogUpdateFileApplied(application_id, file_id, values)
+cinxApi.setCatalogUpdateFileApplied(application_guid, file_guid, values)
     .then(function(response) {
         console.log(response);
     });

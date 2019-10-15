@@ -325,6 +325,18 @@ id_numbers.number | String | No |  | Id number value.
 ## Get Vendor Number
 ### API Endpoint - Get a New Vendor Number
 
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
+
+cinxApi.getVendorNumber(cinx_api_token)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
 > The above code returns JSON structured like this:
 
 ```json
