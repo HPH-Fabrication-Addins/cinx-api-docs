@@ -27,6 +27,18 @@ It is important to understand that the parts on a requisition may be divided ont
 ## Get Req List
 ### API Endpoint - Get a List of Requisitions
 
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
+
+cinxApi.getReqs(cinx_api_token)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
 > The above code returns JSON structured like this:
 
 ```json
@@ -87,6 +99,18 @@ number | Limits results to a specified transaction number. | {transaction_number
 
 ## Get Req
 ### API Endpoint - Get a Requisition
+
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
+
+cinxApi.getReq(cinx_api_token, req_guid)
+    .then(function(response) {
+        console.log(response);
+    });
+```
 
 ```json
 {

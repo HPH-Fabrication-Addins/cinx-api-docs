@@ -76,6 +76,18 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/x
 ## Org Users
 ### API Enpoint – Get an Organization's List of Users
 
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
+
+cinxApi.getOrgUsers(cinx_api_token)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
 > The above code returns JSON structured like this:
 
 ```json
@@ -107,6 +119,18 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/u
 
 ## Org Locations/Addresses
 ### API Enpoint – Get an Organization's List of Locations/Addresses
+
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
+
+cinxApi.getOrgAddresses(cinx_api_token)
+    .then(function(response) {
+        console.log(response);
+    });
+```
 
 > The above code returns JSON structured like this:
 

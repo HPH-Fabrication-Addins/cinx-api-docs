@@ -364,6 +364,18 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 ## Get Categories
 ### API Endpoint - Get an Organization's List of Categories
 
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
+
+cinxApi.getCategories(cinx_api_token)
+       .then(function(response) {
+            console.log(response);
+        });
+```
+
 > The above code returns JSON structured like this:
 
 ```json
@@ -435,6 +447,32 @@ reference_id | String | No |  | Reference id field that can be used to store an 
 
 ## Create Category
 ### API Endpoint - Create a Category
+
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
+
+var isSynchronous = true;
+//cObject can be created based on the template retreived from cinxApi.getCategoryTemplate(cinx_api_token) call
+cinxApi.postCategory(cinx_api_token, cObject, isSynchronous)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+> The above code returns JSON structured like this:
+
+```json
+{
+    "response": {},
+    "rows": [
+        {
+           
+        }
+    ]
+}
+```
 `POST`
 
 This URL will be used to create a new Category in the company’s CINX job costing library.   
@@ -456,6 +494,18 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 ## Get Tax Groups
 ### API Endpoint - Get an Organization's List of Tax Groups
+
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
+
+cinxApi.getTaxGroups(cinx_api_token)
+       .then(function(response) {
+            console.log(response);
+        });
+```
 
 > The above code returns JSON structured like this:
 
@@ -532,6 +582,32 @@ reference_id | String | No |  | Reference id field that can be used to store an 
 
 ## Create Tax Group
 ### API Endpoint - Create a Job Cost Tax Group
+
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
+
+var isSynchronous = true;
+//tObject can be created based on the template retreived from cinxApi.getTaxGroupTemplate(cinx_api_token) call
+cinxApi.postTaxGroup(cinx_api_token, tObject, isSynchronous)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+> The above code returns JSON structured like this:
+
+```json
+{
+    "response": {},
+    "rows": [
+        {
+           
+        }
+    ]
+}
+```
 `POST`
 
 This URL will be used to create a new Tax Group in the company’s CINX job costing library. 

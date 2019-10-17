@@ -24,6 +24,18 @@ A CINX Delivery is created when a shipment from a vendor is received. A Delivery
 ## Get Delivery List
 ### API Endpoint - Get a List of Deliveries
 
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
+
+cinxApi.getDeliveries(cinx_api_token)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
 > The above code returns JSON structured like this:
 
 ```json
@@ -78,6 +90,20 @@ number | Limits results to a specified transaction number. | {transaction_number
   
 ## Get Delivery
 ### API Endpoint - Get a Delivery
+
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
+
+cinxApi.getDelivery(cinx_api_token, delivery_guid)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
+> The above code returns JSON structured like this:
 
 ```json
 {
@@ -375,6 +401,33 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/a
 
 ## Create Delivery
 ### API Endpoint - Create a New Delivery
+
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
+
+var isSynchronous = true;
+//dObject can be created based on the template retreived from cinxApi.getDeliveryTemplate(cinx_api_token) call
+cinxApi.postDelivery(cinx_api_token, dObject, isSynchronous)
+            .then(function (response) {
+            console.log(response);
+            }); 
+```
+
+> The above code returns JSON structured like this:
+
+```json
+{
+    "response": {},
+    "rows": [
+        {
+           
+        }
+    ]
+}
+```
 
 `POST`
 
