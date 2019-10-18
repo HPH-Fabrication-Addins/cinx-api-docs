@@ -489,6 +489,18 @@ items.attributes.value | String | No |  | Value of the attribute.
 ## Get RFQ Number
 ### API Endpoint - Get a New RFQ Number
 
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
+
+cinxApi.getRfqNumber(cinx_api_token)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
 > The above code returns JSON structured like this:
 
 ```json

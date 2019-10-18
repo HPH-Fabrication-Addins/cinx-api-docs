@@ -316,6 +316,18 @@ The cinx_guid will be the purchase orders’s CINX Id.
 ## Get PO Template
 ### API Endpoint - Get a Purchase Order Template
 
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
+
+cinxApi.getPoTemplate(cinx_api_token)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
 ```json
 {
 	"response": {},
@@ -669,6 +681,18 @@ items.attributes.value | String | No |  | Value of the attribute.
 
 ## Get PO Number
 ### API Endpoint - Get a New Purchase Order Number
+
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('http://api.dev.cinx.biz', '2.0');
+
+cinxApi.getPoNumber(cinx_api_token)
+    .then(function(response) {
+        console.log(response);
+    });
+```
 
 > The above code returns JSON structured like this:
 

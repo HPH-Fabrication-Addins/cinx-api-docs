@@ -130,6 +130,20 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 ## Get Project Job Cost Template
 ### API Endpoint - Get a Project Job Costing Breakdown Template
 
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
+
+cinxApi.getProjectJobCostTemplate(cinx_api_token)
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
+> The above code returns JSON structured like this:
+
 ```json
 {
     "response": {},

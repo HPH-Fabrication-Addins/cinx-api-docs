@@ -66,11 +66,17 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/o
 
 ## Get Phase Template
 ### API Endpoint - Get a Phase Template
+
 ```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
+
 cinxApi.getPhaseTemplate(cinx_api_token)
-        .then(function(response) {
-                this.console.log(response);
-        });
+    .then(function(response) {
+        console.log(response);
+    })
 ```
 
 > The above code returns JSON structured like this:
@@ -254,6 +260,20 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/o
 ## Get Mat Cost Code Template
 ### API Endpoint - Get a Material Cost Code Template
 
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
+
+cinxApi.getMaterialCostCodeTemplate(cinx_api_token)
+    .then(function(response) {
+        console.log(response);
+    })
+```
+
+> The above code returns JSON structured like this:
+
 ```json
 {
     "response": {},
@@ -405,6 +425,20 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/o
 ## Get Category Template
 ### API Endpoint - Get a Category Template
 
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
+
+cinxApi.getCategoryTemplate(cinx_api_token)
+    .then(function(response) {
+        console.log(response);
+    })
+```
+
+> The above code returns JSON structured like this:
+
 ```json
 {
     "response": {},
@@ -537,6 +571,20 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/o
 
 ## Get Tax Group Template
 ### API Endpoint - Get a Tax Group Template
+
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
+
+cinxApi.getTaxGroupTemplate(cinx_api_token)
+    .then(function(response) {
+        console.log(response);
+    })
+```
+
+> The above code returns JSON structured like this:
 
 ```json
 {
