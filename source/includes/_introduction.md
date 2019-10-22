@@ -274,6 +274,11 @@ The Commerce GUIDs in API responses and requests will be named **cinx_commerce_g
 
  <img src='images/cinx_commerce_guid.jpg'/>
 
+## NULL Values
+### Submitting NULL values
+
+When a NULL value is submitted in a PUT or POST request, any existing value in the data field will be replaced with a NULL. Please see the CINX demo for code to strip fields with NULL values before they are submitted to the API. However, please use caution if you implement code to remove NULLs as this is the only method for deleting an existing value.
+
 ## External Refs
 ### CINX External References
 
