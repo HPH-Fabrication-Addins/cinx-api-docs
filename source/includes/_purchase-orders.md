@@ -386,6 +386,7 @@ cinxApi.getPoTemplate(cinx_api_token)
 				"tax_group_name": null
 			},
 			"charges": [{
+				"cinx_guid": null,
 				"type": null,
 				"description": null,
 				"unit_price": null,
@@ -412,6 +413,7 @@ cinxApi.getPoTemplate(cinx_api_token)
 				}
 			}],
 			"credits": [{
+				"cinx_guid": null,
 				"type": null,
 				"description": null,
 				"unit_price": null,
@@ -583,6 +585,7 @@ taxes.tax_group_name | String | No |  | Transaction level default. Name for the 
 external_references.type | String | No |  | Non-CINX system reference type.
 external_references.description | String | No |  | Non-CINX system reference description.
 external_references.value | String | No |  | Non-CINX system reference value.
+charges.cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
 charges.type | String | No |  | Name of the type of charge. Template has a list of optional values.
 charges.description | String | No |  | Description of the charge.
 charges.unit_price | Real | No |  | Cost of the charge.
@@ -601,6 +604,7 @@ charges.taxes.tax_rate | Real | No |  | The tax rate.
 charges.taxes.tax_amount | Real | No |  | The total amount of the tax for the charge.
 charges.project.cinx_guid | String (GUID Format) | No |  | CINX Project Id.
 charges.project.number | String | No |  | The public number of the project.
+credits.cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
 credits.type | String | No |  | Name of the type of credit. Template has a list of optional values.
 credits.description | String | No |  | Description of the credit.
 credits.unit_price | Real | No |  | Amount of the credit.
