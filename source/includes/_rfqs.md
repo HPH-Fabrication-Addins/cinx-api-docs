@@ -404,10 +404,10 @@ name | String | Yes |  | Public name for the object.
 description | String | No |  | Public description for the object.
 terms | String | No |  | Transaction terms.
 user_comment | String | No |  | General comment defined by a CINX user.
-workflow_status | String | Yes | IN-PROCESS | Status used to track the workflow of the RFQ. Template has a list of optional values.
+workflow_status | String | Yes | IN-PROCESS | Status used to track the workflow of the RFQ. Field is not modifiable.
 dates.respond_by | Date (YYYY-MM-DD) | No |  | Date the requester would like the vendor to provide the quoted prices.
 dates.need_by | Date (YYYY-MM-DD) | No |  | Date the products on the RFQ need to be delivered to the specified delivery location.
-dates.submitted | Date (YYYY-MM-DD) | No |  | Date the RFQ was submitted to the vendor.
+dates.submitted | Date (YYYY-MM-DD) | No |  | Date the RFQ was submitted to the vendor. Field is not modifiable.
 vendor.cinx_commerce_guid | String (GUID Format) | No |  | CINX Commerce Id for the vendor that will receive the RFQ.
 vendor.number | String | No |  | The public number of the vendor that will receive the RFQ.
 project.cinx_guid | String (GUID Format) | No |  | CINX Project Id.
@@ -485,6 +485,10 @@ items.design.drawing_number | String | No |  | Number of the drawing on which th
 items.design.drawing_name | String | No |  | Name of the drawing on which the item is located.
 items.attributes.name | String | No |  | Name of the attribute.
 items.attributes.value | String | No |  | Value of the attribute.
+
+<aside class="notice">
+If modifying the vendor array, please submit all the desired vendors in the PUT request. 
+</aside>
 
 ## Get RFQ Number
 ### API Endpoint - Get a New RFQ Number
