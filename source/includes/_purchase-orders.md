@@ -550,8 +550,8 @@ description | String | No |  | Public description for the object.
 terms | String | No |  | Transaction terms.
 user_comment | String | No |  | General comment defined by a CINX user.
 procurement_status | String | Yes | NOT ORDERED | Status used to track the procurement activities of the purchase order. Template has a list of optional values.
-workflow_status | String | Yes | IN-PROCESS | Status used to track the workflow of the purchase order. Template has a list of optional values.
-erp_status | String | Yes | NOT SUBMITTED | Status used to track the purchase order's integration with an ERP system. Template has a list of optional values.
+workflow_status | String | Yes | IN-PROCESS | Status used to track the workflow of the purchase order. Field is not modifiable.
+erp_status | String | Yes | NOT SUBMITTED | Status used to track the purchase order's integration with an ERP system. Field is not modifiable.
 allow_substitutes | Boolean | Yes | TRUE | Transaction level default used to indicate if the items on the purchase order can be sourced from an alternate manufacturer.
 dates.order_by | Date (YYYY-MM-DD) | No |  | Date the purchase order should be submitted to the vendor.
 dates.need_by | Date (YYYY-MM-DD) | No |  | Date the products on the purchase order need to be delivered to the specified delivery location.
