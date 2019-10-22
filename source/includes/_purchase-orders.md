@@ -555,10 +555,10 @@ erp_status | String | Yes | NOT SUBMITTED | Status used to track the purchase or
 allow_substitutes | Boolean | Yes | TRUE | Transaction level default used to indicate if the items on the purchase order can be sourced from an alternate manufacturer.
 dates.order_by | Date (YYYY-MM-DD) | No |  | Date the purchase order should be submitted to the vendor.
 dates.need_by | Date (YYYY-MM-DD) | No |  | Date the products on the purchase order need to be delivered to the specified delivery location.
-vendor.cinx_commerce_guid | String (GUID Format) | No |  | CINX Commerce Id for the vendor that will receive the purchase order.
-vendor.number | String | No |  | The public number of the vendor that will receive the purchase order.
-project.cinx_guid | String (GUID Format) | No |  | CINX Project Id.
-project.number | String | No |  | The public number of the project for which the items are being purchased.
+vendor.cinx_commerce_guid | String (GUID Format) | No |  | CINX Commerce Id for the vendor that will receive the purchase order. Field is not modifiable.
+vendor.number | String | No |  | The public number of the vendor that will receive the purchase order. Field is not modifiable.
+project.cinx_guid | String (GUID Format) | No |  | CINX Project Id. Field is not modifiable.
+project.number | String | No |  | The public number of the project for which the items are being purchased. Field is not modifiable.
 delivery.address1 | String | No |  | Address 1 value for the location to which the products on the purchase order are to be delivered.
 delivery.address2 | String | No |  | Address 2 value for the location to which the products on the purchase order are to be delivered.
 delivery.address3 | String | No |  | Address 3 value for the location to which the products on the purchase order are to be delivered.
