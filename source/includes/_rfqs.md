@@ -574,10 +574,24 @@ This API endpoint will be used to modify an existing CINX RFQ.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-rfq-import?body=json**
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-rfq-import?body=json`
+URL Samples: 
+
+  - Asynchronous processing: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-rfq-import?body=json`
+  - Synchronous processing: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-rfq-import?body=json&synchronous=1`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+synchronous | Switch to have the payload processed synchronously. | 1
+
 
 <aside class="notice">
-The PUT payload will be processed asynchronously.
+Modifications in a PUT request will be processed only if the RFQ is UNLOCKED and the workflow status is IN-PROCESS.
+</aside>
+
+<aside class="notice">
+By default the POST payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
 </aside>
 
 ## Get RFQ Quotes
