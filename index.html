@@ -7901,7 +7901,7 @@ The PUT payload will be processed asynchronously.
 <td>String</td>
 <td>Yes</td>
 <td>IN-PROCESS</td>
-<td>Status used to track the workflow of the RFQ. Template has a list of optional values.</td>
+<td>Status used to track the workflow of the RFQ. Field is not modifiable.</td>
 </tr>
 <tr>
 <td>dates.respond_by</td>
@@ -7922,7 +7922,7 @@ The PUT payload will be processed asynchronously.
 <td>Date (YYYY-MM-DD)</td>
 <td>No</td>
 <td></td>
-<td>Date the RFQ was submitted to the vendor.</td>
+<td>Date the RFQ was submitted to the vendor. Field is not modifiable.</td>
 </tr>
 <tr>
 <td>vendor.cinx_commerce_guid</td>
@@ -8464,6 +8464,10 @@ The PUT payload will be processed asynchronously.
 <td>Value of the attribute.</td>
 </tr>
 </tbody></table>
+
+<aside class="notice">
+If modifying the vendor array, please submit all the desired vendors in the PUT request. 
+</aside>
 <h2 id='get-rfq-number'>Get RFQ Number</h2><h3 id='api-endpoint-get-a-new-rfq-number'>API Endpoint - Get a New RFQ Number</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -9284,6 +9288,7 @@ The PUT payload will be processed asynchronously.
                 </span><span class="s2">"tax_group_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"charges"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -9310,6 +9315,7 @@ The PUT payload will be processed asynchronously.
                 </span><span class="p">}</span><span class="w">
             </span><span class="p">}],</span><span class="w">
             </span><span class="s2">"credits"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -9499,14 +9505,14 @@ The PUT payload will be processed asynchronously.
 <td>String</td>
 <td>Yes</td>
 <td>IN-PROCESS</td>
-<td>Status used to track the workflow of the purchase order. Template has a list of optional values.</td>
+<td>Status used to track the workflow of the purchase order. Field is not modifiable.</td>
 </tr>
 <tr>
 <td>erp_status</td>
 <td>String</td>
 <td>Yes</td>
 <td>NOT SUBMITTED</td>
-<td>Status used to track the purchase order&#39;s integration with an ERP system. Template has a list of optional values.</td>
+<td>Status used to track the purchase order&#39;s integration with an ERP system. Field is not modifiable.</td>
 </tr>
 <tr>
 <td>allow_substitutes</td>
@@ -9534,28 +9540,28 @@ The PUT payload will be processed asynchronously.
 <td>String (GUID Format)</td>
 <td>No</td>
 <td></td>
-<td>CINX Commerce Id for the vendor that will receive the purchase order.</td>
+<td>CINX Commerce Id for the vendor that will receive the purchase order. Field is not modifiable.</td>
 </tr>
 <tr>
 <td>vendor.number</td>
 <td>String</td>
 <td>No</td>
 <td></td>
-<td>The public number of the vendor that will receive the purchase order.</td>
+<td>The public number of the vendor that will receive the purchase order. Field is not modifiable.</td>
 </tr>
 <tr>
 <td>project.cinx_guid</td>
 <td>String (GUID Format)</td>
 <td>No</td>
 <td></td>
-<td>CINX Project Id.</td>
+<td>CINX Project Id. Field is not modifiable.</td>
 </tr>
 <tr>
 <td>project.number</td>
 <td>String</td>
 <td>No</td>
 <td></td>
-<td>The public number of the project for which the items are being purchased.</td>
+<td>The public number of the project for which the items are being purchased. Field is not modifiable.</td>
 </tr>
 <tr>
 <td>delivery.address1</td>
@@ -9740,6 +9746,13 @@ The PUT payload will be processed asynchronously.
 <td>Non-CINX system reference value.</td>
 </tr>
 <tr>
+<td>charges.cinx_guid</td>
+<td>String (GUID Format)</td>
+<td>POST = No; Put = Yes</td>
+<td></td>
+<td>CINX System Id.</td>
+</tr>
+<tr>
 <td>charges.type</td>
 <td>String</td>
 <td>No</td>
@@ -9864,6 +9877,13 @@ The PUT payload will be processed asynchronously.
 <td>No</td>
 <td></td>
 <td>The public number of the project.</td>
+</tr>
+<tr>
+<td>credits.cinx_guid</td>
+<td>String (GUID Format)</td>
+<td>POST = No; Put = Yes</td>
+<td></td>
+<td>CINX System Id.</td>
 </tr>
 <tr>
 <td>credits.type</td>
@@ -12258,49 +12278,49 @@ The PUT payload will be processed asynchronously.
 <td>String</td>
 <td>Yes</td>
 <td>INCOMPLETE</td>
-<td>Status used to track the delivery of the products. Template has a list of optional values.</td>
+<td>Status used to track the delivery of the products. Template has a list of optional values. Field is not modifiable.</td>
 </tr>
 <tr>
 <td>purchase_order.cinx_guid</td>
 <td>String (GUID Format)</td>
 <td>No</td>
 <td></td>
-<td>CINX Id of the Purchase Order against which the delivery was made.</td>
+<td>CINX Id of the Purchase Order against which the delivery was made. Field is not modifiable.</td>
 </tr>
 <tr>
 <td>purchase_order.number</td>
 <td>String</td>
 <td>No</td>
 <td></td>
-<td>Public number for the Purchase Order.</td>
+<td>Public number for the Purchase Order. Field is not modifiable.</td>
 </tr>
 <tr>
 <td>vendor.cinx_commerce_guid</td>
 <td>String (GUID Format)</td>
 <td>No</td>
 <td></td>
-<td>CINX Commerce Id for the vendor.</td>
+<td>CINX Commerce Id for the vendor. Field is not modifiable.</td>
 </tr>
 <tr>
 <td>vendor.number</td>
 <td>String</td>
 <td>No</td>
 <td></td>
-<td>The public number of the vendor from whom the products were sourced.</td>
+<td>The public number of the vendor from whom the products were sourced. Field is not modifiable.</td>
 </tr>
 <tr>
 <td>project.cinx_guid</td>
 <td>String (GUID Format)</td>
 <td>No</td>
 <td></td>
-<td>CINX Project Id.</td>
+<td>CINX Project Id. Field is not modifiable.</td>
 </tr>
 <tr>
 <td>project.number</td>
 <td>String</td>
 <td>No</td>
 <td></td>
-<td>The public number of the project from which the items are being requested.</td>
+<td>The public number of the project from which the items are being requested. Field is not modifiable.</td>
 </tr>
 <tr>
 <td>items.cinx_po_item_guid</td>
