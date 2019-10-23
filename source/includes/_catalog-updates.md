@@ -47,7 +47,7 @@ Each CINX catalog update file has field that defines its **Type**. Catalog updat
   -  **Full** – file contains ALL items in the catalog
   -  **Custom** – file contains user-defined contents
 
-**Catalog Update File Status Filter Types**
+**Catalog Update File Consumption Status Types**
 
 Each CINX catalog update file has field that defines its **Status**. When an API call is made to retrieve catalog updates a Status filter can be submitted.  Catalog update status filters are:
 
@@ -132,6 +132,7 @@ status | Limits results based on the consumption status. | NEW, APPLIED, ALL
 
 **Notes**
 
+  - If no **status** parameter is included in the URL, the ALL option will be used by default 
   - If the url uses the **NEW** parameter and there are no new updates, the api response will have an empty **rows** array
 
 ## Download Update
@@ -176,6 +177,10 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/a
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
 type | Defines the file type to be returned. | XLS, JS
+
+**Notes**
+
+  - If no **type** parameter is included in the URL, the XLS option will be used by default 
 
 ## Mark as Applied
 ### API Endpoint – Mark Catalog/App Update File As Applied
