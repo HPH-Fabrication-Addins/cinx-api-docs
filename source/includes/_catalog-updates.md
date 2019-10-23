@@ -1,6 +1,6 @@
-# Catalog Updates
+# Catalog/App Updates
 ## Update Intro
-### CINX Catalog Update Introduction - Price Update Service
+### CINX Catalog/Application Update Introduction - Price Update Service
 
 CINX allows a company to define their own catalog of material content. This Private Catalog can contain items from the Harrison Plumbing/Mechanical database, vendor catalogs that are hosted on CINX, and items created and maintained by the company. In addition, a company can have access to CINX software partner catalogs. For example, databases used by industry estimating systems are available as CINX catalogs.
 
@@ -82,79 +82,60 @@ cinxApi.getCatalogUpdates(application_guid, update_type)
 
 ```json
 {
-    "response": {},
-    "rows": [
-        {
-            "title": "QuoteExpress Mechanical Legacy FULL 08/13/2014",
-            "type": "FULL",
-            "date_published": "2014-08-13 21:12:35",
-            "date_range_start": "2001-01-01",
-            "date_range_end": "2014-08-13",
-            "documents": [
-                {
-                    "type": "DATA-FILE",
-                    "format": "upd",
-                    "size": 80954160,
-                    "formatter": "upd"
-                },
-                {
-                    "type": "BULLETIN",
-                    "format": "xls",
-                    "size": 184320,
-                    "formatter": "xls"
-                },
-                {
-                    "type": "BULLETIN",
-                    "format": "js",
-                    "size": 197514,
-                    "formatter": "js"
-                }
-            ],
-            "transactions": null,
-            "count_of_transactions": 0,
-            "consumed": {
-                "download_date": "2019-07-23",
-                "applied_date": "2019-07-23",
-                "user": {
-                    "name": "Will Stone",
-                    "cinx_id": {
-                        "type": "USER",
-                        "domain": "users",
-                        "id": "185aabe1-3487-5f59-9ad5-c577a76bd392"
-                    }
-                },
-                "cinx_id": {
-                    "type": "SUB-CONSUMPTION",
-                    "domain": "org-0001-4030",
-                    "id": "4ceb4a6e-0513-5745-bf8b-bf9266a28561"
-                }
-            },
-            "export_id": "bulletin_20140813_161048",
-            "created_by": "User Not Found",
-            "cinx_id": {
-                "type": "SUB-UPDATE",
-                "domain": "subscriptions",
-                "id": "7b13257e-25ff-3a03-5d7d-9f4dbe30e091"
-            }
-        }
-    ]
+  "response": {},
+  "rows": [{
+    "cinx_guid": "7b13257e-25ff-3a03-5d7d-9f4dbe30e091",
+    "title": "QuoteExpress Mechanical Legacy FULL 08/13/2019",
+    "type": "FULL",
+    "published": "2019-08-13 21:12:35",
+    "range_start": "2001-01-01",
+    "range_end": "2019-08-13",
+    "documents": [{
+        "type": "DATA-FILE",
+        "format": "upd",
+        "size": 80954160
+      },
+      {
+        "type": "BULLETIN",
+        "format": "xls",
+        "size": 184320
+      },
+      {
+        "type": "BULLETIN",
+        "format": "js",
+        "size": 197514
+      }
+    ],
+    "consumed": "Yes",
+    "downloads": [{
+      "downloaded": "2019-09-23",
+      "applied": "2019-09-23",
+      "user": "Will Stone"
+    }]
+  }]
 }
 ```
 `GET`
 
-This endpoint will be used to retrieve catalog updates for a given subscription. 
+This endpoint will be used to retrieve catalog updates for a given subscription.
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/app/{app_id}/price-updates**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/app/2494df92-e855-5563-826c-05907f9cca22/price-updates?status=all`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+status | Limits results based on the consumption status. | NEW, APPLIED, ALL
+
 
 **Notes**
 
-  - If the url uses the **new** update status parameter and there are no new updates, the api response will have an empty **rows** array
-
-
-URL Pattern: **{api path}/{api_version}/sub/{api_token}/xxx**
-
-URL Sample: `https://update me`
+  - If the url uses the **NEW** parameter and there are no new updates, the api response will have an empty **rows** array
 
 ## Download Update
-### API Endpoint – Download a Catalog Update File
+### API Endpoint – Download a Catalog/App Update File
 
 ```javascript
 //Using cinx-api.js
@@ -171,32 +152,33 @@ cinxApi.getCatalogUpdateFile(application_guid, update_guid)
 
 This endpoint will be used to download a catalog update file. 
 
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/app/{app_id}/price-update/{update_guid}**
 
-URL Pattern: **{api path}/sub/{app-id-guid}/ipu/update/download/{update id}/data-file**
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/app/2494df92-e855-5563-826c-05907f9cca22/price-update/7b13257e-25ff-3a03-5d7d-9f4dbe30e091`
 
-URL Sample: `https://update me`
+**Notes**
 
+  - The update guid used in the URL is obtained from the Get Update List reponse.  It is the cinx_guid value in the reponse.
 
-<img src='images/subscription16.jpg'/>
 
 ## Download Bulletin
-### API Endpoint – Get a Catalog Update Bulletin File ONLY - Download
+### API Endpoint – Download a Catalog/App Update Bulletin File ONLY
 `GET`
 
-This will stream back the bulletin file in the requested format.
+This will stream back the update bulletin file in the requested format.
 
-URL Pattern: **{api path}/sub/{app-id-guid}/ipu/update/download/{update id}/bulletin?type={json or xls}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/app/{app_id}/price-update/{update_guid}/bulletin**
 
-URL Sample: `https://update me`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/app/2494df92-e855-5563-826c-05907f9cca22/price-update/7b13257e-25ff-3a03-5d7d-9f4dbe30e091/bulletin?type=xls`
 
-`https://api.cinx.com/sub/0d2b4b77-d706-e215-13f2-207c7e4aaee7/ipu/update/download/1ac399a6-40e8-f9e4-d5b8-d5dc709e9e1d/bulletin?type=json`
+**OPTIONAL URL PARAMETERS**
 
-`https://api.cinx.com/sub/0d2b4b77-d706-e215-13f2-207c7e4aaee7/ipu/update/download/1ac399a6-40e8-f9e4-d5b8-d5dc709e9e1d/bulletin?type=xls`
-
-<img src='images/subscription17.jpg'/>
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+type | Defines the file type to be returned. | XLS, JS
 
 ## Mark as Applied
-### API Endpoint – Mark Catalog Update File As Applied
+### API Endpoint – Mark Catalog/App Update File As Applied
 
 ```javascript
 //Using cinx-api.js
