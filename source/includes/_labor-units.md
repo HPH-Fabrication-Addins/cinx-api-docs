@@ -102,14 +102,16 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/l
 
 This endpoint will be used to get a labor unit’s information using the source's (trade organization) Id for the unit.  
 
-URL Pattern: **{api path}/{api_version}/sub/{api_token}/labor/{labor_source_reference}/{labor_source_unit_id}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/labor/{labor_source}/{labor_source_unit_id}**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/labor/mcaa/533501`
 
-**Labor Source Reference Options**
+**LABOR SOURCE URL COMPONENT OPTIONS**
 
-  - **MCAA** - MCAA
-  - **PHCC** - PHCC
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+labor_source | Defines the labor unit organization. | MCAA, PHCC
+
 
 ## Get Item Labor - HPH Code
 ### API Endpoint – Get an Item's Labor Units using an HPH Code
@@ -130,9 +132,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/i
 
 **OPTIONAL URL PARAMETERS**
 
-**Labor** 
-
-- **all**: returns all industry labor units the organization is authorized to use
-- **mcaa**: returns the MCAA labor units if the organization is authorized to access them
-- **phcc**: returns the PHCC labor units if the organization is authorized to access them
-
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+view | Defines which API response format will be returned. | details
+labor | Defines which organization's units are to be returned. | MCAA, PHCC, ALL
