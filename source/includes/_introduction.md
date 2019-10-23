@@ -368,3 +368,14 @@ The API calls documented on this site will contain two URL sections to assist in
 
   - **URL SAMPLES**: Each API call definition page will also contain at least one sample. The sample will be fully formatted.  
 THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided only for formatting verification purposes.
+
+
+## Developer Resources
+### Additional API Resources for Developers
+
+**Demo Site**
+
+A simple demo site has been created to demonstrate the implementation of commonly used API calls. The URL for the demo site is: https://www.dev.cinx.biz/cinxjs/
+
+**Javascript Library**
+A Javascript library has been created to support the implementation of the API. The library is hosted on Github and can be accessed via this URL: https://github.com/cinx-api/js-library
