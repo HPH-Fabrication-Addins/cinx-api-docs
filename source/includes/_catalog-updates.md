@@ -202,7 +202,7 @@ cinxApi.setCatalogUpdateFileApplied(application_guid, file_guid, values)
 
 This will mark the update as **Applied** and it will no longer show up in the **New** update list.
 
-URL Pattern: **{api path}/sub/{app-id-guid}/ipu/update/apply/{update id}?values={applied_date:yyyy-mm-dd,download_date:yyyy-mm-dd}**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/app/{app_id}/price-update/{update_guid}/apply**
 
 URL Sample: `https://update me`
 
