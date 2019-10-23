@@ -249,6 +249,9 @@
                     <a href="#commerce-guids" class="toc-h2 toc-link" data-title="Commerce GUIDs">Commerce GUIDs</a>
                   </li>
                   <li>
+                    <a href="#null-values" class="toc-h2 toc-link" data-title="NULL Values">NULL Values</a>
+                  </li>
+                  <li>
                     <a href="#external-refs" class="toc-h2 toc-link" data-title="External Refs">External Refs</a>
                   </li>
                   <li>
@@ -262,6 +265,9 @@
                   </li>
                   <li>
                     <a href="#documentation-notes" class="toc-h2 toc-link" data-title="Documentation Notes">Documentation Notes</a>
+                  </li>
+                  <li>
+                    <a href="#developer-resources" class="toc-h2 toc-link" data-title="Developer Resources">Developer Resources</a>
                   </li>
               </ul>
           </li>
@@ -356,7 +362,7 @@
               </ul>
           </li>
           <li>
-            <a href="#catalog-updates" class="toc-h1 toc-link" data-title="Catalog Updates">Catalog Updates</a>
+            <a href="#catalog-app-updates" class="toc-h1 toc-link" data-title="Catalog/App Updates">Catalog/App Updates</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#update-intro" class="toc-h2 toc-link" data-title="Update Intro">Update Intro</a>
@@ -1112,6 +1118,10 @@ Fields with a NULL value should be removed before creating or modifying an objec
 <p>The Commerce GUIDs in API responses and requests will be named <strong>cinx_commerce_guid</strong>.</p>
 
 <p><img src='images/cinx_commerce_guid.jpg'/></p>
+<h2 id='null-values'>NULL Values</h2><h3 id='submitting-null-values'>Submitting NULL values</h3>
+<p>When a NULL value is submitted in a PUT or POST request, any existing value in the data field will be replaced with a NULL. Please see the CINX demo for code to strip fields with NULL values before they are submitted to the API. However, please use caution if you implement code to remove NULLs as this is the only method for deleting an existing value.</p>
+
+<p>Please see the <strong>External Refs</strong> and <strong>Attributes</strong> sections below for information regarding removing values in those arrays.</p>
 <h2 id='external-refs'>External Refs</h2><h3 id='cinx-external-references'>CINX External References</h3>
 <p>To assist in the exchange of data between systems, CINX supports external references for most object types.</p>
 
@@ -1192,6 +1202,13 @@ The TYPE and VALUE fields are both required.
 <li><p><strong>URL SAMPLES</strong>: Each API call definition page will also contain at least one sample. The sample will be fully formatted.<br>
 THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided only for formatting verification purposes.</p></li>
 </ul>
+<h2 id='developer-resources'>Developer Resources</h2><h3 id='additional-api-resources-for-developers'>Additional API Resources for Developers</h3>
+<p><strong>Demo Site</strong></p>
+
+<p>A simple demo site has been created to demonstrate the implementation of commonly used API calls. The URL for the demo site is: https://www.dev.cinx.biz/cinxjs/</p>
+
+<p><strong>Javascript Library</strong>
+A Javascript library has been created to support the implementation of the API. The library is hosted on Github and can be accessed via this URL: https://github.com/cinx-api/js-library</p>
 <h1 id='getting-started'>Getting Started</h1><h2 id='ping-server'>PING Server</h2><h3 id='api-endpoint-ping-cinx-api-server'>API Endpoint - PING CINX API Server</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -1929,7 +1946,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/item/{cinx_guid}</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/item/d9863525-d926-5441-9f9c-aa47a285a19b</code></p>
-<h1 id='catalog-updates'>Catalog Updates</h1><h2 id='update-intro'>Update Intro</h2><h3 id='cinx-catalog-update-introduction-price-update-service'>CINX Catalog Update Introduction - Price Update Service</h3>
+<h1 id='catalog-app-updates'>Catalog/App Updates</h1><h2 id='update-intro'>Update Intro</h2><h3 id='cinx-catalog-application-update-introduction-price-update-service'>CINX Catalog/Application Update Introduction - Price Update Service</h3>
 <p>CINX allows a company to define their own catalog of material content. This Private Catalog can contain items from the Harrison Plumbing/Mechanical database, vendor catalogs that are hosted on CINX, and items created and maintained by the company. In addition, a company can have access to CINX software partner catalogs. For example, databases used by industry estimating systems are available as CINX catalogs.</p>
 
 <p>As part of CINX’s integration services, a company can request catalog updates formatted for industry software or develop a customized format. The company can have unlimited subscriptions to CINX Import-Export Applications.</p>
@@ -1983,7 +2000,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <li> <strong>Custom</strong> – file contains user-defined contents</li>
 </ul>
 
-<p><strong>Catalog Update File Status Filter Types</strong></p>
+<p><strong>Catalog Update File Consumption Status Types</strong></p>
 
 <p>Each CINX catalog update file has field that defines its <strong>Status</strong>. When an API call is made to retrieve catalog updates a Status filter can be submitted.  Catalog update status filters are:</p>
 
@@ -2014,78 +2031,70 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QuoteExpress Mechanical Legacy FULL 08/13/2014"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FULL"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"date_published"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-13 21:12:35"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"date_range_start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2001-01-01"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"date_range_end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-08-13"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DATA-FILE"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"upd"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">80954160</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"formatter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"upd"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BULLETIN"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xls"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">184320</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"formatter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xls"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BULLETIN"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"js"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">197514</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"formatter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"js"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="s2">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"count_of_transactions"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"consumed"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"download_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-23"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"applied_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-23"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Will Stone"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USER"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"users"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"185aabe1-3487-5f59-9ad5-c577a76bd392"</span><span class="w">
-                    </span><span class="p">}</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUB-CONSUMPTION"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org-0001-4030"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4ceb4a6e-0513-5745-bf8b-bf9266a28561"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="s2">"export_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bulletin_20140813_161048"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"User Not Found"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUB-UPDATE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subscriptions"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7b13257e-25ff-3a03-5d7d-9f4dbe30e091"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7b13257e-25ff-3a03-5d7d-9f4dbe30e091"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QuoteExpress Mechanical Legacy FULL 08/13/2019"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FULL"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"published"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-13 21:12:35"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"range_start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2001-01-01"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"range_end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-13"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DATA-FILE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"upd"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">80954160</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BULLETIN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xls"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">184320</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BULLETIN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"js"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">197514</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"consumed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"downloads"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"downloaded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-23"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"applied"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-23"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Will Stone"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p><code>GET</code></p>
 
-<p>This endpoint will be used to retrieve catalog updates for a given subscription. </p>
+<p>This endpoint will be used to retrieve catalog updates for a given subscription.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/app/{app_id}/price-updates</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/app/2494df92-e855-5563-826c-05907f9cca22/price-updates?status=all</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>Limits results based on the consumption status.</td>
+<td>NEW, APPLIED, ALL</td>
+</tr>
+</tbody></table>
 
 <p><strong>Notes</strong></p>
 
 <ul>
-<li>If the url uses the <strong>new</strong> update status parameter and there are no new updates, the api response will have an empty <strong>rows</strong> array</li>
+<li>If no <strong>status</strong> parameter is included in the URL, the ALL option will be used by default </li>
+<li>If the url uses the <strong>NEW</strong> parameter and there are no new updates, the api response will have an empty <strong>rows</strong> array</li>
 </ul>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/xxx</strong></p>
-
-<p>URL Sample: <code>https://update me</code></p>
-<h2 id='download-update'>Download Update</h2><h3 id='api-endpoint-download-a-catalog-update-file'>API Endpoint – Download a Catalog Update File</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
+<h2 id='download-update'>Download Update</h2><h3 id='api-endpoint-download-a-catalog-app-update-file'>API Endpoint – Download a Catalog/App Update File</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
@@ -2099,26 +2108,46 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p>This endpoint will be used to download a catalog update file. </p>
 
-<p>URL Pattern: <strong>{api path}/sub/{app-id-guid}/ipu/update/download/{update id}/data-file</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/app/{app_id}/price-update/{update_guid}</strong></p>
 
-<p>URL Sample: <code>https://update me</code></p>
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/app/2494df92-e855-5563-826c-05907f9cca22/price-update/7b13257e-25ff-3a03-5d7d-9f4dbe30e091</code></p>
 
-<p><img src='images/subscription16.jpg'/></p>
-<h2 id='download-bulletin'>Download Bulletin</h2><h3 id='api-endpoint-get-a-catalog-update-bulletin-file-only-download'>API Endpoint – Get a Catalog Update Bulletin File ONLY - Download</h3>
+<p><strong>Notes</strong></p>
+
+<ul>
+<li>The update guid used in the URL is obtained from the Get Update List reponse.  It is the cinx_guid value in the reponse.</li>
+</ul>
+<h2 id='download-bulletin'>Download Bulletin</h2><h3 id='api-endpoint-download-a-catalog-app-update-bulletin-file-only'>API Endpoint – Download a Catalog/App Update Bulletin File ONLY</h3>
 <p><code>GET</code></p>
 
-<p>This will stream back the bulletin file in the requested format.</p>
+<p>This will stream back the update bulletin file in the requested format.</p>
 
-<p>URL Pattern: <strong>{api path}/sub/{app-id-guid}/ipu/update/download/{update id}/bulletin?type={json or xls}</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/app/{app_id}/price-update/{update_guid}/bulletin</strong></p>
 
-<p>URL Sample: <code>https://update me</code></p>
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/app/2494df92-e855-5563-826c-05907f9cca22/price-update/7b13257e-25ff-3a03-5d7d-9f4dbe30e091/bulletin?type=xls</code></p>
 
-<p><code>https://api.cinx.com/sub/0d2b4b77-d706-e215-13f2-207c7e4aaee7/ipu/update/download/1ac399a6-40e8-f9e4-d5b8-d5dc709e9e1d/bulletin?type=json</code></p>
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><code>https://api.cinx.com/sub/0d2b4b77-d706-e215-13f2-207c7e4aaee7/ipu/update/download/1ac399a6-40e8-f9e4-d5b8-d5dc709e9e1d/bulletin?type=xls</code></p>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>Defines the file type to be returned.</td>
+<td>XLS, JS</td>
+</tr>
+</tbody></table>
 
-<p><img src='images/subscription17.jpg'/></p>
-<h2 id='mark-as-applied'>Mark as Applied</h2><h3 id='api-endpoint-mark-catalog-update-file-as-applied'>API Endpoint – Mark Catalog Update File As Applied</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
+<p><strong>Notes</strong></p>
+
+<ul>
+<li>If no <strong>type</strong> parameter is included in the URL, the XLS option will be used by default </li>
+</ul>
+<h2 id='mark-as-applied'>Mark as Applied</h2><h3 id='api-endpoint-mark-catalog-app-update-file-as-applied'>API Endpoint – Mark Catalog/App Update File As Applied</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
@@ -2134,7 +2163,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p>This will mark the update as <strong>Applied</strong> and it will no longer show up in the <strong>New</strong> update list.</p>
 
-<p>URL Pattern: <strong>{api path}/sub/{app-id-guid}/ipu/update/apply/{update id}?values={applied_date:yyyy-mm-dd,download_date:yyyy-mm-dd}</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/app/{app_id}/price-update/{update_guid}/apply</strong></p>
 
 <p>URL Sample: <code>https://update me</code></p>
 
@@ -2245,16 +2274,25 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p>This endpoint will be used to get a labor unit’s information using the source&#39;s (trade organization) Id for the unit.  </p>
 
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/labor/{labor_source_reference}/{labor_source_unit_id}</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/labor/{labor_source}/{labor_source_unit_id}</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/labor/mcaa/533501</code></p>
 
-<p><strong>Labor Source Reference Options</strong></p>
+<p><strong>LABOR SOURCE URL COMPONENT OPTIONS</strong></p>
 
-<ul>
-<li><strong>MCAA</strong> - MCAA</li>
-<li><strong>PHCC</strong> - PHCC</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>labor_source</td>
+<td>Defines the labor unit organization.</td>
+<td>MCAA, PHCC</td>
+</tr>
+</tbody></table>
 <h2 id='get-item-labor-hph-code'>Get Item Labor - HPH Code</h2><h3 id='api-endpoint-get-an-item-39-s-labor-units-using-an-hph-code'>API Endpoint – Get an Item&#39;s Labor Units using an HPH Code</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -2271,13 +2309,24 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p><strong>Labor</strong> </p>
-
-<ul>
-<li><strong>all</strong>: returns all industry labor units the organization is authorized to use</li>
-<li><strong>mcaa</strong>: returns the MCAA labor units if the organization is authorized to access them</li>
-<li><strong>phcc</strong>: returns the PHCC labor units if the organization is authorized to access them</li>
-</ul>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>view</td>
+<td>Defines which API response format will be returned.</td>
+<td>details</td>
+</tr>
+<tr>
+<td>labor</td>
+<td>Defines which organization&#39;s units are to be returned.</td>
+<td>MCAA, PHCC, ALL</td>
+</tr>
+</tbody></table>
 <h1 id='job-costing-setup'>Job Costing Setup</h1><h2 id='job-costing-intro'>Job Costing Intro</h2><h3 id='cinx-job-costing-introduction'>CINX Job Costing Introduction</h3>
 <p>To allow for the proper reporting of project items and integration of transactions with contractor accounting systems, CINX has the ability for a company to define its job costing attributes. CINX supports the following job cost information types:</p>
 
@@ -2486,6 +2535,22 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-phase-import?body=json</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-phase-import?body=json</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+</tbody></table>
 <h2 id='modify-phase'>Modify Phase</h2><h3 id='api-endpoint-modify-a-phase'>API Endpoint - Modify a Phase</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -2512,6 +2577,22 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-phase-import?body=json</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-phase-import?body=json</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+</tbody></table>
 <h2 id='get-mat-cost-codes'>Get Mat Cost Codes</h2><h3 id='api-endpoint-get-an-organization-39-s-list-of-material-cost-codes'>API Endpoint - Get an Organization&#39;s List of Material Cost Codes</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -2677,6 +2758,22 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-material-cost-code-import?body=json</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-material-cost-code-import?body=json</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+</tbody></table>
 <h2 id='modify-mat-cost-code'>Modify Mat Cost Code</h2><h3 id='api-endpoint-modify-a-material-cost-code'>API Endpoint - Modify a Material Cost Code</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -2703,6 +2800,22 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-material-cost-code-import?body=json</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-material-cost-code-import?body=json</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+</tbody></table>
 <h2 id='get-categories'>Get Categories</h2><h3 id='api-endpoint-get-an-organization-39-s-list-of-categories'>API Endpoint - Get an Organization&#39;s List of Categories</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -2857,6 +2970,22 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-category-import?body=json</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-category-import?body=json</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+</tbody></table>
 <h2 id='modify-category'>Modify Category</h2><h3 id='api-endpoint-modify-a-job-cost-category'>API Endpoint - Modify a Job Cost Category</h3>
 <p><code>PUT</code></p>
 
@@ -2865,6 +2994,22 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-category-import?body=json</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-category-import?body=json</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+</tbody></table>
 <h2 id='get-tax-groups'>Get Tax Groups</h2><h3 id='api-endpoint-get-an-organization-39-s-list-of-tax-groups'>API Endpoint - Get an Organization&#39;s List of Tax Groups</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -3036,6 +3181,22 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-tax-group-import?body=json</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-tax-group-import?body=json</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+</tbody></table>
 <h2 id='modify-tax-group'>Modify Tax Group</h2><h3 id='api-endpoint-modify-a-job-cost-tax-group'>API Endpoint - Modify a Job Cost Tax Group</h3>
 <p><code>PUT</code></p>
 
@@ -3044,6 +3205,22 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-tax-group-import?body=json</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-tax-group-import?body=json</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+</tbody></table>
 <h1 id='vendors'>Vendors</h1><h2 id='vendor-definition'>Vendor Definition</h2><h3 id='cinx-object-defintion-vendor'>CINX Object Defintion - Vendor</h3>
 <p>Vendor is a generic term that refers to any organization that sells/distributes products or services that are consumed by a customer. Vendors refer to different organization types within the construction vertical market.</p>
 
@@ -3687,6 +3864,22 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-vendor-import?body=json</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-vendor-import?body=json</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+</tbody></table>
 <h2 id='modify-vendor'>Modify Vendor</h2><h3 id='api-endpoint-modify-a-vendor'>API Endpoint - Modify a Vendor</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -3723,6 +3916,22 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-vendor-import?body=json</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-vendor-import?body=json</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+</tbody></table>
 <h1 id='vendor-transactions'>Vendor Transactions</h1><h2 id='get-vendor-rfqs'>Get Vendor RFQs</h2><h3 id='api-endpoint-get-a-list-of-rfqs-submitted-to-a-vendor'>API Endpoint - Get a List of RFQs Submitted to a Vendor</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -4922,6 +5131,22 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-import?body=json</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-import?body=json</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+</tbody></table>
 <h2 id='modify-project'>Modify Project</h2><h3 id='api-endpoint-modify-a-cinx-project'>API Endpoint - Modify a CINX Project</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -4955,6 +5180,22 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-import?body=json</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-import?body=json</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+</tbody></table>
 <h1 id='project-job-costing'>Project Job Costing</h1><h2 id='job-cost-intro'>Job Cost Intro</h2><h3 id='cinx-project-job-costing-introduction'>CINX Project Job Costing Introduction</h3>
 <p>To allow for the proper reporting of project items and integration of transactions with contractor accounting systems, CINX has the ability for a company to define their job costing attributes or each project. </p>
 
@@ -5360,6 +5601,22 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-job-costing-import?body=json</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-job-costing-import?body=json</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+</tbody></table>
 <h2 id='modify-project-job-costing'>Modify Project Job Costing</h2><h3 id='api-endpoint-modify-a-project-s-phase-and-cost-code'>API Endpoint - Modify a Project’s Phase and Cost Code</h3><pre class="highlight javascript tab-javascript"><code>
 </code></pre>
 <blockquote>
@@ -5383,6 +5640,22 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-job-costing-import?body=json</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-job-costing-import?body=json</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+</tbody></table>
 <h1 id='project-transactions'>Project Transactions</h1><h2 id='get-project-reqs'>Get Project Reqs</h2><h3 id='api-endpoint-get-a-list-of-requisitions-for-a-project'>API Endpoint - Get a List of Requisitions for a Project</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -7396,6 +7669,11 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 </tr>
 </thead><tbody>
 <tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+<tr>
 <td>synchronous</td>
 <td>Switch to have the payload processed synchronously.</td>
 <td>1</td>
@@ -8536,6 +8814,11 @@ If modifying the vendor array, please submit all the desired vendors in the PUT 
 </tr>
 </thead><tbody>
 <tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+<tr>
 <td>synchronous</td>
 <td>Switch to have the payload processed synchronously.</td>
 <td>1</td>
@@ -8559,10 +8842,35 @@ By default the POST payload will be processed asynchronously.  See the optional 
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-rfq-import?body=json</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-rfq-import?body=json</code></p>
+<p>URL Samples: </p>
+
+<ul>
+<li>Asynchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-rfq-import?body=json</code></li>
+<li>Synchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-rfq-import?body=json&amp;synchronous=1</code></li>
+</ul>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>synchronous</td>
+<td>Switch to have the payload processed synchronously.</td>
+<td>1</td>
+</tr>
+</tbody></table>
 
 <aside class="notice">
-The PUT payload will be processed asynchronously.
+Modifications in a PUT request will be processed only if the RFQ is UNLOCKED and the workflow status is IN-PROCESS.
+</aside>
+
+<aside class="notice">
+By default the POST payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
 </aside>
 <h2 id='get-rfq-quotes'>Get RFQ Quotes</h2><h3 id='api-endpoint-get-a-list-of-quotes-for-an-rfq'>API Endpoint - Get a List of Quotes for an RFQ</h3>
 <blockquote>
@@ -10513,6 +10821,11 @@ The PUT payload will be processed asynchronously.
 <th>Value Type or Options</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
 <tr>
 <td>synchronous</td>
 <td>Switch to have the payload processed synchronously.</td>
@@ -12523,6 +12836,11 @@ The PUT payload will be processed asynchronously.
 <th>Value Type or Options</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
 <tr>
 <td>synchronous</td>
 <td>Switch to have the payload processed synchronously.</td>
