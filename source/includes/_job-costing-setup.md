@@ -180,6 +180,11 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-o
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-phase-import?body=json`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+body | Defines the content type contained in the payload | json
 
 ## Modify Phase
 ### API Endpoint - Modify a Phase 
@@ -213,6 +218,11 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-o
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-phase-import?body=json`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+body | Defines the content type contained in the payload | json
 
 ## Get Mat Cost Codes
 ### API Endpoint - Get an Organization's List of Material Cost Codes
@@ -349,6 +359,12 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-m
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-material-cost-code-import?body=json`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+body | Defines the content type contained in the payload | json
+
 ## Modify Mat Cost Code
 ### API Endpoint - Modify a Material Cost Code
 
@@ -380,6 +396,12 @@ This URL will be used to modify an existing Cost Code in the company’s CINX jo
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-material-cost-code-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-material-cost-code-import?body=json`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+body | Defines the content type contained in the payload | json
 
 ## Get Categories
 ### API Endpoint - Get an Organization's List of Categories
@@ -515,6 +537,12 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-o
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-category-import?body=json`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+body | Defines the content type contained in the payload | json
+
 ## Modify Category
 ### API Endpoint - Modify a Job Cost Category
 `PUT`
@@ -525,6 +553,11 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-o
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-category-import?body=json`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+body | Defines the content type contained in the payload | json
 
 ## Get Tax Groups
 ### API Endpoint - Get an Organization's List of Tax Groups
@@ -664,7 +697,11 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-o
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-tax-group-import?body=json`
 
+**OPTIONAL URL PARAMETERS**
 
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+body | Defines the content type contained in the payload | json
 
 ## Modify Tax Group
 ### API Endpoint - Modify a Job Cost Tax Group
@@ -675,3 +712,9 @@ This URL will be used to modify an existing Tax Group in the company’s CINX jo
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-tax-group-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-tax-group-import?body=json`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+body | Defines the content type contained in the payload | json

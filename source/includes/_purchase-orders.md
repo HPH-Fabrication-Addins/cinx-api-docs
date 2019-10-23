@@ -772,6 +772,7 @@ URL Samples:
 
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
+body | Defines the content type contained in the payload | json
 synchronous | Switch to have the payload processed synchronously. | 1
 
 <aside class="notice">

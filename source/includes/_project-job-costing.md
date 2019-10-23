@@ -272,6 +272,12 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-p
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-job-costing-import?body=json`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+body | Defines the content type contained in the payload | json
+
 ## Modify Project Job Costing
 ### API Endpoint - Modify a Project’s Phase and Cost Code
 
@@ -298,3 +304,9 @@ This endpoint will be used to modify a project’s phase and cost code attribute
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-job-costing-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-job-costing-import?body=json`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+body | Defines the content type contained in the payload | json
