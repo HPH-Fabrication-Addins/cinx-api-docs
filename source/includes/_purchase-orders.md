@@ -1100,14 +1100,3 @@ Parameter Name | Description | Value Type or Options
 delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
 project | Limits results to a single project. | {cinx_project_id}
 vendor | Limits results to a single vendor. | {organization's vendor number}
-
-## ERP Status Update
-### API Endpoint - Update a Purchase Order's ERP Status
-
-`PUT`
-
-This API call will be used to modify the erp status for a purchase order in CINX.
-
-URL Pattern: **{api path}/{api_version}/sub/{api_token}/po/{cinx_guid/erp/applied**
-
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/po/a9863525-d926-5441-9f9c-aa47a285a19b/erp/applied`
