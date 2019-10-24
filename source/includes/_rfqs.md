@@ -592,7 +592,7 @@ Modifications in a PUT request will be processed only if the RFQ is UNLOCKED and
 </aside>
 
 <aside class="notice">
-By default the POST payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
+By default the PUT payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
 </aside>
 
 ## Get RFQ Quotes
