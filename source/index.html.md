@@ -32,7 +32,6 @@ includes:
   - deliveries
   - invoices
   - returns
-  - alerts
   - additional-info
 
 
