@@ -203,17 +203,3 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/b
 	}]
 }
 ```
-
-## Get Back-Order Upd Template
-### API Endpoint - Get a Back-Order Update Template
-
-`GET`
-
-This endpoint will be used to get a CINX Template for a updating a back-ordered item.
-
-URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/back-order**
-
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/back-order`
-
-
-The table below defines the input fields within the template.
