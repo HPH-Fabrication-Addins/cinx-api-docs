@@ -110,7 +110,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/l
 
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
-labor_source | Defines the labor unit organization. | MCAA, PHCC
+labor_source | Defines the labor unit organization. | mcaa, phcc
 
 
 ## Get Item Labor - HPH Code
@@ -135,4 +135,4 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/i
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
 view | Defines which API response format will be returned. | details
-labor | Defines which organization's units are to be returned. | MCAA, PHCC, ALL
+labor | Defines which organization's units are to be returned. | mcaa, phcc, all
