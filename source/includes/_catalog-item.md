@@ -51,6 +51,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/i
 
 **OPTIONAL URL PARAMETERS**
 
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+view | Defines the level of content in the reponse. | compact, details
+labor | Defines the type of labor units returned. | mcaa, phcc, all
+
 **View** 
 
 - **compact**: returns a small set of item information fields. This is the default view if one is not specified. Please see [Compact View](#item-view-compact) for a definition of the output.
@@ -80,6 +85,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/i
 
 **OPTIONAL URL PARAMETERS**
 
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+view | Defines the level of content in the reponse. | compact, details
+labor | Defines the type of labor units returned. | mcaa, phcc, all
+
 **View** 
 
 - **compact**: returns a small set of item information fields. This is the default view if one is not specified. Please see [Compact View](#item-view-compact) for a definition of the output.
@@ -108,6 +118,11 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/item/guid/{cinx_guid}?vi
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/item/guid/b023b15c-b996-11e0-b635-00137268a1bf?view=details`
 
 **OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+view | Defines the level of content in the reponse. | compact, details
+labor | Defines the type of labor units returned. | mcaa, phcc, all
 
 **View** 
 
