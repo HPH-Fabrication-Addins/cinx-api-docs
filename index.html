@@ -344,21 +344,6 @@
                   <li>
                     <a href="#item-view-details" class="toc-h2 toc-link" data-title="Item View - Details">Item View - Details</a>
                   </li>
-                  <li>
-                    <a href="#create-item-hph-code" class="toc-h2 toc-link" data-title="Create Item - HPH Code">Create Item - HPH Code</a>
-                  </li>
-                  <li>
-                    <a href="#get-item-template" class="toc-h2 toc-link" data-title="Get Item Template">Get Item Template</a>
-                  </li>
-                  <li>
-                    <a href="#create-item" class="toc-h2 toc-link" data-title="Create Item">Create Item</a>
-                  </li>
-                  <li>
-                    <a href="#modify-item" class="toc-h2 toc-link" data-title="Modify Item">Modify Item</a>
-                  </li>
-                  <li>
-                    <a href="#delete-item" class="toc-h2 toc-link" data-title="Delete Item">Delete Item</a>
-                  </li>
               </ul>
           </li>
           <li>
@@ -698,9 +683,6 @@
                   <li>
                     <a href="#get-po-back-orders" class="toc-h2 toc-link" data-title="Get PO Back-Orders">Get PO Back-Orders</a>
                   </li>
-                  <li>
-                    <a href="#erp-status-update" class="toc-h2 toc-link" data-title="ERP Status Update">ERP Status Update</a>
-                  </li>
               </ul>
           </li>
           <li>
@@ -714,15 +696,6 @@
                   </li>
                   <li>
                     <a href="#get-po-co" class="toc-h2 toc-link" data-title="Get PO CO">Get PO CO</a>
-                  </li>
-                  <li>
-                    <a href="#get-po-co-template" class="toc-h2 toc-link" data-title="Get PO CO Template">Get PO CO Template</a>
-                  </li>
-                  <li>
-                    <a href="#create-po-co" class="toc-h2 toc-link" data-title="Create PO CO">Create PO CO</a>
-                  </li>
-                  <li>
-                    <a href="#modify-po-co" class="toc-h2 toc-link" data-title="Modify PO CO">Modify PO CO</a>
                   </li>
               </ul>
           </li>
@@ -751,9 +724,6 @@
                   </li>
                   <li>
                     <a href="#get-back-order" class="toc-h2 toc-link" data-title="Get Back-Order">Get Back-Order</a>
-                  </li>
-                  <li>
-                    <a href="#get-back-order-upd-template" class="toc-h2 toc-link" data-title="Get Back-Order Upd Template">Get Back-Order Upd Template</a>
                   </li>
               </ul>
           </li>
@@ -798,12 +768,6 @@
                   <li>
                     <a href="#get-invoice-template" class="toc-h2 toc-link" data-title="Get Invoice Template">Get Invoice Template</a>
                   </li>
-                  <li>
-                    <a href="#create-invoice" class="toc-h2 toc-link" data-title="Create Invoice">Create Invoice</a>
-                  </li>
-                  <li>
-                    <a href="#modify-invoice" class="toc-h2 toc-link" data-title="Modify Invoice">Modify Invoice</a>
-                  </li>
               </ul>
           </li>
           <li>
@@ -823,23 +787,6 @@
                   </li>
                   <li>
                     <a href="#get-return-number" class="toc-h2 toc-link" data-title="Get Return Number">Get Return Number</a>
-                  </li>
-                  <li>
-                    <a href="#create-return" class="toc-h2 toc-link" data-title="Create Return">Create Return</a>
-                  </li>
-                  <li>
-                    <a href="#modify-return" class="toc-h2 toc-link" data-title="Modify Return">Modify Return</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#alerts" class="toc-h1 toc-link" data-title="Alerts">Alerts</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#get-alerts" class="toc-h2 toc-link" data-title="Get Alerts">Get Alerts</a>
-                  </li>
-                  <li>
-                    <a href="#modify-alerts" class="toc-h2 toc-link" data-title="Modify Alerts">Modify Alerts</a>
                   </li>
               </ul>
           </li>
@@ -1669,6 +1616,25 @@ A Javascript library has been created to support the implementation of the API. 
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>view</td>
+<td>Defines the level of content in the reponse.</td>
+<td>compact, details</td>
+</tr>
+<tr>
+<td>labor</td>
+<td>Defines the type of labor units returned.</td>
+<td>mcaa, phcc, all</td>
+</tr>
+</tbody></table>
+
 <p><strong>View</strong> </p>
 
 <ul>
@@ -1699,6 +1665,25 @@ A Javascript library has been created to support the implementation of the API. 
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>view</td>
+<td>Defines the level of content in the reponse.</td>
+<td>compact, details</td>
+</tr>
+<tr>
+<td>labor</td>
+<td>Defines the type of labor units returned.</td>
+<td>mcaa, phcc, all</td>
+</tr>
+</tbody></table>
+
 <p><strong>View</strong> </p>
 
 <ul>
@@ -1728,6 +1713,25 @@ A Javascript library has been created to support the implementation of the API. 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/item/guid/b023b15c-b996-11e0-b635-00137268a1bf?view=details</code></p>
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>view</td>
+<td>Defines the level of content in the reponse.</td>
+<td>compact, details</td>
+</tr>
+<tr>
+<td>labor</td>
+<td>Defines the type of labor units returned.</td>
+<td>mcaa, phcc, all</td>
+</tr>
+</tbody></table>
 
 <p><strong>View</strong> </p>
 
@@ -1858,94 +1862,6 @@ A Javascript library has been created to support the implementation of the API. 
 <p>When requesting a catalog from the CINX API there are two view options. </p>
 
 <p>The table below defines the fields output using the <strong>details</strong> view option.</p>
-<h2 id='create-item-hph-code'>Create Item - HPH Code</h2><h3 id='api-endpoint-add-a-new-catalog-item-using-an-hph-code'>API Endpoint – Add a New Catalog Item using an HPH Code</h3>
-<blockquote>
-<p>The above code returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-             </span><span class="err">UPDATE</span><span class="w"> </span><span class="err">CONTENTS</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p><code>POST</code></p>
-
-<p>This endpoint will be used to submit an HPH Item Code for an item and have it added to an organization&#39;s private catalog. </p>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/item/add?hph-code={hph-code}</strong></p>
-
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/item/add?hph-code=001BS0200F</code></p>
-<h2 id='get-item-template'>Get Item Template</h2><h3 id='api-endpoint-get-a-catalog-item-template'>API Endpoint - Get a Catalog Item Template</h3>
-<p><code>GET</code></p>
-
-<p>This request will be used to get a CINX Template for a catalog item.</p>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/item</strong></p>
-
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/item</code></p>
-
-<p>The table below defines the fields within the template.</p>
-<h2 id='create-item'>Create Item</h2><h3 id='api-endpoint-create-a-non-hph-private-catalog-item'>API Endpoint – Create a non-HPH Private Catalog Item</h3>
-<blockquote>
-<p>The above code returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-
-                </span><span class="err">UPDATE</span><span class="w"> </span><span class="err">CONTENTS</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p><code>POST</code></p>
-
-<p>This endpoint will be used to create a private catalog item that is not linked to an HPH Item.  </p>
-
-<p><strong>Notes</strong></p>
-
-<ul>
-<li>A CINX Template is available that documents the available fields that can be populated.</li>
-<li>A JSON formatted payload is used in the POST request</li>
-</ul>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-item-import?body=json</strong></p>
-
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-item-import?body=json</code></p>
-<h2 id='modify-item'>Modify Item</h2><h3 id='api-endpoint-modify-a-cinx-private-catalog-item-using-a-cinx-id'>API Endpoint – Modify a CINX Private Catalog Item using a CINX Id</h3>
-<p><code>PUT</code></p>
-
-<p>This endpoint will be used to modify a private catalog item that is not linked to an HPH Item.  </p>
-
-<p><strong>Notes</strong></p>
-
-<ul>
-<li>A CINX Template is available that documents the available fields that can be populated.</li>
-<li>A JSON formatted payload is used in the PUT request</li>
-</ul>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-item-import?body=json</strong></p>
-
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-item-import?body=json</code></p>
-<h2 id='delete-item'>Delete Item</h2><h3 id='api-endpoint-delete-a-catalog-item-using-a-cinx-id'>API Endpoint – Delete a Catalog Item using a CINX Id</h3>
-<p><code>DELETE</code></p>
-
-<blockquote>
-<p>The above code returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code></code></pre>
-<p>This endpoint will be used to remove an item from an organization&#39;s private CINX catalog.  Please note that this API call requires the item’s CINX Item Id.</p>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/item/{cinx_guid}</strong></p>
-
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/item/d9863525-d926-5441-9f9c-aa47a285a19b</code></p>
 <h1 id='catalog-app-updates'>Catalog/App Updates</h1><h2 id='update-intro'>Update Intro</h2><h3 id='cinx-catalog-application-update-introduction-price-update-service'>CINX Catalog/Application Update Introduction - Price Update Service</h3>
 <p>CINX allows a company to define their own catalog of material content. This Private Catalog can contain items from the Harrison Plumbing/Mechanical database, vendor catalogs that are hosted on CINX, and items created and maintained by the company. In addition, a company can have access to CINX software partner catalogs. For example, databases used by industry estimating systems are available as CINX catalogs.</p>
 
@@ -2290,7 +2206,7 @@ A Javascript library has been created to support the implementation of the API. 
 <tr>
 <td>labor_source</td>
 <td>Defines the labor unit organization.</td>
-<td>MCAA, PHCC</td>
+<td>mcaa, phcc</td>
 </tr>
 </tbody></table>
 <h2 id='get-item-labor-hph-code'>Get Item Labor - HPH Code</h2><h3 id='api-endpoint-get-an-item-39-s-labor-units-using-an-hph-code'>API Endpoint – Get an Item&#39;s Labor Units using an HPH Code</h3>
@@ -2324,7 +2240,7 @@ A Javascript library has been created to support the implementation of the API. 
 <tr>
 <td>labor</td>
 <td>Defines which organization&#39;s units are to be returned.</td>
-<td>MCAA, PHCC, ALL</td>
+<td>mcaa, phcc, all</td>
 </tr>
 </tbody></table>
 <h1 id='job-costing-setup'>Job Costing Setup</h1><h2 id='job-costing-intro'>Job Costing Intro</h2><h3 id='cinx-job-costing-introduction'>CINX Job Costing Introduction</h3>
@@ -7697,10 +7613,36 @@ By default the POST payload will be processed asynchronously.  See the optional 
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-req-import?body=json</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-req-import?body=json</code></p>
+<p>URL Samples: </p>
+
+<ul>
+<li>Asynchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-req-import?body=json</code></li>
+<li>Synchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-req-import?body=json&amp;synchronous=1</code></li>
+</ul>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+<tr>
+<td>synchronous</td>
+<td>Switch to have the payload processed synchronously.</td>
+<td>1</td>
+</tr>
+</tbody></table>
 
 <aside class="notice">
-The PUT payload will be processed asynchronously.
+By default the PUT payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
 </aside>
 <h1 id='rfqs'>RFQs</h1><h2 id='rfq-definition'>RFQ Definition</h2><h3 id='cinx-object-defintion-request-for-quotation'>CINX Object Defintion - Request for Quotation</h3>
 <p>A CINX Request for Quotation is a compilation of  that a customer wants a vendor(s) to provide pricing on before making ordering/sourcing decisions. The list might be for a whole project, phase, system, pre-fab work-order, spool, or a general list created by a project foreman in the field. </p>
@@ -8870,7 +8812,7 @@ Modifications in a PUT request will be processed only if the RFQ is UNLOCKED and
 </aside>
 
 <aside class="notice">
-By default the POST payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
+By default the PUT payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
 </aside>
 <h2 id='get-rfq-quotes'>Get RFQ Quotes</h2><h3 id='api-endpoint-get-a-list-of-quotes-for-an-rfq'>API Endpoint - Get a List of Quotes for an RFQ</h3>
 <blockquote>
@@ -10850,10 +10792,36 @@ By default the POST payload will be processed asynchronously.  See the optional 
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-po-import?body=json</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-po-import?body=json</code></p>
+<p>URL Samples: </p>
+
+<ul>
+<li>Asynchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-po-import?body=json</code></li>
+<li>Synchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-po-import?body=json&amp;synchronous=1</code></li>
+</ul>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+<tr>
+<td>synchronous</td>
+<td>Switch to have the payload processed synchronously.</td>
+<td>1</td>
+</tr>
+</tbody></table>
 
 <aside class="notice">
-The PUT payload will be processed asynchronously.
+By default the PUT payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
 </aside>
 <h2 id='get-po-change-orders'>Get PO Change Orders</h2><h3 id='api-endpoint-get-a-list-of-po-change-orders-for-a-purchase-order'>API Endpoint - Get a List of PO Change Orders for a Purchase Order</h3>
 <blockquote>
@@ -11286,14 +11254,6 @@ The PUT payload will be processed asynchronously.
 <td>{organization&#39;s vendor number}</td>
 </tr>
 </tbody></table>
-<h2 id='erp-status-update'>ERP Status Update</h2><h3 id='api-endpoint-update-a-purchase-order-39-s-erp-status'>API Endpoint - Update a Purchase Order&#39;s ERP Status</h3>
-<p><code>PUT</code></p>
-
-<p>This API call will be used to modify the erp status for a purchase order in CINX.</p>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/po/{cinx_guid/erp/applied</strong></p>
-
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/po/a9863525-d926-5441-9f9c-aa47a285a19b/erp/applied</code></p>
 <h1 id='po-change-orders'>PO Change Orders</h1><h2 id='po-change-order-definition'>PO Change Order Definition</h2><h3 id='cinx-object-defintion-po-change-order'>CINX Object Defintion - PO Change Order</h3>
 <p>A CINX Purchase Order Change Order is created when changes need to be made to a previously submitted purchase order. Example of changes include: changing a price or quantity; adding or modifying job costing information; adding or removing a item row. </p>
 
@@ -11621,54 +11581,6 @@ The PUT payload will be processed asynchronously.
 <p>The cinx_guid will be the PO Change Order’s CINX Id.</p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/poco/e73c118f-1ee9-57e0-9c79-1775c1a04b81</code></p>
-<h2 id='get-po-co-template'>Get PO CO Template</h2><h3 id='api-endpoint-get-a-po-change-order-template'>API Endpoint - Get a PO Change Order Template</h3>
-<p><code>GET</code></p>
-
-<p>This endpoint will be used to get a CINX Template for a PO Change Order.</p>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/poco</strong></p>
-
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/poco</code></p>
-
-<p>The table below defines the input fields within the template.</p>
-<h2 id='create-po-co'>Create PO CO</h2><h3 id='api-endpoint-create-a-po-change-order'>API Endpoint - Create a PO Change Order</h3>
-<p><code>POST</code></p>
-
-<p>This endpoint will be used to create a new PO Change Order.</p>
-
-<p><strong>Notes</strong></p>
-
-<ul>
-<li>A CINX Template is available that documents the available fields that can be populated.</li>
-<li>A JSON formatted payload is used in the POST request</li>
-</ul>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-poco-import?body=json</strong></p>
-
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-poco-import?body=json</code></p>
-
-<aside class="notice">
-The POST payload will be processed asynchronously.
-</aside>
-<h2 id='modify-po-co'>Modify PO CO</h2><h3 id='api-endpoint-modify-a-po-change-order'>API Endpoint - Modify a PO Change Order</h3>
-<p><code>PUT</code></p>
-
-<p>This API endpoint will be used to modify an existing CINX PO Change Order.</p>
-
-<p><strong>Notes</strong></p>
-
-<ul>
-<li>A CINX Template is available that documents the available fields that can be populated.</li>
-<li>A JSON formatted payload is used in the PUT request</li>
-</ul>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-poco-import?body=json</strong></p>
-
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-poco-import?body=json</code></p>
-
-<aside class="notice">
-The PUT payload will be processed asynchronously.
-</aside>
 <h1 id='lead-times'>Lead-Times</h1><h2 id='lead-time-definition'>Lead-Time Definition</h2><h3 id='cinx-object-defintion-lead-time'>CINX Object Defintion - Lead-Time</h3>
 <p>CINX supports the definition of a lead-time for an item that has been added to a project or purchasing transaction.  A lead time defines the amount of time, expressed in days, that it will take for the vendor to deliver the finished product after it is ordered. CINX also supports the definition of two date fields (need by and order by) that will help manage the timely ordering of materials.  </p>
 
@@ -12078,17 +11990,7 @@ The PUT payload will be processed asynchronously.
         </span><span class="s2">"updates"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='get-back-order-upd-template'>Get Back-Order Upd Template</h2><h3 id='api-endpoint-get-a-back-order-update-template'>API Endpoint - Get a Back-Order Update Template</h3>
-<p><code>GET</code></p>
-
-<p>This endpoint will be used to get a CINX Template for a updating a back-ordered item.</p>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/back-order</strong></p>
-
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/back-order</code></p>
-
-<p>The table below defines the input fields within the template.</p>
-<h1 id='deliveries'>Deliveries</h1><h2 id='delivery-definition'>Delivery Definition</h2><h3 id='cinx-object-defintion-delivery'>CINX Object Defintion - Delivery</h3>
+</span></code></pre><h1 id='deliveries'>Deliveries</h1><h2 id='delivery-definition'>Delivery Definition</h2><h3 id='cinx-object-defintion-delivery'>CINX Object Defintion - Delivery</h3>
 <p>A CINX Delivery is created when a shipment from a vendor is received. A Delivery references a purchase order on which the materials were ordered.  </p>
 
 <p><strong>Dependencies and Business Rules</strong></p>
@@ -12865,10 +12767,36 @@ By default the POST payload will be processed asynchronously.  See the optional 
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-delivery-import?body=json</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-delivery-import?body=json</code></p>
+<p>URL Samples: </p>
+
+<ul>
+<li>Asynchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-delivery-import?body=json</code></li>
+<li>Synchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-delivery-import?body=json&amp;synchronous=1</code></li>
+</ul>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+<tr>
+<td>synchronous</td>
+<td>Switch to have the payload processed synchronously.</td>
+<td>1</td>
+</tr>
+</tbody></table>
 
 <aside class="notice">
-The PUT payload will be processed asynchronously.
+By default the PUT payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
 </aside>
 <h1 id='invoices'>Invoices</h1><h2 id='invoice-definition'>Invoice Definition</h2><h3 id='cinx-object-defintion-invoices'>CINX Object Defintion - Invoices</h3>
 <p>An Invoice is a vendor document is that indicates the quantities and costs of the products or services provider by the vendor. The invoice document will also define payment terms and dates.</p>
@@ -13148,44 +13076,6 @@ The PUT payload will be processed asynchronously.
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/invoice</code></p>
 
 <p>The table below defines the input fields within the template.</p>
-<h2 id='create-invoice'>Create Invoice</h2><h3 id='api-endpoint-create-a-new-invoice'>API Endpoint - Create a New Invoice</h3>
-<p><code>POST</code></p>
-
-<p>This endpoint will be used to create a new invoice.</p>
-
-<p><strong>Notes</strong></p>
-
-<ul>
-<li>A CINX Template is available that documents the available fields that can be populated.</li>
-<li>A JSON formatted payload is used in the POST request</li>
-</ul>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-invoice-import?body=json</strong></p>
-
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-invoice-import?body=json</code></p>
-
-<aside class="notice">
-The POST payload will be processed asynchronously.
-</aside>
-<h2 id='modify-invoice'>Modify Invoice</h2><h3 id='api-endpoint-modify-an-invoice'>API Endpoint - Modify an Invoice</h3>
-<p><code>PUT</code></p>
-
-<p>This API endpoint will be used to modify an existing CINX invoice.</p>
-
-<p><strong>Notes</strong></p>
-
-<ul>
-<li>A CINX Template is available that documents the available fields that can be populated.</li>
-<li>A JSON formatted payload is used in the PUT request</li>
-</ul>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-invoice-import?body=json</strong></p>
-
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-invoice-import?body=json</code></p>
-
-<aside class="notice">
-The PUT payload will be processed asynchronously.
-</aside>
 <h1 id='returns'>Returns</h1><h2 id='return-definition'>Return Definition</h2><h3 id='cinx-object-defintion-return'>CINX Object Defintion - Return</h3>
 <p>A CINX Return is a contractor initiated process of returning previously purchased products to the vendor from which it was sourced. Part of the return process is receiving an RMA from a vendor which will be attached the the return. In CINX an organization may establish the return reasons and actions that are avaialable to users when returning products.</p>
 
@@ -13527,101 +13417,6 @@ The PUT payload will be processed asynchronously.
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/auto-number/return</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/return</code></p>
-<h2 id='create-return'>Create Return</h2><h3 id='api-endpoint-create-a-new-return'>API Endpoint - Create a New Return</h3>
-<p><code>POST</code></p>
-
-<p>This endpoint will be used to create a new return.</p>
-
-<p><strong>Notes</strong></p>
-
-<ul>
-<li>A CINX Template is available that documents the available fields that can be populated.</li>
-<li>A JSON formatted payload is used in the POST request</li>
-</ul>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-return-import?body=json</strong></p>
-
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-return-import?body=json</code></p>
-
-<aside class="notice">
-The POST payload will be processed asynchronously.
-</aside>
-<h2 id='modify-return'>Modify Return</h2><h3 id='api-endpoint-modify-a-return'>API Endpoint - Modify a Return</h3>
-<p><code>PUT</code></p>
-
-<p>This API endpoint will be used to modify an existing CINX return.</p>
-
-<p><strong>Notes</strong></p>
-
-<ul>
-<li>A CINX Template is available that documents the available fields that can be populated.</li>
-<li>A JSON formatted payload is used in the PUT request</li>
-</ul>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-return-import?body=json</strong></p>
-
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-return-import?body=json</code></p>
-
-<aside class="notice">
-The PUT payload will be processed asynchronously.
-</aside>
-<h1 id='alerts'>Alerts</h1><h2 id='get-alerts'>Get Alerts</h2><h3 id='api-get-received-user-alerts'>API – GET Received User Alerts</h3>
-<p><code>GET</code></p>
-
-<p>This request will be used get a User’s CINX system alerts.</p>
-
-<p>URL Pattern:</p>
-
-<p>{api path}/sub/{B2B Id GUID}/user/alerts/received?shown=0</p>
-
-<p>Samples:</p>
-
-<p><strong>“Shown” Parameter</strong></p>
-
-<p>This optional URL parameter allows us to filter the alerts given their “User Shown” status.</p>
-
-<p><strong>?shown=0</strong>
-<strong>?shown=1</strong></p>
-
-<p>An alert is marked <strong>shown</strong> when a user has view the alert.</p>
-
-<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?shown=0</code></p>
-
-<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?shown=1</code></p>
-
-<p><strong>“Closed” Parameter</strong></p>
-
-<p>This optional URL parameter allows us to filter the alerts given their “User Closed” status.</p>
-
-<p>An alert is marked <strong>closed</strong> when a user has “deleted” the alert from a UI.</p>
-
-<p><strong>?closed=0</strong>
-<strong>?closed=1</strong></p>
-
-<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?closed=0</code></p>
-
-<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?closed=1</code></p>
-<h2 id='modify-alerts'>Modify Alerts</h2><h3 id='api-mark-user-alerts-shown-or-closed'>API – Mark User Alerts Shown or Closed</h3>
-<p><code>PUT</code></p>
-
-<p>This request will be used update a user’s CINX system alert’s <strong>Shown</strong> or <strong>Closed</strong> status.</p>
-
-<p>URL Pattern:</p>
-
-<p>{api path}/sub/{B2B Id GUID}/user/alert/{alert GUID}/modify?values={<strong>“shown or closed</strong> attribute label”:{boolean indicator}</p>
-
-<p>Samples:</p>
-
-<p><strong>Mark Shown</strong></p>
-
-<p>{api path}/sub/{B2B Id GUID}/user /alert/{alert GUID}modify?values={&quot;shown&quot;:1 }</p>
-
-<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alert/5dbf1bdf-732c-5c3b-d4cc-c837f5fc2fa2/modify?values={%22shown%22:1}</code></p>
-
-<p>{api path}/sub/{B2B Id GUID}/user/alert/{alert guid}/modify?values={&quot;closed&quot;: 1 }</p>
-
-<p><code>https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alert/5dbf1bdf-732c-5c3b-d4cc-c837f5fc2fa2/modify?values={%22closed%22:1}</code>
-  </p>
 <h1 id='additional-info'>Additional Info</h1><h2 id='get-countries'>Get Countries</h2><h3 id='api-endpoint-get-a-list-of-countries'>API Endpoint - Get a List of Countries</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
