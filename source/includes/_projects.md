@@ -71,6 +71,13 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/projects**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/projects`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+number | Limits results to a specific project number. | {project number}
+status | Limits results to a specific status. | CONCEPTUAL, BID, DESIGN, CONSTRUCTION, CLOSEOUT, COMPLETED, NOT SPECIFIED
+
 ## Get Project
 ### API Endpoint - Get a Project
 
