@@ -11,7 +11,7 @@ toc_footers:
 
 includes:
   - introduction
-  - getting-started
+  - user-auth
   - org-company
   - catalog-item
   - catalog-updates

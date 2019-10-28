@@ -241,17 +241,3 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/i
 	}]
 }
 ```
-
-## Get Invoice Template
-### API Endpoint - Get an Invoice Template
-
-`GET`
-
-This endpoint will be used to get a CINX Template for an invoice.
-
-URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/invoice**
-
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/invoice`
-
-
-The table below defines the input fields within the template.

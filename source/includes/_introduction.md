@@ -112,6 +112,65 @@ For many HTTP GET requests you can use URL parameters to define the number of ro
 
   - **limit={number}**
 
+## Documentation Notes
+### API Documentation Web Site Formating Notes
+
+**API URL References**
+
+The API calls documented on this site will contain two URL sections to assist in the construction of properly formatted URLs to be submitted to CINX.
+
+  - **URL PATTERN**: This section defines the elements of the URL. Portions of the URL that will require variables to be inserted will be shown in curly braces. 
+
+  - **URL SAMPLES**: Each API call definition page will also contain at least one sample. The sample will be fully formatted.  
+THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided only for formatting verification purposes.
+
+
+## Developer Resources
+### Additional API Resources for Developers
+
+**Demo Site**
+
+A simple demo site has been created to demonstrate the implementation of commonly used API calls. The URL for the demo site is: **https://www.dev.cinx.biz/cinxjs/**
+
+**Javascript Library**
+A Javascript library has been created to support the implementation of the API. The library is hosted on Github and can be accessed via this URL: **https://github.com/cinx-api/js-library**
+
+## PING Server
+### API Endpoint - PING CINX API Server
+
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
+
+cinxApi.pingCinx()
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
+> The above code returns JSON structured like this:
+
+```json
+{
+  "response": {},
+  "rows": [
+    {
+      "status": 200,
+      "message": "CINX: API Ping Response: Ok"
+    }
+  ]
+}
+```
+`GET`
+
+This endpoint can be used to test the availability of the CINX API.
+
+URL Pattern: **{api path}/{api_version}/ping**
+
+URL Samples: `https://api.cinx.com/2.0/ping`
+
 ## App/Sub Model
 ### CINX Application/Subscription Model Introduction
 
@@ -161,67 +220,6 @@ Below is a sample showing an App with two different data sources.
 
 <img src='images/Qsi-MPC.jpg'/>
 
-## Auth Response
-### Working with the GET User SubscriptionAuthorization API Response
-
-The Subscription/Authorization API response will provide the necessary information to make subsequent API requests.
-
-Please keep the following CINX Platform attributes in mind as you begin to work with the Subscription response:
-
-  - A User may be associated with more than one company (multiple Orgs in the CINX subscription result)
-  - An Org can subscribe to multiple catalogs of content
-  - An Org might have multiple subscriptions to a single App  (the data for the App coming from different sources)
-  - A User may use a CINX Addin for multiple partner applications on the same computer
-  - Objects in the CINX Platform are assigned Unique Ids that will be required API URL elements
-
-The JSON response uses the following structure:
-
-<img src='images/subscription6.jpg'/>
-
-Each **Row** array of the response will correspond to an Org to which the user is a member and will contain the following components:
-
-**CINX API Token:** Token that will be used in API calls to access and insert data.
-
-**User:** provides basic information about the user and his/her CINX Unique Id.
-
-**Org:** basic information that can be used to identify a registered CINX org.  
-
-**Subscription:** defines the org’s subscription status which controls access to the API.
-
-**Subscription [Apps]:** an array of applications that the org currently subscribes to and can access using the API. The structure of an app object is governed by its **Type**. Current CINX App types include **Data-Source** (catalog of content) and **Integration** (interactions with other software systems). The contents of this array will only be used if your app needs to access content of a specific CINX Data Source in a pre-defined data format. For example, price updates for an estimating system database.
-
-
-The following sections contain important information about using the API and the CINX Unique Ids that will be required for making API calls. 
-
-**Does the subscription response contain a CINX API Token?**
-A CINX API Token is required to grant programmatic access to content on the CINX Platform. The API Token will appear at the top of the response object in a field named **cinx_api_token**. If there is not a value in this field, then access to content will be denied. A user can contact HPH, to have the necessary account modification made to allow for the generation of the token.
-
-<img src='images/subscription10.jpg'/>
-
-**Is the subscription active?**
-API-based access to CINX will also be controlled by the org’s subscription status. You will need to verify that the subscription is active. This is done by checking the **subscription** object of the response.
-
-If the subscription is active the response will have the following information:
-
-<img src='images/subscription11.jpg'/>
-
-**What is the user’s CINX Unique Id?**
-The CINX User Unique Id (GUID) will be required by some API requests. These requests will generally be ones in which new information is created or existing content is updated.
-
-<img src='images/subscription12.jpg'/>
-
-**Will you need to access price updates or other item content stored in a CINX Catalog in a specific pre-defined format?**
-
-The **Apps** array within the **Subscription** object in the response will provide a list of applications to which the org has subscribed.  
-
-<img src='images/subscription13.jpg'/>
-
-The **cinx_app_guid** is a constant value that is used to identify an application within the CINX platform. If you are a software company that requires data access to a specific catalog of content, a CINX app will be created and you will be provided the **cinx_app_guid** so that you can query the response for instances of your app.
-
-The **cinx_app_id** is a unique value that links a subscribing CINX org to your application. This value will be required when you are making API calls to access content.
-
-The **data_source** name value will define the source of the item content that will be used to create content update files (price updates). For more information about the relationship between and app and a data source, please review the CINX Applications and Data Source page.
-
 ## Templates
 ### CINX Data Object Templates
 
@@ -248,6 +246,41 @@ The templates are accessed via the API and use a standardized response structure
 <aside class="notice">
 Fields with a NULL value should be removed before creating or modifying an object. See the CINX demo site for sample code. Submitting a NULL value will over-write existing values.
 </aside>
+
+## Auto-Numbering
+### CINX Object Auto-Numbering 
+
+CINX provides a subscribing company with the option of automating the numbering of common objects when new instances are created. These numbers are the **public** values used by the company to define the objects. These are NOT system level ids.
+
+Objects on the CINX Platform that can be auto-numbered for contractors are:
+
+  - Vendors
+  - Customers
+  - Projects
+  - Requisitions
+  - RFQs (Request for Quotations)
+  - POs (Purchase Orders)
+  - Deliveries
+  - Returns
+  - Submittals
+  - Transmittals
+
+API calls for obtaining the next number for an object are provided and documented. Please note, that a number will only be provided if the company has activated the auto-numbering feature for the object. If the feature is not activated the API will return a 406 response.
+
+ <img src='images/No-Auto-Number.jpg'/>
+
+
+**Notes on other Transaction Numbering**
+
+  - Purchase Order Change Orders are numbered by appending a numeric suffix the the original PO Number.
+  - Invoices use the Vendor Invoice number
+
+## PUT/POST Processing
+### PUT and POST Processing Options
+
+By default some PUT and POST operations will be processed asynchronously. This is due to the fact that some transactions could include a large volume of items which could require longer processing times. These calls will be noted on the API Documentation pages.
+
+If you would like to override the asynchronous default an optioinal URL parameter is provided.  Using **synchronous=1** in the URL will switch the processing mode to be synchronous.
 
 ## CINX Ids
 ### CINX Platform Unique Ids
@@ -320,62 +353,3 @@ Processing Notes
 * To update the **value** of an existing attribute, submit the existing **type** with the revised **value**
 * To remove an attribute submit the **type** with a NULL or empty string in the **value** field 
 * If a new attribute is submitted without a **type** or **value** it will not be saved
-
-## Auto-Numbering
-### CINX Object Auto-Numbering 
-
-CINX provides a subscribing company with the option of automating the numbering of common objects when new instances are created. These numbers are the **public** values used by the company to define the objects. These are NOT system level ids.
-
-Objects on the CINX Platform that can be auto-numbered for contractors are:
-
-  - Vendors
-  - Customers
-  - Projects
-  - Requisitions
-  - RFQs (Request for Quotations)
-  - POs (Purchase Orders)
-  - Deliveries
-  - Returns
-  - Submittals
-  - Transmittals
-
-API calls for obtaining the next number for an object are provided and documented. Please note, that a number will only be provided if the company has activated the auto-numbering feature for the object. If the feature is not activated the API will return a 406 response.
-
- <img src='images/No-Auto-Number.jpg'/>
-
-
-**Notes on other Transaction Numbering**
-
-  - Purchase Order Change Orders are numbered by appending a numeric suffix the the original PO Number.
-  - Invoices use the Vendor Invoice number
-
-## PUT/POST Processing
-### PUT and POST Processing Options
-
-By default some PUT and POST operations will be processed asynchronously. This is due to the fact that some transactions could include a large volume of items which could require longer processing times. These calls will be noted on the API Documentation pages.
-
-If you would like to override the asynchronous default an optioinal URL parameter is provided.  Using **synchronous=1** in the URL will switch the processing mode to be synchronous.
-
-
-## Documentation Notes
-### API Documentation Web Site Formating Notes
-
-**API URL References**
-
-The API calls documented on this site will contain two URL sections to assist in the construction of properly formatted URLs to be submitted to CINX.
-
-  - **URL PATTERN**: This section defines the elements of the URL. Portions of the URL that will require variables to be inserted will be shown in curly braces. 
-
-  - **URL SAMPLES**: Each API call definition page will also contain at least one sample. The sample will be fully formatted.  
-THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided only for formatting verification purposes.
-
-
-## Developer Resources
-### Additional API Resources for Developers
-
-**Demo Site**
-
-A simple demo site has been created to demonstrate the implementation of commonly used API calls. The URL for the demo site is: https://www.dev.cinx.biz/cinxjs/
-
-**Javascript Library**
-A Javascript library has been created to support the implementation of the API. The library is hosted on Github and can be accessed via this URL: https://github.com/cinx-api/js-library

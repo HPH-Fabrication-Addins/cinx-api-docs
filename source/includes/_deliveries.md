@@ -282,7 +282,6 @@ cinxApi.getDeliveryTemplate(cinx_api_token)
 			"fob_type": null,
 			"fob_point": null,
 			"user_comment": null,
-			"workflow_status": "INCOMPLETE",
 			"purchase_order": {
 				"cinx_guid": null,
 				"number": null
@@ -361,7 +360,6 @@ truck | String | No |  | Id of the truck that delivered the shipment.
 fob_type | String | No |  | F.O.B. Type. Template has a list of optional values.
 fob_point | String | No |  | F.O.B. Point.
 user_comment | String | No |  | General comment defined by a CINX user.
-workflow_status | String | Yes | INCOMPLETE | Status used to track the delivery of the products. Template has a list of optional values. Field is not modifiable.
 purchase_order.cinx_guid | String (GUID Format) | No |  | CINX Id of the Purchase Order against which the delivery was made. Field is not modifiable.
 purchase_order.number | String | No |  | Public number for the Purchase Order. Field is not modifiable.
 vendor.cinx_commerce_guid | String (GUID Format) | No |  | CINX Commerce Id for the vendor. Field is not modifiable.

@@ -171,12 +171,12 @@ BOM-ITEM is a CINX data structure that is used with all BOM types. It inherits f
 ### Useful CINX Links
 
 
-**Login**: https://secure.cinx.com/login
+**Login**: **https://secure.cinx.com/login**
 
-**Forgot CINX Password**: https://secure.cinx.com/login/reset
+**Forgot CINX Password**: **https://secure.cinx.com/login/reset**
 
-**To set up a CINX account click here**: https://secure.cinx.com/join
+**To set up a CINX account click here**: **https://secure.cinx.com/join**
 
-**Terms**: http://support.cinx.com/terms-of-use-agreement
+**Terms**: **http://support.cinx.com/terms-of-use-agreement**
 
  

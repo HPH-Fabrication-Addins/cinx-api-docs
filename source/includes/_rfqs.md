@@ -261,7 +261,6 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 			"description": null,
 			"terms": null,
 			"user_comment": null,
-			"workflow_status": "IN-PROCESS",
 			"dates": {
 				"respond_by": null,
 				"need_by": null,
@@ -404,7 +403,6 @@ name | String | Yes |  | Public name for the object.
 description | String | No |  | Public description for the object.
 terms | String | No |  | Transaction terms.
 user_comment | String | No |  | General comment defined by a CINX user.
-workflow_status | String | Yes | IN-PROCESS | Status used to track the workflow of the RFQ. Field is not modifiable.
 dates.respond_by | Date (YYYY-MM-DD) | No |  | Date the requester would like the vendor to provide the quoted prices.
 dates.need_by | Date (YYYY-MM-DD) | No |  | Date the products on the RFQ need to be delivered to the specified delivery location.
 dates.submitted | Date (YYYY-MM-DD) | No |  | Date the RFQ was submitted to the vendor. Field is not modifiable.
@@ -528,8 +526,6 @@ This endpoint will be used to get a value to be used in the number field of a ne
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/auto-number/rfq**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/rfq`
-
-HTTP Method: 
 
 ## Create RFQ
 ### API Endpoint - Create a New RFQ
