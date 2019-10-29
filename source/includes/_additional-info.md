@@ -1,4 +1,41 @@
 # Additional Info
+
+## PING Server
+### API Endpoint - PING CINX API Server
+
+```javascript
+//Using cinx-api.js
+var cinxApi = new CinxApi();
+cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
+cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
+
+cinxApi.pingCinx()
+    .then(function(response) {
+        console.log(response);
+    });
+```
+
+> The above code returns JSON structured like this:
+
+```json
+{
+  "response": {},
+  "rows": [
+    {
+      "status": 200,
+      "message": "CINX: API Ping Response: Ok"
+    }
+  ]
+}
+```
+`GET`
+
+This endpoint can be used to test the availability of the CINX API.
+
+URL Pattern: **{api path}/{api_version}/ping**
+
+URL Samples: `https://api.cinx.com/2.0/ping`
+
 ## Get Countries
 ### API Endpoint - Get a List of Countries
 
