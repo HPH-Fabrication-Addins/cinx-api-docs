@@ -228,6 +228,12 @@
                     <a href="#rest-api" class="toc-h2 toc-link" data-title="REST API">REST API</a>
                   </li>
                   <li>
+                    <a href="#documentation-notes" class="toc-h2 toc-link" data-title="Documentation Notes">Documentation Notes</a>
+                  </li>
+                  <li>
+                    <a href="#developer-resources" class="toc-h2 toc-link" data-title="Developer Resources">Developer Resources</a>
+                  </li>
+                  <li>
                     <a href="#app-sub-model" class="toc-h2 toc-link" data-title="App/Sub Model">App/Sub Model</a>
                   </li>
                   <li>
@@ -237,10 +243,13 @@
                     <a href="#app-data-sources" class="toc-h2 toc-link" data-title="App - Data Sources">App - Data Sources</a>
                   </li>
                   <li>
-                    <a href="#auth-response" class="toc-h2 toc-link" data-title="Auth Response">Auth Response</a>
+                    <a href="#templates" class="toc-h2 toc-link" data-title="Templates">Templates</a>
                   </li>
                   <li>
-                    <a href="#templates" class="toc-h2 toc-link" data-title="Templates">Templates</a>
+                    <a href="#auto-numbering" class="toc-h2 toc-link" data-title="Auto-Numbering">Auto-Numbering</a>
+                  </li>
+                  <li>
+                    <a href="#put-post-processing" class="toc-h2 toc-link" data-title="PUT/POST Processing">PUT/POST Processing</a>
                   </li>
                   <li>
                     <a href="#cinx-ids" class="toc-h2 toc-link" data-title="CINX Ids">CINX Ids</a>
@@ -257,28 +266,16 @@
                   <li>
                     <a href="#attributes" class="toc-h2 toc-link" data-title="Attributes">Attributes</a>
                   </li>
-                  <li>
-                    <a href="#auto-numbering" class="toc-h2 toc-link" data-title="Auto-Numbering">Auto-Numbering</a>
-                  </li>
-                  <li>
-                    <a href="#put-post-processing" class="toc-h2 toc-link" data-title="PUT/POST Processing">PUT/POST Processing</a>
-                  </li>
-                  <li>
-                    <a href="#documentation-notes" class="toc-h2 toc-link" data-title="Documentation Notes">Documentation Notes</a>
-                  </li>
-                  <li>
-                    <a href="#developer-resources" class="toc-h2 toc-link" data-title="Developer Resources">Developer Resources</a>
-                  </li>
               </ul>
           </li>
           <li>
-            <a href="#getting-started" class="toc-h1 toc-link" data-title="Getting Started">Getting Started</a>
+            <a href="#user-auth" class="toc-h1 toc-link" data-title="User Auth">User Auth</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#ping-server" class="toc-h2 toc-link" data-title="PING Server">PING Server</a>
+                    <a href="#user-auth-2" class="toc-h2 toc-link" data-title="User Auth">User Auth</a>
                   </li>
                   <li>
-                    <a href="#user-auth" class="toc-h2 toc-link" data-title="User Auth">User Auth</a>
+                    <a href="#auth-response" class="toc-h2 toc-link" data-title="Auth Response">Auth Response</a>
                   </li>
               </ul>
           </li>
@@ -765,9 +762,6 @@
                   <li>
                     <a href="#get-invoice" class="toc-h2 toc-link" data-title="Get Invoice">Get Invoice</a>
                   </li>
-                  <li>
-                    <a href="#get-invoice-template" class="toc-h2 toc-link" data-title="Get Invoice Template">Get Invoice Template</a>
-                  </li>
               </ul>
           </li>
           <li>
@@ -793,6 +787,9 @@
           <li>
             <a href="#additional-info" class="toc-h1 toc-link" data-title="Additional Info">Additional Info</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ping-server" class="toc-h2 toc-link" data-title="PING Server">PING Server</a>
+                  </li>
                   <li>
                     <a href="#get-countries" class="toc-h2 toc-link" data-title="Get Countries">Get Countries</a>
                   </li>
@@ -921,6 +918,23 @@
 <li><p><strong>start={number}</strong></p></li>
 <li><p><strong>limit={number}</strong></p></li>
 </ul>
+<h2 id='documentation-notes'>Documentation Notes</h2><h3 id='api-documentation-web-site-formating-notes'>API Documentation Web Site Formating Notes</h3>
+<p><strong>API URL References</strong></p>
+
+<p>The API calls documented on this site will contain two URL sections to assist in the construction of properly formatted URLs to be submitted to CINX.</p>
+
+<ul>
+<li><p><strong>URL PATTERN</strong>: This section defines the elements of the URL. Portions of the URL that will require variables to be inserted will be shown in curly braces. </p></li>
+<li><p><strong>URL SAMPLES</strong>: Each API call definition page will also contain at least one sample. The sample will be fully formatted.<br>
+THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided only for formatting verification purposes.</p></li>
+</ul>
+<h2 id='developer-resources'>Developer Resources</h2><h3 id='additional-api-resources-for-developers'>Additional API Resources for Developers</h3>
+<p><strong>Demo Site</strong></p>
+
+<p>A simple demo site has been created to demonstrate the implementation of commonly used API calls. The URL for the demo site is: <strong>https://www.dev.cinx.biz/cinxjs/</strong></p>
+
+<p><strong>Javascript Library</strong>
+A Javascript library has been created to support the implementation of the API. The library is hosted on Github and can be accessed via this URL: <strong>https://github.com/cinx-api/js-library</strong></p>
 <h2 id='app-sub-model'>App/Sub Model</h2><h3 id='cinx-application-subscription-model-introduction'>CINX Application/Subscription Model Introduction</h3>
 <p>A CINX customer (organization) has the opportunity to subscribe to different applications available on the platform. An application can be a grouping of pages and functionality on the CINX web site or external applications that consume content from CINX. Each application on the CINX platform has a unique identifier and a range of fields that define its attributes. When an organization subscribes to an application, a new unique identifier is created to link the application to the subscribing organization. This application id will be used in API calls to identify and grant access to requested data operations.</p>
 
@@ -961,65 +975,6 @@
 <p><strong>Data Source Name: My Private Catalog</strong></p>
 
 <p><img src='images/Qsi-MPC.jpg'/></p>
-<h2 id='auth-response'>Auth Response</h2><h3 id='working-with-the-get-user-subscriptionauthorization-api-response'>Working with the GET User SubscriptionAuthorization API Response</h3>
-<p>The Subscription/Authorization API response will provide the necessary information to make subsequent API requests.</p>
-
-<p>Please keep the following CINX Platform attributes in mind as you begin to work with the Subscription response:</p>
-
-<ul>
-<li>A User may be associated with more than one company (multiple Orgs in the CINX subscription result)</li>
-<li>An Org can subscribe to multiple catalogs of content</li>
-<li>An Org might have multiple subscriptions to a single App  (the data for the App coming from different sources)</li>
-<li>A User may use a CINX Addin for multiple partner applications on the same computer</li>
-<li>Objects in the CINX Platform are assigned Unique Ids that will be required API URL elements</li>
-</ul>
-
-<p>The JSON response uses the following structure:</p>
-
-<p><img src='images/subscription6.jpg'/></p>
-
-<p>Each <strong>Row</strong> array of the response will correspond to an Org to which the user is a member and will contain the following components:</p>
-
-<p><strong>CINX API Token:</strong> Token that will be used in API calls to access and insert data.</p>
-
-<p><strong>User:</strong> provides basic information about the user and his/her CINX Unique Id.</p>
-
-<p><strong>Org:</strong> basic information that can be used to identify a registered CINX org.  </p>
-
-<p><strong>Subscription:</strong> defines the org’s subscription status which controls access to the API.</p>
-
-<p><strong>Subscription [Apps]:</strong> an array of applications that the org currently subscribes to and can access using the API. The structure of an app object is governed by its <strong>Type</strong>. Current CINX App types include <strong>Data-Source</strong> (catalog of content) and <strong>Integration</strong> (interactions with other software systems). The contents of this array will only be used if your app needs to access content of a specific CINX Data Source in a pre-defined data format. For example, price updates for an estimating system database.</p>
-
-<p>The following sections contain important information about using the API and the CINX Unique Ids that will be required for making API calls. </p>
-
-<p><strong>Does the subscription response contain a CINX API Token?</strong>
-A CINX API Token is required to grant programmatic access to content on the CINX Platform. The API Token will appear at the top of the response object in a field named <strong>cinx_api_token</strong>. If there is not a value in this field, then access to content will be denied. A user can contact HPH, to have the necessary account modification made to allow for the generation of the token.</p>
-
-<p><img src='images/subscription10.jpg'/></p>
-
-<p><strong>Is the subscription active?</strong>
-API-based access to CINX will also be controlled by the org’s subscription status. You will need to verify that the subscription is active. This is done by checking the <strong>subscription</strong> object of the response.</p>
-
-<p>If the subscription is active the response will have the following information:</p>
-
-<p><img src='images/subscription11.jpg'/></p>
-
-<p><strong>What is the user’s CINX Unique Id?</strong>
-The CINX User Unique Id (GUID) will be required by some API requests. These requests will generally be ones in which new information is created or existing content is updated.</p>
-
-<p><img src='images/subscription12.jpg'/></p>
-
-<p><strong>Will you need to access price updates or other item content stored in a CINX Catalog in a specific pre-defined format?</strong></p>
-
-<p>The <strong>Apps</strong> array within the <strong>Subscription</strong> object in the response will provide a list of applications to which the org has subscribed.  </p>
-
-<p><img src='images/subscription13.jpg'/></p>
-
-<p>The <strong>cinx_app_guid</strong> is a constant value that is used to identify an application within the CINX platform. If you are a software company that requires data access to a specific catalog of content, a CINX app will be created and you will be provided the <strong>cinx_app_guid</strong> so that you can query the response for instances of your app.</p>
-
-<p>The <strong>cinx_app_id</strong> is a unique value that links a subscribing CINX org to your application. This value will be required when you are making API calls to access content.</p>
-
-<p>The <strong>data_source</strong> name value will define the source of the item content that will be used to create content update files (price updates). For more information about the relationship between and app and a data source, please review the CINX Applications and Data Source page.</p>
 <h2 id='templates'>Templates</h2><h3 id='cinx-data-object-templates'>CINX Data Object Templates</h3>
 <p>To assist developers in creating and modifying data objects on the CINX Platform, the API includes templates that define the data structure and provide other information that can be used to present data options to the end-user.</p>
 
@@ -1044,6 +999,38 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <aside class="notice">
 Fields with a NULL value should be removed before creating or modifying an object. See the CINX demo site for sample code. Submitting a NULL value will over-write existing values.
 </aside>
+<h2 id='auto-numbering'>Auto-Numbering</h2><h3 id='cinx-object-auto-numbering'>CINX Object Auto-Numbering</h3>
+<p>CINX provides a subscribing company with the option of automating the numbering of common objects when new instances are created. These numbers are the <strong>public</strong> values used by the company to define the objects. These are NOT system level ids.</p>
+
+<p>Objects on the CINX Platform that can be auto-numbered for contractors are:</p>
+
+<ul>
+<li>Vendors</li>
+<li>Customers</li>
+<li>Projects</li>
+<li>Requisitions</li>
+<li>RFQs (Request for Quotations)</li>
+<li>POs (Purchase Orders)</li>
+<li>Deliveries</li>
+<li>Returns</li>
+<li>Submittals</li>
+<li>Transmittals</li>
+</ul>
+
+<p>API calls for obtaining the next number for an object are provided and documented. Please note, that a number will only be provided if the company has activated the auto-numbering feature for the object. If the feature is not activated the API will return a 406 response.</p>
+
+<p><img src='images/No-Auto-Number.jpg'/></p>
+
+<p><strong>Notes on other Transaction Numbering</strong></p>
+
+<ul>
+<li>Purchase Order Change Orders are numbered by appending a numeric suffix the the original PO Number.</li>
+<li>Invoices use the Vendor Invoice number</li>
+</ul>
+<h2 id='put-post-processing'>PUT/POST Processing</h2><h3 id='put-and-post-processing-options'>PUT and POST Processing Options</h3>
+<p>By default some PUT and POST operations will be processed asynchronously. This is due to the fact that some transactions could include a large volume of items which could require longer processing times. These calls will be noted on the API Documentation pages.</p>
+
+<p>If you would like to override the asynchronous default an optioinal URL parameter is provided.  Using <strong>synchronous=1</strong> in the URL will switch the processing mode to be synchronous.</p>
 <h2 id='cinx-ids'>CINX Ids</h2><h3 id='cinx-platform-unique-ids'>CINX Platform Unique Ids</h3>
 <p>The CINX platform stores many Ids for different object types from different sources. For example, an item on a PO may have Ids defined by the customer, vendor, and product manufacturer. </p>
 
@@ -1107,86 +1094,7 @@ The TYPE and VALUE fields are both required.
 <li>To remove an attribute submit the <strong>type</strong> with a NULL or empty string in the <strong>value</strong> field </li>
 <li>If a new attribute is submitted without a <strong>type</strong> or <strong>value</strong> it will not be saved</li>
 </ul>
-<h2 id='auto-numbering'>Auto-Numbering</h2><h3 id='cinx-object-auto-numbering'>CINX Object Auto-Numbering</h3>
-<p>CINX provides a subscribing company with the option of automating the numbering of common objects when new instances are created. These numbers are the <strong>public</strong> values used by the company to define the objects. These are NOT system level ids.</p>
-
-<p>Objects on the CINX Platform that can be auto-numbered for contractors are:</p>
-
-<ul>
-<li>Vendors</li>
-<li>Customers</li>
-<li>Projects</li>
-<li>Requisitions</li>
-<li>RFQs (Request for Quotations)</li>
-<li>POs (Purchase Orders)</li>
-<li>Deliveries</li>
-<li>Returns</li>
-<li>Submittals</li>
-<li>Transmittals</li>
-</ul>
-
-<p>API calls for obtaining the next number for an object are provided and documented. Please note, that a number will only be provided if the company has activated the auto-numbering feature for the object. If the feature is not activated the API will return a 406 response.</p>
-
-<p><img src='images/No-Auto-Number.jpg'/></p>
-
-<p><strong>Notes on other Transaction Numbering</strong></p>
-
-<ul>
-<li>Purchase Order Change Orders are numbered by appending a numeric suffix the the original PO Number.</li>
-<li>Invoices use the Vendor Invoice number</li>
-</ul>
-<h2 id='put-post-processing'>PUT/POST Processing</h2><h3 id='put-and-post-processing-options'>PUT and POST Processing Options</h3>
-<p>By default some PUT and POST operations will be processed asynchronously. This is due to the fact that some transactions could include a large volume of items which could require longer processing times. These calls will be noted on the API Documentation pages.</p>
-
-<p>If you would like to override the asynchronous default an optioinal URL parameter is provided.  Using <strong>synchronous=1</strong> in the URL will switch the processing mode to be synchronous.</p>
-<h2 id='documentation-notes'>Documentation Notes</h2><h3 id='api-documentation-web-site-formating-notes'>API Documentation Web Site Formating Notes</h3>
-<p><strong>API URL References</strong></p>
-
-<p>The API calls documented on this site will contain two URL sections to assist in the construction of properly formatted URLs to be submitted to CINX.</p>
-
-<ul>
-<li><p><strong>URL PATTERN</strong>: This section defines the elements of the URL. Portions of the URL that will require variables to be inserted will be shown in curly braces. </p></li>
-<li><p><strong>URL SAMPLES</strong>: Each API call definition page will also contain at least one sample. The sample will be fully formatted.<br>
-THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided only for formatting verification purposes.</p></li>
-</ul>
-<h2 id='developer-resources'>Developer Resources</h2><h3 id='additional-api-resources-for-developers'>Additional API Resources for Developers</h3>
-<p><strong>Demo Site</strong></p>
-
-<p>A simple demo site has been created to demonstrate the implementation of commonly used API calls. The URL for the demo site is: https://www.dev.cinx.biz/cinxjs/</p>
-
-<p><strong>Javascript Library</strong>
-A Javascript library has been created to support the implementation of the API. The library is hosted on Github and can be accessed via this URL: https://github.com/cinx-api/js-library</p>
-<h1 id='getting-started'>Getting Started</h1><h2 id='ping-server'>PING Server</h2><h3 id='api-endpoint-ping-cinx-api-server'>API Endpoint - PING CINX API Server</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
-<span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
-
-<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">pingCinx</span><span class="p">()</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-    <span class="p">});</span>
-</code></pre>
-<blockquote>
-<p>The above code returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CINX: API Ping Response: Ok"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p><code>GET</code></p>
-
-<p>This endpoint can be used to test the availability of the CINX API.</p>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/ping</strong></p>
-
-<p>URL Samples: <code>https://api.cinx.com/2.0/ping</code></p>
-<h2 id='user-auth'>User Auth</h2><h3 id='api-endpoint-user-subscription-authorization'>API Endpoint - User Subscription/Authorization</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
+<h1 id='user-auth'>User Auth</h1><h2 id='user-auth-2'>User Auth</h2><h3 id='api-endpoint-user-subscription-authorization'>API Endpoint - User Subscription/Authorization</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
@@ -1280,6 +1188,65 @@ A Javascript library has been created to support the implementation of the API. 
 <p>URL Pattern: <strong>{api path}/{api version}/subs</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/subs</code></p>
+<h2 id='auth-response'>Auth Response</h2><h3 id='working-with-the-get-user-subscriptionauthorization-api-response'>Working with the GET User SubscriptionAuthorization API Response</h3>
+<p>The Subscription/Authorization API response will provide the necessary information to make subsequent API requests.</p>
+
+<p>Please keep the following CINX Platform attributes in mind as you begin to work with the Subscription response:</p>
+
+<ul>
+<li>A User may be associated with more than one company (multiple Orgs in the CINX subscription result)</li>
+<li>An Org can subscribe to multiple catalogs of content</li>
+<li>An Org might have multiple subscriptions to a single App  (the data for the App coming from different sources)</li>
+<li>A User may use a CINX Addin for multiple partner applications on the same computer</li>
+<li>Objects in the CINX Platform are assigned Unique Ids that will be required API URL elements</li>
+</ul>
+
+<p>The JSON response uses the following structure:</p>
+
+<p><img src='images/subscription6.jpg'/></p>
+
+<p>Each <strong>Row</strong> array of the response will correspond to an Org to which the user is a member and will contain the following components:</p>
+
+<p><strong>CINX API Token:</strong> Token that will be used in API calls to access and insert data.</p>
+
+<p><strong>User:</strong> provides basic information about the user and his/her CINX Unique Id.</p>
+
+<p><strong>Org:</strong> basic information that can be used to identify a registered CINX org.  </p>
+
+<p><strong>Subscription:</strong> defines the org’s subscription status which controls access to the API.</p>
+
+<p><strong>Subscription [Apps]:</strong> an array of applications that the org currently subscribes to and can access using the API. The structure of an app object is governed by its <strong>Type</strong>. Current CINX App types include <strong>Data-Source</strong> (catalog of content) and <strong>Integration</strong> (interactions with other software systems). The contents of this array will only be used if your app needs to access content of a specific CINX Data Source in a pre-defined data format. For example, price updates for an estimating system database.</p>
+
+<p>The following sections contain important information about using the API and the CINX Unique Ids that will be required for making API calls. </p>
+
+<p><strong>Does the subscription response contain a CINX API Token?</strong>
+A CINX API Token is required to grant programmatic access to content on the CINX Platform. The API Token will appear at the top of the response object in a field named <strong>cinx_api_token</strong>. If there is not a value in this field, then access to content will be denied. A user can contact HPH, to have the necessary account modification made to allow for the generation of the token.</p>
+
+<p><img src='images/subscription10.jpg'/></p>
+
+<p><strong>Is the subscription active?</strong>
+API-based access to CINX will also be controlled by the org’s subscription status. You will need to verify that the subscription is active. This is done by checking the <strong>subscription</strong> object of the response.</p>
+
+<p>If the subscription is active the response will have the following information:</p>
+
+<p><img src='images/subscription11.jpg'/></p>
+
+<p><strong>What is the user’s CINX Unique Id?</strong>
+The CINX User Unique Id (GUID) will be required by some API requests. These requests will generally be ones in which new information is created or existing content is updated.</p>
+
+<p><img src='images/subscription12.jpg'/></p>
+
+<p><strong>Will you need to access price updates or other item content stored in a CINX Catalog in a specific pre-defined format?</strong></p>
+
+<p>The <strong>Apps</strong> array within the <strong>Subscription</strong> object in the response will provide a list of applications to which the org has subscribed.  </p>
+
+<p><img src='images/subscription13.jpg'/></p>
+
+<p>The <strong>cinx_app_guid</strong> is a constant value that is used to identify an application within the CINX platform. If you are a software company that requires data access to a specific catalog of content, a CINX app will be created and you will be provided the <strong>cinx_app_guid</strong> so that you can query the response for instances of your app.</p>
+
+<p>The <strong>cinx_app_id</strong> is a unique value that links a subscribing CINX org to your application. This value will be required when you are making API calls to access content.</p>
+
+<p>The <strong>data_source</strong> name value will define the source of the item content that will be used to create content update files (price updates). For more information about the relationship between and app and a data source, please review the CINX Applications and Data Source page.</p>
 <h1 id='org-company'>Org/Company</h1><h2 id='org-definition'>Org Definition</h2><h3 id='cinx-object-defintion-organization'>CINX Object Defintion - Organization</h3>
 <p>An Organization in CINX defines a company or grouping of individuals (residential customers) that participate or is referenced on the platform.</p>
 
@@ -4608,6 +4575,27 @@ A Javascript library has been created to support the implementation of the API. 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/projects</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/projects</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>number</td>
+<td>Limits results to a specific project number.</td>
+<td>{project number}</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Limits results to a specific status.</td>
+<td>CONCEPTUAL, BID, DESIGN, CONSTRUCTION, CLOSEOUT, COMPLETED, NOT SPECIFIED</td>
+</tr>
+</tbody></table>
 <h2 id='get-project'>Get Project</h2><h3 id='api-endpoint-get-a-project'>API Endpoint - Get a Project</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -7931,7 +7919,6 @@ By default the PUT payload will be processed asynchronously.  See the optional U
             </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"user_comment"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"workflow_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN-PROCESS"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"respond_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"need_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -8115,13 +8102,6 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>No</td>
 <td></td>
 <td>General comment defined by a CINX user.</td>
-</tr>
-<tr>
-<td>workflow_status</td>
-<td>String</td>
-<td>Yes</td>
-<td>IN-PROCESS</td>
-<td>Status used to track the workflow of the RFQ. Field is not modifiable.</td>
 </tr>
 <tr>
 <td>dates.respond_by</td>
@@ -8723,8 +8703,6 @@ If modifying the vendor array, please submit all the desired vendors in the PUT 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/auto-number/rfq</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/rfq</code></p>
-
-<p>HTTP Method: </p>
 <h2 id='create-rfq'>Create RFQ</h2><h3 id='api-endpoint-create-a-new-rfq'>API Endpoint - Create a New RFQ</h3>
 <p><code>POST</code></p>
 
@@ -9493,8 +9471,6 @@ By default the PUT payload will be processed asynchronously.  See the optional U
             </span><span class="s2">"terms"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"user_comment"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"procurement_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT ORDERED"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"workflow_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN-PROCESS"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"erp_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT SUBMITTED"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"allow_substitutes"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
             </span><span class="s2">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"order_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -9749,20 +9725,6 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Yes</td>
 <td>NOT ORDERED</td>
 <td>Status used to track the procurement activities of the purchase order. Template has a list of optional values.</td>
-</tr>
-<tr>
-<td>workflow_status</td>
-<td>String</td>
-<td>Yes</td>
-<td>IN-PROCESS</td>
-<td>Status used to track the workflow of the purchase order. Field is not modifiable.</td>
-</tr>
-<tr>
-<td>erp_status</td>
-<td>String</td>
-<td>Yes</td>
-<td>NOT SUBMITTED</td>
-<td>Status used to track the purchase order&#39;s integration with an ERP system. Field is not modifiable.</td>
 </tr>
 <tr>
 <td>allow_substitutes</td>
@@ -12289,7 +12251,6 @@ By default the PUT payload will be processed asynchronously.  See the optional U
             </span><span class="s2">"fob_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"fob_point"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"user_comment"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"workflow_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INCOMPLETE"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"purchase_order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
@@ -12487,13 +12448,6 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>No</td>
 <td></td>
 <td>General comment defined by a CINX user.</td>
-</tr>
-<tr>
-<td>workflow_status</td>
-<td>String</td>
-<td>Yes</td>
-<td>INCOMPLETE</td>
-<td>Status used to track the delivery of the products. Template has a list of optional values. Field is not modifiable.</td>
 </tr>
 <tr>
 <td>purchase_order.cinx_guid</td>
@@ -13066,17 +13020,7 @@ By default the PUT payload will be processed asynchronously.  See the optional U
         </span><span class="p">]</span><span class="w">
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='get-invoice-template'>Get Invoice Template</h2><h3 id='api-endpoint-get-an-invoice-template'>API Endpoint - Get an Invoice Template</h3>
-<p><code>GET</code></p>
-
-<p>This endpoint will be used to get a CINX Template for an invoice.</p>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/invoice</strong></p>
-
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/invoice</code></p>
-
-<p>The table below defines the input fields within the template.</p>
-<h1 id='returns'>Returns</h1><h2 id='return-definition'>Return Definition</h2><h3 id='cinx-object-defintion-return'>CINX Object Defintion - Return</h3>
+</span></code></pre><h1 id='returns'>Returns</h1><h2 id='return-definition'>Return Definition</h2><h3 id='cinx-object-defintion-return'>CINX Object Defintion - Return</h3>
 <p>A CINX Return is a contractor initiated process of returning previously purchased products to the vendor from which it was sourced. Part of the return process is receiving an RMA from a vendor which will be attached the the return. In CINX an organization may establish the return reasons and actions that are avaialable to users when returning products.</p>
 
 <p><strong>Dependencies and Business Rules</strong></p>
@@ -13417,7 +13361,37 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/auto-number/return</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/return</code></p>
-<h1 id='additional-info'>Additional Info</h1><h2 id='get-countries'>Get Countries</h2><h3 id='api-endpoint-get-a-list-of-countries'>API Endpoint - Get a List of Countries</h3>
+<h1 id='additional-info'>Additional Info</h1><h2 id='ping-server'>PING Server</h2><h3 id='api-endpoint-ping-cinx-api-server'>API Endpoint - PING CINX API Server</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
+<span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
+
+<span class="nx">cinxApi</span><span class="p">.</span><span class="nx">pingCinx</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+    <span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CINX: API Ping Response: Ok"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint can be used to test the availability of the CINX API.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/ping</strong></p>
+
+<p>URL Samples: <code>https://api.cinx.com/2.0/ping</code></p>
+<h2 id='get-countries'>Get Countries</h2><h3 id='api-endpoint-get-a-list-of-countries'>API Endpoint - Get a List of Countries</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
@@ -13570,13 +13544,13 @@ Entity).</p>
 
 <p>BOM-ITEM is a CINX data structure that is used with all BOM types. It inherits from the Catalog Item structure and also provides additional fields for defining its use within a project (quantities, breakdown structure, spec requirements) and transactions (availability and delivery information).</p>
 <h2 id='cinx-links'>CINX Links</h2><h3 id='useful-cinx-links'>Useful CINX Links</h3>
-<p><strong>Login</strong>: https://secure.cinx.com/login</p>
+<p><strong>Login</strong>: <strong>https://secure.cinx.com/login</strong></p>
 
-<p><strong>Forgot CINX Password</strong>: https://secure.cinx.com/login/reset</p>
+<p><strong>Forgot CINX Password</strong>: <strong>https://secure.cinx.com/login/reset</strong></p>
 
-<p><strong>To set up a CINX account click here</strong>: https://secure.cinx.com/join</p>
+<p><strong>To set up a CINX account click here</strong>: <strong>https://secure.cinx.com/join</strong></p>
 
-<p><strong>Terms</strong>: http://support.cinx.com/terms-of-use-agreement</p>
+<p><strong>Terms</strong>: <strong>http://support.cinx.com/terms-of-use-agreement</strong></p>
 
 <p> </p>
 
