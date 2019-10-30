@@ -8,7 +8,7 @@ As part of CINX’s integration services, a company can request catalog updates 
 
 Each subscription will define the catalog of items and the output format. This subscription has an **app_id** that will be required to create API requests. This Id can be obtained from the CINX Subscriptions/Authorizations response.
 
-**Update Format**
+**File Format**
 
 As noted above, CINX can produce update files according to the specifications of leading industry software systems. Custom formats are also supported.
 
@@ -54,6 +54,10 @@ Each CINX catalog update file has field that defines its **Status**. When an API
   -  **New** – files that have not been download or applied
   -  **Applied** – files that have been applied to the integrated system (Requires submission of an API call to mark the file as consumed/applied.)
   -  **All** – returns all update files for the requested subscription
+
+**Apply Update Files in Chronological Order**
+
+Catalog Update files of type=Update should always be processed in chronological order starting with the earliest date.
 
 **CINX UI – Catalog Updates**
 
@@ -134,6 +138,7 @@ status | Limits results based on the consumption status. | NEW, APPLIED, ALL
 
   - If no **status** parameter is included in the URL, the ALL option will be used by default 
   - If the url uses the **NEW** parameter and there are no new updates, the api response will have an empty **rows** array
+  - Catalog Update files of **type=Update** should always be processed in chronological order starting with the earliest date.
 
 ## Download Update
 ### API Endpoint – Download a Catalog/App Update File
@@ -160,6 +165,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/a
 **Notes**
 
   - The update guid used in the URL is obtained from the Get Update List reponse.  It is the cinx_guid value in the reponse.
+  - Catalog Update files of **type=Update** should always be processed in chronological order starting with the earliest date.
 
 
 ## Download Bulletin
@@ -182,8 +188,8 @@ type | Defines the file type to be returned. | XLS, JS
 
   - If no **type** parameter is included in the URL, the XLS option will be used by default 
 
-## Mark as Applied
-### API Endpoint – Mark Catalog/App Update File As Applied
+## Mark as Consumed
+### API Endpoint – Mark Catalog/App Update File As Consumed
 
 ```javascript
 //Using cinx-api.js
@@ -200,7 +206,7 @@ cinxApi.setCatalogUpdateFileApplied(application_guid, file_guid, values)
 ```
 `PUT`
 
-This will mark the update as **Applied** and it will no longer show up in the **New** update list.
+This will mark the update as **Consumed/Applied** and it will no longer show up in the **New** update list.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/app/{app_id}/price-update/{update_guid}/apply**
 
