@@ -52,7 +52,7 @@ Each CINX catalog update file has field that defines its **Type**. Catalog updat
 Each CINX catalog update file has field that defines its **Status**. When an API call is made to retrieve catalog updates a Status filter can be submitted.  Catalog update status filters are:
 
   -  **New** – files that have not been download or applied
-  -  **Applied** – files that have been applied to the integrated system (Requires submission of an API call to mark the file as Applied.)
+  -  **Applied** – files that have been applied to the integrated system (Requires submission of an API call to mark the file as consumed/applied.)
   -  **All** – returns all update files for the requested subscription
 
 **CINX UI – Catalog Updates**
