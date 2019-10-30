@@ -99,7 +99,7 @@ URL Pattern: **{api path}/{api version}/subs**
 URL Sample: `https://api.cinx.com/2.0/subs`
 
 ## Auth Response
-### Working with the GET User SubscriptionAuthorization API Response
+### Working with the GET User Subscription/Auth API Response
 
 The Subscription/Authorization API response will provide the necessary information to make subsequent API requests.
 
