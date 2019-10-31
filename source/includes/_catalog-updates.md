@@ -190,31 +190,6 @@ type | Defines the file type to be returned. | XLS, JS
 
   - If no **type** parameter is included in the URL, the XLS option will be used by default 
 
-## Get Update Applied Template
-### API Endpoint - Get a Price Update Applied Template
-
-```json
-
-```
-`GET`
-
-This endpoint will be used to get a CINX Template for marking a catalog/price update as applied.
-
-URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/price-update-applied**
-
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/price-update-applied`
-
-
-The table below defines the input fields within the template.
-
-**TEMPLATE FIELDS**
-
-Name | Data Type | Required | Default | Note
------ | ----- | ----- | ----- | -----
-cinx_guid | String (GUID Format) | Yes |  | CINX System Id for the update.
-date_downloaded | Date (YYYY-MM-DD) | No |  | Date the update was downloaded.
-date_applied | Date (YYYY-MM-DD) | No |  | Date the update was applied.
-
 ## Mark Update Applied
 ### API Endpoint – Mark Catalog/App Price Update File As Applied
 
@@ -238,7 +213,3 @@ This will mark the update as **Applied** and it will no longer show up in the **
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/app/{app_id}/price-update/{update_guid}/apply**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/app/2494df92-e855-5563-826c-05907f9cca22/price-update/7b13257e-25ff-3a03-5d7d-9f4dbe30e091/apply`
-
-**Notes**
-
-  - If no dates are supplied the current server date will be used.
