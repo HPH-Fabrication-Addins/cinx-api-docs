@@ -132,6 +132,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/a
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
 status | Limits results based on the consumption status. | NEW, APPLIED, ALL
+type | Limits results based on type of update file. | UPDATE, FULL, CUSTOM
+after | Limits results to files published after the submitted date. | YYYY-MM-DD
 
 
 **Notes**
@@ -188,8 +190,33 @@ type | Defines the file type to be returned. | XLS, JS
 
   - If no **type** parameter is included in the URL, the XLS option will be used by default 
 
-## Mark as Consumed
-### API Endpoint – Mark Catalog/App Update File As Consumed
+## Get Update Applied Template
+### API Endpoint - Get a Price Update Applied Template
+
+```json
+
+```
+`GET`
+
+This endpoint will be used to get a CINX Template for marking a catalog/price update as applied.
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/price-update-applied**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/price-update-applied`
+
+
+The table below defines the input fields within the template.
+
+**TEMPLATE FIELDS**
+
+Name | Data Type | Required | Default | Note
+----- | ----- | ----- | ----- | -----
+cinx_guid | String (GUID Format) | Yes |  | CINX System Id for the update.
+date_downloaded | Date (YYYY-MM-DD) | No |  | Date the update was downloaded.
+date_applied | Date (YYYY-MM-DD) | No |  | Date the update was applied.
+
+## Mark Update Applied
+### API Endpoint – Mark Catalog/App Price Update File As Applied
 
 ```javascript
 //Using cinx-api.js
@@ -206,15 +233,12 @@ cinxApi.setCatalogUpdateFileApplied(application_guid, file_guid, values)
 ```
 `PUT`
 
-This will mark the update as **Consumed/Applied** and it will no longer show up in the **New** update list.
+This will mark the update as **Applied** and it will no longer show up in the **New** update list.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/app/{app_id}/price-update/{update_guid}/apply**
 
-URL Sample: `https://update me`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/app/2494df92-e855-5563-826c-05907f9cca22/price-update/7b13257e-25ff-3a03-5d7d-9f4dbe30e091/apply`
 
+**Notes**
 
-The update id field is taken from the Get Update response in the following location:  row -> cinx_id -> id
-
-Sample:
-
-`https://api.cinx.com/sub/0d2b4b77-d706-e215-13f2-207c7e4aaee7/ipu/update/apply/1ac399a6-40e8-f9e4-d5b8-d5dc709e9e1d?values={%22applied_date%22:%222016-06-10%22,%22download_date%22:%222016-06-10%22}`
+  - If no dates are supplied the current server date will be used.
