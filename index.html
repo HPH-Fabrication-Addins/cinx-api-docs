@@ -359,7 +359,7 @@
                     <a href="#download-bulletin" class="toc-h2 toc-link" data-title="Download Bulletin">Download Bulletin</a>
                   </li>
                   <li>
-                    <a href="#mark-as-applied" class="toc-h2 toc-link" data-title="Mark as Applied">Mark as Applied</a>
+                    <a href="#mark-update-applied" class="toc-h2 toc-link" data-title="Mark Update Applied">Mark Update Applied</a>
                   </li>
               </ul>
           </li>
@@ -1188,7 +1188,7 @@ The TYPE and VALUE fields are both required.
 <p>URL Pattern: <strong>{api path}/{api version}/subs</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/subs</code></p>
-<h2 id='auth-response'>Auth Response</h2><h3 id='working-with-the-get-user-subscriptionauthorization-api-response'>Working with the GET User SubscriptionAuthorization API Response</h3>
+<h2 id='auth-response'>Auth Response</h2><h3 id='working-with-the-get-user-subscription-auth-api-response'>Working with the GET User Subscription/Auth API Response</h3>
 <p>The Subscription/Authorization API response will provide the necessary information to make subsequent API requests.</p>
 
 <p>Please keep the following CINX Platform attributes in mind as you begin to work with the Subscription response:</p>
@@ -1836,7 +1836,7 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 
 <p>Each subscription will define the catalog of items and the output format. This subscription has an <strong>app_id</strong> that will be required to create API requests. This Id can be obtained from the CINX Subscriptions/Authorizations response.</p>
 
-<p><strong>Update Format</strong></p>
+<p><strong>File Format</strong></p>
 
 <p>As noted above, CINX can produce update files according to the specifications of leading industry software systems. Custom formats are also supported.</p>
 
@@ -1889,9 +1889,13 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 
 <ul>
 <li> <strong>New</strong> – files that have not been download or applied</li>
-<li> <strong>Applied</strong> – files that have been applied to the integrated system (Requires submission of an API call to mark the file as Applied.)</li>
+<li> <strong>Applied</strong> – files that have been applied to the integrated system (Requires submission of an API call to mark the file as consumed/applied.)</li>
 <li> <strong>All</strong> – returns all update files for the requested subscription</li>
 </ul>
+
+<p><strong>Apply Update Files in Chronological Order</strong></p>
+
+<p>Catalog Update files of type=Update should always be processed in chronological order starting with the earliest date.</p>
 
 <p><strong>CINX UI – Catalog Updates</strong></p>
 
@@ -1969,6 +1973,16 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <td>Limits results based on the consumption status.</td>
 <td>NEW, APPLIED, ALL</td>
 </tr>
+<tr>
+<td>type</td>
+<td>Limits results based on type of update file.</td>
+<td>UPDATE, FULL, CUSTOM</td>
+</tr>
+<tr>
+<td>after</td>
+<td>Limits results to files published after the submitted date.</td>
+<td>YYYY-MM-DD</td>
+</tr>
 </tbody></table>
 
 <p><strong>Notes</strong></p>
@@ -1976,6 +1990,7 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <ul>
 <li>If no <strong>status</strong> parameter is included in the URL, the ALL option will be used by default </li>
 <li>If the url uses the <strong>NEW</strong> parameter and there are no new updates, the api response will have an empty <strong>rows</strong> array</li>
+<li>Catalog Update files of <strong>type=Update</strong> should always be processed in chronological order starting with the earliest date.</li>
 </ul>
 <h2 id='download-update'>Download Update</h2><h3 id='api-endpoint-download-a-catalog-app-update-file'>API Endpoint – Download a Catalog/App Update File</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
@@ -1999,6 +2014,7 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 
 <ul>
 <li>The update guid used in the URL is obtained from the Get Update List reponse.  It is the cinx_guid value in the reponse.</li>
+<li>Catalog Update files of <strong>type=Update</strong> should always be processed in chronological order starting with the earliest date.</li>
 </ul>
 <h2 id='download-bulletin'>Download Bulletin</h2><h3 id='api-endpoint-download-a-catalog-app-update-bulletin-file-only'>API Endpoint – Download a Catalog/App Update Bulletin File ONLY</h3>
 <p><code>GET</code></p>
@@ -2030,7 +2046,7 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <ul>
 <li>If no <strong>type</strong> parameter is included in the URL, the XLS option will be used by default </li>
 </ul>
-<h2 id='mark-as-applied'>Mark as Applied</h2><h3 id='api-endpoint-mark-catalog-app-update-file-as-applied'>API Endpoint – Mark Catalog/App Update File As Applied</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
+<h2 id='mark-update-applied'>Mark Update Applied</h2><h3 id='api-endpoint-mark-catalog-app-price-update-file-as-applied'>API Endpoint – Mark Catalog/App Price Update File As Applied</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">''</span><span class="p">);</span>
@@ -2048,13 +2064,7 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/app/{app_id}/price-update/{update_guid}/apply</strong></p>
 
-<p>URL Sample: <code>https://update me</code></p>
-
-<p>The update id field is taken from the Get Update response in the following location:  row -&gt; cinx_id -&gt; id</p>
-
-<p>Sample:</p>
-
-<p><code>https://api.cinx.com/sub/0d2b4b77-d706-e215-13f2-207c7e4aaee7/ipu/update/apply/1ac399a6-40e8-f9e4-d5b8-d5dc709e9e1d?values={%22applied_date%22:%222016-06-10%22,%22download_date%22:%222016-06-10%22}</code></p>
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/app/2494df92-e855-5563-826c-05907f9cca22/price-update/7b13257e-25ff-3a03-5d7d-9f4dbe30e091/apply</code></p>
 <h1 id='labor-units'>Labor Units</h1><h2 id='labor-units-intro'>Labor Units Intro</h2><h3 id='cinx-introduction-to-industry-labor-units'>CINX Introduction to Industry Labor Units</h3>
 <p>In construction, a labor unit is the estimated time it takes to install an item under good working conditions.</p>
 
@@ -4727,10 +4737,130 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
             </span><span class="s2">"size_square"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FEET"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"external_references"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">}],</span><span class="w">
+            </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"order_lead_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"allow_substitutes"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"procurement_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT ORDERED"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"construction_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"hph_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"org_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"org_system_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"mfr_part_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"mfr_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"item_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"need_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"order_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"installed"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"cinx_commerce_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"system_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"availability_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"availability_location"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"delivery"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"deliver_to"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"location_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"location_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"labeling_instructions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"packaging_instructions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"work_breakdown"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"trade"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"work_order_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"work_order_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"spool_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"spool_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"building_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"space"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"sub_space"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"arch_symbol"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"tag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"job_cost"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"cinx_phase_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"phase_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"cinx_material_cost_code_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"material_cost_code_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"cinx_labor_cost_code_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"labor_cost_code_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"cinx_category_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"category_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"taxes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"taxable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"tax_group_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"tax_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"design"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"model_item_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"model_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"model_file"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"drawing_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"drawing_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"buy_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"base_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"multiplier_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"multiplier_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"price_uom"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"price_source_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"sell_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"base_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"multiplier_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"multiplier_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"price_uom"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"price_source_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"labor_unit"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"base_unit"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"multiplier_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"unit"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"labor_cost"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"labor_rate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"sub_total"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"adjustment"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">}]</span><span class="w">
+            </span><span class="p">}]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"field_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
         </span><span class="s2">"api_calls"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p><code>GET</code></p>
@@ -4846,6 +4976,13 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <td>CINX Id for the building or structure.</td>
 </tr>
 <tr>
+<td>customer.cinx_building_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the building or structure.</td>
+</tr>
+<tr>
 <td>customer.project_number</td>
 <td>String</td>
 <td>No</td>
@@ -4957,6 +5094,629 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <td>FEET</td>
 <td>Unit-of-measure that the size of the project is defined.</td>
 </tr>
+<tr>
+<td>external_references.type</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Non-CINX system reference type.</td>
+</tr>
+<tr>
+<td>external_references.description</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Non-CINX system reference description.</td>
+</tr>
+<tr>
+<td>external_references.value</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Non-CINX system reference value.</td>
+</tr>
+<tr>
+<td>items.cinx_guid</td>
+<td>String (GUID Format)</td>
+<td>POST = No; Put = Yes</td>
+<td></td>
+<td>CINX System Id.</td>
+</tr>
+<tr>
+<td>items.quantity</td>
+<td>Real</td>
+<td>Yes</td>
+<td>1</td>
+<td>Quantity of the item that is being ordered.</td>
+</tr>
+<tr>
+<td>items.currency</td>
+<td>String</td>
+<td>Yes</td>
+<td>USD</td>
+<td>Currency in which the price is being defined.  Three-character alpha abbreviation.</td>
+</tr>
+<tr>
+<td>items.order_lead_time</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Number of days required for the material vendor to aquire the item.</td>
+</tr>
+<tr>
+<td>items.allow_substitutes</td>
+<td>Boolean</td>
+<td>Yes</td>
+<td>TRUE</td>
+<td>Indicator if the product can be sourced from an alternate manufacturer.</td>
+</tr>
+<tr>
+<td>items.procurement_status</td>
+<td>String</td>
+<td>Yes</td>
+<td>NOT ORDERED</td>
+<td>Status used to track the procurement activities of the item. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>items.construction_status</td>
+<td>String</td>
+<td>Yes</td>
+<td>NOT INSTALLED</td>
+<td>Status used to track the installation of the item. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>items.hph_code</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>HPH Item Code for the item that is being ordered.</td>
+</tr>
+<tr>
+<td>items.org_item_id</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>The requesting company&#39;s Org Item Id for the product that is being ordered. User-friendly code.</td>
+</tr>
+<tr>
+<td>items.org_system_id</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>The requesting company&#39;s Org System Item Id for the product that is being ordered. Unique Id code.</td>
+</tr>
+<tr>
+<td>items.mfr_part_number</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Manufacturer-defined Part/Catalog Number for the product that is being ordered.</td>
+</tr>
+<tr>
+<td>items.upc</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Manufacturer-defined UPC Number for the product that is being ordered.</td>
+</tr>
+<tr>
+<td>items.size</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Size of the item that is being ordered.</td>
+</tr>
+<tr>
+<td>items.description</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Description of the item that is being ordered.</td>
+</tr>
+<tr>
+<td>items.mfr_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the manufacturer or fabricator that produces the item that is being ordered.</td>
+</tr>
+<tr>
+<td>items.item_type</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Classification name of the item that is being ordered.</td>
+</tr>
+<tr>
+<td>items.weight.value</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Weight of the item.</td>
+</tr>
+<tr>
+<td>items.weight.uom</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Measurement type in which the weight value is expressed.</td>
+</tr>
+<tr>
+<td>items.dates.need_by</td>
+<td>Date (YYYY-MM-DD)</td>
+<td>No</td>
+<td></td>
+<td>Date the product needs to be delivered to the specified delivery location.</td>
+</tr>
+<tr>
+<td>items.dates_order_by</td>
+<td>Date (YYYY-MM-DD)</td>
+<td>No</td>
+<td></td>
+<td>Date the product needs to be ordered from the vendor.</td>
+</tr>
+<tr>
+<td>items.dates_installed</td>
+<td>Date (YYYY-MM-DD)</td>
+<td>No</td>
+<td></td>
+<td>Date the product was installed.</td>
+</tr>
+<tr>
+<td>items.vendor.cinx_commerce_guid</td>
+<td>String (GUID Format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Commerce Id for the vendor.</td>
+</tr>
+<tr>
+<td>items.vendor.number</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>The public number of the vendor from whom the product is being sourced.</td>
+</tr>
+<tr>
+<td>items.vendor.item_id</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>The vendor&#39;s Org Item Id for the product that is being ordered. User-friendly code.</td>
+</tr>
+<tr>
+<td>items.vendor.system_id</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>The vendor&#39;s Org System Item Id for the product that is being ordered. Unique Id code.</td>
+</tr>
+<tr>
+<td>items.vendor.availability_type</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Vendor stocking type for the item. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>items.vendor.availability_location</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Vendor stocking location for the item.</td>
+</tr>
+<tr>
+<td>items.delivery.deliver_to</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Deliver To text.</td>
+</tr>
+<tr>
+<td>items.delivery.location_type</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Where the requester would like the product to be delivered. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>items.delivery_location_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the location where the item is to be delivered.</td>
+</tr>
+<tr>
+<td>items.delivery.instructions</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Delivery instructions to be submitted to the vendor responsible for delivering the item.</td>
+</tr>
+<tr>
+<td>items.delivery.labeling_instructions</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Labeling instructions to be submitted to the vendor responsible for delivering the item.</td>
+</tr>
+<tr>
+<td>items.delivery.packaging_instructions</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Packaging instructions to be submitted to the vendor responsible for delivering the item.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.trade</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Contractor defined trade related to the installation of the item.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.work_order_id</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Contractor defined Work Order Id that was assigned to the product.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.work_order_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Contractor defined Work Order Name that was assigned to the product.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.spool_id</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Contractor defined Spool Id that was assigned to the product.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.spool_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Contractor defined Spool Name that was assigned to the product.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.building_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the building in which the product will be installed.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.level</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Level of the building in which the product will be installed.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.space</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Space of the building in which the product will be installed.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.sub_space</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Sub-space of the building in which the product will be installed.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.system</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the system in which the product will be installed.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.arch_symbol</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Architectural symbol of the product.</td>
+</tr>
+<tr>
+<td>items.work_breakdown.tag</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Text of what should appear on a tag for the item.</td>
+</tr>
+<tr>
+<td>items.job_cost.cinx_phase_guid</td>
+<td>String (GUID Format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Id for the Phase/Sub-Job assigned to the item.</td>
+</tr>
+<tr>
+<td>items.job_cost.phase_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name for the Phase/Sub-Job assigned to the item.</td>
+</tr>
+<tr>
+<td>items.job_cost.cinx_material_cost_code_guid</td>
+<td>String (GUID Format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Id for the Material Cost Code assigned to the item.</td>
+</tr>
+<tr>
+<td>items.job_cost.material_cost_code_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name for the Material Cost Code assigned to the item.</td>
+</tr>
+<tr>
+<td>items.job_cost.cinx_labor_cost_code_guid</td>
+<td>String (GUID Format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Id for the Labor Cost Code assigned to the labor reqruired to install the item.</td>
+</tr>
+<tr>
+<td>items.job_cost.labor_cost_code_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name for the Labor Cost Code assigned to the labor reqruired to install the item.</td>
+</tr>
+<tr>
+<td>items.job_cost.cinx_category_guid</td>
+<td>String (GUID Format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Id for the Category assigned to the item.</td>
+</tr>
+<tr>
+<td>items.job_cost.category_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name for the Category assigned to the item.</td>
+</tr>
+<tr>
+<td>items.taxes.taxable</td>
+<td>Boolean</td>
+<td>Yes</td>
+<td>TRUE</td>
+<td>Indicator defining if the product is taxable.</td>
+</tr>
+<tr>
+<td>items.taxes.cinx_guid</td>
+<td>String (GUID Format)</td>
+<td>No</td>
+<td></td>
+<td>CINX Id for the Tax Group assigned to the item.</td>
+</tr>
+<tr>
+<td>items.taxes.tax_group_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the Tax Group assigned to the item.</td>
+</tr>
+<tr>
+<td>items.taxes.tax_type</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the type of tax. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>items.design.model_item_guid</td>
+<td>String (GUID Format)</td>
+<td>No</td>
+<td></td>
+<td>Id assigned by the authoring system that placed the item in the model.</td>
+</tr>
+<tr>
+<td>items.design.model_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the model in which the item is located.</td>
+</tr>
+<tr>
+<td>items.design.model_file</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>File name of the model in which the item is located.</td>
+</tr>
+<tr>
+<td>items.design.drawing_number</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Number of the drawing on which the item is located.</td>
+</tr>
+<tr>
+<td>items.design.drawing_name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the drawing on which the item is located.</td>
+</tr>
+<tr>
+<td>items.buy_price.base_price</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Base price of the item.</td>
+</tr>
+<tr>
+<td>items.buy_price.multiplier_code</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Code identifying the multiplier code/class.</td>
+</tr>
+<tr>
+<td>items.buy_price.multiplier_value</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Multiplier to be applied to the base price of the item.</td>
+</tr>
+<tr>
+<td>items.buy_price.unit_price</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Unit price of the item.</td>
+</tr>
+<tr>
+<td>items.buy_price.price_uom</td>
+<td>String</td>
+<td>Yes</td>
+<td>E</td>
+<td>Price unit-of-measure. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>items.buy_price.price_source_type</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Source from which the price was obtained. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>items.sell_price.base_price</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Base price of the item.</td>
+</tr>
+<tr>
+<td>items.sell_price.multiplier_code</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Code identifying the multiplier code/class.</td>
+</tr>
+<tr>
+<td>items.sell_price.multiplier_value</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Multiplier to be applied to the base price of the item.</td>
+</tr>
+<tr>
+<td>items.sell_price.unit_price</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Unit price of the item.</td>
+</tr>
+<tr>
+<td>items.sell_price.price_uom</td>
+<td>String</td>
+<td>Yes</td>
+<td>E</td>
+<td>Price unit-of-measure. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>items.sell_price.price_source_type</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Source from which the price was obtained. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>items.labor_unit.cinx_guid</td>
+<td>String (GUID Format)</td>
+<td>No</td>
+<td></td>
+<td>CINX System Id for the labor unit from its source catalog.</td>
+</tr>
+<tr>
+<td>items.labor_unit.source</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the source that created the labor unit.</td>
+</tr>
+<tr>
+<td>items.labor_unit.base_unit</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Base labor unit for the item.</td>
+</tr>
+<tr>
+<td>items.labor_unit.uom</td>
+<td>String</td>
+<td>YES</td>
+<td>HOUR</td>
+<td>Unit-of-measure in which the labor unit is expressed.</td>
+</tr>
+<tr>
+<td>items.labor_unit.multiplier_value</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Multiplier to be applied to the base labor unit for the item.</td>
+</tr>
+<tr>
+<td>items.labor_unit.unit</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>The labor unit value to be used for the item.</td>
+</tr>
+<tr>
+<td>items.labor_cost.labor_rate</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Labor rate ($) to be used when billing for the installation of the item.</td>
+</tr>
+<tr>
+<td>items.labor_cost.sub_total</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Labor sub-total to be used when billing for the installation of the item.</td>
+</tr>
+<tr>
+<td>items.labor_cost.adjustment</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Adjustment amount ($) applied to the sub-total.</td>
+</tr>
+<tr>
+<td>items.labor_cost.total</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Total amount ($) used when billing for the installation of the item.</td>
+</tr>
+<tr>
+<td>items.attributes.name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the attribute.</td>
+</tr>
+<tr>
+<td>items.attributes.value</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Value of the attribute.</td>
+</tr>
 </tbody></table>
 <h2 id='get-project-number'>Get Project Number</h2><h3 id='api-endpoint-get-a-new-project-number'>API Endpoint - Get a New Project Number</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
@@ -5034,7 +5794,12 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-import?body=json</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-import?body=json</code></p>
+<p>URL Samples: </p>
+
+<ul>
+<li>Asynchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-import?body=json</code></li>
+<li>Synchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-import?body=json&amp;synchronous=1</code></li>
+</ul>
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
@@ -5049,6 +5814,11 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <td>body</td>
 <td>Defines the content type contained in the payload</td>
 <td>json</td>
+</tr>
+<tr>
+<td>synchronous</td>
+<td>Switch to have the payload processed synchronously.</td>
+<td>1</td>
 </tr>
 </tbody></table>
 <h2 id='modify-project'>Modify Project</h2><h3 id='api-endpoint-modify-a-cinx-project'>API Endpoint - Modify a CINX Project</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
