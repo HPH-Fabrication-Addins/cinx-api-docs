@@ -341,6 +341,15 @@
                   <li>
                     <a href="#item-view-details" class="toc-h2 toc-link" data-title="Item View - Details">Item View - Details</a>
                   </li>
+                  <li>
+                    <a href="#get-item-template" class="toc-h2 toc-link" data-title="Get Item Template">Get Item Template</a>
+                  </li>
+                  <li>
+                    <a href="#create-item" class="toc-h2 toc-link" data-title="Create Item">Create Item</a>
+                  </li>
+                  <li>
+                    <a href="#modify-item" class="toc-h2 toc-link" data-title="Modify Item">Modify Item</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1543,7 +1552,7 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 
 <p><strong>Labor Units</strong></p>
 
-<p>HPH has worked with industry labor unit providers (MCAA and PHCC) to store their labor units as CINX Catalogs. HPH has also linked labor units to our HPH Plumbing/Mechanical catalog items. The CINX Get Item API can return labor units when the <strong>details view</strong> is used. Adding a labor parameter to the URL will enable the output of labor units.  <strong>Labor units will be returned ONLY if the organziation is authorized by the labor unit author to access them</strong>.</p>
+<p>HPH has worked with industry labor unit providers (MCAA and PHCC) to store their labor units as CINX Catalogs. HPH has also linked labor units to our HPH Plumbing/Mechanical catalog items. The CINX Get Item API can return labor units when the <strong>details view</strong> is used. Adding a labor parameter to the URL will enable the output of labor units. <strong>Labor units will be returned ONLY if the organziation is authorized by the labor unit author to access them</strong>.</p>
 
 <p>For more information about labor units, please review the <a href="#labor-units">Labor Units</a> pages on this site.</p>
 
@@ -1565,7 +1574,6 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <li><a href="#get-item-template">Get a Catalog Item Template</a></li>
 <li><a href="#create-item">Create a Catalog Item</a></li>
 <li><a href="#modify-item">Modify a Catalog Item</a></li>
-<li><a href="#delete-item">Delete a Catalog Item</a></li>
 </ul>
 <h2 id='get-item-hph-code'>Get Item - HPH Code</h2><h3 id='api-endpoint-get-an-item-using-an-hph-code'>API Endpoint – Get an Item using an HPH Code</h3>
 <blockquote>
@@ -1575,7 +1583,7 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 </span></code></pre>
 <p><code>GET</code></p>
 
-<p>This endpoint will be used to get a catalog item’s information using the HPH Code of an item.  </p>
+<p>This endpoint will be used to get a catalog item’s information using the HPH Code of an item.</p>
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/item/hph-code/{hph_code}?view={view_option}&amp;labor={labor_type}</strong></p>
 
@@ -1624,7 +1632,7 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 </span></code></pre>
 <p><code>GET</code></p>
 
-<p>This endpoint will be used to get a catalog item’s information using the organization&#39;s item id.  </p>
+<p>This endpoint will be used to get a catalog item’s information using the organization&#39;s item id.</p>
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/item/org-id/{org_item_id}?view={view_option}&amp;labor={labor_type}</strong></p>
 
@@ -1673,7 +1681,7 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 </span></code></pre>
 <p><code>GET</code></p>
 
-<p>This endpoint will be used to get a catalog item’s information using the item&#39;s CINX Id.  </p>
+<p>This endpoint will be used to get a catalog item’s information using the item&#39;s CINX Id.</p>
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/item/guid/{cinx_guid}?view={view_option}&amp;labor={labor_type}</strong></p>
 
@@ -1829,6 +1837,399 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <p>When requesting a catalog from the CINX API there are two view options. </p>
 
 <p>The table below defines the fields output using the <strong>details</strong> view option.</p>
+<h2 id='get-item-template'>Get Item Template</h2><h3 id='api-endpoint-get-a-catalog-item-template'>API Endpoint - Get a Catalog Item Template</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"doc_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"availability_status"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mfr_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cinx_material_cost_code_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"product_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"org_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"org_system_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mfr_part_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mfr_order_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gtin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"cinx_catalog_parent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"hph_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"lines"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"org_prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"packaging"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gtin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"depth"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cube"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"dimension_uom"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"weight_uom"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"field_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"api_calls"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a CINX Template for a catalog item.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/item</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/item</code></p>
+
+<p>The table below defines the input fields within the template.</p>
+
+<p><strong>TEMPLATE FIELDS</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Dflt</th>
+<th>Note</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cinx_guid</td>
+<td>String (GUID Format)</td>
+<td>POST = No; PUT = Yes</td>
+<td></td>
+<td>CINX System Id.</td>
+</tr>
+<tr>
+<td>availability_status</td>
+<td>String</td>
+<td>Yes</td>
+<td>A</td>
+<td>Manufacturer availability status of the item. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>size</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Size or rating of the item.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>Organization-defined description for the item.</td>
+</tr>
+<tr>
+<td>mfr_name</td>
+<td>String</td>
+<td>Yes (Non-HPH Item)</td>
+<td></td>
+<td>Name of the item&#39;s manufacturer.</td>
+</tr>
+<tr>
+<td>cinx_material_cost_code_guid</td>
+<td>String (GUID Format)</td>
+<td>No</td>
+<td></td>
+<td>Default CINX Id for the Material Cost Code assigned to the item.</td>
+</tr>
+<tr>
+<td>product_ids.org_item_id</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>The organization&#39;s Item Id for the item . User-friendly code.</td>
+</tr>
+<tr>
+<td>product_ids.org_system_id</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>The organization&#39;s System Item Id for the item. Unique Id code.</td>
+</tr>
+<tr>
+<td>product_ids.mfr_part_number</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Manufacturer-defined Part/Catalog Number for the item.</td>
+</tr>
+<tr>
+<td>product_ids.mfr_order_number</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Manufacturer-defined Order Number for the item.</td>
+</tr>
+<tr>
+<td>product_ids.upc</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Manufacturer-defined UPC Number for the item.</td>
+</tr>
+<tr>
+<td>product_ids.gtin</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Manufacturer-defined GTIN for the item.</td>
+</tr>
+<tr>
+<td>cinx_catalog_parent.cinx_guid</td>
+<td>String (GUID Format)</td>
+<td>No</td>
+<td></td>
+<td>CINX System Id if the organization&#39;s item is linked to a public catalog (HPH) item.</td>
+</tr>
+<tr>
+<td>cinx_catalog_parent.hph_code</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>HPH Item Code if the organization&#39;s item is linked to a public catalog (HPH) item.</td>
+</tr>
+<tr>
+<td>weight.value</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Weight of the item.</td>
+</tr>
+<tr>
+<td>weight.uom</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Measurement type in which the weight value is expressed.</td>
+</tr>
+<tr>
+<td>line.cinx_guid</td>
+<td>String (GUID Format)</td>
+<td>No</td>
+<td></td>
+<td>CINX System Id of the Line to which an item is linked.</td>
+</tr>
+<tr>
+<td>org_prices.type</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Type of item price. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>org_prices.price</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Unit price of the item.</td>
+</tr>
+<tr>
+<td>org_prices.uom</td>
+<td>String</td>
+<td>Yes</td>
+<td>E</td>
+<td>Price unit-of-measure. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>packaging.type</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Description of the type of packaging unit. Template has a list of optional values.</td>
+</tr>
+<tr>
+<td>packaging.upc</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Manufacturer-defined UPC Number for the item package.</td>
+</tr>
+<tr>
+<td>packaging.gtin</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Manufacturer-defined GTIN for the item package.</td>
+</tr>
+<tr>
+<td>packaging.quantity</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Number of items in the package.</td>
+</tr>
+<tr>
+<td>packaging.depth</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Depth of the item package.</td>
+</tr>
+<tr>
+<td>packaging.height</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Height of the item package.</td>
+</tr>
+<tr>
+<td>packaging.width</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Width of the item package.</td>
+</tr>
+<tr>
+<td>packaging.cube</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Cube of the item package.</td>
+</tr>
+<tr>
+<td>packaging.dimension_uom</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Measurement type in which the dimension values are expressed.</td>
+</tr>
+<tr>
+<td>packaging.weight</td>
+<td>Real</td>
+<td>No</td>
+<td></td>
+<td>Weight of the item&#39;s package.</td>
+</tr>
+<tr>
+<td>packaging.weight_uom</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Measurement type in which the weight value is expressed.</td>
+</tr>
+<tr>
+<td>attributes.name</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Name of the attribute.</td>
+</tr>
+<tr>
+<td>attributes.value</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+<td>Value of the attribute.</td>
+</tr>
+</tbody></table>
+<h2 id='create-item'>Create Item</h2><h3 id='api-endpoint-create-a-new-catalog-item'>API Endpoint - Create a New Catalog Item</h3>
+<p><code>POST</code></p>
+
+<p>This endpoint will be used to insert a new item into the organization&#39;s private CINX catalog.</p>
+
+<aside class="warning">
+A private catalog item can be copied from a public catalog (HPH) item. If either the CINX GUID or the HPH Item Code is known for the item, simply insert the known value into the cinx_catalog_parent object. This will add the item and create a linkage to the parent item.
+</aside>
+
+<p><strong>Notes</strong></p>
+
+<ul>
+<li>A CINX Template is available that documents the available fields that can be populated.</li>
+<li>A JSON formatted payload is used in the POST request</li>
+<li>This API call supports the submission of a single item</li>
+</ul>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-item-import?body=json</strong></p>
+
+<p>URL Samples: </p>
+
+<ul>
+<li>Asynchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-item-import?body=json</code></li>
+<li>Synchronous processing: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-item-import?body=json&amp;synchronous=1</code></li>
+</ul>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload.</td>
+<td>json</td>
+</tr>
+<tr>
+<td>synchronous</td>
+<td>Switch to have the payload processed synchronously.</td>
+<td>1</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+By default the POST payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
+</aside>
+<h2 id='modify-item'>Modify Item</h2><h3 id='api-endpoint-modify-a-cinx-catalog-item'>API Endpoint - Modify a CINX Catalog Item</h3>
+<p><code>PUT</code></p>
+
+<p>This endpoint will be used to modify an organization&#39;s private catalog item.</p>
+
+<p><strong>Notes</strong></p>
+
+<ul>
+<li>A CINX Template is available that documents the available fields that can be populated.</li>
+<li>A JSON formatted payload is used in the PUT request</li>
+</ul>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-item-import?body=json</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-item-import?body=json</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload.</td>
+<td>json</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+By default the PUT payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
+</aside>
 <h1 id='catalog-app-updates'>Catalog/App Updates</h1><h2 id='update-intro'>Update Intro</h2><h3 id='cinx-catalog-application-update-introduction-price-update-service'>CINX Catalog/Application Update Introduction - Price Update Service</h3>
 <p>CINX allows a company to define their own catalog of material content. This Private Catalog can contain items from the Harrison Plumbing/Mechanical database, vendor catalogs that are hosted on CINX, and items created and maintained by the company. In addition, a company can have access to CINX software partner catalogs. For example, databases used by industry estimating systems are available as CINX catalogs.</p>
 
@@ -5812,7 +6213,7 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 </thead><tbody>
 <tr>
 <td>body</td>
-<td>Defines the content type contained in the payload</td>
+<td>Defines the content type contained in the payload.</td>
 <td>json</td>
 </tr>
 <tr>
@@ -5866,7 +6267,7 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 </thead><tbody>
 <tr>
 <td>body</td>
-<td>Defines the content type contained in the payload</td>
+<td>Defines the content type contained in the payload.</td>
 <td>json</td>
 </tr>
 </tbody></table>
