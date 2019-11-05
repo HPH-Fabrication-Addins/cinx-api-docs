@@ -136,7 +136,7 @@ execution of a construction project or maintenance of a building.
 catalog. Its data structure includes core information about the product including, part identifiers,
 descriptions, attributes, dimensional data, and URLs.
 
-**CINX Id:** uniquely identifies an entity within the CINX system. The Id is comprised of three elements
+**CINX GUID:** uniquely identifies an entity within the CINX system. The Id is comprised of three elements
 (Entity Type, Domain, and Id) which together will provide the location and Id of the entity.
 
 **Item Labor:** an Item level structure for storing labor unit (installation time) and cost information.
