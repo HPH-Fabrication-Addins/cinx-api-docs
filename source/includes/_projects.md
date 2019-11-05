@@ -574,7 +574,7 @@ URL Samples:
 
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
-body | Defines the content type contained in the payload | json
+body | Defines the content type contained in the payload. | json
 synchronous | Switch to have the payload processed synchronously. | 1
 
 ## Modify Project
@@ -618,4 +618,4 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/p
 
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
-body | Defines the content type contained in the payload | json
+body | Defines the content type contained in the payload. | json

@@ -11,7 +11,7 @@ A CINX orgranization will have a private catalog where items can be stored. An o
 
 **Labor Units**
 
-HPH has worked with industry labor unit providers (MCAA and PHCC) to store their labor units as CINX Catalogs. HPH has also linked labor units to our HPH Plumbing/Mechanical catalog items. The CINX Get Item API can return labor units when the **details view** is used. Adding a labor parameter to the URL will enable the output of labor units.  **Labor units will be returned ONLY if the organziation is authorized by the labor unit author to access them**.
+HPH has worked with industry labor unit providers (MCAA and PHCC) to store their labor units as CINX Catalogs. HPH has also linked labor units to our HPH Plumbing/Mechanical catalog items. The CINX Get Item API can return labor units when the **details view** is used. Adding a labor parameter to the URL will enable the output of labor units. **Labor units will be returned ONLY if the organziation is authorized by the labor unit author to access them**.
 
 For more information about labor units, please review the [Labor Units](#labor-units) pages on this site.
 
@@ -30,7 +30,7 @@ For more information about labor units, please review the [Labor Units](#labor-u
   - [Get a Catalog Item Template](#get-item-template)
   - [Create a Catalog Item](#create-item)
   - [Modify a Catalog Item](#modify-item)
-  - [Delete a Catalog Item](#delete-item)
+
 
 ## Get Item - HPH Code
 ### API Endpoint – Get an Item using an HPH Code
@@ -43,7 +43,7 @@ For more information about labor units, please review the [Labor Units](#labor-u
 
 `GET`
 
-This endpoint will be used to get a catalog item’s information using the HPH Code of an item.  
+This endpoint will be used to get a catalog item’s information using the HPH Code of an item.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/item/hph-code/{hph_code}?view={view_option}&labor={labor_type}**
 
@@ -77,7 +77,7 @@ labor | Defines the type of labor units returned. | mcaa, phcc, all
 ```
 `GET`
 
-This endpoint will be used to get a catalog item’s information using the organization's item id.  
+This endpoint will be used to get a catalog item’s information using the organization's item id.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/item/org-id/{org_item_id}?view={view_option}&labor={labor_type}**
 
@@ -111,7 +111,7 @@ labor | Defines the type of labor units returned. | mcaa, phcc, all
 ```
 `GET`
 
-This endpoint will be used to get a catalog item’s information using the item's CINX Id.  
+This endpoint will be used to get a catalog item’s information using the item's CINX Id.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/item/guid/{cinx_guid}?view={view_option}&labor={labor_type}**
 
@@ -260,3 +260,172 @@ The table below defines the fields output using the **compact** view option.
 When requesting a catalog from the CINX API there are two view options. 
 
 The table below defines the fields output using the **details** view option.
+
+## Get Item Template
+### API Endpoint - Get a Catalog Item Template
+
+```json
+{
+  "doc_info": {},
+  "template": {
+    "cinx_guid": null,
+    "availability_status": null,
+    "size": null,
+    "description": null,
+    "mfr_name": null,
+    "cinx_material_cost_code_guid": null,
+    "product_ids": {
+      "org_item_id": null,
+      "org_system_id": null,
+      "mfr_part_number": null,
+      "mfr_order_number": null,
+      "upc": null,
+      "gtin": null
+    },
+    "cinx_catalog_parent": {
+      "cinx_guid": null,
+      "hph_code": null
+    },
+    "weight": {
+      "value": null,
+      "uom": null
+    },
+    "lines": [{
+      "cinx_guid": null
+    }],
+    "org_prices": [{
+      "type": null,
+      "price": null,
+      "uom": null
+    }],
+    "packaging": [{
+      "type": null,
+      "upc": null,
+      "gtin": null,
+      "quantity": null,
+      "depth": null,
+      "height": null,
+      "width": null,
+      "cube": null,
+      "dimension_uom": null,
+      "weight": null,
+      "weight_uom": null
+    }],
+    "attributes": [{
+      "name": null,
+      "value": null
+    }]
+  },
+  "field_options": {},
+  "api_calls": []
+}
+```
+`GET`
+
+This endpoint will be used to get a CINX Template for a catalog item.
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/item**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/item`
+
+
+The table below defines the input fields within the template.
+
+**TEMPLATE FIELDS**
+
+Name | Data Type | Required | Dflt | Note
+----- | ----- | ----- | ----- | -----
+cinx_guid | String (GUID Format) | POST = No; PUT = Yes |  | CINX System Id.
+availability_status | String | Yes | A | Manufacturer availability status of the item. Template has a list of optional values.
+size | String | No |  | Size or rating of the item.
+description | String | Yes |  | Organization-defined description for the item.
+mfr_name | String | Yes (Non-HPH Item) |  | Name of the item's manufacturer.
+cinx_material_cost_code_guid | String (GUID Format) | No |  | Default CINX Id for the Material Cost Code assigned to the item.
+product_ids.org_item_id | String | No |  | The organization's Item Id for the item . User-friendly code.
+product_ids.org_system_id | String | No |  | The organization's System Item Id for the item. Unique Id code.
+product_ids.mfr_part_number | String | No |  | Manufacturer-defined Part/Catalog Number for the item.
+product_ids.mfr_order_number | String | No |  | Manufacturer-defined Order Number for the item.
+product_ids.upc | String | No |  | Manufacturer-defined UPC Number for the item.
+product_ids.gtin | String | No |  | Manufacturer-defined GTIN for the item.
+cinx_catalog_parent.cinx_guid | String (GUID Format) | No |  | CINX System Id if the organization's item is linked to a public catalog (HPH) item.
+cinx_catalog_parent.hph_code | String | No |  | HPH Item Code if the organization's item is linked to a public catalog (HPH) item.
+weight.value | Real | No |  | Weight of the item.
+weight.uom | String | No |  | Measurement type in which the weight value is expressed.
+line.cinx_guid | String (GUID Format) | No |  | CINX System Id of the Line to which an item is linked.
+org_prices.type | String | No |  | Type of item price. Template has a list of optional values.
+org_prices.price | Real | No |  | Unit price of the item.
+org_prices.uom | String | Yes | E | Price unit-of-measure. Template has a list of optional values.
+packaging.type | String | No |  | Description of the type of packaging unit. Template has a list of optional values.
+packaging.upc | String | No |  | Manufacturer-defined UPC Number for the item package.
+packaging.gtin | String | No |  | Manufacturer-defined GTIN for the item package.
+packaging.quantity | Real | No |  | Number of items in the package.
+packaging.depth | Real | No |  | Depth of the item package.
+packaging.height | Real | No |  | Height of the item package.
+packaging.width | Real | No |  | Width of the item package.
+packaging.cube | Real | No |  | Cube of the item package.
+packaging.dimension_uom | String | No |  | Measurement type in which the dimension values are expressed.
+packaging.weight | Real | No |  | Weight of the item's package.
+packaging.weight_uom | String | No |  | Measurement type in which the weight value is expressed.
+attributes.name | String | No |  | Name of the attribute.
+attributes.value | String | No |  | Value of the attribute.
+
+## Create Item
+### API Endpoint - Create a New Catalog Item
+
+ `POST`
+
+This endpoint will be used to insert a new item into the organization's private CINX catalog.
+
+<aside class="warning">
+A private catalog item can be copied from a public catalog (HPH) item. If either the CINX GUID or the HPH Item Code is known for the item, simply insert the known value into the cinx_catalog_parent object. This will add the item and create a linkage to the parent item.
+</aside>
+
+**Notes**
+
+  - A CINX Template is available that documents the available fields that can be populated.
+  - A JSON formatted payload is used in the POST request
+  - This API call supports the submission of a single item
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-item-import?body=json**
+
+URL Samples: 
+
+  - Asynchronous processing: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-item-import?body=json`
+  - Synchronous processing: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-item-import?body=json&synchronous=1`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+body | Defines the content type contained in the payload. | json
+synchronous | Switch to have the payload processed synchronously. | 1
+
+<aside class="notice">
+By default the POST payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
+</aside>
+
+## Modify Item
+### API Endpoint - Modify a CINX Catalog Item
+
+`PUT`
+
+This endpoint will be used to modify an organization's private catalog item.
+
+**Notes**
+
+  - A CINX Template is available that documents the available fields that can be populated.
+  - A JSON formatted payload is used in the PUT request
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-item-import?body=json**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-item-import?body=json`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+body | Defines the content type contained in the payload. | json
+
+<aside class="notice">
+By default the PUT payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
+</aside>
