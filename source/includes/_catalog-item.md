@@ -333,12 +333,16 @@ The table below defines the input fields within the template.
 
 **TEMPLATE FIELDS**
 
+<aside class="warning">
+If you are creating a new private catalog item that will be copied from an existing public catalog (HPH) item, then your API POST request will only need to contain the cinx_catalog_parent object with either the cinx_guid or hph_code field populated. The manadatory fields referenced in the table below are to be used when creating an item NOT linked to a public catalog item. For these fields the Required column will contain the following: Yes (Non-HPH Item).
+</aside>
+
 Name | Data Type | Required | Dflt | Note
 ----- | ----- | ----- | ----- | -----
 cinx_guid | String (GUID Format) | POST = No; PUT = Yes |  | CINX System Id.
-availability_status | String | Yes | A | Manufacturer availability status of the item. Template has a list of optional values.
+availability_status | String | Yes (Non-HPH Item) | A | Manufacturer availability status of the item. Template has a list of optional values.
 size | String | No |  | Size or rating of the item.
-description | String | Yes |  | Organization-defined description for the item.
+description | String | Yes (Non-HPH Item) |  | Organization-defined description for the item.
 mfr_name | String | Yes (Non-HPH Item) |  | Name of the item's manufacturer.
 cinx_material_cost_code_guid | String (GUID Format) | No |  | Default CINX Id for the Material Cost Code assigned to the item.
 product_ids.org_item_id | String | No |  | The organization's Item Id for the item . User-friendly code.
@@ -354,7 +358,7 @@ weight.uom | String | No |  | Measurement type in which the weight value is expr
 line.cinx_guid | String (GUID Format) | No |  | CINX System Id of the Line to which an item is linked.
 org_prices.type | String | No |  | Type of item price. Template has a list of optional values.
 org_prices.price | Real | No |  | Unit price of the item.
-org_prices.uom | String | Yes | E | Price unit-of-measure. Template has a list of optional values.
+org_prices.uom | String | Yes (Non-HPH Item) | E | Price unit-of-measure. Template has a list of optional values.
 packaging.type | String | No |  | Description of the type of packaging unit. Template has a list of optional values.
 packaging.upc | String | No |  | Manufacturer-defined UPC Number for the item package.
 packaging.gtin | String | No |  | Manufacturer-defined GTIN for the item package.
@@ -377,7 +381,7 @@ attributes.value | String | No |  | Value of the attribute.
 This endpoint will be used to insert a new item into the organization's private CINX catalog.
 
 <aside class="warning">
-A private catalog item can be copied from a public catalog (HPH) item. If either the CINX GUID or the HPH Item Code is known for the item, simply insert the known value into the cinx_catalog_parent object. This will add the item and create a linkage to the parent item.
+A private catalog item can be created from a public catalog (HPH) item. If either the CINX GUID or the HPH Item Code is known for the new item, simply insert the known value into the cinx_catalog_parent object of the Item template. This will add the item and create a linkage to the parent public catalog item. This link will allow the public catalog information to be included when requesting details about the item. This includes information such as Mfr List Prices, Labor Units, and links to Mfr documentation. If you submit new values for your private catalog item that are also available from the public item, your values will supercede the public catalog content.
 </aside>
 
 **Notes**
@@ -410,6 +414,10 @@ By default the POST payload will be processed asynchronously.  See the optional 
 `PUT`
 
 This endpoint will be used to modify an organization's private catalog item.
+
+<aside class="warning">
+If you submit new values for your private catalog item that are also available from the public item, your values will supercede the public catalog content. For example, if you submit a new weight value for an item that the HPH item already has a value, your new weight value will be used.
+</aside>
 
 **Notes**
 
