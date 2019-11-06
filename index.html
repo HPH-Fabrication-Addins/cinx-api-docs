@@ -321,6 +321,20 @@
               </ul>
           </li>
           <li>
+            <a href="#catalog" class="toc-h1 toc-link" data-title="Catalog">Catalog</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#catalog-definition" class="toc-h2 toc-link" data-title="Catalog Definition">Catalog Definition</a>
+                  </li>
+                  <li>
+                    <a href="#get-catalog-line-roots" class="toc-h2 toc-link" data-title="Get Catalog Line Roots">Get Catalog Line Roots</a>
+                  </li>
+                  <li>
+                    <a href="#get-catalog-line-children" class="toc-h2 toc-link" data-title="Get Catalog Line Children">Get Catalog Line Children</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#catalog-item" class="toc-h1 toc-link" data-title="Catalog Item">Catalog Item</a>
               <ul class="toc-list-h2">
                   <li>
@@ -786,9 +800,6 @@
                     <a href="#get-return" class="toc-h2 toc-link" data-title="Get Return">Get Return</a>
                   </li>
                   <li>
-                    <a href="#get-return-template" class="toc-h2 toc-link" data-title="Get Return Template">Get Return Template</a>
-                  </li>
-                  <li>
                     <a href="#get-return-number" class="toc-h2 toc-link" data-title="Get Return Number">Get Return Number</a>
                   </li>
               </ul>
@@ -917,7 +928,7 @@
 
 <p><strong>API Response Formatting – XML</strong></p>
 
-<p>To receive an XML response, please add the following parameter to the url: <strong>format=xml</strong></p>
+<p>To receive an XML response, please add the following parameter to the URL: <strong>format=xml</strong></p>
 
 <p><strong>Result Rows - Paging</strong></p>
 
@@ -942,8 +953,13 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p>A simple demo site has been created to demonstrate the implementation of commonly used API calls. The URL for the demo site is: <strong>https://www.dev.cinx.biz/cinxjs/</strong></p>
 
-<p><strong>Javascript Library</strong>
-A Javascript library has been created to support the implementation of the API. The library is hosted on Github and can be accessed via this URL: <strong>https://github.com/cinx-api/js-library</strong></p>
+<p><strong>Javascript Library</strong></p>
+
+<p>A Javascript library has been created to support the implementation of the API. The library is hosted on Github and can be accessed via this URL: <strong>https://github.com/cinx-api/js-library</strong></p>
+
+<p><strong>Email Support</strong></p>
+
+<p>Email questions to <strong>support@cinx.com</strong></p>
 <h2 id='app-sub-model'>App/Sub Model</h2><h3 id='cinx-application-subscription-model-introduction'>CINX Application/Subscription Model Introduction</h3>
 <p>A CINX customer (organization) has the opportunity to subscribe to different applications available on the platform. An application can be a grouping of pages and functionality on the CINX web site or external applications that consume content from CINX. Each application on the CINX platform has a unique identifier and a range of fields that define its attributes. When an organization subscribes to an application, a new unique identifier is created to link the application to the subscribing organization. This application id will be used in API calls to identify and grant access to requested data operations.</p>
 
@@ -1001,7 +1017,7 @@ A Javascript library has been created to support the implementation of the API. 
 
 <p><img src='images/subscription20.jpg'/></p>
 
-<p><strong>api_calls:</strong> lists related API calls.  The url in the response is fully formed with the proper API Token and other variables.  The API calls will include the web service to POST/PUT the data and any calls that can be used to access data that can be populated in the template. </p>
+<p><strong>api_calls:</strong> lists related API calls.  The URL in the response is fully formed with the proper API Token and other variables.  The API calls will include the web service to POST/PUT the data and any calls that can be used to access data that can be populated in the template. </p>
 
 <p><img src='images/subscription21.jpg'/></p>
 
@@ -1039,7 +1055,7 @@ Fields with a NULL value should be removed before creating or modifying an objec
 <h2 id='put-post-processing'>PUT/POST Processing</h2><h3 id='put-and-post-processing-options'>PUT and POST Processing Options</h3>
 <p>By default some PUT and POST operations will be processed asynchronously. This is due to the fact that some transactions could include a large volume of items which could require longer processing times. These calls will be noted on the API Documentation pages.</p>
 
-<p>If you would like to override the asynchronous default an optioinal URL parameter is provided.  Using <strong>synchronous=1</strong> in the URL will switch the processing mode to be synchronous.</p>
+<p>If you would like to override the asynchronous default an optional URL parameter is provided.  Using <strong>synchronous=1</strong> in the URL will switch the processing mode to be synchronous.</p>
 <h2 id='cinx-ids'>CINX Ids</h2><h3 id='cinx-platform-unique-ids'>CINX Platform Unique Ids</h3>
 <p>The CINX platform stores many Ids for different object types from different sources. For example, an item on a PO may have Ids defined by the customer, vendor, and product manufacturer. </p>
 
@@ -1084,7 +1100,7 @@ The TYPE, DESCRIPTION and VALUE fields are all required.
 <li>If a new external reference is submitted without a <strong>type</strong> or <strong>value</strong> it will not be saved</li>
 </ul>
 <h2 id='attributes'>Attributes</h2><h3 id='cinx-attributes'>CINX Attributes</h3>
-<p>Attributes are also used to assist in the exchange of data between systems. Similar in concept to an external reference, attributes are intended to provide API users the ability to set and retreive values relevant to another system.  </p>
+<p>Attributes are also used to assist in the exchange of data between systems. Similar in concept to an external reference, attributes are intended to provide API users the ability to set and retrieve values relevant to another system.  </p>
 
 <p>In the API, attributes are used on objects that do not have external references. An important example is a BOM-ITEM.</p>
 
@@ -1144,7 +1160,7 @@ The TYPE and VALUE fields are both required.
                         </span><span class="s2">"cinx_app_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d217f7b7-ef49-5ae1-adf3-3765160725a4"</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Integrated Price Updates"</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INTEGRATION : IMPORT-EXPORT"</span><span class="p">,</span><span class="w">
-                        </span><span class="s2">"data_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Southland"</span><span class="w">
+                        </span><span class="s2">"data_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Private Catalog"</span><span class="w">
                     </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
             </span><span class="p">}</span><span class="w">
@@ -1190,13 +1206,99 @@ The TYPE and VALUE fields are both required.
 
 <ul>
 <li>A User can be associated with multiple companies (orgs).  In this case, their will be multiple <strong>Rows</strong> in the response.</li>
-<li>If a User account is expired the <strong>status_code</strong> will be <strong>401</strong>.</li>
-<li>For addtional information about working with this response see this page <a href="#auth-response">Auth Response</a></li>
+<li>If a User account is expired the <strong>status_code</strong> in the subscription object will be <strong>401</strong>.</li>
+<li>For additional information about working with this response see this page <a href="#auth-response">Auth Response</a></li>
 </ul>
 
 <p>URL Pattern: <strong>{api path}/{api version}/subs</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/subs</code></p>
+
+<p><strong>RESPONSE FIELDS</strong></p>
+
+<aside class="warning">
+API TOKEN: The CINX API uses an API Token when submitting web service requests. The CINX API Token is retrieved from the response of this call in a field named cinx_api_token. A company that has a CINX account must also be configured to permit API access before the API token will be returned in the authorization API response. Please email support@cinx.com to request access to the API if your company does not have an API Token.   
+</aside>
+
+<table><thead>
+<tr>
+<th>Field Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cinx_api_token</td>
+<td>Company-specific API token value that will be used in the URL of other CINX API calls. Token is valid for the duration of a company’s CINX subscription. Tokens <strong>will be</strong> different on the two different CINX servers (Dev and Production).</td>
+</tr>
+<tr>
+<td>user.cinx_user_guid</td>
+<td>CINX unique Id for the user.</td>
+</tr>
+<tr>
+<td>user.first_name</td>
+<td>User&#39;s first name.</td>
+</tr>
+<tr>
+<td>user.middle_name</td>
+<td>User&#39;s middle name.</td>
+</tr>
+<tr>
+<td>user.last_name</td>
+<td>User&#39;s last name.</td>
+</tr>
+<tr>
+<td>user.suffix</td>
+<td>User&#39;s name suffix.</td>
+</tr>
+<tr>
+<td>org.cinx_org_id</td>
+<td>CINX unique Id for the company/organization.</td>
+</tr>
+<tr>
+<td>org.name</td>
+<td>Name of the company/organization.</td>
+</tr>
+<tr>
+<td>subscription.status_code</td>
+<td>Status code for the subscription. Potential values are <strong>200</strong> and <strong>401</strong>.</td>
+</tr>
+<tr>
+<td>subscription.status_message</td>
+<td>Message relating to the status code. Potential values are <strong>OK</strong> or <strong>Unauthorized</strong>.</td>
+</tr>
+<tr>
+<td>subscription.status_message_reason</td>
+<td>Reason for the status code. If the account is expired the account expiration date will be provided.</td>
+</tr>
+<tr>
+<td>subscription.start_date</td>
+<td>Start date of the company&#39;s subscription.</td>
+</tr>
+<tr>
+<td>subscription.end_date</td>
+<td>Expiration date of the company&#39;s subscription.</td>
+</tr>
+<tr>
+<td>apps.cinx_app_guid</td>
+<td>System constant value that is used to identify an application within the CINX platform. If you are a software company that requires data access to a specific catalog of content, a CINX app will be created and you will be provided the cinx_app_guid so that you can query the response for instances of your app.</td>
+</tr>
+<tr>
+<td>apps.cinx_app_id</td>
+<td>Unique value that links a subscribing CINX company/org to the application. This value will be required when making API calls to access content.</td>
+</tr>
+<tr>
+<td>apps.name</td>
+<td>Name of the application.</td>
+</tr>
+<tr>
+<td>apps.type</td>
+<td>CINX application type. Current CINX App types include Integration (interactions with other software systems) and Data-Source (catalog of content).</td>
+</tr>
+<tr>
+<td>apps.data_source</td>
+<td>Name of the source of the item content that will be used to create content update files (price updates).</td>
+</tr>
+</tbody></table>
 <h2 id='auth-response'>Auth Response</h2><h3 id='working-with-the-get-user-subscription-auth-api-response'>Working with the GET User Subscription/Auth API Response</h3>
 <p>The Subscription/Authorization API response will provide the necessary information to make subsequent API requests.</p>
 
@@ -1256,7 +1358,7 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <p>The <strong>cinx_app_id</strong> is a unique value that links a subscribing CINX org to your application. This value will be required when you are making API calls to access content.</p>
 
 <p>The <strong>data_source</strong> name value will define the source of the item content that will be used to create content update files (price updates). For more information about the relationship between and app and a data source, please review the CINX Applications and Data Source page.</p>
-<h1 id='org-company'>Org/Company</h1><h2 id='org-definition'>Org Definition</h2><h3 id='cinx-object-defintion-organization'>CINX Object Defintion - Organization</h3>
+<h1 id='org-company'>Org/Company</h1><h2 id='org-definition'>Org Definition</h2><h3 id='cinx-object-definition-organization'>CINX Object Definition - Organization</h3>
 <p>An Organization in CINX defines a company or grouping of individuals (residential customers) that participate or is referenced on the platform.</p>
 
 <p><strong>Dependencies and Business Rules</strong></p>
@@ -1304,6 +1406,22 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/org</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='get-org-template'>Get Org Template</h2><h3 id='api-endpoint-get-an-organization-template'>API Endpoint - Get an Organization Template</h3>
 <p><code>GET</code></p>
 
@@ -1312,7 +1430,23 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/org</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/org</code></p>
-<h2 id='modify-org'>Modify Org</h2><h3 id='api-enpoint-modify-an-organization-39-s-details'>API Enpoint – Modify an Organization&#39;s Details</h3>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h2 id='modify-org'>Modify Org</h2><h3 id='api-endpoint-modify-an-organization-39-s-details'>API Endpoint – Modify an Organization&#39;s Details</h3>
 <p><code>PUT</code></p>
 
 <p>This request will be used to modify an organization’s details.</p>
@@ -1358,7 +1492,23 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/users</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/users</code></p>
-<h2 id='org-locations-addresses'>Org Locations/Addresses</h2><h3 id='api-enpoint-get-an-organization-39-s-list-of-locations-addresses'>API Enpoint – Get an Organization&#39;s List of Locations/Addresses</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h2 id='org-locations-addresses'>Org Locations/Addresses</h2><h3 id='api-endpoint-get-an-organization-39-s-list-of-locations-addresses'>API Endpoint – Get an Organization&#39;s List of Locations/Addresses</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'http://api.dev.cinx.biz'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
@@ -1398,7 +1548,23 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/addresses</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/addresses</code></p>
-<h2 id='get-customer-types'>Get Customer Types</h2><h3 id='api-enpoint-get-an-organization-s-list-of-customer-types'>API Enpoint – Get an Organization’s List of Customer Types</h3>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h2 id='get-customer-types'>Get Customer Types</h2><h3 id='api-endpoint-get-an-organization-s-list-of-customer-types'>API Endpoint – Get an Organization’s List of Customer Types</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
@@ -1420,7 +1586,23 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/org-refs/types/customers</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org-refs/types/customers</code></p>
-<h2 id='get-vendor-types'>Get Vendor Types</h2><h3 id='api-enpoint-get-an-organization-s-list-of-vendor-types'>API Enpoint – Get an Organization’s List of Vendor Types</h3>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h2 id='get-vendor-types'>Get Vendor Types</h2><h3 id='api-endpoint-get-an-organization-s-list-of-vendor-types'>API Endpoint – Get an Organization’s List of Vendor Types</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
@@ -1442,7 +1624,23 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/org-refs/types/vendors</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org-refs/types/vendors</code></p>
-<h2 id='get-project-types'>Get Project Types</h2><h3 id='api-enpoint-get-an-organization-s-list-of-project-types'>API Enpoint – Get an Organization’s List of Project Types</h3>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h2 id='get-project-types'>Get Project Types</h2><h3 id='api-endpoint-get-an-organization-s-list-of-project-types'>API Endpoint – Get an Organization’s List of Project Types</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
@@ -1462,7 +1660,23 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/org-refs/types/projects</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org-refs/types/projects</code></p>
-<h2 id='get-dispute-reasons'>Get Dispute Reasons</h2><h3 id='api-enpoint-get-an-organization-s-list-of-invoice-dispute-reasons'>API Enpoint – Get an Organization’s List of Invoice Dispute Reasons</h3>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h2 id='get-dispute-reasons'>Get Dispute Reasons</h2><h3 id='api-endpoint-get-an-organization-s-list-of-invoice-dispute-reasons'>API Endpoint – Get an Organization’s List of Invoice Dispute Reasons</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
@@ -1489,7 +1703,23 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/org-refs/invoices/dispute-reasons</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org-refs/invoices/dispute-reasons</code></p>
-<h2 id='get-return-reasons'>Get Return Reasons</h2><h3 id='api-enpoint-get-an-organization-s-list-of-return-reasons'>API Enpoint – Get an Organization’s List of Return Reasons</h3>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h2 id='get-return-reasons'>Get Return Reasons</h2><h3 id='api-endpoint-get-an-organization-s-list-of-return-reasons'>API Endpoint – Get an Organization’s List of Return Reasons</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
@@ -1516,7 +1746,23 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/org-refs/returns/reasons</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org-refs/returns/reasons</code></p>
-<h2 id='get-return-actions'>Get Return Actions</h2><h3 id='api-enpoint-get-an-organization-s-list-of-return-actions'>API Enpoint – Get an Organization’s List of Return Actions</h3>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h2 id='get-return-actions'>Get Return Actions</h2><h3 id='api-endpoint-get-an-organization-s-list-of-return-actions'>API Endpoint – Get an Organization’s List of Return Actions</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
@@ -1538,21 +1784,108 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 </span></code></pre>
 <p><code>GET</code></p>
 
-<p>This endpoint will be used to get a company’s list of thier Return Actions. In CINX, each company can define the list of the actions it would like the vendor to use when processing the return. The company can define a code and name for each action. </p>
+<p>This endpoint will be used to get a company’s list of their Return Actions. In CINX, each company can define the list of the actions it would like the vendor to use when processing the return. The company can define a code and name for each action. </p>
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/org-refs/returns/actions</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org-refs/returns/actions</code></p>
-<h1 id='catalog-item'>Catalog Item</h1><h2 id='item-definition'>Item Definition</h2><h3 id='cinx-object-defintion-catalog-item'>CINX Object Defintion - Catalog Item</h3>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h1 id='catalog'>Catalog</h1><h2 id='catalog-definition'>Catalog Definition</h2><h3 id='cinx-object-definition-private-catalog'>CINX Object Definition - Private Catalog</h3>
+<p>A CINX catalog is a collection of items grouped together in a CINX database structure. Catalogs may contain
+construction materials, sub-contract services, rental equipment, and other content necessary for the
+execution of a construction project or maintenance of a building.</p>
+
+<p>Every CINX organization can have their own private catalog that can be accessed by the organization&#39;s users in the CINX user interface or via the API. A private catalog can be populated by copying items from a CINX public catalog (HPH) or by creating new private items. Private items will not be linked to an HPH item and therefore will have to be managed and updated by the organization.</p>
+
+<p>With a CINX private catalog, an organization can:
+  - create a hierarchy classification system to group items
+  - create their own product identifiers and descriptions for items
+  - manage different pricing levels
+  - create exports and update files for different software systems</p>
+
+<p><strong>Supported API Services</strong></p>
+
+<ul>
+<li><a href="#get-item-hph-code">Get Catalog Line Roots</a></li>
+<li><a href="#get-item-org-id">Get a Catalog Line Children</a></li>
+<li><a href="#catalog-item">Catalog Items</a></li>
+<li><a href="#catalog/app-updates">Catalog/App Updates</a></li>
+</ul>
+<h2 id='get-catalog-line-roots'>Get Catalog Line Roots</h2><h3 id='api-endpoint-get-a-private-catalog-39-s-line-root-levels'>API Endpoint – Get a Private Catalog&#39;s Line Root Levels</h3>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a listing of a company&#39;s private catalog root level line hierarchies.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/lines/roots</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/lines/roots</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h2 id='get-catalog-line-children'>Get Catalog Line Children</h2><h3 id='api-endpoint-get-a-private-catalog-line-39-s-children-levels'>API Endpoint – Get a Private Catalog Line&#39;s Children Levels</h3>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a listing of a private catalog line&#39;s children (child lines).</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/line/{line_cinx_guid}/children</strong></p>
+
+<p>The line_cinx_guid is the CINX Id of the parent line.</p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/line/3cfc2cdf-c96a-5b00-a572-33d8f343f0c6/children</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h1 id='catalog-item'>Catalog Item</h1><h2 id='item-definition'>Item Definition</h2><h3 id='cinx-object-definition-catalog-item'>CINX Object Definition - Catalog Item</h3>
 <p>A CINX Catalog Item is a building material product or construction related service that is stored within a CINX catalog.</p>
 
 <p>A CINX catalog is a collection of items grouped together in a CINX database structure. Catalogs may contain construction materials, sub-contract services, rental equipment, and other content necessary for the execution of a construction project or maintenance of a building.</p>
 
-<p>A CINX orgranization will have a private catalog where items can be stored. An organization&#39;s private CINX catalog can be built from the items from CINX public catalogs including the HPH Plumbing/Mechanical database. Private items not associated with a CINX public catalog can also be inserted into an organization&#39;s private catalog. Thus, the responsibility for maintaining that item will be the organization.</p>
+<p>A CINX organization will have a private catalog where items can be stored. An organization&#39;s private CINX catalog can be built from the items from CINX public catalogs including the HPH Plumbing/Mechanical database. Private items not associated with a CINX public catalog can also be inserted into an organization&#39;s private catalog. Thus, the responsibility for maintaining that item will be the organization.</p>
 
 <p><strong>Labor Units</strong></p>
 
-<p>HPH has worked with industry labor unit providers (MCAA and PHCC) to store their labor units as CINX Catalogs. HPH has also linked labor units to our HPH Plumbing/Mechanical catalog items. The CINX Get Item API can return labor units when the <strong>details view</strong> is used. Adding a labor parameter to the URL will enable the output of labor units. <strong>Labor units will be returned ONLY if the organziation is authorized by the labor unit author to access them</strong>.</p>
+<p>HPH has worked with industry labor unit providers (MCAA and PHCC) to store their labor units as CINX Catalogs. HPH has also linked labor units to our HPH Plumbing/Mechanical catalog items. The CINX Get Item API can return labor units when the <strong>details view</strong> is used. Adding a labor parameter to the URL will enable the output of labor units. <strong>Labor units will be returned ONLY if the organization is authorized by the labor unit author to access them</strong>.</p>
 
 <p>For more information about labor units, please review the <a href="#labor-units">Labor Units</a> pages on this site.</p>
 
@@ -1600,13 +1933,18 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 </thead><tbody>
 <tr>
 <td>view</td>
-<td>Defines the level of content in the reponse.</td>
+<td>Defines the level of content in the response.</td>
 <td>compact, details</td>
 </tr>
 <tr>
 <td>labor</td>
 <td>Defines the type of labor units returned.</td>
 <td>mcaa, phcc, all</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
 </tr>
 </tbody></table>
 
@@ -1649,13 +1987,18 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 </thead><tbody>
 <tr>
 <td>view</td>
-<td>Defines the level of content in the reponse.</td>
+<td>Defines the level of content in the response.</td>
 <td>compact, details</td>
 </tr>
 <tr>
 <td>labor</td>
 <td>Defines the type of labor units returned.</td>
 <td>mcaa, phcc, all</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
 </tr>
 </tbody></table>
 
@@ -1698,13 +2041,18 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 </thead><tbody>
 <tr>
 <td>view</td>
-<td>Defines the level of content in the reponse.</td>
+<td>Defines the level of content in the response.</td>
 <td>compact, details</td>
 </tr>
 <tr>
 <td>labor</td>
 <td>Defines the type of labor units returned.</td>
 <td>mcaa, phcc, all</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
 </tr>
 </tbody></table>
 
@@ -1900,9 +2248,29 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/item</code></p>
 
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+
 <p>The table below defines the input fields within the template.</p>
 
 <p><strong>TEMPLATE FIELDS</strong></p>
+
+<aside class="warning">
+If you are creating a new private catalog item that will be copied from an existing public catalog (HPH) item, then your API POST request will only need to contain the cinx_catalog_parent object with either the cinx_guid or hph_code field populated. The mandatory fields referenced in the table below are to be used when creating an item NOT linked to a public catalog item. For these fields the Required column will contain the following: Yes (Non-HPH Item).
+</aside>
 
 <table><thead>
 <tr>
@@ -1923,7 +2291,7 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <tr>
 <td>availability_status</td>
 <td>String</td>
-<td>Yes</td>
+<td>Yes (Non-HPH Item)</td>
 <td>A</td>
 <td>Manufacturer availability status of the item. Template has a list of optional values.</td>
 </tr>
@@ -1937,7 +2305,7 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <tr>
 <td>description</td>
 <td>String</td>
-<td>Yes</td>
+<td>Yes (Non-HPH Item)</td>
 <td></td>
 <td>Organization-defined description for the item.</td>
 </tr>
@@ -2049,7 +2417,7 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <tr>
 <td>org_prices.uom</td>
 <td>String</td>
-<td>Yes</td>
+<td>Yes (Non-HPH Item)</td>
 <td>E</td>
 <td>Price unit-of-measure. Template has a list of optional values.</td>
 </tr>
@@ -2151,7 +2519,7 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <p>This endpoint will be used to insert a new item into the organization&#39;s private CINX catalog.</p>
 
 <aside class="warning">
-A private catalog item can be copied from a public catalog (HPH) item. If either the CINX GUID or the HPH Item Code is known for the item, simply insert the known value into the cinx_catalog_parent object. This will add the item and create a linkage to the parent item.
+A private catalog item can be created from a public catalog (HPH) item. If either the CINX GUID or the HPH Item Code is known for the new item, simply insert the known value into the cinx_catalog_parent object of the Item template. This will add the item and create a linkage to the parent public catalog item. This link will allow the public catalog information to be included when requesting details about the item. This includes information such as Mfr List Prices, Labor Units, and links to Mfr documentation. If you submit new values for your private catalog item that are also available from the public item, your values will supersede the public catalog content.
 </aside>
 
 <p><strong>Notes</strong></p>
@@ -2199,6 +2567,10 @@ By default the POST payload will be processed asynchronously.  See the optional 
 <p><code>PUT</code></p>
 
 <p>This endpoint will be used to modify an organization&#39;s private catalog item.</p>
+
+<aside class="warning">
+If you submit new values for your private catalog item that are also available from the public item, your values will supersede the public catalog content. For example, if you submit a new weight value for an item that the HPH item already has a value, your new weight value will be used.
+</aside>
 
 <p><strong>Notes</strong></p>
 
@@ -2384,13 +2756,18 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to files published after the submitted date.</td>
 <td>YYYY-MM-DD</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 
 <p><strong>Notes</strong></p>
 
 <ul>
 <li>If no <strong>status</strong> parameter is included in the URL, the ALL option will be used by default </li>
-<li>If the url uses the <strong>NEW</strong> parameter and there are no new updates, the api response will have an empty <strong>rows</strong> array</li>
+<li>If the URL uses the <strong>NEW</strong> parameter and there are no new updates, the API response will have an empty <strong>rows</strong> array</li>
 <li>Catalog Update files of <strong>type=Update</strong> should always be processed in chronological order starting with the earliest date.</li>
 </ul>
 <h2 id='download-update'>Download Update</h2><h3 id='api-endpoint-download-a-catalog-app-update-file'>API Endpoint – Download a Catalog/App Update File</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
@@ -2414,7 +2791,7 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p><strong>Notes</strong></p>
 
 <ul>
-<li>The update guid used in the URL is obtained from the Get Update List reponse.  It is the cinx_guid value in the reponse.</li>
+<li>The update guid used in the URL is obtained from the Get Update List response.  It is the cinx_guid value in the response.</li>
 <li>Catalog Update files of <strong>type=Update</strong> should always be processed in chronological order starting with the earliest date.</li>
 </ul>
 <h2 id='download-bulletin'>Download Bulletin</h2><h3 id='api-endpoint-download-a-catalog-app-update-bulletin-file-only'>API Endpoint – Download a Catalog/App Update Bulletin File ONLY</h3>
@@ -2469,7 +2846,7 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <h1 id='labor-units'>Labor Units</h1><h2 id='labor-units-intro'>Labor Units Intro</h2><h3 id='cinx-introduction-to-industry-labor-units'>CINX Introduction to Industry Labor Units</h3>
 <p>In construction, a labor unit is the estimated time it takes to install an item under good working conditions.</p>
 
-<p>In the Plumbing/Mechanial industry there are two primary sources of labor unit standards.  They are both industry trade organzations:</p>
+<p>In the Plumbing/Mechanical industry there are two primary sources of labor unit standards.  They are both industry trade organizations:</p>
 
 <ul>
 <li>MCAA - Mechanical Contractors Association of America</li>
@@ -2483,16 +2860,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <li>PHCC - <strong>Per Fitting</strong> and <strong>Per Joint</strong></li>
 </ul>
 
-<p>HPH has license agreements with both of these trade organinzations which allow us to store their labor units as CINX catalogs and provide API services to access their content. Every labor unit has been assigned a unique HPH Labor Code.  The code can stored in local database and used in API calls to access the actual labor unit values.</p>
+<p>HPH has license agreements with both of these trade organizations which allow us to store their labor units as CINX catalogs and provide API services to access their content. Every labor unit has been assigned a unique HPH Labor Code.  The code can stored in local database and used in API calls to access the actual labor unit values.</p>
 
-<p>The API also offers full database and update files of the labor units so that a sofware system can have a labor unit update feature.</p>
+<p>The API also offers full database and update files of the labor units so that a software system can have a labor unit update feature.</p>
 
 <p>HPH has also linked the industry labor units to our HPH Plumbing/Mechanical catalog items. Both PHCC methods and the MCAA Component method have been assigned to our items.</p>
 
 <p><strong>NOTES</strong></p>
 
 <ul>
-<li><strong>Labor units will be returned ONLY if the organziation is authorized by the labor unit source (trade organization) to access them</strong>.</li>
+<li><strong>Labor units will be returned ONLY if the organization is authorized by the labor unit source (trade organization) to access them</strong>.</li>
 <li>Please review the assumptions from each trade organization in regards to how the units were calculated and their intended use.</li>
 <li>The Labor Unit API responses will contain a field named <strong>joint_quantity</strong>. This will be populated only when the labor source is PHCC and the method is Per Joint.</li>
 </ul>
@@ -2542,6 +2919,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/labor/hph/{hph_labor_code}</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/labor/hph/L01FTCU030000025</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='get-labor-source-id'>Get Labor - Source Id</h2><h3 id='api-endpoint-get-a-labor-unit-using-the-source-39-s-trade-organization-unit-id'>API Endpoint – Get a Labor Unit using the Source&#39;s (Trade Organization) Unit Id</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -2586,6 +2979,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Defines the labor unit organization.</td>
 <td>mcaa, phcc</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h2 id='get-item-labor-hph-code'>Get Item Labor - HPH Code</h2><h3 id='api-endpoint-get-an-item-39-s-labor-units-using-an-hph-code'>API Endpoint – Get an Item&#39;s Labor Units using an HPH Code</h3>
 <blockquote>
@@ -2620,6 +3018,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Defines which organization&#39;s units are to be returned.</td>
 <td>mcaa, phcc, all</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h1 id='job-costing-setup'>Job Costing Setup</h1><h2 id='job-costing-intro'>Job Costing Intro</h2><h3 id='cinx-job-costing-introduction'>CINX Job Costing Introduction</h3>
 <p>To allow for the proper reporting of project items and integration of transactions with contractor accounting systems, CINX has the ability for a company to define its job costing attributes. CINX supports the following job cost information types:</p>
@@ -2639,7 +3042,7 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p><strong>TAX GROUPS</strong></p>
 
 <p>A Tax Group is a collection of tax fields defined in an accounting system that allows for the proper identification and processing of taxes.  </p>
-<h2 id='get-phases'>Get Phases</h2><h3 id='api-endpoint-get-an-organizaiton-39-s-list-of-phases'>API Endpoint - Get an Organizaiton&#39;s List of Phases</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
+<h2 id='get-phases'>Get Phases</h2><h3 id='api-endpoint-get-an-organization-39-s-list-of-phases'>API Endpoint - Get an Organization&#39;s List of Phases</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
@@ -2676,6 +3079,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/org/job-costing/phases</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/phases</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='get-phase-template'>Get Phase Template</h2><h3 id='api-endpoint-get-a-phase-template'>API Endpoint - Get a Phase Template</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -2714,6 +3133,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/phase</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/phase</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 
 <p>The table below defines the input fields within the template.</p>
 
@@ -2924,6 +3359,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/org/job-costing/material-cost-codes</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/material-cost-codes</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='get-mat-cost-code-template'>Get Mat Cost Code Template</h2><h3 id='api-endpoint-get-a-material-cost-code-template'>API Endpoint - Get a Material Cost Code Template</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -2962,6 +3413,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/material-cost-code</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/material-cost-code</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 
 <p>The table below defines the input fields within the template.</p>
 
@@ -3145,6 +3612,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/org/job-costing/categories</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/categories</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='get-category-template'>Get Category Template</h2><h3 id='api-endpoint-get-a-category-template'>API Endpoint - Get a Category Template</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -3183,6 +3666,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/category</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/category</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 
 <p>The table below defines the input fields within the template.</p>
 
@@ -3341,6 +3840,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/org/job-costing/tax-groups</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/tax-groups</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='get-tax-group-template'>Get Tax Group Template</h2><h3 id='api-endpoint-get-a-tax-group-template'>API Endpoint - Get a Tax Group Template</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -3380,6 +3895,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/tax-group</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/tax-group</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 
 <p>The table below defines the input fields within the template.</p>
 
@@ -3450,7 +3981,7 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="c1">//tObject can be created based on the template retreived from cinxApi.getTaxGroupTemplate(cinx_api_token) call</span>
+<span class="c1">//tObject can be created based on the template retrieved from cinxApi.getTaxGroupTemplate(cinx_api_token) call</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postTaxGroup</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">tObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
@@ -3515,7 +4046,7 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>json</td>
 </tr>
 </tbody></table>
-<h1 id='vendors'>Vendors</h1><h2 id='vendor-definition'>Vendor Definition</h2><h3 id='cinx-object-defintion-vendor'>CINX Object Defintion - Vendor</h3>
+<h1 id='vendors'>Vendors</h1><h2 id='vendor-definition'>Vendor Definition</h2><h3 id='cinx-object-definition-vendor'>CINX Object Definition - Vendor</h3>
 <p>Vendor is a generic term that refers to any organization that sells/distributes products or services that are consumed by a customer. Vendors refer to different organization types within the construction vertical market.</p>
 
 <p>For contractors on the CINX platform, a Vendor is a Wholesale Distributor or other entities that provide products or services.  As a web-based platform CINX has the ability for contractors and distributors to connect with one another if they are both already members of the CINX site. Similar to LinkedIn and Facebook, a request is sent by the requesting party to create a relationship whereby CINX activities and transactions can be shared between the two companies.</p>
@@ -3685,6 +4216,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/vendor/{cinx_commerce_guid}</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/vendor/512d5a2f-1d6c-21ca-9b97-9299ac9c802a</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='get-vendor-template'>Get Vendor Template</h2><h3 id='api-endpoint-get-a-vendor-template'>API Endpoint - Get a Vendor Template</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -3785,6 +4332,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/vendor</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/vendor</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 
 <p>The table below defines the input fields within the template.</p>
 
@@ -4122,13 +4685,29 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/auto-number/vendor</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/vendor</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='create-vendor'>Create Vendor</h2><h3 id='api-endpoint-create-a-new-vendor'>API Endpoint - Create a New Vendor</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="c1">//vendorObject can be created based on the template retreived from cinxApi.getVendorTemplate(cinx_api_token) call</span>
+<span class="c1">//vendorObject can be created based on the template retrieved from cinxApi.getVendorTemplate(cinx_api_token) call</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postVendor</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">vendorObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
@@ -4180,7 +4759,7 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="c1">//vendorObject can be created based on the template retreived from cinxApi.getVendorTemplate(cinx_api_token) call</span>
+<span class="c1">//vendorObject can be created based on the template retrieved from cinxApi.getVendorTemplate(cinx_api_token) call</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">putVendor</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">vendorObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
@@ -4317,6 +4896,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h2 id='get-vendor-quotes'>Get Vendor Quotes</h2><h3 id='api-endpoint-get-a-list-of-quotes-submitted-by-a-vendor'>API Endpoint - Get a List of Quotes Submitted by a Vendor</h3>
 <blockquote>
@@ -4396,6 +4980,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>number</td>
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
 </tr>
 </tbody></table>
 <h2 id='get-vendor-pos'>Get Vendor POs</h2><h3 id='api-endpoint-get-a-list-of-pos-submitted-to-a-vendor'>API Endpoint - Get a List of POs Submitted to a Vendor</h3>
@@ -4500,6 +5089,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h2 id='get-vendor-pocos'>Get Vendor POCOs</h2><h3 id='api-endpoint-get-a-list-of-po-change-orders-submitted-to-a-vendor'>API Endpoint - Get a List of PO Change Orders Submitted to a Vendor</h3>
 <blockquote>
@@ -4601,6 +5195,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h2 id='get-vendor-deliveries'>Get Vendor Deliveries</h2><h3 id='api-endpoint-get-a-list-of-deliveries-for-a-vendor'>API Endpoint - Get a List of Deliveries for a Vendor</h3>
 <blockquote>
@@ -4682,6 +5281,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h2 id='get-vendor-invoices'>Get Vendor Invoices</h2><h3 id='api-endpoint-get-a-list-of-invoices-from-a-vendor'>API Endpoint - Get a List of Invoices from a Vendor</h3>
 <blockquote>
@@ -4761,6 +5365,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>number</td>
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
 </tr>
 </tbody></table>
 <h2 id='get-vendor-returns'>Get Vendor Returns</h2><h3 id='api-endpoint-get-a-list-of-returns-for-a-vendor'>API Endpoint - Get a List of Returns for a Vendor</h3>
@@ -4842,6 +5451,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h2 id='get-vendor-back-orders'>Get Vendor Back-Orders</h2><h3 id='api-endpoint-get-a-list-of-back-orders-from-a-vendor'>API Endpoint - Get a List of Back-Orders from a Vendor</h3>
 <blockquote>
@@ -4919,8 +5533,13 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specific purchase order.</td>
 <td>{cinx_po_id}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
-<h1 id='projects'>Projects</h1><h2 id='project-definition'>Project Definition</h2><h3 id='cinx-object-defintion-project'>CINX Object Defintion - Project</h3>
+<h1 id='projects'>Projects</h1><h2 id='project-definition'>Project Definition</h2><h3 id='cinx-object-definition-project'>CINX Object Definition - Project</h3>
 <p>A CINX project is a job that is being performed for a customer/client on building, structure, or other asset.</p>
 
 <p><strong>Dependencies and Business Rules</strong></p>
@@ -5006,6 +5625,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specific status.</td>
 <td>CONCEPTUAL, BID, DESIGN, CONSTRUCTION, CLOSEOUT, COMPLETED, NOT SPECIFIED</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h2 id='get-project'>Get Project</h2><h3 id='api-endpoint-get-a-project'>API Endpoint - Get a Project</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
@@ -5079,6 +5703,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/project/{project_guid}</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/e8c5dc6b-e95a-5009-ad89-a11520f55493</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='get-project-template'>Get Project Template</h2><h3 id='api-endpoint-get-a-project-template'>API Endpoint - Get a Project Template</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -5271,6 +5911,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/project</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/project</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 
 <p>The table below defines the input fields within the template.</p>
 
@@ -5542,7 +6198,7 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Real</td>
 <td>No</td>
 <td></td>
-<td>Number of days required for the material vendor to aquire the item.</td>
+<td>Number of days required for the material vendor to acquire the item.</td>
 </tr>
 <tr>
 <td>items.allow_substitutes</td>
@@ -5871,7 +6527,7 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>String</td>
 <td>No</td>
 <td></td>
-<td>Name for the Labor Cost Code assigned to the labor reqruired to install the item.</td>
+<td>Name for the Labor Cost Code assigned to the labor required to install the item.</td>
 </tr>
 <tr>
 <td>items.job_cost.cinx_category_guid</td>
@@ -6154,13 +6810,29 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/auto-number/project</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/project</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='create-project'>Create Project</h2><h3 id='api-endpoint-create-a-new-project'>API Endpoint - Create a New Project</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="c1">//projectObject can be created based on the template retreived from cinxApi.getProjectTemplate(cinx_api_token) call</span>
+<span class="c1">//projectObject can be created based on the template retrieved from cinxApi.getProjectTemplate(cinx_api_token) call</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postProject</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">projectObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
@@ -6228,7 +6900,7 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="c1">//projectObject can be created based on the template retreived from cinxApi.getProjectTemplate(cinx_api_token) call</span>
+<span class="c1">//projectObject can be created based on the template retrieved from cinxApi.getProjectTemplate(cinx_api_token) call</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">putProject</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">projectObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
@@ -6389,6 +7061,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/project/{project_guid}/job-costing</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/e1e3cb54-b00a-55ae-a079-072732542bf4/job-costing</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='get-project-job-cost-template'>Get Project Job Cost Template</h2><h3 id='api-endpoint-get-a-project-job-costing-breakdown-template'>API Endpoint - Get a Project Job Costing Breakdown Template</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -6460,6 +7148,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/project-job-costing</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/project-job-costing</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 
 <p>The table below defines the input fields within the template.</p>
 
@@ -6649,7 +7353,7 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="c1">//projectCostObject can be created based on the template retreived from cinxApi.getProjectJobCostTemplate(cinx_api_token) call</span>
+<span class="c1">//projectCostObject can be created based on the template retrieved from cinxApi.getProjectJobCostTemplate(cinx_api_token) call</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postProjectJobCosting</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">projectCostObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
@@ -6825,6 +7529,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h2 id='get-project-rfqs'>Get Project RFQs</h2><h3 id='api-endpoint-get-a-list-of-rfqs-linked-to-a-project'>API Endpoint - Get a List of RFQs Linked to a Project</h3>
 <blockquote>
@@ -6917,6 +7626,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h2 id='get-project-quotes'>Get Project Quotes</h2><h3 id='api-endpoint-get-a-list-of-quotes-for-a-project'>API Endpoint - Get a List of Quotes for a Project</h3>
 <blockquote>
@@ -6998,6 +7712,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>number</td>
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
 </tr>
 </tbody></table>
 <h2 id='get-project-pos'>Get Project POs</h2><h3 id='api-endpoint-get-a-list-of-pos-for-a-project'>API Endpoint - Get a List of POs for a Project</h3>
@@ -7102,6 +7821,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h2 id='get-project-pocos'>Get Project POCOs</h2><h3 id='api-endpoint-get-a-list-of-po-change-orders-for-a-project'>API Endpoint - Get a List of PO Change Orders for a Project</h3>
 <blockquote>
@@ -7203,6 +7927,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h2 id='get-project-deliveries'>Get Project Deliveries</h2><h3 id='api-endpoint-get-a-list-of-deliveries-for-a-project'>API Endpoint - Get a List of Deliveries for a Project</h3>
 <blockquote>
@@ -7283,6 +8012,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>number</td>
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
 </tr>
 </tbody></table>
 <h2 id='get-project-invoices'>Get Project Invoices</h2><h3 id='api-endpoint-get-a-list-of-invoices-for-a-project'>API Endpoint - Get a List of Invoices for a Project</h3>
@@ -7366,6 +8100,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h2 id='get-project-returns'>Get Project Returns</h2><h3 id='api-endpoint-get-a-list-of-returns-for-a-project'>API Endpoint - Get a List of Returns for a Project</h3>
 <blockquote>
@@ -7446,6 +8185,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h2 id='get-project-back-orders'>Get Project Back-Orders</h2><h3 id='api-endpoint-get-a-list-of-back-orders-for-a-project'>API Endpoint - Get a List of Back-Orders for a Project</h3>
 <blockquote>
@@ -7523,6 +8267,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specific purchase order.</td>
 <td>{cinx_po_id}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h2 id='get-project-lead-times'>Get Project Lead-Times</h2><h3 id='api-endpoint-get-a-list-of-lead-times-for-a-project'>API Endpoint - Get a List of Lead-Times for a Project</h3>
 <blockquote>
@@ -7567,7 +8316,23 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/project/{project_guid}/lead-times</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/lead-times</code></p>
-<h1 id='requisitions'>Requisitions</h1><h2 id='req-definition'>Req Definition</h2><h3 id='cinx-object-defintion-requisition'>CINX Object Defintion - Requisition</h3>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h1 id='requisitions'>Requisitions</h1><h2 id='req-definition'>Req Definition</h2><h3 id='cinx-object-definition-requisition'>CINX Object Definition - Requisition</h3>
 <p>A CINX Material Requisition is a compilation of parts that need to be purchased.  The list might be for a whole project, phase, system, pre-fab work-order, spool, or a general list created by a project foreman in the field. The parts on a requisition might also contain items from multiple projects that are combined into one purchase to achieve volume pricing.</p>
 
 <p>It is important to understand that the parts on a requisition may be divided onto different purchase orders which might be sent to different vendors.</p>
@@ -7699,6 +8464,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>number</td>
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
 </tr>
 </tbody></table>
 <h2 id='get-req'>Get Req</h2><h3 id='api-endpoint-get-a-requisition'>API Endpoint - Get a Requisition</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
@@ -7867,6 +8637,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>The cinx_guid will be the requisition’s CINX Id.</p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/req/e73c118f-1ee9-57e0-9c79-1775c1a04b81</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='get-req-template'>Get Req Template</h2><h3 id='api-endpoint-get-a-requisition-template'>API Endpoint - Get a Requisition Template</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -8022,6 +8808,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/req</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/req</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 
 <p>The table below defines the input fields within the template.</p>
 
@@ -8702,13 +9504,29 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/auto-number/req</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/req</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='create-req'>Create Req</h2><h3 id='api-endpoint-create-a-new-requisition'>API Endpoint - Create a New Requisition</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="c1">//requisitionObject can be created based on the template retreived from cinxApi.getReqTemplate(cinx_api_token) call</span>
+<span class="c1">//requisitionObject can be created based on the template retrieved from cinxApi.getReqTemplate(cinx_api_token) call</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postReq</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">requisitionObject</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
@@ -8803,7 +9621,7 @@ By default the POST payload will be processed asynchronously.  See the optional 
 <aside class="notice">
 By default the PUT payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
 </aside>
-<h1 id='rfqs'>RFQs</h1><h2 id='rfq-definition'>RFQ Definition</h2><h3 id='cinx-object-defintion-request-for-quotation'>CINX Object Defintion - Request for Quotation</h3>
+<h1 id='rfqs'>RFQs</h1><h2 id='rfq-definition'>RFQ Definition</h2><h3 id='cinx-object-definition-request-for-quotation'>CINX Object Definition - Request for Quotation</h3>
 <p>A CINX Request for Quotation is a compilation of  that a customer wants a vendor(s) to provide pricing on before making ordering/sourcing decisions. The list might be for a whole project, phase, system, pre-fab work-order, spool, or a general list created by a project foreman in the field. </p>
 
 <p><strong>Dependencies and Business Rules</strong></p>
@@ -8919,6 +9737,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>number</td>
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
 </tr>
 </tbody></table>
 <h2 id='get-rfq'>Get RFQ</h2><h3 id='api-endpoint-get-an-rfq'>API Endpoint - Get an RFQ</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -9079,6 +9902,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>The cinx_guid will be the RFQ’s CINX Id.</p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/rfq/e73c118f-1ee9-57e0-9c79-1775c1a04b81</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='get-rfq-template'>Get RFQ Template</h2><h3 id='api-endpoint-get-an-rfq-template'>API Endpoint - Get an RFQ Template</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
     </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
@@ -9218,6 +10057,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/rfq</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/rfq</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 
 <p>The table below defines the input fields within the template.</p>
 
@@ -9874,6 +10729,22 @@ If modifying the vendor array, please submit all the desired vendors in the PUT 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/auto-number/rfq</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/rfq</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='create-rfq'>Create RFQ</h2><h3 id='api-endpoint-create-a-new-rfq'>API Endpoint - Create a New RFQ</h3>
 <p><code>POST</code></p>
 
@@ -10047,8 +10918,13 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
-<h1 id='quotes'>Quotes</h1><h2 id='quote-definition'>Quote Definition</h2><h3 id='cinx-object-defintion-quote'>CINX Object Defintion - Quote</h3>
+<h1 id='quotes'>Quotes</h1><h2 id='quote-definition'>Quote Definition</h2><h3 id='cinx-object-definition-quote'>CINX Object Definition - Quote</h3>
 <p>A CINX Quote is a document a vendor prepares in response to a customer’s Request for Quotation.  Quotes will contain the net prices a customer will pay if they place an order.</p>
 
 <p><strong>Supported API Services</strong></p>
@@ -10140,6 +11016,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>number</td>
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
 </tr>
 </tbody></table>
 <h2 id='get-quote'>Get Quote</h2><h3 id='api-endpoint-get-a-quote'>API Endpoint - Get a Quote</h3>
@@ -10273,7 +11154,23 @@ By default the PUT payload will be processed asynchronously.  See the optional U
         </span><span class="p">]</span><span class="w">
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='purchase-orders'>Purchase Orders</h1><h2 id='po-definition'>PO Definition</h2><h3 id='cinx-object-defintion-purchase-order'>CINX Object Defintion - Purchase Order</h3>
+</span></code></pre>
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h1 id='purchase-orders'>Purchase Orders</h1><h2 id='po-definition'>PO Definition</h2><h3 id='cinx-object-definition-purchase-order'>CINX Object Definition - Purchase Order</h3>
 <p>A CINX Purchase Order is a compilation of parts that are being ordered. The list might be for a whole project, phase, system, pre-fab work-order, spool, or a general list created by a project foreman in the field. </p>
 
 <p><strong>Dependencies and Business Rules</strong></p>
@@ -10298,8 +11195,8 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <li><a href="#get-po-change-orders">Get a List of Change Orders for a Purchase Order</a></li>
 <li><a href="#get-po-deliveries">Get a List of Deliveries for a Purchase Order</a></li>
 <li><a href="#get-po-invoices">Get a List of Invoices for a Purchase Order</a></li>
-<li><a href="#get-po-returns">Get a List of Returns for a Purchse Order</a></li>
-<li><a href="#get-po-back-orders">Get a List of Back-Orders for a Purchse Order</a></li>
+<li><a href="#get-po-returns">Get a List of Returns for a Purchase Order</a></li>
+<li><a href="#get-po-back-orders">Get a List of Back-Orders for a Purchase Order</a></li>
 <li><a href="#erp-status-update">Update a Purchase Order&#39;s ERP Status</a></li>
 </ul>
 <h2 id='get-po-list'>Get PO List</h2><h3 id='api-endpoint-get-a-list-of-purchase-orders'>API Endpoint - Get a List of Purchase Orders</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
@@ -10417,6 +11314,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>number</td>
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
 </tr>
 </tbody></table>
 <h2 id='get-po'>Get PO</h2><h3 id='api-endpoint-get-a-purchase-order'>API Endpoint - Get a Purchase Order</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
@@ -10618,9 +11520,25 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/po/{cinx_guid}</strong></p>
 
+<p>The cinx_guid will be the purchase orders’s CINX Id.</p>
+
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/po/8185cbd2-18c6-5cdc-b3ed-25795aabbfcc</code></p>
 
-<p>The cinx_guid will be the purchase orders’s CINX Id.</p>
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='get-po-template'>Get PO Template</h2><h3 id='api-endpoint-get-a-purchase-order-template'>API Endpoint - Get a Purchase Order Template</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -10834,6 +11752,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/po</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/po</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 
 <p>The table below defines the input fields within the template.</p>
 
@@ -11843,13 +12777,29 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/auto-number/po</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/po</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='create-po'>Create PO</h2><h3 id='api-endpoint-create-a-new-purchase-order'>API Endpoint - Create a New Purchase Order</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="c1">//poObject can be created based on the template retreived from cinxApi.getPoTemplate(cinx_api_token) call</span>
+<span class="c1">//poObject can be created based on the template retrieved from cinxApi.getPoTemplate(cinx_api_token) call</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postPO</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">poObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
@@ -12062,6 +13012,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h2 id='get-po-deliveries'>Get PO Deliveries</h2><h3 id='api-endpoint-get-a-list-of-deliveries-for-a-purchase-order'>API Endpoint - Get a List of Deliveries for a Purchase Order</h3>
 <blockquote>
@@ -12148,6 +13103,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h2 id='get-po-invoices'>Get PO Invoices</h2><h3 id='api-endpoint-get-a-list-of-invoices-for-a-purchase-order'>API Endpoint - Get a List of Invoices for a Purchase Order</h3>
 <blockquote>
@@ -12229,6 +13189,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h2 id='get-po-returns'>Get PO Returns</h2><h3 id='api-endpoint-get-a-list-of-returns-for-a-purchase-order'>API Endpoint - Get a List of Returns for a Purchase Order</h3>
 <blockquote>
@@ -12309,6 +13274,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
 <h2 id='get-po-back-orders'>Get PO Back-Orders</h2><h3 id='api-endpoint-get-a-list-of-back-orders-for-a-purchase-order'>API Endpoint - Get a List of Back-Orders for a Purchase Order</h3>
 <blockquote>
@@ -12386,8 +13356,13 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Limits results to a single vendor.</td>
 <td>{organization&#39;s vendor number}</td>
 </tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
 </tbody></table>
-<h1 id='po-change-orders'>PO Change Orders</h1><h2 id='po-change-order-definition'>PO Change Order Definition</h2><h3 id='cinx-object-defintion-po-change-order'>CINX Object Defintion - PO Change Order</h3>
+<h1 id='po-change-orders'>PO Change Orders</h1><h2 id='po-change-order-definition'>PO Change Order Definition</h2><h3 id='cinx-object-definition-po-change-order'>CINX Object Definition - PO Change Order</h3>
 <p>A CINX Purchase Order Change Order is created when changes need to be made to a previously submitted purchase order. Example of changes include: changing a price or quantity; adding or modifying job costing information; adding or removing a item row. </p>
 
 <p><strong>Dependencies and Business Rules</strong></p>
@@ -12514,6 +13489,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>number</td>
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
 </tr>
 </tbody></table>
 <h2 id='get-po-co'>Get PO CO</h2><h3 id='api-endpoint-get-a-po-change-order'>API Endpoint - Get a PO Change Order</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -12714,7 +13694,23 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>The cinx_guid will be the PO Change Order’s CINX Id.</p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/poco/e73c118f-1ee9-57e0-9c79-1775c1a04b81</code></p>
-<h1 id='lead-times'>Lead-Times</h1><h2 id='lead-time-definition'>Lead-Time Definition</h2><h3 id='cinx-object-defintion-lead-time'>CINX Object Defintion - Lead-Time</h3>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h1 id='lead-times'>Lead-Times</h1><h2 id='lead-time-definition'>Lead-Time Definition</h2><h3 id='cinx-object-definition-lead-time'>CINX Object Definition - Lead-Time</h3>
 <p>CINX supports the definition of a lead-time for an item that has been added to a project or purchasing transaction.  A lead time defines the amount of time, expressed in days, that it will take for the vendor to deliver the finished product after it is ordered. CINX also supports the definition of two date fields (need by and order by) that will help manage the timely ordering of materials.  </p>
 
 <p><strong>Dependencies and Business Rules</strong></p>
@@ -12797,6 +13793,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>vendor</td>
 <td>Limits results to a single vendor.</td>
 <td>{organization&#39;s vendor number}</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
 </tr>
 </tbody></table>
 <h2 id='get-lead-time'>Get Lead-Time</h2><h3 id='api-endpoint-get-a-lead-time'>API Endpoint - Get a Lead-Time</h3>
@@ -12906,7 +13907,23 @@ By default the PUT payload will be processed asynchronously.  See the optional U
         </span><span class="s2">"attibutes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='back-orders'>Back-Orders</h1><h2 id='back-order-definition'>Back-Order Definition</h2><h3 id='cinx-object-defintion-back-order'>CINX Object Defintion - Back-Order</h3>
+</span></code></pre>
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h1 id='back-orders'>Back-Orders</h1><h2 id='back-order-definition'>Back-Order Definition</h2><h3 id='cinx-object-definition-back-order'>CINX Object Definition - Back-Order</h3>
 <p>A back-order is an item from a submitted PO that cannot be delivered by the requested delivery date, and for which the customer is prepared to wait for the vendor to replenish its inventory.</p>
 
 <p><strong>Dependencies and Business Rules</strong></p>
@@ -12998,6 +14015,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>po-guid</td>
 <td>Limits results to a specific purchase order.</td>
 <td>{cinx_po_id}</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
 </tr>
 </tbody></table>
 <h2 id='get-back-order'>Get Back-Order</h2><h3 id='api-endpoint-get-a-back-order'>API Endpoint - Get a Back-Order</h3>
@@ -13123,7 +14145,23 @@ By default the PUT payload will be processed asynchronously.  See the optional U
         </span><span class="s2">"updates"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='deliveries'>Deliveries</h1><h2 id='delivery-definition'>Delivery Definition</h2><h3 id='cinx-object-defintion-delivery'>CINX Object Defintion - Delivery</h3>
+</span></code></pre>
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h1 id='deliveries'>Deliveries</h1><h2 id='delivery-definition'>Delivery Definition</h2><h3 id='cinx-object-definition-delivery'>CINX Object Definition - Delivery</h3>
 <p>A CINX Delivery is created when a shipment from a vendor is received. A Delivery references a purchase order on which the materials were ordered.  </p>
 
 <p><strong>Dependencies and Business Rules</strong></p>
@@ -13238,6 +14276,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>number</td>
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
 </tr>
 </tbody></table>
 <h2 id='get-delivery'>Get Delivery</h2><h3 id='api-endpoint-get-a-delivery'>API Endpoint - Get a Delivery</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
@@ -13385,6 +14428,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>The cinx_guid will be the delivery&#39;s CINX Id.</p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/delivery/e73c118f-1ee9-57e0-9c79-1775c1a04b81</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='get-delivery-template'>Get Delivery Template</h2><h3 id='api-endpoint-get-a-delivery-template'>API Endpoint - Get a Delivery Template</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -13473,6 +14532,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/delivery</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/delivery</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 
 <p>The table below defines the input fields within the template.</p>
 
@@ -13810,13 +14885,29 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/auto-number/delivery</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/delivery</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='create-delivery'>Create Delivery</h2><h3 id='api-endpoint-create-a-new-delivery'>API Endpoint - Create a New Delivery</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="c1">//dObject can be created based on the template retreived from cinxApi.getDeliveryTemplate(cinx_api_token) call</span>
+<span class="c1">//dObject can be created based on the template retrieved from cinxApi.getDeliveryTemplate(cinx_api_token) call</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postDelivery</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">dObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
@@ -13923,7 +15014,7 @@ By default the POST payload will be processed asynchronously.  See the optional 
 <aside class="notice">
 By default the PUT payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
 </aside>
-<h1 id='invoices'>Invoices</h1><h2 id='invoice-definition'>Invoice Definition</h2><h3 id='cinx-object-defintion-invoices'>CINX Object Defintion - Invoices</h3>
+<h1 id='invoices'>Invoices</h1><h2 id='invoice-definition'>Invoice Definition</h2><h3 id='cinx-object-definition-invoices'>CINX Object Definition - Invoices</h3>
 <p>An Invoice is a vendor document is that indicates the quantities and costs of the products or services provider by the vendor. The invoice document will also define payment terms and dates.</p>
 
 <p><strong>Dependencies and Business Rules</strong></p>
@@ -14026,6 +15117,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>number</td>
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
 </tr>
 </tbody></table>
 <h2 id='get-invoice'>Get Invoice</h2><h3 id='api-endpoint-get-an-invoice'>API Endpoint - Get an Invoice</h3>
@@ -14191,8 +15287,24 @@ By default the PUT payload will be processed asynchronously.  See the optional U
         </span><span class="p">]</span><span class="w">
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='returns'>Returns</h1><h2 id='return-definition'>Return Definition</h2><h3 id='cinx-object-defintion-return'>CINX Object Defintion - Return</h3>
-<p>A CINX Return is a contractor initiated process of returning previously purchased products to the vendor from which it was sourced. Part of the return process is receiving an RMA from a vendor which will be attached the the return. In CINX an organization may establish the return reasons and actions that are avaialable to users when returning products.</p>
+</span></code></pre>
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h1 id='returns'>Returns</h1><h2 id='return-definition'>Return Definition</h2><h3 id='cinx-object-definition-return'>CINX Object Definition - Return</h3>
+<p>A CINX Return is a contractor initiated process of returning previously purchased products to the vendor from which it was sourced. Part of the return process is receiving an RMA from a vendor which will be attached the the return. In CINX an organization may establish the return reasons and actions that are available to users when returning products.</p>
 
 <p><strong>Dependencies and Business Rules</strong></p>
 
@@ -14295,6 +15407,11 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>number</td>
 <td>Limits results to a specified transaction number.</td>
 <td>{transaction_number}</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
 </tr>
 </tbody></table>
 <h2 id='get-return'>Get Return</h2><h3 id='api-endpoint-get-a-return'>API Endpoint - Get a Return</h3>
@@ -14487,16 +15604,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
         </span><span class="p">}]</span><span class="w">
     </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='get-return-template'>Get Return Template</h2><h3 id='api-endpoint-get-a-return-template'>API Endpoint - Get a Return Template</h3>
-<p><code>GET</code></p>
+</span></code></pre>
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
-<p>This endpoint will be used to get a CINX Template for a return.</p>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/return</strong></p>
-
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/return</code></p>
-
-<p>The table below defines the input fields within the template.</p>
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='get-return-number'>Get Return Number</h2><h3 id='api-endpoint-get-a-new-return-number'>API Endpoint - Get a New Return Number</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -14532,6 +15655,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/auto-number/return</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/return</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h1 id='additional-info'>Additional Info</h1><h2 id='ping-server'>PING Server</h2><h3 id='api-endpoint-ping-cinx-api-server'>API Endpoint - PING CINX API Server</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -14562,6 +15701,22 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/ping</strong></p>
 
 <p>URL Samples: <code>https://api.cinx.com/2.0/ping</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='get-countries'>Get Countries</h2><h3 id='api-endpoint-get-a-list-of-countries'>API Endpoint - Get a List of Countries</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -14582,9 +15737,25 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 
 <p>This endpoint will be used to get a list of countries. This can be used when setting addresses within the API. Please use the <strong>abv_alpha3</strong> field.</p>
 
-<p>URL Pattern: <strong>{api path}/{api_version}sub/countries</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/countries</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/countries</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='get-states'>Get States</h2><h3 id='api-endpoint-get-a-list-of-states-for-a-country'>API Endpoint - Get a List of States for a Country</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -14603,9 +15774,25 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 
 <p>This endpoint will be used to get a list of states for a given country. This can be used when setting addresses within the API.  Please use the <strong>abv</strong> field.</p>
 
-<p>URL Pattern: <strong>{api path}/{api_version}sub/country/{country_abv_alpha3}/states</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/country/{country_abv_alpha3}/states</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/country/usa/states</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='get-currencies'>Get Currencies</h2><h3 id='api-endpoint-get-a-list-of-currencies'>API Endpoint - Get a List of Currencies</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
@@ -14625,9 +15812,25 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 
 <p>This endpoint will be used to get a list of currencies. Please use the <strong>currency_abv</strong> field when setting a currency in CINX.</p>
 
-<p>URL Pattern: <strong>{api path}/{api_version}sub/currencies</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/currencies</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/currencies</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
 <h2 id='cinx-concepts'>CINX Concepts</h2><h3 id='list-of-cinx-terms-and-concepts'>List of CINX Terms and Concepts</h3>
 <p><strong>Application:</strong> is a grouping of pages, functionality, or an external software partner system that interacts
 with the CINX platform and is managed via a CINX subscription plan.</p>
@@ -14651,7 +15854,7 @@ execution of a construction project or maintenance of a building.</p>
 catalog. Its data structure includes core information about the product including, part identifiers,
 descriptions, attributes, dimensional data, and URLs.</p>
 
-<p><strong>CINX Id:</strong> uniquely identifies an entity within the CINX system. The Id is comprised of three elements
+<p><strong>CINX GUID:</strong> uniquely identifies an entity within the CINX system. The Id is comprised of three elements
 (Entity Type, Domain, and Id) which together will provide the location and Id of the entity.</p>
 
 <p><strong>Item Labor:</strong> an Item level structure for storing labor unit (installation time) and cost information.</p>
