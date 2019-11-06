@@ -91,7 +91,7 @@ This endpoint will be used to get the applications/subscriptions that the user i
 **Notes**
 
   - A User can be associated with multiple companies (orgs).  In this case, their will be multiple **Rows** in the response.
-  - If a User account is expired the **status_code** in the subscription object will be **401**.
+  - If a User account is expired, the **status_code** in the subscription object will be **401**.
   - For additional information about working with this response see this page [Auth Response](#auth-response)
 
 URL Pattern: **{api path}/{api version}/subs**
