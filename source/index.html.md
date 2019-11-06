@@ -13,6 +13,7 @@ includes:
   - introduction
   - user-auth
   - org-company
+  - catalog
   - catalog-item
   - catalog-updates
   - labor-units
