@@ -101,7 +101,7 @@ The **rows** array will contain the query results.
 
 **API Response Formatting – XML**
 
-To receive an XML response, please add the following parameter to the url: **format=xml**
+To receive an XML response, please add the following parameter to the URL: **format=xml**
 
 
 **Result Rows - Paging**
@@ -133,7 +133,12 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 A simple demo site has been created to demonstrate the implementation of commonly used API calls. The URL for the demo site is: **https://www.dev.cinx.biz/cinxjs/**
 
 **Javascript Library**
+
 A Javascript library has been created to support the implementation of the API. The library is hosted on Github and can be accessed via this URL: **https://github.com/cinx-api/js-library**
+
+**Email Support**
+
+Email questions to **support@cinx.com**
 
 ## App/Sub Model
 ### CINX Application/Subscription Model Introduction
@@ -203,7 +208,7 @@ The templates are accessed via the API and use a standardized response structure
 
 <img src='images/subscription20.jpg'/>
 
-**api_calls:** lists related API calls.  The url in the response is fully formed with the proper API Token and other variables.  The API calls will include the web service to POST/PUT the data and any calls that can be used to access data that can be populated in the template. 
+**api_calls:** lists related API calls.  The URL in the response is fully formed with the proper API Token and other variables.  The API calls will include the web service to POST/PUT the data and any calls that can be used to access data that can be populated in the template. 
 
 <img src='images/subscription21.jpg'/>
 
@@ -244,7 +249,7 @@ API calls for obtaining the next number for an object are provided and documente
 
 By default some PUT and POST operations will be processed asynchronously. This is due to the fact that some transactions could include a large volume of items which could require longer processing times. These calls will be noted on the API Documentation pages.
 
-If you would like to override the asynchronous default an optioinal URL parameter is provided.  Using **synchronous=1** in the URL will switch the processing mode to be synchronous.
+If you would like to override the asynchronous default an optional URL parameter is provided.  Using **synchronous=1** in the URL will switch the processing mode to be synchronous.
 
 ## CINX Ids
 ### CINX Platform Unique Ids
@@ -300,7 +305,7 @@ Processing Notes
 ## Attributes
 ### CINX Attributes
 
-Attributes are also used to assist in the exchange of data between systems. Similar in concept to an external reference, attributes are intended to provide API users the ability to set and retreive values relevant to another system.  
+Attributes are also used to assist in the exchange of data between systems. Similar in concept to an external reference, attributes are intended to provide API users the ability to set and retrieve values relevant to another system.  
 
 In the API, attributes are used on objects that do not have external references. An important example is a BOM-ITEM.
 

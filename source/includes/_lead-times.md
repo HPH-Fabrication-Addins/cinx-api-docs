@@ -1,7 +1,7 @@
 # Lead-Times
 
 ## Lead-Time Definition
-### CINX Object Defintion - Lead-Time
+### CINX Object Definition - Lead-Time
 
 CINX supports the definition of a lead-time for an item that has been added to a project or purchasing transaction.  A lead time defines the amount of time, expressed in days, that it will take for the vendor to deliver the finished product after it is ordered. CINX also supports the definition of two date fields (need by and order by) that will help manage the timely ordering of materials.  
 
@@ -69,6 +69,7 @@ Parameter Name | Description | Value Type or Options
 delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
 project | Limits results to a single project. | {cinx_project_id}
 vendor | Limits results to a single vendor. | {organization's vendor number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Lead-Time
 ### API Endpoint - Get a Lead-Time
@@ -182,3 +183,9 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/l
 	}]
 }
 ```
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml

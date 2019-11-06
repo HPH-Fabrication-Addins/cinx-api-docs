@@ -36,6 +36,12 @@ URL Pattern: **{api path}/{api_version}/ping**
 
 URL Samples: `https://api.cinx.com/2.0/ping`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Get Countries
 ### API Endpoint - Get a List of Countries
 
@@ -58,9 +64,15 @@ URL Samples: `https://api.cinx.com/2.0/ping`
 
 This endpoint will be used to get a list of countries. This can be used when setting addresses within the API. Please use the **abv_alpha3** field.
 
-URL Pattern: **{api path}/{api_version}sub/countries**
+URL Pattern: **{api path}/{api_version}/sub/countries**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/countries`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get States
 ### API Endpoint - Get a List of States for a Country
@@ -82,9 +94,15 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/c
 
 This endpoint will be used to get a list of states for a given country. This can be used when setting addresses within the API.  Please use the **abv** field.
 
-URL Pattern: **{api path}/{api_version}sub/country/{country_abv_alpha3}/states**
+URL Pattern: **{api path}/{api_version}/sub/country/{country_abv_alpha3}/states**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/country/usa/states`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Currencies
 ### API Endpoint - Get a List of Currencies
@@ -107,9 +125,15 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/c
 
 This endpoint will be used to get a list of currencies. Please use the **currency_abv** field when setting a currency in CINX.
 
-URL Pattern: **{api path}/{api_version}sub/currencies**
+URL Pattern: **{api path}/{api_version}/sub/currencies**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/currencies`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## CINX Concepts
 ### List of CINX Terms and Concepts

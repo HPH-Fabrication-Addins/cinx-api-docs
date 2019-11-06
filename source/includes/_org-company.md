@@ -1,8 +1,7 @@
 # Org/Company
 
-
 ## Org Definition
-### CINX Object Defintion - Organization
+### CINX Object Definition - Organization
 
 An Organization in CINX defines a company or grouping of individuals (residential customers) that participate or is referenced on the platform.
 
@@ -51,6 +50,13 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/org**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml 
+
+
 ## Get Org Template
 ### API Endpoint - Get an Organization Template
 
@@ -62,8 +68,14 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/org**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/org`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml 
+
 ## Modify Org
-### API Enpoint – Modify an Organization's Details
+### API Endpoint – Modify an Organization's Details
 
 `PUT`
 
@@ -72,6 +84,8 @@ This request will be used to modify an organization’s details.
 URL Pattern:**{api path}/{api_version}/sub/{api_token}/org**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/xxx`
+
+
 
 ## Org Users
 ### API Enpoint – Get an Organization's List of Users
@@ -117,8 +131,14 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/users**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/users`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Org Locations/Addresses
-### API Enpoint – Get an Organization's List of Locations/Addresses
+### API Endpoint – Get an Organization's List of Locations/Addresses
 
 ```javascript
 //Using cinx-api.js
@@ -162,9 +182,15 @@ This endpoint will be used to get a company’s list of location types and their
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/addresses**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/addresses`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
  
 ## Get Customer Types
-### API Enpoint – Get an Organization’s List of Customer Types
+### API Endpoint – Get an Organization’s List of Customer Types
 
 > The above code returns JSON structured like this:
 
@@ -188,8 +214,14 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/org-refs/types/customers
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org-refs/types/customers`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Get Vendor Types
-### API Enpoint – Get an Organization’s List of Vendor Types
+### API Endpoint – Get an Organization’s List of Vendor Types
 
 > The above code returns JSON structured like this:
 
@@ -213,8 +245,14 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/org-refs/types/vendors**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org-refs/types/vendors`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Get Project Types
-### API Enpoint – Get an Organization’s List of Project Types
+### API Endpoint – Get an Organization’s List of Project Types
 
 > The above code returns JSON structured like this:
 
@@ -236,8 +274,14 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/org-refs/types/projects*
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org-refs/types/projects`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Get Dispute Reasons
-### API Enpoint – Get an Organization’s List of Invoice Dispute Reasons
+### API Endpoint – Get an Organization’s List of Invoice Dispute Reasons
 
 > The above code returns JSON structured like this:
 
@@ -266,8 +310,14 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/org-refs/invoices/disput
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org-refs/invoices/dispute-reasons`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Get Return Reasons
-### API Enpoint – Get an Organization’s List of Return Reasons
+### API Endpoint – Get an Organization’s List of Return Reasons
 
 > The above code returns JSON structured like this:
 
@@ -296,8 +346,14 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/org-refs/returns/reasons
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org-refs/returns/reasons`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Get Return Actions
-### API Enpoint – Get an Organization’s List of Return Actions
+### API Endpoint – Get an Organization’s List of Return Actions
 
 > The above code returns JSON structured like this:
 
@@ -320,8 +376,14 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/o
 ```
 `GET`
 
-This endpoint will be used to get a company’s list of thier Return Actions. In CINX, each company can define the list of the actions it would like the vendor to use when processing the return. The company can define a code and name for each action. 
+This endpoint will be used to get a company’s list of their Return Actions. In CINX, each company can define the list of the actions it would like the vendor to use when processing the return. The company can define a code and name for each action. 
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/org-refs/returns/actions**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org-refs/returns/actions`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml

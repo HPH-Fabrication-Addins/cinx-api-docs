@@ -1,7 +1,7 @@
 # Invoices
 
 ## Invoice Definition
-### CINX Object Defintion - Invoices
+### CINX Object Definition - Invoices
 
 An Invoice is a vendor document is that indicates the quantities and costs of the products or services provider by the vendor. The invoice document will also define payment terms and dates.
 
@@ -72,6 +72,7 @@ project | Limits results to a single project. | {cinx_project_id}
 vendor | Limits results to a single vendor. | {organization's vendor number}
 owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Invoice
 ### API Endpoint - Get an Invoice
@@ -241,3 +242,9 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/i
 	}]
 }
 ```
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml

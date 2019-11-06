@@ -134,12 +134,13 @@ Parameter Name | Description | Value Type or Options
 status | Limits results based on the consumption status. | NEW, APPLIED, ALL
 type | Limits results based on type of update file. | UPDATE, FULL, CUSTOM
 after | Limits results to files published after the submitted date. | YYYY-MM-DD
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 
 **Notes**
 
   - If no **status** parameter is included in the URL, the ALL option will be used by default 
-  - If the url uses the **NEW** parameter and there are no new updates, the api response will have an empty **rows** array
+  - If the URL uses the **NEW** parameter and there are no new updates, the API response will have an empty **rows** array
   - Catalog Update files of **type=Update** should always be processed in chronological order starting with the earliest date.
 
 ## Download Update
@@ -166,7 +167,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/a
 
 **Notes**
 
-  - The update guid used in the URL is obtained from the Get Update List reponse.  It is the cinx_guid value in the reponse.
+  - The update guid used in the URL is obtained from the Get Update List response.  It is the cinx_guid value in the response.
   - Catalog Update files of **type=Update** should always be processed in chronological order starting with the earliest date.
 
 

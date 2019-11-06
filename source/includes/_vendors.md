@@ -1,7 +1,7 @@
 # Vendors
 
 ## Vendor Definition
-### CINX Object Defintion - Vendor
+### CINX Object Definition - Vendor
 
 Vendor is a generic term that refers to any organization that sells/distributes products or services that are consumed by a customer. Vendors refer to different organization types within the construction vertical market.
 
@@ -181,6 +181,12 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/vendor/{cinx_commerce_gu
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/vendor/512d5a2f-1d6c-21ca-9b97-9299ac9c802a`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Get Vendor Template
 ### API Endpoint - Get a Vendor Template
 
@@ -287,6 +293,12 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/vendor**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/vendor`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 
 The table below defines the input fields within the template.
 
@@ -375,6 +387,12 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/auto-number/vendor**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/vendor`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Create Vendor
 ### API Endpoint - Create a New Vendor
 
@@ -385,7 +403,7 @@ cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 var isSynchronous = true;
-//vendorObject can be created based on the template retreived from cinxApi.getVendorTemplate(cinx_api_token) call
+//vendorObject can be created based on the template retrieved from cinxApi.getVendorTemplate(cinx_api_token) call
 cinxApi.postVendor(cinx_api_token, vendorObject, isSynchronous)
     .then(function(response) {
         console.log(response);
@@ -431,7 +449,7 @@ cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 var isSynchronous = true;
-//vendorObject can be created based on the template retreived from cinxApi.getVendorTemplate(cinx_api_token) call
+//vendorObject can be created based on the template retrieved from cinxApi.getVendorTemplate(cinx_api_token) call
 cinxApi.putVendor(cinx_api_token, vendorObject, isSynchronous)
     .then(function(response) {
         console.log(response);

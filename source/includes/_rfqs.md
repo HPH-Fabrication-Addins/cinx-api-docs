@@ -1,7 +1,7 @@
 # RFQs
 
 ## RFQ Definition
-### CINX Object Defintion - Request for Quotation
+### CINX Object Definition - Request for Quotation
 
 A CINX Request for Quotation is a compilation of  that a customer wants a vendor(s) to provide pricing on before making ordering/sourcing decisions. The list might be for a whole project, phase, system, pre-fab work-order, spool, or a general list created by a project foreman in the field. 
 
@@ -81,6 +81,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get RFQ
 ### API Endpoint - Get an RFQ
@@ -246,6 +247,12 @@ The cinx_guid will be the RFQ’s CINX Id.
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/rfq/e73c118f-1ee9-57e0-9c79-1775c1a04b81`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Get RFQ Template
 ### API Endpoint - Get an RFQ Template
 
@@ -391,6 +398,13 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/rfq**
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/rfq`
 
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
+
 The table below defines the input fields within the template.
 
 **TEMPLATE FIELDS**
@@ -527,6 +541,12 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/auto-number/rfq**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/rfq`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Create RFQ
 ### API Endpoint - Create a New RFQ
 
@@ -640,3 +660,4 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
 submitter | Limits results to a specified CINX user. | {cinx_uer_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml

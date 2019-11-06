@@ -1,7 +1,7 @@
 # Purchase Orders
 
 ## PO Definition
-### CINX Object Defintion - Purchase Order
+### CINX Object Definition - Purchase Order
 
 A CINX Purchase Order is a compilation of parts that are being ordered. The list might be for a whole project, phase, system, pre-fab work-order, spool, or a general list created by a project foreman in the field. 
 
@@ -24,8 +24,8 @@ A CINX Purchase Order is a compilation of parts that are being ordered. The list
   - [Get a List of Change Orders for a Purchase Order](#get-po-change-orders)
   - [Get a List of Deliveries for a Purchase Order](#get-po-deliveries)
   - [Get a List of Invoices for a Purchase Order](#get-po-invoices)
-  - [Get a List of Returns for a Purchse Order](#get-po-returns)
-  - [Get a List of Back-Orders for a Purchse Order](#get-po-back-orders)
+  - [Get a List of Returns for a Purchase Order](#get-po-returns)
+  - [Get a List of Back-Orders for a Purchase Order](#get-po-back-orders)
   - [Update a Purchase Order's ERP Status](#erp-status-update)
 
 ## Get PO List
@@ -104,6 +104,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get PO
 ### API Endpoint - Get a Purchase Order
@@ -309,9 +310,15 @@ This endpoint will be used to get the details of a specific purchase order.  Not
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/po/{cinx_guid}**
 
+The cinx_guid will be the purchase orders’s CINX Id.
+
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/po/8185cbd2-18c6-5cdc-b3ed-25795aabbfcc`
 
-The cinx_guid will be the purchase orders’s CINX Id.
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get PO Template
 ### API Endpoint - Get a Purchase Order Template
@@ -534,6 +541,11 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/po**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/po`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 The table below defines the input fields within the template.
 
@@ -718,6 +730,12 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/auto-number/po**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/po`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Create PO
 ### API Endpoint - Create a New Purchase Order
 
@@ -728,7 +746,7 @@ cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 var isSynchronous = true;
-//poObject can be created based on the template retreived from cinxApi.getPoTemplate(cinx_api_token) call
+//poObject can be created based on the template retrieved from cinxApi.getPoTemplate(cinx_api_token) call
 cinxApi.postPO(cinx_api_token, poObject, isSynchronous)
             .then(function (response) {
             console.log(response);
@@ -868,7 +886,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
-
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get PO Deliveries
 ### API Endpoint - Get a List of Deliveries for a Purchase Order
@@ -924,7 +942,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 po-guid | Limits results to a specific purchase order. | {cinx_po_id}
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
-
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get PO Invoices
 ### API Endpoint - Get a List of Invoices for a Purchase Order
@@ -979,7 +997,7 @@ project | Limits results to a single project. | {cinx_project_id}
 vendor | Limits results to a single vendor. | {organization's vendor number}
 owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
-
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get PO Returns
 ### API Endpoint - Get a List of Returns for a Purchase Order
@@ -1033,7 +1051,7 @@ delivery | Limits results to a specific delivery type location. | JOB SITE, FABR
 ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
 owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
-
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get PO Back-Orders
 ### API Endpoint - Get a List of Back-Orders for a Purchase Order
@@ -1096,3 +1114,4 @@ Parameter Name | Description | Value Type or Options
 delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
 project | Limits results to a single project. | {cinx_project_id}
 vendor | Limits results to a single vendor. | {organization's vendor number}
+format | Defines the response format type. If not specified, json will be used. | json, xml

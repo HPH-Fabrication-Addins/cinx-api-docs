@@ -59,6 +59,7 @@ need-by | Limits results to a specific need-by or delivery-by date. | Date Forma
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Project RFQs
 ### API Endpoint - Get a List of RFQs Linked to a Project
@@ -120,6 +121,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Project Quotes
 ### API Endpoint - Get a List of Quotes for a Project
@@ -171,6 +173,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Project POs
 ### API Endpoint - Get a List of POs for a Project
@@ -235,6 +238,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Project POCOs
 ### API Endpoint - Get a List of PO Change Orders for a Project
@@ -297,6 +301,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Project Deliveries
 ### API Endpoint - Get a List of Deliveries for a Project
@@ -351,6 +356,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 po-guid | Limits results to a specific purchase order. | {cinx_po_id}
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Project Invoices
 ### API Endpoint - Get a List of Invoices for a Project
@@ -406,6 +412,7 @@ erp | Limits results to a specific erp status. | NOT SUBMITTED, PENDING, SUBMITT
 vendor | Limits results to a single vendor. | {organization's vendor number}
 owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Project Returns
 ### API Endpoint - Get a List of Returns for a Project
@@ -459,6 +466,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 po-guid | Limits results to a specific purchase order. | {cinx_po_id}
 owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Project Back-Orders
 ### API Endpoint - Get a List of Back-Orders for a Project
@@ -521,6 +529,7 @@ Parameter Name | Description | Value Type or Options
 delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
 vendor | Limits results to a single vendor. | {organization's vendor number}
 po-guid | Limits results to a specific purchase order. | {cinx_po_id}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Project Lead-Times
 ### API Endpoint - Get a List of Lead-Times for a Project
@@ -567,3 +576,9 @@ This endpoint will be used to get a list of items with a lead-time. See the Opti
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/lead-times**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/lead-times`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml

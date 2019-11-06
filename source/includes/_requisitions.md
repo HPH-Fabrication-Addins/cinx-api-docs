@@ -1,7 +1,7 @@
 # Requisitions
 
 ## Req Definition
-### CINX Object Defintion - Requisition
+### CINX Object Definition - Requisition
 
 A CINX Material Requisition is a compilation of parts that need to be purchased.  The list might be for a whole project, phase, system, pre-fab work-order, spool, or a general list created by a project foreman in the field. The parts on a requisition might also contain items from multiple projects that are combined into one purchase to achieve volume pricing.
 
@@ -96,6 +96,7 @@ need-by | Limits results to a specific need-by or delivery-by date. | Date Forma
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Req
 ### API Endpoint - Get a Requisition
@@ -271,6 +272,12 @@ The cinx_guid will be the requisition’s CINX Id.
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/req/e73c118f-1ee9-57e0-9c79-1775c1a04b81`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Get Req Template
 ### API Endpoint - Get a Requisition Template
 ```javascript
@@ -431,6 +438,11 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/req**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/req`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 The table below defines the input fields within the template.
 
@@ -568,6 +580,11 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/auto-number/req**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/req`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Create Req
 ### API Endpoint - Create a New Requisition
@@ -579,7 +596,7 @@ cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 var isSynchronous = true;
-//requisitionObject can be created based on the template retreived from cinxApi.getReqTemplate(cinx_api_token) call
+//requisitionObject can be created based on the template retrieved from cinxApi.getReqTemplate(cinx_api_token) call
 cinxApi.postReq(cinx_api_token, requisitionObject, true)
             .then(function (response) {
                 console.log(response);

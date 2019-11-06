@@ -1,7 +1,7 @@
 # Back-Orders
 
 ## Back-Order Definition
-### CINX Object Defintion - Back-Order
+### CINX Object Definition - Back-Order
 
 A back-order is an item from a submitted PO that cannot be delivered by the requested delivery date, and for which the customer is prepared to wait for the vendor to replenish its inventory.
 
@@ -74,6 +74,7 @@ delivery | Limits results to a specific delivery type location. | JOB SITE, FABR
 project | Limits results to a single project. | {cinx_project_id}
 vendor | Limits results to a single vendor. | {organization's vendor number}
 po-guid | Limits results to a specific purchase order. | {cinx_po_id}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Back-Order
 ### API Endpoint - Get a Back-Order
@@ -203,3 +204,9 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/b
 	}]
 }
 ```
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml

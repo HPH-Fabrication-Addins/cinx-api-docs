@@ -5,7 +5,7 @@
 
 In construction, a labor unit is the estimated time it takes to install an item under good working conditions.
 
-In the Plumbing/Mechanial industry there are two primary sources of labor unit standards.  They are both industry trade organzations:
+In the Plumbing/Mechanical industry there are two primary sources of labor unit standards.  They are both industry trade organizations:
 
   - MCAA - Mechanical Contractors Association of America
   - PHCC - Plumbing - Heating - Cooling Contractors Association
@@ -15,15 +15,15 @@ Each organization has two two choices or methods for laboring common Pipe, Valve
   - MCAA - **Component** and **Work Activity**
   - PHCC - **Per Fitting** and **Per Joint**
 
-HPH has license agreements with both of these trade organinzations which allow us to store their labor units as CINX catalogs and provide API services to access their content. Every labor unit has been assigned a unique HPH Labor Code.  The code can stored in local database and used in API calls to access the actual labor unit values.
+HPH has license agreements with both of these trade organizations which allow us to store their labor units as CINX catalogs and provide API services to access their content. Every labor unit has been assigned a unique HPH Labor Code.  The code can stored in local database and used in API calls to access the actual labor unit values.
 
-The API also offers full database and update files of the labor units so that a sofware system can have a labor unit update feature.
+The API also offers full database and update files of the labor units so that a software system can have a labor unit update feature.
 
 HPH has also linked the industry labor units to our HPH Plumbing/Mechanical catalog items. Both PHCC methods and the MCAA Component method have been assigned to our items.
 
 **NOTES**
 
-  - **Labor units will be returned ONLY if the organziation is authorized by the labor unit source (trade organization) to access them**.
+  - **Labor units will be returned ONLY if the organization is authorized by the labor unit source (trade organization) to access them**.
   - Please review the assumptions from each trade organization in regards to how the units were calculated and their intended use.
   - The Labor Unit API responses will contain a field named **joint_quantity**. This will be populated only when the labor source is PHCC and the method is Per Joint.
 
@@ -74,6 +74,12 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/labor/hph/{hph_labor_cod
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/labor/hph/L01FTCU030000025`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Get Labor - Source Id
 ### API Endpoint – Get a Labor Unit using the Source's (Trade Organization) Unit Id
 
@@ -111,7 +117,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/l
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
 labor_source | Defines the labor unit organization. | mcaa, phcc
-
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Item Labor - HPH Code
 ### API Endpoint – Get an Item's Labor Units using an HPH Code
@@ -136,3 +142,4 @@ Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
 view | Defines which API response format will be returned. | details
 labor | Defines which organization's units are to be returned. | mcaa, phcc, all
+format | Defines the response format type. If not specified, json will be used. | json, xml

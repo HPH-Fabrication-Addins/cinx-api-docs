@@ -1,7 +1,7 @@
 # Deliveries
 
 ## Delivery Definition
-### CINX Object Defintion - Delivery
+### CINX Object Definition - Delivery
 
 A CINX Delivery is created when a shipment from a vendor is received. A Delivery references a purchase order on which the materials were ordered.  
 
@@ -87,7 +87,8 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 po-guid | Limits results to a specific purchase order. | {cinx_po_id}
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
-  
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Get Delivery
 ### API Endpoint - Get a Delivery
 
@@ -240,6 +241,12 @@ The cinx_guid will be the delivery's CINX Id.
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/delivery/e73c118f-1ee9-57e0-9c79-1775c1a04b81`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Get Delivery Template
 ### API Endpoint - Get a Delivery Template
 
@@ -334,6 +341,11 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/delivery**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/delivery`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 The table below defines the input fields within the template.
 
@@ -421,7 +433,12 @@ This endpoint will be used to get a value to be used in the number field of a ne
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/auto-number/delivery**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/delivery`
- 
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Create Delivery
 ### API Endpoint - Create a New Delivery
@@ -433,7 +450,7 @@ cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 var isSynchronous = true;
-//dObject can be created based on the template retreived from cinxApi.getDeliveryTemplate(cinx_api_token) call
+//dObject can be created based on the template retrieved from cinxApi.getDeliveryTemplate(cinx_api_token) call
 cinxApi.postDelivery(cinx_api_token, dObject, isSynchronous)
             .then(function (response) {
             console.log(response);

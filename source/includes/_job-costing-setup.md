@@ -22,7 +22,7 @@ A Category is an accounting concept that allows a company to classify project co
 A Tax Group is a collection of tax fields defined in an accounting system that allows for the proper identification and processing of taxes.  
 
 ## Get Phases
-### API Endpoint - Get an Organizaiton's List of Phases
+### API Endpoint - Get an Organization's List of Phases
 
 ```javascript
 //Using cinx-api.js
@@ -63,6 +63,12 @@ This endpoint will be used to get a company’s list of project phases. In CINX,
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/org/job-costing/phases**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/phases`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Phase Template
 ### API Endpoint - Get a Phase Template
@@ -108,6 +114,11 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/phase**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/phase`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 The table below defines the input fields within the template.
 
@@ -267,6 +278,12 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/org/job-costing/material
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/material-cost-codes`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Get Mat Cost Code Template
 ### API Endpoint - Get a Material Cost Code Template
 
@@ -311,6 +328,11 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/material-cost-c
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/material-cost-code`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 The table below defines the input fields within the template.
 
@@ -444,6 +466,12 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/org/job-costing/categori
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/categories`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Get Category Template
 ### API Endpoint - Get a Category Template
 
@@ -488,6 +516,11 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/category**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/category`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 The table below defines the input fields within the template.
 
@@ -602,6 +635,12 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/org/job-costing/tax-grou
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/tax-groups`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Get Tax Group Template
 ### API Endpoint - Get a Tax Group Template
 
@@ -647,6 +686,12 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/tax-group**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/tax-group`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 The table below defines the input fields within the template.
 
 **TEMPLATE FIELDS**
@@ -671,7 +716,7 @@ cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 var isSynchronous = true;
-//tObject can be created based on the template retreived from cinxApi.getTaxGroupTemplate(cinx_api_token) call
+//tObject can be created based on the template retrieved from cinxApi.getTaxGroupTemplate(cinx_api_token) call
 cinxApi.postTaxGroup(cinx_api_token, tObject, isSynchronous)
     .then(function(response) {
         console.log(response);

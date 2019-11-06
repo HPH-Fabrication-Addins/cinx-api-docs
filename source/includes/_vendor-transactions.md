@@ -60,6 +60,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Vendor Quotes
 ### API Endpoint - Get a List of Quotes Submitted by a Vendor
@@ -109,6 +110,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Vendor POs
 ### API Endpoint - Get a List of POs Submitted to a Vendor
@@ -173,6 +175,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Vendor POCOs
 ### API Endpoint - Get a List of PO Change Orders Submitted to a Vendor
@@ -235,6 +238,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Vendor Deliveries
 ### API Endpoint - Get a List of Deliveries for a Vendor
@@ -289,6 +293,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 po-guid | Limits results to a specific purchase order. | {cinx_po_id}
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Vendor Invoices
 ### API Endpoint - Get a List of Invoices from a Vendor
@@ -342,6 +347,7 @@ erp | Limits results to a specific erp status. | NOT SUBMITTED, PENDING, SUBMITT
 project | Limits results to a single project. | {cinx_project_id}
 owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Vendor Returns
 ### API Endpoint - Get a List of Returns for a Vendor
@@ -395,6 +401,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 po-guid | Limits results to a specific purchase order. | {cinx_po_id}
 owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Vendor Back-Orders
 ### API Endpoint - Get a List of Back-Orders from a Vendor
@@ -457,3 +464,4 @@ Parameter Name | Description | Value Type or Options
 delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
 project | Limits results to a single project. | {cinx_project_id}
 po-guid | Limits results to a specific purchase order. | {cinx_po_id}
+format | Defines the response format type. If not specified, json will be used. | json, xml

@@ -1,7 +1,7 @@
 # Quotes
 
 ## Quote Definition
-### CINX Object Defintion - Quote
+### CINX Object Definition - Quote
 
 A CINX Quote is a document a vendor prepares in response to a customer’s Request for Quotation.  Quotes will contain the net prices a customer will pay if they place an order.
 
@@ -60,6 +60,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Quote
 ### API Endpoint - Get a Quote
@@ -197,3 +198,9 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/q
 	}]
 }
 ```
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml

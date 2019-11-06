@@ -1,9 +1,9 @@
 # Returns
 
 ## Return Definition
-### CINX Object Defintion - Return
+### CINX Object Definition - Return
 
-A CINX Return is a contractor initiated process of returning previously purchased products to the vendor from which it was sourced. Part of the return process is receiving an RMA from a vendor which will be attached the the return. In CINX an organization may establish the return reasons and actions that are avaialable to users when returning products.
+A CINX Return is a contractor initiated process of returning previously purchased products to the vendor from which it was sourced. Part of the return process is receiving an RMA from a vendor which will be attached the the return. In CINX an organization may establish the return reasons and actions that are available to users when returning products.
 
 **Dependencies and Business Rules**
 
@@ -73,6 +73,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 po-guid | Limits results to a specific purchase order. | {cinx_po_id}
 owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Return
 ### API Endpoint - Get a Return
@@ -270,19 +271,11 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/r
 }
 ```
 
-## Get Return Template
-### API Endpoint - Get a Return Template
+**OPTIONAL URL PARAMETERS**
 
-`GET`
-
-This endpoint will be used to get a CINX Template for a return.
-
-URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/return**
-
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/return`
-
-
-The table below defines the input fields within the template.
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Return Number
 ### API Endpoint - Get a New Return Number
@@ -322,3 +315,9 @@ This endpoint will be used to get a value to be used in the number field of a ne
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/auto-number/return**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/return`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml

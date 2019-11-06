@@ -127,6 +127,12 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}/j
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/e1e3cb54-b00a-55ae-a079-072732542bf4/job-costing`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Get Project Job Cost Template
 ### API Endpoint - Get a Project Job Costing Breakdown Template
 
@@ -204,6 +210,12 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/project-job-cos
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/project-job-costing`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 The table below defines the input fields within the template.
 
 **TEMPLATE FIELDS**
@@ -245,7 +257,7 @@ cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 var isSynchronous = true;
-//projectCostObject can be created based on the template retreived from cinxApi.getProjectJobCostTemplate(cinx_api_token) call
+//projectCostObject can be created based on the template retrieved from cinxApi.getProjectJobCostTemplate(cinx_api_token) call
 cinxApi.postProjectJobCosting(cinx_api_token, projectCostObject, isSynchronous)
     .then(function(response) {
         console.log(response);

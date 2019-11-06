@@ -46,7 +46,7 @@ cinxApi.getSubscriptions()
                         "cinx_app_id": "d217f7b7-ef49-5ae1-adf3-3765160725a4",
                         "name": "Integrated Price Updates",
                         "type": "INTEGRATION : IMPORT-EXPORT",
-                        "data_source": "Southland"
+                        "data_source": "My Private Catalog"
                     }
                 ]
             }
@@ -91,12 +91,39 @@ This endpoint will be used to get the applications/subscriptions that the user i
 **Notes**
 
   - A User can be associated with multiple companies (orgs).  In this case, their will be multiple **Rows** in the response.
-  - If a User account is expired the **status_code** will be **401**.
-  - For addtional information about working with this response see this page [Auth Response](#auth-response)
+  - If a User account is expired the **status_code** in the subscription object will be **401**.
+  - For additional information about working with this response see this page [Auth Response](#auth-response)
 
 URL Pattern: **{api path}/{api version}/subs**
 
 URL Sample: `https://api.cinx.com/2.0/subs`
+
+**RESPONSE FIELDS**
+
+<aside class="warning">
+API TOKEN: The CINX API uses an API Token when submitting web service requests. The CINX API Token is retrieved from the response of this call in a field named cinx_api_token. A company that has a CINX account must also be configured to permit API access before the API token will be returned in the authorization API response. Please email support@cinx.com to request access to the API if your company does not have an API Token.   
+</aside>
+
+Field Name | Description
+----- | ----- | ----- 
+cinx_api_token | Company-specific API token value that will be used in the URL of other CINX API calls. Token is valid for the duration of a company’s CINX subscription. Tokens **will be** different on the two different CINX servers (Dev and Production).
+user.cinx_user_guid | CINX unique Id for the user.
+user.first_name | User's first name.
+user.middle_name | User's middle name.
+user.last_name | User's last name.
+user.suffix | User's name suffix.
+org.cinx_org_id | CINX unique Id for the company/organization.
+org.name | Name of the company/organization.
+subscription.status_code | Status code for the subscription. Potential values are **200** and **401**.
+subscription.status_message | Message relating to the status code. Potential values are **OK** or **Unauthorized**.
+subscription.status_message_reason | Reason for the status code. If the account is expired the account expiration date will be provided.
+subscription.start_date | Start date of the company's subscription.
+subscription.end_date | Expiration date of the company's subscription.
+apps.cinx_app_guid | System constant value that is used to identify an application within the CINX platform. If you are a software company that requires data access to a specific catalog of content, a CINX app will be created and you will be provided the cinx_app_guid so that you can query the response for instances of your app.
+apps.cinx_app_id | Unique value that links a subscribing CINX company/org to the application. This value will be required when making API calls to access content.
+apps.name | Name of the application.
+apps.type | CINX application type. Current CINX App types include Integration (interactions with other software systems) and Data-Source (catalog of content).
+apps.data_source | Name of the source of the item content that will be used to create content update files (price updates).
 
 ## Auth Response
 ### Working with the GET User Subscription/Auth API Response

@@ -1,7 +1,7 @@
 # PO Change Orders
 
 ## PO Change Order Definition
-### CINX Object Defintion - PO Change Order
+### CINX Object Definition - PO Change Order
 
 A CINX Purchase Order Change Order is created when changes need to be made to a previously submitted purchase order. Example of changes include: changing a price or quantity; adding or modifying job costing information; adding or removing a item row. 
 
@@ -84,6 +84,7 @@ ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR 
 need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get PO CO
 ### API Endpoint - Get a PO Change Order
@@ -288,3 +289,9 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/poco/{cinx_guid}**
 The cinx_guid will be the PO Change Order’s CINX Id.
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/poco/e73c118f-1ee9-57e0-9c79-1775c1a04b81`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml

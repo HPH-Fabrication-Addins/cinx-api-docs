@@ -1,7 +1,7 @@
 # Projects
 
 ## Project Definition
-### CINX Object Defintion - Project
+### CINX Object Definition - Project
 
 A CINX project is a job that is being performed for a customer/client on building, structure, or other asset.
 
@@ -77,6 +77,7 @@ Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
 number | Limits results to a specific project number. | {project number}
 status | Limits results to a specific status. | CONCEPTUAL, BID, DESIGN, CONSTRUCTION, CLOSEOUT, COMPLETED, NOT SPECIFIED
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Project
 ### API Endpoint - Get a Project
@@ -155,6 +156,12 @@ This endpoint will be used to get the details of a specific project.
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/project/{project_guid}**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/e8c5dc6b-e95a-5009-ad89-a11520f55493`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 ## Get Project Template
 ### API Endpoint - Get a Project Template
@@ -355,6 +362,12 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/project**
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/project`
 
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 The table below defines the input fields within the template.
 
 **TEMPLATE FIELDS**
@@ -397,7 +410,7 @@ external_references.value | String | No |  | Non-CINX system reference value.
 items.cinx_guid | String (GUID Format) | POST = No; Put = Yes |  | CINX System Id.
 items.quantity | Real | Yes | 1 | Quantity of the item that is being ordered.
 items.currency | String | Yes | USD | Currency in which the price is being defined.  Three-character alpha abbreviation.
-items.order_lead_time | Real | No | | Number of days required for the material vendor to aquire the item.
+items.order_lead_time | Real | No | | Number of days required for the material vendor to acquire the item.
 items.allow_substitutes | Boolean | Yes | TRUE | Indicator if the product can be sourced from an alternate manufacturer.
 items.procurement_status | String | Yes | NOT ORDERED | Status used to track the procurement activities of the item. Template has a list of optional values.
 items.construction_status | String | Yes | NOT INSTALLED | Status used to track the installation of the item. Template has a list of optional values.
@@ -444,7 +457,7 @@ items.job_cost.phase_name | String | No |  | Name for the Phase/Sub-Job assigned
 items.job_cost.cinx_material_cost_code_guid | String (GUID Format) | No |  | CINX Id for the Material Cost Code assigned to the item.
 items.job_cost.material_cost_code_name | String | No |  | Name for the Material Cost Code assigned to the item.
 items.job_cost.cinx_labor_cost_code_guid | String (GUID Format) | No |  | CINX Id for the Labor Cost Code assigned to the labor reqruired to install the item.
-items.job_cost.labor_cost_code_name | String | No |  | Name for the Labor Cost Code assigned to the labor reqruired to install the item.
+items.job_cost.labor_cost_code_name | String | No |  | Name for the Labor Cost Code assigned to the labor required to install the item.
 items.job_cost.cinx_category_guid | String (GUID Format) | No |  | CINX Id for the Category assigned to the item.
 items.job_cost.category_name | String | No |  | Name for the Category assigned to the item.
 items.taxes.taxable | Boolean | Yes | TRUE | Indicator defining if the product is taxable.
@@ -521,6 +534,12 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/auto-number/project**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/auto-number/project`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
 ## Create Project
 ### API Endpoint - Create a New Project
 
@@ -531,7 +550,7 @@ cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 var isSynchronous = true;
-//projectObject can be created based on the template retreived from cinxApi.getProjectTemplate(cinx_api_token) call
+//projectObject can be created based on the template retrieved from cinxApi.getProjectTemplate(cinx_api_token) call
 cinxApi.postProject(cinx_api_token, projectObject, isSynchronous)
     .then(function(response) {
         console.log(response);
@@ -587,7 +606,7 @@ cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 var isSynchronous = true;
-//projectObject can be created based on the template retreived from cinxApi.getProjectTemplate(cinx_api_token) call
+//projectObject can be created based on the template retrieved from cinxApi.getProjectTemplate(cinx_api_token) call
 cinxApi.putProject(cinx_api_token, projectObject, isSynchronous)
     .then(function(response) {
         console.log(response);

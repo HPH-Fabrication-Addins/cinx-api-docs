@@ -1,17 +1,17 @@
 # Catalog Item
 
 ## Item Definition
-### CINX Object Defintion - Catalog Item
+### CINX Object Definition - Catalog Item
 
 A CINX Catalog Item is a building material product or construction related service that is stored within a CINX catalog.
 
 A CINX catalog is a collection of items grouped together in a CINX database structure. Catalogs may contain construction materials, sub-contract services, rental equipment, and other content necessary for the execution of a construction project or maintenance of a building.
 
-A CINX orgranization will have a private catalog where items can be stored. An organization's private CINX catalog can be built from the items from CINX public catalogs including the HPH Plumbing/Mechanical database. Private items not associated with a CINX public catalog can also be inserted into an organization's private catalog. Thus, the responsibility for maintaining that item will be the organization.
+A CINX organization will have a private catalog where items can be stored. An organization's private CINX catalog can be built from the items from CINX public catalogs including the HPH Plumbing/Mechanical database. Private items not associated with a CINX public catalog can also be inserted into an organization's private catalog. Thus, the responsibility for maintaining that item will be the organization.
 
 **Labor Units**
 
-HPH has worked with industry labor unit providers (MCAA and PHCC) to store their labor units as CINX Catalogs. HPH has also linked labor units to our HPH Plumbing/Mechanical catalog items. The CINX Get Item API can return labor units when the **details view** is used. Adding a labor parameter to the URL will enable the output of labor units. **Labor units will be returned ONLY if the organziation is authorized by the labor unit author to access them**.
+HPH has worked with industry labor unit providers (MCAA and PHCC) to store their labor units as CINX Catalogs. HPH has also linked labor units to our HPH Plumbing/Mechanical catalog items. The CINX Get Item API can return labor units when the **details view** is used. Adding a labor parameter to the URL will enable the output of labor units. **Labor units will be returned ONLY if the organization is authorized by the labor unit author to access them**.
 
 For more information about labor units, please review the [Labor Units](#labor-units) pages on this site.
 
@@ -53,8 +53,9 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/i
 
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
-view | Defines the level of content in the reponse. | compact, details
+view | Defines the level of content in the response. | compact, details
 labor | Defines the type of labor units returned. | mcaa, phcc, all
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 **View** 
 
@@ -87,8 +88,9 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/i
 
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
-view | Defines the level of content in the reponse. | compact, details
+view | Defines the level of content in the response. | compact, details
 labor | Defines the type of labor units returned. | mcaa, phcc, all
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 **View** 
 
@@ -121,8 +123,9 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/i
 
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
-view | Defines the level of content in the reponse. | compact, details
+view | Defines the level of content in the response. | compact, details
 labor | Defines the type of labor units returned. | mcaa, phcc, all
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 **View** 
 
@@ -328,13 +331,18 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/item**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/item`
 
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
 
 The table below defines the input fields within the template.
 
 **TEMPLATE FIELDS**
 
 <aside class="warning">
-If you are creating a new private catalog item that will be copied from an existing public catalog (HPH) item, then your API POST request will only need to contain the cinx_catalog_parent object with either the cinx_guid or hph_code field populated. The manadatory fields referenced in the table below are to be used when creating an item NOT linked to a public catalog item. For these fields the Required column will contain the following: Yes (Non-HPH Item).
+If you are creating a new private catalog item that will be copied from an existing public catalog (HPH) item, then your API POST request will only need to contain the cinx_catalog_parent object with either the cinx_guid or hph_code field populated. The mandatory fields referenced in the table below are to be used when creating an item NOT linked to a public catalog item. For these fields the Required column will contain the following: Yes (Non-HPH Item).
 </aside>
 
 Name | Data Type | Required | Dflt | Note
@@ -381,7 +389,7 @@ attributes.value | String | No |  | Value of the attribute.
 This endpoint will be used to insert a new item into the organization's private CINX catalog.
 
 <aside class="warning">
-A private catalog item can be created from a public catalog (HPH) item. If either the CINX GUID or the HPH Item Code is known for the new item, simply insert the known value into the cinx_catalog_parent object of the Item template. This will add the item and create a linkage to the parent public catalog item. This link will allow the public catalog information to be included when requesting details about the item. This includes information such as Mfr List Prices, Labor Units, and links to Mfr documentation. If you submit new values for your private catalog item that are also available from the public item, your values will supercede the public catalog content.
+A private catalog item can be created from a public catalog (HPH) item. If either the CINX GUID or the HPH Item Code is known for the new item, simply insert the known value into the cinx_catalog_parent object of the Item template. This will add the item and create a linkage to the parent public catalog item. This link will allow the public catalog information to be included when requesting details about the item. This includes information such as Mfr List Prices, Labor Units, and links to Mfr documentation. If you submit new values for your private catalog item that are also available from the public item, your values will supersede the public catalog content.
 </aside>
 
 **Notes**
@@ -416,7 +424,7 @@ By default the POST payload will be processed asynchronously.  See the optional 
 This endpoint will be used to modify an organization's private catalog item.
 
 <aside class="warning">
-If you submit new values for your private catalog item that are also available from the public item, your values will supercede the public catalog content. For example, if you submit a new weight value for an item that the HPH item already has a value, your new weight value will be used.
+If you submit new values for your private catalog item that are also available from the public item, your values will supersede the public catalog content. For example, if you submit a new weight value for an item that the HPH item already has a value, your new weight value will be used.
 </aside>
 
 **Notes**
