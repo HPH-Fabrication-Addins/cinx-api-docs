@@ -17,8 +17,10 @@ With a CINX private catalog, an organization can:
 
 **Supported API Services**
 
-  - [Get Catalog Line Roots](#get-item-hph-code)
-  - [Get a Catalog Line Children](#get-item-org-id)
+  - [Get Catalog Line Roots](#get-catalog-line-roots)
+  - [Get a Catalog Line Children](#get-catalog-line-children)
+  - [Get a Catalog Items Ids](#get-catalog-items-ids)
+  - [Get a Catalog Stats](#get-catalog-stats)
   - [Catalog Items](#catalog-item)
   - [Catalog/App Updates](#catalog/app-updates)
 
@@ -52,6 +54,42 @@ URL Pattern: **{api path}/{api_version}/sub/{api_token}/line/{line_cinx_guid}/ch
 The line_cinx_guid is the CINX Id of the parent line.
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/line/3cfc2cdf-c96a-5b00-a572-33d8f343f0c6/children`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
+## Get Catalog Items Ids
+### API Endpoint – Get a Private Catalog Items' Ids
+
+`GET`
+
+This endpoint will be used to get a listing of a private catalog items' product identifiers.
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/items/ids**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/items/ids?offset=50&limit=5`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+offset | Defines the offset to use when returning the items. | 
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | 
+
+## Get Catalog Stats
+### API Endpoint – Get a Private Catalog Statistics
+
+`GET`
+
+This endpoint will be used to get a private catalog's statistics for items, lines and manufacturers.
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/catalog/stats**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/catalog/stats`
 
 **OPTIONAL URL PARAMETERS**
 

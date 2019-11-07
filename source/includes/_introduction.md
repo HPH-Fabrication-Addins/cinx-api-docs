@@ -108,7 +108,7 @@ To receive an XML response, please add the following parameter to the URL: **for
 
 For many HTTP GET requests you can use URL parameters to define the number of rows returned in the response.  Valid input parameters are:
 
-  - **start={number}**
+  - **offset={number}**
 
   - **limit={number}**
 
