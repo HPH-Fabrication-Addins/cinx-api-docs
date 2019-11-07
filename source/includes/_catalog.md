@@ -77,8 +77,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/i
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
 format | Defines the response format type. If not specified, json will be used. | json, xml
-offset | Defines the offset to use when returning the items. | 
-limit | Defines the number of results to include in the response. If not specified, 50 will be used. | 
+offset | Defines the offset to use when returning the items. | Integer
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
 ## Get Catalog Stats
 ### API Endpoint – Get a Private Catalog Statistics

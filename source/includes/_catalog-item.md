@@ -274,6 +274,7 @@ The table below defines the fields output using the **details** view option.
 {
   "response": {},
   "rows": [{
+    "cinx_guid": "82393d53-6f55-52a8-8019-42f5ec9615e1",
     "mfr_list_price": 162.32,
     "price_uom": "E",
     "availability_status": "P",
