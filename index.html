@@ -332,6 +332,12 @@
                   <li>
                     <a href="#get-catalog-line-children" class="toc-h2 toc-link" data-title="Get Catalog Line Children">Get Catalog Line Children</a>
                   </li>
+                  <li>
+                    <a href="#get-catalog-items-ids" class="toc-h2 toc-link" data-title="Get Catalog Items Ids">Get Catalog Items Ids</a>
+                  </li>
+                  <li>
+                    <a href="#get-catalog-stats" class="toc-h2 toc-link" data-title="Get Catalog Stats">Get Catalog Stats</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -354,6 +360,9 @@
                   </li>
                   <li>
                     <a href="#item-view-details" class="toc-h2 toc-link" data-title="Item View - Details">Item View - Details</a>
+                  </li>
+                  <li>
+                    <a href="#item-view-list-price" class="toc-h2 toc-link" data-title="Item View - List Price">Item View - List Price</a>
                   </li>
                   <li>
                     <a href="#get-item-template" class="toc-h2 toc-link" data-title="Get Item Template">Get Item Template</a>
@@ -935,7 +944,7 @@
 <p>For many HTTP GET requests you can use URL parameters to define the number of rows returned in the response.  Valid input parameters are:</p>
 
 <ul>
-<li><p><strong>start={number}</strong></p></li>
+<li><p><strong>offset={number}</strong></p></li>
 <li><p><strong>limit={number}</strong></p></li>
 </ul>
 <h2 id='documentation-notes'>Documentation Notes</h2><h3 id='api-documentation-web-site-formating-notes'>API Documentation Web Site Formating Notes</h3>
@@ -1206,7 +1215,7 @@ The TYPE and VALUE fields are both required.
 
 <ul>
 <li>A User can be associated with multiple companies (orgs).  In this case, their will be multiple <strong>Rows</strong> in the response.</li>
-<li>If a User account is expired the <strong>status_code</strong> in the subscription object will be <strong>401</strong>.</li>
+<li>If a User account is expired, the <strong>status_code</strong> in the subscription object will be <strong>401</strong>.</li>
 <li>For additional information about working with this response see this page <a href="#auth-response">Auth Response</a></li>
 </ul>
 
@@ -1821,10 +1830,12 @@ execution of a construction project or maintenance of a building.</p>
 <p><strong>Supported API Services</strong></p>
 
 <ul>
-<li><a href="#get-item-hph-code">Get Catalog Line Roots</a></li>
-<li><a href="#get-item-org-id">Get a Catalog Line Children</a></li>
+<li><a href="#get-catalog-line-roots">Get Catalog Line Roots</a></li>
+<li><a href="#get-catalog-line-children">Get a Catalog Line Children</a></li>
+<li><a href="#get-catalog-items-ids">Get a Catalog Items Ids</a></li>
+<li><a href="#get-catalog-stats">Get a Catalog Stats</a></li>
 <li><a href="#catalog-item">Catalog Items</a></li>
-<li><a href="#catalog/app-updates">Catalog/App Updates</a></li>
+<li>Catalog/App Updates</li>
 </ul>
 <h2 id='get-catalog-line-roots'>Get Catalog Line Roots</h2><h3 id='api-endpoint-get-a-private-catalog-39-s-line-root-levels'>API Endpoint – Get a Private Catalog&#39;s Line Root Levels</h3>
 <p><code>GET</code></p>
@@ -1860,6 +1871,64 @@ execution of a construction project or maintenance of a building.</p>
 <p>The line_cinx_guid is the CINX Id of the parent line.</p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/line/3cfc2cdf-c96a-5b00-a572-33d8f343f0c6/children</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h2 id='get-catalog-items-ids'>Get Catalog Items Ids</h2><h3 id='api-endpoint-get-a-private-catalog-items-39-ids'>API Endpoint – Get a Private Catalog Items&#39; Ids</h3>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a listing of a private catalog items&#39; product identifiers.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/items/ids</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/items/ids?offset=50&amp;limit=5</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
+</tr>
+</tbody></table>
+<h2 id='get-catalog-stats'>Get Catalog Stats</h2><h3 id='api-endpoint-get-a-private-catalog-statistics'>API Endpoint – Get a Private Catalog Statistics</h3>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a private catalog&#39;s statistics for items, lines and manufacturers.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/catalog/stats</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/catalog/stats</code></p>
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
@@ -1934,7 +2003,7 @@ execution of a construction project or maintenance of a building.</p>
 <tr>
 <td>view</td>
 <td>Defines the level of content in the response.</td>
-<td>compact, details</td>
+<td>compact, details, list-price</td>
 </tr>
 <tr>
 <td>labor</td>
@@ -1953,6 +2022,7 @@ execution of a construction project or maintenance of a building.</p>
 <ul>
 <li><strong>compact</strong>: returns a small set of item information fields. This is the default view if one is not specified. Please see <a href="#item-view-compact">Compact View</a> for a definition of the output.</li>
 <li><strong>details</strong>: returns a comprehensive set of item information. Please see <a href="#item-view-details">Details View</a> for a definition of the output.</li>
+<li><strong>list-price</strong>: returns details about the current mfr list price for the item. Please see <a href="#item-view-list-price">List Price View</a> for a definition of the output.</li>
 </ul>
 
 <p><strong>Labor</strong> </p>
@@ -1988,7 +2058,7 @@ execution of a construction project or maintenance of a building.</p>
 <tr>
 <td>view</td>
 <td>Defines the level of content in the response.</td>
-<td>compact, details</td>
+<td>compact, details, list-price</td>
 </tr>
 <tr>
 <td>labor</td>
@@ -2007,6 +2077,7 @@ execution of a construction project or maintenance of a building.</p>
 <ul>
 <li><strong>compact</strong>: returns a small set of item information fields. This is the default view if one is not specified. Please see <a href="#item-view-compact">Compact View</a> for a definition of the output.</li>
 <li><strong>details</strong>: returns a comprehensive set of item information. Please see <a href="#item-view-details">Details View</a> for a definition of the output.</li>
+<li><strong>list-price</strong>: returns details about the current mfr list price for the item. Please see <a href="#item-view-list-price">List Price View</a> for a definition of the output.</li>
 </ul>
 
 <p><strong>Labor</strong> </p>
@@ -2042,7 +2113,7 @@ execution of a construction project or maintenance of a building.</p>
 <tr>
 <td>view</td>
 <td>Defines the level of content in the response.</td>
-<td>compact, details</td>
+<td>compact, details, list-price</td>
 </tr>
 <tr>
 <td>labor</td>
@@ -2061,6 +2132,7 @@ execution of a construction project or maintenance of a building.</p>
 <ul>
 <li><strong>compact</strong>: returns a small set of item information fields. This is the default view if one is not specified. Please see <a href="#item-view-compact">Compact View</a> for a definition of the output.</li>
 <li><strong>details</strong>: returns a comprehensive set of item information. Please see <a href="#item-view-details">Details View</a> for a definition of the output.</li>
+<li><strong>list-price</strong>: returns details about the current mfr list price for the item. Please see <a href="#item-view-list-price">List Price View</a> for a definition of the output.</li>
 </ul>
 
 <p><strong>Labor</strong> </p>
@@ -2077,7 +2149,7 @@ execution of a construction project or maintenance of a building.</p>
     </span><span class="s2">"availability_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copper Fittings &amp; Flanges"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sub-category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pressure Wrot-Solder"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sub_category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pressure Wrot-Solder"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"hph_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012NI0018"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"org_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"org_system_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -2089,7 +2161,7 @@ execution of a construction project or maintenance of a building.</p>
   </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>When requesting a catalog from the CINX API there are two view options. </p>
+<p>When requesting a catalog from the CINX API there are three view options. </p>
 
 <p>The table below defines the fields output using the <strong>compact</strong> view option.</p>
 <h2 id='item-view-details'>Item View - Details</h2><h3 id='api-item-response-view-definition-details'>API Item Response View Definition - Details</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -2099,7 +2171,7 @@ execution of a construction project or maintenance of a building.</p>
     </span><span class="s2">"availability_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copper Fittings &amp; Flanges"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sub-category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pressure Wrot-Solder"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sub_category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pressure Wrot-Solder"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"item_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"hph_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012NI0018"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"org_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -2182,9 +2254,33 @@ execution of a construction project or maintenance of a building.</p>
   </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>When requesting a catalog from the CINX API there are two view options. </p>
+<p>When requesting a catalog from the CINX API there are three view options. </p>
 
 <p>The table below defines the fields output using the <strong>details</strong> view option.</p>
+<h2 id='item-view-list-price'>Item View - List Price</h2><h3 id='api-item-response-view-definition-list-price'>API Item Response View Definition - List Price</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"82393d53-6f55-52a8-8019-42f5ec9615e1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mfr_list_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">162.32</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price_uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"availability_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"effective_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-19"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price_sheet_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APOLLOXPRESS Fittings"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price_sheet_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XPR-14"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price_sheet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APOLLOXPRESS Fittings"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cinx_price_sheet_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14a3dc28-5131-11e7-9399-00137268a1bf"</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>When requesting a catalog from the CINX API there are three view options. </p>
+
+<p>The table below defines the fields output using the <strong>list-price</strong> view option.</p>
+
+<p><strong>Notes</strong></p>
+
+<ul>
+<li>The manufacturer list price will be pulled from HPH&#39;s public catalog containing the item</li>
+</ul>
 <h2 id='get-item-template'>Get Item Template</h2><h3 id='api-endpoint-get-a-catalog-item-template'>API Endpoint - Get a Catalog Item Template</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"doc_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
   </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -4124,6 +4220,32 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/vendors</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/vendors</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
+</tr>
+</tbody></table>
 <h2 id='get-vendor'>Get Vendor</h2><h3 id='api-endpoint-get-a-vendor'>API Endpoint - Get a Vendor</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -4901,6 +5023,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
+</tr>
 </tbody></table>
 <h2 id='get-vendor-quotes'>Get Vendor Quotes</h2><h3 id='api-endpoint-get-a-list-of-quotes-submitted-by-a-vendor'>API Endpoint - Get a List of Quotes Submitted by a Vendor</h3>
 <blockquote>
@@ -4985,6 +5117,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>format</td>
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
 </tr>
 </tbody></table>
 <h2 id='get-vendor-pos'>Get Vendor POs</h2><h3 id='api-endpoint-get-a-list-of-pos-submitted-to-a-vendor'>API Endpoint - Get a List of POs Submitted to a Vendor</h3>
@@ -5094,6 +5236,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
+</tr>
 </tbody></table>
 <h2 id='get-vendor-pocos'>Get Vendor POCOs</h2><h3 id='api-endpoint-get-a-list-of-po-change-orders-submitted-to-a-vendor'>API Endpoint - Get a List of PO Change Orders Submitted to a Vendor</h3>
 <blockquote>
@@ -5200,6 +5352,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
+</tr>
 </tbody></table>
 <h2 id='get-vendor-deliveries'>Get Vendor Deliveries</h2><h3 id='api-endpoint-get-a-list-of-deliveries-for-a-vendor'>API Endpoint - Get a List of Deliveries for a Vendor</h3>
 <blockquote>
@@ -5286,6 +5448,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
+</tr>
 </tbody></table>
 <h2 id='get-vendor-invoices'>Get Vendor Invoices</h2><h3 id='api-endpoint-get-a-list-of-invoices-from-a-vendor'>API Endpoint - Get a List of Invoices from a Vendor</h3>
 <blockquote>
@@ -5371,6 +5543,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
+</tr>
 </tbody></table>
 <h2 id='get-vendor-returns'>Get Vendor Returns</h2><h3 id='api-endpoint-get-a-list-of-returns-for-a-vendor'>API Endpoint - Get a List of Returns for a Vendor</h3>
 <blockquote>
@@ -5455,6 +5637,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>format</td>
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
 </tr>
 </tbody></table>
 <h2 id='get-vendor-back-orders'>Get Vendor Back-Orders</h2><h3 id='api-endpoint-get-a-list-of-back-orders-from-a-vendor'>API Endpoint - Get a List of Back-Orders from a Vendor</h3>
@@ -5629,6 +5821,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>format</td>
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
 </tr>
 </tbody></table>
 <h2 id='get-project'>Get Project</h2><h3 id='api-endpoint-get-a-project'>API Endpoint - Get a Project</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
@@ -7534,6 +7736,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
+</tr>
 </tbody></table>
 <h2 id='get-project-rfqs'>Get Project RFQs</h2><h3 id='api-endpoint-get-a-list-of-rfqs-linked-to-a-project'>API Endpoint - Get a List of RFQs Linked to a Project</h3>
 <blockquote>
@@ -7631,6 +7843,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
+</tr>
 </tbody></table>
 <h2 id='get-project-quotes'>Get Project Quotes</h2><h3 id='api-endpoint-get-a-list-of-quotes-for-a-project'>API Endpoint - Get a List of Quotes for a Project</h3>
 <blockquote>
@@ -7717,6 +7939,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>format</td>
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
 </tr>
 </tbody></table>
 <h2 id='get-project-pos'>Get Project POs</h2><h3 id='api-endpoint-get-a-list-of-pos-for-a-project'>API Endpoint - Get a List of POs for a Project</h3>
@@ -7826,6 +8058,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
+</tr>
 </tbody></table>
 <h2 id='get-project-pocos'>Get Project POCOs</h2><h3 id='api-endpoint-get-a-list-of-po-change-orders-for-a-project'>API Endpoint - Get a List of PO Change Orders for a Project</h3>
 <blockquote>
@@ -7932,6 +8174,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
+</tr>
 </tbody></table>
 <h2 id='get-project-deliveries'>Get Project Deliveries</h2><h3 id='api-endpoint-get-a-list-of-deliveries-for-a-project'>API Endpoint - Get a List of Deliveries for a Project</h3>
 <blockquote>
@@ -8017,6 +8269,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>format</td>
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
 </tr>
 </tbody></table>
 <h2 id='get-project-invoices'>Get Project Invoices</h2><h3 id='api-endpoint-get-a-list-of-invoices-for-a-project'>API Endpoint - Get a List of Invoices for a Project</h3>
@@ -8105,6 +8367,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
+</tr>
 </tbody></table>
 <h2 id='get-project-returns'>Get Project Returns</h2><h3 id='api-endpoint-get-a-list-of-returns-for-a-project'>API Endpoint - Get a List of Returns for a Project</h3>
 <blockquote>
@@ -8189,6 +8461,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>format</td>
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
 </tr>
 </tbody></table>
 <h2 id='get-project-back-orders'>Get Project Back-Orders</h2><h3 id='api-endpoint-get-a-list-of-back-orders-for-a-project'>API Endpoint - Get a List of Back-Orders for a Project</h3>
@@ -8469,6 +8751,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>format</td>
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
 </tr>
 </tbody></table>
 <h2 id='get-req'>Get Req</h2><h3 id='api-endpoint-get-a-requisition'>API Endpoint - Get a Requisition</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
@@ -9743,6 +10035,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
+</tr>
 </tbody></table>
 <h2 id='get-rfq'>Get RFQ</h2><h3 id='api-endpoint-get-an-rfq'>API Endpoint - Get an RFQ</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
@@ -10753,7 +11055,7 @@ If modifying the vendor array, please submit all the desired vendors in the PUT 
 <p><strong>Notes</strong></p>
 
 <ul>
-<li>A CINX Template is available that documents the available fields that can be populated.</li>
+<li>A CINX Template is available that documents the available fields that can be populated</li>
 <li>A JSON formatted payload is used in the POST request</li>
 </ul>
 
@@ -11021,6 +11323,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>format</td>
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
 </tr>
 </tbody></table>
 <h2 id='get-quote'>Get Quote</h2><h3 id='api-endpoint-get-a-quote'>API Endpoint - Get a Quote</h3>
@@ -11319,6 +11631,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>format</td>
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
 </tr>
 </tbody></table>
 <h2 id='get-po'>Get PO</h2><h3 id='api-endpoint-get-a-purchase-order'>API Endpoint - Get a Purchase Order</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
@@ -13495,6 +13817,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
+</tr>
 </tbody></table>
 <h2 id='get-po-co'>Get PO CO</h2><h3 id='api-endpoint-get-a-po-change-order'>API Endpoint - Get a PO Change Order</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
@@ -14281,6 +14613,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>format</td>
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
 </tr>
 </tbody></table>
 <h2 id='get-delivery'>Get Delivery</h2><h3 id='api-endpoint-get-a-delivery'>API Endpoint - Get a Delivery</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
@@ -15123,6 +15465,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
 </tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
+</tr>
 </tbody></table>
 <h2 id='get-invoice'>Get Invoice</h2><h3 id='api-endpoint-get-an-invoice'>API Endpoint - Get an Invoice</h3>
 <p><code>GET</code></p>
@@ -15412,6 +15764,16 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>format</td>
 <td>Defines the response format type. If not specified, json will be used.</td>
 <td>json, xml</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 50 will be used.</td>
+<td>Integer</td>
 </tr>
 </tbody></table>
 <h2 id='get-return'>Get Return</h2><h3 id='api-endpoint-get-a-return'>API Endpoint - Get a Return</h3>
