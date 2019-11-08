@@ -78,6 +78,8 @@ Parameter Name | Description | Value Type or Options
 number | Limits results to a specific project number. | {project number}
 status | Limits results to a specific status. | CONCEPTUAL, BID, DESIGN, CONSTRUCTION, CLOSEOUT, COMPLETED, NOT SPECIFIED
 format | Defines the response format type. If not specified, json will be used. | json, xml
+offset | Defines the offset to use when returning the items. | Integer
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
 ## Get Project
 ### API Endpoint - Get a Project

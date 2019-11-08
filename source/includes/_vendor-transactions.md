@@ -61,6 +61,8 @@ need-by | Limits results to a specific need-by or delivery-by date. | Date Forma
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
 format | Defines the response format type. If not specified, json will be used. | json, xml
+offset | Defines the offset to use when returning the items. | Integer
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
 ## Get Vendor Quotes
 ### API Endpoint - Get a List of Quotes Submitted by a Vendor
@@ -111,6 +113,8 @@ need-by | Limits results to a specific need-by or delivery-by date. | Date Forma
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
 format | Defines the response format type. If not specified, json will be used. | json, xml
+offset | Defines the offset to use when returning the items. | Integer
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
 ## Get Vendor POs
 ### API Endpoint - Get a List of POs Submitted to a Vendor
@@ -176,6 +180,8 @@ need-by | Limits results to a specific need-by or delivery-by date. | Date Forma
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
 format | Defines the response format type. If not specified, json will be used. | json, xml
+offset | Defines the offset to use when returning the items. | Integer
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
 ## Get Vendor POCOs
 ### API Endpoint - Get a List of PO Change Orders Submitted to a Vendor
@@ -239,6 +245,8 @@ need-by | Limits results to a specific need-by or delivery-by date. | Date Forma
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
 format | Defines the response format type. If not specified, json will be used. | json, xml
+offset | Defines the offset to use when returning the items. | Integer
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
 ## Get Vendor Deliveries
 ### API Endpoint - Get a List of Deliveries for a Vendor
@@ -294,6 +302,8 @@ po-guid | Limits results to a specific purchase order. | {cinx_po_id}
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
 format | Defines the response format type. If not specified, json will be used. | json, xml
+offset | Defines the offset to use when returning the items. | Integer
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
 ## Get Vendor Invoices
 ### API Endpoint - Get a List of Invoices from a Vendor
@@ -348,6 +358,8 @@ project | Limits results to a single project. | {cinx_project_id}
 owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
 format | Defines the response format type. If not specified, json will be used. | json, xml
+offset | Defines the offset to use when returning the items. | Integer
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
 ## Get Vendor Returns
 ### API Endpoint - Get a List of Returns for a Vendor
@@ -402,6 +414,8 @@ po-guid | Limits results to a specific purchase order. | {cinx_po_id}
 owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
 format | Defines the response format type. If not specified, json will be used. | json, xml
+offset | Defines the offset to use when returning the items. | Integer
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
 ## Get Vendor Back-Orders
 ### API Endpoint - Get a List of Back-Orders from a Vendor

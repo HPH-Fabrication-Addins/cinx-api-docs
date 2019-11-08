@@ -105,6 +105,8 @@ need-by | Limits results to a specific need-by or delivery-by date. | Date Forma
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
 format | Defines the response format type. If not specified, json will be used. | json, xml
+offset | Defines the offset to use when returning the items. | Integer
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
 ## Get PO
 ### API Endpoint - Get a Purchase Order

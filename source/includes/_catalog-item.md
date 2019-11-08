@@ -290,6 +290,10 @@ When requesting a catalog from the CINX API there are three view options.
 
 The table below defines the fields output using the **list-price** view option.
 
+**Notes**
+
+  - The manufacturer list price will be pulled from HPH's public catalog containing the item
+
 ## Get Item Template
 ### API Endpoint - Get a Catalog Item Template
 

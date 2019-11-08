@@ -60,6 +60,8 @@ submitter | Limits results to a specified CINX user. | {cinx_user_id}
 owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
 format | Defines the response format type. If not specified, json will be used. | json, xml
+offset | Defines the offset to use when returning the items. | Integer
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
 ## Get Project RFQs
 ### API Endpoint - Get a List of RFQs Linked to a Project
@@ -122,6 +124,8 @@ need-by | Limits results to a specific need-by or delivery-by date. | Date Forma
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
 format | Defines the response format type. If not specified, json will be used. | json, xml
+offset | Defines the offset to use when returning the items. | Integer
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
 ## Get Project Quotes
 ### API Endpoint - Get a List of Quotes for a Project
@@ -174,6 +178,8 @@ need-by | Limits results to a specific need-by or delivery-by date. | Date Forma
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
 format | Defines the response format type. If not specified, json will be used. | json, xml
+offset | Defines the offset to use when returning the items. | Integer
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
 ## Get Project POs
 ### API Endpoint - Get a List of POs for a Project
@@ -239,6 +245,8 @@ need-by | Limits results to a specific need-by or delivery-by date. | Date Forma
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
 format | Defines the response format type. If not specified, json will be used. | json, xml
+offset | Defines the offset to use when returning the items. | Integer
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
 ## Get Project POCOs
 ### API Endpoint - Get a List of PO Change Orders for a Project
@@ -302,6 +310,8 @@ need-by | Limits results to a specific need-by or delivery-by date. | Date Forma
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
 format | Defines the response format type. If not specified, json will be used. | json, xml
+offset | Defines the offset to use when returning the items. | Integer
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
 ## Get Project Deliveries
 ### API Endpoint - Get a List of Deliveries for a Project
@@ -357,6 +367,8 @@ po-guid | Limits results to a specific purchase order. | {cinx_po_id}
 submitter | Limits results to a specified CINX user. | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
 format | Defines the response format type. If not specified, json will be used. | json, xml
+offset | Defines the offset to use when returning the items. | Integer
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
 ## Get Project Invoices
 ### API Endpoint - Get a List of Invoices for a Project
@@ -413,6 +425,8 @@ vendor | Limits results to a single vendor. | {organization's vendor number}
 owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
 format | Defines the response format type. If not specified, json will be used. | json, xml
+offset | Defines the offset to use when returning the items. | Integer
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
 ## Get Project Returns
 ### API Endpoint - Get a List of Returns for a Project
@@ -467,6 +481,8 @@ po-guid | Limits results to a specific purchase order. | {cinx_po_id}
 owner | Limits results to a specified CINX user to whom the transaction is assigned | {cinx_user_id}
 number | Limits results to a specified transaction number. | {transaction_number}
 format | Defines the response format type. If not specified, json will be used. | json, xml
+offset | Defines the offset to use when returning the items. | Integer
+limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
 ## Get Project Back-Orders
 ### API Endpoint - Get a List of Back-Orders for a Project
