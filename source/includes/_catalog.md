@@ -22,7 +22,7 @@ With a CINX private catalog, an organization can:
   - [Get a Catalog Items Ids](#get-catalog-items-ids)
   - [Get a Catalog Stats](#get-catalog-stats)
   - [Catalog Items](#catalog-item)
-  - [Catalog/App Updates](#catalog/app-updates)
+  - Catalog/App Updates
 
 
 ## Get Catalog Line Roots
