@@ -128,11 +128,11 @@ Name | Data Type | Required | Default | Note
 ----- | ----- | ----- | ----- | -----
 cinx_guid | String (GUID Format) | POST = No; PUT = Yes |  | CINX System Id.
 name | String | Yes |  | Full name of the phase.
-description | String | No |  | Description of the phase.
+description | String | Yes |  | Description of the phase. Can be Null.
 status | String | Yes | A | Status of the phase.
-reference_id | String | No |  | Reference id field that can be used to store an ERP code for the phase.
-cinx_material_cost_code_guid | String (GUID Format) | No |  | CINX Id for the default material cost code assigned to the phase.
-material_cost_code_name | String | No |  | Name of the default material cost code assigned to the phase.
+reference_id | String | Yes |  | Reference id field that can be used to store an ERP code for the phase. Can be Null.
+cinx_material_cost_code_guid | String (GUID Format) | Yes |  | CINX Id for the default material cost code assigned to the phase. Can be Null.
+material_cost_code_name | String | Yes |  | Name of the default material cost code assigned to the phase. Can be Null.
 
 ## Create Phase
 ### API Endpoint - Create a Phase 
@@ -342,11 +342,11 @@ Name | Data Type | Required | Default | Note
 ----- | ----- | ----- | ----- | -----
 cinx_guid | String (GUID Format) | POST = No; PUT = Yes |  | CINX System Id.
 name | String | Yes |  | Full name of the material cost code.
-description | String | No |  | Description of the material cost code.
+description | String | Yes |  | Description of the material cost code. Can be Null.
 status | String | Yes | A | Status of the material cost code.
-reference_id | String | No |  | Reference id field that can be used to store an ERP code for the material cost code.
-cinx_category_guid | String (GUID Format) | No |  | CINX Id for the default category assigned to the material cost code.
-category_name | String | No |  | Name of the default category assigned to the material cost code.
+reference_id | String | Yes |  | Reference id field that can be used to store an ERP code for the material cost code. Can be Null.
+cinx_category_guid | String (GUID Format) | Yes |  | CINX Id for the default category assigned to the material cost code. Can be Null.
+category_name | String | Yes |  | Name of the default category assigned to the material cost code. Can be Null.
 
 ## Create Mat Cost Code
 ### API Endpoint - Create a Material Cost Code
@@ -505,11 +505,11 @@ Name | Data Type | Required | Default | Note
 ----- | ----- | ----- | ----- | -----
 cinx_guid | String (GUID Format) | POST = No; PUT = Yes |  | CINX System Id.
 name | String | Yes |  | Full name of the labor cost code.
-description | String | No |  | Description of the labor cost code.
+description | String | Yes |  | Description of the labor cost code. Can be Null.
 status | String | Yes | A | Status of the labor cost code.
-reference_id | String | No |  | Reference id field that can be used to store an ERP code for the labor cost code.
-cinx_category_guid | String (GUID Format) | No |  | CINX Id for the default category assigned to the labor cost code.
-category_name | String | No |  | Name of the default category assigned to the labor cost code.
+reference_id | String | Yes |  | Reference id field that can be used to store an ERP code for the labor cost code. Can be Null.
+cinx_category_guid | String (GUID Format) | Yes |  | CINX Id for the default category assigned to the labor cost code. Can be Null.
+category_name | String | Yes |  | Name of the default category assigned to the labor cost code. Can be Null.
 
 ## Create Labor Cost Code
 ### API Endpoint - Create a Labor Cost Code
@@ -661,9 +661,9 @@ Name | Data Type | Required | Default | Note
 ----- | ----- | ----- | ----- | -----
 cinx_guid | String (GUID Format) | POST = No; PUT = Yes |  | CINX System Id.
 name | String | Yes |  | Full name of the category.
-description | String | No |  | Description of the category.
+description | String | Yes |  | Description of the category. Can be Null.
 status | String | Yes | A | Status of the category.
-reference_id | String | No |  | Reference id field that can be used to store an ERP code for the category.
+reference_id | String | Yes |  | Reference id field that can be used to store an ERP code for the category. Can be Null.
 
 ## Create Category
 ### API Endpoint - Create a Category
@@ -831,11 +831,11 @@ Name | Data Type | Required | Default | Note
 ----- | ----- | ----- | ----- | -----
 cinx_guid | String (GUID Format) | POST = No; PUT = Yes |  | CINX System Id.
 name | String | Yes |  | Full name of the tax group.
-description | String | No |  | Description of the tax group.
-rate | Real | No |  | Value of the tax group rate.
-tax_type | String | No |  | Type of the tax. Template has a list of optional values.
+description | String | Yes |  | Description of the tax group. Can be Null.
+rate | Real | Yes |  | Value of the tax group rate.
+tax_type | String | Yes |  | Type of the tax. Template has a list of optional values. Can be Null.
 status | String | Yes | A | Status of the tax group. Template has a list of optional values.
-reference_id | String | No |  | Reference id field that can be used to store an ERP code for the tax group.
+reference_id | String | Yes |  | Reference id field that can be used to store an ERP code for the tax group. Can be Null.
 
 ## Create Tax Group
 ### API Endpoint - Create a Job Cost Tax Group
