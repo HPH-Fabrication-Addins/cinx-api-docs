@@ -144,7 +144,7 @@ cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 var isSynchronous = true;
-//phaseObject can be created based on the template retreived from cinxApi.getPhaseTemplate(cinx_api_token) call
+//phaseObject can be created based on the template retrieved from cinxApi.getPhaseTemplate(cinx_api_token) call
 cinxApi.postPhase(cinx_api_token, phaseObject, isSynchronous)
             .then(function (response) {
             console.log(response);
@@ -207,7 +207,7 @@ cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 var isSynchronous = true;
-//phaseObject can be created based on the template retreived from cinxApi.getPhaseTemplate(cinx_api_token) call
+//phaseObject can be created based on the template retrieved from cinxApi.getPhaseTemplate(cinx_api_token) call
 cinxApi.putPhase(cinx_api_token, phaseObject, isSynchronous)
             .then(function (response) {
                 console.log(response);
@@ -348,7 +348,6 @@ reference_id | String | No |  | Reference id field that can be used to store an 
 cinx_category_guid | String (GUID Format) | No |  | CINX Id for the default category assigned to the material cost code.
 category_name | String | No |  | Name of the default category assigned to the material cost code.
 
-
 ## Create Mat Cost Code
 ### API Endpoint - Create a Material Cost Code
 
@@ -359,7 +358,7 @@ cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 var isSynchronous = true;
-//ccObject can be created based on the template retreived from cinxApi.getMaterialCostCodeTemplate(cinx_api_token) call
+//ccObject can be created based on the template retrieved from cinxApi.getMaterialCostCodeTemplate(cinx_api_token) call
 cinxApi.postMaterialCostCode(cinx_api_token, ccObject, isSynchronous)
        .then(function(response) {
             console.log(response);
@@ -397,7 +396,7 @@ cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 var isSynchronous = true;
-//ccObject can be created based on the template retreived from cinxApi.getMaterialCostCodeTemplate(cinx_api_token) call
+//ccObject can be created based on the template retrieved from cinxApi.getMaterialCostCodeTemplate(cinx_api_token) call
 cinxApi.putMaterialCostCode(cinx_api_token, ccObject, isSynchronous)
     .then(function(response) {
         console.log(response);
@@ -418,6 +417,138 @@ This URL will be used to modify an existing Cost Code in the company’s CINX jo
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-material-cost-code-import?body=json**
 
 URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-material-cost-code-import?body=json`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+body | Defines the content type contained in the payload | json
+
+## Get Labor Cost Codes
+### API Endpoint - Get an Organization's List of Labor Cost Codes
+
+```json
+{
+    "response": {},
+    "rows": [
+        {
+            "cinx_guid": "314f6a13-56b3-5c3f-b14e-10d159e4c5c0",
+            "name": "101-1025",
+            "description": "W",
+            "category_guid": "31d57bb1-156e-5cf2-a1ce-05b57232e643",
+            "category_name": "MAT",
+            "reference_id": null,
+            "modified_by": "Will Stone",
+            "date_modified": "2019-07-26",
+            "status": "A"
+        }
+    ]
+}
+```
+`GET`
+
+This endpoint will be used to get a company’s list of labor cost codes. In CINX, each company can define the list of cost codes that can be assigned to labor activities associated with material products. The company can define a name and description for each cost code as well as a default category. 
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/org/job-costing/labor-cost-codes**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/labor-cost-codes`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
+## Get Labor Cost Code Template
+### API Endpoint - Get a Labor Cost Code Template
+
+```json
+{
+    "response": {},
+    "rows": [{
+        "doc_info": {},
+        "template": {
+            "cinx_guid": null,
+            "name": null,
+            "description": null,
+            "status": "A",
+            "reference_id": null,
+            "cinx_category_guid": null,
+            "category_name": null
+        },
+        "required_post": [],
+        "required_put": [],
+        "field_options": {},
+        "api_calls": []
+    }]
+}
+```
+`GET`
+
+This endpoint will be used to get a CINX Template for a job costing labor cost code.
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/labor-cost-code**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/labor-cost-code`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
+The table below defines the input fields within the template.
+
+**TEMPLATE FIELDS**
+
+Name | Data Type | Required | Default | Note
+----- | ----- | ----- | ----- | -----
+cinx_guid | String (GUID Format) | POST = No; PUT = Yes |  | CINX System Id.
+name | String | Yes |  | Full name of the labor cost code.
+description | String | No |  | Description of the labor cost code.
+status | String | Yes | A | Status of the labor cost code.
+reference_id | String | No |  | Reference id field that can be used to store an ERP code for the labor cost code.
+cinx_category_guid | String (GUID Format) | No |  | CINX Id for the default category assigned to the labor cost code.
+category_name | String | No |  | Name of the default category assigned to the labor cost code.
+
+## Create Labor Cost Code
+### API Endpoint - Create a Labor Cost Code
+
+```json
+{
+   
+}
+```
+`POST`
+
+This URL will be used to create a new Cost Code in the company’s CINX job costing library.
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-labor-cost-code-import?body=json**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-labor-cost-code-import?body=json`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+body | Defines the content type contained in the payload | json
+
+
+## Modify Labor Cost Code
+### API Endpoint - Modify a Labor Cost Code
+
+```json
+{
+    
+}
+```
+`PUT`
+
+This URL will be used to modify an existing Cost Code in the company’s CINX job costing library.
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-labor-cost-code-import?body=json**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-labor-cost-code-import?body=json`
 
 **OPTIONAL URL PARAMETERS**
 
@@ -544,7 +675,7 @@ cinxApi.setCredentials('CINX USERNAME', 'CINX PASSWORD');
 cinxApi.setApiPathAndVersion('https://api.cinx.com', '2.0');
 
 var isSynchronous = true;
-//cObject can be created based on the template retreived from cinxApi.getCategoryTemplate(cinx_api_token) call
+//cObject can be created based on the template retrieved from cinxApi.getCategoryTemplate(cinx_api_token) call
 cinxApi.postCategory(cinx_api_token, cObject, isSynchronous)
     .then(function(response) {
         console.log(response);
