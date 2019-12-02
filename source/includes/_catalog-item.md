@@ -394,8 +394,8 @@ cinx_catalog_parent.hph_code | String | No |  | HPH Item Code if the organizatio
 weight.value | Real | No |  | Weight of the item.
 weight.uom | String | No |  | Measurement type in which the weight value is expressed.
 line.cinx_guid | String (GUID Format) | No |  | CINX System Id of the Line to which an item is linked.
-org_prices.type | String | No |  | Type of item price. Template has a list of optional values.
-org_prices.price | Real | No |  | Unit price of the item.
+org_prices.type | String | Yes |  | Type of item price. Template has a list of optional values.
+org_prices.price | Real | Yes | 0 | Unit price of the item.
 org_prices.uom | String | Yes (Non-HPH Item) | E | Price unit-of-measure. Template has a list of optional values.
 packaging.type | String | No |  | Description of the type of packaging unit. Template has a list of optional values.
 packaging.upc | String | No |  | Manufacturer-defined UPC Number for the item package.
