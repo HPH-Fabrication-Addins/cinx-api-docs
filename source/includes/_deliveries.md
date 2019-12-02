@@ -385,7 +385,6 @@ items.quantity_accepted | Real | Yes | 0 | Quantity of the item that was accepte
 items.quantity_refused | Real | Yes | 0 | Quantity of the item that was refused during the delivery receiving.
 items.date_received | Date (YYYY-MM-DD) | No |  | Date the delivery of the product was processed.
 items.cinx_receiver_guid | String (GUID Format) | No |  | CINX Id for the user who received the product.
-items.workflow_status | String | Yes | INCOMPLETE | Status used to track the delivery. Template has a list of optional values.
 items.photo_url | String | No |  | Link to a photo of the item being received.
 items.delivery.ship_via | String | No |  | How the product was delivered or otherwise acquired. Template has a list of optional values.
 items.delivery.location_type | String | Yes | JOB SITE | Location type where the product was delivered. Template has a list of optional values.

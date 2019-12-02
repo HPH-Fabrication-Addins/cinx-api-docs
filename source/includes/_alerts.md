@@ -1,44 +1,33 @@
 # Alerts
 
 ## Get Alerts
-### API – GET Received User Alerts
+### API Endpoint – Get Received User Alerts
 
 `GET`
 
-This request will be used get a User’s CINX system alerts.
+This request will be used get a user’s CINX system alerts.
 
-URL Pattern:
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/user/alerts**
 
-{api path}/sub/{B2B Id GUID}/user/alerts/received?shown=0
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/user/alerts`
 
-Samples:
+**OPTIONAL URL PARAMETERS**
 
-**“Shown” Parameter**
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+format | Defines the response format type. If not specified, json will be used. | json, xml
+shown | Defines if the Alert has been viewed by the user. | 0, 1
+closed | Defines if the Alert has been closed/removed by the user. | 0, 1
 
-This optional URL parameter allows us to filter the alerts given their “User Shown” status.
 
-**?shown=0**
-**?shown=1**
 
-An alert is marked **shown** when a user has view the alert.
+add time to date? 
+add shown, closed?
+add acknowledged (functional alert)?
 
-`https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?shown=0`
 
-`https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?shown=1`
 
-**“Closed” Parameter**
 
-This optional URL parameter allows us to filter the alerts given their “User Closed” status.
-
-An alert is marked **closed** when a user has “deleted” the alert from a UI.
-
-**?closed=0**
-**?closed=1**
-
-`https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?closed=0`
-
-`https://api.cinx.com/sub/050ba80b-832b-89cc-8197-b2a1261a408c/user/alerts/received?closed=1`
- 
 ## Modify Alerts
 ### API – Mark User Alerts Shown or Closed
 
