@@ -26,7 +26,6 @@ For more information about labor units, please review the [Labor Units](#labor-u
   - [Get an Item using the HPH Code](#get-item-hph-code)
   - [Get an Item using an Organization Id](#get-item-org-id)
   - [Get an Item using a CINX Id](#get-item-cinx-id)
-  - [Create a Catalog Item from an HPH Code](#create-item-hph-code)
   - [Get a Catalog Item Template](#get-item-template)
   - [Create a Catalog Item](#create-item)
   - [Modify a Catalog Item](#modify-item)
