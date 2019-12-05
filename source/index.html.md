@@ -15,6 +15,7 @@ includes:
   - org-company
   - catalog
   - catalog-item
+  - catalog-item-prices
   - catalog-updates
   - labor-units
   - job-costing-setup

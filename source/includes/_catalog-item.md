@@ -52,7 +52,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/i
 
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
-view | Defines the level of content in the response. | compact, details, list-price
+view | Defines the level of content in the response. | compact, details
 labor | Defines the type of labor units returned. | mcaa, phcc, all
 format | Defines the response format type. If not specified, json will be used. | json, xml
 
@@ -60,7 +60,6 @@ format | Defines the response format type. If not specified, json will be used. 
 
 - **compact**: returns a small set of item information fields. This is the default view if one is not specified. Please see [Compact View](#item-view-compact) for a definition of the output.
 - **details**: returns a comprehensive set of item information. Please see [Details View](#item-view-details) for a definition of the output.
-- **list-price**: returns details about the current mfr list price for the item. Please see [List Price View](#item-view-list-price) for a definition of the output.
 
 **Labor** 
 
@@ -88,7 +87,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/i
 
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
-view | Defines the level of content in the response. | compact, details, list-price
+view | Defines the level of content in the response. | compact, details
 labor | Defines the type of labor units returned. | mcaa, phcc, all
 format | Defines the response format type. If not specified, json will be used. | json, xml
 
@@ -96,7 +95,6 @@ format | Defines the response format type. If not specified, json will be used. 
 
 - **compact**: returns a small set of item information fields. This is the default view if one is not specified. Please see [Compact View](#item-view-compact) for a definition of the output.
 - **details**: returns a comprehensive set of item information. Please see [Details View](#item-view-details) for a definition of the output.
-- **list-price**: returns details about the current mfr list price for the item. Please see [List Price View](#item-view-list-price) for a definition of the output.
 
 **Labor** 
 
@@ -124,7 +122,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/i
 
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
-view | Defines the level of content in the response. | compact, details, list-price
+view | Defines the level of content in the response. | compact, details
 labor | Defines the type of labor units returned. | mcaa, phcc, all
 format | Defines the response format type. If not specified, json will be used. | json, xml
 
@@ -132,7 +130,6 @@ format | Defines the response format type. If not specified, json will be used. 
 
 - **compact**: returns a small set of item information fields. This is the default view if one is not specified. Please see [Compact View](#item-view-compact) for a definition of the output.
 - **details**: returns a comprehensive set of item information. Please see [Details View](#item-view-details) for a definition of the output.
-- **list-price**: returns details about the current mfr list price for the item. Please see [List Price View](#item-view-list-price) for a definition of the output.
 
 **Labor** 
 
@@ -163,7 +160,7 @@ format | Defines the response format type. If not specified, json will be used. 
   }]
 }
 ```
-When requesting a catalog from the CINX API there are three view options. 
+When requesting a catalog from the CINX API there are two view options. 
 
 The table below defines the fields output using the **compact** view option.
 
@@ -262,36 +259,9 @@ The table below defines the fields output using the **compact** view option.
 }
 ```
 
-When requesting a catalog from the CINX API there are three view options. 
+When requesting a catalog from the CINX API there are two view options. 
 
 The table below defines the fields output using the **details** view option.
-
-## Item View - List Price
-### API Item Response View Definition - List Price
-
-```json
-{
-  "response": {},
-  "rows": [{
-    "cinx_guid": "82393d53-6f55-52a8-8019-42f5ec9615e1",
-    "mfr_list_price": 162.32,
-    "price_uom": "E",
-    "availability_status": "P",
-    "effective_date": "2017-06-19",
-    "price_sheet_type": "APOLLOXPRESS Fittings",
-    "price_sheet_number": "XPR-14",
-    "price_sheet_name": "APOLLOXPRESS Fittings",
-    "cinx_price_sheet_guid": "14a3dc28-5131-11e7-9399-00137268a1bf"
-  }]
-}
-```
-When requesting a catalog from the CINX API there are three view options. 
-
-The table below defines the fields output using the **list-price** view option.
-
-**Notes**
-
-  - The manufacturer list price will be pulled from HPH's public catalog containing the item
 
 ## Get Item Template
 ### API Endpoint - Get a Catalog Item Template
