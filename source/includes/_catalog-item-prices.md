@@ -116,3 +116,49 @@ format | Defines the response format type. If not specified, json will be used. 
 
 - **current**: returns only the current or most recent manufacturer list price for the item.
 - **all**: returns all the list prices for the item. This will include the current list price and all historical prices. The result is sorted most recent to earliest.
+
+## Get Price History - HPH Code
+### API Endpoint – Get an Item's Buy Price History using an HPH Code
+
+> The above code returns JSON structured like this:
+
+```json
+{
+  "response": {},
+  "rows": [{
+      "cinx_guid": "04b7673a-eb84-11e0-8ba1-00137268a1bf",
+      "current_price": false,
+      "mfr_list_price": 22,
+      "price_uom": "E",
+      "effective_date": "2011-07-22",
+      "price_sheet_type": "Wrot Solder Joint Fittings",
+      "price_sheet_number": "W-162",
+      "price_sheet_name": "Wrot Solder Joint Fittings",
+      "cinx_price_sheet_guid": "773549d8-b995-11e0-b635-00137268a1bf"
+    }]
+}
+```
+
+`GET`
+
+This endpoint will be used to get a catalog item’s buy price history using the HPH Item Code of the item. The response will contain a listing of the prices used on transactions.
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/analytics/item/hph-code/{hph_code}/price-history**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/analytics/item/hph-code/012EK0018/price-history`
+
+**OPTIONAL URL PARAMETERS**
+
+Parameter Name | Description | Value Type or Options
+----- | ----- | ----- 
+source | Limits the prices to a specific transaction type.| po, poco, quote, invoice
+project | Limits the prices to a specific project.| {cinx_project_guid}
+vendor | Limits the prices to a specific vendor.| {cinx_commerce_guid}
+include | Indicator if the same product from a different manufacturer should be included.| xrefs
+view | Defines the content contained in the response.| summary, list
+format | Defines the response format type. If not specified, json will be used. | json, xml
+
+**View Parameter Option Definitions** 
+
+- **summary**: returns a summary of the price history.  Contents include the following price types: last, low, high, and ..........
+- **list**: returns a listing of all the prices that match the criteria defined by the URL parameters.
