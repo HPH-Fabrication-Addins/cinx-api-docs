@@ -362,9 +362,6 @@
                     <a href="#item-view-details" class="toc-h2 toc-link" data-title="Item View - Details">Item View - Details</a>
                   </li>
                   <li>
-                    <a href="#item-view-list-price" class="toc-h2 toc-link" data-title="Item View - List Price">Item View - List Price</a>
-                  </li>
-                  <li>
                     <a href="#get-item-template" class="toc-h2 toc-link" data-title="Get Item Template">Get Item Template</a>
                   </li>
                   <li>
@@ -372,6 +369,35 @@
                   </li>
                   <li>
                     <a href="#modify-item" class="toc-h2 toc-link" data-title="Modify Item">Modify Item</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#catalog-item-prices" class="toc-h1 toc-link" data-title="Catalog Item Prices">Catalog Item Prices</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#catalog-item-prices-2" class="toc-h2 toc-link" data-title="Catalog Item Prices">Catalog Item Prices</a>
+                  </li>
+                  <li>
+                    <a href="#get-list-prices-hph-code" class="toc-h2 toc-link" data-title="Get List Prices - HPH Code">Get List Prices - HPH Code</a>
+                  </li>
+                  <li>
+                    <a href="#get-list-prices-cinx-id" class="toc-h2 toc-link" data-title="Get List Prices - CINX Id">Get List Prices - CINX Id</a>
+                  </li>
+                  <li>
+                    <a href="#get-price-history-hph-code" class="toc-h2 toc-link" data-title="Get Price History - HPH Code">Get Price History - HPH Code</a>
+                  </li>
+                  <li>
+                    <a href="#get-price-history-org-id" class="toc-h2 toc-link" data-title="Get Price History - Org Id">Get Price History - Org Id</a>
+                  </li>
+                  <li>
+                    <a href="#get-price-history-cinx-id" class="toc-h2 toc-link" data-title="Get Price History - CINX Id">Get Price History - CINX Id</a>
+                  </li>
+                  <li>
+                    <a href="#item-price-history-view-summary" class="toc-h2 toc-link" data-title="Item Price History View - Summary">Item Price History View - Summary</a>
+                  </li>
+                  <li>
+                    <a href="#item-price-history-view-list" class="toc-h2 toc-link" data-title="Item Price History View - List">Item Price History View - List</a>
                   </li>
               </ul>
           </li>
@@ -441,6 +467,18 @@
                   </li>
                   <li>
                     <a href="#modify-mat-cost-code" class="toc-h2 toc-link" data-title="Modify Mat Cost Code">Modify Mat Cost Code</a>
+                  </li>
+                  <li>
+                    <a href="#get-labor-cost-codes" class="toc-h2 toc-link" data-title="Get Labor Cost Codes">Get Labor Cost Codes</a>
+                  </li>
+                  <li>
+                    <a href="#get-labor-cost-code-template" class="toc-h2 toc-link" data-title="Get Labor Cost Code Template">Get Labor Cost Code Template</a>
+                  </li>
+                  <li>
+                    <a href="#create-labor-cost-code" class="toc-h2 toc-link" data-title="Create Labor Cost Code">Create Labor Cost Code</a>
+                  </li>
+                  <li>
+                    <a href="#modify-labor-cost-code" class="toc-h2 toc-link" data-title="Modify Labor Cost Code">Modify Labor Cost Code</a>
                   </li>
                   <li>
                     <a href="#get-categories" class="toc-h2 toc-link" data-title="Get Categories">Get Categories</a>
@@ -1972,7 +2010,6 @@ execution of a construction project or maintenance of a building.</p>
 <li><a href="#get-item-hph-code">Get an Item using the HPH Code</a></li>
 <li><a href="#get-item-org-id">Get an Item using an Organization Id</a></li>
 <li><a href="#get-item-cinx-id">Get an Item using a CINX Id</a></li>
-<li><a href="#create-item-hph-code">Create a Catalog Item from an HPH Code</a></li>
 <li><a href="#get-item-template">Get a Catalog Item Template</a></li>
 <li><a href="#create-item">Create a Catalog Item</a></li>
 <li><a href="#modify-item">Modify a Catalog Item</a></li>
@@ -2003,7 +2040,7 @@ execution of a construction project or maintenance of a building.</p>
 <tr>
 <td>view</td>
 <td>Defines the level of content in the response.</td>
-<td>compact, details, list-price</td>
+<td>compact, details</td>
 </tr>
 <tr>
 <td>labor</td>
@@ -2022,7 +2059,6 @@ execution of a construction project or maintenance of a building.</p>
 <ul>
 <li><strong>compact</strong>: returns a small set of item information fields. This is the default view if one is not specified. Please see <a href="#item-view-compact">Compact View</a> for a definition of the output.</li>
 <li><strong>details</strong>: returns a comprehensive set of item information. Please see <a href="#item-view-details">Details View</a> for a definition of the output.</li>
-<li><strong>list-price</strong>: returns details about the current mfr list price for the item. Please see <a href="#item-view-list-price">List Price View</a> for a definition of the output.</li>
 </ul>
 
 <p><strong>Labor</strong> </p>
@@ -2058,7 +2094,7 @@ execution of a construction project or maintenance of a building.</p>
 <tr>
 <td>view</td>
 <td>Defines the level of content in the response.</td>
-<td>compact, details, list-price</td>
+<td>compact, details</td>
 </tr>
 <tr>
 <td>labor</td>
@@ -2077,7 +2113,6 @@ execution of a construction project or maintenance of a building.</p>
 <ul>
 <li><strong>compact</strong>: returns a small set of item information fields. This is the default view if one is not specified. Please see <a href="#item-view-compact">Compact View</a> for a definition of the output.</li>
 <li><strong>details</strong>: returns a comprehensive set of item information. Please see <a href="#item-view-details">Details View</a> for a definition of the output.</li>
-<li><strong>list-price</strong>: returns details about the current mfr list price for the item. Please see <a href="#item-view-list-price">List Price View</a> for a definition of the output.</li>
 </ul>
 
 <p><strong>Labor</strong> </p>
@@ -2113,7 +2148,7 @@ execution of a construction project or maintenance of a building.</p>
 <tr>
 <td>view</td>
 <td>Defines the level of content in the response.</td>
-<td>compact, details, list-price</td>
+<td>compact, details</td>
 </tr>
 <tr>
 <td>labor</td>
@@ -2132,7 +2167,6 @@ execution of a construction project or maintenance of a building.</p>
 <ul>
 <li><strong>compact</strong>: returns a small set of item information fields. This is the default view if one is not specified. Please see <a href="#item-view-compact">Compact View</a> for a definition of the output.</li>
 <li><strong>details</strong>: returns a comprehensive set of item information. Please see <a href="#item-view-details">Details View</a> for a definition of the output.</li>
-<li><strong>list-price</strong>: returns details about the current mfr list price for the item. Please see <a href="#item-view-list-price">List Price View</a> for a definition of the output.</li>
 </ul>
 
 <p><strong>Labor</strong> </p>
@@ -2161,7 +2195,7 @@ execution of a construction project or maintenance of a building.</p>
   </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>When requesting a catalog from the CINX API there are three view options. </p>
+<p>When requesting a catalog from the CINX API there are two view options. </p>
 
 <p>The table below defines the fields output using the <strong>compact</strong> view option.</p>
 <h2 id='item-view-details'>Item View - Details</h2><h3 id='api-item-response-view-definition-details'>API Item Response View Definition - Details</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
@@ -2254,33 +2288,9 @@ execution of a construction project or maintenance of a building.</p>
   </span><span class="p">}]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>When requesting a catalog from the CINX API there are three view options. </p>
+<p>When requesting a catalog from the CINX API there are two view options. </p>
 
 <p>The table below defines the fields output using the <strong>details</strong> view option.</p>
-<h2 id='item-view-list-price'>Item View - List Price</h2><h3 id='api-item-response-view-definition-list-price'>API Item Response View Definition - List Price</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"82393d53-6f55-52a8-8019-42f5ec9615e1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"mfr_list_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">162.32</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price_uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"availability_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"effective_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-19"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price_sheet_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APOLLOXPRESS Fittings"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price_sheet_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XPR-14"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price_sheet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APOLLOXPRESS Fittings"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cinx_price_sheet_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14a3dc28-5131-11e7-9399-00137268a1bf"</span><span class="w">
-  </span><span class="p">}]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>When requesting a catalog from the CINX API there are three view options. </p>
-
-<p>The table below defines the fields output using the <strong>list-price</strong> view option.</p>
-
-<p><strong>Notes</strong></p>
-
-<ul>
-<li>The manufacturer list price will be pulled from HPH&#39;s public catalog containing the item</li>
-</ul>
 <h2 id='get-item-template'>Get Item Template</h2><h3 id='api-endpoint-get-a-catalog-item-template'>API Endpoint - Get a Catalog Item Template</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"doc_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
   </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -2499,15 +2509,15 @@ If you are creating a new private catalog item that will be copied from an exist
 <tr>
 <td>org_prices.type</td>
 <td>String</td>
-<td>No</td>
+<td>Yes</td>
 <td></td>
 <td>Type of item price. Template has a list of optional values.</td>
 </tr>
 <tr>
 <td>org_prices.price</td>
 <td>Real</td>
-<td>No</td>
-<td></td>
+<td>Yes</td>
+<td>0</td>
 <td>Unit price of the item.</td>
 </tr>
 <tr>
@@ -2698,6 +2708,523 @@ If you submit new values for your private catalog item that are also available f
 <aside class="notice">
 By default the PUT payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
 </aside>
+<h1 id='catalog-item-prices'>Catalog Item Prices</h1><h2 id='catalog-item-prices-2'>Catalog Item Prices</h2><h3 id='cinx-catalog-item-prices-discussion'>CINX Catalog Item Prices Discussion</h3>
+<aside class="notice">
+Catalog item prices are also output in the Get Catalog Item response views. Please see the Catalog Item section of this web site.
+</aside>
+
+<p>This section of the site describes endpoints relating to different price types that can be associated with a catalog item.  There are four different types of prices that can be linked to a catalog item. Each price type is defined below.</p>
+
+<p><strong>List Price</strong></p>
+
+<p>Base price for a product that is normally set by the product&#39;s manufacturer. The List price is similar in concept to a car&#39;s MSRP price. For items in the HPH Plumbing/Mechanical catalog, HPH continuously updates the manufacturer list price as revisions are issued by the manufacturer. Each List price also has the Name and Number of the Manufacturer Price Sheet from which the price was obtained as well as the price&#39;s effective date. The Effective Date is the published date upon which the manufacturer implemented the new price.</p>
+
+<p><strong>Buy Price</strong> </p>
+
+<p>Price paid to a vendor for the purchase of a product or service. The Buy Price is often a discounted price from a previously established base price - which is commonly referred to as a List Price or a MSRP. Each catalog item in an organization&#39;s private catalog can have a Buy Price.</p>
+
+<p>CINX also tracks buy prices that are used on transactions with vendors. Prices from Purchase Orders, Quotes, and Invoices are archived to allow for use by the organization when creating new transactions or performing analytics.</p>
+
+<p><strong>Sell Price</strong></p>
+
+<p>Price charged to a customer for a product or service. A Sell Price is normally related to a Buy Price or an established base price. Each catalog item in an organization&#39;s private catalog can have a Sell Price.</p>
+
+<p><strong>Estimate Price</strong></p>
+
+<p>Price for a product or service used in the estimating/bidding phase of a project. An Estimate Price is normally related to a Buy Price or an established base price. Each catalog item in an organization&#39;s private catalog can have a Estimate price.</p>
+
+<p><strong>Supported API Services</strong></p>
+
+<ul>
+<li><a href="#get-list-prices-hph-code">Get an Item&#39;s List Prices using the HPH Code</a></li>
+<li><a href="#get-list-prices-cinx-id">Get an Item&#39;s List Prices using a CINX Id</a></li>
+<li><a href="#get-price-history-hph-code">Get an Item&#39;s Price History using the HPH Code</a></li>
+<li><a href="#get-price-history-org-id">Get an Item&#39;s Price History using an Organization Id</a></li>
+<li><a href="#get-price-history-cinx-id">Get an Item&#39;s Price History using a CINX Id</a></li>
+</ul>
+<h2 id='get-list-prices-hph-code'>Get List Prices - HPH Code</h2><h3 id='api-endpoint-get-an-item-39-s-list-prices-using-an-hph-code'>API Endpoint – Get an Item&#39;s List Prices using an HPH Code</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"04b7673a-eb84-11e0-8ba1-00137268a1bf"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"current_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mfr_list_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"effective_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2011-07-22"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_sheet_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrot Solder Joint Fittings"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_sheet_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W-162"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_sheet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrot Solder Joint Fittings"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cinx_price_sheet_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"773549d8-b995-11e0-b635-00137268a1bf"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a catalog item’s manufacturer list prices using the HPH Item Code of the item.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/item/hph-code/{hph_code}/list-prices</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/item/hph-code/012EK0018/list-prices</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>which</td>
+<td>Defines how many list prices are returned. The all option is the default.</td>
+<td>current, all</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+
+<p><strong>Which Parameter Option Definitions</strong> </p>
+
+<ul>
+<li><strong>current</strong>: returns only the current or most recent manufacturer list price for the item.</li>
+<li><strong>all</strong>: returns all the list prices for the item. This will include the current list price and all historical prices. The result is sorted most recent to earliest.</li>
+</ul>
+<h2 id='get-list-prices-cinx-id'>Get List Prices - CINX Id</h2><h3 id='api-endpoint-get-an-item-39-s-list-prices-using-the-cinx-id'>API Endpoint – Get an Item&#39;s List Prices using the CINX Id</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"04b7673a-eb84-11e0-8ba1-00137268a1bf"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"current_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mfr_list_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"effective_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2011-07-22"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_sheet_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrot Solder Joint Fittings"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_sheet_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W-162"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_sheet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrot Solder Joint Fittings"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cinx_price_sheet_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"773549d8-b995-11e0-b635-00137268a1bf"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a catalog item’s manufacturer list prices using the CINX Id of the item.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/item/guid/{cinx_guid}/list-prices</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/item/guid/b023b15c-b996-11e0-b635-00137268a1bf/list-prices</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>which</td>
+<td>Defines how many list prices are returned. The all option is the default.</td>
+<td>current, all</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+
+<p><strong>Which Parameter Option Definitions</strong> </p>
+
+<ul>
+<li><strong>current</strong>: returns only the current or most recent manufacturer list price for the item.</li>
+<li><strong>all</strong>: returns all the list prices for the item. This will include the current list price and all historical prices. The result is sorted most recent to earliest.</li>
+</ul>
+<h2 id='get-price-history-hph-code'>Get Price History - HPH Code</h2><h3 id='api-endpoint-get-an-item-39-s-transaction-buy-price-history-using-an-hph-code'>API Endpoint – Get an Item&#39;s Transaction Buy Price History using an HPH Code</h3>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a catalog item’s buy price history using the HPH Item Code of the item. The response will contain a listing of the prices used on transactions.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/analytics/item/hph-code/{hph_code}/price-history</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/analytics/item/hph-code/012EK0018/price-history</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>source</td>
+<td>Limits the prices to a specific transaction type.</td>
+<td>po, poco, quote, invoice</td>
+</tr>
+<tr>
+<td>project</td>
+<td>Limits the prices to a specific project.</td>
+<td>{cinx_project_guid}</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits the prices to a specific vendor.</td>
+<td>{cinx_commerce_guid}</td>
+</tr>
+<tr>
+<td>include</td>
+<td>Indicator if the same product from a different manufacturer should be included.</td>
+<td>xrefs</td>
+</tr>
+<tr>
+<td>view</td>
+<td>Defines the content contained in the response. Summary is the default.</td>
+<td>summary, list</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+
+<p><strong>View Parameter Option Definitions</strong> </p>
+
+<ul>
+<li><strong>summary</strong>: returns a summary of the price history.  Contents include the following price types: average, last, low,  and high.</li>
+<li><strong>list</strong>: returns a listing of average price information into addition to all the prices that match the criteria defined by the URL parameters.</li>
+</ul>
+<h2 id='get-price-history-org-id'>Get Price History - Org Id</h2><h3 id='api-endpoint-get-an-item-39-s-transaction-buy-price-history-using-an-org-item-id'>API Endpoint – Get an Item&#39;s Transaction Buy Price History using an Org Item Id</h3>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a catalog item’s buy price history using the CINX Id of the item. The response will contain a listing of the prices used on transactions.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/analytics/item/org-id/{org_item_id}/price-history</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/analytics/item/org-id/C90114/price-history</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>source</td>
+<td>Limits the prices to a specific transaction type.</td>
+<td>po, poco, quote, invoice</td>
+</tr>
+<tr>
+<td>project</td>
+<td>Limits the prices to a specific project.</td>
+<td>{cinx_project_guid}</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits the prices to a specific vendor.</td>
+<td>{cinx_commerce_guid}</td>
+</tr>
+<tr>
+<td>include</td>
+<td>Indicator if the same product from a different manufacturer should be included.</td>
+<td>xrefs</td>
+</tr>
+<tr>
+<td>view</td>
+<td>Defines the content contained in the response. Summary is the default.</td>
+<td>summary, list</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+
+<p><strong>View Parameter Option Definitions</strong> </p>
+
+<ul>
+<li><strong>summary</strong>: returns a summary of the price history.  Contents include the following price types: average, last, low,  and high.</li>
+<li><strong>list</strong>: returns a listing of average price information into addition to all the prices that match the criteria defined by the URL parameters.</li>
+</ul>
+<h2 id='get-price-history-cinx-id'>Get Price History - CINX Id</h2><h3 id='api-endpoint-get-an-item-39-s-transaction-buy-price-history-using-a-cinx-id'>API Endpoint – Get an Item&#39;s Transaction Buy Price History using a CINX Id</h3>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a catalog item’s buy price history using the CINX Id of the item. The response will contain a listing of the prices used on transactions.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/analytics/item/guid/{cinx_guid}/price-history</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/analytics/item/guid/b023b15c-b996-11e0-b635-00137268a1bf/price-history</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>source</td>
+<td>Limits the prices to a specific transaction type.</td>
+<td>po, poco, quote, invoice</td>
+</tr>
+<tr>
+<td>project</td>
+<td>Limits the prices to a specific project.</td>
+<td>{cinx_project_guid}</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>Limits the prices to a specific vendor.</td>
+<td>{cinx_commerce_guid}</td>
+</tr>
+<tr>
+<td>include</td>
+<td>Indicator if the same product from a different manufacturer should be included.</td>
+<td>xrefs</td>
+</tr>
+<tr>
+<td>view</td>
+<td>Defines the content contained in the response. Summary is the default.</td>
+<td>summary, list</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+
+<p><strong>View Parameter Option Definitions</strong> </p>
+
+<ul>
+<li><strong>summary</strong>: returns a summary of the price history.  Contents include the following price types: average, last, low,  and high.</li>
+<li><strong>list</strong>: returns a listing of average price information into addition to all the prices that match the criteria defined by the URL parameters.</li>
+</ul>
+<h2 id='item-price-history-view-summary'>Item Price History View - Summary</h2><h3 id='api-item-price-history-response-view-definition-summary'>API Item Price History Response View Definition - Summary</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"include_xrefs"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"primary"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"xrefs"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-29"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-04"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"average"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">13.18</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"is_xref"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b023b15c-b996-11e0-b635-00137268a1bf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hph_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012EK0018"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"org_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"org_system_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1</span><span class="se">\"</span><span class="s2"> WROT CXC 90 ELBOW"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"cinx_org_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org-0000-1179"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elkhart Products Corporation"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">8.25</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-29"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bom"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"df8a088c-1fd6-5b8f-99f3-ba6d38d8cd82"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BOM-PO"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PO-000006"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cinx_bom_item_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9cf3ec4f-c162-5262-bb7e-f3bcbec8550d"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0929772a-fbaf-59ae-bf9b-0a5275f4a847"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRJ-2019-10"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRJ-2019-10"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cinx_commerce_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9a13fcca-e6ae-524f-95dd-0f4d7d26930f"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99999"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Keegan Supply"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"is_xref"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b023b15c-b996-11e0-b635-00137268a1bf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hph_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012EK0018"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"org_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"org_system_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1</span><span class="se">\"</span><span class="s2"> WROT CXC 90 ELBOW"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"cinx_org_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org-0000-1179"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elkhart Products Corporation"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">18.11</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-04"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bom"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d15c0678-f8dc-5a03-a9b9-c7a303cd9837"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BOM-PO"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PO-000007"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PO-000007"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cinx_bom_item_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a0532c2c-adf3-5190-8aaf-4be57bf3928a"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cinx_commerce_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7880c854-017f-5359-96de-fdef626c33cf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"V101"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hilti-6"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"is_xref"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b023b15c-b996-11e0-b635-00137268a1bf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hph_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012EK0018"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"org_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"org_system_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1</span><span class="se">\"</span><span class="s2"> WROT CXC 90 ELBOW"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"cinx_org_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org-0000-1179"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elkhart Products Corporation"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">18.11</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-04"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bom"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d15c0678-f8dc-5a03-a9b9-c7a303cd9837"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BOM-PO"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PO-000007"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PO-000007"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cinx_bom_item_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a0532c2c-adf3-5190-8aaf-4be57bf3928a"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cinx_commerce_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7880c854-017f-5359-96de-fdef626c33cf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"V101"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hilti-6"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>When requesting an item&#39;s price history from the CINX API there are two view options. </p>
+
+<p>The table below defines the fields output using the <strong>summary</strong> view option.</p>
+<h2 id='item-price-history-view-list'>Item Price History View - List</h2><h3 id='api-item-price-history-response-view-definition-list'>API Item Price History Response View Definition - List</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"include_xrefs"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"counts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"primary"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"xrefs"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-29"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-04"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"average"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">13.18</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"cinx_item_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b023b15c-b996-11e0-b635-00137268a1bf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hph_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012EK0018"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"org_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"org_system_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1</span><span class="se">\"</span><span class="s2"> WROT CXC 90 ELBOW"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mfr_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elkhart Products Corporation"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">8.25</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-29"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bom_cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BOM-PO"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bom_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BOM-PO"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bom_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bom_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PO-000006"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vendor_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99999"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vendor_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Keegan Supply"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRJ-2019-10"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRJ-2019-10"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_xref"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_low_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_high_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_first_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_last_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cinx_item_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b023b15c-b996-11e0-b635-00137268a1bf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hph_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012EK0018"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"org_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"org_system_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1</span><span class="se">\"</span><span class="s2"> WROT CXC 90 ELBOW"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mfr_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elkhart Products Corporation"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">18.11</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-04"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bom_cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BOM-PO"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bom_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BOM-PO"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bom_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PO-000007"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bom_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PO-000007"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vendor_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"V101"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vendor_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hilti-6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"project_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_xref"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_low_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_high_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_first_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_last_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>When requesting an item&#39;s price history from the CINX API there are two view options. </p>
+
+<p>The table below defines the fields output using the <strong>list</strong> view option.</p>
 <h1 id='catalog-app-updates'>Catalog/App Updates</h1><h2 id='update-intro'>Update Intro</h2><h3 id='cinx-catalog-application-update-introduction-price-update-service'>CINX Catalog/Application Update Introduction - Price Update Service</h3>
 <p>CINX allows a company to define their own catalog of material content. This Private Catalog can contain items from the Harrison Plumbing/Mechanical database, vendor catalogs that are hosted on CINX, and items created and maintained by the company. In addition, a company can have access to CINX software partner catalogs. For example, databases used by industry estimating systems are available as CINX catalogs.</p>
 
@@ -3276,9 +3803,9 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <tr>
 <td>description</td>
 <td>String</td>
-<td>No</td>
+<td>Yes</td>
 <td></td>
-<td>Description of the phase.</td>
+<td>Description of the phase. Can be Null.</td>
 </tr>
 <tr>
 <td>status</td>
@@ -3290,23 +3817,23 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <tr>
 <td>reference_id</td>
 <td>String</td>
-<td>No</td>
+<td>Yes</td>
 <td></td>
-<td>Reference id field that can be used to store an ERP code for the phase.</td>
+<td>Reference id field that can be used to store an ERP code for the phase. Can be Null.</td>
 </tr>
 <tr>
 <td>cinx_material_cost_code_guid</td>
 <td>String (GUID Format)</td>
-<td>No</td>
+<td>Yes</td>
 <td></td>
-<td>CINX Id for the default material cost code assigned to the phase.</td>
+<td>CINX Id for the default material cost code assigned to the phase. Can be Null.</td>
 </tr>
 <tr>
 <td>material_cost_code_name</td>
 <td>String</td>
-<td>No</td>
+<td>Yes</td>
 <td></td>
-<td>Name of the default material cost code assigned to the phase.</td>
+<td>Name of the default material cost code assigned to the phase. Can be Null.</td>
 </tr>
 </tbody></table>
 <h2 id='create-phase'>Create Phase</h2><h3 id='api-endpoint-create-a-phase'>API Endpoint - Create a Phase</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
@@ -3315,7 +3842,7 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="c1">//phaseObject can be created based on the template retreived from cinxApi.getPhaseTemplate(cinx_api_token) call</span>
+<span class="c1">//phaseObject can be created based on the template retrieved from cinxApi.getPhaseTemplate(cinx_api_token) call</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postPhase</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">phaseObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
@@ -3382,7 +3909,7 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="c1">//phaseObject can be created based on the template retreived from cinxApi.getPhaseTemplate(cinx_api_token) call</span>
+<span class="c1">//phaseObject can be created based on the template retrieved from cinxApi.getPhaseTemplate(cinx_api_token) call</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">putPhase</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">phaseObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
@@ -3556,9 +4083,9 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <tr>
 <td>description</td>
 <td>String</td>
-<td>No</td>
+<td>Yes</td>
 <td></td>
-<td>Description of the material cost code.</td>
+<td>Description of the material cost code. Can be Null.</td>
 </tr>
 <tr>
 <td>status</td>
@@ -3570,23 +4097,23 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <tr>
 <td>reference_id</td>
 <td>String</td>
-<td>No</td>
+<td>Yes</td>
 <td></td>
-<td>Reference id field that can be used to store an ERP code for the material cost code.</td>
+<td>Reference id field that can be used to store an ERP code for the material cost code. Can be Null.</td>
 </tr>
 <tr>
 <td>cinx_category_guid</td>
 <td>String (GUID Format)</td>
-<td>No</td>
+<td>Yes</td>
 <td></td>
-<td>CINX Id for the default category assigned to the material cost code.</td>
+<td>CINX Id for the default category assigned to the material cost code. Can be Null.</td>
 </tr>
 <tr>
 <td>category_name</td>
 <td>String</td>
-<td>No</td>
+<td>Yes</td>
 <td></td>
-<td>Name of the default category assigned to the material cost code.</td>
+<td>Name of the default category assigned to the material cost code. Can be Null.</td>
 </tr>
 </tbody></table>
 <h2 id='create-mat-cost-code'>Create Mat Cost Code</h2><h3 id='api-endpoint-create-a-material-cost-code'>API Endpoint - Create a Material Cost Code</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
@@ -3595,7 +4122,7 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="c1">//ccObject can be created based on the template retreived from cinxApi.getMaterialCostCodeTemplate(cinx_api_token) call</span>
+<span class="c1">//ccObject can be created based on the template retrieved from cinxApi.getMaterialCostCodeTemplate(cinx_api_token) call</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postMaterialCostCode</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">ccObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
             <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
@@ -3637,7 +4164,7 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="c1">//ccObject can be created based on the template retreived from cinxApi.getMaterialCostCodeTemplate(cinx_api_token) call</span>
+<span class="c1">//ccObject can be created based on the template retrieved from cinxApi.getMaterialCostCodeTemplate(cinx_api_token) call</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">putMaterialCostCode</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">ccObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
@@ -3657,6 +4184,207 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-material-cost-code-import?body=json</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-material-cost-code-import?body=json</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+</tbody></table>
+<h2 id='get-labor-cost-codes'>Get Labor Cost Codes</h2><h3 id='api-endpoint-get-an-organization-39-s-list-of-labor-cost-codes'>API Endpoint - Get an Organization&#39;s List of Labor Cost Codes</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"314f6a13-56b3-5c3f-b14e-10d159e4c5c0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"101-1025"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"category_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"31d57bb1-156e-5cf2-a1ce-05b57232e643"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"category_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MAT"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"modified_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Will Stone"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-26"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a company’s list of labor cost codes. In CINX, each company can define the list of cost codes that can be assigned to labor activities associated with material products. The company can define a name and description for each cost code as well as a default category. </p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/org/job-costing/labor-cost-codes</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/org/job-costing/labor-cost-codes</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h2 id='get-labor-cost-code-template'>Get Labor Cost Code Template</h2><h3 id='api-endpoint-get-a-labor-cost-code-template'>API Endpoint - Get a Labor Cost Code Template</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"doc_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cinx_category_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"category_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"required_post"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"required_put"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"field_options"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"api_calls"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a CINX Template for a job costing labor cost code.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/labor-cost-code</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/labor-cost-code</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+
+<p>The table below defines the input fields within the template.</p>
+
+<p><strong>TEMPLATE FIELDS</strong></p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Note</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cinx_guid</td>
+<td>String (GUID Format)</td>
+<td>POST = No; PUT = Yes</td>
+<td></td>
+<td>CINX System Id.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>Full name of the labor cost code.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>Description of the labor cost code. Can be Null.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>Yes</td>
+<td>A</td>
+<td>Status of the labor cost code.</td>
+</tr>
+<tr>
+<td>reference_id</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>Reference id field that can be used to store an ERP code for the labor cost code. Can be Null.</td>
+</tr>
+<tr>
+<td>cinx_category_guid</td>
+<td>String (GUID Format)</td>
+<td>Yes</td>
+<td></td>
+<td>CINX Id for the default category assigned to the labor cost code. Can be Null.</td>
+</tr>
+<tr>
+<td>category_name</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+<td>Name of the default category assigned to the labor cost code. Can be Null.</td>
+</tr>
+</tbody></table>
+<h2 id='create-labor-cost-code'>Create Labor Cost Code</h2><h3 id='api-endpoint-create-a-labor-cost-code'>API Endpoint - Create a Labor Cost Code</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>POST</code></p>
+
+<p>This URL will be used to create a new Cost Code in the company’s CINX job costing library.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-labor-cost-code-import?body=json</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-labor-cost-code-import?body=json</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>Defines the content type contained in the payload</td>
+<td>json</td>
+</tr>
+</tbody></table>
+<h2 id='modify-labor-cost-code'>Modify Labor Cost Code</h2><h3 id='api-endpoint-modify-a-labor-cost-code'>API Endpoint - Modify a Labor Cost Code</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>PUT</code></p>
+
+<p>This URL will be used to modify an existing Cost Code in the company’s CINX job costing library.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-labor-cost-code-import?body=json</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-labor-cost-code-import?body=json</code></p>
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
@@ -3809,9 +4537,9 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <tr>
 <td>description</td>
 <td>String</td>
-<td>No</td>
+<td>Yes</td>
 <td></td>
-<td>Description of the category.</td>
+<td>Description of the category. Can be Null.</td>
 </tr>
 <tr>
 <td>status</td>
@@ -3823,9 +4551,9 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <tr>
 <td>reference_id</td>
 <td>String</td>
-<td>No</td>
+<td>Yes</td>
 <td></td>
-<td>Reference id field that can be used to store an ERP code for the category.</td>
+<td>Reference id field that can be used to store an ERP code for the category. Can be Null.</td>
 </tr>
 </tbody></table>
 <h2 id='create-category'>Create Category</h2><h3 id='api-endpoint-create-a-category'>API Endpoint - Create a Category</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
@@ -3834,7 +4562,7 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setApiPathAndVersion</span><span class="p">(</span><span class="s1">'https://api.cinx.com'</span><span class="p">,</span> <span class="s1">'2.0'</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">isSynchronous</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<span class="c1">//cObject can be created based on the template retreived from cinxApi.getCategoryTemplate(cinx_api_token) call</span>
+<span class="c1">//cObject can be created based on the template retrieved from cinxApi.getCategoryTemplate(cinx_api_token) call</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">postCategory</span><span class="p">(</span><span class="nx">cinx_api_token</span><span class="p">,</span> <span class="nx">cObject</span><span class="p">,</span> <span class="nx">isSynchronous</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
@@ -4038,23 +4766,23 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <tr>
 <td>description</td>
 <td>String</td>
-<td>No</td>
+<td>Yes</td>
 <td></td>
-<td>Description of the tax group.</td>
+<td>Description of the tax group. Can be Null.</td>
 </tr>
 <tr>
 <td>rate</td>
 <td>Real</td>
-<td>No</td>
+<td>Yes</td>
 <td></td>
 <td>Value of the tax group rate.</td>
 </tr>
 <tr>
 <td>tax_type</td>
 <td>String</td>
-<td>No</td>
+<td>Yes</td>
 <td></td>
-<td>Type of the tax. Template has a list of optional values.</td>
+<td>Type of the tax. Template has a list of optional values. Can be Null.</td>
 </tr>
 <tr>
 <td>status</td>
@@ -4066,9 +4794,9 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <tr>
 <td>reference_id</td>
 <td>String</td>
-<td>No</td>
+<td>Yes</td>
 <td></td>
-<td>Reference id field that can be used to store an ERP code for the tax group.</td>
+<td>Reference id field that can be used to store an ERP code for the tax group. Can be Null.</td>
 </tr>
 </tbody></table>
 <h2 id='create-tax-group'>Create Tax Group</h2><h3 id='api-endpoint-create-a-job-cost-tax-group'>API Endpoint - Create a Job Cost Tax Group</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
@@ -15113,13 +15841,6 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>No</td>
 <td></td>
 <td>CINX Id for the user who received the product.</td>
-</tr>
-<tr>
-<td>items.workflow_status</td>
-<td>String</td>
-<td>Yes</td>
-<td>INCOMPLETE</td>
-<td>Status used to track the delivery. Template has a list of optional values.</td>
 </tr>
 <tr>
 <td>items.photo_url</td>
