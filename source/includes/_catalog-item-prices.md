@@ -152,7 +152,7 @@ format | Defines the response format type. If not specified, json will be used. 
 
 `GET`
 
-This endpoint will be used to get a catalog item’s buy price history using the CINX Id of the item. The response will contain a listing of the prices used on transactions.
+This endpoint will be used to get a catalog item’s buy price history using the Org Id of the item. The response will contain a listing of the prices used on transactions.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/analytics/item/org-id/{org_item_id}/price-history**
 
