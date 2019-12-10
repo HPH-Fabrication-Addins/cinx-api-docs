@@ -92,7 +92,7 @@ The CINX API Base URL is constructed from the components shown below:
 
 **API Response Formatting – Standard/JSON**
 
-All CINX API responses use a standardized format. By default, a JSON formatted response is provided.  Please see below if you prefer XML.
+All CINX API responses use a standardized format. By default, a JSON formatted response is provided. Please see below if you prefer XML.
 
 The **response** object will contain meta data about the server’s response to the request.
 
@@ -106,7 +106,7 @@ To receive an XML response, please add the following parameter to the URL: **for
 
 **Result Rows - Paging**
 
-For many HTTP GET requests you can use URL parameters to define the number of rows returned in the response.  Valid input parameters are:
+For many HTTP GET requests you can use URL parameters to define the number of rows returned in the response. Valid input parameters are:
 
   - **offset={number}**
 
@@ -122,7 +122,7 @@ The API calls documented on this site will contain two URL sections to assist in
   - **URL PATTERN**: This section defines the elements of the URL. Portions of the URL that will require variables to be inserted will be shown in curly braces. 
 
   - **URL SAMPLES**: Each API call definition page will also contain at least one sample. The sample will be fully formatted.  
-THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided only for formatting verification purposes.
+THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED. The samples are provided only for formatting verification purposes.
 
 
 ## Developer Resources
@@ -156,7 +156,7 @@ CINX supports different “catalogs” (databases) of content. Companies subscri
   - MCAA WebLEM
   - PHCC Labor Units 
   
-Another catalog that each CINX company can use is a **Private** catalog.  This catalog of content is specific to the subscribing company and can contain material items. These items can be copied from another catalog on CINX or manually entered/uploaded by the company.
+Another catalog that each CINX company can use is a **Private** catalog. This catalog of content is specific to the subscribing company and can contain material items. These items can be copied from another catalog on CINX or manually entered/uploaded by the company.
 
 Estimating systems, CAD/BIM software systems, and other software partners that utilize CINX content will also have a separate CINX Catalogs. This allows each system to have a specific set of items that CINX maintains.
 
@@ -204,11 +204,19 @@ The templates are accessed via the API and use a standardized response structure
 
 <img src='images/subscription19.jpg'/>
 
+**required_post:** defines required fields when a POST is submitted.
+
+<img src='images/required-post.jpg'/>
+
+**required_put:** defines required fields when a PUT is submitted
+
+<img src='images/required-put.jpg'/>
+
 **field_options:** defines available options for data fields
 
 <img src='images/subscription20.jpg'/>
 
-**api_calls:** lists related API calls.  The URL in the response is fully formed with the proper API Token and other variables.  The API calls will include the web service to POST/PUT the data and any calls that can be used to access data that can be populated in the template. 
+**api_calls:** lists related API calls. The URL in the response is fully formed with the proper API Token and other variables. The API calls will include the web service to POST/PUT the data and any calls that can be used to access data that can be populated in the template. 
 
 <img src='images/subscription21.jpg'/>
 
@@ -249,7 +257,7 @@ API calls for obtaining the next number for an object are provided and documente
 
 By default some PUT and POST operations will be processed asynchronously. This is due to the fact that some transactions could include a large volume of items which could require longer processing times. These calls will be noted on the API Documentation pages.
 
-If you would like to override the asynchronous default an optional URL parameter is provided.  Using **synchronous=1** in the URL will switch the processing mode to be synchronous.
+If you would like to override the asynchronous default an optional URL parameter is provided. Using **synchronous=1** in the URL will switch the processing mode to be synchronous.
 
 ## CINX Ids
 ### CINX Platform Unique Ids
