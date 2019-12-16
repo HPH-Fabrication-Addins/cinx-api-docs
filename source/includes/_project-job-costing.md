@@ -280,9 +280,9 @@ This endpoint will be used to create a project’s job costing attributes.
   - A CINX Template is available that documents the available fields that can be populated.
   - A JSON formatted payload is used in the POST request
 
-URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-job-costing-import?body=json**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-job-cost-import?body=json**
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-job-costing-import?body=json`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-job-cost-import?body=json`
 
 **OPTIONAL URL PARAMETERS**
 
@@ -313,9 +313,9 @@ This endpoint will be used to modify a project’s phase and cost code attribute
   - A CINX Template is available that documents the available fields that can be populated.
   - A JSON formatted payload is used in the PUT request
 
-URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-job-costing-import?body=json**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-job-cost-import?body=json**
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-job-costing-import?body=json`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-job-cost-import?body=json`
 
 **OPTIONAL URL PARAMETERS**
 
