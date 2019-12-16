@@ -378,7 +378,7 @@ This URL will be used to create a new Cost Code in the company’s CINX job cost
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-material-cost-code-import?body=json**
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-material-cost-code-import?body=json`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-material-cost-code-import?body=json`
 
 **OPTIONAL URL PARAMETERS**
 
@@ -416,7 +416,7 @@ This URL will be used to modify an existing Cost Code in the company’s CINX jo
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-material-cost-code-import?body=json**
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-material-cost-code-import?body=json`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-material-cost-code-import?body=json`
 
 **OPTIONAL URL PARAMETERS**
 
@@ -525,7 +525,7 @@ This URL will be used to create a new Cost Code in the company’s CINX job cost
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-labor-cost-code-import?body=json**
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-labor-cost-code-import?body=json`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-labor-cost-code-import?body=json`
 
 **OPTIONAL URL PARAMETERS**
 
@@ -548,7 +548,7 @@ This URL will be used to modify an existing Cost Code in the company’s CINX jo
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-labor-cost-code-import?body=json**
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-labor-cost-code-import?body=json`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-labor-cost-code-import?body=json`
 
 **OPTIONAL URL PARAMETERS**
 
