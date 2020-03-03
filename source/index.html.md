@@ -24,6 +24,8 @@ includes:
   - projects
   - project-job-costing
   - project-transactions
+  - project-submittals
+  - project-transmittals
   - requisitions
   - rfqs
   - quotes

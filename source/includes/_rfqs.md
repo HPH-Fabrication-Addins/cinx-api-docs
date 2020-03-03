@@ -125,12 +125,12 @@ limit | Defines the number of results to include in the response. If not specifi
 			"name": "National Sales Company"
 		}],
 		"project": {
-			"cinx_id": null,
+			"cinx_guid": null,
 			"number": null,
 			"name": null
 		},
 		"requisition": {
-			"cinx_id": null,
+			"cinx_guid": null,
 			"number": null,
 			"name": null
 		},
