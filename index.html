@@ -643,6 +643,34 @@
               </ul>
           </li>
           <li>
+            <a href="#project-submittals" class="toc-h1 toc-link" data-title="Project Submittals">Project Submittals</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#project-submittal-definition" class="toc-h2 toc-link" data-title="Project Submittal Definition">Project Submittal Definition</a>
+                  </li>
+                  <li>
+                    <a href="#get-project-submittals" class="toc-h2 toc-link" data-title="Get Project Submittals">Get Project Submittals</a>
+                  </li>
+                  <li>
+                    <a href="#get-submittal" class="toc-h2 toc-link" data-title="Get Submittal">Get Submittal</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#project-transmittals" class="toc-h1 toc-link" data-title="Project Transmittals">Project Transmittals</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#project-transmittal-definition" class="toc-h2 toc-link" data-title="Project Transmittal Definition">Project Transmittal Definition</a>
+                  </li>
+                  <li>
+                    <a href="#get-project-transmittals" class="toc-h2 toc-link" data-title="Get Project Transmittals">Get Project Transmittals</a>
+                  </li>
+                  <li>
+                    <a href="#get-transmittal" class="toc-h2 toc-link" data-title="Get Transmittal">Get Transmittal</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#requisitions" class="toc-h1 toc-link" data-title="Requisitions">Requisitions</a>
               <ul class="toc-list-h2">
                   <li>
@@ -967,7 +995,7 @@
 
 <p><strong>API Response Formatting – Standard/JSON</strong></p>
 
-<p>All CINX API responses use a standardized format. By default, a JSON formatted response is provided.  Please see below if you prefer XML.</p>
+<p>All CINX API responses use a standardized format. By default, a JSON formatted response is provided. Please see below if you prefer XML.</p>
 
 <p>The <strong>response</strong> object will contain meta data about the server’s response to the request.</p>
 
@@ -979,7 +1007,7 @@
 
 <p><strong>Result Rows - Paging</strong></p>
 
-<p>For many HTTP GET requests you can use URL parameters to define the number of rows returned in the response.  Valid input parameters are:</p>
+<p>For many HTTP GET requests you can use URL parameters to define the number of rows returned in the response. Valid input parameters are:</p>
 
 <ul>
 <li><p><strong>offset={number}</strong></p></li>
@@ -993,7 +1021,7 @@
 <ul>
 <li><p><strong>URL PATTERN</strong>: This section defines the elements of the URL. Portions of the URL that will require variables to be inserted will be shown in curly braces. </p></li>
 <li><p><strong>URL SAMPLES</strong>: Each API call definition page will also contain at least one sample. The sample will be fully formatted.<br>
-THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided only for formatting verification purposes.</p></li>
+THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED. The samples are provided only for formatting verification purposes.</p></li>
 </ul>
 <h2 id='developer-resources'>Developer Resources</h2><h3 id='additional-api-resources-for-developers'>Additional API Resources for Developers</h3>
 <p><strong>Demo Site</strong></p>
@@ -1020,7 +1048,7 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 <li>PHCC Labor Units </li>
 </ul>
 
-<p>Another catalog that each CINX company can use is a <strong>Private</strong> catalog.  This catalog of content is specific to the subscribing company and can contain material items. These items can be copied from another catalog on CINX or manually entered/uploaded by the company.</p>
+<p>Another catalog that each CINX company can use is a <strong>Private</strong> catalog. This catalog of content is specific to the subscribing company and can contain material items. These items can be copied from another catalog on CINX or manually entered/uploaded by the company.</p>
 
 <p>Estimating systems, CAD/BIM software systems, and other software partners that utilize CINX content will also have a separate CINX Catalogs. This allows each system to have a specific set of items that CINX maintains.</p>
 
@@ -1060,11 +1088,19 @@ THE SAMPLES WILL NOT DISPLAY A RESPONSE IF CLICKED.  The samples are provided on
 
 <p><img src='images/subscription19.jpg'/></p>
 
+<p><strong>required_post:</strong> defines required fields when a POST is submitted.</p>
+
+<p><img src='images/required-post.jpg'/></p>
+
+<p><strong>required_put:</strong> defines required fields when a PUT is submitted</p>
+
+<p><img src='images/required-put.jpg'/></p>
+
 <p><strong>field_options:</strong> defines available options for data fields</p>
 
 <p><img src='images/subscription20.jpg'/></p>
 
-<p><strong>api_calls:</strong> lists related API calls.  The URL in the response is fully formed with the proper API Token and other variables.  The API calls will include the web service to POST/PUT the data and any calls that can be used to access data that can be populated in the template. </p>
+<p><strong>api_calls:</strong> lists related API calls. The URL in the response is fully formed with the proper API Token and other variables. The API calls will include the web service to POST/PUT the data and any calls that can be used to access data that can be populated in the template. </p>
 
 <p><img src='images/subscription21.jpg'/></p>
 
@@ -1102,7 +1138,7 @@ Fields with a NULL value should be removed before creating or modifying an objec
 <h2 id='put-post-processing'>PUT/POST Processing</h2><h3 id='put-and-post-processing-options'>PUT and POST Processing Options</h3>
 <p>By default some PUT and POST operations will be processed asynchronously. This is due to the fact that some transactions could include a large volume of items which could require longer processing times. These calls will be noted on the API Documentation pages.</p>
 
-<p>If you would like to override the asynchronous default an optional URL parameter is provided.  Using <strong>synchronous=1</strong> in the URL will switch the processing mode to be synchronous.</p>
+<p>If you would like to override the asynchronous default an optional URL parameter is provided. Using <strong>synchronous=1</strong> in the URL will switch the processing mode to be synchronous.</p>
 <h2 id='cinx-ids'>CINX Ids</h2><h3 id='cinx-platform-unique-ids'>CINX Platform Unique Ids</h3>
 <p>The CINX platform stores many Ids for different object types from different sources. For example, an item on a PO may have Ids defined by the customer, vendor, and product manufacturer. </p>
 
@@ -2909,7 +2945,7 @@ Catalog item prices are also output in the Get Catalog Item response views. Plea
 <h2 id='get-price-history-org-id'>Get Price History - Org Id</h2><h3 id='api-endpoint-get-an-item-39-s-transaction-buy-price-history-using-an-org-item-id'>API Endpoint – Get an Item&#39;s Transaction Buy Price History using an Org Item Id</h3>
 <p><code>GET</code></p>
 
-<p>This endpoint will be used to get a catalog item’s buy price history using the CINX Id of the item. The response will contain a listing of the prices used on transactions.</p>
+<p>This endpoint will be used to get a catalog item’s buy price history using the Org Id of the item. The response will contain a listing of the prices used on transactions.</p>
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/analytics/item/org-id/{org_item_id}/price-history</strong></p>
 
@@ -4139,9 +4175,9 @@ Catalog item prices are also output in the Get Catalog Item response views. Plea
 
 <p>This URL will be used to create a new Cost Code in the company’s CINX job costing library.</p>
 
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-material-cost-code-import?body=json</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-material-cost-code-import?body=json</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-material-cost-code-import?body=json</code></p>
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-material-cost-code-import?body=json</code></p>
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
@@ -4181,9 +4217,9 @@ Catalog item prices are also output in the Get Catalog Item response views. Plea
 
 <p>This URL will be used to modify an existing Cost Code in the company’s CINX job costing library.</p>
 
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-material-cost-code-import?body=json</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-material-cost-code-import?body=json</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-material-cost-code-import?body=json</code></p>
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-material-cost-code-import?body=json</code></p>
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
@@ -4355,9 +4391,9 @@ Catalog item prices are also output in the Get Catalog Item response views. Plea
 
 <p>This URL will be used to create a new Cost Code in the company’s CINX job costing library.</p>
 
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-labor-cost-code-import?body=json</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-labor-cost-code-import?body=json</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-labor-cost-code-import?body=json</code></p>
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-labor-cost-code-import?body=json</code></p>
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
@@ -4382,9 +4418,9 @@ Catalog item prices are also output in the Get Catalog Item response views. Plea
 
 <p>This URL will be used to modify an existing Cost Code in the company’s CINX job costing library.</p>
 
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-labor-cost-code-import?body=json</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-org-labor-cost-code-import?body=json</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-labor-cost-code-import?body=json</code></p>
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-org-labor-cost-code-import?body=json</code></p>
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
@@ -8307,9 +8343,9 @@ Catalog item prices are also output in the Get Catalog Item response views. Plea
 <li>A JSON formatted payload is used in the POST request</li>
 </ul>
 
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-job-costing-import?body=json</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-job-cost-import?body=json</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-job-costing-import?body=json</code></p>
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-job-cost-import?body=json</code></p>
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
@@ -8346,9 +8382,9 @@ Catalog item prices are also output in the Get Catalog Item response views. Plea
 <li>A JSON formatted payload is used in the PUT request</li>
 </ul>
 
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-job-costing-import?body=json</strong></p>
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/partner/exec/cinx/json-project-job-cost-import?body=json</strong></p>
 
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-job-costing-import?body=json</code></p>
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/partner/exec/cinx/json-project-job-cost-import?body=json</code></p>
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
@@ -9326,6 +9362,390 @@ Catalog item prices are also output in the Get Catalog Item response views. Plea
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/project/{project_guid}/lead-times</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/lead-times</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h1 id='project-submittals'>Project Submittals</h1><h2 id='project-submittal-definition'>Project Submittal Definition</h2><h3 id='cinx-object-definition-project-submittal'>CINX Object Definition - Project Submittal</h3>
+<p>A project submittal is a document that is prepared and submitted to an engineer or other entity for approval. </p>
+
+<p>For larger projects, a project specification or manual is created and provided to all the project participants. The specification defines everything on a project from bidding requirements to product specifications and installation practices. Engineers normally define the sections of the specification relating to products used by contractors on the project.</p>
+
+<p>Prior to the installation of products, contractors may have to submit documents relating to the products to the engineer or other responsible party for approval. Each document required by the specification and submitted for approval is called a submittal. Typically, the submittal will go through an approval process which may require several iterations.</p>
+
+<p>The CINX web application has functionality to help a contractor create and manage submittals. User&#39;s can select product documentation to add as submittals and also upload new documents that needed to be provided to the approving entity.</p>
+
+<p>Currently, the API supports working with documents defined as submittals within CINX.</p>
+
+<p><strong>Supported API Services</strong></p>
+
+<ul>
+<li><a href="#get-project-submittals">Get a List of Project Submittals</a></li>
+<li><a href="#get-submittal">Get a Submittal</a></li>
+</ul>
+<h2 id='get-project-submittals'>Get Project Submittals</h2><h3 id='api-endpoint-get-a-project-39-s-submittals'>API Endpoint – Get a Project&#39;s Submittals</h3>
+<aside class="warning">
+BETA: This call is in a beta state and therefore subject to potential change. It has been published to allow partners to provide input.  
+</aside>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+ </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+  </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3dcecae7-c25e-5cc6-8bf9-609f2df56b61"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUB-4579"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"600WOG SDR BRS LOW LEAD 2PC BALL VLV"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Specification Sheet"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"workflow_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREATED"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"approval_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT APPROVED"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"project_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRJ-2019-13"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"project_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRJ-2019-13"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"date_due"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-04"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"date_approved"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-02"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-02"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"mime_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cdn.dev.cinx.biz/submittals/org-0001-4030/5bd8a7fbde7809766143984e.pdf"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+ </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a listing of a project&#39;s submittals.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/project/{project_guid}/submittals</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/submittals</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>type</td>
+<td>Limits results to a specific submittal document type.</td>
+<td>SPECIFICATION SHEET, OPERATION MANUAL, SDS, WARRANTY, INSTALL INSTRUCTIONS, PARTS, MILL TEST REPORT, TECHNICAL BULLETIN, TECHNICAL DRAWING, WIRING DIAGRAM, SHOP DRAWING, AS-BUILT-PLAN, BROCHURE, OTHER</td>
+</tr>
+<tr>
+<td>approval</td>
+<td>Limits results to a specific approval status.</td>
+<td>NOT APPROVED, APPROVED, APPROVED WITH CHANGES, REVISE AND RESUBMIT, REJECTED-NOT SPECIFIED DOCUMENT, REJECTED-INCOMPLETE, REJECTED-OTHER, INFORMATIONAL ONLY-FOR RECRORDS, NOT REQUIRED-NOT REVIEWED</td>
+</tr>
+<tr>
+<td>workflow</td>
+<td>Limits results to a specific workflow status.</td>
+<td>CREATED, RECEIVED FROM VENDOR, APPLIED BY CINX, UPLOADED, APPROVED BY ORG, SUBMITTED, PENDING APPROVAL, APPROVED</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified submittal number.</td>
+<td>{submittal_number}</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 10 will be used.</td>
+<td>Integer</td>
+</tr>
+</tbody></table>
+<h2 id='get-submittal'>Get Submittal</h2><h3 id='api-endpoint-get-a-project-submittal'>API Endpoint – Get a Project Submittal</h3>
+<aside class="warning">
+BETA: This call is in a beta state and therefore subject to potential change. It has been published to allow partners to provide input.  
+</aside>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3dcecae7-c25e-5cc6-8bf9-609f2df56b61"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUB-4579"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"125SWP/200WOG THD BZ CHECK VLV| MV"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Specification Sheet"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CINX"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"workflow_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CREATED"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"approval_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REJECTED-OTHER"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-02"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-02"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"due"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-04"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"approved"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eac76f6c-a988-5b53-a987-58e4bc01bd66"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRJ-2019-13"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRJ-2019-13"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"project_spec"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"page_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"45"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"page_paragraph"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"reference_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"architect"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ArchRef-1245"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"drawing_symbol"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"engineer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ArchRef-1245"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"general_contractor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GCRef-4578"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"serial_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mfr_part_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mfr_order_number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"master_format"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"division_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"division_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Plumbing"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"section_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22-05-23"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"section_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General Duty Valves for Plumbing Piping"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"revision"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_current"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"509/509T - Ver2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cdn.dev.cinx.biz/submittals/org-0001-4030/1583180007RLSProductCatalog.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mime_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-02"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"185aabe1-3487-5f59-9ad5-c577a76bd392"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Will Stone"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"willstone@cinx.com"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"revision"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_current"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Autogeneration File"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cdn.dev.cinx.biz/submittals/org-0001-4030/5bd88151de780971827e7079.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mime_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-02"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"185aabe1-3487-5f59-9ad5-c577a76bd392"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Will Stone"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"willstone@cinx.com"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"participants"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"185aabe1-3487-5f59-9ad5-c577a76bd392"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Will Stone"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"willstone@cinx.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"org_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WTS Mechanical -DEV"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"org_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONTRACTOR"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get the details of a specific project submittal.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/submittal/{submittal_guid}/</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/submittal/cd204035-368e-5677-838b-17d7506c4523</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h1 id='project-transmittals'>Project Transmittals</h1><h2 id='project-transmittal-definition'>Project Transmittal Definition</h2><h3 id='cinx-object-definition-project-transmittal'>CINX Object Definition - Project Transmittal</h3>
+<p>A CINX project transmittal consists of two components.  The transmittal cover page provides identification and submission information.  Also included on the cover page is a listing of documents included in the package. </p>
+
+<p>The second section contains the actual documents that are being submitted.</p>
+
+<p>Today, transmittals are often referred to as submittal packages.</p>
+
+<p>The CINX web application has functionality to help a contractor create and manage transmittals. User&#39;s can select documents from the project&#39;s submittals and add them to a transmittal. Each transmittal can have a recipients list which will be used when the transmittal is electronically submitted.</p>
+
+<p>Currently, the API supports working with documents defined as transmittals within CINX.</p>
+
+<p><strong>Supported API Services</strong></p>
+
+<ul>
+<li><a href="#get-project-transmittals">Get a List of Project Transmittals</a></li>
+<li><a href="#get-transmittal">Get a Transmittal</a></li>
+</ul>
+<h2 id='get-project-transmittals'>Get Project Transmittals</h2><h3 id='api-endpoint-get-a-project-39-s-transmittals'>API Endpoint – Get a Project&#39;s Transmittals</h3>
+<aside class="warning">
+BETA: This call is in a beta state and therefore subject to potential change. It has been published to allow partners to provide input.  
+</aside>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+ </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+ </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+  </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0229f4de-65bf-531a-be48-d1aebc372f07"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRAN-030220"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"revision"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRAN-030220"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Valve Spec Sheets"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"workflow_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUBMITTED"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"project_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRJ-2019-13"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"project_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRJ-2019-13"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"date_due"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-12"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"date_submitted"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-02"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-02"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"date_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-02"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"mime_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://5f062a51145e77536a19-9611898491c752c3179a567caf577a77.r87.cf1.rackcdn.com/TRAN_030220__20200302160457.pdf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"submittal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+ </span><span class="p">}}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a listing of a project&#39;s transmittals.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/project/{project_guid}/transmittals</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/7880c854-017f-5359-96de-fdef626c33cf/transmittals</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>workflow</td>
+<td>Limits results to a specific workflow status.</td>
+<td>CREATED, APPROVED FOR SUBMISSION, SUBMITTED</td>
+</tr>
+<tr>
+<td>number</td>
+<td>Limits results to a specified transmittal number.</td>
+<td>{transmittal_number}</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 10 will be used.</td>
+<td>Integer</td>
+</tr>
+</tbody></table>
+<h2 id='get-transmittal'>Get Transmittal</h2><h3 id='api-endpoint-get-a-project-transmittal'>API Endpoint – Get a Project Transmittal</h3>
+<aside class="warning">
+BETA: This call is in a beta state and therefore subject to potential change. It has been published to allow partners to provide input.  
+</aside>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2dc90e17-bbdc-59fa-8845-ee80bdfdec74"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"locked"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRAN-200301A"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"revision"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TRAN-200301A"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Valve Spec Sheets"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"workflow_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUBMITTED"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CINX"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"remarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Please review ASAP.  We need to order these soon."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-02"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"last_modified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-02"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"due"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-20"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"submitted"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-02"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eac76f6c-a988-5b53-a987-58e4bc01bd66"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRJ-2019-13"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRJ-2019-13"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"document"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c3ea0b9b-5e6d-5caa-bcb3-4a42344bc9d1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://5f062a51145e77536a19-9611898491c752c3179a567caf577a77.r87.cf1.rackcdn.com/TRAN_200301A__20200302210151.pdf"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mime_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"submittal_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"submittals"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d894dd54-c489-57ba-a62b-98590ca0d2ea"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"revision"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Autogeneration File"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cdn.dev.cinx.biz/submittals/org-0001-4030/5bd72c4ede78090bbd5e9c8f.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mime_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-02"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"185aabe1-3487-5f59-9ad5-c577a76bd392"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Will Stone"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"willstone@cinx.com"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4e3ba9ff-d189-51a7-9ad2-511c4c058413"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"revision"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Autogeneration File"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cdn.dev.cinx.biz/submittals/org-0001-4030/5bd9b461de78090dac7d35b9.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mime_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date_created"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-02"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"creator"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"185aabe1-3487-5f59-9ad5-c577a76bd392"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Will Stone"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"willstone@cinx.com"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"participants"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d89f99cd-99da-50d8-94e7-91314d95ec86"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"David McPhaul"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dmcphaul@hphguide.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6034440820"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"org_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HPH"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"org_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ENGINEER"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get the details of a specific project transmittal.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/transmittal/{transmittal_guid}/</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/transmittal/cd204035-368e-5677-838b-17d7506c4523</code></p>
 
 <p><strong>OPTIONAL URL PARAMETERS</strong></p>
 
@@ -10810,12 +11230,12 @@ By default the PUT payload will be processed asynchronously.  See the optional U
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"National Sales Company"</span><span class="w">
         </span><span class="p">}],</span><span class="w">
         </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"requisition"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
         </span><span class="p">},</span><span class="w">
