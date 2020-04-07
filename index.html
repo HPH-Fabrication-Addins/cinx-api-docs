@@ -608,6 +608,29 @@
               </ul>
           </li>
           <li>
+            <a href="#project-items" class="toc-h1 toc-link" data-title="Project Items">Project Items</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#project-items-definition" class="toc-h2 toc-link" data-title="Project Items Definition">Project Items Definition</a>
+                  </li>
+                  <li>
+                    <a href="#get-project-items" class="toc-h2 toc-link" data-title="Get Project Items">Get Project Items</a>
+                  </li>
+                  <li>
+                    <a href="#project-items-view-ids" class="toc-h2 toc-link" data-title="Project Items View - Ids">Project Items View - Ids</a>
+                  </li>
+                  <li>
+                    <a href="#project-items-view-compact" class="toc-h2 toc-link" data-title="Project Items View - Compact">Project Items View - Compact</a>
+                  </li>
+                  <li>
+                    <a href="#project-items-view-details" class="toc-h2 toc-link" data-title="Project Items View - Details">Project Items View - Details</a>
+                  </li>
+                  <li>
+                    <a href="#create-or-modify-a-project-item" class="toc-h2 toc-link" data-title="Create or Modify a Project Item">Create or Modify a Project Item</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#project-transactions" class="toc-h1 toc-link" data-title="Project Transactions">Project Transactions</a>
               <ul class="toc-list-h2">
                   <li>
@@ -8401,6 +8424,241 @@ Catalog item prices are also output in the Get Catalog Item response views. Plea
 <td>json</td>
 </tr>
 </tbody></table>
+<h1 id='project-items'>Project Items</h1><h2 id='project-items-definition'>Project Items Definition</h2><h3 id='cinx-object-definition-project-items'>CINX Object Definition - Project Items</h3>
+<p>CINX Project Items are building material products or construction related services that are used on a project.</p>
+
+<p>A CINX project item is linked to its source item in a CINX Catalog. Note: If a project is imported into CINX and its items are not yet linked to a catalog item a new catalog item will be created.</p>
+
+<p>In addition to the catalog-level information, a project item has a large number of fields that can used to manage the item through the different project and procurement workflows. Some important examples include: project job-costing, taxes, order conditions, construction status, work-breakdowns, and ERP integration.  </p>
+
+<p>Project items are also tracked on every transaction to which they have been attached.</p>
+
+<p><strong>Dependencies and Business Rules</strong></p>
+
+<ul>
+<li>A project item must be associated with a CINX project</li>
+<li>A project item must be associated with a CINX catalog item</li>
+<li>A project item must have a quantity</li>
+</ul>
+
+<p><strong>Supported API Services</strong></p>
+
+<ul>
+<li><a href="#get-project-items">Get Project Items</a></li>
+</ul>
+<h2 id='get-project-items'>Get Project Items</h2><h3 id='api-endpoint-get-a-project-items'>API Endpoint – Get a Project Items</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a listing of a specific project&#39;s item.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/project/{project_guid}/items?view={view_option}</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/project/bb613aff-4256-5359-b7cd-391505d19e01/items?view=ids</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>view</td>
+<td>Defines the level of content in the response.</td>
+<td>ids, compact, details</td>
+</tr>
+<tr>
+<td>guid</td>
+<td>Limits the response to a single CINX Project Item GUID.</td>
+<td>{cinx_guid}</td>
+</tr>
+<tr>
+<td>hph-code</td>
+<td>Limits the response to a single HPH Item Code.</td>
+<td>{hph_item_code}</td>
+</tr>
+<tr>
+<td>model-guid</td>
+<td>Limits the response to a single Model Item GUID.</td>
+<td>{model_guid}</td>
+</tr>
+<tr>
+<td>org-id</td>
+<td>Limits the response to a single organization&#39;s item id</td>
+<td>{org_id}</td>
+</tr>
+<tr>
+<td>org-sys</td>
+<td>Limits the response to a single organization&#39;s item system id.</td>
+<td>{org_system_id}</td>
+</tr>
+<tr>
+<td>mfr-part</td>
+<td>Limits the response to a single Manufacturer Part Number.</td>
+<td>{mfr_part_number}</td>
+</tr>
+<tr>
+<td>upc</td>
+<td>Limits the response to a single Manufacturer UPC Number.</td>
+<td>{upc__number}</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 10 will be used.</td>
+<td>Integer</td>
+</tr>
+</tbody></table>
+
+<p><strong>View</strong> </p>
+
+<ul>
+<li><strong>ids</strong>: returns a small set of item ids. Please see <a href="#project-items-view-ids">Compact View</a> for a definition of the output.</li>
+<li><strong>compact</strong>: returns a small set of project item information fields. This is the default view if one is not specified. Please see <a href="#project-items-view-compact">Compact View</a> for a definition of the output.</li>
+<li><strong>details</strong>: returns a comprehensive set of project item information. Please see <a href="#project-items-view-details">Details View</a> for a definition of the output. This is the default view if one is not specified.</li>
+</ul>
+<h2 id='project-items-view-ids'>Project Items View - Ids</h2><h3 id='api-project-items-response-view-definition-ids'>API Project Items Response View Definition - Ids</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dc7517d8-6e8c-5bfd-927f-1b784d401143"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hph_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012NI0018"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"039923312969"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"org_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"org_system_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"model_item_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"234234q32fqw5324f3232"</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>When requesting listing of a project&#39;s items from the CINX API there are three view options. </p>
+
+<p>The table below defines the fields output using the <strong>ids</strong> view option.</p>
+
+<p>NOTE: Limit and Offset information is included in the <strong>Response</strong> object.</p>
+<h2 id='project-items-view-compact'>Project Items View - Compact</h2><h3 id='api-project-items-response-view-definition-compact'>API Project Items Response View Definition - Compact</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dc7517d8-6e8c-5bfd-927f-1b784d401143"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hph_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012NI0018"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"039923312969"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"org_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"org_system_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mfr_part_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"607"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"model_item_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"234234q32fqw5324f3232"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1</span><span class="se">\"</span><span class="s2"> WROT CXC 90 ELBOW"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mfr_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NIBCO, Inc."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">18.11</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price_uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.177</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"weight_uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lb"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phase_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"material_cost_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UG-123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"labor_cost_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"taxable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"availability_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"procurement_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT ORDERED"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"construction_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT INSTALLED"</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>When requesting listing of a project&#39;s items from the CINX API there are three view options. </p>
+
+<p>The table below defines the fields output using the <strong>compact</strong> view option.</p>
+
+<p>NOTE: Limit and Offset information is included in the <strong>Response</strong> object.</p>
+<h2 id='project-items-view-details'>Project Items View - Details</h2><h3 id='api-project-items-response-view-definition-details'>API Project Items Response View Definition - Details</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dc7517d8-6e8c-5bfd-927f-1b784d401143"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hph_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012NI0018"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"039923312969"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"org_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"org_system_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mfr_part_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"607"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"model_item_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"234234q32fqw5324f3232"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1</span><span class="se">\"</span><span class="s2"> WROT CXC 90 ELBOW"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mfr_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NIBCO, Inc."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"unit_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">18.11</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price_uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"spec_sheet_url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"item_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MATERIAL"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.177</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"weight_uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lb"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"labor_unit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"labor_cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"availability_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"procurement_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT ORDERED"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"construction_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NOT INSTALLED"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quantities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"entered"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ordered"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"received"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"invoiced"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"back_ordered"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"order_conditions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"allow_substitutes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_lead_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"order_by_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"delivery"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"deliver_to"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Site Forman"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"location_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HPH"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Handle with double extra care"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"labeling_instructions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HPH-789879"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"packaging_instructions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrapped pallets"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"work_breakdown"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"work_order_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WO-8774512"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"spool_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"building_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HPH1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"space"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lobby"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"sub_space"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Female Restroom"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Domestic Cold Water"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"arch_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ELB-045"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"job_cost"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"phase_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First Floor"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"material_cost_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UG-123"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"labor_cost_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"category_name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"taxes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"taxable"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"tax_group_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TAX-12"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>When requesting listing of a project&#39;s items from the CINX API there are three view options. </p>
+
+<p>The table below defines the fields output using the <strong>details</strong> view option.</p>
+
+<p>NOTE: Limit and Offset information is included in the <strong>Response</strong> object.</p>
+<h2 id='create-or-modify-a-project-item'>Create or Modify a Project Item</h2><h3 id='api-endpoint-create-or-modify-a-new-project-item'>API Endpoint - Create or Modify a New Project Item</h3>
+<aside class="warning">
+Please use teh Modify Project API call to create or modify a project item. Documentation for this API Endpoint can be found under the **Projects** menu option.
+</aside>
 <h1 id='project-transactions'>Project Transactions</h1><h2 id='get-project-reqs'>Get Project Reqs</h2><h3 id='api-endpoint-get-a-list-of-requisitions-for-a-project'>API Endpoint - Get a List of Requisitions for a Project</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
