@@ -23,6 +23,7 @@ includes:
   - vendor-transactions
   - projects
   - project-job-costing
+  - project-items
   - project-transactions
   - project-submittals
   - project-transmittals
