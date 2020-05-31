@@ -12,8 +12,6 @@ An Organization in CINX defines a company or grouping of individuals (residentia
 **Supported API Services**
 
   - [Get an Org's Details](#get-org-details)
-  - [Get an Org Template](#get-org-template)
-  - [Modify Org](#modify-org)
   - [Get an Org's List of Users](#org-users)
   - [Get an Org's List of Locations/Addresses](#org-locations-addresses)
   - [Get an Org's List of Customer Types](#get-customer-types)
@@ -55,37 +53,6 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/o
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
 format | Defines the response format type. If not specified, json will be used. | json, xml 
-
-
-## Get Org Template
-### API Endpoint - Get an Organization Template
-
-`GET`
-
-This endpoint will be used to get a CINX Template for an organization.
-
-URL Pattern: **{api path}/{api_version}/sub/{api_token}/template/org**
-
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/org`
-
-**OPTIONAL URL PARAMETERS**
-
-Parameter Name | Description | Value Type or Options
------ | ----- | ----- 
-format | Defines the response format type. If not specified, json will be used. | json, xml 
-
-## Modify Org
-### API Endpoint – Modify an Organization's Details
-
-`PUT`
-
-This request will be used to modify an organization’s details.
-
-URL Pattern:**{api path}/{api_version}/sub/{api_token}/org**
-
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/xxx`
-
-
 
 ## Org Users
 ### API Enpoint – Get an Organization's List of Users

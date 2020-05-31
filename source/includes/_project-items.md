@@ -202,6 +202,6 @@ NOTE: Limit and Offset information is included in the **Response** object.
 ### API Endpoint - Create or Modify a New Project Item
 
 <aside class="warning">
-Please use teh Modify Project API call to create or modify a project item. Documentation for this API Endpoint can be found under the **Projects** menu option.
+Please use the Modify Project API call to create or modify a project item. Documentation for this API Endpoint can be found under the **Projects** menu option.
 </aside>
 
