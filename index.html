@@ -289,12 +289,6 @@
                     <a href="#get-org-details" class="toc-h2 toc-link" data-title="Get Org Details">Get Org Details</a>
                   </li>
                   <li>
-                    <a href="#get-org-template" class="toc-h2 toc-link" data-title="Get Org Template">Get Org Template</a>
-                  </li>
-                  <li>
-                    <a href="#modify-org" class="toc-h2 toc-link" data-title="Modify Org">Modify Org</a>
-                  </li>
-                  <li>
                     <a href="#org-users" class="toc-h2 toc-link" data-title="Org Users">Org Users</a>
                   </li>
                   <li>
@@ -331,6 +325,27 @@
                   </li>
                   <li>
                     <a href="#get-catalog-line-children" class="toc-h2 toc-link" data-title="Get Catalog Line Children">Get Catalog Line Children</a>
+                  </li>
+                  <li>
+                    <a href="#get-catalog-line-items" class="toc-h2 toc-link" data-title="Get Catalog Line Items">Get Catalog Line Items</a>
+                  </li>
+                  <li>
+                    <a href="#line-item-view-compact" class="toc-h2 toc-link" data-title="Line Item View - Compact">Line Item View - Compact</a>
+                  </li>
+                  <li>
+                    <a href="#line-item-view-details" class="toc-h2 toc-link" data-title="Line Item View - Details">Line Item View - Details</a>
+                  </li>
+                  <li>
+                    <a href="#line-item-view-list-price" class="toc-h2 toc-link" data-title="Line Item View - List-Price">Line Item View - List-Price</a>
+                  </li>
+                  <li>
+                    <a href="#get-catalog-manufacturers" class="toc-h2 toc-link" data-title="Get Catalog Manufacturers">Get Catalog Manufacturers</a>
+                  </li>
+                  <li>
+                    <a href="#get-price-sheet-types" class="toc-h2 toc-link" data-title="Get Price Sheet Types">Get Price Sheet Types</a>
+                  </li>
+                  <li>
+                    <a href="#get-price-sheets" class="toc-h2 toc-link" data-title="Get Price Sheets">Get Price Sheets</a>
                   </li>
                   <li>
                     <a href="#get-catalog-items-ids" class="toc-h2 toc-link" data-title="Get Catalog Items Ids">Get Catalog Items Ids</a>
@@ -402,7 +417,7 @@
               </ul>
           </li>
           <li>
-            <a href="#catalog-app-updates" class="toc-h1 toc-link" data-title="Catalog/App Updates">Catalog/App Updates</a>
+            <a href="#catalog-app-updates-prices" class="toc-h1 toc-link" data-title="Catalog/App Updates - Prices">Catalog/App Updates - Prices</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#update-intro" class="toc-h2 toc-link" data-title="Update Intro">Update Intro</a>
@@ -422,6 +437,23 @@
               </ul>
           </li>
           <li>
+            <a href="#catalog-app-updates-labor" class="toc-h1 toc-link" data-title="Catalog/App Updates - Labor">Catalog/App Updates - Labor</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#update-intro" class="toc-h2 toc-link" data-title="Update Intro">Update Intro</a>
+                  </li>
+                  <li>
+                    <a href="#get-labor-update-list" class="toc-h2 toc-link" data-title="Get Labor Update List">Get Labor Update List</a>
+                  </li>
+                  <li>
+                    <a href="#download-labor-update" class="toc-h2 toc-link" data-title="Download Labor Update">Download Labor Update</a>
+                  </li>
+                  <li>
+                    <a href="#mark-update-applied" class="toc-h2 toc-link" data-title="Mark Update Applied">Mark Update Applied</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#labor-units" class="toc-h1 toc-link" data-title="Labor Units">Labor Units</a>
               <ul class="toc-list-h2">
                   <li>
@@ -434,7 +466,16 @@
                     <a href="#get-labor-source-id" class="toc-h2 toc-link" data-title="Get Labor - Source Id">Get Labor - Source Id</a>
                   </li>
                   <li>
-                    <a href="#get-item-labor-hph-code" class="toc-h2 toc-link" data-title="Get Item Labor - HPH Code">Get Item Labor - HPH Code</a>
+                    <a href="#get-item-labor-hph-item-code" class="toc-h2 toc-link" data-title="Get Item Labor - HPH Item Code">Get Item Labor - HPH Item Code</a>
+                  </li>
+                  <li>
+                    <a href="#get-labor-update-list" class="toc-h2 toc-link" data-title="Get Labor Update List">Get Labor Update List</a>
+                  </li>
+                  <li>
+                    <a href="#download-labor-update" class="toc-h2 toc-link" data-title="Download Labor Update">Download Labor Update</a>
+                  </li>
+                  <li>
+                    <a href="#mark-labor-update-applied" class="toc-h2 toc-link" data-title="Mark Labor Update Applied">Mark Labor Update Applied</a>
                   </li>
               </ul>
           </li>
@@ -1477,8 +1518,6 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 
 <ul>
 <li><a href="#get-org-details">Get an Org&#39;s Details</a></li>
-<li><a href="#get-org-template">Get an Org Template</a></li>
-<li><a href="#modify-org">Modify Org</a></li>
 <li><a href="#org-users">Get an Org&#39;s List of Users</a></li>
 <li><a href="#org-locations-addresses">Get an Org&#39;s List of Locations/Addresses</a></li>
 <li><a href="#get-customer-types">Get an Org&#39;s List of Customer Types</a></li>
@@ -1528,38 +1567,6 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <td>json, xml</td>
 </tr>
 </tbody></table>
-<h2 id='get-org-template'>Get Org Template</h2><h3 id='api-endpoint-get-an-organization-template'>API Endpoint - Get an Organization Template</h3>
-<p><code>GET</code></p>
-
-<p>This endpoint will be used to get a CINX Template for an organization.</p>
-
-<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/template/org</strong></p>
-
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/template/org</code></p>
-
-<p><strong>OPTIONAL URL PARAMETERS</strong></p>
-
-<table><thead>
-<tr>
-<th>Parameter Name</th>
-<th>Description</th>
-<th>Value Type or Options</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>format</td>
-<td>Defines the response format type. If not specified, json will be used.</td>
-<td>json, xml</td>
-</tr>
-</tbody></table>
-<h2 id='modify-org'>Modify Org</h2><h3 id='api-endpoint-modify-an-organization-39-s-details'>API Endpoint – Modify an Organization&#39;s Details</h3>
-<p><code>PUT</code></p>
-
-<p>This request will be used to modify an organization’s details.</p>
-
-<p>URL Pattern:<strong>{api path}/{api_version}/sub/{api_token}/org</strong></p>
-
-<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/xxx</code></p>
 <h2 id='org-users'>Org Users</h2><h3 id='api-enpoint-get-an-organization-39-s-list-of-users'>API Enpoint – Get an Organization&#39;s List of Users</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -1912,29 +1919,69 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 </tr>
 </tbody></table>
 <h1 id='catalog'>Catalog</h1><h2 id='catalog-definition'>Catalog Definition</h2><h3 id='cinx-object-definition-private-catalog'>CINX Object Definition - Private Catalog</h3>
-<p>A CINX catalog is a collection of items grouped together in a CINX database structure. Catalogs may contain
-construction materials, sub-contract services, rental equipment, and other content necessary for the
-execution of a construction project or maintenance of a building.</p>
+<p>A CINX catalog is a collection of items grouped together in a CINX database structure. Catalogs may contain construction materials, sub-contract services, rental equipment, and other content necessary for the execution of a construction project or maintenance of a building.</p>
 
 <p>Every CINX organization can have their own private catalog that can be accessed by the organization&#39;s users in the CINX user interface or via the API. A private catalog can be populated by copying items from a CINX public catalog (HPH) or by creating new private items. Private items will not be linked to an HPH item and therefore will have to be managed and updated by the organization.</p>
 
-<p>With a CINX private catalog, an organization can:
-  - create a hierarchy classification system to group items
-  - create their own product identifiers and descriptions for items
-  - manage different pricing levels
-  - create exports and update files for different software systems</p>
+<p>With a CINX private catalog, an organization can:</p>
+
+<ul>
+<li>create a hierarchy classification system to group items</li>
+<li>create their own product identifiers and descriptions for items</li>
+<li>manage different pricing levels</li>
+<li>create exports and update files for different software systems</li>
+</ul>
+
+<p><strong>Catalog Lines</strong></p>
+
+<p>Each organization can create its own hierarchy system used to classify and group items together. This hierarchy system is called Lines. The CINX Line system allows a company to create as many levels as needed to group their items. The highest level of lines are named the root level lines in this API documentation. Children lines are those that are linked to a higher level line. The line API responses contain line children counts, this will allow you to determine if you are at the bottom level of the hierarchy. The response will also contain a count of items that belong to that level of the hierarchy. </p>
+
+<p><strong>Catalog Manufacturers</strong></p>
+
+<p>Each private catalog line can be linked to a manufacturer. A manufacturer is the company that produces the item. If the private catalog is copied from a CINX public catalog item, then the API can report information regarding that manufacturer. Using the Manufacturer name is often a convenient way to navigate the items in a catalog. This API provides several API calls to work with manufacturer information related to the items in the organization&#39;s private catalog.</p>
+
+<p><strong>Manufacturer Price Sheet Types</strong></p>
+
+<p>In construction sub-contracting trades it is common for product manufacturers to publish price sheets. A price sheet will contain a grouping of products and their corresponding prices. Some manufacturers publish multiple price sheets. It is relatively common for a manufacturer to have separate price sheets for products that are produced for a similar base material (Wrot copper fittings) or have different price sheets for the type of end product (Ball Valves). The CINX API refers to each type or version of the manufacturer price sheets as a Price Sheet Type.</p>
+
+<p><strong>Manufacturer Price Sheets</strong></p>
+
+<p>Manufacturers will frequently issue price sheet revisions with updated prices and product offerings. These revisions will be linked to a price sheet type and will normally have a price sheet number, name, and effective date that the prices will be implemented. In this API these individual instances of a price sheet type will be refereed to as Price Sheets. </p>
+
+<aside class="notice">
+If an item is discontinued by a manufacturer, then the last price and price sheet for that item will be included in the API response. So, it is possible that we requesting a list of price sheets for a private catalog there will be older price sheets returned.
+</aside>
 
 <p><strong>Supported API Services</strong></p>
 
 <ul>
 <li><a href="#get-catalog-line-roots">Get Catalog Line Roots</a></li>
 <li><a href="#get-catalog-line-children">Get a Catalog Line Children</a></li>
-<li><a href="#get-catalog-items-ids">Get a Catalog Items Ids</a></li>
+<li><a href="#get-catalog-line-items">Get a Catalog Line Items</a></li>
+<li><a href="#get-catalog-manufacturers">Get Catalog Manufacturers</a></li>
+<li><a href="#get-price-sheet-types">Get Manufacturer Price Sheet Types</a></li>
+<li><a href="#get-price-sheets">Get Price Sheet Instances</a></li>
+<li><a href="#get-catalog-items-ids">Get Catalog Items Ids</a></li>
 <li><a href="#get-catalog-stats">Get a Catalog Stats</a></li>
-<li><a href="#catalog-item">Catalog Items</a></li>
-<li>Catalog/App Updates</li>
 </ul>
-<h2 id='get-catalog-line-roots'>Get Catalog Line Roots</h2><h3 id='api-endpoint-get-a-private-catalog-39-s-line-root-levels'>API Endpoint – Get a Private Catalog&#39;s Line Root Levels</h3>
+<h2 id='get-catalog-line-roots'>Get Catalog Line Roots</h2><h3 id='api-endpoint-get-a-private-catalog-39-s-line-root-levels'>API Endpoint – Get a Private Catalog&#39;s Line Root Levels</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"268625fa-38cf-5085-9e08-89be31e395e7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(Unassigned)"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All items not currently assigned to a specific LINE."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cdn.dev.cinx.biz/assets/org-0000-7413/image-hier-no-image.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"has_children"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"children_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"item_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <p><code>GET</code></p>
 
 <p>This endpoint will be used to get a listing of a company&#39;s private catalog root level line hierarchies.</p>
@@ -1958,7 +2005,24 @@ execution of a construction project or maintenance of a building.</p>
 <td>json, xml</td>
 </tr>
 </tbody></table>
-<h2 id='get-catalog-line-children'>Get Catalog Line Children</h2><h3 id='api-endpoint-get-a-private-catalog-line-39-s-children-levels'>API Endpoint – Get a Private Catalog Line&#39;s Children Levels</h3>
+<h2 id='get-catalog-line-children'>Get Catalog Line Children</h2><h3 id='api-endpoint-get-a-private-catalog-line-39-s-children-levels'>API Endpoint – Get a Private Catalog Line&#39;s Children Levels</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012773c1-d75c-50d8-b53d-7af936fb9311"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fittings - Compression"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fittings - Compression"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.cinx.com/assets/org-0000-0001/image-hier-no-image.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"has_children"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"children_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"item_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">317</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3cfc2cdf-c96a-5b00-a572-33d8f343f0c6"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copper"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <p><code>GET</code></p>
 
 <p>This endpoint will be used to get a listing of a private catalog line&#39;s children (child lines).</p>
@@ -1984,7 +2048,317 @@ execution of a construction project or maintenance of a building.</p>
 <td>json, xml</td>
 </tr>
 </tbody></table>
-<h2 id='get-catalog-items-ids'>Get Catalog Items Ids</h2><h3 id='api-endpoint-get-a-private-catalog-items-39-ids'>API Endpoint – Get a Private Catalog Items&#39; Ids</h3>
+<h2 id='get-catalog-line-items'>Get Catalog Line Items</h2><h3 id='api-endpoint-get-a-private-catalog-39-s-items-for-a-given-line'>API Endpoint – Get a Private Catalog&#39;s Items for a given Line</h3>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a listing of a private catalog&#39;s items for a given line.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/line/{line_cinx_guid}/items</strong></p>
+
+<p>The line_cinx_guid is the CINX Id of the parent line.</p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/line/3cfc2cdf-c96a-5b00-a572-33d8f343f0c6/items</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>view</td>
+<td>Defines the level of content in the response.</td>
+<td>compact, details, list-price</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>Defines the offset to use when returning the items.</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>Defines the number of results to include in the response. If not specified, 20 will be used.</td>
+<td>Integer</td>
+</tr>
+</tbody></table>
+
+<p><strong>View</strong> </p>
+
+<ul>
+<li><strong>compact</strong>: returns a small set of item information fields. This is the default view if one is not specified. Please see <a href="#line-item-view-compact">Compact View</a> for a definition of the output.</li>
+<li><strong>details</strong>: returns a comprehensive set of item information. Please see <a href="#line-item-view-details">Details View</a> for a definition of the output.</li>
+<li><strong>list-price</strong>: returns the current list price and price sheet information for each item. Please see <a href="#line-item-view-list-price">Details View</a> for a definition of the output.</li>
+</ul>
+<h2 id='line-item-view-compact'>Line Item View - Compact</h2><h3 id='api-line-item-response-view-definition-compact'>API Line Item Response View Definition - Compact</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b0f01d82-b996-11e0-b635-00137268a1bf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"availability_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copper Fittings &amp; Flanges"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sub_category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pressure Wrot-Solder"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hph_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012NI0018"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"org_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"org_system_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mfr_part_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"607"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1</span><span class="se">\"</span><span class="s2"> WROT CXC 90 ELBOW"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mfr_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NIBCO, Inc."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mfr_list_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">18.11</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price_uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E"</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>When requesting the items for a catalog line from the CINX API there are three view options.</p>
+
+<p>The table below defines the fields output using the <strong>compact</strong> view option.</p>
+<h2 id='line-item-view-details'>Line Item View - Details</h2><h3 id='api-line-item-response-view-definition-details'>API Line Item Response View Definition - Details</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b0f01d82-b996-11e0-b635-00137268a1bf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"availability_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copper Fittings &amp; Flanges"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sub_category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pressure Wrot-Solder"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"item_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"hph_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012NI0018"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"org_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"org_system_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mfr_part_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"607"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mfr_order_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9055750"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"039923312969"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"gtin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00039923312969"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"descriptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"org"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cinx_long"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1</span><span class="se">\"</span><span class="s2"> WROT CXC 90 ELBOW"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cinx_short"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 WROT CXC 90 ELL"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mfr"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"mfr"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"cinx_org_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org-0000-1411"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NIBCO, Inc."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name_short"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NIBCO"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.177</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lb"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cdn.dev.cinx.biz/assets/org-0000-1411/5bd9c604de78090ebd153512.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mime_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/jpg"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"spec_sheet"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mime_type"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"mfr_list_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"cinx_price_sheet_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3d4c7bfc-49b0-11e9-9891-00137268a1bf"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">18.11</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"effective_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-01"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_sheet_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WROT-0419"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price_sheet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrot Copper Fittings"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"org_prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"labor_units"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1b99b258-f362-5127-a354-8a56e1593a21"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hph_labor_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L02PP11500005201"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PHCC"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"per fitting"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Piping/Process | Copper | 1000 Degree Alloy Braze | Elbow | 1</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"joint_quantity"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"base_unit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.57</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_unit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.57</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HOUR"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f77b4ca3-1b04-55b3-89cf-a5ada9891f6a"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hph_labor_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L01FTCU032000022"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MCAA"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"component"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Piping Systems (Component Method) | Fittings | Copper | Pressure | Silver Solder Joint (Brazing with Flux) | 90 Elbow Long Radius | 1.0000 Dia. (in)"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"joint_quantity"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"base_unit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_unit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HOUR"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"packaging"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Master Pack"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"039923312969"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"gtin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"039923312969"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"depth"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cube"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"dimension_uom"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"weight_uom"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>When requesting the items for a catalog line from the CINX API there are three view options. </p>
+
+<p>The table below defines the fields output using the <strong>details</strong> view option.</p>
+<h2 id='line-item-view-list-price'>Line Item View - List-Price</h2><h3 id='api-line-item-response-view-definition-list-price'>API Line Item Response View Definition - List Price</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b0f01d82-b996-11e0-b635-00137268a1bf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mfr_list_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">18.11</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price_uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"effective_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-01"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price_sheet_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WROT COPPER"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price_sheet_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WROT-0419"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price_sheet_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrot Copper Fittings"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cinx_price_sheet_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3d4c7bfc-49b0-11e9-9891-00137268a1bf"</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>When requesting the items for a catalog line from the CINX API there are three view options. </p>
+
+<p>The table below defines the fields output using the <strong>list-price</strong> view option.</p>
+<h2 id='get-catalog-manufacturers'>Get Catalog Manufacturers</h2><h3 id='api-endpoint-get-a-private-catalog-39-s-manufacturers'>API Endpoint – Get a Private Catalog&#39;s Manufacturers</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_org_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org-0000-1698"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aegis Technologies, Inc."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"short_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aegis"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://cdn.dev.cinx.biz/assets/org-0000-1698/logo/030_0000-0000.JPG"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"item_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">235</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a listing of a company&#39;s private catalog manufacturers.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/mfrs</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/mfrs</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+The manufacturers included in this response will be based on the items linked to a master HPH item. CINX does not have the required information for private manufacturers created by the company.
+</aside>
+<h2 id='get-price-sheet-types'>Get Price Sheet Types</h2><h3 id='api-endpoint-get-a-manufacturer-39-s-price-sheet-types'>API Endpoint – Get a Manufacturer&#39;s Price Sheet Types</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"price_sheet_type_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"90f7b284-4b7b-11e1-9e73-00137268a1bf"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brass Fittings"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brass Fittings"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brass-Craft"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cinx_org_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"org-0000-1074"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a listing of a specific manufacturer&#39;s price sheet types.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/mfr/{mfr_cinx_org_id}/price-sheet-types</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/mfr/org-0000-1074/price-sheet-types</code></p>
+
+<p>The mfr_cinx_org_id is the CINX Org Id for the manufacturer and can be obtained from the Get Mfrs API response.</p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+<h2 id='get-price-sheets'>Get Price Sheets</h2><h3 id='api-endpoint-get-a-manufacturer-price-sheet-type-39-s-price-sheets'>API Endpoint – Get a Manufacturer Price Sheet Type&#39;s Price Sheets</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"price_sheet_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"154dae84-2150-11e8-9eb7-00137268a1bf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brass Fittings"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0302A"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"date_effective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-01"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"date_release"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"date_expiration"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sequence_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a listing of price sheet instances for a given price sheet type that are used on items in the company&#39;s private catalog.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/mfr/price-sheet-types/{price-sheet-type-cinx-guid}/price-sheets</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/mfr/price-sheet-type/90f7b284-4b7b-11e1-9e73-00137268a1bf/price-sheets</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+If an item is discontinued by a manufacturer, then the last price and price sheet for that item will be included in the API response. So, it is possible that we requesting a list of price sheets for a private catalog there will be older price sheets returned.
+</aside>
+<h2 id='get-catalog-items-ids'>Get Catalog Items Ids</h2><h3 id='api-endpoint-get-a-private-catalog-items-39-ids'>API Endpoint – Get a Private Catalog Items&#39; Ids</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a9c63fa4-ec0d-50eb-ac78-f7c279a996ba"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hph_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"152BC4703"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"org_item_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"org_system_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <p><code>GET</code></p>
 
 <p>This endpoint will be used to get a listing of a private catalog items&#39; product identifiers.</p>
@@ -2018,7 +2392,23 @@ execution of a construction project or maintenance of a building.</p>
 <td>Integer</td>
 </tr>
 </tbody></table>
-<h2 id='get-catalog-stats'>Get Catalog Stats</h2><h3 id='api-endpoint-get-a-private-catalog-statistics'>API Endpoint – Get a Private Catalog Statistics</h3>
+<h2 id='get-catalog-stats'>Get Catalog Stats</h2><h3 id='api-endpoint-get-a-private-catalog-statistics'>API Endpoint – Get a Private Catalog Statistics</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"private"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">7457</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"lines"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"root"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">996</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"manufacturers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">19</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <p><code>GET</code></p>
 
 <p>This endpoint will be used to get a private catalog&#39;s statistics for items, lines and manufacturers.</p>
@@ -3284,7 +3674,7 @@ Catalog item prices are also output in the Get Catalog Item response views. Plea
 <p>When requesting an item&#39;s price history from the CINX API there are two view options. </p>
 
 <p>The table below defines the fields output using the <strong>list</strong> view option.</p>
-<h1 id='catalog-app-updates'>Catalog/App Updates</h1><h2 id='update-intro'>Update Intro</h2><h3 id='cinx-catalog-application-update-introduction-price-update-service'>CINX Catalog/Application Update Introduction - Price Update Service</h3>
+<h1 id='catalog-app-updates-prices'>Catalog/App Updates - Prices</h1><h2 id='update-intro'>Update Intro</h2><h3 id='cinx-catalog-application-update-introduction-price-update-service'>CINX Catalog/Application Update Introduction - Price Update Service</h3>
 <p>CINX allows a company to define their own catalog of material content. This Private Catalog can contain items from the Harrison Plumbing/Mechanical database, vendor catalogs that are hosted on CINX, and items created and maintained by the company. In addition, a company can have access to CINX software partner catalogs. For example, databases used by industry estimating systems are available as CINX catalogs.</p>
 
 <p>As part of CINX’s integration services, a company can request catalog updates formatted for industry software or develop a customized format. The company can have unlimited subscriptions to CINX Import-Export Applications.</p>
@@ -3357,8 +3747,6 @@ Catalog item prices are also output in the Get Catalog Item response views. Plea
 <p>The CINX UI provides extensive capabilities to manage the catalog updates. Admin settings can be defined that will allow for the creation of update files that can be accessed via the API. Custom update files can be requested. Updates can be downloaded and a history of activity can be viewed.</p>
 
 <p><img src='images/subscription15.jpg'/></p>
-
-<p>(Note: many of the API URLs will contain an IPU parameter. IPU is an acronym for Integrated Product/Price Updates)</p>
 <h2 id='get-update-list'>Get Update List</h2><h3 id='api-endpoint-get-a-list-of-catalog-updates'>API Endpoint – Get a List of Catalog Updates</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="s1">'CINX USERNAME'</span><span class="p">,</span> <span class="s1">'CINX PASSWORD'</span><span class="p">);</span>
@@ -3525,10 +3913,12 @@ Catalog item prices are also output in the Get Catalog Item response views. Plea
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/app/{app_id}/price-update/{update_guid}/apply</strong></p>
 
 <p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/app/2494df92-e855-5563-826c-05907f9cca22/price-update/7b13257e-25ff-3a03-5d7d-9f4dbe30e091/apply</code></p>
-<h1 id='labor-units'>Labor Units</h1><h2 id='labor-units-intro'>Labor Units Intro</h2><h3 id='cinx-introduction-to-industry-labor-units'>CINX Introduction to Industry Labor Units</h3>
+<h1 id='catalog-app-updates-labor'>Catalog/App Updates - Labor</h1><h2 id='update-intro'>Update Intro</h2><h3 id='cinx-catalog-application-update-introduction-labor-unit-update-service'>CINX Catalog/Application Update Introduction - Labor Unit Update Service</h3>
+<p>CINX allows a company to define their own catalog of material content. This Private Catalog can contain items from the Harrison Plumbing/Mechanical database, vendor catalogs that are hosted on CINX, and items created and maintained by the company. The items in a private catalog can also be linked to labor units.</p>
+
 <p>In construction, a labor unit is the estimated time it takes to install an item under good working conditions.</p>
 
-<p>In the Plumbing/Mechanical industry there are two primary sources of labor unit standards.  They are both industry trade organizations:</p>
+<p>In the Plumbing/Mechanical industry there are two primary sources of labor unit standards.  They are both contractor industry trade organizations:</p>
 
 <ul>
 <li>MCAA - Mechanical Contractors Association of America</li>
@@ -3542,35 +3932,212 @@ Catalog item prices are also output in the Get Catalog Item response views. Plea
 <li>PHCC - <strong>Per Fitting</strong> and <strong>Per Joint</strong></li>
 </ul>
 
-<p>HPH has license agreements with both of these trade organizations which allow us to store their labor units as CINX catalogs and provide API services to access their content. Every labor unit has been assigned a unique HPH Labor Code.  The code can stored in local database and used in API calls to access the actual labor unit values.</p>
+<p>HPH has license agreements with both of these trade organizations which allow us to store their labor units as CINX catalogs and provide API services to access their content. </p>
 
-<p>The API also offers full database and update files of the labor units so that a software system can have a labor unit update feature.</p>
+<p>The CINX API has two different labor unit update options:</p>
 
-<p>HPH has also linked the industry labor units to our HPH Plumbing/Mechanical catalog items. Both PHCC methods and the MCAA Component method have been assigned to our items.</p>
+<ul>
+<li>Catalog/App Updates service is based on the items in an org&#39;s private catalog and uses the HPH <strong>ITEM</strong> CODE and is documented in this web site section.</li>
+<li>Industry Labor Catalog update service is based on each trade organization labor catalog and uses the HPH <strong>LABOR</strong> CODE and is documented in the <strong>LABOR UNITS</strong> section of this site.</li>
+</ul>
+
+<aside class="warning">
+A single HPH Item Code can be linked to multiple labor units from the labor unit source. A couple of common examples of this include solder joint fittings that can be joined with different solders or brazing materials.  Service weight cast iron fittings can be joined with compression gaskets or lead and oakum. Therefore, there is NOT a one-to-one relationship between an HPH Item Code and a HPH Labor Code. 
+</aside>
+
+<p><strong>File Format</strong></p>
+
+<p>By default CINX offers to standard file format options: JSON and CSV. Custom formats can also be developed.</p>
+
+<p><strong>The contents of the files are based on the HPH Item Code. Therefore, if an item in the private catalog has multiple labor units their will be multiple rows/entries of the HPH Item Code in the file.</strong></p>
+
+<p><strong>Labor Update File Types</strong></p>
+
+<p>Each CINX catalog labor update file has field that defines its <strong>Type</strong>. Catalog labor update types are:</p>
+
+<ul>
+<li> <strong>Full</strong> – file contains ALL items in the catalog</li>
+<li> <strong>Custom</strong> – file contains user-defined contents (The CINX UI can be used to trigger the generation of a custom labor unit file)</li>
+<li> <strong>Update</strong> – file contains any labor units that have had changes since the previous update was published (Trade organizations rarely release updates to existing labor units)</li>
+</ul>
+
+<p><strong>Notifications</strong></p>
+
+<p>When a labor update is posted, CINX checks the subscription settings and notifies the defined users. Notification types include:</p>
+
+<ul>
+<li>Email</li>
+<li>CINX System Alert</li>
+</ul>
+
+<p><strong>Catalog Update File Consumption Status Types</strong></p>
+
+<p>Each CINX catalog labor update file has field that defines its <strong>Status</strong>. When an API call is made to retrieve catalog labor updates a Status filter can be submitted.  Catalog update status filters are:</p>
+
+<ul>
+<li> <strong>New</strong> – files that have not been download or applied</li>
+<li> <strong>Applied</strong> – files that have been applied to the integrated system (Requires submission of an API call to mark the file as consumed/applied.)</li>
+<li> <strong>All</strong> – returns all update files for the requested subscription</li>
+</ul>
 
 <p><strong>NOTES</strong></p>
 
 <ul>
 <li><strong>Labor units will be returned ONLY if the organization is authorized by the labor unit source (trade organization) to access them</strong>.</li>
 <li>Please review the assumptions from each trade organization in regards to how the units were calculated and their intended use.</li>
-<li>The Labor Unit API responses will contain a field named <strong>joint_quantity</strong>. This will be populated only when the labor source is PHCC and the method is Per Joint.</li>
+<li>The API responses will contain a field named <strong>joint_quantity</strong>. This will be populated only when the labor source is PHCC and the method is Per Joint.</li>
 </ul>
+<h2 id='get-labor-update-list'>Get Labor Update List</h2><h3 id='api-endpoint-get-a-list-of-catalog-labor-unit-updates'>API Endpoint – Get a List of Catalog Labor Unit Updates</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7b13257e-25ff-3a03-5d7d-9f4dbe30e091"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QuoteExpress Mechanical Legacy FULL 08/13/2019"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FULL"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"published"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-13 21:12:35"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"range_start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2001-01-01"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"range_end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-13"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DATA-FILE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"upd"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">80954160</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BULLETIN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xls"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">184320</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BULLETIN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"js"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">197514</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"consumed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"downloads"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"downloaded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-23"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"applied"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-23"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Will Stone"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
 
-<p><strong>Dependencies and Business Rules</strong></p>
+<p>This endpoint will be used to retrieve catalog labor updates for a given subscription.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/app/{app_id}/labor-updates</strong></p>
+
+<p>The app_id is the cinx_app_id value for the <strong>Integrated Labor Updates</strong> Import-Export app found in the API&#39;s subscription response.</p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/app/c5919ab5-68e4-580a-ae1e-9f748abfb223/labor-updates?status=all</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>Limits results based on the consumption status.</td>
+<td>NEW, APPLIED, ALL</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Limits results based on type of update file.</td>
+<td>UPDATE, FULL, CUSTOM</td>
+</tr>
+<tr>
+<td>after</td>
+<td>Limits results to files published after the submitted date.</td>
+<td>YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+
+<p><strong>Notes</strong></p>
 
 <ul>
-<li>A single HPH Item Code can be linked to multiple labor units from the labor unit source</li>
+<li>If no <strong>status</strong> parameter is included in the URL, the ALL option will be used by default </li>
+<li>If the URL uses the <strong>NEW</strong> parameter and there are no new updates, the API response will have an empty <strong>rows</strong> array</li>
+</ul>
+<h2 id='download-labor-update'>Download Labor Update</h2><h3 id='api-endpoint-download-a-catalog-app-labor-update-file'>API Endpoint – Download a Catalog/App Labor Update File</h3>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to download a catalog update file. </p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/app/{app_id}/price-update/{update_guid}</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/app/2494df92-e855-5563-826c-05907f9cca22/price-update/7b13257e-25ff-3a03-5d7d-9f4dbe30e091</code></p>
+
+<p><strong>Notes</strong></p>
+
+<ul>
+<li>The update guid used in the URL is obtained from the Get Update List response.  It is the cinx_guid value in the response.</li>
+<li>Catalog Update files of <strong>type=Update</strong> should always be processed in chronological order starting with the earliest date.</li>
+</ul>
+<h2 id='mark-update-applied'>Mark Update Applied</h2><h3 id='api-endpoint-mark-catalog-app-price-update-file-as-applied'>API Endpoint – Mark Catalog/App Price Update File As Applied</h3>
+<p><code>PUT</code></p>
+
+<p>This will mark the labor update as <strong>Applied</strong> and it will no longer show up in the <strong>New</strong> update list.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/app/{app_id}/labor-update/{update_guid}/apply</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/app/2494df92-e855-5563-826c-05907f9cca22/price-update/7b13257e-25ff-3a03-5d7d-9f4dbe30e091/apply</code></p>
+<h1 id='labor-units'>Labor Units</h1><h2 id='labor-units-intro'>Labor Units Intro</h2><h3 id='cinx-introduction-to-industry-labor-units'>CINX Introduction to Industry Labor Units</h3>
+<p>In construction, a labor unit is the estimated time it takes to install an item under good working conditions.</p>
+
+<p>In the Plumbing/Mechanical industry there are two primary sources of labor unit standards.  They are both contractor industry trade organizations:</p>
+
+<ul>
+<li>MCAA - Mechanical Contractors Association of America</li>
+<li>PHCC - Plumbing - Heating - Cooling Contractors Association</li>
+</ul>
+
+<p>Each organization has two two choices or methods for laboring common Pipe, Valves, and Fittings. </p>
+
+<ul>
+<li>MCAA - <strong>Component</strong> and <strong>Work Activity</strong></li>
+<li>PHCC - <strong>Per Fitting</strong> and <strong>Per Joint</strong></li>
+</ul>
+
+<p>HPH has license agreements with both of these trade organizations which allow us to store their labor units as CINX catalogs and provide API services to access their content. Every labor unit has been assigned a unique HPH <strong>Labor</strong> Code.  The code can stored in local database and used in API calls to access the actual labor unit values.</p>
+
+<p>The CINX API has two different labor unit update options:</p>
+
+<ul>
+<li>Industry Labor Catalog update service is based on each trade organization labor catalog and uses the HPH <strong>LABOR</strong> CODE and is documented in this web site section. </li>
+<li>Catalog/App Updates service is based on the items in an org&#39;s private catalog and uses the HPH <strong>ITEM</strong> CODE and is documented in the <strong>CATALOG/APP Updates - Labor</strong> section of this site.</li>
+</ul>
+
+<p><strong>NOTES</strong></p>
+
+<ul>
+<li><strong>Labor units will be returned ONLY if the organization is authorized by the labor unit source (trade organization) to access them</strong>.</li>
+<li>Please review the assumptions from each trade organization in regards to how the units were calculated and their intended use.</li>
+<li>The API responses will contain a field named <strong>joint_quantity</strong>. This will be populated only when the labor source is PHCC and the method is Per Joint.</li>
 </ul>
 
 <p><strong>Supported API Services</strong></p>
 
 <ul>
-<li><a href="#">Get a Labor Unit using the HPH Labor Code</a></li>
-<li><a href="#">Get a Labor Unit using the Source Id</a></li>
-<li><a href="#">Get a Labor Unit Update File</a></li>
-<li><a href="#">Get an Item&#39;s Labor Units using the HPH Item Code</a></li>
-<li><a href="#">Get an Item&#39;s Labor Units using an Organization&#39;s Item Id</a></li>
-<li><a href="#">Get an Item&#39;s Labor Units using a CINX Item Id</a></li>
+<li><a href="#get-labor-hph-code">Get a Labor Unit using the HPH Labor Code</a></li>
+<li><a href="#get-labor-source-id">Get a Labor Unit using the Source Id</a></li>
+<li><a href="#get-item-labor-hph-item-code">Get an Item&#39;s Labor Units using the HPH Item Code</a></li>
+<li><a href="#get-labor-update-list">Get a List of Labor Unit Update Files</a></li>
+<li><a href="#download-labor-update">Download a Labor Unit Update File</a></li>
+<li><a href="#mark-labor-update-applied">Mark Labor Update Applied</a></li>
 </ul>
 <h2 id='get-labor-hph-code'>Get Labor - HPH Code</h2><h3 id='api-endpoint-get-a-labor-unit-using-an-hph-labor-code'>API Endpoint – Get a Labor Unit using an HPH Labor Code</h3>
 <blockquote>
@@ -3667,15 +4234,64 @@ Catalog item prices are also output in the Get Catalog Item response views. Plea
 <td>json, xml</td>
 </tr>
 </tbody></table>
-<h2 id='get-item-labor-hph-code'>Get Item Labor - HPH Code</h2><h3 id='api-endpoint-get-an-item-39-s-labor-units-using-an-hph-code'>API Endpoint – Get an Item&#39;s Labor Units using an HPH Code</h3>
+
+<aside class="warning">
+The Ids used in the endpoint are defined by the labor unit source. CINX/HPH cannot guarantee their uniqueness. Please note that the MCAA uses a single Id to represent their Component method and the installation activity of their Work Activity method. So, most ids in the MCAA labor unit catalog will be linked to two different labor units. 
+</aside>
+<h2 id='get-item-labor-hph-item-code'>Get Item Labor - HPH Item Code</h2><h3 id='api-endpoint-get-an-item-39-s-labor-units-using-an-hph-item-code'>API Endpoint – Get an Item&#39;s Labor Units using an HPH Item Code</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"edc36af3-0c18-5f43-88d8-912525226084"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"availability_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Copper Fittings"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sub_category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pressure Wrot-Solder"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"item_ids"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"descriptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"mfr"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"material_cost_code"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"spec_sheet"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"mfr_list_price"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"org_prices"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"labor_units"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1b99b258-f362-5127-a354-8a56e1593a21"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hph_labor_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L02PP11500005201"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source_unit_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.9.50.220.3.2054"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PHCC"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"per fitting"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Piping/Process | Copper | 1000 Degree Alloy Braze | Elbow | 1</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"joint_quantity"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"base_unit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.57</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_unit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.57</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HOUR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date_effective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-02-13"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9d79c10d-4cc9-5a7c-9d59-85268928184d"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hph_labor_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L02PP21400009539"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source_unit_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.9.50.221.3.2054"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PHCC"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"per joint"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Piping/Process (Per Joint Method) | Copper | 1000 Degree Alloy Braze | Joint | 1</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"joint_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"base_unit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.28</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"total_unit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8400000000000001</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HOUR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"date_effective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-02-13"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p><code>GET</code></p>
 
-<p>This endpoint will be used to get a catalog item’s labor unit and descriptive information using the HPH Code of an item.  </p>
+<p>This endpoint will be used to get a catalog item’s labor units and descriptive information using the HPH Item Code of an item. The API response contains a labor units array to allow for the inclusion of all available labor units assigned to the item given the org&#39;s authorizations in CINX. </p>
 
 <p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/item/hph-code/{hph_code}?view=details&amp;labor={labor_type}</strong></p>
 
@@ -3706,6 +4322,110 @@ Catalog item prices are also output in the Get Catalog Item response views. Plea
 <td>json, xml</td>
 </tr>
 </tbody></table>
+<h2 id='get-labor-update-list'>Get Labor Update List</h2><h3 id='api-endpoint-get-a-list-of-labor-updates'>API Endpoint – Get a List of Labor Updates</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13e33a1f-6363-541d-b7f7-8bd23ce7a301"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MCAA Labor"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FULL"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"published"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-05-20 15:37:16"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"range_start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000-01-01"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"range_end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-05-21"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"documents"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DATA-FILE"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zip"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">5850414</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"consumed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"downloads"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"downloaded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-05-21"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"applied"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-05-21"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Will Stone"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"downloaded"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-05-21"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"applied"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-05-21"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Will Stone"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to retrieve labor updates for a given labor unit catalog.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/app/{app_id}/labor-updates</strong></p>
+
+<p>The app_id is the cinx_app_id value for the desired labor unit source found in the API&#39;s subscription response.</p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/app/3df33ce2-a5f5-5c39-8da1-0a969c23f444/labor-updates</code></p>
+
+<p><strong>OPTIONAL URL PARAMETERS</strong></p>
+
+<table><thead>
+<tr>
+<th>Parameter Name</th>
+<th>Description</th>
+<th>Value Type or Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>Limits results based on the consumption status.</td>
+<td>NEW, APPLIED, ALL</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Limits results based on type of update file.</td>
+<td>UPDATE, FULL</td>
+</tr>
+<tr>
+<td>after</td>
+<td>Limits results to files published after the submitted date.</td>
+<td>YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Defines the response format type. If not specified, json will be used.</td>
+<td>json, xml</td>
+</tr>
+</tbody></table>
+
+<p><strong>Notes</strong></p>
+
+<ul>
+<li>If no <strong>status</strong> parameter is included in the URL, the ALL option will be used by default </li>
+<li>If the URL uses the <strong>NEW</strong> parameter and there are no new updates, the API response will have an empty <strong>rows</strong> array</li>
+<li>Labor Update files of <strong>type=Update</strong> should always be processed in chronological order starting with the earliest date.</li>
+</ul>
+<h2 id='download-labor-update'>Download Labor Update</h2><h3 id='api-endpoint-download-a-labor-update-file'>API Endpoint – Download a Labor Update File</h3>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to download a labor unit update file. </p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/app/{app_id}/labor-update/{update_guid}</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/app/3df33ce2-a5f5-5c39-8da1-0a969c23f444/labor-update/13e33a1f-6363-541d-b7f7-8bd23ce7a301</code></p>
+
+<p><strong>Notes</strong></p>
+
+<ul>
+<li>The update guid used in the URL is obtained from the Get Update List response.  It is the cinx_guid value in the response.</li>
+<li>Labor Update files of <strong>type=Update</strong> should always be processed in chronological order starting with the earliest date.</li>
+</ul>
+<h2 id='mark-labor-update-applied'>Mark Labor Update Applied</h2><h3 id='api-endpoint-mark-labor-unit-update-file-as-applied'>API Endpoint – Mark Labor Unit Update File As Applied</h3>
+<p><code>PUT</code></p>
+
+<p>This will mark the update as <strong>Applied</strong> and it will no longer show up in the <strong>New</strong> update list.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/app/{app_id}/labor-update/{update_guid}/apply</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/app/3df33ce2-a5f5-5c39-8da1-0a969c23f444/labor-update/13e33a1f-6363-541d-b7f7-8bd23ce7a301/apply</code></p>
 <h1 id='job-costing-setup'>Job Costing Setup</h1><h2 id='job-costing-intro'>Job Costing Intro</h2><h3 id='cinx-job-costing-introduction'>CINX Job Costing Introduction</h3>
 <p>To allow for the proper reporting of project items and integration of transactions with contractor accounting systems, CINX has the ability for a company to define its job costing attributes. CINX supports the following job cost information types:</p>
 
@@ -8657,7 +9377,7 @@ Catalog item prices are also output in the Get Catalog Item response views. Plea
 <p>NOTE: Limit and Offset information is included in the <strong>Response</strong> object.</p>
 <h2 id='create-or-modify-a-project-item'>Create or Modify a Project Item</h2><h3 id='api-endpoint-create-or-modify-a-new-project-item'>API Endpoint - Create or Modify a New Project Item</h3>
 <aside class="warning">
-Please use teh Modify Project API call to create or modify a project item. Documentation for this API Endpoint can be found under the **Projects** menu option.
+Please use the Modify Project API call to create or modify a project item. Documentation for this API Endpoint can be found under the **Projects** menu option.
 </aside>
 <h1 id='project-transactions'>Project Transactions</h1><h2 id='get-project-reqs'>Get Project Reqs</h2><h3 id='api-endpoint-get-a-list-of-requisitions-for-a-project'>API Endpoint - Get a List of Requisitions for a Project</h3>
 <blockquote>
