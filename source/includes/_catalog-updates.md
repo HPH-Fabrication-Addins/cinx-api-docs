@@ -65,6 +65,13 @@ The CINX UI provides extensive capabilities to manage the catalog updates. Admin
 
 <img src='images/subscription15.jpg'/>
 
+**Supported API Services**
+
+  - [Get Update List](#get-update-list)
+  - [Download an Update File](#download-update)
+  - [Download an Update's Bulletin File](#download-bulletin)
+  - [Mark Update Applied](#mark-update-applied)
+
 ## Get Update List
 ### API Endpoint – Get a List of Catalog Updates
 

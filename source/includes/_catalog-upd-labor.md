@@ -63,6 +63,13 @@ Each CINX catalog labor update file has field that defines its **Status**. When 
   - Please review the assumptions from each trade organization in regards to how the units were calculated and their intended use.
   - The API responses will contain a field named **joint_quantity**. This will be populated only when the labor source is PHCC and the method is Per Joint.
 
+
+**Supported API Services**
+
+  - [Get Labor Update List](#get-labor-update-list)
+  - [Download a Labor Update File](#download-labor-update)
+  - [Mark Labor Update Applied](#mark-labor-update-applied)
+
 ## Get Labor Update List
 ### API Endpoint – Get a List of Catalog Labor Unit Updates
 
@@ -144,8 +151,8 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/a
   - Catalog Update files of **type=Update** should always be processed in chronological order starting with the earliest date.
 
 
-## Mark Update Applied
-### API Endpoint – Mark Catalog/App Price Update File As Applied
+## Mark Labor Update Applied
+### API Endpoint – Mark Catalog/App Labor Update File As Applied
 
 `PUT`
 
