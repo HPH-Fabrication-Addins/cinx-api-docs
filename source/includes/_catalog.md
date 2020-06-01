@@ -141,7 +141,7 @@ Parameter Name | Description | Value Type or Options
 view | Defines the level of content in the response. | compact, details, list-price
 format | Defines the response format type. If not specified, json will be used. | json, xml
 offset | Defines the offset to use when returning the items. | Integer
-limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
+limit | Defines the number of results to include in the response. If not specified, 20 will be used. | Integer
 
 **View** 
 
@@ -337,12 +337,16 @@ The manufacturers included in this response will be based on the items linked to
 {
   "response": {},
   "rows": [{
-    "cinx_org_id": "org-0000-1698",
-    "name": "Aegis Technologies, Inc.",
-    "short_name": "Aegis",
-    "logo": "http://cdn.dev.cinx.biz/assets/org-0000-1698/logo/030_0000-0000.JPG",
-    "item_count": 235
-  }]
+      "price_sheet_type_guid": "90f7b284-4b7b-11e1-9e73-00137268a1bf",
+      "name": "Brass Fittings",
+      "description": "Brass Fittings",
+      "status": "A",
+      "manufacturer": {
+        "name": "Brass-Craft",
+        "cinx_org_id": "org-0000-1074"
+      }
+    }
+  ]
 }
 ```
 
@@ -350,9 +354,9 @@ The manufacturers included in this response will be based on the items linked to
 
 This endpoint will be used to get a listing of a specific manufacturer's price sheet types.
 
-URL Pattern: **{api path}/{api_version}/sub/{api_token}/mfr/{mfr_cinx_org_id}/price-sheets/types**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/mfr/{mfr_cinx_org_id}/price-sheet-types**
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/mfrxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/mfr/org-0000-1074/price-sheet-types`
 
 The mfr_cinx_org_id is the CINX Org Id for the manufacturer and can be obtained from the Get Mfrs API response.
 
@@ -369,11 +373,15 @@ format | Defines the response format type. If not specified, json will be used. 
 {
   "response": {},
   "rows": [{
-    "cinx_org_id": "org-0000-1698",
-    "name": "Aegis Technologies, Inc.",
-    "short_name": "Aegis",
-    "logo": "http://cdn.dev.cinx.biz/assets/org-0000-1698/logo/030_0000-0000.JPG",
-    "item_count": 235
+    "price_sheet_guid": "154dae84-2150-11e8-9eb7-00137268a1bf",
+    "name": "Brass Fittings",
+    "number": "0302A",
+    "date_effective": "2018-03-01",
+    "date_release": "",
+    "date_expiration": "",
+    "sequence_number": "1",
+    "version": "1",
+    "status": "A"
   }]
 }
 ```
@@ -382,9 +390,9 @@ format | Defines the response format type. If not specified, json will be used. 
 
 This endpoint will be used to get a listing of price sheet instances for a given price sheet type that are used on items in the company's private catalog.
 
-URL Pattern: **{api path}/{api_version}/sub/{api_token}/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXmfr/{mfr_cinx_org_id}/price-sheets/types**
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/mfr/price-sheet-types/{price-sheet-type-cinx-guid}/price-sheets**
 
-URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/mfrxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/mfr/price-sheet-type/90f7b284-4b7b-11e1-9e73-00137268a1bf/price-sheets`
 
 **OPTIONAL URL PARAMETERS**
 

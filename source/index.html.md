@@ -17,6 +17,7 @@ includes:
   - catalog-item
   - catalog-item-prices
   - catalog-updates
+  - catalog-upd-labor
   - labor-units
   - job-costing-setup
   - vendors

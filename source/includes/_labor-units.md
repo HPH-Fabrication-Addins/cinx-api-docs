@@ -5,7 +5,7 @@
 
 In construction, a labor unit is the estimated time it takes to install an item under good working conditions.
 
-In the Plumbing/Mechanical industry there are two primary sources of labor unit standards.  They are both industry trade organizations:
+In the Plumbing/Mechanical industry there are two primary sources of labor unit standards.  They are both contractor industry trade organizations:
 
   - MCAA - Mechanical Contractors Association of America
   - PHCC - Plumbing - Heating - Cooling Contractors Association
@@ -17,27 +17,16 @@ Each organization has two two choices or methods for laboring common Pipe, Valve
 
 HPH has license agreements with both of these trade organizations which allow us to store their labor units as CINX catalogs and provide API services to access their content. Every labor unit has been assigned a unique HPH **Labor** Code.  The code can stored in local database and used in API calls to access the actual labor unit values.
 
-<aside class="warning">
-A single HPH Item Code can be linked to multiple labor units from the labor unit source. A couple of common examples of this include solder joint fittings that can be joined with different solders or brazing materials.  Service weight cast iron fittings can be joined with compression gaskets or lead and oakum. Therefore, there is NOT a one-to-one relationship between an HPH Item Code and a HPH Labor Code. 
-</aside>
+The CINX API has two different labor unit update options:
 
-The API also offers full database and update files of the labor units so that a software system can have a labor unit update feature.
-
-<aside class="warning">
-The full and update files for industry labor units will be based on the HPH **LABOR** Code. 
-</aside>
-
-HPH has also linked the industry labor units to our HPH Plumbing/Mechanical catalog items. Both PHCC methods and the MCAA Component method have been assigned to our items.
-
-<aside class="warning">
-CINX can produce full, update, and custom files for an org's private catalog that includes an array of all labor units linked to the catalog item. The units contained in the file will be dependent on the authorizations attached to the company's CINX account. For more information on API capability please see the Catalog/App Updates - Labor Units section of this documentation site.
-</aside>
+  - Industry Labor Catalog update service is based on each trade organization labor catalog and uses the HPH **LABOR** CODE and is documented in this web site section. 
+  - Catalog/App Updates service is based on the items in an org's private catalog and uses the HPH **ITEM** CODE and is documented in the **CATALOG/APP Updates - Labor** section of this site.
 
 **NOTES**
 
   - **Labor units will be returned ONLY if the organization is authorized by the labor unit source (trade organization) to access them**.
   - Please review the assumptions from each trade organization in regards to how the units were calculated and their intended use.
-  - The Labor Unit API responses will contain a field named **joint_quantity**. This will be populated only when the labor source is PHCC and the method is Per Joint.
+  - The API responses will contain a field named **joint_quantity**. This will be populated only when the labor source is PHCC and the method is Per Joint.
 
 **Supported API Services**
 

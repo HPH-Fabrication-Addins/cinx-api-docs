@@ -1,4 +1,4 @@
-# Catalog/App Updates
+# Catalog/App Updates - Prices
 ## Update Intro
 ### CINX Catalog/Application Update Introduction - Price Update Service
 
@@ -64,8 +64,6 @@ Catalog Update files of type=Update should always be processed in chronological 
 The CINX UI provides extensive capabilities to manage the catalog updates. Admin settings can be defined that will allow for the creation of update files that can be accessed via the API. Custom update files can be requested. Updates can be downloaded and a history of activity can be viewed.
 
 <img src='images/subscription15.jpg'/>
-
-(Note: many of the API URLs will contain an IPU parameter. IPU is an acronym for Integrated Product/Price Updates)
 
 ## Get Update List
 ### API Endpoint – Get a List of Catalog Updates
