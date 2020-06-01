@@ -79,34 +79,30 @@ Each CINX catalog labor update file has field that defines its **Status**. When 
 {
   "response": {},
   "rows": [{
-    "cinx_guid": "7b13257e-25ff-3a03-5d7d-9f4dbe30e091",
-    "title": "QuoteExpress Mechanical Legacy FULL 08/13/2019",
+    "cinx_guid": "1c0c6c28-ebe5-5423-b3be-c86d8640f24d",
+    "title": "Integrated Labor Updates",
     "type": "FULL",
-    "published": "2019-08-13 21:12:35",
-    "range_start": "2001-01-01",
-    "range_end": "2019-08-13",
+    "published": "2020-06-01 19:00:09",
+    "range_start": "2000-01-01",
+    "range_end": "2020-06-02",
     "documents": [{
         "type": "DATA-FILE",
-        "format": "upd",
-        "size": 80954160
+        "format": "zip",
+        "size": 101205
       },
       {
         "type": "BULLETIN",
         "format": "xls",
-        "size": 184320
+        "size": 20480
       },
       {
         "type": "BULLETIN",
-        "format": "js",
-        "size": 197514
+        "format": "json",
+        "size": 18018
       }
     ],
-    "consumed": "Yes",
-    "downloads": [{
-      "downloaded": "2019-09-23",
-      "applied": "2019-09-23",
-      "user": "Will Stone"
-    }]
+    "consumed": "No",
+    "downloads": []
   }]
 }
 ```
