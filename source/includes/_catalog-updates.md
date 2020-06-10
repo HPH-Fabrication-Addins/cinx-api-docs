@@ -102,16 +102,19 @@ cinxApi.getCatalogUpdates(application_guid, update_type)
     "documents": [{
         "type": "DATA-FILE",
         "format": "upd",
+        "formatter": "generic",
         "size": 80954160
       },
       {
         "type": "BULLETIN",
         "format": "xls",
+        "formatter": "excel_bulletin",
         "size": 184320
       },
       {
         "type": "BULLETIN",
         "format": "js",
+        "formatter": "json_bulletin",
         "size": 197514
       }
     ],
