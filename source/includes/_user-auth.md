@@ -40,6 +40,7 @@ cinxApi.getSubscriptions()
                 "status_message_reason": null,
                 "start_date": "2017-10-20",
                 "end_date": "2025-11-19",
+                "catalog_ref": "c5919ab5-68e4-580a-ae1e-9f748abfb223",
                 "apps": [
                     {
                         "cinx_app_guid": "3780a6b903937022c5649f5cd391744e",
@@ -70,6 +71,7 @@ cinxApi.getSubscriptions()
                 "status_message_reason": "Subscription expired on [2017-11-22]",
                 "start_date": "2017-10-23",
                 "end_date": "2017-11-22",
+                "catalog_ref": "d4r19ab5-68e4-580a-ae1e-9f748abfb223",
                 "apps": [
                     {
                         "cinx_app_guid": "308-599736-f129d818-ca871bfb90-350af7",
@@ -119,6 +121,7 @@ subscription.status_message | Message relating to the status code. Potential val
 subscription.status_message_reason | Reason for the status code. If the account is expired the account expiration date will be provided.
 subscription.start_date | Start date of the company's subscription.
 subscription.end_date | Expiration date of the company's subscription.
+subscription.catalog_ref | Reference Id to the orgnaization's private catalog.
 apps.cinx_app_guid | System constant value that is used to identify an application within the CINX platform. If you are a software company that requires data access to a specific catalog of content, a CINX app will be created and you will be provided the cinx_app_guid so that you can query the response for instances of your app.
 apps.cinx_app_id | Unique value that links a subscribing CINX company/org to the application. This value will be required when making API calls to access content.
 apps.name | Name of the application.
