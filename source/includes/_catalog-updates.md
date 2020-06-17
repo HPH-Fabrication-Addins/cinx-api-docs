@@ -122,7 +122,9 @@ cinxApi.getCatalogUpdates(application_guid, update_type)
     "downloads": [{
       "downloaded": "2019-09-23",
       "applied": "2019-09-23",
-      "user": "Will Stone"
+      "user": "Will Stone",
+      "meta": {},
+      "reports": []
     }]
   }]
 }
