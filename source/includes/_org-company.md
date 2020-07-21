@@ -79,13 +79,15 @@ cinxApi.getOrgUsers(cinx_api_token)
             "id": "4a23ff84-9d61-5ab3-95c9-3870cb2727bd",
             "name": "Karl Stone",
             "last_first": "Stone, Karl",
-            "email": "karlstone@cinx.com"
+            "email": "karlstone@cinx.com",
+            "cinx_role": "Administrator"
         },
         {
             "id": "185aabe1-3487-5f59-9ad5-c577a76bd392",
             "name": "Will Stone",
             "last_first": "Stone, Will",
-            "email": "willstone@cinx.com"
+            "email": "willstone@cinx.com",
+            "cinx_role": "Administrator"
         }
     ]
 }
