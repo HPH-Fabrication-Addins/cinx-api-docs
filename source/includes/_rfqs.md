@@ -264,7 +264,7 @@ format | Defines the response format type. If not specified, json will be used. 
 	"rows": [{
 		"doc_info": {},
 		"template": {
-			"cinx_id": null,
+			"cinx_guid": null,
 			"number": null,
 			"name": null,
 			"description": null,
@@ -280,7 +280,7 @@ format | Defines the response format type. If not specified, json will be used. 
 				"number": null
 			}],
 			"project": {
-				"cinx_id": null,
+				"cinx_guid": null,
 				"number": null
 			},
 			"delivery": {
