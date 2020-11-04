@@ -41,7 +41,12 @@ A CINX Request for Quotation is a compilation of  that a customer wants a vendor
 			"vendors": [
 				{
 					"number": "H125",
-					"name": "Hilti"
+					"name": "Hilti",
+					"tx_docs": [{
+							"type": "XLS RFQ",
+							"description": "Excel (xls) version of RFQ",
+							"value": "https://api.cinx.com/sub/12021401-f5e9-5326-b0bc-49a869ae5f23/ncds/c25fba39-50ff-5876-91ea-fcd2c1447500/54f45909-9cc3-50dd-b103-a51d5905df0e/247f71e1-84ed-54af-9e3c-6d994349cf4d"
+					}]
 				}
 			],
 			"ship_via": "SUPPLIER TRUCK",
