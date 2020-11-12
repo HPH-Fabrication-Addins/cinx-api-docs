@@ -80,7 +80,6 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/d
 
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
-project | Limits results to a single project. | {cinx_project_id}
 vendor | Limits results to a single vendor. | {organization's vendor number}
 delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
 ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE

@@ -80,7 +80,6 @@ Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
 delivery | Limits results to a specific delivery type location. | JOB SITE, FABRICATION SHOP, OFFICE, WAREHOUSE, FABRICATOR
 workflow | Limits results to a specific workflow status. | IN-PROCESS, SUBMITTED, RECEIVED, ACCEPTED, DECLINED, QUOTED
-project | Limits results to a single project. | {cinx_project_id}
 vendor | Limits results to a single vendor. | {organization's vendor number}
 ship-via | Limits results to a specific ship via value. | SUPPLIER TRUCK, MOTOR COMMON CARRIER, CUSTOMER PICKUP, TRACKING GROUND, GROUND, AIR EXPRESS, AIR, PRIVATE PARCEL SERVICE
 need-by | Limits results to a specific need-by or delivery-by date. | Date Format: YYYY-MM-DD
