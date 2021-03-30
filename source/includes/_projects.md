@@ -110,6 +110,11 @@ cinxApi.getProjectDetails(cinx_api_token, project_guid)
         "project_manager": "Will Stone",
         "status": "DESIGN",
         "item_count": 241,
+        "status_counts": {
+            "active": 230,
+            "discontinued": 10,
+            "poa": 1
+        },
         "dates": {
             "contract_award": null,
             "scheduled_start": null,
