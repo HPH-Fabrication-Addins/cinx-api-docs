@@ -175,6 +175,7 @@ cinxApi.getVendorDetails(cinx_api_token, vendor_guid)
             "cinx_guid": "e9bf728d-021c-5644-b934-43c193751f2d",
             "name": "David Farnsworth",
             "email": "dmcpahul@hphguide.com",
+            "phone_number": "603.444.0820",
             "role": "User",
             "is_primary": false
         }]
