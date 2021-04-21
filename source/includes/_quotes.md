@@ -8,6 +8,7 @@ A CINX Quote is a document a vendor prepares in response to a customer’s Reque
 **Supported API Services**
 
   - [Get a List of Quotes](#get-quote-list)
+  - [Get a List of Quotes for a RFQ](#get-quote-list-for-a-RFQ)
   - [Get a Quote](#get-quote)
 
 
