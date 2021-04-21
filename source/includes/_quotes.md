@@ -64,6 +64,44 @@ format | Defines the response format type. If not specified, json will be used. 
 offset | Defines the offset to use when returning the items. | Integer
 limit | Defines the number of results to include in the response. If not specified, 50 will be used. | Integer
 
+
+## Get Quote List for a RFQ
+### API Endpoint - Get a List of Quotes for a Given RFQ
+
+> The above code returns JSON structured like this:
+
+```json
+{
+	"response": {},
+	"rows": [{
+		"cinx_guid": "1eb08930-8744-5213-90f0-3ad63a216b20",
+		"number": "Q19-789456",
+		"name": "Q19-789456",
+		"description": "",
+		"workflow_status": "RECEIVED",
+		"vendor_number": "99999",
+		"vendor_name": "Keegan Supply",
+		"submitter": "eb stone",
+		"date_received": "2019-07-25",
+		"date_expires": "2019-08-26",
+		"date_requested": "",
+		"project_number": "WTS-2019-06",
+		"project_name": "HPH HQ Renovation",
+		"rfq_number": "RFQ-456464",
+		"rfq_name": "RFQ-456464",
+		"links": [],
+		"item_count": 11
+	}]
+}
+```
+`GET`
+
+This endpoint will be used to get a list of quotes for a specific RFQ. 
+
+URL Pattern: **{api path}/{api_version}/sub/{api_token}/rfq/{rfq guid}/quotes**
+
+URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/rfq/eff2e2e0-a042-5839-8b45-770559abbb53/quotes`
+
 ## Get Quote
 ### API Endpoint - Get a Quote
 
