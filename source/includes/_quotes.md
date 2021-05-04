@@ -224,6 +224,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/q
 					"instructions": null,
 					"labeling_instructions": "wo-101",
 					"packaging_instructions": "crate",
+					"model_item_guid": null,
 					"work_order_name": null,
 					"spool_name": null,
 					"building": null,
