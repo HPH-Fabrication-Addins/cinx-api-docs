@@ -128,6 +128,10 @@ apps.name | Name of the application.
 apps.type | CINX application type. Current CINX App types include Integration (interactions with other software systems) and Data-Source (catalog of content).
 apps.data_source | Name of the source of the item content that will be used to create content update files (price updates).
 
+**View** 
+
+- **token**: returns the API Token and a smaller set of important data.
+
 ## Auth Response
 ### Working with the GET User Subscription/Auth API Response
 
