@@ -577,7 +577,8 @@ URL Samples:
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
 body | Defines the content type contained in the payload | json
-synchronous | Switch to have the payload processed synchronously. | 1
+synchronous | Switch to have the payload processed synchronously | 1
+auto_submit | Have RFQ directly submitted to the vendors | 0,1
 
 <aside class="notice">
 By default the POST payload will be processed asynchronously.  See the optional URL parameters table for a synchronous option.
