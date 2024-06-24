@@ -1,5 +1,7 @@
 # Quotes
 
+
+
 ## Quote Definition
 ### CINX Object Definition - Quote
 
@@ -8,8 +10,8 @@ A CINX Quote is a document a vendor prepares in response to a customer’s Reque
 **Supported API Services**
 
   - [Get a List of Quotes](#get-quote-list)
-  - [Get a List of Quotes for an RFQ ID (GUID)](#get-quote-list-for-a-RFQ)
-  - [Get a List of Quotes for an RFQ Number](#get-quote-list-for-a-RFQ-number)
+  - [Get a List of Quotes for an RFQ ID](#get-quote-list-for-an-rfq)
+  - [Get a List of Quotes for an RFQ Number](#get-quote-list-for-an-rfq-number)
   - [Get a Quote](#get-quote)
 
 
@@ -98,7 +100,7 @@ limit | Defines the number of results to include in the response. If not specifi
 
 `GET`
 
-This endpoint will be used to get a list of quotes for a specific RFQ that has the uniquely given RFQ number
+This endpoint will be used to get a list of quotes for a specific RFQ that has the uniquely given RFQ number. It is case sensitive, and must be the complete number, no partials will be matched.
 
 URL Pattern: **{api path}/{api_version}/sub/{api_token}/rfq/quotes?filter=number:{number}**
 
@@ -286,3 +288,7 @@ URL Sample: `https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/q
 Parameter Name | Description | Value Type or Options
 ----- | ----- | ----- 
 format | Defines the response format type. If not specified, json will be used. | json, xml
+
+#### History
+
+    * 2024-06-24:GTC:Added List Quotes by RFQ Number

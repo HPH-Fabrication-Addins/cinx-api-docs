@@ -1,7 +1,7 @@
 # Introduction
 
 ## Welcome
-### Welcome to the CINX API Documentation site
+### Welcome to the CINX API Documentation site, updated 2024-06-24
 
 CINX is a platform product from Harrison Publishing House (HPH) serving the construction industry in North America.  
 
