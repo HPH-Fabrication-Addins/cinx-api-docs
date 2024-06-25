@@ -1,0 +1,1 @@
+./slate.sh build

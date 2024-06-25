@@ -22,6 +22,7 @@ services:
             - ./docker/env/ssh:/root/.ssh
             - ./build:/srv/slate/build
             - ./source:/srv/slate/source
+            - ./build.sh:/srv/slate/build.sh
             - ./deploy.sh:/srv/slate/deploy.sh
             - .:/srv/slate/repo
         environment:
