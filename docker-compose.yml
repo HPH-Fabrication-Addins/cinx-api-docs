@@ -19,6 +19,7 @@ services:
         volumes:
             - ./build:/srv/slate/build
             - ./source:/srv/slate/source
+            - ./deploy.sh:/srv/slate/deploy.sh
         environment:
             - PORT=4567
 
