@@ -807,7 +807,10 @@
                     <a href="#get-quote-list" class="toc-h2 toc-link" data-title="Get Quote List">Get Quote List</a>
                   </li>
                   <li>
-                    <a href="#get-quote-list-for-a-rfq" class="toc-h2 toc-link" data-title="Get Quote List for a RFQ">Get Quote List for a RFQ</a>
+                    <a href="#get-quote-list-for-an-rfq-number" class="toc-h2 toc-link" data-title="Get Quote List for an RFQ Number">Get Quote List for an RFQ Number</a>
+                  </li>
+                  <li>
+                    <a href="#get-quote-list-for-an-rfq" class="toc-h2 toc-link" data-title="Get Quote List for an RFQ">Get Quote List for an RFQ</a>
                   </li>
                   <li>
                     <a href="#get-quote" class="toc-h2 toc-link" data-title="Get Quote">Get Quote</a>
@@ -1003,7 +1006,7 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1><h2 id='welcome'>Welcome</h2><h3 id='welcome-to-the-cinx-api-documentation-site'>Welcome to the CINX API Documentation site</h3>
+        <h1 id='introduction'>Introduction</h1><h2 id='welcome'>Welcome</h2><h3 id='welcome-to-the-cinx-api-documentation-site-updated-2024-06-24'>Welcome to the CINX API Documentation site, updated 2024-06-24</h3>
 <p>CINX is a platform product from Harrison Publishing House (HPH) serving the construction industry in North America.  </p>
 
 <p>The CINX API provides access to building material information, construction project information, and material transactions exchanged with product vendors.</p>
@@ -13415,7 +13418,8 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 
 <ul>
 <li><a href="#get-quote-list">Get a List of Quotes</a></li>
-<li><a href="#get-quote-list-for-a-RFQ">Get a List of Quotes for a RFQ</a></li>
+<li><a href="#get-quote-list-for-an-rfq">Get a List of Quotes for an RFQ ID</a></li>
+<li><a href="#get-quote-list-for-an-rfq-number">Get a List of Quotes for an RFQ Number</a></li>
 <li><a href="#get-quote">Get a Quote</a></li>
 </ul>
 <h2 id='get-quote-list'>Get Quote List</h2><h3 id='api-endpoint-get-a-list-of-quotes'>API Endpoint - Get a List of Quotes</h3>
@@ -13518,7 +13522,41 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>Integer</td>
 </tr>
 </tbody></table>
-<h2 id='get-quote-list-for-a-rfq'>Get Quote List for a RFQ</h2><h3 id='api-endpoint-get-a-list-of-quotes-for-a-given-rfq'>API Endpoint - Get a List of Quotes for a Given RFQ</h3>
+<h2 id='get-quote-list-for-an-rfq-number'>Get Quote List for an RFQ Number</h2><h3 id='api-endpoint-get-a-list-of-quotes-matching-the-given-rfq-number-end-user-39-s-number'>API Endpoint - Get a List of Quotes matching the given RFQ Number (end-user&#39;s number)</h3>
+<blockquote>
+<p>The above code returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="nl">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"cinx_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1eb08930-8744-5213-90f0-3ad63a216b20"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Q19-789456"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Q19-789456"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"workflow_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RECEIVED"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"vendor_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99999"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"vendor_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Keegan Supply"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"submitter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eb stone"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_received"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-25"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_expires"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-08-26"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date_requested"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"project_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WTS-2019-06"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"project_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HPH HQ Renovation"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rfq_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RFQ-456464"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rfq_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RFQ-456464"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"item_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>GET</code></p>
+
+<p>This endpoint will be used to get a list of quotes for a specific RFQ that has the uniquely given RFQ number. It is case sensitive, and must be the complete number, no partials will be matched.</p>
+
+<p>URL Pattern: <strong>{api path}/{api_version}/sub/{api_token}/rfq/quotes?filter=number:{number}</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/sub/dfed7d88-adf8-5356-8029-fe061c93d0fe/rfq/quotes?filter=number:2024-AB-01</code></p>
+<h2 id='get-quote-list-for-an-rfq'>Get Quote List for an RFQ</h2><h3 id='api-endpoint-get-a-list-of-quotes-for-a-given-rfq'>API Endpoint - Get a List of Quotes for a Given RFQ</h3>
 <blockquote>
 <p>The above code returns JSON structured like this:</p>
 </blockquote>
@@ -13701,6 +13739,8 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>json, xml</td>
 </tr>
 </tbody></table>
+<h4 id='history'>History</h4>
+<p>* 2024-06-24:GTC:Added List Quotes by RFQ Number</p>
 <h1 id='purchase-orders'>Purchase Orders</h1><h2 id='po-definition'>PO Definition</h2><h3 id='cinx-object-definition-purchase-order'>CINX Object Definition - Purchase Order</h3>
 <p>A CINX Purchase Order is a compilation of parts that are being ordered. The list might be for a whole project, phase, system, pre-fab work-order, spool, or a general list created by a project foreman in the field. </p>
 
