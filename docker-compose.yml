@@ -1,0 +1,25 @@
+version: '3.8'
+name: slate
+
+services:
+    builder:
+        container_name: 'slate-builder'
+        build:
+            context: ./docker/builder
+            dockerfile: Dockerfile
+            args:
+                WWWGROUPID: '${WWWGROUPID:-33}'
+        command: serve
+    #    command: bash
+    #command: bundle exec middleman server
+        extra_hosts:
+            - 'host.docker.internal:host-gateway'
+        ports:
+            - 4567:4567
+        volumes:
+            - ./build:/srv/slate/build
+            - ./source:/srv/slate/source
+        environment:
+            - PORT=4567
+
+
