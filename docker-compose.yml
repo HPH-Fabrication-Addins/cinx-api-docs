@@ -18,6 +18,8 @@ services:
             - 4567:4567
         volumes:
             - ./docker/env/bashrc:/root/.bashrc
+            - ./docker/env/github:/root/.config/github
+            - ./docker/env/ssh:/root/.ssh
             - ./build:/srv/slate/build
             - ./source:/srv/slate/source
             - ./deploy.sh:/srv/slate/deploy.sh
