@@ -17,9 +17,11 @@ services:
         ports:
             - 4567:4567
         volumes:
+            - ./docker/env/bashrc:/root/.bashrc
             - ./build:/srv/slate/build
             - ./source:/srv/slate/source
             - ./deploy.sh:/srv/slate/deploy.sh
+            - .:/srv/slate/repo
         environment:
             - PORT=4567
 
