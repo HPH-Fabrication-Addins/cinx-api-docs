@@ -12,6 +12,7 @@ toc_footers:
 includes:
   - introduction
   - user-auth
+  - token-auth
   - org-company
   - catalog
   - catalog-item
