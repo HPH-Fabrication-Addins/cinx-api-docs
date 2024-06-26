@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+/#!/usr/bin/env bash
 set -o errexit #abort if any command fails
 me=$(basename "$0")
 
@@ -77,7 +77,7 @@ main() {
 
   enable_expanded_output
 
-  if ! git diff --exit-code --quiet --cached; then
+  if ! git diff --exit-code --quiet; then
     echo Aborting due to uncommitted changes in the index >&2
     return 1
   fi
