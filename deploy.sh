@@ -77,10 +77,12 @@ main() {
 
   enable_expanded_output
 
-  if ! git diff --exit-code --quiet; then
+  if ! git diff --exit-code --quiet --cached; then
     echo Aborting due to uncommitted changes in the index >&2
     return 1
   fi
+
+  echo "You are here"
 
   commit_title=`git log -n 1 --format="%s" HEAD`
   commit_hash=` git log -n 1 --format="%H" HEAD`
@@ -132,6 +134,7 @@ initial_deploy() {
 }
 
 incremental_deploy() {
+  echo "Incremental Deploy"
   #make deploy_branch the current branch
   git symbolic-ref HEAD refs/heads/$deploy_branch
   #put the previously committed contents of deploy_branch into the index
