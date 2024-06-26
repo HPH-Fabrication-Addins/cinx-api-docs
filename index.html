@@ -288,6 +288,14 @@
               </ul>
           </li>
           <li>
+            <a href="#token-auth" class="toc-h1 toc-link" data-title="Token Auth">Token Auth</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#token-auth-2" class="toc-h2 toc-link" data-title="Token Auth">Token Auth</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#org-company" class="toc-h1 toc-link" data-title="Org/Company">Org/Company</a>
               <ul class="toc-list-h2">
                   <li>
@@ -1533,6 +1541,66 @@ The CINX User Unique Id (GUID) will be required by some API requests. These requ
 <p>The <strong>cinx_app_id</strong> is a unique value that links a subscribing CINX org to your application. This value will be required when you are making API calls to access content.</p>
 
 <p>The <strong>data_source</strong> name value will define the source of the item content that will be used to create content update files (price updates). For more information about the relationship between and app and a data source, please review the CINX Applications and Data Source page.</p>
+<h1 id='token-auth'>Token Auth</h1><h2 id='token-auth-2'>Token Auth</h2><h3 id='api-endpoint-user-subscription-authorization-token'>API Endpoint - User Subscription/Authorization Token</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"b9bff245-e1f2-410a-8244-7beabeda6a99"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token_exp_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-08-07"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"account_exp_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-11-13"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"authorized"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"tokens"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"API"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"apps"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CINX B2B"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a4cdf53d-1e7d-7ef9-8cbe-922194241980"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INTEGRATION"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"sub_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B2B"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"access"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RESTRICTED"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"app_cdoc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"couchdb://apps/2d4dde95cc7d1a3d8e830036ff126f60"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="nl">"cost"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"is_paid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="nl">"notify"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="nl">"labor_app"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.cinx.com/assets/apps/cinx-integration-b2b.png"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CINX B2B Partner API Integration Services"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"data_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"couchdb://apps/a6502d78d800a4cd3cc052562500033a"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"data_source_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"My Private Catalog"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"catalog_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"couchdb://apps/a6502d78d800a4cd3cc052562500033a"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>GET</code></p>
+
+<p>There are times where you may wish to use an API token instead of HTTP Basic Auth username and password to access the API in an authenticated manner. 
+In that case, you will need to generate a bearer token for the user&#39;s credentials.</p>
+
+<p>URL Pattern: <strong>{api path}/{api version}/auth/token/generate</strong></p>
+
+<p>URL Sample: <code>https://api.cinx.com/2.0/auth/token/generate</code></p>
+
+<p>HTTP basic authentication required.</p>
+
+<p>Required additional header:</p>
+
+<p>* <code>Partner-Id</code> with a value of <code>oauth-api</code></p>
+<h3 id='how-to-use'>How to Use</h3>
+<p>In the returned data, if the user is valid and has an active subscription to CINX, there are two key guids returned that you need to access 
+other resources permitted to this account:</p>
+
+<ul>
+<li><code>token</code> - This is the Bearer Token that you will you on subsequent calls, <em>instead of</em> HTTP basic authentication. 
+** Using the sample JSON return here as an example, you&#39;d set the <code>Bearer</code> header to a value of <code>b9bff245-e1f2-410a-8244-7beabeda6a99</code></li>
+<li><code>authorized.apps.id</code> - This is the API token, here called the CINX api token</li>
+</ul>
+
+<p>Also note the expiration date; you may wish to save the Expiration Date so you can remind your users that they need to refresh their token
+to continue to access protected resources and features of CINX.</p>
+<h4 id='update-2024-06-26'>Update 2024-06-26</h4>
+<p>We are working on a ticket to create version 2.1, where the output of this call matches that of <a href="#user-auth">User Authentication</a>.</p>
 <h1 id='org-company'>Org/Company</h1><h2 id='org-definition'>Org Definition</h2><h3 id='cinx-object-definition-organization'>CINX Object Definition - Organization</h3>
 <p>An Organization in CINX defines a company or grouping of individuals (residential customers) that participate or is referenced on the platform.</p>
 
