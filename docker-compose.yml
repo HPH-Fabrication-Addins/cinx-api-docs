@@ -23,7 +23,7 @@ services:
             - ./build:/srv/slate/build
             - ./source:/srv/slate/source
             - ./build.sh:/srv/slate/build.sh
-            - ./deploy.sh:/srv/slate/deploy.sh
+      #            - ./deploy.sh:/srv/slate/deploy.sh
             - .:/srv/slate/repo
         environment:
             - PORT=4567
