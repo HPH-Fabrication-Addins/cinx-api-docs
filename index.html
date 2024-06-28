@@ -980,6 +980,14 @@
               </ul>
           </li>
           <li>
+            <a href="#jobs" class="toc-h1 toc-link" data-title="Jobs">Jobs</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#job-status" class="toc-h2 toc-link" data-title="Job Status">Job Status</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#additional-info" class="toc-h1 toc-link" data-title="Additional Info">Additional Info</a>
               <ul class="toc-list-h2">
                   <li>
@@ -18603,6 +18611,142 @@ By default the PUT payload will be processed asynchronously.  See the optional U
 <td>json, xml</td>
 </tr>
 </tbody></table>
+<h1 id='jobs'>Jobs</h1><h2 id='job-status'>Job Status</h2><h3 id='cinx-object-definition-job'>CINX Object Definition - Job</h3>
+<p>A Job is a request submitted to the Partner Integration Gateway, affectionately known
+as the PIG.  When you post an asynchronous job to the PIG, you get a simple JSON 
+response that includes the job GUID. </p>
+
+<p>That GUID can then be used to make an authenticated call to the job status API 
+here to see if the job has been completed, and if it was successful.</p>
+<h3 id='call-response-with-processed-pig-job'>Call response with processed PIG job</h3><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"App</span><span class="se">\\</span><span class="s2">Controllers</span><span class="se">\\</span><span class="s2">Auth-&gt;authenticate"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1719584394.89486</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_time"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.177053928375244</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"record_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"app"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json-rfq-import"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"json"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"auto_submit"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"1"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"api_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"app_cdoc"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"couchdb://apps/2d4dde95cc7d1a3d8e830036ff126f60"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"org_cdoc"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"couchdb://orgs/org-unit-test"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"org_name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"PSF Mechanical, Inc."</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"user_cdoc"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"couchdb://users/CINX-SYSTEM"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"2260bc39-5871-4e13-87c6-afd3bfc7519e"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"user_name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"USER TEST"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"archive"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"sub_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"93b09b7f-becd-4dd7-801d-80f0f45fa5ab"</span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"command_started_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-17 16:38:55Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"file_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"partner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cinx"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Processed"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"97b96860-ca73-4f8e-b6ba-37ce9f256871"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pig"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PIG-UPLOAD"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<blockquote>
+<p>A successfully processed PIG job returns JSON structured like this:</p>
+</blockquote>
+
+<p>When you submit a Partner Integration Gateway (PIG) job, you get a response like this. Critical is the job_id, which is used in the subsequent status call.</p>
+
+<p>To get the status of a job, you call:</p>
+
+<p>URL Pattern: <strong>{api path}/{api version}/partner/exec/{job id}/status</strong></p>
+
+<p>Sample Call: <strong>{api path}/1.0/partner/exec/69151a1e-ac43-4355-ba14-ea9d148a6633/status</strong></p>
+
+<ul>
+<li>Note: This is a VERSION 1.0 API call.</li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Failed to find a job with the given id of [7ab6f316-39bb-4d02-92aa-c9cfd8eeeb11]"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"App</span><span class="se">\\</span><span class="s2">Controllers</span><span class="se">\\</span><span class="s2">Auth-&gt;authenticate"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sub/d4cdf53d-1e7d-7cf9-8cbe-94d194241980/partner/exec/7ab6f316-39bb-4d02-92aa-c9cfd8eeeb11/status"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1719524513.524035</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total_time"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2764439582824707</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"record_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>A call with an invalid Job Id</p>
+</blockquote>
+<h3 id='call-with-missing-invalid-job-id'>Call with missing/invalid Job Id</h3>
+<p>The <code>rows</code> array will be empty. The <code>response.status_code</code> will not be 200. </p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"App</span><span class="se">\\</span><span class="s2">Controllers</span><span class="se">\\</span><span class="s2">Auth-&gt;authenticate"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"start_time"</span><span class="p">:</span><span class="w"> </span><span class="mf">1719584394.89486</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_time"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.177053928375244</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"record_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"rows"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"app"</span><span class="p">:</span><span class="w"> </span><span class="s2">"json-rfq-import"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"json"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"auto_submit"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"1"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"api_version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"app_cdoc"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"couchdb://apps/2d4dde95cc7d1a3d8e830036ff126f60"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"org_cdoc"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"couchdb://orgs/org-unit-test"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"org_name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"PSF Mechanical, Inc."</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"user_cdoc"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"couchdb://users/CINX-SYSTEM"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"2260bc39-5871-4e13-87c6-afd3bfc7519e"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"user_name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"USER TEST"</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"archive"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"sub_id"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"93b09b7f-becd-4dd7-801d-80f0f45fa5ab"</span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"command_started_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-01-17 16:38:55Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"file_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"partner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cinx"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Internal Server Error"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cinx_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"97b96860-ca73-4f8e-b6ba-37ce9f256871"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"domain"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pig"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PIG-UPLOAD"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+
+
+</span></code></pre></div>
+<blockquote>
+<p>The above is a call with a valid pig job ID, but the job has failed. Note the
+<code>status_code</code> and <code>status_message</code>.</p>
+</blockquote>
+<h3 id='call-with-a-failed-pig-job'>Call with a failed PIG Job</h3>
+<p>The key fields to examine are the <code>status_code</code> and <code>status_message</code> in the first record in the rows array. If the <code>status_code</code> is 200 and the <code>status_message</code> is &#39;Processed&#39;, the job has completed successfully. If the <code>status_code</code> is 500, then the job was attempted and failed. The <code>status_message</code> in this case will be &#39;Internal Server Error&#39;.</p>
 <h1 id='additional-info'>Additional Info</h1><h2 id='ping-server'>PING Server</h2><h3 id='api-endpoint-ping-cinx-api-server'>API Endpoint - PING CINX API Server</h3><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//Using cinx-api.js</span>
 <span class="kd">var</span> <span class="nx">cinxApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CinxApi</span><span class="p">();</span>
 <span class="nx">cinxApi</span><span class="p">.</span><span class="nx">setCredentials</span><span class="p">(</span><span class="dl">'</span><span class="s1">CINX USERNAME</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">CINX PASSWORD</span><span class="dl">'</span><span class="p">);</span>
