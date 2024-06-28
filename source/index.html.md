@@ -40,6 +40,7 @@ includes:
   - deliveries
   - invoices
   - returns
+  - jobs
   - additional-info
 
 
